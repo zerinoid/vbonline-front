@@ -9,7 +9,9 @@ function App() {
     return (
         <div className="App">
             <Router>
-                VBONLINE <code>>></code>
+                <div className="container">
+                    VBONLINE <code>>></code>
+                </div>
             </Router>
         </div>
     );
