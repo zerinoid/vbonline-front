@@ -10,7 +10,15 @@ function App() {
         <div className="App">
             <Router>
                 <div className="container">
-                    VBONLINE <code>>></code>
+                    <nav className="navbar">
+                        VBONLINE <code>>></code>
+                        <button>Docs</button>
+                        <button>VB Online</button>
+                        <button>pt</button>
+                        <button>en</button>
+                    </nav>
+                    <Route path="/" exact component={ListaDocs} />
+                    <Route path="/sobre" exact component={Sobre} />
                 </div>
             </Router>
         </div>
