@@ -15,13 +15,17 @@ function App() {
                 <div className="container">
                     <nav className="navbar">
                         VBONLINE <code>>></code>
-                        <button>Docs</button>
-                        <button>VB Online</button>
+                        <Link to="/" className="nav-link">
+                            <button>VB Online</button>
+                        </Link>
+                        <Link to="/" className="nav-link">
+                            <button>Docs</button>
+                        </Link>
                         <button>pt</button>
                         <button>en</button>
                     </nav>
                     <Route path="/" exact component={ListaDocs} />
-                    <Route path="/sobre" exact component={Sobre} />
+                    <Route path="/sobre" component={Sobre} />
                 </div>
             </Router>
         </div>
