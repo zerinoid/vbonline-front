@@ -16,10 +16,10 @@ function App() {
                     <nav className="navbar">
                         VBONLINE <code>>></code>
                         <Link to="/" className="nav-link">
-                            <button>VB Online</button>
-                        </Link>
-                        <Link to="/" className="nav-link">
                             <button>Docs</button>
+                        </Link>
+                        <Link to="/sobre" className="nav-link">
+                            <button>VB Online</button>
                         </Link>
                         <button>pt</button>
                         <button>en</button>
