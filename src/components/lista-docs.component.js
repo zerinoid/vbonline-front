@@ -2,15 +2,12 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 // import axios from "axios";
 
-import Video from "./video.component";
+import VideoPlayer from "./video.component";
+
+// import dean from "mersh.mp4";
 
 export default class ListaDocs extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
     render() {
-        return <Video />;
+        return <VideoPlayer src="mersh.mp4" />;
     }
 }
