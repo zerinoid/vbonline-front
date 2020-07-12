@@ -4,10 +4,10 @@ import React, { Component } from "react";
 
 import VideoPlayer from "./video.component";
 
-// import dean from "mersh.mp4";
+import dean from "./mersh.mp4";
 
 export default class ListaDocs extends Component {
     render() {
-        return <VideoPlayer src="mersh.mp4" />;
+        return <VideoPlayer src={dean} />;
     }
 }
