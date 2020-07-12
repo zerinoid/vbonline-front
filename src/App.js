@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -14,7 +14,7 @@ function App() {
             <Router>
                 <div className="container">
                     <nav className="navbar">
-                        VBONLINE <code>>></code>
+                        <code>>></code>
                         <Link to="/" className="nav-link">
                             <button>Docs</button>
                         </Link>
