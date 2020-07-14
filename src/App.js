@@ -11,26 +11,24 @@ import ListaDocs from "./components/lista-docs.component";
 
 function App() {
     return (
-        <div className="App">
-            <Router>
-                <div className="container">
-                    <nav className="navbar">
-                        <code>>></code>
-                        <Link to="/" className="nav-link">
-                            <button>Docs</button>
-                        </Link>
-                        <Link to="/sobre" className="nav-link">
-                            <button>VB Online</button>
-                        </Link>
-                        <button>pt</button>
-                        <button>en</button>
-                    </nav>
-                    <Route path="/" exact component={ListaDocs} />
-                    <Route path="/sobre" component={Sobre} />
-                </div>
-            </Router>
-        </div>
+        <Router>
+            <div className="container">
+                <nav className="navbar">
+                    <code>>></code>
+                    <Link to="/" className="nav-link">
+                        <button>Docs</button>
+                    </Link>
+                    <Link to="/sobre" className="nav-link">
+                        <button>DT Online</button>
+                    </Link>
+                    <button>pt</button>
+                    <button>en</button>
+                </nav>
+                <Route path="/" exact component={ListaDocs} />
+                <Route path="/sobre" component={Sobre} />
+            </div>
+        </Router>
     );
 }
 
-export default App;
+export default hot(App);
