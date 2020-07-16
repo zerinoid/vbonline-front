@@ -14,6 +14,7 @@ button {
         color: white;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
+
     .titulo {
         font-size: 5em;
     }
@@ -21,7 +22,12 @@ button {
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1400px;
+        max-width: 1330px !important;
     }
 }
 
+@media (min-width: 1368px) {
+    .container {
+        max-width: 1330px;
+    }
+}
