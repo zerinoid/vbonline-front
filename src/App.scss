@@ -1,2 +1,18 @@
 @import "video.js/dist/video-js";
 @import "styles/test";
+
+button {
+    background-color: red;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1330px !important;
+    }
+}
+
+@media (min-width: 1368px) {
+    .container {
+        max-width: 1330px;
+    }
+}
