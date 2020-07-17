@@ -1,4 +1,4 @@
 module.exports = {
-    entry: ["react-hot-loader/patch", "./src"],
     watch: true,
+    watchOptions: 300,
 };
