@@ -5,6 +5,25 @@ import { jsx } from '@emotion/core';
 // import { Link } from "react-router-dom";
 // import axios from "axios";
 
+const Cartela = (props) => (
+    <div
+        css={{
+            color: 'white',
+        }}
+    />
+);
+
+const DocPreview = (props) => (
+    <div
+        css={{
+            width: '100%',
+            minHeight: 720,
+            padding: '210px 135px',
+        }}
+        {...props}
+    />
+);
+
 export default class ListaDocs extends Component {
     state = {
         playlist_id: 'PLjZHtJxNiFBnv5J0G0RXJh7P7yL58zpIg',
@@ -47,6 +66,10 @@ export default class ListaDocs extends Component {
                         <button>Saiba +</button>
                     </div>
                 </div>
+
+                <DocPreview css={style}>
+                    <Cartela />
+                </DocPreview>
             </div>
         );
     }
