@@ -10,21 +10,21 @@ export default class ListaDocs extends Component {
         videos: [
             {
                 id: 'zynTWAUK5mc',
-                title: 'Nome do vídeo 1',
-                subtitle: 'Sobre o vídeo 1',
+                title: "Maybe One Day She'll See Me Again",
+                subtitle: `Viper goes in raw.`,
                 poster: '/img/seemeagain.jpg',
                 order: 1,
             },
             {
                 id: 'tsfnuyyjaB0',
-                title: 'Nome do vídeo 2',
+                title: 'You Wanna See Me Dead Cause Of My Hops',
                 subtitle: 'Sobre o vídeo 2',
                 poster: '/img/myhops.jpg',
                 order: 2,
             },
             {
                 id: 'y-G8BlRcRP0',
-                title: 'Nome do vídeo 3',
+                title: "you'll cowards don't even smoke crack",
                 subtitle: 'Sobre o vídeo 3',
                 poster: '/img/cowardscrack.jpg',
                 order: 3,
