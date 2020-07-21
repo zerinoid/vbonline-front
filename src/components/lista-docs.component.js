@@ -59,7 +59,7 @@ export default class ListaDocs extends Component {
 
         return (
             <div className="lista-docs">
-                <div id="doc1" style={style}>
+                <div id="doc1" css={style}>
                     <div className="cartela">
                         <h1 className="titulo">{this.state.videos[0].title}</h1>
                         <p>{this.state.videos[0].subtitle}</p>
