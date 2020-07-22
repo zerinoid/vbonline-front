@@ -19,6 +19,7 @@ const Cartela = (props) => (
         css={{
             color: 'white',
         }}
+        {...props}
     />
 );
 
@@ -62,24 +63,25 @@ export default class ListaDocs extends Component {
     };
 
     render() {
-        const style = {
-            backgroundImage: `url(${this.state.videos[0].poster})`,
-        };
+        let lista = [];
 
-        return (
-            <div className="lista-docs">
-                <div id="doc1" css={style}>
-                    <div className="cartela">
-                        <h1 className="titulo">{this.state.videos[0].title}</h1>
-                        <p>{this.state.videos[0].subtitle}</p>
+        for (const [index, value] of this.state.videos.entries()) {
+            lista.push(
+                <DocPreview
+                    css={{
+                        backgroundImage: `url(${value.poster})`,
+                    }}
+                    key={index}
+                >
+                    <Cartela>
+                        <Titulo>{value.title}</Titulo>
+                        <p>{value.subtitle}</p>
                         <button>Saiba +</button>
-                    </div>
-                </div>
-
-                <DocPreview css={style}>
-                    <Cartela />
+                    </Cartela>
                 </DocPreview>
-            </div>
-        );
+            );
+        }
+
+        return <div className="lista-docs">{lista}</div>;
     }
 }
