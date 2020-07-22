@@ -5,6 +5,15 @@ import { jsx } from '@emotion/core';
 // import { Link } from "react-router-dom";
 // import axios from "axios";
 
+const Titulo = (props) => (
+    <h1
+        css={{
+            fontSize: '5em',
+        }}
+        {...props}
+    />
+);
+
 const Cartela = (props) => (
     <div
         css={{
