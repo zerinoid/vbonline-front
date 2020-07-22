@@ -1,8 +1,11 @@
 @import "video.js/dist/video-js";
-@import "styles/docs";
 
 button {
     background-color: red;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @media (min-width: 1200px) {
