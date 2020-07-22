@@ -10,7 +10,9 @@ const Titulo = (props) => (
             fontSize: '5em',
         }}
         {...props}
-    />
+    >
+        {props.titulo}
+    </h1>
 );
 
 const Cartela = (props) => (
@@ -75,7 +77,7 @@ export default class ListaDocs extends Component {
                     key={index}
                 >
                     <Cartela>
-                        <Titulo>{value.title}</Titulo>
+                        <Titulo titulo={value.title} />
                         <p>{value.subtitle}</p>
                         <button>Saiba +</button>
                     </Cartela>
