@@ -38,31 +38,34 @@ const DocPreview = (props) => (
 export default class ListaDocs extends Component {
     constructor(props) {
         super(props);
+        // this.state = { lista: [] };
         this.state = {
-            playlist_id: 'PLjZHtJxNiFBnv5J0G0RXJh7P7yL58zpIg',
-            videos: [
-                {
-                    id: 'zynTWAUK5mc',
-                    title: "Maybe One Day She'll See Me Again",
-                    subtitle: `Viper goes in raw.`,
-                    poster: '/img/seemeagain.jpg',
-                    order: 1,
-                },
-                {
-                    id: 'tsfnuyyjaB0',
-                    title: 'You Wanna See Me Dead Cause Of My Hops',
-                    subtitle: 'Sobre o vídeo 2',
-                    poster: '/img/myhops.jpg',
-                    order: 2,
-                },
-                {
-                    id: 'y-G8BlRcRP0',
-                    title: "you'll cowards don't even smoke crack",
-                    subtitle: 'Sobre o vídeo 3',
-                    poster: '/img/cowardscrack.jpg',
-                    order: 3,
-                },
-            ],
+            lista: {
+                playlist_id: 'PLjZHtJxNiFBnv5J0G0RXJh7P7yL58zpIg',
+                videos: [
+                    {
+                        id: 'zynTWAUK5mc',
+                        title: "Maybe One Day She'll See Me Again",
+                        subtitle: 'Viper goes in raw.',
+                        poster: '/img/seemeagain.jpg',
+                        order: 1,
+                    },
+                    {
+                        id: 'tsfnuyyjaB0',
+                        title: 'You Wanna See Me Dead Cause Of My Hops',
+                        subtitle: 'Sobre o vídeo 2',
+                        poster: '/img/myhops.jpg',
+                        order: 2,
+                    },
+                    {
+                        id: 'y-G8BlRcRP0',
+                        title: "you'll cowards don't even smoke crack",
+                        subtitle: 'Sobre o vídeo 3',
+                        poster: '/img/cowardscrack.jpg',
+                        order: 3,
+                    },
+                ],
+            },
         };
     }
     render() {
