@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import videojs from "video.js";
+import React, { Component } from 'react';
+import videojs from 'video.js';
+import 'videojs-youtube';
 // import axios from "axios";
 
 export default class VideoPlayer extends Component {
@@ -9,7 +10,7 @@ export default class VideoPlayer extends Component {
             this.videoNode,
             this.props,
             function onPlayerReady() {
-                console.log("onPlayerReady", this);
+                console.log('onPlayerReady', this);
             }
         );
     }

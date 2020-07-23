@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Component } from 'react';
 import { jsx } from '@emotion/core';
-// import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 // import axios from "axios";
 
 const Titulo = (props) => (
