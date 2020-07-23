@@ -68,11 +68,21 @@ export default class ListaDocs extends Component {
             },
         };
     }
-    render() {
-        let lista = [];
 
-        for (const [index, value] of this.state.videos.entries()) {
-            lista.push(
+    // componentDidMount() {
+    //     axios
+    //         .get("http://localhost:4000/todos/")
+    //         .then((response) => {
+    //             this.setState({ lista: response.data });
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    // }
+
+    ListaDocs() {
+        return this.state.lista.videos.map((value, index) => {
+            return (
                 <DocPreview
                     css={{
                         backgroundImage: `url(${value.poster})`,
@@ -86,8 +96,11 @@ export default class ListaDocs extends Component {
                     </Cartela>
                 </DocPreview>
             );
-        }
+        });
+    }
 
-        return <div className="lista-docs">{lista}</div>;
+    render() {
+        console.log(this.state.lista.videos);
+        return <div className="lista-docs">{this.ListaDocs()}</div>;
     }
 }
