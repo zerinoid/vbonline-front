@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Component } from 'react';
 import { jsx } from '@emotion/core';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import axios from "axios";
 
 import VideoPlayer from './video.component';
@@ -40,34 +40,32 @@ const DocPreview = (props) => (
 export default class ListaDocs extends Component {
     constructor(props) {
         super(props);
-        // this.state = { lista: [] };
+        // this.state = {};
         this.state = {
-            lista: {
-                playlist_id: 'PLjZHtJxNiFBnv5J0G0RXJh7P7yL58zpIg',
-                videos: [
-                    {
-                        id: 'zynTWAUK5mc',
-                        title: "Maybe One Day She'll See Me Again",
-                        subtitle: 'Viper goes in raw.',
-                        poster: '/img/seemeagain.jpg',
-                        order: 1,
-                    },
-                    {
-                        id: 'tsfnuyyjaB0',
-                        title: 'You Wanna See Me Dead Cause Of My Hops',
-                        subtitle: 'Sobre o vídeo 2',
-                        poster: '/img/myhops.jpg',
-                        order: 2,
-                    },
-                    {
-                        id: 'y-G8BlRcRP0',
-                        title: "you'll cowards don't even smoke crack",
-                        subtitle: 'Sobre o vídeo 3',
-                        poster: '/img/cowardscrack.jpg',
-                        order: 3,
-                    },
-                ],
-            },
+            playlist_id: 'PLjZHtJxNiFBnv5J0G0RXJh7P7yL58zpIg',
+            videos: [
+                {
+                    id: 'zynTWAUK5mc',
+                    title: "Maybe One Day She'll See Me Again",
+                    subtitle: 'Viper goes in raw.',
+                    poster: '/img/seemeagain.jpg',
+                    order: 1,
+                },
+                {
+                    id: 'tsfnuyyjaB0',
+                    title: 'You Wanna See Me Dead Cause Of My Hops',
+                    subtitle: 'nostalgia from the future. ',
+                    poster: '/img/myhops.jpg',
+                    order: 2,
+                },
+                {
+                    id: 'y-G8BlRcRP0',
+                    title: "you'll cowards don't even smoke crack",
+                    subtitle: "he's like the black jimi hendrix",
+                    poster: '/img/cowardscrack.jpg',
+                    order: 3,
+                },
+            ],
         };
     }
 
@@ -75,7 +73,7 @@ export default class ListaDocs extends Component {
     //     axios
     //         .get("http://localhost:4000/todos/")
     //         .then((response) => {
-    //             this.setState({ lista: response.data });
+    //             this.setState( response.data );
     //         })
     //         .catch(function (error) {
     //             console.log(error);
@@ -83,7 +81,7 @@ export default class ListaDocs extends Component {
     // }
 
     ListaDocs() {
-        return this.state.lista.videos.map((value, index) => {
+        return this.state.videos.map((value, index) => {
             return (
                 <Router key={index}>
                     <DocPreview
