@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Sobre from './components/sobre.component';
 import ListaDocs from './components/lista-docs.component';
-import Video from './components/video.component';
 
 function App() {
     return (
@@ -27,7 +26,6 @@ function App() {
                     </nav>
                     <Route path="/" exact component={ListaDocs} />
                     <Route path="/sobre" component={Sobre} />
-                    <Route path="/video" component={Video} />
                 </div>
             </Router>
         </div>

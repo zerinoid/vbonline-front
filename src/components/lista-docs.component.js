@@ -4,6 +4,8 @@ import { jsx } from '@emotion/core';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 // import axios from "axios";
 
+import VideoPlayer from './video.component';
+
 const Titulo = (props) => (
     <h1
         css={{
@@ -83,24 +85,44 @@ export default class ListaDocs extends Component {
     ListaDocs() {
         return this.state.lista.videos.map((value, index) => {
             return (
-                <DocPreview
-                    css={{
-                        backgroundImage: `url(${value.poster})`,
-                    }}
-                    key={index}
-                >
-                    <Cartela>
-                        <Titulo titulo={value.title} />
-                        <p>{value.subtitle}</p>
-                        <button>Saiba +</button>
-                    </Cartela>
-                </DocPreview>
+                <Router key={index}>
+                    <DocPreview
+                        css={{
+                            backgroundImage: `url(${value.poster})`,
+                        }}
+                    >
+                        <Cartela>
+                            <Link to="/video">
+                                <Titulo titulo={value.title} />
+                            </Link>
+                            <p>{value.subtitle}</p>
+                            <button>Saiba +</button>
+                        </Cartela>
+                        <Route path="/video" component={this.RenderPlayer} />
+                    </DocPreview>
+                </Router>
             );
         });
     }
 
+    // data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=xjS6SftYQaQ"}] }'
+
+    RenderPlayer() {
+        const videoJsOptions = {
+            autoplay: true,
+            controls: true,
+            // techOrder: 'youtube',
+            sources: [
+                {
+                    src: 'https://www.youtube.com/watch?v=XPtVZ69lomk',
+                    type: 'video/youtube',
+                },
+            ],
+        };
+        return <VideoPlayer {...videoJsOptions} />;
+    }
+
     render() {
-        console.log(this.state.lista.videos);
         return <div className="lista-docs">{this.ListaDocs()}</div>;
     }
 }
