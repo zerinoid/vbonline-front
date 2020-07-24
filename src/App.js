@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.scss';
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Sobre from './components/sobre.component';
@@ -15,10 +13,10 @@ function App() {
                 <div className="container">
                     <nav className="navbar">
                         <code>>></code>
-                        <Link to="/" className="nav-link">
+                        <Link to="/">
                             <button>Docs</button>
                         </Link>
-                        <Link to="/sobre" className="nav-link">
+                        <Link to="/sobre">
                             <button>VB Online</button>
                         </Link>
                         <button>pt</button>

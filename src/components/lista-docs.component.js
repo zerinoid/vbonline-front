@@ -33,6 +33,8 @@ const DocPreview = (props) => (
             minHeight: 720,
             padding: '210px 135px',
             marginBottom: '10px',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
         }}
         {...props}
     />
