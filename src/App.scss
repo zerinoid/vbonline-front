@@ -3,6 +3,7 @@
 
 button {
     background-color: red;
+    border-radius: 20px;
 }
 
 p {
@@ -11,7 +12,7 @@ p {
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1330px !important;
+        max-width: 1330px;
     }
 }
 
