@@ -32,6 +32,7 @@ const DocPreview = (props) => (
             width: '100%',
             minHeight: 720,
             padding: '210px 135px',
+            marginBottom: '10px',
         }}
         {...props}
     />
@@ -90,29 +91,27 @@ export default class ListaDocs extends Component {
                         }}
                     >
                         <Cartela>
-                            <Link to="/video">
+                            <Link to={value.id}>
                                 <Titulo titulo={value.title} />
                             </Link>
                             <p>{value.subtitle}</p>
                             <button>Saiba +</button>
                         </Cartela>
-                        <Route path="/video" component={this.RenderPlayer} />
+                        <Route path="/:id" component={this.RenderPlayer} />
                     </DocPreview>
                 </Router>
             );
         });
     }
 
-    // data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=xjS6SftYQaQ"}] }'
-
-    RenderPlayer() {
+    RenderPlayer(props) {
         const videoJsOptions = {
             autoplay: true,
             controls: true,
             // techOrder: 'youtube',
             sources: [
                 {
-                    src: 'https://www.youtube.com/watch?v=XPtVZ69lomk',
+                    src: `https://www.youtube.com/watch?v=${props.match.params.id}`,
                     type: 'video/youtube',
                 },
             ],
