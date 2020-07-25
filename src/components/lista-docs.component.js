@@ -45,7 +45,7 @@ export default class ListaDocs extends Component {
         super(props);
         // this.state = {};
         this.state = {
-            playlist_id: 'PLjZHtJxNiFBnv5J0G0RXJh7P7yL58zpIg',
+            playlist: 'PLjZHtJxNiFBnv5J0G0RXJh7P7yL58zpIg',
             videos: [
                 {
                     id: 'y-G8BlRcRP0',
@@ -93,13 +93,18 @@ export default class ListaDocs extends Component {
                         }}
                     >
                         <Cartela>
-                            <Link to={value.id}>
+                            <Link
+                                to={`${this.state.playlist}/${value.id}/${value.order}`}
+                            >
                                 <Titulo titulo={value.title} />
                             </Link>
                             <p>{value.subtitle}</p>
                             <button>Saiba +</button>
                         </Cartela>
-                        <Route path="/:id" component={this.RenderPlayer} />
+                        <Route
+                            path="/:playlist/:id/:order"
+                            component={this.RenderPlayer}
+                        />
                     </DocPreview>
                 </Router>
             );
@@ -113,7 +118,7 @@ export default class ListaDocs extends Component {
             // techOrder: 'youtube',
             sources: [
                 {
-                    src: `https://www.youtube.com/watch?v=${props.match.params.id}`,
+                    src: `https://www.youtube.com/watch?v=${props.match.params.id}&list=${props.match.params.playlist}&index=${props.match.params.order}`,
                     type: 'video/youtube',
                 },
             ],
