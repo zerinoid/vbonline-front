@@ -1,8 +1,14 @@
 @import "video.js/dist/video-js";
 @import "bootstrap/dist/css/bootstrap";
 
+$vermelho: #ff0000;
+
+body {
+    background: linear-gradient(0deg, $vermelho, #ffffff);
+}
+
 button {
-    background-color: red;
+    background-color: $vermelho;
     border-radius: 20px;
 }
 
