@@ -1,44 +1,35 @@
 /** @jsx jsx */
 import { Component } from 'react';
 import { jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import axios from "axios";
 
 import VideoPlayer from './video.component';
 
-const Titulo = (props) => (
-    <h1
-        css={{
-            fontSize: '5em',
-        }}
-        {...props}
-    >
-        {props.titulo}
-    </h1>
-);
+const DocPreviewMain = styled.div`
+    border: solid red 2px;
+    width: 100%;
+    min-height: 720px;
+    padding: 210px 135px;
+    margin-bottom: 10px;
+    background-image: url(${(props) => props.bg});
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    h1 {
+        font-size: 5em;
+    }
+`;
 
-const Cartela = (props) => (
-    <div
-        css={{
-            color: 'white',
-        }}
-        {...props}
-    />
-);
-
-const DocPreview = (props) => (
-    <div
-        css={{
-            width: '100%',
-            minHeight: 720,
-            padding: '210px 135px',
-            marginBottom: '10px',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-        }}
-        {...props}
-    />
-);
+const DocPreviewThumb = styled.div`
+    width: '33%',
+    minHeigh: 100,
+    marginBottom: 10,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    display: 'inline-block',
+`;
 
 export default class ListaDocs extends Component {
     constructor(props) {
@@ -68,46 +59,50 @@ export default class ListaDocs extends Component {
                     poster: '/img/cowardscrack.jpg',
                     order: 3,
                 },
+                {
+                    id: 'l1ANAdzP5GM',
+                    title: 'I Ball or Die',
+                    subtitle: 'I came for the hops, stayed for the crack. ',
+                    poster: '/img/ballordie.jpg',
+                    order: 3,
+                },
             ],
         };
     }
 
-    // componentDidMount() {
-    //     axios
-    //         .get("http://localhost:4000/todos/")
-    //         .then((response) => {
-    //             this.setState( response.data );
-    //         })
-    //         .catch(function (error) {
-    //             console.log(error);
-    //         });
-    // }
+    componentDidMount() {
+        //     axios
+        //         .get("http://localhost:4000/todos/")
+        //         .then((response) => {
+        //             this.setState( response.data );
+        //         })
+        //         .catch(function (error) {
+        //             console.log(error);
+        //         });
+    }
 
     ListaDocs() {
         return this.state.videos.map((value, index) => {
-            return (
-                <Router key={index}>
-                    <DocPreview
-                        css={{
-                            backgroundImage: `url(${value.poster})`,
-                        }}
-                    >
-                        <Cartela>
+            if (index === 0) {
+                return (
+                    <DocPreviewMain bg={value.poster} key={index}>
+                        <div>
                             <Link
                                 to={`${this.state.playlist}/${value.id}/${value.order}`}
                             >
-                                <Titulo titulo={value.title} />
+                                <h1>{value.title}</h1>
                             </Link>
-                            <p>{value.subtitle}</p>
+                            <h3>{value.subtitle}</h3>
                             <button>Saiba +</button>
-                        </Cartela>
+                        </div>
                         <Route
                             path="/:playlist/:id/:order"
                             component={this.RenderPlayer}
                         />
-                    </DocPreview>
-                </Router>
-            );
+                    </DocPreviewMain>
+                );
+            }
+            return <DocPreviewThumb key={index}></DocPreviewThumb>;
         });
     }
 
@@ -115,7 +110,10 @@ export default class ListaDocs extends Component {
         const videoJsOptions = {
             autoplay: true,
             controls: true,
-            // techOrder: 'youtube',
+            youtube: {
+                iv_load_policy: '3',
+            },
+            techOrder: ['youtube'],
             sources: [
                 {
                     src: `https://www.youtube.com/watch?v=${props.match.params.id}&list=${props.match.params.playlist}&index=${props.match.params.order}`,
@@ -127,6 +125,10 @@ export default class ListaDocs extends Component {
     }
 
     render() {
-        return <div className="lista-docs">{this.ListaDocs()}</div>;
+        return (
+            <Router>
+                <div className="lista-docs">{this.ListaDocs()}</div>
+            </Router>
+        );
     }
 }
