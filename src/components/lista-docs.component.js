@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Component } from 'react';
-import { jsx } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import axios from "axios";
@@ -8,10 +8,10 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import VideoPlayer from './video.component';
 
 const DocPreviewMain = styled.div`
-    border: solid red 2px;
     width: 100%;
-    min-height: 720px;
-    padding: 210px 135px;
+    min-height: 620px;
+    max-height: 60vh;
+    padding: 10% 10%;
     margin-bottom: 10px;
     background-image: url(${(props) => props.bg});
     background-repeat: no-repeat;
@@ -20,16 +20,24 @@ const DocPreviewMain = styled.div`
     h1 {
         font-size: 5em;
     }
+    h4 {
+        font-size: 1.2em;
+    }
 `;
 
-const DocPreviewThumb = styled.div`
-    width: '33%',
-    minHeigh: 100,
-    marginBottom: 10,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    display: 'inline-block',
-`;
+const DocPreviewThumb = (props) => (
+    <DocPreviewMain
+        css={css`
+            width: 32%;
+            min-height: 50px;
+            height: 20vh;
+            padding: 12px;
+            display: inline-block;
+            margin-right: 1%;
+        `}
+        {...props}
+    />
+);
 
 export default class ListaDocs extends Component {
     constructor(props) {
@@ -102,7 +110,16 @@ export default class ListaDocs extends Component {
                     </DocPreviewMain>
                 );
             }
-            return <DocPreviewThumb key={index}></DocPreviewThumb>;
+            return (
+                <DocPreviewThumb bg={value.poster} key={index}>
+                    <Link
+                        to={`${this.state.playlist}/${value.id}/${value.order}`}
+                    >
+                        <h4>{value.title}</h4>
+                        <p>tipo de material</p>
+                    </Link>
+                </DocPreviewThumb>
+            );
         });
     }
 
