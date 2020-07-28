@@ -13,6 +13,15 @@ export default class VideoPlayer extends Component {
                 console.log('onPlayerReady', this);
             }
         );
+
+        //adição de botão custom
+        let Button = videojs.getComponent('Button');
+        let butao = new Button(this.player, {
+            clickHandler: function (event) {
+                videojs.log('Clicked');
+            },
+        });
+        this.player.addChild(butao);
     }
 
     // destroy player on unmount
