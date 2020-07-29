@@ -1,5 +1,6 @@
 @import "video.js/dist/video-js";
 @import "bootstrap/dist/css/bootstrap";
+@import "styles/fonts";
 
 $vermelho: #ff0000;
 
@@ -10,6 +11,8 @@ body {
 button {
     background-color: $vermelho;
     border-radius: 20px;
+    font-family: FedraMono;
+    font-weight: normal;
 }
 
 p {
@@ -24,6 +27,28 @@ a {
         text-decoration: none;
         color: white;
     }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: FedraMono;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h4 {
+    font-size: 1.0em;
 }
 
 @media (min-width: 1200px) {

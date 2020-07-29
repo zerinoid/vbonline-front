@@ -17,11 +17,8 @@ const DocPreviewMain = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    h1 {
-        font-size: 5em;
-    }
-    h4 {
-        font-size: 1.2em;
+    h3 {
+        text-transform: none;
     }
 `;
 
@@ -34,6 +31,10 @@ const DocPreviewThumb = (props) => (
             padding: 12px;
             display: inline-block;
             margin-right: 1%;
+            p {
+                font-family: FedraMono;
+                font-weight: normal;
+            }
         `}
         {...props}
     />
@@ -116,7 +117,7 @@ export default class ListaDocs extends Component {
                         to={`${this.state.playlist}/${value.id}/${value.order}`}
                     >
                         <h4>{value.title}</h4>
-                        <p>tipo de material</p>
+                        <p>Tipo de Material</p>
                     </Link>
                 </DocPreviewThumb>
             );
