@@ -1,17 +1,23 @@
-import React from "react";
-// import { Link } from "react-router-dom";
-// import axios from "axios";
+import React, { Component } from 'react';
+import axios from "axios";
 
-const Sobre = (props) => (
-    <div className="sobre">
-        Aliquam erat volutpat. Nunc eleifend leo vitae magna. In id erat non
-        orci commodo lobortis. Proin neque massa, cursus ut, gravida ut,
-        lobortis eget, lacus. Sed diam. Praesent fermentum tempor tellus. Nullam
-        tempus. Mauris ac felis vel velit tristique imperdiet. Donec at pede.
-        Etiam vel neque nec dui dignissim bibendum. Vivamus id enim. Phasellus
-        neque orci, porta a, aliquet quis, semper a, massa. Phasellus purus.
-        Pellentesque tristique imperdiet tortor. Nam euismod tellus id erat.
-    </div>
-);
 
-export default Sobre;
+export default class Sobre extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {}
+      }
+
+    componentDidMount() {
+        axios.get('/api/sobre').then((res) => {
+            this.setState(res.data)
+        })
+    }
+
+    render() {
+        return (
+            <div className="sobre">{this.state.pt}</div>
+        );
+    }
+}
