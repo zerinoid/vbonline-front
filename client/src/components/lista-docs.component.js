@@ -50,10 +50,9 @@ const DocPreviewThumb = (props) => (
 const PlayButton = (props) => (
     <img
         css={css`
-            position: absolute;
-            /* left: calc(50% - ${props.imagem.clientWidth}); */
-            left: calc(50% - 82px);
-            top: calc(50% - 82px);
+            /* left: calc(50% - 82px); */
+            /* top: calc(50% - 82px); */
+            margin: 0 auto;
         `}
         alt="play"
         src={props.imagem}
@@ -138,7 +137,13 @@ export default class ListaDocs extends Component {
                     <Link
                         to={`${this.state.playlist}/${value.id}/${value.order}`}
                     >
-                        <PlayButton imagem={smallPlay} />
+                        <div
+                            css={css`
+                                position: absolute;
+                            `}
+                        >
+                            <PlayButton imagem={smallPlay} />
+                        </div>
                     </Link>
                     <p>Tipo de Material</p>
                 </DocPreviewThumb>
