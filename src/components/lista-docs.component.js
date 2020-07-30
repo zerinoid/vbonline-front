@@ -4,6 +4,8 @@ import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import axios from "axios";
+import bigPlay from '../assets/img/bigplay.png';
+import smallPlay from '../assets/img/smplay.png';
 
 import VideoPlayer from './video.component';
 
@@ -17,6 +19,7 @@ const DocPreviewMain = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    position: relative;
     h3 {
         text-transform: none;
     }
@@ -31,12 +34,29 @@ const DocPreviewThumb = (props) => (
             padding: 12px;
             display: inline-block;
             margin-right: 1%;
+            img {
+                left: calc(50% - 41px);
+                top: calc(50% - 41px);
+            }
             p {
                 font-family: FedraMono;
                 font-weight: normal;
             }
         `}
         {...props}
+    />
+);
+
+const PlayButton = (props) => (
+    <img
+        css={css`
+            position: absolute;
+            /* left: calc(50% - ${props.imagem.clientWidth}); */
+            left: calc(50% - 82px);
+            top: calc(50% - 82px);
+        `}
+        alt="play"
+        src={props.imagem}
     />
 );
 
@@ -95,15 +115,15 @@ export default class ListaDocs extends Component {
             if (index === 0) {
                 return (
                     <DocPreviewMain bg={value.poster} key={index}>
-                        <div>
-                            <Link
-                                to={`${this.state.playlist}/${value.id}/${value.order}`}
-                            >
-                                <h1>{value.title}</h1>
-                            </Link>
-                            <h3>{value.subtitle}</h3>
-                            <button>Saiba +</button>
-                        </div>
+                        <h1>{value.title}</h1>
+                        <Link
+                            to={`${this.state.playlist}/${value.id}/${value.order}`}
+                        >
+                            <PlayButton imagem={bigPlay} />
+                        </Link>
+                        <h3>{value.subtitle}</h3>
+                        <button>Saiba +</button>
+
                         <Route
                             path="/:playlist/:id/:order"
                             component={this.RenderPlayer}
@@ -111,14 +131,16 @@ export default class ListaDocs extends Component {
                     </DocPreviewMain>
                 );
             }
+            // console.log(smallPlay.clientWidth);
             return (
                 <DocPreviewThumb bg={value.poster} key={index}>
+                    <h4>{value.title}</h4>
                     <Link
                         to={`${this.state.playlist}/${value.id}/${value.order}`}
                     >
-                        <h4>{value.title}</h4>
-                        <p>Tipo de Material</p>
+                        <PlayButton imagem={smallPlay} />
                     </Link>
+                    <p>Tipo de Material</p>
                 </DocPreviewThumb>
             );
         });
