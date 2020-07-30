@@ -1,0 +1,39 @@
+@import "video.js/dist/video-js";
+@import "bootstrap/dist/css/bootstrap";
+
+$vermelho: #ff0000;
+
+body {
+    background: linear-gradient(0deg, $vermelho, #ffffff);
+}
+
+button {
+    background-color: $vermelho;
+    border-radius: 20px;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1330px;
+    }
+}
+
+@media (min-width: 1368px) {
+    .container {
+        max-width: 1330px;
+    }
+}
