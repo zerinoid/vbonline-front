@@ -47,6 +47,21 @@ const DocPreviewThumb = (props) => (
     />
 );
 
+const Absolute = (props) => (
+    <div
+        css={css`
+            position: absolute;
+        `}
+    >
+        <PlayButton
+            css={css`
+                margin: 0 auto;
+            `}
+            src={props.imagem}
+        />
+    </div>
+);
+
 const PlayButton = (props) => (
     <img
         css={css`
@@ -118,7 +133,7 @@ export default class ListaDocs extends Component {
                         <Link
                             to={`${this.state.playlist}/${value.id}/${value.order}`}
                         >
-                            <PlayButton imagem={bigPlay} />
+                            <Absolute imagem={bigPlay} />
                         </Link>
                         <h3>{value.subtitle}</h3>
                         <button>Saiba +</button>
@@ -137,13 +152,7 @@ export default class ListaDocs extends Component {
                     <Link
                         to={`${this.state.playlist}/${value.id}/${value.order}`}
                     >
-                        <div
-                            css={css`
-                                position: absolute;
-                            `}
-                        >
-                            <PlayButton imagem={smallPlay} />
-                        </div>
+                        <Absolute imagem={smallPlay} />
                     </Link>
                     <p>Tipo de Material</p>
                 </DocPreviewThumb>
