@@ -4,6 +4,7 @@ import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import axios from "axios";
+
 import bigPlay from '../assets/img/bigplay.png';
 import smallPlay from '../assets/img/smplay.png';
 
@@ -34,10 +35,6 @@ const DocPreviewThumb = (props) => (
             padding: 12px;
             display: inline-block;
             margin-right: 1%;
-            img {
-                left: calc(50% - 41px);
-                top: calc(50% - 41px);
-            }
             p {
                 font-family: FedraMono;
                 font-weight: normal;
@@ -47,30 +44,23 @@ const DocPreviewThumb = (props) => (
     />
 );
 
-const Absolute = (props) => (
-    <div
-        css={css`
-            position: absolute;
-        `}
-    >
-        <PlayButton
-            css={css`
-                margin: 0 auto;
-            `}
-            src={props.imagem}
-        />
-    </div>
-);
+const Absolute = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+`;
 
 const PlayButton = (props) => (
     <img
         css={css`
-            /* left: calc(50% - 82px); */
-            /* top: calc(50% - 82px); */
-            margin: 0 auto;
+            /* margin: auto auto; */
         `}
-        alt="play"
         src={props.imagem}
+        alt="play"
     />
 );
 
@@ -130,11 +120,16 @@ export default class ListaDocs extends Component {
                 return (
                     <DocPreviewMain bg={value.poster} key={index}>
                         <h1>{value.title}</h1>
-                        <Link
-                            to={`${this.state.playlist}/${value.id}/${value.order}`}
-                        >
-                            <Absolute imagem={bigPlay} />
-                        </Link>
+                        <Absolute>
+                            <Link
+                                css={css`
+                                    margin: auto;
+                                `}
+                                to={`${this.state.playlist}/${value.id}/${value.order}`}
+                            >
+                                <PlayButton imagem={bigPlay} />
+                            </Link>
+                        </Absolute>
                         <h3>{value.subtitle}</h3>
                         <button>Saiba +</button>
 
@@ -149,11 +144,16 @@ export default class ListaDocs extends Component {
             return (
                 <DocPreviewThumb bg={value.poster} key={index}>
                     <h4>{value.title}</h4>
-                    <Link
-                        to={`${this.state.playlist}/${value.id}/${value.order}`}
-                    >
-                        <Absolute imagem={smallPlay} />
-                    </Link>
+                    <Absolute>
+                        <Link
+                            css={css`
+                                margin: auto;
+                            `}
+                            to={`${this.state.playlist}/${value.id}/${value.order}`}
+                        >
+                            <PlayButton imagem={smallPlay} />
+                        </Link>
+                    </Absolute>
                     <p>Tipo de Material</p>
                 </DocPreviewThumb>
             );
