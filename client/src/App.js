@@ -6,13 +6,15 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Sobre from './components/sobre.component';
 import ListaDocs from './components/lista-docs.component';
 
+import Logo from './assets/img/logo.png';
+
 function App() {
     return (
         <div className="App">
             <Router>
                 <div className="container">
                     <nav className="navbar">
-                        <code>>></code>
+                        <img alt="Logo" src={Logo} />
                         <Link to="/">
                             <button>Docs</button>
                         </Link>
