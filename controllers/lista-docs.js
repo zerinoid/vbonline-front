@@ -1,7 +1,6 @@
 // sei la
 exports.getListaDocs = (req, res, next) => {
     data = {
-        loaded: false,
         playlist: 'PLjZHtJxNiFBnv5J0G0RXJh7P7yL58zpIg',
         videos: [
             {

@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 
 import bigPlay from '../assets/img/bigplay.png';
 import smallPlay from '../assets/img/smplay.png';
@@ -67,61 +67,47 @@ const PlayButton = (props) => (
 export default class ListaDocs extends Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     videos: [],
-        // };
         this.state = {
-            playlist: 'PLjZHtJxNiFBnv5J0G0RXJh7P7yL58zpIg',
-            videos: [
-                {
-                    id: 'y-G8BlRcRP0',
-                    title: "Maybe One Day She'll See Me Again",
-                    subtitle: 'Viper goes in raw.',
-                    poster: '/img/seemeagain.jpg',
-                    order: 1,
-                },
-                {
-                    id: 'zynTWAUK5mc',
-                    title: 'You Wanna See Me Dead Cause Of My Hops',
-                    subtitle: 'nostalgia from the future. ',
-                    poster: '/img/myhops.jpg',
-                    order: 2,
-                },
-                {
-                    id: 'tsfnuyyjaB0',
-                    title: "you'll cowards don't even smoke crack",
-                    subtitle: "he's like the black jimi hendrix",
-                    poster: '/img/cowardscrack.jpg',
-                    order: 3,
-                },
-                {
-                    id: 'l1ANAdzP5GM',
-                    title: 'I Ball or Die',
-                    subtitle: 'I came for the hops, stayed for the crack. ',
-                    poster: '/img/ballordie.jpg',
-                    order: 3,
-                },
-            ],
+            data: null,
         };
     }
 
     componentDidMount() {
-        // axios
-        //     .get('/api/lista-docs')
-        //     .then((response) => {
-        //         this.setState(response.data);
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     });
+        axios.get('/api/lista-docs')
+            .then((res) => this.setState({data: res.data}))
+            .catch((error) => console.log(error));
     }
 
     ListaDocs() {
-        return this.state.videos.map((value, index) => {
-            if (index === 0) {
+        if(this.state.data){
+            return this.state.data.videos.map((value, index) => {
+                if (index === 0) {
+                    return (
+                        <DocPreviewMain bg={value.poster} key={index}>
+                            <h1>{value.title}</h1>
+                            <Absolute>
+                                <Link
+                                    css={css`
+                                        margin: auto;
+                                    `}
+                                    to={`${this.state.playlist}/${value.id}/${value.order}`}
+                                >
+                                    <PlayButton imagem={bigPlay} />
+                                </Link>
+                            </Absolute>
+                            <h3>{value.subtitle}</h3>
+                            <button>Saiba +</button>
+                            <Route
+                                path="/:playlist/:id/:order"
+                                component={this.RenderPlayer}
+                            />
+                        </DocPreviewMain>
+                    );
+                }
+                console.log(smallPlay.clientWidth);
                 return (
-                    <DocPreviewMain bg={value.poster} key={index}>
-                        <h1>{value.title}</h1>
+                    <DocPreviewThumb bg={value.poster} key={index}>
+                        <h4>{value.title}</h4>
                         <Absolute>
                             <Link
                                 css={css`
@@ -129,36 +115,26 @@ export default class ListaDocs extends Component {
                                 `}
                                 to={`${this.state.playlist}/${value.id}/${value.order}`}
                             >
-                                <PlayButton imagem={bigPlay} />
+                                <PlayButton imagem={smallPlay} />
                             </Link>
                         </Absolute>
-                        <h3>{value.subtitle}</h3>
-                        <button>Saiba +</button>
-                        <Route
-                            path="/:playlist/:id/:order"
-                            component={this.RenderPlayer}
-                        />
-                    </DocPreviewMain>
+                        <p>Tipo de Material</p>
+                    </DocPreviewThumb>
                 );
-            }
-            console.log(smallPlay.clientWidth);
-            return (
-                <DocPreviewThumb bg={value.poster} key={index}>
-                    <h4>{value.title}</h4>
-                    <Absolute>
-                        <Link
-                            css={css`
-                                margin: auto;
-                            `}
-                            to={`${this.state.playlist}/${value.id}/${value.order}`}
-                        >
-                            <PlayButton imagem={smallPlay} />
-                        </Link>
-                    </Absolute>
-                    <p>Tipo de Material</p>
-                </DocPreviewThumb>
-            );
-        });
+            });
+        } else {
+            return <div>
+                        <DocPreviewMain>
+                            <h1>Loading</h1>
+                            <h3>&nbsp;</h3>
+                            <button>Saiba +</button>
+                        </DocPreviewMain>
+                        <DocPreviewThumb>
+                            <h4>Loading</h4>
+                            <p>&nbsp;</p>
+                        </DocPreviewThumb>
+                    </div>
+        }
     }
 
     RenderPlayer(props) {

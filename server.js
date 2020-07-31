@@ -7,7 +7,7 @@ const app = express()
 // Routes import
 const apiRoutes = require('./routes/api');
 
-// BodyParser
+// bodyParser
 app.use(bodyParser.json());
 
 // Headers
