@@ -71,34 +71,39 @@ export default class ListaDocs extends Component {
         //     videos: [],
         // };
         this.state = {
-            playlist: 'PLjZHtJxNiFBnv5J0G0RXJh7P7yL58zpIg',
+            // https://www.youtube.com/watch?v=gFeN6fAy6J4&list=PL7Afrte6bZnYEsZHGjCPI5sHDdfF-zf1M&index=1
+            playlist: 'PL7Afrte6bZnYEsZHGjCPI5sHDdfF-zf1M',
             videos: [
                 {
-                    id: 'y-G8BlRcRP0',
-                    title: "Maybe One Day She'll See Me Again",
-                    subtitle: 'Viper goes in raw.',
-                    poster: '/img/seemeagain.jpg',
+                    id: 'gFeN6fAy6J4',
+                    title: 'Dominik Barbier e Cathy Vogan',
+                    subtitle: '8th Fotoptica International Video Festival',
+                    poster: '/img/dominik_cathy.jpg',
+                    categoria: 'Entrevista',
                     order: 1,
                 },
                 {
-                    id: 'zynTWAUK5mc',
-                    title: 'You Wanna See Me Dead Cause Of My Hops',
-                    subtitle: 'nostalgia from the future. ',
-                    poster: '/img/myhops.jpg',
+                    id: 'FEEu8O8gkPc',
+                    title: 'Videojornal (parte 1)',
+                    subtitle: '8º Festival Videobrasil',
+                    poster: '/img/vj1.jpg',
+                    categoria: 'Videojornal',
                     order: 2,
                 },
                 {
-                    id: 'tsfnuyyjaB0',
-                    title: "you'll cowards don't even smoke crack",
-                    subtitle: "he's like the black jimi hendrix",
-                    poster: '/img/cowardscrack.jpg',
+                    id: '46ecQ60ZpKU',
+                    title: 'Videojornal (parte 2)',
+                    subtitle: '8º Festival Videobrasil',
+                    poster: '/img/vj2.jpg',
+                    categoria: 'Videojornal',
                     order: 3,
                 },
                 {
-                    id: 'l1ANAdzP5GM',
-                    title: 'I Ball or Die',
-                    subtitle: 'I came for the hops, stayed for the crack. ',
-                    poster: '/img/ballordie.jpg',
+                    id: '-BT4nNgL3xM',
+                    title: 'Making of',
+                    subtitle: '8th Videobrasil Festival',
+                    poster: '/img/makingOf8.jpg',
+                    categoria: 'Making of',
                     order: 3,
                 },
             ],
@@ -155,7 +160,7 @@ export default class ListaDocs extends Component {
                             <PlayButton imagem={smallPlay} />
                         </Link>
                     </Absolute>
-                    <p>Tipo de Material</p>
+                    <p>{value.categoria}</p>
                 </DocPreviewThumb>
             );
         });
