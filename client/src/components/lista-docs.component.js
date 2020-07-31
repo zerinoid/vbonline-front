@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-// import axios from "axios";
+// import axios from 'axios';
 
 import bigPlay from '../assets/img/bigplay.png';
 import smallPlay from '../assets/img/smplay.png';
@@ -30,8 +30,8 @@ const DocPreviewThumb = (props) => (
     <DocPreviewMain
         css={css`
             width: 32%;
-            min-height: 50px;
-            height: 20vh;
+            min-height: 100px;
+            max-height: 40vh;
             padding: 12px;
             display: inline-block;
             margin-right: 1%;
@@ -67,7 +67,9 @@ const PlayButton = (props) => (
 export default class ListaDocs extends Component {
     constructor(props) {
         super(props);
-        // this.state = {};
+        // this.state = {
+        //     videos: [],
+        // };
         this.state = {
             playlist: 'PLjZHtJxNiFBnv5J0G0RXJh7P7yL58zpIg',
             videos: [
@@ -104,14 +106,14 @@ export default class ListaDocs extends Component {
     }
 
     componentDidMount() {
-        //     axios
-        //         .get("http://localhost:4000/todos/")
-        //         .then((response) => {
-        //             this.setState( response.data );
-        //         })
-        //         .catch(function (error) {
-        //             console.log(error);
-        //         });
+        // axios
+        //     .get('/api/lista-docs')
+        //     .then((response) => {
+        //         this.setState(response.data);
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     });
     }
 
     ListaDocs() {
@@ -132,7 +134,6 @@ export default class ListaDocs extends Component {
                         </Absolute>
                         <h3>{value.subtitle}</h3>
                         <button>Saiba +</button>
-
                         <Route
                             path="/:playlist/:id/:order"
                             component={this.RenderPlayer}
@@ -140,7 +141,7 @@ export default class ListaDocs extends Component {
                     </DocPreviewMain>
                 );
             }
-            // console.log(smallPlay.clientWidth);
+            console.log(smallPlay.clientWidth);
             return (
                 <DocPreviewThumb bg={value.poster} key={index}>
                     <h4>{value.title}</h4>
