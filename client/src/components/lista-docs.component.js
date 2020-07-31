@@ -13,7 +13,7 @@ import VideoPlayer from './video.component';
 const DocPreviewMain = styled.div`
     width: 100%;
     min-height: 620px;
-    max-height: 60vh;
+    // max-height: 60vh;
     padding: 10% 10%;
     margin-bottom: 10px;
     background-image: url(${(props) => props.bg});
@@ -30,8 +30,8 @@ const DocPreviewThumb = (props) => (
     <DocPreviewMain
         css={css`
             width: 32%;
-            min-height: 100px;
-            max-height: 40vh;
+            min-height: 140px;
+            /* max-height: 40vh; */
             padding: 12px;
             display: inline-block;
             margin-right: 1%;
