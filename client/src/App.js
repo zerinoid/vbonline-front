@@ -1,4 +1,6 @@
-import React from 'react';
+/** @jsx jsx */
+// import React from 'react';
+import { css, jsx } from '@emotion/core';
 import './App.scss';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -13,7 +15,16 @@ function App() {
         <div className="App">
             <Router>
                 <div className="container">
-                    <nav className="navbar">
+                    <nav
+                        css={css`
+                            position: relative;
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: end;
+                            justify-content: space-between;
+                            padding: 0.5rem 1rem;
+                        `}
+                    >
                         <img alt="Logo" src={Logo} />
                         <Link to="/">
                             <button>Docs</button>
