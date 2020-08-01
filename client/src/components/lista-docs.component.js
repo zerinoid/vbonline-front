@@ -73,13 +73,14 @@ export default class ListaDocs extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/lista-docs')
-            .then((res) => this.setState({data: res.data}))
+        axios
+            .get('/api/lista-docs')
+            .then((res) => this.setState({ data: res.data }))
             .catch((error) => console.log(error));
     }
 
     ListaDocs() {
-        if(this.state.data){
+        if (this.state.data) {
             return this.state.data.videos.map((value, index) => {
                 if (index === 0) {
                     return (
@@ -123,17 +124,19 @@ export default class ListaDocs extends Component {
                 );
             });
         } else {
-            return <div>
-                        <DocPreviewMain>
-                            <h1>Loading</h1>
-                            <h3>&nbsp;</h3>
-                            <button>Saiba +</button>
-                        </DocPreviewMain>
-                        <DocPreviewThumb>
-                            <h4>Loading</h4>
-                            <p>&nbsp;</p>
-                        </DocPreviewThumb>
-                    </div>
+            return (
+                <div>
+                    <DocPreviewMain>
+                        <h1>Loading</h1>
+                        <h3>&nbsp;</h3>
+                        <button>Saiba +</button>
+                    </DocPreviewMain>
+                    <DocPreviewThumb>
+                        <h4>Loading</h4>
+                        <p>&nbsp;</p>
+                    </DocPreviewThumb>
+                </div>
+            );
         }
     }
 
