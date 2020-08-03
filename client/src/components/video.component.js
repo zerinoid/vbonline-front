@@ -3,10 +3,7 @@ import videojs from 'video.js';
 import 'videojs-youtube';
 // import axios from "axios";
 
-
 export default class VideoPlayer extends Component {
-
-
     destroyPlayer(player) {
         if (player) player.dispose();
     }
@@ -33,7 +30,7 @@ export default class VideoPlayer extends Component {
 
     // destroy player on unmount
     componentWillUnmount() {
-        destroyPlayer(this.player)
+        // this.destroyPlayer(this.player);
     }
 
     // wrap the player in a div with a `data-vjs-player` attribute
