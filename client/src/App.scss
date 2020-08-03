@@ -3,10 +3,30 @@
 @import "styles/fonts";
 
 $vermelho: #ff0000;
+$navHeight: 90px;
 
-.App {
+nav {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    padding: 0.5rem 80px;
+    min-height: $navHeight;
+
+    div {
+        display: flex;
+    }
+
+    &>div {
+        margin-top: 35px;
+    }
+}
+
+.container-fluid {
     background: linear-gradient(0deg, $vermelho, #ffffff 50%);
-    /* height: 100vh; */
+
+    padding: 0 80px;
 }
 
 button {
@@ -52,14 +72,14 @@ h4 {
     font-size: 1.0em;
 }
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1330px;
-    }
-}
+/* @media (min-width: 1200px) { */
+/*     .container { */
+/*         max-width: 1330px; */
+/*     } */
+/* } */
 
-@media (min-width: 1368px) {
-    .container {
-        max-width: 1330px;
-    }
-}
+/* @media (min-width: 1368px) { */
+/*     .container { */
+/*         max-width: 1330px; */
+/*     } */
+/* } */
