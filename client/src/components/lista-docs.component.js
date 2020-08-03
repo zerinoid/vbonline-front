@@ -160,9 +160,11 @@ export default class ListaDocs extends Component {
 
     render() {
         return (
-            <Router>
-                <div className="lista-docs">{this.ListaDocs()}</div>
-            </Router>
+            <div className="lista-docs">
+                <Router>
+                    <div className="lista-docs">{this.ListaDocs()}</div>
+                </Router>
+            </div>
         );
     }
 }

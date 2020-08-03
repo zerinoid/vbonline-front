@@ -4,8 +4,9 @@
 
 $vermelho: #ff0000;
 
-body {
+.App {
     background: linear-gradient(0deg, $vermelho, #ffffff 50%);
+    /* height: 100vh; */
 }
 
 button {
