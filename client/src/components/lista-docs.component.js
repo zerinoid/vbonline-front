@@ -119,7 +119,7 @@ export default class ListaDocs extends Component {
                                 <PlayButton imagem={smallPlay} />
                             </Link>
                         </Absolute>
-                        <p>Tipo de Material</p>
+                        <p>{value.categoria}</p>
                     </DocPreviewThumb>
                 );
             });
