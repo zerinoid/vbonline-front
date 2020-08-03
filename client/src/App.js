@@ -10,7 +10,7 @@ import ListaDocs from './components/lista-docs.component';
 
 import Logo from './assets/img/logo.png';
 
-const flexN = 4;
+const flexN = 5;
 
 function App() {
     return (
@@ -63,7 +63,7 @@ function App() {
                         </div>
                         <div
                             css={css({
-                                flex: `1 ${flexN} 0`,
+                                flex: `1 ${flexN} 30px`,
                                 justifyContent: 'space-between',
                             })}
                         >
