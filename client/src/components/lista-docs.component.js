@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 
 import bigPlay from '../assets/img/bigplay.png';
@@ -58,10 +58,12 @@ const Absolute = styled.div`
 const PlayButton = (props) => (
     <img
         css={css`
-            /* margin: auto auto; */
+            margin: auto;
+            cursor: pointer;
         `}
         src={props.imagem}
         alt="play"
+        onClick={props.click}
     />
 );
 
@@ -70,6 +72,7 @@ export default class ListaDocs extends Component {
         super(props);
         this.state = {
             data: null,
+            showPlayer: false,
         };
     }
 
@@ -83,9 +86,14 @@ export default class ListaDocs extends Component {
             window.innerHeight ||
             document.documentElement.clientHeight ||
             document.body.clientHeight;
-
-        // this.setState({ bodyHeight: windowHeight });
     }
+
+    togglePlayerHandler = (value) => {
+        const doesShow = this.state.showPlayer;
+        this.setState({ showPlayer: !doesShow });
+        console.log(value.id, this.state.data.playlist, value.order);
+        // this.RenderPlayer(this.state.data.playlist, value.id, value.order);
+    };
 
     ListaDocs() {
         if (this.state.data) {
@@ -95,14 +103,12 @@ export default class ListaDocs extends Component {
                         <DocPreviewMain bg={value.poster} key={index}>
                             <h1>{value.title}</h1>
                             <Absolute>
-                                <Link
-                                    css={css`
-                                        margin: auto;
-                                    `}
-                                    to={`${this.state.playlist}/${value.id}/${value.order}`}
-                                >
-                                    <PlayButton imagem={bigPlay} />
-                                </Link>
+                                <PlayButton
+                                    click={() =>
+                                        this.togglePlayerHandler(value)
+                                    }
+                                    imagem={bigPlay}
+                                />
                             </Absolute>
                             <h3>{value.subtitle}</h3>
                             <button>Saiba +</button>
@@ -117,14 +123,10 @@ export default class ListaDocs extends Component {
                     <DocPreviewThumb bg={value.poster} key={index}>
                         <h4>{value.title}</h4>
                         <Absolute>
-                            <Link
-                                css={css`
-                                    margin: auto;
-                                `}
-                                to={`${this.state.playlist}/${value.id}/${value.order}`}
-                            >
-                                <PlayButton imagem={smallPlay} />
-                            </Link>
+                            <PlayButton
+                                click={() => this.togglePlayerHandler(value)}
+                                imagem={smallPlay}
+                            />
                         </Absolute>
                         <p>{value.categoria}</p>
                     </DocPreviewThumb>
@@ -175,7 +177,7 @@ export default class ListaDocs extends Component {
                         ${colors.branco} 50%
                     );
                     height: ${this.windowHeight}px;
-                    min-height: 780px;
+                    min-height: 796px;
                 `}
             >
                 <Router>
