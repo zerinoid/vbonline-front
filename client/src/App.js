@@ -61,7 +61,7 @@ function App() {
                     </div>
                 </nav>
 
-                <div className="container-fluid">
+                <div className="conteudo">
                     <Route path="/" exact component={ListaDocs} />
                     <Route path="/sobre" component={Sobre} />
                 </div>
