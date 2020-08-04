@@ -2,6 +2,7 @@
 import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
+import colors from '../styles/colors';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -160,9 +161,19 @@ export default class ListaDocs extends Component {
 
     render() {
         return (
-            <div className="lista-docs">
+            <div
+                className="lista-docs"
+                css={css`
+                    background: linear-gradient(
+                        0deg,
+                        ${colors.vermelho},
+                        ${colors.branco} 50%
+                    );
+                    padding: 0 80px;
+                `}
+            >
                 <Router>
-                    <div className="lista-docs">{this.ListaDocs()}</div>
+                    <div>{this.ListaDocs()}</div>
                 </Router>
             </div>
         );

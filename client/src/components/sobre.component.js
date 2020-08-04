@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import colors from '../styles/colors';
 
 export default class Sobre extends Component {
     constructor(props) {
