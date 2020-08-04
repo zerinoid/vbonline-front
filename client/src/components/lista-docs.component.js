@@ -168,7 +168,6 @@ export default class ListaDocs extends Component {
     render() {
         return (
             <div
-                className="lista-docs"
                 css={css`
                     background: linear-gradient(
                         0deg,
@@ -177,11 +176,10 @@ export default class ListaDocs extends Component {
                     );
                     height: ${this.windowHeight}px;
                     min-height: 780px;
-                    padding: 0 80px;
                 `}
             >
                 <Router>
-                    <div>{this.ListaDocs()}</div>
+                    <div className="lista-docs">{this.ListaDocs()}</div>
                 </Router>
             </div>
         );

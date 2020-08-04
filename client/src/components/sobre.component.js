@@ -41,8 +41,7 @@ export default class Sobre extends Component {
                                     fontFamily: 'Graphik',
                                 })}
                             >
-                                {' '}
-                                {this.state.data.pt.content}{' '}
+                                {this.state.data.pt.content}
                             </p>
                             <p> {this.state.data.pt.content} </p>
                         </div>

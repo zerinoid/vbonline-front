@@ -28,8 +28,8 @@ function App() {
                                 src={Logo}
                                 css={css({
                                     position: 'absolute',
-                                    left: 20,
-                                    top: 34,
+                                    left: -38,
+                                    top: 43,
                                     'z-index': 99,
                                     width: 200,
                                 })}
