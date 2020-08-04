@@ -5,6 +5,12 @@
 $vermelho: #ed0000;
 $navHeight: 90px;
 
+#root,
+.app,
+.conteudo {
+    height: 100%;
+}
+
 nav {
     position: relative;
     display: flex;

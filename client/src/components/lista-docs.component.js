@@ -78,6 +78,13 @@ export default class ListaDocs extends Component {
             .get('/api/lista-docs')
             .then((res) => this.setState({ data: res.data }))
             .catch((error) => console.log(error));
+
+        this.windowHeight =
+            window.innerHeight ||
+            document.documentElement.clientHeight ||
+            document.body.clientHeight;
+
+        // this.setState({ bodyHeight: windowHeight });
     }
 
     ListaDocs() {
@@ -106,7 +113,6 @@ export default class ListaDocs extends Component {
                         </DocPreviewMain>
                     );
                 }
-                console.log(smallPlay.clientWidth);
                 return (
                     <DocPreviewThumb bg={value.poster} key={index}>
                         <h4>{value.title}</h4>
@@ -169,6 +175,8 @@ export default class ListaDocs extends Component {
                         ${colors.vermelho},
                         ${colors.branco} 50%
                     );
+                    height: ${this.windowHeight}px;
+                    min-height: 780px;
                     padding: 0 80px;
                 `}
             >
