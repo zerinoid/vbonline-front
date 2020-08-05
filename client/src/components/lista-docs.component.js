@@ -3,12 +3,11 @@ import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
-import axios from 'axios';
+
+import VideoPlayer from './video.component';
 
 import bigPlay from '../assets/img/bigplay.png';
 import smallPlay from '../assets/img/smplay.png';
-
-import VideoPlayer from './video.component';
 
 const DocPreviewMain = styled.div`
     width: 100%;
