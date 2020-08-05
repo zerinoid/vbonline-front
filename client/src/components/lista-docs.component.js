@@ -65,7 +65,7 @@ const PlayButton = (props) => (
     />
 );
 
-export function ListaDocs() {
+export default function ListaDocs() {
     this.windowHeight =
         window.innerHeight ||
         document.documentElement.clientHeight ||
