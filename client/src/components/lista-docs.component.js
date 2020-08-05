@@ -3,7 +3,6 @@ import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 
 import bigPlay from '../assets/img/bigplay.png';
@@ -112,10 +111,6 @@ export default class ListaDocs extends Component {
                             </Absolute>
                             <h3>{value.subtitle}</h3>
                             <button>Saiba +</button>
-                            <Route
-                                path="/:playlist/:id/:order"
-                                component={this.RenderPlayer}
-                            />
                         </DocPreviewMain>
                     );
                 }
@@ -180,9 +175,7 @@ export default class ListaDocs extends Component {
                     min-height: 796px;
                 `}
             >
-                <Router>
-                    <div className="lista-docs">{this.ListaDocs()}</div>
-                </Router>
+                <div className="lista-docs">{this.ListaDocs()}</div>
             </div>
         );
     }
