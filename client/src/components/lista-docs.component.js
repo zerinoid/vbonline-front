@@ -1,10 +1,8 @@
 /** @jsx jsx */
-import { Component } from 'react';
+// import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
-
-import VideoPlayer from './video.component';
 
 import bigPlay from '../assets/img/bigplay.png';
 import smallPlay from '../assets/img/smplay.png';
@@ -71,13 +69,6 @@ export default function ListaDocs(props) {
         document.documentElement.clientHeight ||
         document.body.clientHeight;
 
-    const togglePlayerHandler = (value) => {
-        const doesShow = props.lista.showPlayer;
-        // this.setState({ showPlayer: !doesShow });
-        console.log(value.id, props.lista.data.playlist, value.order);
-        // RenderPlayer(props.lista.data.playlist, value.id, value.order);
-    };
-
     function Lista(props) {
         if (props.lista.data) {
             return props.lista.data.videos.map((value, index) => {
@@ -126,24 +117,7 @@ export default function ListaDocs(props) {
         }
     }
 
-    function RenderPlayer(props) {
-        const videoJsOptions = {
-            autoplay: true,
-            controls: true,
-            youtube: {
-                iv_load_policy: '3',
-            },
-            techOrder: ['youtube'],
-            sources: [
-                {
-                    src: `https://www.youtube.com/watch?v=${props.match.params.id}&list=${props.match.params.playlist}&index=${props.match.params.order}`,
-                    type: 'video/youtube',
-                },
-            ],
-        };
-        return <VideoPlayer {...videoJsOptions} />;
-    }
-
+    console.log(props.lista);
     return (
         <div
             css={css`

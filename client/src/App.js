@@ -8,6 +8,7 @@ import './App.scss';
 
 import Sobre from './components/sobre.component';
 import ListaDocs from './components/lista-docs.component';
+import VideoPlayer from './components/video.component';
 
 import Logo from './assets/img/logo2x.png';
 
@@ -20,6 +21,31 @@ export default class App extends Component {
             data: null,
             showPlayer: false,
         };
+    }
+
+    togglePlayerHandler = (value) => {
+        const doesShow = this.state.showPlayer;
+        this.setState({ showPlayer: !doesShow });
+        console.log(value.id, this.state.data.playlist, value.order);
+        // RenderPlayer(props.lista.data.playlist, value.id, value.order);
+    };
+
+    RenderPlayer(props) {
+        const videoJsOptions = {
+            autoplay: true,
+            controls: true,
+            youtube: {
+                iv_load_policy: '3',
+            },
+            techOrder: ['youtube'],
+            sources: [
+                {
+                    src: `https://www.youtube.com/watch?v=${props.match.params.id}&list=${props.match.params.playlist}&index=${props.match.params.order}`,
+                    type: 'video/youtube',
+                },
+            ],
+        };
+        return <VideoPlayer {...videoJsOptions} />;
     }
 
     componentDidMount() {
