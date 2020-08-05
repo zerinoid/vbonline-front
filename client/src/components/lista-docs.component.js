@@ -65,31 +65,29 @@ const PlayButton = (props) => (
     />
 );
 
-export default function ListaDocs() {
-    this.windowHeight =
+export default function ListaDocs(props) {
+    const windowHeight =
         window.innerHeight ||
         document.documentElement.clientHeight ||
         document.body.clientHeight;
 
-    // const togglePlayerHandler = (value) => {
-    //     const doesShow = this.state.showPlayer;
-    //     this.setState({ showPlayer: !doesShow });
-    //     // console.log(value.id, this.state.data.playlist, value.order);
-    //     // this.RenderPlayer(this.state.data.playlist, value.id, value.order);
-    // };
+    const togglePlayerHandler = (value) => {
+        const doesShow = props.lista.showPlayer;
+        // this.setState({ showPlayer: !doesShow });
+        console.log(value.id, props.lista.data.playlist, value.order);
+        // RenderPlayer(props.lista.data.playlist, value.id, value.order);
+    };
 
-    function Lista() {
-        if (this.state.data) {
-            return this.state.data.videos.map((value, index) => {
+    function Lista(props) {
+        if (props.lista.data) {
+            return props.lista.data.videos.map((value, index) => {
                 if (index === 0) {
                     return (
                         <DocPreviewMain bg={value.poster} key={index}>
                             <h1>{value.title}</h1>
                             <Absolute>
                                 <PlayButton
-                                    click={() =>
-                                        this.togglePlayerHandler(value)
-                                    }
+                                    click={() => togglePlayerHandler(value)}
                                     imagem={bigPlay}
                                 />
                             </Absolute>
@@ -103,7 +101,7 @@ export default function ListaDocs() {
                         <h4>{value.title}</h4>
                         <Absolute>
                             <PlayButton
-                                click={() => this.togglePlayerHandler(value)}
+                                click={() => togglePlayerHandler(value)}
                                 imagem={smallPlay}
                             />
                         </Absolute>
@@ -154,11 +152,11 @@ export default function ListaDocs() {
                     ${colors.vermelho},
                     ${colors.branco} 50%
                 );
-                height: calc(${this.windowHeight}px - 90px);
+                height: calc(${windowHeight}px - 90px);
                 min-height: 796px;
             `}
         >
-            <div className="lista-docs">{this.Lista()}</div>
+            <div className="lista-docs">{Lista()}</div>
         </div>
     );
 }
