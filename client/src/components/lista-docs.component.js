@@ -65,30 +65,20 @@ const PlayButton = (props) => (
     />
 );
 
-export default class ListaDocs extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: null,
-            showPlayer: false,
-        };
-    }
+export function ListaDocs() {
+    this.windowHeight =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight;
 
-    componentDidMount() {
-        this.windowHeight =
-            window.innerHeight ||
-            document.documentElement.clientHeight ||
-            document.body.clientHeight;
-    }
+    // const togglePlayerHandler = (value) => {
+    //     const doesShow = this.state.showPlayer;
+    //     this.setState({ showPlayer: !doesShow });
+    //     // console.log(value.id, this.state.data.playlist, value.order);
+    //     // this.RenderPlayer(this.state.data.playlist, value.id, value.order);
+    // };
 
-    togglePlayerHandler = (value) => {
-        const doesShow = this.state.showPlayer;
-        this.setState({ showPlayer: !doesShow });
-        // console.log(value.id, this.state.data.playlist, value.order);
-        // this.RenderPlayer(this.state.data.playlist, value.id, value.order);
-    };
-
-    ListaDocs() {
+    function Lista() {
         if (this.state.data) {
             return this.state.data.videos.map((value, index) => {
                 if (index === 0) {
@@ -138,7 +128,7 @@ export default class ListaDocs extends Component {
         }
     }
 
-    RenderPlayer(props) {
+    function RenderPlayer(props) {
         const videoJsOptions = {
             autoplay: true,
             controls: true,
@@ -156,22 +146,19 @@ export default class ListaDocs extends Component {
         return <VideoPlayer {...videoJsOptions} />;
     }
 
-    render() {
-        console.log(this.props);
-        return (
-            <div
-                css={css`
-                    background: linear-gradient(
-                        0deg,
-                        ${colors.vermelho},
-                        ${colors.branco} 50%
-                    );
-                    height: calc(${this.windowHeight}px - 90px);
-                    min-height: 796px;
-                `}
-            >
-                <div className="lista-docs">{this.ListaDocs()}</div>
-            </div>
-        );
-    }
+    return (
+        <div
+            css={css`
+                background: linear-gradient(
+                    0deg,
+                    ${colors.vermelho},
+                    ${colors.branco} 50%
+                );
+                height: calc(${this.windowHeight}px - 90px);
+                min-height: 796px;
+            `}
+        >
+            <div className="lista-docs">{this.Lista()}</div>
+        </div>
+    );
 }
