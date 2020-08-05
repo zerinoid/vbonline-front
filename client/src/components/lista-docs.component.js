@@ -176,7 +176,7 @@ export default class ListaDocs extends Component {
                         ${colors.vermelho},
                         ${colors.branco} 50%
                     );
-                    height: ${this.windowHeight}px;
+                    height: calc(${this.windowHeight}px - 90px);
                     min-height: 796px;
                 `}
             >
