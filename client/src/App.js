@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
-import './App.scss';
-
+import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import './App.scss';
 
 import Sobre from './components/sobre.component';
 import ListaDocs from './components/lista-docs.component';
@@ -19,6 +20,13 @@ export default class App extends Component {
             data: null,
             showPlayer: false,
         };
+    }
+
+    componentDidMount() {
+        axios
+            .get('/api/lista-docs')
+            .then((res) => this.setState({ data: res.data }))
+            .catch((error) => console.log(error));
     }
 
     render() {
@@ -71,7 +79,13 @@ export default class App extends Component {
                     </nav>
 
                     <div className="conteudo">
-                        <Route path="/" exact component={ListaDocs} />
+                        <Route
+                            path="/"
+                            exact
+                            render={(props) => (
+                                <ListaDocs {...props} lista={this.state.data} />
+                            )}
+                        />
                         <Route path="/sobre" component={Sobre} />
                     </div>
                 </Router>

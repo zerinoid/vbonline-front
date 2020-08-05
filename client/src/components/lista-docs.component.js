@@ -76,11 +76,6 @@ export default class ListaDocs extends Component {
     }
 
     componentDidMount() {
-        axios
-            .get('/api/lista-docs')
-            .then((res) => this.setState({ data: res.data }))
-            .catch((error) => console.log(error));
-
         this.windowHeight =
             window.innerHeight ||
             document.documentElement.clientHeight ||
@@ -90,7 +85,7 @@ export default class ListaDocs extends Component {
     togglePlayerHandler = (value) => {
         const doesShow = this.state.showPlayer;
         this.setState({ showPlayer: !doesShow });
-        console.log(value.id, this.state.data.playlist, value.order);
+        // console.log(value.id, this.state.data.playlist, value.order);
         // this.RenderPlayer(this.state.data.playlist, value.id, value.order);
     };
 
@@ -163,6 +158,7 @@ export default class ListaDocs extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <div
                 css={css`
