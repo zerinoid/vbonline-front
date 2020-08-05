@@ -131,7 +131,7 @@ export default class ListaDocs extends Component {
             return (
                 <div>
                     <DocPreviewMain>
-                        <h1>Loading</h1>
+                        <h1 css={css({ color: colors.vermelho })}>Loading</h1>
                         <h3>&nbsp;</h3>
                         <button>Saiba +</button>
                     </DocPreviewMain>
