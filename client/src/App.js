@@ -13,6 +13,14 @@ import Logo from './assets/img/logo2x.png';
 const flexN = 5;
 
 export default class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: null,
+            showPlayer: false,
+        };
+    }
+
     render() {
         return (
             <div className="App">
