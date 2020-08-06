@@ -103,15 +103,22 @@ export default class App extends Component {
                             </div>
                         </div>
                     </nav>
-
                     <div className="conteudo">
-                        <Route
-                            path="/"
-                            exact
-                            render={(props) => (
-                                <ListaDocs {...props} lista={this.state.data} />
-                            )}
-                        />
+                        {this.state.data ? (
+                            <Route
+                                path="/"
+                                exact
+                                render={(props) => (
+                                    <ListaDocs
+                                        {...props}
+                                        lista={this.state}
+                                        playVideo={this.togglePlayerHandler}
+                                    />
+                                )}
+                            />
+                        ) : (
+                            <div>ERRO</div>
+                        )}
                         <Route path="/sobre" component={Sobre} />
                     </div>
                 </Router>
