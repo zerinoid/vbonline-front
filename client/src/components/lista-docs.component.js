@@ -69,8 +69,8 @@ export default function ListaDocs(props) {
         document.documentElement.clientHeight ||
         document.body.clientHeight;
 
-    function Lista(props) {
-        if (props.lista.data) {
+    function Lista() {
+        if (props) {
             return props.lista.data.videos.map((value, index) => {
                 if (index === 0) {
                     return (
@@ -78,7 +78,7 @@ export default function ListaDocs(props) {
                             <h1>{value.title}</h1>
                             <Absolute>
                                 <PlayButton
-                                    click={() => togglePlayerHandler(value)}
+                                    click={() => props.playVideo(value)}
                                     imagem={bigPlay}
                                 />
                             </Absolute>
@@ -92,7 +92,7 @@ export default function ListaDocs(props) {
                         <h4>{value.title}</h4>
                         <Absolute>
                             <PlayButton
-                                click={() => togglePlayerHandler(value)}
+                                click={() => props.playVideo(value)}
                                 imagem={smallPlay}
                             />
                         </Absolute>
@@ -117,7 +117,6 @@ export default function ListaDocs(props) {
         }
     }
 
-    console.log(props.lista);
     return (
         <div
             css={css`
