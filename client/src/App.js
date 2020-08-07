@@ -26,31 +26,23 @@ export default class App extends Component {
     togglePlayerHandler = (value) => {
         const doesShow = this.state.showPlayer;
         this.setState({ showPlayer: !doesShow });
-        console.log(value);
-        return this.RenderPlayer(
-            value.id,
-            this.state.data.playlist,
-            value.order
-        );
     };
 
-    RenderPlayer(id, playlist, order) {
-        const videoJsOptions = {
-            autoplay: true,
-            controls: true,
-            youtube: {
-                iv_load_policy: '3',
+    videoJsOptions = {
+        autoplay: true,
+        controls: true,
+        youtube: {
+            iv_load_policy: '3',
+        },
+        techOrder: ['youtube'],
+        sources: [
+            {
+                src:
+                    'https://www.youtube.com/watch?v=gFeN6fAy6J4&list=PL7Afrte6bZnYEsZHGjCPI5sHDdfF-zf1M&index=1',
+                type: 'video/youtube',
             },
-            techOrder: ['youtube'],
-            sources: [
-                {
-                    src: `https://www.youtube.com/watch?v=${id}&list=${playlist}&index=${order}`,
-                    type: 'video/youtube',
-                },
-            ],
-        };
-        return <VideoPlayer {...videoJsOptions} />;
-    }
+        ],
+    };
 
     componentDidMount() {
         axios
