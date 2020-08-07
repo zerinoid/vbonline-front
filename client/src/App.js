@@ -26,11 +26,15 @@ export default class App extends Component {
     togglePlayerHandler = (value) => {
         const doesShow = this.state.showPlayer;
         this.setState({ showPlayer: !doesShow });
-        console.log(value.id, this.state.data.playlist, value.order);
-        // RenderPlayer(props.lista.data.playlist, value.id, value.order);
+        console.log(value);
+        return this.RenderPlayer(
+            value.id,
+            this.state.data.playlist,
+            value.order
+        );
     };
 
-    RenderPlayer(props) {
+    RenderPlayer(id, playlist, order) {
         const videoJsOptions = {
             autoplay: true,
             controls: true,
@@ -40,7 +44,7 @@ export default class App extends Component {
             techOrder: ['youtube'],
             sources: [
                 {
-                    src: `https://www.youtube.com/watch?v=${props.match.params.id}&list=${props.match.params.playlist}&index=${props.match.params.order}`,
+                    src: `https://www.youtube.com/watch?v=${id}&list=${playlist}&index=${order}`,
                     type: 'video/youtube',
                 },
             ],
