@@ -29,7 +29,7 @@ export default class App extends Component {
     };
 
     videoJsOptions = {
-        autoplay: true,
+        // autoplay: true,
         controls: true,
         youtube: {
             iv_load_policy: '3',
@@ -55,7 +55,10 @@ export default class App extends Component {
         return (
             <div className="App">
                 {this.state.showPlayer ? (
-                    <VideoPlayer {...this.videoJsOptions} />
+                    <VideoPlayer
+                        {...this.videoJsOptions}
+                        fechaVideo={this.togglePlayerHandler}
+                    />
                 ) : (
                     <Router>
                         <nav>

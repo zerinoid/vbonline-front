@@ -14,15 +14,15 @@ export default class VideoPlayer extends Component {
             this.videoNode,
             this.props,
             function onPlayerReady() {
-                console.log('onPlayerReady', this);
+                // console.log('onPlayerReady', this);
             }
         );
 
         //adição de botão custom
         let Button = videojs.getComponent('Button');
         let butao = new Button(this.player, {
-            clickHandler: function (event) {
-                videojs.log('Clicked');
+            clickHandler: (event) => {
+                this.props.fechaVideo();
             },
         });
         this.player.addChild(butao);
