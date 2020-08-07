@@ -70,7 +70,7 @@ export default function ListaDocs(props) {
         document.body.clientHeight;
 
     function Lista() {
-        if (props) {
+        if (props.lista.data.videos) {
             return props.lista.data.videos.map((value, index) => {
                 if (index === 0) {
                     return (
