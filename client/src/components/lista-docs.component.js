@@ -3,6 +3,7 @@
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import bigPlay from '../assets/img/bigplay.png';
 import smallPlay from '../assets/img/smplay.png';
@@ -52,15 +53,22 @@ const Absolute = styled.div`
 `;
 
 const PlayButton = (props) => (
-    <img
+    <Link
         css={css`
             margin: auto;
-            cursor: pointer;
         `}
-        src={props.imagem}
-        alt="play"
-        onClick={props.click}
-    />
+        to="/video"
+    >
+        <img
+            css={css`
+                margin: auto;
+                cursor: pointer;
+            `}
+            src={props.imagem}
+            alt="play"
+            onClick={props.click}
+        />
+    </Link>
 );
 
 export default function ListaDocs(props) {
@@ -129,7 +137,9 @@ export default function ListaDocs(props) {
                 min-height: 796px;
             `}
         >
-            <div className="lista-docs">{Lista()}</div>
+            <Router>
+                <div className="lista-docs">{Lista()}</div>
+            </Router>
         </div>
     );
 }
