@@ -126,6 +126,7 @@ export default class App extends Component {
                         <Route path="/sobre" component={Sobre} />
                     </div>
                 </Router>
+                {this.state.showPlayer ? this.togglePlayerHandler() : null}
             </div>
         );
     }
