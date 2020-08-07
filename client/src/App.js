@@ -23,7 +23,7 @@ export default class App extends Component {
         };
     }
 
-    togglePlayerHandler = (value) => {
+    togglePlayerHandler = () => {
         const doesShow = this.state.showPlayer;
         this.setState({ showPlayer: !doesShow });
     };
