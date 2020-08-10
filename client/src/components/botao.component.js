@@ -10,12 +10,12 @@ const Botao = styled.button((props) => ({
     border: props.active ? 'none' : `solid 1px ${colors.vermelho}`,
     fontFamily: 'FedraMono',
     fontWeight: props.active ? 'bold' : 'normal',
-    fontSize: '0.9em',
+    fontSize: '0.8em',
     borderRadius: 20,
     height: 25,
     width: 100,
-    maxWidth: props.lang && '1.8em',
-    paddingLeft: props.lang && 5,
+    maxWidth: props.lang && '2em',
+    padding: '3px 0 0 0',
 }));
 
 export default Botao;

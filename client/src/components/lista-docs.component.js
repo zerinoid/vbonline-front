@@ -3,7 +3,9 @@
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+
+import Botao from './botao.component';
 
 import bigPlay from '../assets/img/bigplay.png';
 import smallPlay from '../assets/img/smplay.png';
@@ -11,7 +13,6 @@ import smallPlay from '../assets/img/smplay.png';
 const DocPreviewMain = styled.div`
     width: 100%;
     min-height: 620px;
-    // max-height: 60vh;
     padding: 10% 10%;
     margin-bottom: 10px;
     background-image: url(${(props) => props.bg});
@@ -22,6 +23,9 @@ const DocPreviewMain = styled.div`
     h3 {
         text-transform: none;
     }
+    button {
+        border: none;
+    }
 `;
 
 const DocPreviewThumb = (props) => (
@@ -29,7 +33,6 @@ const DocPreviewThumb = (props) => (
         css={css`
             width: 32%;
             min-height: 140px;
-            /* max-height: 40vh; */
             padding: 12px;
             display: inline-block;
             margin-right: 1%;
@@ -91,7 +94,7 @@ export default function ListaDocs(props) {
                                 />
                             </Absolute>
                             <h3>{value.subtitle}</h3>
-                            <button>Saiba +</button>
+                            <Botao>Saiba +</Botao>
                         </DocPreviewMain>
                     );
                 }
