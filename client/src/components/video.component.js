@@ -23,6 +23,8 @@ export default class VideoPlayer extends Component {
         let butao = new Button(this.player, {
             clickHandler: (event) => {
                 this.props.fechaVideo();
+                this.destroyPlayer(this.player);
+                window.history.back();
             },
         });
         this.player.addChild(butao);
