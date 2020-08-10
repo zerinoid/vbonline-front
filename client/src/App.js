@@ -9,6 +9,7 @@ import './App.scss';
 import Sobre from './components/sobre.component';
 import ListaDocs from './components/lista-docs.component';
 import VideoPlayer from './components/video.component';
+import Botao from './components/botao.component';
 
 import Logo from './assets/img/logo2x.png';
 
@@ -98,7 +99,7 @@ export default class App extends Component {
                                 })}
                             >
                                 <Link to="/">
-                                    <button>Docs</button>
+                                    <Botao active>Docs</Botao>
                                 </Link>
                             </div>
                             <div
@@ -108,11 +109,18 @@ export default class App extends Component {
                                 })}
                             >
                                 <Link to="/sobre">
-                                    <button>VB Online</button>
+                                    <Botao>VB Online</Botao>
                                 </Link>
-                                <div>
-                                    <button>pt</button>
-                                    <button>en</button>
+                                <div
+                                    css={css`
+                                        justify-content: space-between;
+                                        min-width: 58px;
+                                    `}
+                                >
+                                    <Botao lang active>
+                                        PT
+                                    </Botao>
+                                    <Botao lang>EN</Botao>
                                 </div>
                             </div>
                         </nav>
