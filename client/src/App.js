@@ -25,35 +25,40 @@ export default class App extends Component {
         };
     }
 
-    togglePlayerHandler = async (value) => {
-        await this.setState({
+    togglePlayerHandler = (value) => {
+        this.setState({
             currentVideo: value,
             showPlayer: !this.state.showPlayer,
+        }, () => {
+            if(this.state.showPlayer){
+                this.videoJsOptions = {
+                    // autoplay: true,
+                    controls: true,
+                    youtube: {
+                        iv_load_policy: '3',
+                    },
+                    techOrder: ['youtube'],
+                    sources: [
+                        {
+                            src: `https://www.youtube.com/watch?v=${this.state.currentVideo.id}&list=${this.state.data.playlist}&index=${this.state.currentVideo.order}`,
+                            type: 'video/youtube',
+                        },
+                    ],
+                }
+            }
+            console.log(this.videoJsOptions);
+
         });
         // const doesShow = this.state.showPlayer;
         // console.log(`value ${value}`);
-        console.log(this.state.currentVideo);
+        // console.log(this.state.currentVideo);
+        // console.log(this.state.showPlayer);
         // console.log(`showplayer ${this.state.showPlayer}`);
 
-        const url = `https:www.youtube.com/watch?v=${this.state.currentVideo.id}&list=${this.state.data.playlist}&index=${this.state.currentVideo.order}`;
+        //this.videoJsOptions = {};
 
-        console.log(url);
-
-        this.videoJsOptions = {
-            // autoplay: true,
-            controls: true,
-            youtube: {
-                iv_load_policy: '3',
-            },
-            techOrder: ['youtube'],
-            sources: [
-                {
-                    // src: '',
-                    src: url,
-                    type: 'video/youtube',
-                },
-            ],
-        };
+        
+        // console.log(this.videoJsOptions);
     };
 
     componentDidMount() {

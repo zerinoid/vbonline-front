@@ -9,6 +9,7 @@ export default class VideoPlayer extends Component {
     }
 
     componentDidMount() {
+        
         // instantiate Video.js
         this.player = videojs(
             this.videoNode,
@@ -28,6 +29,7 @@ export default class VideoPlayer extends Component {
             },
         });
         this.player.addChild(butao);
+        
     }
 
     // destroy player on unmount
