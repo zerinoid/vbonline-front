@@ -59,7 +59,7 @@ export default class App extends Component {
                 {this.state.showPlayer ? (
                     <VideoPlayer
                         {...this.videoJsOptions}
-                        fechaVideo={this.togglePlayerHandler}
+                        fechaVideo={this.closePlayer}
                     />
                 ) : (
                     <Router>
@@ -123,7 +123,7 @@ export default class App extends Component {
                                         <ListaDocs
                                             {...props}
                                             lista={this.state}
-                                            playVideo={this.togglePlayerHandler}
+                                            playVideo={this.openPlayer}
                                         />
                                     )}
                                 />
