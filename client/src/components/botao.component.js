@@ -15,7 +15,7 @@ const Botao = styled.button((props) => ({
     height: 25,
     width: 100,
     maxWidth: props.lang && '2em',
-    padding: '3px 0 0 0',
+    padding: '2px 0 1px 1px',
 }));
 
 export default Botao;
