@@ -35,10 +35,14 @@ const DocPreviewThumb = (props) => (
             min-height: 140px;
             padding: 12px;
             display: inline-block;
-            margin-right: 1%;
+            margin: 0 1% 0 0;
             p {
                 font-family: FedraMono;
                 font-weight: normal;
+            }
+
+            &:hover {
+                box-shadow: inset 0px 0px 0px 2px #fff;
             }
         `}
         {...props}
@@ -141,7 +145,7 @@ export default function ListaDocs(props) {
             `}
         >
             <Router>
-                <div className="lista-docs">{Lista()}</div>
+                <div className="lista-docs limite">{Lista()}</div>
             </Router>
         </div>
     );

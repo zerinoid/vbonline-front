@@ -6,10 +6,8 @@
 $vermelho: #ed0000;
 $navHeight: 90px;
 
-@mixin larguraMaxima {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 8px 1rem;
+body {
+    overflow-y: scroll;
 }
 
 #root,
@@ -18,8 +16,13 @@ $navHeight: 90px;
     height: 100%;
 }
 
+.limite {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8px 1rem;
+}
+
 nav {
-    @include larguraMaxima;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -36,10 +39,6 @@ nav {
     }
 }
 
-.lista-docs {
-    @include larguraMaxima;
-}
-
 p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -51,6 +50,10 @@ a {
     &:hover {
         text-decoration: none;
         color: white;
+    }
+
+    &:focus {
+        outline-color: transparent;
     }
 }
 
@@ -78,16 +81,4 @@ h4 {
 
 h5 {
     font-size: 1.0em;
-}
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1330px;
-    }
-}
-
-@media (min-width: 1368px) {
-    .container {
-        max-width: 1330px;
-    }
 }

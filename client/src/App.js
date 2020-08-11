@@ -73,7 +73,7 @@ export default class App extends Component {
                     />
                 ) : (
                     <Router>
-                        <nav>
+                        <nav className="limite">
                             <div
                                 css={css({
                                     flex: `1 ${flexN} 0`,
