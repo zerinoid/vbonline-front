@@ -25,41 +25,26 @@ export default class App extends Component {
         };
     }
 
-    togglePlayerHandler = (value) => {
-        this.setState({
-            currentVideo: value,
-            showPlayer: !this.state.showPlayer,
-        }, () => {
-            if(this.state.showPlayer){
-                this.videoJsOptions = {
-                    // autoplay: true,
-                    controls: true,
-                    youtube: {
-                        iv_load_policy: '3',
-                    },
-                    techOrder: ['youtube'],
-                    sources: [
-                        {
-                            src: `https://www.youtube.com/watch?v=${this.state.currentVideo.id}&list=${this.state.data.playlist}&index=${this.state.currentVideo.order}`,
-                            type: 'video/youtube',
-                        },
-                    ],
-                }
-            }
-            console.log(this.videoJsOptions);
-
-        });
-        // const doesShow = this.state.showPlayer;
-        // console.log(`value ${value}`);
-        // console.log(this.state.currentVideo);
-        // console.log(this.state.showPlayer);
-        // console.log(`showplayer ${this.state.showPlayer}`);
-
-        //this.videoJsOptions = {};
-
-        
-        // console.log(this.videoJsOptions);
+    openPlayer = (value) => {
+        this.videoJsOptions = {
+            // autoplay: true,
+            controls: true,
+            youtube: {
+                iv_load_policy: '3',
+            },
+            techOrder: ['youtube'],
+            sources: [
+                {
+                    src: `https://www.youtube.com/watch?v=${value.id}&list=${this.state.data.playlist}&index=${value.order}`,
+                    type: 'video/youtube',
+                },
+            ],
+        };
+        this.setState({ showPlayer: true });
+        console.log('value', value);
     };
+
+    closePlayer = () => this.setState({ showPlayer: false });
 
     componentDidMount() {
         axios
