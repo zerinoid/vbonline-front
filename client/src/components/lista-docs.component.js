@@ -9,6 +9,8 @@ import Botao from './botao.component';
 
 import bigPlay from '../assets/img/bigplay.png';
 import smallPlay from '../assets/img/smplay.png';
+import hvSmallPlay from '../assets/img/hv_sm_play.png';
+import hvBigPlay from '../assets/img/hv_big_play.png';
 
 const DocPreviewMain = styled.div`
     width: 100%;
