@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -15,18 +15,19 @@ import Logo from './assets/img/logo2x.png';
 
 const flexN = 5;
 
-export default class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: null,
-            showPlayer: false,
-            currentVideo: null,
-        };
-    }
+const App = props => {
 
-    openPlayer = (value) => {
-        this.videoJsOptions = {
+    let videoJsOptions = {}
+
+    const [ appState, setAppState ] = useState({
+        data: null,
+        showPlayer: false,
+        currentVideo: null,
+        videoJsOptions: null,
+    });
+
+    const openPlayer = (value) => {
+        videoJsOptions = {
             // autoplay: true,
             controls: true,
             youtube: {
@@ -35,31 +36,45 @@ export default class App extends Component {
             techOrder: ['youtube'],
             sources: [
                 {
-                    src: `https://www.youtube.com/watch?v=${value.id}&list=${this.state.data.playlist}&index=${value.order}`,
+                    src: `https://www.youtube.com/watch?v=${value.id}&list=${appState.data.playlist}&index=${value.order}`,
                     type: 'video/youtube',
                 },
             ],
         };
-        this.setState({ showPlayer: true });
-        console.log('value', value);
+        setAppState({ 
+            data: appState.data,
+            showPlayer: true, 
+            currentVideo: appState.currentVideo,
+            videoJsOptions: videoJsOptions
+        });
     };
 
-    closePlayer = () => this.setState({ showPlayer: false });
+    const closePlayer = () => setAppState({ 
+        data: appState.data,
+        showPlayer: false, 
+        currentVideo: appState.currentVideo,
+        videoJsOptions: appState.videoJsOptions 
+    });
 
-    componentDidMount() {
+    useEffect(() => {
         axios
             .get('/api/lista-docs')
-            .then((res) => this.setState({ data: res.data }))
+            .then((res) => setAppState({ 
+                data: res.data,
+                showPlayer: appState.showPlayer, 
+                currentVideo: appState.currentVideo,
+                videoJsOptions: appState.videoJsOptions,
+            }))
             .catch((error) => console.log(error));
-    }
+    }, [appState.showPlayer, appState.currentVideo, appState.videoJsOptions]);
 
-    render() {
+    if(appState.data){
         return (
             <div className="App">
-                {this.state.showPlayer ? (
+                {appState.showPlayer ? (
                     <VideoPlayer
-                        {...this.videoJsOptions}
-                        fechaVideo={this.closePlayer}
+                        {...appState.videoJsOptions}
+                        fechaVideo={closePlayer}
                     />
                 ) : (
                     <Router>
@@ -115,26 +130,30 @@ export default class App extends Component {
                             </div>
                         </nav>
                         <div className="conteudo">
-                            {this.state.data ? (
+                            {
                                 <Route
                                     path="/"
                                     exact
                                     render={(props) => (
                                         <ListaDocs
                                             {...props}
-                                            lista={this.state}
-                                            playVideo={this.openPlayer}
+                                            lista={appState}
+                                            playVideo={openPlayer}
                                         />
                                     )}
                                 />
-                            ) : (
-                                <div>ERRO</div>
-                            )}
+                            }
                             <Route path="/sobre" component={Sobre} />
                         </div>
                     </Router>
                 )}
             </div>
         );
-    }
+    } 
+    
+    return (
+        <div className="App"></div>
+    );
 }
+
+export default App;
