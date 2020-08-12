@@ -3,7 +3,7 @@
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
-import useState from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 import Botao from './botao.component';
@@ -63,7 +63,12 @@ const Absolute = styled.div`
 `;
 
 const PlayButton = (props) => {
-    // const [isHover, setIsHover] = useState(false);
+    const [isHover, setIsHover] = useState(false);
+
+    const hoverHandler = () => {
+        setIsHover(!isHover);
+        console.log(isHover);
+    };
 
     return (
         <Link
@@ -77,6 +82,8 @@ const PlayButton = (props) => {
                     margin: auto;
                     cursor: pointer;
                 `}
+                onMouseEnter={hoverHandler}
+                onMouseLeave={hoverHandler}
                 src={props.imagem}
                 alt="play"
                 onClick={props.click}
