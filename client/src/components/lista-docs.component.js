@@ -3,7 +3,6 @@
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
-import { useState } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 import Botao from './botao.component';
@@ -70,13 +69,18 @@ const PlayButton = (props) => {
             `}
             to="/video"
         >
-            <img
-                css={css`
-                    margin: auto;
-                    cursor: pointer;
-                `}
-                src={props.imagem}
-                alt="play"
+            <div
+                css={css({
+                    cursor: 'pointer',
+                    backgroundImage: `url(${props.imagem})`,
+                    width: props.size,
+                    height: props.size,
+                    '&:hover': {
+                        backgroundImage: `url(${props.hvimagem})`,
+                        width: props.hvsize,
+                        height: props.hvsize,
+                    },
+                })}
                 onClick={props.click}
             />
         </Link>
@@ -100,6 +104,9 @@ export default function ListaDocs(props) {
                                 <PlayButton
                                     click={() => props.playVideo(value)}
                                     imagem={bigPlay}
+                                    hvimagem={hvBigPlay}
+                                    size={82}
+                                    hvsize={80}
                                 />
                             </Absolute>
                             <h3>{value.subtitle}</h3>
@@ -114,6 +121,9 @@ export default function ListaDocs(props) {
                             <PlayButton
                                 click={() => props.playVideo(value)}
                                 imagem={smallPlay}
+                                hvimagem={hvSmallPlay}
+                                size={42}
+                                hvsize={40}
                             />
                         </Absolute>
                         <p>{value.categoria}</p>
