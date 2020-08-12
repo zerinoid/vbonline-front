@@ -63,13 +63,6 @@ const Absolute = styled.div`
 `;
 
 const PlayButton = (props) => {
-    const [isHover, setIsHover] = useState(false);
-
-    const hoverHandler = () => {
-        setIsHover(!isHover);
-        console.log(isHover);
-    };
-
     return (
         <Link
             css={css`
@@ -82,12 +75,9 @@ const PlayButton = (props) => {
                     margin: auto;
                     cursor: pointer;
                 `}
-                onMouseEnter={hoverHandler}
-                onMouseLeave={hoverHandler}
                 src={props.imagem}
                 alt="play"
                 onClick={props.click}
-                isHover={isHover}
             />
         </Link>
     );
@@ -109,7 +99,7 @@ export default function ListaDocs(props) {
                             <Absolute>
                                 <PlayButton
                                     click={() => props.playVideo(value)}
-                                    imagem={props.isHover ? hvBigPlay : bigPlay}
+                                    imagem={bigPlay}
                                 />
                             </Absolute>
                             <h3>{value.subtitle}</h3>
