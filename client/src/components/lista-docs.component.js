@@ -158,9 +158,7 @@ export default function ListaDocs(props) {
                 min-height: 796px;
             `}
         >
-            <Router>
-                <div className="lista-docs limite">{Lista()}</div>
-            </Router>
+            <div className="lista-docs limite">{Lista()}</div>
         </div>
     );
 }
