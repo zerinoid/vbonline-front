@@ -95,41 +95,49 @@ export default function ListaDocs(props) {
 
     function Lista() {
         if (props.lista.data.videos) {
-            return props.lista.data.videos.map((value, index) => {
-                if (index === 0) {
+
+            // Main video
+            let main = props.lista.data.videos[0];
+            let videos = [
+                <DocPreviewMain bg={main.poster} key={0}>
+                    <h1>{main.title}</h1>
+                    <Absolute>
+                        <PlayButton
+                            click={() => props.playVideo(main)}
+                            imagem={bigPlay}
+                            hvimagem={hvBigPlay}
+                            size={82}
+                            hvsize={80}
+                        />
+                    </Absolute>
+                    <h3>{main.subtitle}</h3>
+                    <Botao>Saiba +</Botao>
+                </DocPreviewMain>
+            ];
+
+            // Thumbs
+            videos.push(props.lista.data.videos.map((value, index) => {
+                if(index > 0){
                     return (
-                        <DocPreviewMain bg={value.poster} key={index}>
-                            <h1>{value.title}</h1>
+                        <DocPreviewThumb bg={value.poster} key={index}>
+                            <h4>{value.title}</h4>
                             <Absolute>
                                 <PlayButton
                                     click={() => props.playVideo(value)}
-                                    imagem={bigPlay}
-                                    hvimagem={hvBigPlay}
-                                    size={82}
-                                    hvsize={80}
+                                    imagem={smallPlay}
+                                    hvimagem={hvSmallPlay}
+                                    size={42}
+                                    hvsize={40}
                                 />
                             </Absolute>
-                            <h3>{value.subtitle}</h3>
-                            <Botao>Saiba +</Botao>
-                        </DocPreviewMain>
+                            <p>{value.categoria}</p>
+                        </DocPreviewThumb>
                     );
                 }
-                return (
-                    <DocPreviewThumb bg={value.poster} key={index}>
-                        <h4>{value.title}</h4>
-                        <Absolute>
-                            <PlayButton
-                                click={() => props.playVideo(value)}
-                                imagem={smallPlay}
-                                hvimagem={hvSmallPlay}
-                                size={42}
-                                hvsize={40}
-                            />
-                        </Absolute>
-                        <p>{value.categoria}</p>
-                    </DocPreviewThumb>
-                );
-            });
+            }));
+
+            return videos;
+            
         } else {
             return (
                 <div>
