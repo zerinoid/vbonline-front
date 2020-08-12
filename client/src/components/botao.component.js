@@ -12,7 +12,7 @@ const Botao = styled.button((props) => ({
     borderRadius: 20,
     height: 25,
     width: 100,
-    maxWidth: props.lang && '2em',
+    maxWidth: props.lingua && '2em',
     padding: '2px 0 1px 1px',
 }));
 
