@@ -28,27 +28,58 @@ export default class Sobre extends Component {
                 >
                     {this.state.data ? (
                         <div>
-                            <h4
-                                css={css({
-                                    marginTop: '4.8em',
-                                    marginBottom: '2.4em',
-                                })}
-                            >
-                                {this.state.data.pt.title}
-                            </h4>
-                            <p>{this.state.data.pt.content}</p>
-                            <p>{this.state.data.pt.content}</p>
-                            <p
-                                css={css({
-                                    fontFamily: 'Graphik',
-                                })}
-                            >
-                                {this.state.data.pt.content}
-                            </p>
-                            <p> {this.state.data.pt.content} </p>
+                            <div>
+                                <h4
+                                    css={css({
+                                        marginTop: '4.8em',
+                                        marginBottom: '2.4em',
+                                    })}
+                                >
+                                    {this.state.data.pt.title}
+                                </h4>
+                                <p>{this.state.data.pt.content}</p>
+                                <p>{this.state.data.pt.content}</p>
+                            </div>
+                            {this.state.data.partnersLogos ? (
+                                <div
+                                    css={css`
+                                        margin-top: 50px;
+                                    `}
+                                >
+                                    <p
+                                        css={css`
+                                            font: bold 0.8em FedraMono !important;
+                                            text-transform: uppercase;
+                                        `}
+                                    >
+                                        {this.state.data.pt.partners}:
+                                    </p>
+                                    <div
+                                        css={css`
+                                            margin-top: 28px;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            width: ${this.state.data
+                                                .partnersLogos.length * 55}px;
+                                        `}
+                                    >
+                                        {this.state.data.partnersLogos.map(
+                                            (value, index) => (
+                                                <img
+                                                    alt=""
+                                                    src={value}
+                                                    key={index}
+                                                />
+                                            )
+                                        )}
+                                    </div>
+                                </div>
+                            ) : null}
                         </div>
                     ) : (
-                        <div className="sobre">Carregando</div>
+                        <div className="sobre">
+                            <p>Carregando</p>
+                        </div>
                     )}
                 </div>
             </div>
