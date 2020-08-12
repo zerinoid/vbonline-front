@@ -111,8 +111,11 @@ export default function ListaDocs(props) {
                         />
                     </Absolute>
                     <h3>{main.subtitle}</h3>
-                    <Botao>Saiba +</Botao>
+                    <Link to="/saibamais">
+                        <Botao>Saiba +</Botao>
+                    </Link>
                 </DocPreviewMain>
+                
             ];
 
             // Thumbs

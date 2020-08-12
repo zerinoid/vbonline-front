@@ -127,10 +127,10 @@ const App = (props) => {
                                         min-width: 58px;
                                     `}
                                 >
-                                    <Botao lang active>
+                                    <Botao lingua active>
                                         PT
                                     </Botao>
-                                    <Botao lang>EN</Botao>
+                                    <Botao lingua>EN</Botao>
                                 </div>
                             </div>
                         </nav>
