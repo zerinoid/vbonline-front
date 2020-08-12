@@ -87,6 +87,7 @@ const PlayButton = (props) => {
                 src={props.imagem}
                 alt="play"
                 onClick={props.click}
+                isHover={isHover}
             />
         </Link>
     );
@@ -108,7 +109,7 @@ export default function ListaDocs(props) {
                             <Absolute>
                                 <PlayButton
                                     click={() => props.playVideo(value)}
-                                    imagem={bigPlay}
+                                    imagem={props.isHover ? hvBigPlay : bigPlay}
                                 />
                             </Absolute>
                             <h3>{value.subtitle}</h3>
