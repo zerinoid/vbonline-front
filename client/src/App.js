@@ -57,7 +57,7 @@ const App = props => {
     });
 
     useEffect(() => {
-        console.log(pathname);
+        // console.log(pathname);
         axios
             .get('/api/lista-docs')
             .then((res) => setAppState({

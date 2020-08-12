@@ -1,20 +1,30 @@
 import React from 'react'
-import { useEffect, useRef } from 'react';
-// import { useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
 import videojs from 'video.js';
 import 'videojs-youtube';
 
 const VideoPlayer = props => {
 
     const videoNode = useRef();
+    const history = useHistory();
+    const { pathname } = useLocation();
+    let player = null;
 
     const destroyPlayer = (player) => {
         if (player) player.dispose();
     };
 
+    const fechaPlayer = () => {
+        props.fechaVideo();
+        destroyPlayer(player);
+        history.push('/');
+    }
+
+    // DidMount
     useEffect(() => {
         // instantiate Video.js
-        const player = videojs(
+        player = videojs(
             videoNode.current,
             props,
             function onPlayerReady() {
@@ -26,23 +36,22 @@ const VideoPlayer = props => {
         let Button = videojs.getComponent('Button');
         let butao = new Button(player, {
             clickHandler: (event) => {
-                props.fechaVideo();
-                destroyPlayer(player);
-                window.history.back();
+                fechaPlayer();
             },
         });
         player.addChild(butao);
-    }, [props]);
 
+    }, []);
 
-    // destroy player on unmount
-    // componentWillUnmount() {
-        // this.destroyPlayer(this.player);
-    // }
+    // Update + WillUnmount (why?)
+    useEffect(() => {
+        return () => {
+            if(pathname !== "/video"){
+                fechaPlayer();
+            }
+        }
+    });
 
-    // wrap the player in a div with a `data-vjs-player` attribute
-    // so videojs won't create additional wrapper in the DOM
-    // see https://github.com/videojs/video.js/pull/3856
     return (
         <div>
             <div data-vjs-player>
