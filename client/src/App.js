@@ -11,7 +11,8 @@ import ListaDocs from './components/lista-docs.component';
 import VideoPlayer from './components/video.component';
 import Botao from './components/botao.component';
 
-import Logo from './assets/img/logo2x.png';
+import logo from './assets/img/logo2x.png';
+import hvlogo from './assets/img/hv_logo2x.png';
 
 const flexN = 5;
 
@@ -84,15 +85,20 @@ const App = (props) => {
                                 })}
                             >
                                 <Link to="/">
-                                    <img
-                                        alt="Logo"
-                                        src={Logo}
+                                    <div
                                         css={css({
+                                            cursor: 'pointer',
+                                            background: `url(${logo}) no-repeat`,
+                                            backgroundSize: 'cover',
+                                            width: 200,
+                                            height: 153,
                                             position: 'absolute',
                                             left: -38,
                                             top: 43,
                                             'z-index': 99,
-                                            width: 200,
+                                            '&:hover': {
+                                                backgroundImage: `url(${hvlogo})`,
+                                            },
                                         })}
                                     />
                                 </Link>
