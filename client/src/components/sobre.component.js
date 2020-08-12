@@ -36,6 +36,8 @@ export default class Sobre extends Component {
                             >
                                 {this.state.data.pt.title}
                             </h4>
+                            <p>{this.state.data.pt.content}</p>
+                            <p>{this.state.data.pt.content}</p>
                             <p
                                 css={css({
                                     fontFamily: 'Graphik',
