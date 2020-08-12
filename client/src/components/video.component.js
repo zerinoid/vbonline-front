@@ -13,7 +13,6 @@ const VideoPlayer = props => {
     };
 
     useEffect(() => {
-        console.log(pathname);
         // instantiate Video.js
         const player = videojs(
             videoNode.current,
