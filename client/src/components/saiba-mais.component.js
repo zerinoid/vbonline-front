@@ -4,6 +4,8 @@ import { css, jsx } from '@emotion/core';
 import axios from 'axios';
 import colors from '../styles/colors';
 
+import Botao from './botao.component';
+
 export default class SaibaMais extends Component {
     constructor(props) {
         super(props);
@@ -35,10 +37,11 @@ export default class SaibaMais extends Component {
                                         marginBottom: '2.4em',
                                     })}
                                 >
+                                    {this.state.data.pt.artist}
                                     {this.state.data.pt.title}
                                 </h4>
                                 <p>{this.state.data.pt.content}</p>
-                                <p>{this.state.data.pt.content}</p>
+                                <Botao>Saiba +</Botao>
                             </div>
                             {this.state.data.partnersLogos ? (
                                 <div
