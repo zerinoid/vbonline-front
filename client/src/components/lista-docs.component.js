@@ -100,10 +100,12 @@ export default function ListaDocs(props) {
         document.body.clientHeight;
 
     function Lista() {
-        if (props.lista.data.videos) {
+        const video_list = props.lista.data.videos;
+        
+        if (video_list && video_list.length > 0) {
 
             // Main video
-            const main = props.lista.data.videos[0];
+            const main = video_list[0];
             const main_video = [
                 <DocPreviewMain bg={main.poster} key={0}>
                     <h1>{main.title}</h1>
@@ -125,25 +127,27 @@ export default function ListaDocs(props) {
 
             // Thumbs
             let videos = [];
-            videos.push(props.lista.data.videos.map((value, index) => {
-                if (index > 0) {
-                    return (
-                        <DocPreviewThumb bg={value.poster} key={index}>
-                            <h4>{value.title}</h4>
-                            <Absolute>
-                                <PlayButton
-                                    click={() => props.playVideo(value)}
-                                    imagem={smallPlay}
-                                    hvimagem={hvSmallPlay}
-                                    size={42}
-                                    hvsize={40}
-                                />
-                            </Absolute>
-                            <p>{value.categoria}</p>
-                        </DocPreviewThumb>
-                    );
-                }
-            }));
+            if(video_list.length > 1){
+                videos.push(video_list.map((value, index) => {
+                    if (index > 0) {
+                        return (
+                            <DocPreviewThumb bg={value.poster} key={index}>
+                                <h4>{value.title}</h4>
+                                <Absolute>
+                                    <PlayButton
+                                        click={() => props.playVideo(value)}
+                                        imagem={smallPlay}
+                                        hvimagem={hvSmallPlay}
+                                        size={42}
+                                        hvsize={40}
+                                    />
+                                </Absolute>
+                                <p>{value.categoria}</p>
+                            </DocPreviewThumb>
+                        );
+                    }
+                }));
+            }
 
             return (
                 <React.Fragment>
