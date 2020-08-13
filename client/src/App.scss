@@ -40,7 +40,10 @@ nav {
 }
 
 .sobre {
-    padding: 40px 0 60px;
+    padding: 120px 1rem 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     p {
         font-family: Graphik,

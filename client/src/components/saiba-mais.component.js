@@ -23,23 +23,30 @@ export default class SaibaMais extends Component {
 
     render() {
         return (
-            <div className="sobre">
+            <div className="sobre limite">
+                <div
+                    css={css`
+                        flex: 1 5 0;
+                    `}
+                />
                 <div
                     css={css({
-                        margin: '0 auto',
-                        width: '50%',
+                        /* margin: '0 auto', */
+                        /* width: '50%', */
                         color: colors.vermelho,
+                        flex: '5 1 0',
                     })}
                 >
                     {this.state.data ? (
                         <div>
                             <AboutSession>
+                                <h4>{this.state.data.pt.artist}</h4>
                                 <h4
-                                    css={css({
-                                        marginTop: '4.8em',
-                                    })}
+                                    css={css`
+                                        font-weight: normal;
+                                        text-transform: none;
+                                    `}
                                 >
-                                    {this.state.data.pt.artist}
                                     {this.state.data.pt.title}
                                 </h4>
                             </AboutSession>
@@ -93,6 +100,11 @@ export default class SaibaMais extends Component {
                         </div>
                     )}
                 </div>
+                <div
+                    css={css`
+                        flex: 1 5 30px;
+                    `}
+                />
             </div>
         );
     }
