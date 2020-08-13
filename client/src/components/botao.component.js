@@ -15,7 +15,9 @@ const Botao = styled.button((props) => ({
     maxWidth: props.lingua && '2em',
     padding: '2px 0 1px 1px',
     '&:focus': { outline: 'none' },
-    '&:hover': !props.active && { border: 'solid 2px red' },
+    '&:hover': !props.active && {
+        boxShadow: `inset 0px 0px 0px 2px ${colors.vermelho}`,
+    },
 }));
 
 export default Botao;
