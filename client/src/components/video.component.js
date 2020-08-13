@@ -21,7 +21,7 @@ const VideoPlayer = props => {
         history.push('/');
     }
 
-    // DidMount
+    // didMount
     useEffect(() => {
         // instantiate Video.js
         player = videojs(
@@ -40,10 +40,8 @@ const VideoPlayer = props => {
             },
         });
         player.addChild(butao);
-    }, []);
 
-    // Update + WillUnmount (why?)
-    useEffect(() => {
+        // willUnmount
         return () => {
             if(pathname !== "/video"){
                 closePlayer();
