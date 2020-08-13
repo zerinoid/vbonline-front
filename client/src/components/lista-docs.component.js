@@ -1,5 +1,5 @@
 /** @jsx jsx */
-// import { Component } from 'react';
+import React from 'react'
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
@@ -16,7 +16,7 @@ const DocPreviewMain = styled.div`
     width: 100%;
     min-height: 620px;
     padding: 10% 10%;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     background-image: url(${(props) => props.bg});
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,14 +31,19 @@ const DocPreviewMain = styled.div`
     }
 `;
 
+const DocPreviewContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+
 const DocPreviewThumb = (props) => (
     <DocPreviewMain
         css={css`
-            width: 32%;
+            width: 32.95%;
             min-height: 140px;
             padding: 12px;
             display: inline-block;
-            margin: 0 1% 0 0;
+            margin: 0 0 0 0;
             p {
                 font-family: FedraMono;
                 font-weight: normal;
@@ -98,8 +103,8 @@ export default function ListaDocs(props) {
         if (props.lista.data.videos) {
 
             // Main video
-            let main = props.lista.data.videos[0];
-            let videos = [
+            const main = props.lista.data.videos[0];
+            const main_video = [
                 <DocPreviewMain bg={main.poster} key={0}>
                     <h1>{main.title}</h1>
                     <Absolute>
@@ -116,12 +121,12 @@ export default function ListaDocs(props) {
                         <Botao>Saiba +</Botao>
                     </Link>
                 </DocPreviewMain>
-                
             ];
 
             // Thumbs
+            let videos = [];
             videos.push(props.lista.data.videos.map((value, index) => {
-                if(index > 0){
+                if (index > 0) {
                     return (
                         <DocPreviewThumb bg={value.poster} key={index}>
                             <h4>{value.title}</h4>
@@ -140,8 +145,15 @@ export default function ListaDocs(props) {
                 }
             }));
 
-            return videos;
-            
+            return (
+                <React.Fragment>
+                    {main_video}
+                    <DocPreviewContainer>
+                        {videos}
+                    </DocPreviewContainer>
+                </React.Fragment>
+            );
+
         } else {
             return (
                 <div>
