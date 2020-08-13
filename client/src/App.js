@@ -110,7 +110,7 @@ const App = (props) => {
                                 })}
                             >
                                 <Link to="/">
-                                    <Botao active>Docs</Botao>
+                                    <Botao active={true}>Docs</Botao>
                                 </Link>
                             </div>
                             <div
@@ -120,7 +120,7 @@ const App = (props) => {
                                 })}
                             >
                                 <Link to="/sobre">
-                                    <Botao>VB Online</Botao>
+                                    <Botao active={pathname === "/sobre"}>VB Online</Botao>
                                 </Link>
                                 <div
                                     css={css`
