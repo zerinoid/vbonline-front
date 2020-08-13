@@ -15,7 +15,7 @@ const VideoPlayer = props => {
         if (player) player.dispose();
     };
 
-    const fechaPlayer = () => {
+    const closePlayer = () => {
         props.fechaVideo();
         destroyPlayer(player);
         history.push('/');
@@ -36,18 +36,17 @@ const VideoPlayer = props => {
         let Button = videojs.getComponent('Button');
         let butao = new Button(player, {
             clickHandler: (event) => {
-                fechaPlayer();
+                closePlayer();
             },
         });
         player.addChild(butao);
-
     }, []);
 
     // Update + WillUnmount (why?)
     useEffect(() => {
         return () => {
             if(pathname !== "/video"){
-                fechaPlayer();
+                closePlayer();
             }
         }
     });
