@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
-import styled from '@emotion/styled';
 import axios from 'axios';
 import colors from '../styles/colors';
 
@@ -31,8 +30,6 @@ export default class SaibaMais extends Component {
                 />
                 <div
                     css={css({
-                        /* margin: '0 auto', */
-                        /* width: '50%', */
                         color: colors.vermelho,
                         flex: '5 1 0',
                     })}

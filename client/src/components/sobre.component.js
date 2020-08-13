@@ -4,6 +4,8 @@ import { css, jsx } from '@emotion/core';
 import axios from 'axios';
 import colors from '../styles/colors';
 
+import AboutSession from './about-session.component';
+
 export default class Sobre extends Component {
     constructor(props) {
         super(props);
@@ -18,34 +20,29 @@ export default class Sobre extends Component {
 
     render() {
         return (
-            <div className="sobre">
+            <div className="sobre limite">
+                <div
+                    css={css`
+                        flex: 1 5 0;
+                    `}
+                />
                 <div
                     css={css({
-                        margin: '0 auto',
-                        width: '50%',
                         color: colors.vermelho,
+                        flex: '5 1 0',
                     })}
                 >
                     {this.state.data ? (
                         <div>
-                            <div>
-                                <h4
-                                    css={css({
-                                        marginTop: '4.8em',
-                                        marginBottom: '2.4em',
-                                    })}
-                                >
-                                    {this.state.data.pt.title}
-                                </h4>
+                            <AboutSession>
+                                <h4>{this.state.data.pt.title}</h4>
+                            </AboutSession>
+                            <AboutSession>
                                 <p>{this.state.data.pt.content}</p>
                                 <p>{this.state.data.pt.content}</p>
-                            </div>
+                            </AboutSession>
                             {this.state.data.partnersLogos ? (
-                                <div
-                                    css={css`
-                                        margin-top: 50px;
-                                    `}
-                                >
+                                <AboutSession>
                                     <p
                                         css={css`
                                             font: bold 0.8em FedraMono !important;
@@ -73,7 +70,7 @@ export default class Sobre extends Component {
                                             )
                                         )}
                                     </div>
-                                </div>
+                                </AboutSession>
                             ) : null}
                         </div>
                     ) : (
@@ -82,6 +79,11 @@ export default class Sobre extends Component {
                         </div>
                     )}
                 </div>
+                <div
+                    css={css`
+                        flex: 1 5 30px;
+                    `}
+                />
             </div>
         );
     }
