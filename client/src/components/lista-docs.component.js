@@ -27,6 +27,7 @@ const DocPreviewMain = styled.div`
     }
     button {
         border: none;
+        position: relative;
     }
 `;
 

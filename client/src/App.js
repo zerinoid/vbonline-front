@@ -13,6 +13,7 @@ import Botao from './components/botao.component';
 
 import logo from './assets/img/logo2x.png';
 import hvlogo from './assets/img/hv_logo2x.png';
+import SaibaMais from './components/saiba-mais.component';
 
 const flexN = 5;
 
@@ -149,6 +150,7 @@ const App = (props) => {
                                 />
                             }
                             <Route path="/sobre" component={Sobre} />
+                            <Route path="/saibamais" component={SaibaMais} />
                         </div>
                     </div>
                 )}
