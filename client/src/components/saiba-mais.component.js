@@ -1,10 +1,13 @@
 /** @jsx jsx */
 import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 import axios from 'axios';
 import colors from '../styles/colors';
 
 import Botao from './botao.component';
+
+import AboutSession from './about-session.component';
 
 export default class SaibaMais extends Component {
     constructor(props) {
@@ -30,25 +33,30 @@ export default class SaibaMais extends Component {
                 >
                     {this.state.data ? (
                         <div>
-                            <div>
+                            <AboutSession>
                                 <h4
                                     css={css({
                                         marginTop: '4.8em',
-                                        marginBottom: '2.4em',
                                     })}
                                 >
                                     {this.state.data.pt.artist}
                                     {this.state.data.pt.title}
                                 </h4>
+                            </AboutSession>
+                            <AboutSession>
                                 <p>{this.state.data.pt.content}</p>
-                                <Botao>Saiba +</Botao>
-                            </div>
-                            {this.state.data.partnersLogos ? (
-                                <div
-                                    css={css`
-                                        margin-top: 50px;
-                                    `}
+                            </AboutSession>
+                            <AboutSession>
+                                <a
+                                    href={this.state.data.pt.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
+                                    <Botao>Saiba +</Botao>
+                                </a>
+                            </AboutSession>
+                            {this.state.data.partnersLogos ? (
+                                <AboutSession>
                                     <p
                                         css={css`
                                             font: bold 0.8em FedraMono !important;
@@ -76,7 +84,7 @@ export default class SaibaMais extends Component {
                                             )
                                         )}
                                     </div>
-                                </div>
+                                </AboutSession>
                             ) : null}
                         </div>
                     ) : (
