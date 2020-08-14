@@ -18,14 +18,20 @@ import hvlogo from './assets/img/hv_logo2x.png';
 const flexN = 5;
 
 const App = (props) => {
+
+    // Location
     const { pathname } = useLocation();
 
+    // State
     const [appState, setAppState] = useState({
         data: null,
         showPlayer: false,
         videoJsOptions: null,
     });
+    
+    const [langState, setLangState] = useState("pt");
 
+    // Player
     const openPlayer = (value) => {
         const videoJsOptions = {
             // autoplay: true,
@@ -54,9 +60,14 @@ const App = (props) => {
             showPlayer: false,
             videoJsOptions: appState.videoJsOptions,
         });
+    
+    // Language handler
+    const setLangHandler = (lang) => {
+        setLangState(lang);
+    }
 
+    // Main request 
     useEffect(() => {
-        // console.log(pathname);
         axios
             .get('/api/lista-docs')
             .then((res) =>
@@ -67,7 +78,12 @@ const App = (props) => {
                 })
             )
             .catch((error) => console.log(error));
-    }, [appState.showPlayer, appState.videoJsOptions, pathname]);
+    }, [appState.showPlayer, appState.videoJsOptions]);
+
+    // Default language
+    useEffect(() => {
+        setLangState("pt");
+    }, []);
 
     if (appState.data) {
         return (
@@ -130,10 +146,10 @@ const App = (props) => {
                                         min-width: 58px;
                                     `}
                                 >
-                                    <Botao lingua active>
+                                    <Botao onClick={setLangHandler.bind(this, "pt")} lingua active={langState === "pt"}>
                                         PT
                                     </Botao>
-                                    <Botao lingua>EN</Botao>
+                                    <Botao onClick={setLangHandler.bind(this, "en")} lingua active={langState === "en"}>EN</Botao>
                                 </div>
                             </div>
                         </nav>
@@ -146,6 +162,7 @@ const App = (props) => {
                                         <ListaDocs
                                             {...props}
                                             lista={appState}
+                                            lang={langState}
                                             playVideo={openPlayer}
                                         />
                                     )}

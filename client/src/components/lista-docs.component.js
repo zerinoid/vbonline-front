@@ -101,14 +101,15 @@ export default function ListaDocs(props) {
 
     function Lista() {
         const video_list = props.lista.data.videos;
-        
+        const lang = props.lang ? props.lang : "pt";
+
         if (video_list && video_list.length > 0) {
 
             // Main video
             const main = video_list[0];
             const main_video = [
-                <DocPreviewMain bg={main.poster} key={0}>
-                    <h1>{main.title}</h1>
+                <DocPreviewMain bg={main[lang].poster} key={0}>
+                    <h1>{main[lang].title}</h1>
                     <Absolute>
                         <PlayButton
                             click={() => props.playVideo(main)}
@@ -118,7 +119,7 @@ export default function ListaDocs(props) {
                             hvsize={80}
                         />
                     </Absolute>
-                    <h3>{main.subtitle}</h3>
+                    <h3>{main[lang].subtitle}</h3>
                     <Link to="/saibamais">
                         <Botao>Saiba +</Botao>
                     </Link>
@@ -127,12 +128,12 @@ export default function ListaDocs(props) {
 
             // Thumbs
             let videos = [];
-            if(video_list.length > 1){
+            if (video_list.length > 1) {
                 videos.push(video_list.map((value, index) => {
                     if (index > 0) {
                         return (
-                            <DocPreviewThumb bg={value.poster} key={index}>
-                                <h4>{value.title}</h4>
+                            <DocPreviewThumb bg={value[lang].poster} key={index}>
+                                <h4>{value[lang].title}</h4>
                                 <Absolute>
                                     <PlayButton
                                         click={() => props.playVideo(value)}
@@ -142,7 +143,7 @@ export default function ListaDocs(props) {
                                         hvsize={40}
                                     />
                                 </Absolute>
-                                <p>{value.categoria}</p>
+                                <p>{value[lang].category}</p>
                             </DocPreviewThumb>
                         );
                     }
