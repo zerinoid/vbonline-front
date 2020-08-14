@@ -10,10 +10,10 @@ import Sobre from './components/sobre.component';
 import ListaDocs from './components/lista-docs.component';
 import VideoPlayer from './components/video.component';
 import Botao from './components/botao.component';
+import SaibaMais from './components/saiba-mais.component';
 
 import logo from './assets/img/logo2x.png';
 import hvlogo from './assets/img/hv_logo2x.png';
-import SaibaMais from './components/saiba-mais.component';
 
 const flexN = 5;
 
@@ -120,7 +120,9 @@ const App = (props) => {
                                 })}
                             >
                                 <Link to="/sobre">
-                                    <Botao active={pathname === "/sobre"}>VB Online</Botao>
+                                    <Botao active={pathname === '/sobre'}>
+                                        VB Online
+                                    </Botao>
                                 </Link>
                                 <div
                                     css={css`
