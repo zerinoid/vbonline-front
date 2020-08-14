@@ -14,8 +14,11 @@ import SaibaMais from './components/saiba-mais.component';
 
 import logo from './assets/img/logo2x.png';
 import hvlogo from './assets/img/hv_logo2x.png';
+import botaoMais from './assets/img/cruzverm.png';
 
 const flexN = 5;
+
+const largeBreakPoint = '@media (max-width: 992px)';
 
 const App = (props) => {
     const { pathname } = useLocation();
@@ -100,6 +103,13 @@ const App = (props) => {
                                             '&:hover': {
                                                 backgroundImage: `url(${hvlogo})`,
                                             },
+                                            [largeBreakPoint]: {
+                                                position: 'relative',
+                                                width: 90,
+                                                height: 69,
+                                                left: 0,
+                                                top: 0,
+                                            },
                                         })}
                                     />
                                 </Link>
@@ -107,16 +117,36 @@ const App = (props) => {
                             <div
                                 css={css({
                                     flex: `${flexN} 1 0`,
+                                    [largeBreakPoint]: {
+                                        justifyContent: 'flex-end',
+                                    },
                                 })}
                             >
                                 <Link to="/">
                                     <Botao active={true}>Docs</Botao>
                                 </Link>
+                                <div
+                                    css={css({
+                                        display: 'none',
+                                        background: `url(${botaoMais}) no-repeat`,
+                                        backgroundSize: '25px',
+                                        width: 25,
+                                        height: 25,
+                                        marginLeft: 10,
+                                        cursor: 'pointer',
+                                        [largeBreakPoint]: {
+                                            display: 'block',
+                                        },
+                                    })}
+                                />
                             </div>
                             <div
                                 css={css({
                                     flex: `1 ${flexN} 30px`,
                                     justifyContent: 'space-between',
+                                    [largeBreakPoint]: {
+                                        display: 'none',
+                                    },
                                 })}
                             >
                                 <Link to="/sobre">

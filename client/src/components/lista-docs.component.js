@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from 'react'
+import React from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
@@ -34,7 +34,19 @@ const DocPreviewMain = styled.div`
 const DocPreviewContainer = styled.div`
     display: flex;
     justify-content: space-between;
-`
+    @media (max-width: 992px) {
+        flex-direction: column;
+        > div {
+            margin-bottom: 6px;
+        }
+        > div:last-child {
+            margin-bottom: 0px;
+        }
+        h4 {
+            margin-bottom: 0;
+        }
+    }
+`;
 
 const DocPreviewThumb = (props) => (
     <DocPreviewMain
@@ -51,6 +63,9 @@ const DocPreviewThumb = (props) => (
 
             &:hover {
                 box-shadow: inset 0px 0px 0px 2px #fff;
+            }
+            @media (max-width: 992px) {
+                width: 100%;
             }
         `}
         {...props}
@@ -101,9 +116,8 @@ export default function ListaDocs(props) {
 
     function Lista() {
         const video_list = props.lista.data.videos;
-        
-        if (video_list && video_list.length > 0) {
 
+        if (video_list && video_list.length > 0) {
             // Main video
             const main = video_list[0];
             const main_video = [
@@ -122,42 +136,41 @@ export default function ListaDocs(props) {
                     <Link to="/saibamais">
                         <Botao>Saiba +</Botao>
                     </Link>
-                </DocPreviewMain>
+                </DocPreviewMain>,
             ];
 
             // Thumbs
             let videos = [];
-            if(video_list.length > 1){
-                videos.push(video_list.map((value, index) => {
-                    if (index > 0) {
-                        return (
-                            <DocPreviewThumb bg={value.poster} key={index}>
-                                <h4>{value.title}</h4>
-                                <Absolute>
-                                    <PlayButton
-                                        click={() => props.playVideo(value)}
-                                        imagem={smallPlay}
-                                        hvimagem={hvSmallPlay}
-                                        size={42}
-                                        hvsize={40}
-                                    />
-                                </Absolute>
-                                <p>{value.categoria}</p>
-                            </DocPreviewThumb>
-                        );
-                    }
-                }));
+            if (video_list.length > 1) {
+                videos.push(
+                    video_list.map((value, index) => {
+                        if (index > 0) {
+                            return (
+                                <DocPreviewThumb bg={value.poster} key={index}>
+                                    <h4>{value.title}</h4>
+                                    <Absolute>
+                                        <PlayButton
+                                            click={() => props.playVideo(value)}
+                                            imagem={smallPlay}
+                                            hvimagem={hvSmallPlay}
+                                            size={42}
+                                            hvsize={40}
+                                        />
+                                    </Absolute>
+                                    <p>{value.categoria}</p>
+                                </DocPreviewThumb>
+                            );
+                        }
+                    })
+                );
             }
 
             return (
                 <React.Fragment>
                     {main_video}
-                    <DocPreviewContainer>
-                        {videos}
-                    </DocPreviewContainer>
+                    <DocPreviewContainer>{videos}</DocPreviewContainer>
                 </React.Fragment>
             );
-
         } else {
             return (
                 <div>
