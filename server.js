@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session');
 const bodyParser = require('body-parser');
 
 // App
@@ -17,6 +18,11 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
 });
+
+// Session
+app.use(session({
+    secret: "vb"
+}));
 
 // Routes declaration
 app.use('/api', apiRoutes);
