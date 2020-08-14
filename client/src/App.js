@@ -14,14 +14,13 @@ import SaibaMais from './components/saiba-mais.component';
 
 import logo from './assets/img/logo2x.png';
 import hvlogo from './assets/img/hv_logo2x.png';
-import botaoMais from './assets/img/cruzverm.png';
+import botaoMais from './assets/img/cruz.png';
 
 const flexN = 5;
 
 const largeBreakPoint = '@media (max-width: 992px)';
 
 const App = (props) => {
-
     // Location
     const { pathname } = useLocation();
 
@@ -31,8 +30,8 @@ const App = (props) => {
         showPlayer: false,
         videoJsOptions: null,
     });
-    
-    const [langState, setLangState] = useState("pt");
+
+    const [langState, setLangState] = useState('pt');
 
     // Player
     const openPlayer = (value) => {
@@ -63,13 +62,13 @@ const App = (props) => {
             showPlayer: false,
             videoJsOptions: appState.videoJsOptions,
         });
-    
+
     // Language handler
     const setLangHandler = (lang) => {
         setLangState(lang);
-    }
+    };
 
-    // Main request 
+    // Main request
     useEffect(() => {
         axios
             .get('/api/lista-docs')
@@ -85,7 +84,7 @@ const App = (props) => {
 
     // Default language
     useEffect(() => {
-        setLangState("pt");
+        setLangState('pt');
     }, []);
 
     if (appState.data) {
@@ -176,10 +175,26 @@ const App = (props) => {
                                         min-width: 58px;
                                     `}
                                 >
-                                    <Botao onClick={setLangHandler.bind(this, "pt")} lingua active={langState === "pt"}>
+                                    <Botao
+                                        onClick={setLangHandler.bind(
+                                            this,
+                                            'pt'
+                                        )}
+                                        lingua
+                                        active={langState === 'pt'}
+                                    >
                                         PT
                                     </Botao>
-                                    <Botao onClick={setLangHandler.bind(this, "en")} lingua active={langState === "en"}>EN</Botao>
+                                    <Botao
+                                        onClick={setLangHandler.bind(
+                                            this,
+                                            'en'
+                                        )}
+                                        lingua
+                                        active={langState === 'en'}
+                                    >
+                                        EN
+                                    </Botao>
                                 </div>
                             </div>
                         </nav>
