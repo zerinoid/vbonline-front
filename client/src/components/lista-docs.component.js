@@ -12,11 +12,15 @@ import smallPlay from '../assets/img/smplay.png';
 import hvSmallPlay from '../assets/img/hv_sm_play.png';
 import hvBigPlay from '../assets/img/hv_big_play.png';
 
+const mainHeight = 620;
+const thumbHeight = 140;
+const previewMargin = 6;
+
 const DocPreviewMain = styled.div`
     width: 100%;
-    min-height: 620px;
+    height: ${mainHeight}px;
     padding: 10% 10%;
-    margin-bottom: 6px;
+    margin-bottom: ${previewMargin}px;
     background-image: url(${(props) => props.bg});
     background-repeat: no-repeat;
     background-size: cover;
@@ -37,7 +41,7 @@ const DocPreviewContainer = styled.div`
     @media (max-width: 992px) {
         flex-direction: column;
         > div {
-            margin-bottom: 6px;
+            margin-bottom: ${previewMargin}px;
         }
         > div:last-child {
             margin-bottom: 0px;
@@ -52,7 +56,7 @@ const DocPreviewThumb = (props) => (
     <DocPreviewMain
         css={css`
             width: 32.95%;
-            min-height: 140px;
+            height: ${thumbHeight}px;
             padding: 12px;
             display: inline-block;
             margin: 0 0 0 0;
@@ -114,8 +118,12 @@ export default function ListaDocs(props) {
         document.documentElement.clientHeight ||
         document.body.clientHeight;
 
+    let videoCount = 0;
+
     function Lista() {
         const video_list = props.lista.data.videos;
+
+        videoCount = video_list.lenght;
 
         if (video_list && video_list.length > 0) {
             // Main video
@@ -196,8 +204,13 @@ export default function ListaDocs(props) {
                     ${colors.vermelho},
                     ${colors.branco} 50%
                 );
-                height: calc(${windowHeight}px - 90px);
-                min-height: 796px;
+
+                @media (max-width: 992px) {
+                    height: calc(${windowHeight}px - 90px);
+                    min-height: ${mainHeight +
+                    thumbHeight * (4 - 1) +
+                    4 * previewMargin}px;
+                }
             `}
         >
             <div className="lista-docs limite">{Lista()}</div>
