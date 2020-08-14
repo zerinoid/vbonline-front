@@ -26,7 +26,7 @@ nav {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    align-items: end;
+    align-items: flex-end;
     justify-content: space-between;
     min-height: $navHeight;
 
@@ -35,7 +35,7 @@ nav {
     }
 
     &>div {
-        margin-top: 35px;
+        margin-bottom: 5px;
     }
 }
 
@@ -92,4 +92,33 @@ h4 {
 
 h5 {
     font-size: 1.0em;
+}
+
+
+@media (max-width: 992px) {
+    .limite {
+        max-width: 500px;
+        padding-bottom: 6px;
+    }
+
+    nav>div {
+        margin-bottom: 0px;
+    }
+
+    h1 {
+        font-size: 2.59em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    h4 {
+        font-size: 0.95em;
+    }
+
+    h5 {
+        font-size: 0.5em;
+    }
+
 }

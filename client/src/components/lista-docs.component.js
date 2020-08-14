@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from 'react'
+import React from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
@@ -34,7 +34,19 @@ const DocPreviewMain = styled.div`
 const DocPreviewContainer = styled.div`
     display: flex;
     justify-content: space-between;
-`
+    @media (max-width: 992px) {
+        flex-direction: column;
+        > div {
+            margin-bottom: 6px;
+        }
+        > div:last-child {
+            margin-bottom: 0px;
+        }
+        h4 {
+            margin-bottom: 0;
+        }
+    }
+`;
 
 const DocPreviewThumb = (props) => (
     <DocPreviewMain
@@ -51,6 +63,9 @@ const DocPreviewThumb = (props) => (
 
             &:hover {
                 box-shadow: inset 0px 0px 0px 2px #fff;
+            }
+            @media (max-width: 992px) {
+                width: 100%;
             }
         `}
         {...props}
@@ -104,7 +119,6 @@ export default function ListaDocs(props) {
         const lang = props.lang ? props.lang : "pt";
 
         if (video_list && video_list.length > 0) {
-
             // Main video
             const main = video_list[0];
             const main_video = [
@@ -123,7 +137,7 @@ export default function ListaDocs(props) {
                     <Link to="/saibamais">
                         <Botao>Saiba +</Botao>
                     </Link>
-                </DocPreviewMain>
+                </DocPreviewMain>,
             ];
 
             // Thumbs
@@ -153,12 +167,9 @@ export default function ListaDocs(props) {
             return (
                 <React.Fragment>
                     {main_video}
-                    <DocPreviewContainer>
-                        {videos}
-                    </DocPreviewContainer>
+                    <DocPreviewContainer>{videos}</DocPreviewContainer>
                 </React.Fragment>
             );
-
         } else {
             return (
                 <div>
