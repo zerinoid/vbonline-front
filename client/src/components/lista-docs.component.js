@@ -122,7 +122,7 @@ export default function ListaDocs(props) {
 
     function Lista() {
         const video_list = props.lista.data.videos;
-        const lang = props.lang ? props.lang : "pt";
+        const lang = props.lang ? props.lang : 'pt';
 
         videoCount = video_list.lenght;
 
@@ -151,25 +151,30 @@ export default function ListaDocs(props) {
             // Thumbs
             let videos = [];
             if (video_list.length > 1) {
-                videos.push(video_list.map((value, index) => {
-                    if (index > 0) {
-                        return (
-                            <DocPreviewThumb bg={value[lang].poster} key={index}>
-                                <h4>{value[lang].title}</h4>
-                                <Absolute>
-                                    <PlayButton
-                                        click={() => props.playVideo(value)}
-                                        imagem={smallPlay}
-                                        hvimagem={hvSmallPlay}
-                                        size={42}
-                                        hvsize={40}
-                                    />
-                                </Absolute>
-                                <p>{value[lang].category}</p>
-                            </DocPreviewThumb>
-                        );
-                    }
-                }));
+                videos.push(
+                    video_list.map((value, index) => {
+                        if (index > 0) {
+                            return (
+                                <DocPreviewThumb
+                                    bg={value[lang].poster}
+                                    key={index}
+                                >
+                                    <h4>{value[lang].title}</h4>
+                                    <Absolute>
+                                        <PlayButton
+                                            click={() => props.playVideo(value)}
+                                            imagem={smallPlay}
+                                            hvimagem={hvSmallPlay}
+                                            size={42}
+                                            hvsize={40}
+                                        />
+                                    </Absolute>
+                                    <p>{value[lang].category}</p>
+                                </DocPreviewThumb>
+                            );
+                        }
+                    })
+                );
             }
 
             return (
@@ -205,10 +210,12 @@ export default function ListaDocs(props) {
                 );
 
                 @media (max-width: 992px) {
+                    background-attachment: fixed;
                     height: calc(${windowHeight}px - 90px);
                     min-height: ${mainHeight +
                     thumbHeight * (4 - 1) +
-                    4 * previewMargin}px;
+                    4 * previewMargin +
+                    10}px;
                 }
             `}
         >
