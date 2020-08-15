@@ -17,6 +17,7 @@ import logo from './assets/img/logo2x.png';
 import hvlogo from './assets/img/hv_logo2x.png';
 import botaoMais from './assets/img/cruz.png';
 import botaoMaisApertado from './assets/img/cruzVerm.png';
+import fechar from './assets/img/fecharVerm.png';
 
 const largeBreakPoint = '@media (max-width: 992px)';
 
@@ -122,7 +123,8 @@ const App = (props) => {
                                     <div
                                         css={css({
                                             cursor: 'pointer',
-                                            background: `url(${logo}) no-repeat`,
+                                            backgroundImage: `url(${logo})`,
+                                            backgroundRepeat: 'no-repeat',
                                             backgroundSize: 'cover',
                                             width: 200,
                                             height: 153,
@@ -135,10 +137,15 @@ const App = (props) => {
                                             },
                                             [largeBreakPoint]: {
                                                 position: 'relative',
-                                                width: 90,
-                                                height: 69,
-                                                left: 0,
+                                                width:
+                                                    pathname !== '/' ? 25 : 90,
+                                                height:
+                                                    pathname !== '/' ? 25 : 69,
+                                                left: pathname !== '/' ? 7 : 0,
                                                 top: 0,
+                                                backgroundImage:
+                                                    pathname !== '/' &&
+                                                    `url(${fechar})`,
                                                 '&:hover': {
                                                     backgroundImage: `url(${logo})`,
                                                 },
