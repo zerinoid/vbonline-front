@@ -40,12 +40,12 @@ const VideoPlayer = props => {
             },
         });
         player.addChild(butao);
+    }, []);
 
-        // willUnmount
-        return () => {
-            if(pathname !== "/video"){
-                closePlayer();
-            }
+    // update
+    useEffect(() => {
+        if(pathname !== "/video"){
+            closePlayer();
         }
     });
 
