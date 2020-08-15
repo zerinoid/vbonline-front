@@ -13,10 +13,16 @@ const Botao = styled.button((props) => ({
     height: 25,
     width: 100,
     maxWidth: props.lingua && '2em',
-    padding: '2px 0 1px 1px',
+    padding: '2px 0 0 0',
     '&:focus': { outline: 'none' },
     '&:hover': !props.active && {
-        boxShadow: `inset 0px 0px 0px 2px ${colors.vermelho}`,
+        border: `solid 2px ${colors.vermelho}`,
+        // boxShadow: `inset 0px 0px 0px 2px ${colors.vermelho}`,
+    },
+    '@media (max-width: 992px)': {
+        '&:hover': {
+            border: 'initial',
+        },
     },
 }));
 

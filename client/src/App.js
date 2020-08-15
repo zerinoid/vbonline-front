@@ -11,10 +11,12 @@ import ListaDocs from './components/lista-docs.component';
 import VideoPlayer from './components/video.component';
 import Botao from './components/botao.component';
 import SaibaMais from './components/saiba-mais.component';
+import MenuMobile from './components/menu-mobile.component';
 
 import logo from './assets/img/logo2x.png';
 import hvlogo from './assets/img/hv_logo2x.png';
 import botaoMais from './assets/img/cruz.png';
+import botaoMaisApertado from './assets/img/cruzVerm.png';
 
 const flexN = 5;
 
@@ -32,6 +34,15 @@ const App = (props) => {
     });
 
     const [langState, setLangState] = useState('pt');
+
+    const [menuMobileShow, setMenuMobileShow] = useState(false);
+
+    // Handler menu mobile
+    const menuMobileToggle = () => {
+        let menuMobileStatus = menuMobileShow;
+        setMenuMobileShow(!menuMobileStatus);
+        console.log('ae galera');
+    };
 
     // Player
     const openPlayer = (value) => {
@@ -124,6 +135,9 @@ const App = (props) => {
                                                 height: 69,
                                                 left: 0,
                                                 top: 0,
+                                                '&:hover': {
+                                                    backgroundImage: `url(${logo})`,
+                                                },
                                             },
                                         })}
                                     />
@@ -143,7 +157,9 @@ const App = (props) => {
                                 <div
                                     css={css({
                                         display: 'none',
-                                        background: `url(${botaoMais}) no-repeat`,
+                                        background: menuMobileShow
+                                            ? `url(${botaoMaisApertado})`
+                                            : `url(${botaoMais})`,
                                         backgroundSize: '25px',
                                         width: 25,
                                         height: 25,
@@ -153,6 +169,7 @@ const App = (props) => {
                                             display: 'block',
                                         },
                                     })}
+                                    onClick={menuMobileToggle}
                                 />
                             </div>
                             <div
@@ -199,6 +216,7 @@ const App = (props) => {
                             </div>
                         </nav>
                         <div className="conteudo">
+                            <MenuMobile isShown={menuMobileShow} />
                             {
                                 <Route
                                     path="/"
