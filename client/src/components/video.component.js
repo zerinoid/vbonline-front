@@ -34,12 +34,12 @@ const VideoPlayer = props => {
 
         //adição de botão custom
         let Button = videojs.getComponent('Button');
-        let butao = new Button(player, {
+        let bt = new Button(player, {
             clickHandler: (event) => {
                 closePlayer();
             },
         });
-        player.addChild(butao);
+        player.addChild(bt);
     }, []);
 
     // update

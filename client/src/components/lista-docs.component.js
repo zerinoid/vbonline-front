@@ -118,14 +118,11 @@ export default function ListaDocs(props) {
         document.documentElement.clientHeight ||
         document.body.clientHeight;
 
-    let videoCount = 0;
+    const video_list = props.lista.data.videos;
+    const lang = props.lang ? props.lang : 'pt';
+    const videoCount = video_list.lenght;
 
     function Lista() {
-        const video_list = props.lista.data.videos;
-        const lang = props.lang ? props.lang : 'pt';
-
-        videoCount = video_list.lenght;
-
         if (video_list && video_list.length > 0) {
             // Main video
             const main = video_list[0];
