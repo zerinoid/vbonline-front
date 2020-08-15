@@ -41,7 +41,6 @@ const App = (props) => {
     const menuMobileToggle = () => {
         let menuMobileStatus = menuMobileShow;
         setMenuMobileShow(!menuMobileStatus);
-        console.log('ae galera');
     };
 
     // Player
@@ -77,6 +76,7 @@ const App = (props) => {
     // Language handler
     const setLangHandler = (lang) => {
         setLangState(lang);
+        axios.post(`/api/lang/set/${lang}`);
     };
 
     // Main request
@@ -95,7 +95,13 @@ const App = (props) => {
 
     // Default language
     useEffect(() => {
-        setLangState('pt');
+        axios.get('/api/lang/get').then((res) => {
+            if(res.data === null){
+                axios.post('/api/lang/set/pt');
+            } else {
+                setLangState(res.data);
+            }
+        });
     }, []);
 
     if (appState.data) {

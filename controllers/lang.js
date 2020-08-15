@@ -4,5 +4,6 @@ exports.setLang = (req, res) => {
 };
 
 exports.getLang = (req, res) => {
-    res.status(200).json(req.session.lang);
+    lang = req.session.lang ? req.session.lang : null;
+    res.status(200).json(lang);
 };

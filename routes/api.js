@@ -7,8 +7,8 @@ const sobreController = require('../controllers/sobre');
 const listaDocsController = require('../controllers/lista-docs');
 const saibaMaisController = require('../controllers/saiba-mais');
 
-// GET /api/lang/set/:name
-router.get('/lang/set/:name', langController.setLang);
+// POST /api/lang/set/:name
+router.post('/lang/set/:name', langController.setLang);
 
 // GET /api/lang/get/:name
 router.get('/lang/get', langController.getLang);
