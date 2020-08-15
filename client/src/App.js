@@ -237,8 +237,16 @@ const App = (props) => {
                                     )}
                                 />
                             }
-                            <Route path="/sobre" component={Sobre} />
-                            <Route path="/saibamais" component={SaibaMais} />
+                            <Route path="/sobre" render={(props) => (
+                                <Sobre 
+                                    {...props} 
+                                    lang={langState} />
+                            )} />
+                            <Route path="/saibamais" render={(props) => (
+                                <SaibaMais 
+                                    {...props} 
+                                    lang={langState} />
+                            )} />
                         </div>
                     </div>
                 )}

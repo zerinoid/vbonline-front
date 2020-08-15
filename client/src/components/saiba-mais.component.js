@@ -11,7 +11,9 @@ import AboutSection from './about-section.component';
 export default class SaibaMais extends Component {
     constructor(props) {
         super(props);
-        this.state = { data: null };
+        this.state = { 
+            data: null 
+        };
     }
 
     componentDidMount() {
@@ -37,22 +39,22 @@ export default class SaibaMais extends Component {
                     {this.state.data ? (
                         <div>
                             <AboutSection>
-                                <h4>{this.state.data.pt.artist}</h4>
+                                <h4>{this.state.data[this.props.lang].artist}</h4>
                                 <h4
                                     css={css`
                                         font-weight: normal;
                                         text-transform: none;
                                     `}
                                 >
-                                    {this.state.data.pt.title}
+                                    {this.state.data[this.props.lang].title}
                                 </h4>
                             </AboutSection>
                             <AboutSection>
-                                <p>{this.state.data.pt.content}</p>
+                                <p>{this.state.data[this.props.lang].content}</p>
                             </AboutSection>
                             <AboutSection>
                                 <a
-                                    href={this.state.data.pt.link}
+                                    href={this.state.data[this.props.lang].link}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -67,7 +69,7 @@ export default class SaibaMais extends Component {
                                             text-transform: uppercase;
                                         `}
                                     >
-                                        {this.state.data.pt.partners}:
+                                        {this.state.data[this.props.lang].partners}:
                                     </p>
                                     <div
                                         css={css`

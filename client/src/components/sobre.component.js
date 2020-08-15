@@ -9,7 +9,9 @@ import AboutSection from './about-section.component';
 export default class Sobre extends Component {
     constructor(props) {
         super(props);
-        this.state = { data: null };
+        this.state = { 
+            data: null,
+        };
     }
 
     componentDidMount() {
@@ -35,11 +37,11 @@ export default class Sobre extends Component {
                     {this.state.data ? (
                         <div>
                             <AboutSection>
-                                <h4>{this.state.data.pt.title}</h4>
+                                <h4>{this.state.data[this.props.lang].title}</h4>
                             </AboutSection>
                             <AboutSection>
-                                <p>{this.state.data.pt.content}</p>
-                                <p>{this.state.data.pt.content}</p>
+                                <p>{this.state.data[this.props.lang].content}</p>
+                                <p>{this.state.data[this.props.lang].content}</p>
                             </AboutSection>
                             {this.state.data.partnersLogos ? (
                                 <AboutSection>
@@ -49,7 +51,7 @@ export default class Sobre extends Component {
                                             text-transform: uppercase;
                                         `}
                                     >
-                                        {this.state.data.pt.partners}:
+                                        {this.state.data[this.props.lang].partners}:
                                     </p>
                                     <div
                                         css={css`
