@@ -18,8 +18,6 @@ import hvlogo from './assets/img/hv_logo2x.png';
 import botaoMais from './assets/img/cruz.png';
 import botaoMaisApertado from './assets/img/cruzVerm.png';
 
-const flexN = 5;
-
 const largeBreakPoint = '@media (max-width: 992px)';
 
 const App = (props) => {
@@ -117,7 +115,7 @@ const App = (props) => {
                         <nav className="limite">
                             <div
                                 css={css({
-                                    flex: `1 ${flexN} 0`,
+                                    flex: '1 1 0',
                                 })}
                             >
                                 <Link to="/">
@@ -151,7 +149,7 @@ const App = (props) => {
                             </div>
                             <div
                                 css={css({
-                                    flex: `${flexN} 1 0`,
+                                    flex: '5 1 0',
                                     [largeBreakPoint]: {
                                         justifyContent: 'flex-end',
                                     },
@@ -180,7 +178,7 @@ const App = (props) => {
                             </div>
                             <div
                                 css={css({
-                                    flex: `1 ${flexN} 30px`,
+                                    flex: '1 1 30px',
                                     justifyContent: 'space-between',
                                     [largeBreakPoint]: {
                                         display: 'none',
