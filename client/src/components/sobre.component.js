@@ -4,7 +4,7 @@ import { css, jsx } from '@emotion/core';
 import axios from 'axios';
 import colors from '../styles/colors';
 
-import AboutSession from './about-session.component';
+import AboutSection from './about-section.component';
 
 export default class Sobre extends Component {
     constructor(props) {
@@ -34,15 +34,15 @@ export default class Sobre extends Component {
                 >
                     {this.state.data ? (
                         <div>
-                            <AboutSession>
+                            <AboutSection>
                                 <h4>{this.state.data.pt.title}</h4>
-                            </AboutSession>
-                            <AboutSession>
+                            </AboutSection>
+                            <AboutSection>
                                 <p>{this.state.data.pt.content}</p>
                                 <p>{this.state.data.pt.content}</p>
-                            </AboutSession>
+                            </AboutSection>
                             {this.state.data.partnersLogos ? (
-                                <AboutSession>
+                                <AboutSection>
                                     <p
                                         css={css`
                                             font: bold 0.8em FedraMono !important;
@@ -70,7 +70,7 @@ export default class Sobre extends Component {
                                             )
                                         )}
                                     </div>
-                                </AboutSession>
+                                </AboutSection>
                             ) : null}
                         </div>
                     ) : (

@@ -6,7 +6,7 @@ import colors from '../styles/colors';
 
 import Botao from './botao.component';
 
-import AboutSession from './about-session.component';
+import AboutSection from './about-section.component';
 
 export default class SaibaMais extends Component {
     constructor(props) {
@@ -36,7 +36,7 @@ export default class SaibaMais extends Component {
                 >
                     {this.state.data ? (
                         <div>
-                            <AboutSession>
+                            <AboutSection>
                                 <h4>{this.state.data.pt.artist}</h4>
                                 <h4
                                     css={css`
@@ -46,11 +46,11 @@ export default class SaibaMais extends Component {
                                 >
                                     {this.state.data.pt.title}
                                 </h4>
-                            </AboutSession>
-                            <AboutSession>
+                            </AboutSection>
+                            <AboutSection>
                                 <p>{this.state.data.pt.content}</p>
-                            </AboutSession>
-                            <AboutSession>
+                            </AboutSection>
+                            <AboutSection>
                                 <a
                                     href={this.state.data.pt.link}
                                     target="_blank"
@@ -58,9 +58,9 @@ export default class SaibaMais extends Component {
                                 >
                                     <Botao>Saiba +</Botao>
                                 </a>
-                            </AboutSession>
+                            </AboutSection>
                             {this.state.data.partnersLogos ? (
-                                <AboutSession>
+                                <AboutSection>
                                     <p
                                         css={css`
                                             font: bold 0.8em FedraMono !important;
@@ -88,7 +88,7 @@ export default class SaibaMais extends Component {
                                             )
                                         )}
                                     </div>
-                                </AboutSession>
+                                </AboutSection>
                             ) : null}
                         </div>
                     ) : (
