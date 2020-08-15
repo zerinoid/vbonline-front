@@ -11,8 +11,8 @@ import AboutSection from './about-section.component';
 export default class SaibaMais extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
-            data: null 
+        this.state = {
+            data: null,
         };
     }
 
@@ -27,19 +27,24 @@ export default class SaibaMais extends Component {
             <div className="sobre limite">
                 <div
                     css={css`
-                        flex: 1 5 0;
+                        flex: 1 1 0;
                     `}
                 />
                 <div
                     css={css({
                         color: colors.vermelho,
                         flex: '5 1 0',
+                        '@media (max-width: 992px)': {
+                            flexGrow: 8,
+                        },
                     })}
                 >
                     {this.state.data ? (
                         <div>
                             <AboutSection>
-                                <h4>{this.state.data[this.props.lang].artist}</h4>
+                                <h4>
+                                    {this.state.data[this.props.lang].artist}
+                                </h4>
                                 <h4
                                     css={css`
                                         font-weight: normal;
@@ -50,7 +55,9 @@ export default class SaibaMais extends Component {
                                 </h4>
                             </AboutSection>
                             <AboutSection>
-                                <p>{this.state.data[this.props.lang].content}</p>
+                                <p>
+                                    {this.state.data[this.props.lang].content}
+                                </p>
                             </AboutSection>
                             <AboutSection>
                                 <a
@@ -69,7 +76,11 @@ export default class SaibaMais extends Component {
                                             text-transform: uppercase;
                                         `}
                                     >
-                                        {this.state.data[this.props.lang].partners}:
+                                        {
+                                            this.state.data[this.props.lang]
+                                                .partners
+                                        }
+                                        :
                                     </p>
                                     <div
                                         css={css`
@@ -78,6 +89,9 @@ export default class SaibaMais extends Component {
                                             justify-content: space-between;
                                             width: ${this.state.data
                                                 .partnersLogos.length * 55}px;
+                                            @media (max-width: 992px) {
+                                                margin-bottom: 20px;
+                                            }
                                         `}
                                     >
                                         {this.state.data.partnersLogos.map(
@@ -102,6 +116,9 @@ export default class SaibaMais extends Component {
                 <div
                     css={css`
                         flex: 1 5 30px;
+                        @media (max-width: 992px) {
+                            flex-basis: 0;
+                        }
                     `}
                 />
             </div>
