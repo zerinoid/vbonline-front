@@ -203,6 +203,7 @@ export default function ListaDocs(props) {
     return (
         <div
             css={css`
+                height: calc(${windowHeight}px - 90px);
                 background: linear-gradient(
                     0deg,
                     ${colors.vermelho},
@@ -211,7 +212,6 @@ export default function ListaDocs(props) {
 
                 @media (max-width: 992px) {
                     background-attachment: fixed;
-                    height: calc(${windowHeight}px - 90px);
                     min-height: ${mainHeight +
                     thumbHeight * (4 - 1) +
                     4 * previewMargin +
