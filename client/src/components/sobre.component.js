@@ -9,7 +9,7 @@ import AboutSection from './about-section.component';
 export default class Sobre extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             data: null,
         };
     }
@@ -25,23 +25,32 @@ export default class Sobre extends Component {
             <div className="sobre limite">
                 <div
                     css={css`
-                        flex: 1 5 0;
+                        flex: 1 1 0;
                     `}
                 />
                 <div
                     css={css({
                         color: colors.vermelho,
                         flex: '5 1 0',
+                        '@media (max-width: 992px)': {
+                            flexGrow: 8,
+                        },
                     })}
                 >
                     {this.state.data ? (
                         <div>
                             <AboutSection>
-                                <h4>{this.state.data[this.props.lang].title}</h4>
+                                <h4>
+                                    {this.state.data[this.props.lang].title}
+                                </h4>
                             </AboutSection>
                             <AboutSection>
-                                <p>{this.state.data[this.props.lang].content}</p>
-                                <p>{this.state.data[this.props.lang].content}</p>
+                                <p>
+                                    {this.state.data[this.props.lang].content}
+                                </p>
+                                <p>
+                                    {this.state.data[this.props.lang].content}
+                                </p>
                             </AboutSection>
                             {this.state.data.partnersLogos ? (
                                 <AboutSection>
@@ -51,7 +60,11 @@ export default class Sobre extends Component {
                                             text-transform: uppercase;
                                         `}
                                     >
-                                        {this.state.data[this.props.lang].partners}:
+                                        {
+                                            this.state.data[this.props.lang]
+                                                .partners
+                                        }
+                                        :
                                     </p>
                                     <div
                                         css={css`
@@ -60,6 +73,9 @@ export default class Sobre extends Component {
                                             justify-content: space-between;
                                             width: ${this.state.data
                                                 .partnersLogos.length * 55}px;
+                                            @media (max-width: 992px) {
+                                                margin-bottom: 20px;
+                                            }
                                         `}
                                     >
                                         {this.state.data.partnersLogos.map(
@@ -83,7 +99,10 @@ export default class Sobre extends Component {
                 </div>
                 <div
                     css={css`
-                        flex: 1 5 30px;
+                        flex: 1 1 30px;
+                        @media (max-width: 992px) {
+                            flex-basis: 0;
+                        }
                     `}
                 />
             </div>
