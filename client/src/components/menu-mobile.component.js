@@ -29,9 +29,13 @@ const menuMobile = (props) => {
                     width: 100,
                 })}
             >
-                <Botao lingua={true}>PT</Botao>
+                <Botao lingua={true} onClick={props.toggle}>
+                    PT
+                </Botao>
                 <img alt="" src={barra} height="23" />
-                <Botao lingua={true}>EN</Botao>
+                <Botao lingua={true} onClick={props.toggle}>
+                    EN
+                </Botao>
                 <div
                     css={css`
                         flex-basis: 100%;
@@ -39,7 +43,7 @@ const menuMobile = (props) => {
                     `}
                 />
                 <Link to="/sobre">
-                    <Botao>VB Online</Botao>
+                    <Botao onClick={props.toggle}>VB Online</Botao>
                 </Link>
             </div>
         </div>

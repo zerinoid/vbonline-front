@@ -96,7 +96,7 @@ const App = (props) => {
     // Default language
     useEffect(() => {
         axios.get('/api/lang/get').then((res) => {
-            if(res.data === null){
+            if (res.data === null) {
                 axios.post('/api/lang/set/pt');
             } else {
                 setLangState(res.data);
@@ -222,7 +222,10 @@ const App = (props) => {
                             </div>
                         </nav>
                         <div className="conteudo">
-                            <MenuMobile isShown={menuMobileShow} />
+                            <MenuMobile
+                                isShown={menuMobileShow}
+                                toggle={menuMobileToggle}
+                            />
                             {
                                 <Route
                                     path="/"
@@ -237,16 +240,18 @@ const App = (props) => {
                                     )}
                                 />
                             }
-                            <Route path="/sobre" render={(props) => (
-                                <Sobre 
-                                    {...props} 
-                                    lang={langState} />
-                            )} />
-                            <Route path="/saibamais" render={(props) => (
-                                <SaibaMais 
-                                    {...props} 
-                                    lang={langState} />
-                            )} />
+                            <Route
+                                path="/sobre"
+                                render={(props) => (
+                                    <Sobre {...props} lang={langState} />
+                                )}
+                            />
+                            <Route
+                                path="/saibamais"
+                                render={(props) => (
+                                    <SaibaMais {...props} lang={langState} />
+                                )}
+                            />
                         </div>
                     </div>
                 )}
