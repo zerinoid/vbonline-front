@@ -24,6 +24,17 @@ const VideoPlayer = (props) => {
         // instantiate vimeo player
         player = new Player('vimeo-recipient', { id: 149458592 });
 
+        //listener de vídeo carregado
+        player.on(
+            'loaded',
+            player
+                .requestFullscreen()
+                .then(() => console.log('entrou em fullscreen'))
+                .catch((error) =>
+                    console.log('fullscreen não executado', error)
+                )
+        );
+
         player.on('play', function () {
             console.log('played the video!');
         });
