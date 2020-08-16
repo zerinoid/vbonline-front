@@ -35,6 +35,15 @@ const VideoPlayer = (props) => {
                 )
         );
 
+        //listener de mudança fullscreen
+        player.on(
+            'fullscreenchange',
+            player
+                .destroy()
+                .then(() => console.log('player destruido'))
+                .catch((erro) => console.log('player não destruido', erro))
+        );
+
         player.on('play', function () {
             console.log('played the video!');
         });
