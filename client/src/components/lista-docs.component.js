@@ -206,6 +206,7 @@ export default function ListaDocs(props) {
                     ${colors.vermelho},
                     ${colors.branco} 50%
                 );
+                min-height: ${windowHeight}px;
 
                 @media (max-width: 992px) {
                     background-attachment: fixed;
