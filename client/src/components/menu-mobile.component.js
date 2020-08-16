@@ -29,11 +29,11 @@ const menuMobile = (props) => {
                     width: 100,
                 })}
             >
-                <Botao lingua={true} onClick={props.toggle}>
+                <Botao lingua={true} onClick={props.setLang.bind(this, 'pt')}>
                     PT
                 </Botao>
                 <img alt="" src={barra} height="23" />
-                <Botao lingua={true} onClick={props.toggle}>
+                <Botao lingua={true} onClick={props.setLang.bind(this, 'en')}>
                     EN
                 </Botao>
                 <div

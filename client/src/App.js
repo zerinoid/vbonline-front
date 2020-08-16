@@ -76,6 +76,7 @@ const App = (props) => {
     const setLangHandler = (lang) => {
         setLangState(lang);
         axios.post(`/api/lang/set/${lang}`);
+        setMenuMobileShow(false);
     };
 
     // Main request
@@ -102,6 +103,11 @@ const App = (props) => {
             }
         });
     }, []);
+
+    // Fechar menuMobile
+    useEffect(() => {
+        if (menuMobileShow) setMenuMobileShow(false);
+    }, [pathname]);
 
     if (appState.data) {
         return (
@@ -229,7 +235,7 @@ const App = (props) => {
                         <div className="conteudo">
                             <MenuMobile
                                 isShown={menuMobileShow}
-                                toggle={menuMobileToggle}
+                                setLang={setLangHandler}
                             />
                             {
                                 <Route
