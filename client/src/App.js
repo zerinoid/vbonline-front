@@ -46,7 +46,7 @@ const App = (props) => {
     const openPlayer = (value) => {
         const videoJsOptions = {
             // autoplay: true,
-            controls: true,
+            // controls: true,
             id: 149458592,
             // sources: [
             //     {

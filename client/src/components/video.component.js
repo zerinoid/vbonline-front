@@ -22,7 +22,7 @@ const VideoPlayer = (props) => {
     // didMount
     useEffect(() => {
         // instantiate vimeo player
-        player = new Player('vimeo-recipient', props.videoJsOptions);
+        player = new Player('vimeo-recipient', { id: 149458592 });
 
         player.on('play', function () {
             console.log('played the video!');
