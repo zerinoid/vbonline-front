@@ -1,12 +1,10 @@
-import React from 'react'
-import { useState, useEffect, useRef } from 'react';
+import React from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
-import videojs from 'video.js';
-import 'videojs-youtube';
+import Player from '@vimeo/player';
+// import 'videojs-youtube';
 
-const VideoPlayer = props => {
-
-    const videoNode = useRef();
+const VideoPlayer = (props) => {
     const history = useHistory();
     const { pathname } = useLocation();
     let player = null;
@@ -19,46 +17,30 @@ const VideoPlayer = props => {
         props.fechaVideo();
         destroyPlayer(player);
         history.push('/');
-    }
+    };
 
     // didMount
     useEffect(() => {
-        // instantiate Video.js
-        player = videojs(
-            videoNode.current,
-            props,
-            function onPlayerReady() {
-                // console.log('onPlayerReady', this);
-            }
-        );
+        // instantiate vimeo player
+        player = new Player('vimeo-recipient', props.videoJsOptions);
 
-        //adição de botão custom
-        let Button = videojs.getComponent('Button');
-        let bt = new Button(player, {
-            clickHandler: (event) => {
-                closePlayer();
-            },
+        player.on('play', function () {
+            console.log('played the video!');
         });
-        player.addChild(bt);
     }, []);
 
     // update
     useEffect(() => {
-        if(pathname !== "/video"){
+        if (pathname !== '/video') {
             closePlayer();
         }
     });
 
     return (
         <div>
-            <div data-vjs-player>
-                <video
-                    ref={videoNode}
-                    className="video-js"
-                ></video>
-            </div>
+            <div id="vimeo-recipient"></div>
         </div>
     );
-}
+};
 
 export default VideoPlayer;

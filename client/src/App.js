@@ -47,16 +47,13 @@ const App = (props) => {
         const videoJsOptions = {
             // autoplay: true,
             controls: true,
-            youtube: {
-                iv_load_policy: '3',
-            },
-            techOrder: ['youtube'],
-            sources: [
-                {
-                    src: `https://www.youtube.com/watch?v=${value.id}&list=${appState.data.playlist}&index=${value.order}`,
-                    type: 'video/youtube',
-                },
-            ],
+            id: 149458592,
+            // sources: [
+            //     {
+            //         src: `https://www.youtube.com/watch?v=${value.id}&list=${appState.data.playlist}&index=${value.order}`,
+            //         type: 'video/youtube',
+            //     },
+            // ],
         };
         setAppState({
             data: appState.data,
