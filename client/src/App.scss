@@ -94,6 +94,21 @@ h5 {
     font-size: 1.0em;
 }
 
+#video-container {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+#vimeo-player{
+    display: table-cell;
+    vertical-align: middle;
+}
+
 
 @media (max-width: 992px) {
     .limite {

@@ -1,64 +1,59 @@
-import React from 'react'
-import { useState, useEffect, useRef } from 'react';
+import React from 'react';
+import { useEffect } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
-import videojs from 'video.js';
-import 'videojs-youtube';
+import Player from '@vimeo/player';
 
-const VideoPlayer = props => {
-
-    const videoNode = useRef();
+const VideoPlayer = (props) => {
     const history = useHistory();
     const { pathname } = useLocation();
     let player = null;
 
-    const destroyPlayer = (player) => {
-        if (player) player.dispose();
-    };
-
     const closePlayer = () => {
         props.fechaVideo();
-        destroyPlayer(player);
+        if(player != null) player.destroy();
         history.push('/');
-    }
+    };
 
     // didMount
     useEffect(() => {
-        // instantiate Video.js
-        player = videojs(
-            videoNode.current,
-            props,
-            function onPlayerReady() {
-                // console.log('onPlayerReady', this);
-            }
-        );
+        // instantiate vimeo player
+        player = new Player('vimeo-player', props);
 
-        //adição de botão custom
-        let Button = videojs.getComponent('Button');
-        let bt = new Button(player, {
-            clickHandler: (event) => {
-                closePlayer();
-            },
+        // Fullscreen no carregamento do player
+        player.on('loaded', () => {
+            player
+                .requestFullscreen()
+                .catch((error) =>
+                    console.log('fullscreen não executado', error)
+                )
         });
-        player.addChild(bt);
+
+        // Fecha player ao sair de fullscreen
+        player.on('fullscreenchange', () => {
+            player.getFullscreen()
+                .then((fullscreen) => {
+                    if(!fullscreen){
+                        closePlayer();
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        });
     }, []);
 
     // update
     useEffect(() => {
-        if(pathname !== "/video"){
+        if (pathname !== '/video') {
             closePlayer();
         }
     });
 
     return (
-        <div>
-            <div data-vjs-player>
-                <video
-                    ref={videoNode}
-                    className="video-js"
-                ></video>
-            </div>
+        <div id="video-container">
+            <div id="vimeo-player"></div>
         </div>
     );
-}
+};
 
 export default VideoPlayer;
