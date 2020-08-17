@@ -236,6 +236,8 @@ const App = (props) => {
                             <MenuMobile
                                 isShown={menuMobileShow}
                                 setLang={setLangHandler}
+                                langState={langState}
+                                pathname={pathname}
                             />
                             {
                                 <Route
