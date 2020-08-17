@@ -200,7 +200,7 @@ export default function ListaDocs(props) {
     return (
         <div
             css={css`
-                //height: calc(${windowHeight}px - 90px);
+                height: calc(${windowHeight}px - 90px);
                 background: linear-gradient(
                     0deg,
                     ${colors.vermelho},
