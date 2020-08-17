@@ -200,13 +200,13 @@ export default function ListaDocs(props) {
     return (
         <div
             css={css`
-                height: calc(${windowHeight}px - 90px);
+                //height: calc(${windowHeight}px - 90px);
                 background: linear-gradient(
                     0deg,
                     ${colors.vermelho},
                     ${colors.branco} 50%
                 );
-                min-height: ${windowHeight}px;
+                //min-height: ${windowHeight}px;
 
                 @media (max-width: 992px) {
                     background-attachment: fixed;

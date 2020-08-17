@@ -29,7 +29,7 @@ const App = (props) => {
     const [appState, setAppState] = useState({
         data: null,
         showPlayer: false,
-        videoJsOptions: null,
+        vimeoOptions: null,
     });
 
     const [langState, setLangState] = useState('pt');
@@ -44,21 +44,18 @@ const App = (props) => {
 
     // Player
     const openPlayer = (value) => {
-        const videoJsOptions = {
-            // autoplay: true,
-            // controls: true,
-            id: 149458592,
-            // sources: [
-            //     {
-            //         src: `https://www.youtube.com/watch?v=${value.id}&list=${appState.data.playlist}&index=${value.order}`,
-            //         type: 'video/youtube',
-            //     },
-            // ],
+        console.log(value);
+        const vimeoOptions = {
+            autoplay: true,
+            controls: true,
+            id: value.id,
+            responsive: true,
+            texttrack: langState,
         };
         setAppState({
             data: appState.data,
             showPlayer: true,
-            videoJsOptions: videoJsOptions,
+            vimeoOptions: vimeoOptions,
         });
     };
 
@@ -66,7 +63,7 @@ const App = (props) => {
         setAppState({
             data: appState.data,
             showPlayer: false,
-            videoJsOptions: appState.videoJsOptions,
+            vimeoOptions: appState.vimeoOptions,
         });
 
     // Language handler
@@ -84,11 +81,11 @@ const App = (props) => {
                 setAppState({
                     data: res.data,
                     showPlayer: appState.showPlayer,
-                    videoJsOptions: appState.videoJsOptions,
+                    vimeoOptions: appState.vimeoOptions,
                 })
             )
             .catch((error) => console.log(error));
-    }, [appState.showPlayer, appState.videoJsOptions]);
+    }, [appState.showPlayer, appState.vimeoOptions]);
 
     // Default language
     useEffect(() => {
@@ -111,7 +108,7 @@ const App = (props) => {
             <div className="App">
                 {appState.showPlayer ? (
                     <VideoPlayer
-                        {...appState.videoJsOptions}
+                        {...appState.vimeoOptions}
                         fechaVideo={closePlayer}
                     />
                 ) : (
