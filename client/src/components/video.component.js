@@ -40,6 +40,12 @@ const VideoPlayer = (props) => {
                     console.log(error);
                 });
         });
+
+        // Fecha player ao final do vídeo
+        player.on('ended', () => {
+            closePlayer();
+        });
+
     }, []);
 
     // update
