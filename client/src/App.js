@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
 import axios from 'axios';
-import { Route, Link, useLocation } from 'react-router-dom';
+import { Route, Link, useLocation, useHistory } from 'react-router-dom';
 
 import './App.scss';
 
@@ -24,7 +24,8 @@ const largeBreakPoint = '@media (max-width: 992px)';
 const App = (props) => {
     // Location
     const { pathname } = useLocation();
-
+    // History
+    const history = useHistory();
     // State
     const [appState, setAppState] = useState({
         data: null,
@@ -72,6 +73,11 @@ const App = (props) => {
         axios.post(`/api/lang/set/${lang}`);
         setMenuMobileShow(false);
     };
+
+    // Don't allow empty video
+    if(appState.vimeoOptions === null && pathname === "/video"){
+        history.push('/');
+    }
 
     // Main request
     useEffect(() => {
