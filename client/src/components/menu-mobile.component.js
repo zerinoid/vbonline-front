@@ -6,7 +6,7 @@ import colors from '../styles/colors';
 
 import barra from '../assets/img/barraMobile.png';
 
-import Botao from './botao.component';
+import BotaoMenuMobile from './botao-menu-mobile.component';
 
 const menuMobile = (props) => {
     return (
@@ -29,13 +29,21 @@ const menuMobile = (props) => {
                     width: 100,
                 })}
             >
-                <Botao lingua={true} onClick={props.setLang.bind(this, 'pt')}>
+                <BotaoMenuMobile
+                    lingua={true}
+                    onClick={props.setLang.bind(this, 'pt')}
+                    active={props.langState === 'pt'}
+                >
                     PT
-                </Botao>
+                </BotaoMenuMobile>
                 <img alt="" src={barra} height="23" />
-                <Botao lingua={true} onClick={props.setLang.bind(this, 'en')}>
+                <BotaoMenuMobile
+                    lingua={true}
+                    onClick={props.setLang.bind(this, 'en')}
+                    active={props.langState === 'en'}
+                >
                     EN
-                </Botao>
+                </BotaoMenuMobile>
                 <div
                     css={css`
                         flex-basis: 100%;
@@ -43,7 +51,9 @@ const menuMobile = (props) => {
                     `}
                 />
                 <Link to="/sobre">
-                    <Botao onClick={props.toggle}>VB Online</Botao>
+                    <BotaoMenuMobile active={props.pathname === '/sobre'}>
+                        VB Online
+                    </BotaoMenuMobile>
                 </Link>
             </div>
         </div>
