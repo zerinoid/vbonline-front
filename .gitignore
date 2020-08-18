@@ -24,3 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 client/.scss-lint.yml
 package-lock.json
+
+# .env
+.env
