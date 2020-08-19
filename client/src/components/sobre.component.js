@@ -73,6 +73,9 @@ export default class Sobre extends Component {
                                             justify-content: space-between;
                                             width: ${this.state.data
                                                 .partnersLogos.length * 55}px;
+                                            img {
+                                                height: 50px;
+                                            }
                                             @media (max-width: 992px) {
                                                 margin-bottom: 20px;
                                             }

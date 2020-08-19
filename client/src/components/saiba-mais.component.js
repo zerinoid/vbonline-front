@@ -92,6 +92,9 @@ export default class SaibaMais extends Component {
                                             @media (max-width: 992px) {
                                                 margin-bottom: 20px;
                                             }
+                                            img {
+                                                height: 50px;
+                                            }
                                         `}
                                     >
                                         {this.state.data.partnersLogos.map(

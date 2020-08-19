@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 
 import Botao from './botao.component';
 
-import bigPlay from '../assets/img/bigplay.png';
-import smallPlay from '../assets/img/smplay.png';
+import bigPlay from '../assets/img/big_play.png';
+import smallPlay from '../assets/img/sm_play.png';
 import hvSmallPlay from '../assets/img/hv_sm_play.png';
 import hvBigPlay from '../assets/img/hv_big_play.png';
 
@@ -97,11 +97,12 @@ const PlayButton = (props) => {
             <div
                 css={css({
                     cursor: 'pointer',
-                    backgroundImage: `url(${props.imagem})`,
+                    background: `url(${props.imagem}) center/${props.size}px no-repeat`,
+                    /* backgroundSize: `${props.size}px`, */
                     width: props.size,
                     height: props.size,
                     '&:hover': {
-                        backgroundImage: `url(${props.hvimagem})`,
+                        background: `url(${props.hvimagem}) center/${props.hvsize}px no-repeat`,
                         width: props.hvsize,
                         height: props.hvsize,
                     },
