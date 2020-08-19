@@ -75,7 +75,7 @@ const App = (props) => {
     };
 
     // Don't allow empty video
-    if(appState.vimeoOptions === null && pathname === "/video"){
+    if (appState.vimeoOptions === null && pathname === '/video') {
         history.push('/');
     }
 
@@ -118,8 +118,8 @@ const App = (props) => {
                         fechaVideo={closePlayer}
                     />
                 ) : (
-                    <div>
-                        <nav className="limite">
+                    <div className="limite">
+                        <nav>
                             <div
                                 css={css({
                                     flex: '1 1 0',
@@ -144,9 +144,11 @@ const App = (props) => {
                                             [largeBreakPoint]: {
                                                 position: 'relative',
                                                 width:
-                                                    pathname !== '/' ? 25 : 90,
+                                                    pathname !== '/'
+                                                        ? 25
+                                                        : '57.6px',
                                                 height:
-                                                    pathname !== '/' ? 25 : 69,
+                                                    pathname !== '/' ? 25 : 44,
                                                 left: pathname !== '/' ? 7 : 0,
                                                 top: 0,
                                                 backgroundImage:
