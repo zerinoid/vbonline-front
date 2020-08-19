@@ -96,13 +96,19 @@ const PlayButton = (props) => {
                 css={css({
                     cursor: 'pointer',
                     background: `url(${props.imagem}) center/${props.size}px no-repeat`,
-                    /* backgroundSize: `${props.size}px`, */
                     width: props.size,
                     height: props.size,
                     '&:hover': {
                         background: `url(${props.hvimagem}) center/${props.hvsize}px no-repeat`,
                         width: props.hvsize,
                         height: props.hvsize,
+                    },
+                    '@media (max-width: 992px)': {
+                        '&:hover': {
+                            background: `url(${props.imagem}) center/${props.size}px no-repeat`,
+                            width: props.size,
+                            height: props.size,
+                        },
                     },
                 })}
                 onClick={props.click}
