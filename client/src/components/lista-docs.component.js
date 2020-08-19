@@ -16,23 +16,6 @@ const mainHeight = 620;
 const thumbHeight = 140;
 const previewMargin = 6;
 
-const DocPreviewMain = styled.div`
-    width: 100%;
-    height: ${mainHeight}px;
-    padding: 10% 10%;
-    margin-bottom: ${previewMargin}px;
-    background: url(${(props) => props.bg}) center/cover no-repeat;
-    color: white;
-    position: relative;
-    h3 {
-        text-transform: none;
-    }
-    button {
-        border: none;
-        position: relative;
-    }
-`;
-
 const DocPreviewContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -50,6 +33,26 @@ const DocPreviewContainer = styled.div`
     }
 `;
 
+const DocPreviewMain = styled.div`
+    width: 100%;
+    height: ${mainHeight}px;
+    padding: 10% 10%;
+    margin-bottom: ${previewMargin}px;
+    background: url(${(props) => props.bg}) center/cover no-repeat;
+    color: white;
+    position: relative;
+    h3 {
+        text-transform: none;
+    }
+    button {
+        border: none;
+        position: relative;
+    }
+    @media (max-width: 992px) {
+        height: calc(100vh - 90px);
+    }
+`;
+
 const DocPreviewThumb = (props) => (
     <DocPreviewMain
         css={css`
@@ -62,12 +65,12 @@ const DocPreviewThumb = (props) => (
                 font-family: FedraMono;
                 font-weight: normal;
             }
-
             &:hover {
                 box-shadow: inset 0px 0px 0px 2px #fff;
             }
             @media (max-width: 992px) {
                 width: 100%;
+                height: ${thumbHeight}px;
             }
         `}
         {...props}
