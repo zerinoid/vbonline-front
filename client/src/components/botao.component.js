@@ -13,6 +13,7 @@ const Botao = styled.button((props) => ({
     width: 100,
     maxWidth: props.lingua && '2em',
     padding: '2px 0 0 0',
+    cursor: props.active ? 'default !important' : 'pointer !important',
     '&:focus': { outline: 'none' },
     '&:hover': !props.active && {
         border: `solid 2px ${colors.vermelho}`,
