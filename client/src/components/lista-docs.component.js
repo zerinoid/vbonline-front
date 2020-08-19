@@ -21,9 +21,7 @@ const DocPreviewMain = styled.div`
     height: ${mainHeight}px;
     padding: 10% 10%;
     margin-bottom: ${previewMargin}px;
-    background-image: url(${(props) => props.bg});
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url(${(props) => props.bg}) center/cover no-repeat;
     color: white;
     position: relative;
     h3 {
