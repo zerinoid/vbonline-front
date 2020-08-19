@@ -17,6 +17,7 @@ const Botao = styled.button((props) => ({
     '&:focus': { outline: 'none' },
     '&:hover': !props.active && {
         border: `solid 2px ${colors.vermelho}`,
+        fontWeight: 'bold',
         // boxShadow: `inset 0px 0px 0px 2px ${colors.vermelho}`,
     },
     '@media (max-width: 992px)': {
