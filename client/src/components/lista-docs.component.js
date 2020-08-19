@@ -2,8 +2,8 @@
 import React from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import colors from '../styles/colors';
 import { Link } from 'react-router-dom';
+import colors from '../styles/colors';
 
 import Botao from './botao.component';
 
@@ -121,11 +121,6 @@ const PlayButton = (props) => {
 };
 
 export default function ListaDocs(props) {
-    const windowHeight =
-        window.innerHeight ||
-        document.documentElement.clientHeight ||
-        document.body.clientHeight;
-
     const video_list = props.lista.data.videos;
     const lang = props.lang ? props.lang : 'pt';
     const videoCount = video_list.lenght;
@@ -206,28 +201,8 @@ export default function ListaDocs(props) {
     }
 
     return (
-        <div
-            css={css`
-                height: calc(${windowHeight}px - 90px);
-                background: linear-gradient(
-                    0deg,
-                    ${colors.vermelho},
-                    ${colors.branco} 50%
-                );
-                //min-height: ${windowHeight}px;
-
-                @media (max-width: 992px) {
-                    background-attachment: fixed;
-                    min-height: ${
-                        mainHeight +
-                        thumbHeight * (4 - 1) +
-                        4 * previewMargin +
-                        10
-                    }px;
-                }
-            `}
-        >
-            <div className="lista-docs limite">{Lista()}</div>
+        <div>
+            <div className="lista-docs">{Lista()}</div>
         </div>
     );
 }
