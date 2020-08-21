@@ -13,7 +13,7 @@ body {
 }
 
 #root,
-.app,
+.App,
 .conteudo {
     height: 100%;
 }
@@ -111,6 +111,16 @@ h5 {
 #vimeo-player {
     display: table-cell;
     vertical-align: middle;
+}
+
+@media (min-width: 991px) {
+    .limite {
+        max-width: 4950px;
+    }
+
+    .App {
+        margin: 0 2.4% 2.4%;
+    }
 }
 
 

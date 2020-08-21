@@ -57,8 +57,7 @@ export default function ListaDocs(props) {
         <DocPreviewMain
             css={css`
                 width: 32.95%;
-                height: ${props.thumbHeight}px;
-                padding: 12px;
+                padding-bottom: 3.1%;
                 display: inline-block;
                 margin: 0 0 0 0;
                 p {
