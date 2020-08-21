@@ -77,6 +77,7 @@ export default function ListaDocs(props) {
     );
 
     const Absolute = styled.div`
+        padding: ${(props) => props.padding && props.padding};
         position: absolute;
         top: 0;
         left: 0;
@@ -84,7 +85,6 @@ export default function ListaDocs(props) {
         height: 100%;
         display: ${(props) => (props.flex ? 'flex' : 'block')};
         justify-content: center;
-        padding: ${(props) => props.padding && props.padding};
     `;
 
     const PlayButton = (props) => {
@@ -167,8 +167,8 @@ export default function ListaDocs(props) {
                                             hvsize={40}
                                         />
                                     </Absolute>
-                                    <Absolute padding={'1.8%'}>
-                                        <div>
+                                    <Absolute padding={'2%'}>
+                                        <div css={{ width: '50%' }}>
                                             <h4>{value[lang].title}</h4>
                                             <p>{value[lang].category}</p>
                                         </div>
