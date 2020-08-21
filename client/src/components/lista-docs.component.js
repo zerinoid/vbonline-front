@@ -35,7 +35,7 @@ export default function ListaDocs(props) {
 
     const DocPreviewMain = styled.div`
         width: 100%;
-        padding-bottom: 38.1%;
+        padding-bottom: 50.5%;
         margin-bottom: ${props.previewMargin}px;
         background: url(${(props) => props.bg}) center/cover no-repeat;
         color: white;
@@ -57,7 +57,7 @@ export default function ListaDocs(props) {
         <DocPreviewMain
             css={css`
                 width: 32.95%;
-                padding-bottom: 3.1%;
+                padding-bottom: 11.1%;
                 display: inline-block;
                 margin: 0 0 0 0;
                 p {
@@ -82,8 +82,9 @@ export default function ListaDocs(props) {
         left: 0;
         width: 100%;
         height: 100%;
-        display: flex;
+        display: ${(props) => (props.flex ? 'flex' : 'block')};
         justify-content: center;
+        padding: ${(props) => props.padding && props.padding};
     `;
 
     const PlayButton = (props) => {
@@ -125,8 +126,7 @@ export default function ListaDocs(props) {
             const main = video_list[0];
             const main_video = [
                 <DocPreviewMain bg={main[lang].poster} key={0}>
-                    <h1>{main[lang].title}</h1>
-                    <Absolute>
+                    <Absolute flex>
                         <PlayButton
                             click={() => props.playVideo(main)}
                             imagem={bigPlay}
@@ -135,10 +135,15 @@ export default function ListaDocs(props) {
                             hvsize={80}
                         />
                     </Absolute>
-                    <h3>{main[lang].subtitle}</h3>
-                    <Link to="/saibamais">
-                        <Botao>Saiba +</Botao>
-                    </Link>
+                    <Absolute padding={'13% 9%'}>
+                        <div css={{ width: '50%' }}>
+                            <h1>{main[lang].title}</h1>
+                            <h3>{main[lang].subtitle}</h3>
+                            <Link to="/saibamais">
+                                <Botao>Saiba +</Botao>
+                            </Link>
+                        </div>
+                    </Absolute>
                 </DocPreviewMain>,
             ];
 
@@ -153,8 +158,7 @@ export default function ListaDocs(props) {
                                     bg={value[lang].poster}
                                     key={index}
                                 >
-                                    <h4>{value[lang].title}</h4>
-                                    <Absolute>
+                                    <Absolute flex>
                                         <PlayButton
                                             click={() => props.playVideo(value)}
                                             imagem={smallPlay}
@@ -163,7 +167,12 @@ export default function ListaDocs(props) {
                                             hvsize={40}
                                         />
                                     </Absolute>
-                                    <p>{value[lang].category}</p>
+                                    <Absolute padding={'1.8%'}>
+                                        <div>
+                                            <h4>{value[lang].title}</h4>
+                                            <p>{value[lang].category}</p>
+                                        </div>
+                                    </Absolute>
                                 </DocPreviewThumb>
                             );
                         }
