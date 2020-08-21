@@ -115,7 +115,9 @@ const App = (props) => {
                 <Global
                     styles={{
                         body: {
-                            background: `linear-gradient(0deg, ${colors.vermelho}, white 50%)`,
+                            background:
+                                pathname === '/' &&
+                                `linear-gradient(0deg, ${colors.vermelho}, white 50%)`,
                             backgroundAttachment: 'fixed',
                         },
                     }}
