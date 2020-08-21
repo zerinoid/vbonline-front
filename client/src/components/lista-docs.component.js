@@ -16,13 +16,15 @@ export default function ListaDocs(props) {
     const video_list = props.lista.data.videos;
     const lang = props.lang ? props.lang : 'pt';
 
+    const previewMargin = '0.5%';
+
     const DocPreviewContainer = styled.div`
         display: flex;
         justify-content: space-between;
         @media (max-width: 992px) {
             flex-direction: column;
             > div {
-                margin-bottom: ${props.previewMargin}px;
+                margin-bottom: ${previewMargin};
             }
             > div:last-child {
                 margin-bottom: 0px;
@@ -36,7 +38,7 @@ export default function ListaDocs(props) {
     const DocPreviewMain = styled.div`
         width: 100%;
         padding-bottom: 50.5%;
-        margin-bottom: ${props.previewMargin}px;
+        margin-bottom: ${previewMargin};
         background: url(${(props) => props.bg}) center/cover no-repeat;
         color: white;
         position: relative;
@@ -48,6 +50,7 @@ export default function ListaDocs(props) {
             position: relative;
         }
         @media (max-width: 992px) {
+            margin-bottom: 6px;
             height: calc(100vh - 74px);
             padding-bottom: unset;
         }
@@ -69,7 +72,7 @@ export default function ListaDocs(props) {
                 }
                 @media (max-width: 992px) {
                     width: 100%;
-                    height: ${props.thumbHeight}px;
+                    height: 140px;
                 }
             `}
             {...localProps}

@@ -35,8 +35,6 @@ const App = (props) => {
 
     const [langState, setLangState] = useState('pt');
     const [menuMobileShow, setMenuMobileShow] = useState(false);
-    const thumbHeight = 140;
-    const previewMargin = 6;
 
     // Handler menu mobile
     const menuMobileToggle = () => {
@@ -252,8 +250,6 @@ const App = (props) => {
                                             lista={appState}
                                             lang={langState}
                                             playVideo={openPlayer}
-                                            thumbHeight={thumbHeight}
-                                            previewMargin={previewMargin}
                                         />
                                     )}
                                 />
