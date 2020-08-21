@@ -142,10 +142,10 @@ const App = (props) => {
                                             backgroundImage: `url(${logo})`,
                                             backgroundRepeat: 'no-repeat',
                                             backgroundSize: 'cover',
-                                            width: 200,
-                                            height: 153,
+                                            width: 168,
+                                            height: 129,
                                             position: 'absolute',
-                                            left: -38,
+                                            left: -51,
                                             top: 43,
                                             'z-index': 99,
                                             '&:hover': {
