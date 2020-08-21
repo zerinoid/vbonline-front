@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { useState, useEffect } from 'react';
-import { css, jsx } from '@emotion/core';
+import { css, jsx, Global } from '@emotion/core';
 import axios from 'axios';
 import { Route, Link, useLocation, useHistory } from 'react-router-dom';
+import colors from './styles/colors';
 
 import './App.scss';
 
@@ -111,6 +112,14 @@ const App = (props) => {
     if (appState.data) {
         return (
             <div className="App">
+                <Global
+                    styles={{
+                        body: {
+                            background: `linear-gradient(0deg, ${colors.vermelho}, white 50%)`,
+                            backgroundAttachment: 'fixed',
+                        },
+                    }}
+                ></Global>
                 {appState.showPlayer ? (
                     <VideoPlayer
                         {...appState.vimeoOptions}
