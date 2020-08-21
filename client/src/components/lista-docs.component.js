@@ -29,9 +29,6 @@ export default function ListaDocs(props) {
             > div:last-child {
                 margin-bottom: 0px;
             }
-            h4 {
-                margin-bottom: 0;
-            }
         }
     `;
 
@@ -172,7 +169,7 @@ export default function ListaDocs(props) {
                                     </Absolute>
                                     <Absolute padding={'2%'}>
                                         <div css={{ width: '50%' }}>
-                                            <h4>{value[lang].title}</h4>
+                                            <h5>{value[lang].title}</h5>
                                             <p>{value[lang].category}</p>
                                         </div>
                                     </Absolute>
@@ -198,7 +195,7 @@ export default function ListaDocs(props) {
                         <button>Saiba +</button>
                     </DocPreviewMain>
                     <DocPreviewThumb>
-                        <h4>Loading</h4>
+                        <h5>Loading</h5>
                         <p>&nbsp;</p>
                     </DocPreviewThumb>
                 </div>

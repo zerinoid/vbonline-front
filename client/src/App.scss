@@ -37,13 +37,14 @@ nav {
 }
 
 .sobre {
-    padding: 120px 1rem 60px;
+    padding: 120px 0 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
     p {
-        font-family: Graphik,
+        font-family: Graphik;
+        font-size: 1.2em;
     }
 }
 
@@ -89,12 +90,13 @@ h3 {
 }
 
 h4 {
-    font-size: 1.11em;
+    font-size: 1.2em;
     margin-bottom: 0;
 }
 
 h5 {
-    font-size: 1.0em;
+    font-size: 1.01em;
+    margin-bottom: 0;
 }
 
 #video-container {
@@ -130,7 +132,6 @@ h5 {
 
     nav {
         min-height: 60px;
-        padding: 8px 1rem;
 
         &>div {
             margin-bottom: 0px;
