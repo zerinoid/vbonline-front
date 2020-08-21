@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
 import axios from 'axios';
 import { Route, Link, useLocation, useHistory } from 'react-router-dom';
-import colors from './styles/colors';
 
 import './App.scss';
 
@@ -22,15 +21,6 @@ import fechar from './assets/img/fecharVerm.png';
 
 const largeBreakPoint = '@media (max-width: 992px)';
 
-const mainHeight = 620;
-const thumbHeight = 140;
-const previewMargin = 6;
-
-const windowHeight =
-    window.innerHeight ||
-    document.documentElement.clientHeight ||
-    document.body.clientHeight;
-
 const App = (props) => {
     // Location
     const { pathname } = useLocation();
@@ -44,8 +34,9 @@ const App = (props) => {
     });
 
     const [langState, setLangState] = useState('pt');
-
     const [menuMobileShow, setMenuMobileShow] = useState(false);
+    const thumbHeight = 140;
+    const previewMargin = 6;
 
     // Handler menu mobile
     const menuMobileToggle = () => {
@@ -121,27 +112,7 @@ const App = (props) => {
 
     if (appState.data) {
         return (
-            <div
-                className="App"
-                css={css`
-                    height: calc(${windowHeight}px);
-                    background: linear-gradient(
-                        0deg,
-                        ${colors.vermelho},
-                        ${colors.branco} 50%
-                    );
-                    // joguei + 200 aqui para fins de teste, está em aberto
-                    min-height: ${windowHeight + 200}px;
-                    background-attachment: fixed;
-
-                    @media (max-width: 992px) {
-                        min-height: ${mainHeight +
-                        thumbHeight * (4 - 1) +
-                        4 * previewMargin +
-                        10}px;
-                    }
-                `}
-            >
+            <div className="App">
                 {appState.showPlayer ? (
                     <VideoPlayer
                         {...appState.vimeoOptions}
@@ -281,6 +252,8 @@ const App = (props) => {
                                             lista={appState}
                                             lang={langState}
                                             playVideo={openPlayer}
+                                            thumbHeight={thumbHeight}
+                                            previewMargin={previewMargin}
                                         />
                                     )}
                                 />

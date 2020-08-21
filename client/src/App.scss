@@ -8,6 +8,8 @@ $navHeight: 90px;
 
 body {
     overflow-y: scroll;
+    background: linear-gradient(0deg, $vermelho, white 50%);
+    background-attachment: fixed;
 }
 
 #root,
