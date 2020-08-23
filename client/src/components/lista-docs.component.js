@@ -101,6 +101,8 @@ export default function ListaDocs(props) {
                         background: `url(${props.imagem}) center/${props.size}px no-repeat`,
                         width: props.size,
                         height: props.size,
+                        position: 'relative',
+                        zIndex: 1,
                         '&:hover': {
                             background: `url(${props.hvimagem}) center/${props.hvsize}px no-repeat`,
                             width: props.hvsize,
