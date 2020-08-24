@@ -9,6 +9,8 @@ $max_width: 5000px;
 $min_font: 10px;
 $max_font: 56px;
 
+$vermelho: #ed0000;
+
 html {
     @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }
@@ -142,7 +144,7 @@ h5 {
     padding: 3% 8%;
     // background-color: $vermelho;
     //background: linear-gradient(0deg, $vermelho, white 170%);
-    
+
     .bt-player {
         width: 22px;
         height: auto;
