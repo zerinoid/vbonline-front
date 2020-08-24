@@ -2,9 +2,16 @@
 @import "bootstrap/dist/css/bootstrap";
 @import "styles/fonts";
 @import "styles/video";
+@import "styles/fontSize";
 
-$vermelho: #ed0000;
-$navHeight: 90px;
+$min_width: 992px;
+$max_width: 5000px;
+$min_font: 10px;
+$max_font: 56px;
+
+html {
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
 
 #root,
 .App,
@@ -24,7 +31,7 @@ nav {
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
-    min-height: $navHeight;
+    min-height: 90px;
     padding: 8px 0;
 
     div {
@@ -157,7 +164,7 @@ h5 {
     }
 }
 
-@media (min-width: 991px) {
+@media (min-width: 993px) {
     .limite {
         max-width: 4950px;
     }
@@ -169,6 +176,10 @@ h5 {
 
 
 @media (max-width: 992px) {
+    html {
+        font-size: 16px;
+    }
+
     .limite {
         padding-bottom: 6px;
     }
