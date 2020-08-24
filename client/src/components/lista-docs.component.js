@@ -90,29 +90,31 @@ export default function ListaDocs(props) {
     const PlayButton = (props) => {
         return (
             <Link
-                css={css`
-                    margin: auto;
-                `}
+                css={{
+                    margin: 'auto',
+                    width: props.size,
+                    height: props.size,
+                    '@media (max-width: 992px)': {
+                        width: props.msize,
+                        height: props.msize,
+                    },
+                }}
                 to="/video"
             >
                 <div
                     css={css({
                         cursor: 'pointer',
-                        background: `url(${props.imagem}) center/${props.size}px no-repeat`,
-                        width: props.size,
-                        height: props.size,
+                        background: `url(${props.imagem}) center/100% no-repeat`,
+                        width: '99%',
+                        height: '99%',
                         position: 'relative',
                         zIndex: 1,
                         '&:hover': {
-                            background: `url(${props.hvimagem}) center/${props.hvsize}px no-repeat`,
-                            width: props.hvsize,
-                            height: props.hvsize,
+                            background: `url(${props.hvimagem}) center/100% no-repeat`,
                         },
                         '@media (max-width: 992px)': {
                             '&:hover': {
-                                background: `url(${props.imagem}) center/${props.size}px no-repeat`,
-                                width: props.size,
-                                height: props.size,
+                                background: `url(${props.imagem}) center/100% no-repeat`,
                             },
                         },
                     })}
@@ -133,8 +135,8 @@ export default function ListaDocs(props) {
                             click={() => props.playVideo(main)}
                             imagem={bigPlay}
                             hvimagem={hvBigPlay}
-                            size={82}
-                            hvsize={80}
+                            size={'5vw'}
+                            msize={'15vw'}
                         />
                     </Absolute>
                     <Absolute padding={'13% 9%'}>
@@ -165,8 +167,8 @@ export default function ListaDocs(props) {
                                             click={() => props.playVideo(value)}
                                             imagem={smallPlay}
                                             hvimagem={hvSmallPlay}
-                                            size={42}
-                                            hvsize={40}
+                                            size={'3vw'}
+                                            msize={'10vw'}
                                         />
                                     </Absolute>
                                     <Absolute padding={'2%'}>
