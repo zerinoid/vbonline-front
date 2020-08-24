@@ -45,12 +45,11 @@ const App = (props) => {
 
     // Player
     const openPlayer = (value) => {
-        console.log(value);
         const vimeoOptions = {
             autoplay: true,
             controls: true,
             id: value.id,
-            responsive: true,
+            // responsive: true,
             texttrack: langState,
         };
         setAppState({
