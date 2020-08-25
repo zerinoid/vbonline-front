@@ -61,15 +61,14 @@ export default function ListaDocs(props) {
                 display: inline-block;
                 margin: 0 0 0 0;
                 p {
-                    font-family: FedraMono;
-                    font-weight: normal;
+                    font: normal 0.8em FedraMono;
                 }
                 &:hover {
                     box-shadow: inset 0px 0px 0px 2px #fff;
                 }
                 @media (max-width: 992px) {
                     width: 100%;
-                    height: 140px;
+                    height: 130px;
                 }
             `}
             {...localProps}
@@ -140,7 +139,11 @@ export default function ListaDocs(props) {
                         />
                     </Absolute>
                     <Absolute padding={'13% 9%'}>
-                        <div css={{ width: '50%' }}>
+                        <div
+                            css={{
+                                '@media (min-width: 993px)': { width: '50%' },
+                            }}
+                        >
                             <h1>{main[lang].title}</h1>
                             <h3>{main[lang].subtitle}</h3>
                             <Link to="/saibamais">
@@ -172,7 +175,11 @@ export default function ListaDocs(props) {
                                         />
                                     </Absolute>
                                     <Absolute padding={'2%'}>
-                                        <div css={{ width: '50%' }}>
+                                        <div
+                                            css={{
+                                                width: '50%',
+                                            }}
+                                        >
                                             <h5>{value[lang].title}</h5>
                                             <p>{value[lang].category}</p>
                                         </div>
