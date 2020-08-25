@@ -10,9 +10,9 @@ const Botao = styled.button((props) => ({
     fontSize: '0.8em',
     borderRadius: '2vw',
     height: '1.57vw',
-    width: '6.3vw',
+    width: '5.5vw',
     maxWidth: props.lingua && '2em',
-    padding: '2px 0 0 0',
+    padding: '0.1vw 0 0 0',
     cursor: props.active ? 'default !important' : 'pointer !important',
     '&:focus': { outline: 'none' },
     '&:hover': !props.active && {

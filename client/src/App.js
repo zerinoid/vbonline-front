@@ -141,11 +141,11 @@ const App = (props) => {
                                             backgroundImage: `url(${logo})`,
                                             backgroundRepeat: 'no-repeat',
                                             backgroundSize: 'cover',
-                                            width: 168,
-                                            height: 129,
+                                            width: '9.2vw',
+                                            height: '7vw',
                                             position: 'absolute',
-                                            left: -51,
-                                            top: 43,
+                                            left: '-2vw',
+                                            top: '3.15vw',
                                             'z-index': 99,
                                             '&:hover': {
                                                 backgroundImage: `url(${hvlogo})`,
@@ -173,7 +173,7 @@ const App = (props) => {
                             </div>
                             <div
                                 css={css({
-                                    flex: '5 1 0',
+                                    flex: '6 1 0',
                                     [largeBreakPoint]: {
                                         justifyContent: 'flex-end',
                                     },
@@ -202,7 +202,7 @@ const App = (props) => {
                             </div>
                             <div
                                 css={css({
-                                    flex: '1 1 30px',
+                                    flex: '1 1 0.1%',
                                     justifyContent: 'space-between',
                                     alignItems: 'baseline',
                                     [largeBreakPoint]: {
@@ -218,7 +218,7 @@ const App = (props) => {
                                 <div
                                     css={css`
                                         justify-content: space-between;
-                                        min-width: 58px;
+                                        min-width: 3.7vw;
                                     `}
                                 >
                                     <Botao
