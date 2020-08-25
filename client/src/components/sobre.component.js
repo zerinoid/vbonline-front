@@ -22,7 +22,7 @@ export default class Sobre extends Component {
 
     render() {
         return (
-            <div className="sobre limite">
+            <div className="sobre">
                 <div
                     css={css`
                         flex: 1 1 0;
