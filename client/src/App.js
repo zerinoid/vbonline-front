@@ -204,6 +204,7 @@ const App = (props) => {
                                 css={css({
                                     flex: '1 1 30px',
                                     justifyContent: 'space-between',
+                                    alignItems: 'baseline',
                                     [largeBreakPoint]: {
                                         display: 'none',
                                     },
