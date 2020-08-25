@@ -24,7 +24,7 @@ html {
 .limite {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 8px 1rem 0;
+    padding: 0 1rem 0;
 }
 
 nav {
@@ -35,14 +35,14 @@ nav {
     justify-content: space-between;
     min-height: 90px;
     height: 5.7vw;
-    padding: 8px 0;
+    padding: 0.51vw 0;
 
     div {
         display: flex;
     }
 
     &>div {
-        margin-bottom: 5px;
+        margin-bottom: 0.32vw;
     }
 }
 
@@ -188,10 +188,11 @@ h5 {
     }
 
     nav {
-        min-height: 60px;
+        min-height: 68px;
+        padding: 16px 0 8px;
 
         &>div {
-            margin-bottom: 0px;
+            margin-bottom: 0;
         }
     }
 
