@@ -77,7 +77,13 @@ export default class Sobre extends Component {
                                                 height: 3.2vw;
                                             }
                                             @media (max-width: 992px) {
+                                                width: ${this.state.data
+                                                    .partnersLogos.length *
+                                                25}%;
                                                 margin-bottom: 20px;
+                                                img {
+                                                    height: 50px;
+                                                }
                                             }
                                         `}
                                     >
