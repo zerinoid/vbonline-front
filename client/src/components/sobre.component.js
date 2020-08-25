@@ -31,7 +31,7 @@ export default class Sobre extends Component {
                 <div
                     css={css({
                         color: colors.vermelho,
-                        flex: '5 1 0',
+                        flex: '3.75 1 0',
                         '@media (max-width: 992px)': {
                             flexGrow: 8,
                         },

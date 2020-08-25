@@ -173,7 +173,7 @@ const App = (props) => {
                             </div>
                             <div
                                 css={css({
-                                    flex: '6 1 0',
+                                    flex: '7 1 0',
                                     [largeBreakPoint]: {
                                         justifyContent: 'flex-end',
                                     },
