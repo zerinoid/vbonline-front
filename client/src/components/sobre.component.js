@@ -72,9 +72,9 @@ export default class Sobre extends Component {
                                             display: flex;
                                             justify-content: space-between;
                                             width: ${this.state.data
-                                                .partnersLogos.length * 65}px;
+                                                .partnersLogos.length * 4}vw;
                                             img {
-                                                height: 50px;
+                                                height: 3.2vw;
                                             }
                                             @media (max-width: 992px) {
                                                 margin-bottom: 20px;
