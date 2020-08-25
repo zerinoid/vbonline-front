@@ -34,7 +34,7 @@ export default function ListaDocs(props) {
 
     const DocPreviewMain = styled.div`
         width: 100%;
-        padding-bottom: 43.5%;
+        padding-bottom: 40.1%;
         margin-bottom: 0.5%;
         background: url(${(props) => props.bg}) center/cover no-repeat;
         color: white;
@@ -57,7 +57,7 @@ export default function ListaDocs(props) {
         <DocPreviewMain
             css={css`
                 width: 32.95%;
-                padding-bottom: 11.1%;
+                padding-bottom: 11%;
                 display: inline-block;
                 margin-bottom: 0;
                 p {
