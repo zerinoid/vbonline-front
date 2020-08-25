@@ -145,25 +145,36 @@ h5 {
     // background-color: $vermelho;
     //background: linear-gradient(0deg, $vermelho, white 170%);
 
-    .bt-player {
-        width: 22px;
-        height: auto;
-        cursor: pointer;
-        float: right;
-        margin-left: 22px;
+    .video-buttons div,
+    .video-boxes div {
+        text-align: right;
     }
 
-    #info-box {
-        position: absolute;
-        top: 80px;
-        right: 8%;
-        width: 17%;
-        min-width: 220px;
-        height: 42vh;
-        padding: 12px;
-        color: white;
-        background-color: $vermelho;
+    .video-boxes {
+        .info-box {
+            position: relative;
+            & > div {
+                position: absolute;
+                top: 2vh;
+                right: 0;
+                width: 11vw;
+                min-width: 220px;
+                height: 42vh;
+                padding: 2.5vh 2.5vw;
+                color: white;
+                background-color: $vermelho;
+            }
+        }
     }
+
+    .bt-player {
+        width: 2.1vw;
+        height: auto;
+        cursor: pointer;
+        // float: right;
+        // margin-left: 22px;
+    }
+
 }
 
 @media (min-width: 993px) {
