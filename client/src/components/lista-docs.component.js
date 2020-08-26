@@ -139,7 +139,7 @@ export default function ListaDocs(props) {
                             msize={'15vw'}
                         />
                     </Absolute>
-                    <Absolute padding={'13% 9%'}>
+                    <Absolute padding={'10% 9%'}>
                         <div
                             css={{
                                 '@media (min-width: 993px)': { width: '50%' },
