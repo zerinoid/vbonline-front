@@ -94,8 +94,7 @@ const VideoPlayer = (props) => {
             controls: true,
             id: nextVideo.id,
             current_video: nextVideo,
-            // responsive: true,
-            texttrack: "pt",
+            texttrack: lang,
         });
     };
 
