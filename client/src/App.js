@@ -113,7 +113,7 @@ const App = (props) => {
         if (appState.data && vinhetaRef.current != null) {
             const vid = vinhetaRef.current;
             // vid.play();
-            vid.onended = function() {
+            vid.onended = function () {
                 setVinhetaState(false);
             };
         }
@@ -128,7 +128,12 @@ const App = (props) => {
         if (vinhetaState) {
             return (
                 <div>
-                    <video id="vinheta" ref={vinhetaRef} autoPlay={true} muted="muted">
+                    <video
+                        id="vinheta"
+                        ref={vinhetaRef}
+                        autoPlay={true}
+                        muted="muted"
+                    >
                         <source src={vinhetaWebM} type="video/webm" />
                         <source src={vinhetaMp4} type="video/mp4" />
                     </video>
