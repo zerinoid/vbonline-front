@@ -111,9 +111,7 @@ const App = (props) => {
 
     useEffect(() => {
         if (appState.data && vinhetaRef.current != null) {
-            const vid = vinhetaRef.current;
-            // vid.play();
-            vid.onended = function() {
+            vinhetaRef.current.onended = function() {
                 setVinhetaState(false);
             };
         }
