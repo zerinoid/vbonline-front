@@ -41,6 +41,9 @@ const App = (props) => {
     const [vinhetaState, setVinhetaState] = useState(true);
 
     const vinhetaRef = useRef(null);
+    
+    // const showVinheta = process.env.NODE_ENV.substring(0, 3) !== "dev"
+    const showVinheta = true;
 
     // Handler menu mobile
     const menuMobileToggle = () => {
@@ -123,7 +126,7 @@ const App = (props) => {
     }, [pathname]);
 
     if (appState.data) {
-        if (vinhetaState) {
+        if (vinhetaState && showVinheta) {
             return (
                 <div
                     css={{

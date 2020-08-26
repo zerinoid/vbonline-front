@@ -81,7 +81,7 @@ exports.getListaDocs = (req, res, next) => {
                     title: 'As Asas da Borboleta',
                     subtitle: '',
                     poster: '/img/asas_01_low.jpg',
-                    poster: '/img/asas_01_thumb.jpg',
+                    thumb: '/img/asas_01_thumb.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
                               Brasil, 2017<br />
@@ -91,7 +91,7 @@ exports.getListaDocs = (req, res, next) => {
                     title: 'As Asas da Borboleta [The Butterfly’s Wings]',
                     subtitle: '',
                     poster: '/img/asas_01_low.jpg',
-                    poster: '/img/asas_01_thumb.jpg',
+                    thumb: '/img/asas_01_thumb.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
                               Brazil, 2017<br />
