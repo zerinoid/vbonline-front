@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { css, jsx, Global } from '@emotion/core';
 import axios from 'axios';
 import { Route, Link, useLocation, useHistory } from 'react-router-dom';
@@ -19,6 +19,8 @@ import hvlogo from './assets/img/hv_logo2x.png';
 import botaoMais from './assets/img/cruz.png';
 import botaoMaisApertado from './assets/img/cruzVerm.png';
 import fechar from './assets/img/fecharVerm.png';
+import vinhetaMp4 from './assets/video/vb_crf25.mp4'
+import vinhetaWebM from './assets/video/vb.webm'
 
 const largeBreakPoint = '@media (max-width: 992px)';
 
@@ -36,6 +38,9 @@ const App = (props) => {
 
     const [langState, setLangState] = useState('pt');
     const [menuMobileShow, setMenuMobileShow] = useState(false);
+    const [vinhetaState, setVinhetaState] = useState(true);
+
+    const vinhetaRef = useRef(null);
 
     // Handler menu mobile
     const menuMobileToggle = () => {
@@ -104,186 +109,212 @@ const App = (props) => {
         });
     }, []);
 
+    useEffect(() => {
+        if(vinhetaRef.current != null){
+            const vid = vinhetaRef.current;
+            // autoplay
+            vid.play();
+            // close on video end
+            vid.onended = () => {
+                setVinhetaState(false);
+            };
+        }
+    });
+
     // Fechar menuMobile
     useEffect(() => {
         if (menuMobileShow) setMenuMobileShow(false);
     }, [pathname]);
 
     if (appState.data) {
-        return (
-            <div className="App">
-                <Global
-                    styles={{
-                        body: {
-                            background:
-                                pathname === '/' &&
-                                `linear-gradient(0deg, ${colors.vermelho}, white 50%)`,
-                            backgroundAttachment: 'fixed',
-                        },
-                    }}
-                ></Global>
-                {appState.showPlayer ? (
-                    <VideoPlayer
-                        {...appState}
-                        fechaVideo={closePlayer}
-                        lang={langState}
-                    />
-                ) : (
-                    <div className="limite">
-                        <nav>
-                            <div
-                                css={css({
-                                    flex: '1 1 0',
-                                })}
-                            >
-                                <Link to="/">
-                                    <div
-                                        css={css({
-                                            cursor: 'pointer',
-                                            backgroundImage: `url(${logo})`,
-                                            backgroundRepeat: 'no-repeat',
-                                            backgroundSize: 'cover',
-                                            width: '9.2vw',
-                                            height: '7vw',
-                                            position: 'absolute',
-                                            left: '-2vw',
-                                            top: '3.15vw',
-                                            'z-index': 99,
-                                            '&:hover': {
-                                                backgroundImage: `url(${hvlogo})`,
-                                            },
-                                            [largeBreakPoint]: {
-                                                position: 'relative',
-                                                width:
-                                                    pathname !== '/'
-                                                        ? 25
-                                                        : '57.6px',
-                                                height:
-                                                    pathname !== '/' ? 25 : 44,
-                                                left: pathname !== '/' ? 7 : 0,
-                                                top: 0,
-                                                backgroundImage:
-                                                    pathname !== '/' &&
-                                                    `url(${fechar})`,
-                                                '&:hover': {
-                                                    backgroundImage: `url(${logo})`,
-                                                },
-                                            },
-                                        })}
-                                    />
-                                </Link>
-                            </div>
-                            <div
-                                css={css({
-                                    flex: '7 1 0',
-                                    [largeBreakPoint]: {
-                                        justifyContent: 'flex-end',
-                                    },
-                                })}
-                            >
-                                <Link to="/">
-                                    <Botao active={true}>Docs</Botao>
-                                </Link>
+
+        if(vinhetaState){
+            return (
+                <div>
+                    <video id="vinheta" ref={vinhetaRef}>
+                        <source src={vinhetaWebM} type="video/webm" />
+                        <source src={vinhetaMp4} type="video/mp4" />
+                    </video>
+                </div>
+            )
+
+        } else {
+            return (
+                <div className="App">
+                    <Global
+                        styles={{
+                            body: {
+                                background:
+                                    pathname === '/' &&
+                                    `linear-gradient(0deg, ${colors.vermelho}, white 50%)`,
+                                backgroundAttachment: 'fixed',
+                            },
+                        }}
+                    ></Global>
+                    {appState.showPlayer ? (
+                        <VideoPlayer
+                            {...appState}
+                            fechaVideo={closePlayer}
+                            lang={langState}
+                        />
+                    ) : (
+                        <div className="limite">
+                            <nav>
                                 <div
                                     css={css({
-                                        display: 'none',
-                                        background: menuMobileShow
-                                            ? `url(${botaoMaisApertado})`
-                                            : `url(${botaoMais})`,
-                                        backgroundSize: '25px',
-                                        width: 25,
-                                        height: 25,
-                                        marginLeft: 10,
-                                        cursor: 'pointer',
+                                        flex: '1 1 0',
+                                    })}
+                                >
+                                    <Link to="/">
+                                        <div
+                                            css={css({
+                                                cursor: 'pointer',
+                                                backgroundImage: `url(${logo})`,
+                                                backgroundRepeat: 'no-repeat',
+                                                backgroundSize: 'cover',
+                                                width: '9.2vw',
+                                                height: '7vw',
+                                                position: 'absolute',
+                                                left: '-2vw',
+                                                top: '3.15vw',
+                                                'z-index': 99,
+                                                '&:hover': {
+                                                    backgroundImage: `url(${hvlogo})`,
+                                                },
+                                                [largeBreakPoint]: {
+                                                    position: 'relative',
+                                                    width:
+                                                        pathname !== '/'
+                                                            ? 25
+                                                            : '57.6px',
+                                                    height:
+                                                        pathname !== '/' ? 25 : 44,
+                                                    left: pathname !== '/' ? 7 : 0,
+                                                    top: 0,
+                                                    backgroundImage:
+                                                        pathname !== '/' &&
+                                                        `url(${fechar})`,
+                                                    '&:hover': {
+                                                        backgroundImage: `url(${logo})`,
+                                                    },
+                                                },
+                                            })}
+                                        />
+                                    </Link>
+                                </div>
+                                <div
+                                    css={css({
+                                        flex: '7 1 0',
                                         [largeBreakPoint]: {
-                                            display: 'block',
+                                            justifyContent: 'flex-end',
                                         },
                                     })}
-                                    onClick={menuMobileToggle}
-                                />
-                            </div>
-                            <div
-                                css={css({
-                                    flex: '1 1 0.1%',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'baseline',
-                                    [largeBreakPoint]: {
-                                        display: 'none',
-                                    },
-                                })}
-                            >
-                                <Link to="/sobre">
-                                    <Botao active={pathname === '/sobre'}>
-                                        VB Online
-                                    </Botao>
-                                </Link>
-                                <div
-                                    css={css`
-                                        justify-content: space-between;
-                                        min-width: 3.7vw;
-                                    `}
                                 >
-                                    <Botao
-                                        onClick={setLangHandler.bind(
-                                            this,
-                                            'pt'
-                                        )}
-                                        lingua
-                                        active={langState === 'pt'}
-                                    >
-                                        PT
-                                    </Botao>
-                                    <Botao
-                                        onClick={setLangHandler.bind(
-                                            this,
-                                            'en'
-                                        )}
-                                        lingua
-                                        active={langState === 'en'}
-                                    >
-                                        EN
-                                    </Botao>
+                                    <Link to="/">
+                                        <Botao active={true}>Docs</Botao>
+                                    </Link>
+                                    <div
+                                        css={css({
+                                            display: 'none',
+                                            background: menuMobileShow
+                                                ? `url(${botaoMaisApertado})`
+                                                : `url(${botaoMais})`,
+                                            backgroundSize: '25px',
+                                            width: 25,
+                                            height: 25,
+                                            marginLeft: 10,
+                                            cursor: 'pointer',
+                                            [largeBreakPoint]: {
+                                                display: 'block',
+                                            },
+                                        })}
+                                        onClick={menuMobileToggle}
+                                    />
                                 </div>
-                            </div>
-                        </nav>
-                        <div className="conteudo">
-                            <MenuMobile
-                                isShown={menuMobileShow}
-                                setLang={setLangHandler}
-                                langState={langState}
-                                pathname={pathname}
-                            />
-                            {
+                                <div
+                                    css={css({
+                                        flex: '1 1 0.1%',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'baseline',
+                                        [largeBreakPoint]: {
+                                            display: 'none',
+                                        },
+                                    })}
+                                >
+                                    <Link to="/sobre">
+                                        <Botao active={pathname === '/sobre'}>
+                                            VB Online
+                                        </Botao>
+                                    </Link>
+                                    <div
+                                        css={css`
+                                            justify-content: space-between;
+                                            min-width: 3.7vw;
+                                        `}
+                                    >
+                                        <Botao
+                                            onClick={setLangHandler.bind(
+                                                this,
+                                                'pt'
+                                            )}
+                                            lingua
+                                            active={langState === 'pt'}
+                                        >
+                                            PT
+                                        </Botao>
+                                        <Botao
+                                            onClick={setLangHandler.bind(
+                                                this,
+                                                'en'
+                                            )}
+                                            lingua
+                                            active={langState === 'en'}
+                                        >
+                                            EN
+                                        </Botao>
+                                    </div>
+                                </div>
+                            </nav>
+                            <div className="conteudo">
+                                <MenuMobile
+                                    isShown={menuMobileShow}
+                                    setLang={setLangHandler}
+                                    langState={langState}
+                                    pathname={pathname}
+                                />
+                                {
+                                    <Route
+                                        path="/"
+                                        exact
+                                        render={(props) => (
+                                            <ListaDocs
+                                                {...props}
+                                                lista={appState}
+                                                lang={langState}
+                                                playVideo={openPlayer}
+                                            />
+                                        )}
+                                    />
+                                }
                                 <Route
-                                    path="/"
-                                    exact
+                                    path="/sobre"
                                     render={(props) => (
-                                        <ListaDocs
-                                            {...props}
-                                            lista={appState}
-                                            lang={langState}
-                                            playVideo={openPlayer}
-                                        />
+                                        <Sobre {...props} lang={langState} />
                                     )}
                                 />
-                            }
-                            <Route
-                                path="/sobre"
-                                render={(props) => (
-                                    <Sobre {...props} lang={langState} />
-                                )}
-                            />
-                            <Route
-                                path="/saibamais"
-                                render={(props) => (
-                                    <SaibaMais {...props} lang={langState} />
-                                )}
-                            />
+                                <Route
+                                    path="/saibamais"
+                                    render={(props) => (
+                                        <SaibaMais {...props} lang={langState} />
+                                    )}
+                                />
+                            </div>
                         </div>
-                    </div>
-                )}
-            </div>
-        );
+                    )}
+                </div>
+            );
+        }
+
     }
 
     return <div className="App"></div>;
