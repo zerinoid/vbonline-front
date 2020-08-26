@@ -236,7 +236,7 @@ const App = (props) => {
                                 </div>
                                 <div
                                     css={css({
-                                        flex: '1 1 0.1%',
+                                        flex: '1 1 1.5%',
                                         justifyContent: 'space-between',
                                         alignItems: 'baseline',
                                         [largeBreakPoint]: {
