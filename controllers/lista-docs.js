@@ -8,7 +8,8 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'Abdoulaye Konaté',
                     subtitle: 'Cores e Composições',
-                    poster: '/img/main_video_test.jpg',
+                    poster: '/img/corescomposicoes_01_low.jpg',
+                    thumb: '/img/corescomposicoes_01_thumb.jpg',
                     category: 'Doc',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
                               Brasil, 2017<br />
@@ -16,9 +17,9 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Abdoulaye Konaté',
-                    subtitle: '',
                     subtitle: 'Cores e Composições',
-                    poster: '/img/main_video_test.jpg',
+                    poster: '/img/corescomposicoes_01_low.jpg',
+                    thumb: '/img/corescomposicoes_01_thumb.jpg',
                     category: 'Doc',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
                               Brazil, 2017<br />
@@ -31,7 +32,8 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'Visita Preparatória ao Brasil',
                     subtitle: '',
-                    poster: '/img/video_test_2.jpg',
+                    poster: '/img/visita-preparatoria_01_low.jpg',
+                    thumb: '/img/visita-preparatoria_01_thumb.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
                               Brasil, 2017<br />
@@ -40,7 +42,8 @@ exports.getListaDocs = (req, res, next) => {
                 en: {
                     title: 'Preparatory Visit to Brazil',
                     subtitle: '',
-                    poster: '/img/video_test_2.jpg',
+                    poster: '/img/visita-preparatoria_01_low.jpg',
+                    thumb: '/img/visita-preparatoria_01_thumb.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
                               Brazil, 2017<br />
@@ -53,7 +56,8 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'Encontro em Arken',
                     subtitle: '',
-                    poster: '/img/video_test_3.jpg',
+                    poster: '/img/encontro_01_low.jpg',
+                    thumb: '/img/encontro_01_thumb.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
                               Brasil, 2017<br />
@@ -62,7 +66,8 @@ exports.getListaDocs = (req, res, next) => {
                 en: {
                     title: 'An Encounter in Arken',
                     subtitle: '',
-                    poster: '/img/video_test_3.jpg',
+                    poster: '/img/encontro_01_low.jpg',
+                    thumb: '/img/encontro_01_thumb.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
                               Brazil, 2017<br />
@@ -75,7 +80,8 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'As Asas da Borboleta',
                     subtitle: '',
-                    poster: '/img/video_test_4.jpg',
+                    poster: '/img/asas_01_low.jpg',
+                    poster: '/img/asas_01_thumb.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
                               Brasil, 2017<br />
@@ -84,7 +90,8 @@ exports.getListaDocs = (req, res, next) => {
                 en: {
                     title: 'As Asas da Borboleta [The Butterfly’s Wings]',
                     subtitle: '',
-                    poster: '/img/video_test_4.jpg',
+                    poster: '/img/asas_01_low.jpg',
+                    poster: '/img/asas_01_thumb.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
                               Brazil, 2017<br />
