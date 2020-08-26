@@ -5,6 +5,11 @@ const AboutSection = styled.div`
     @media (max-width: 992px) {
         margin-top: 50px;
     }
+    a {
+        color: #ed0000;
+        font-weight: bold;
+        text-decoration: underline;
+    }
 `;
 
 export default AboutSection;
