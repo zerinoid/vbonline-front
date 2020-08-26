@@ -110,12 +110,10 @@ const App = (props) => {
     }, []);
 
     useEffect(() => {
-        if (vinhetaRef.current != null) {
+        if (appState.data && vinhetaRef.current != null) {
             const vid = vinhetaRef.current;
-            // autoplay
-            vid.play();
-            // close on video end
-            vid.onended = () => {
+            // vid.play();
+            vid.onended = function() {
                 setVinhetaState(false);
             };
         }
@@ -130,7 +128,7 @@ const App = (props) => {
         if (vinhetaState) {
             return (
                 <div>
-                    <video id="vinheta" ref={vinhetaRef}>
+                    <video id="vinheta" ref={vinhetaRef} autoPlay={true} muted="muted">
                         <source src={vinhetaWebM} type="video/webm" />
                         <source src={vinhetaMp4} type="video/mp4" />
                     </video>
