@@ -127,7 +127,12 @@ const App = (props) => {
     if (appState.data) {
         if (vinhetaState) {
             return (
-                <div>
+                <div
+                    css={{
+                        background: colors.vermelho,
+                        height: '100vh',
+                    }}
+                >
                     <video
                         id="vinheta"
                         ref={vinhetaRef}
