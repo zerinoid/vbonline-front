@@ -152,18 +152,32 @@ h5 {
     }
 
     .video-boxes {
+
         .info-box {
             position: relative;
-            & > div {
+
+            .info-box-container {
                 position: absolute;
                 top: 2vh;
                 right: 0;
-                width: 11vw;
+                width: 13vw;
                 min-width: 220px;
-                height: 42vh;
+                height: auto;
                 padding: 2.5vh 2.5vw;
                 color: white;
                 background-color: $vermelho;
+
+                .info-box-caption,
+                .info-box-title {
+                    text-align: left;
+                }
+
+                .info-box-title {
+                    font-family: FedraMono;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+
             }
         }
     }
@@ -176,6 +190,11 @@ h5 {
         // margin-left: 22px;
     }
 
+}
+
+#vinheta {
+    width: 100%;
+    height: 100%;  
 }
 
 @media (min-width: 993px) {
