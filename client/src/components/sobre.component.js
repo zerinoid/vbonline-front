@@ -14,7 +14,7 @@ export default class Sobre extends Component {
         };
     }
 
-    // insert html from backend (used in info boxes)
+    // insert html from backend
     createMarkup = (markup) => {
         return {__html: markup};
     };

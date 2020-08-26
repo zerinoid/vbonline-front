@@ -16,6 +16,11 @@ export default class SaibaMais extends Component {
         };
     }
 
+    // insert html from backend
+    createMarkup = (markup) => {
+        return {__html: markup};
+    };
+
     componentDidMount() {
         axios.get('/api/saibamais').then((res) => {
             this.setState({ data: res.data });
@@ -55,9 +60,9 @@ export default class SaibaMais extends Component {
                                 </h4>
                             </AboutSection>
                             <AboutSection>
-                                <p>
-                                    {this.state.data[this.props.lang].content}
-                                </p>
+                                <div dangerouslySetInnerHTML={
+                                    this.createMarkup(this.state.data[this.props.lang].content)
+                                } />
                             </AboutSection>
                             <AboutSection>
                                 <a
@@ -88,12 +93,18 @@ export default class SaibaMais extends Component {
                                             display: flex;
                                             justify-content: space-between;
                                             width: ${this.state.data
-                                                .partnersLogos.length * 65}px;
-                                            @media (max-width: 992px) {
-                                                margin-bottom: 20px;
-                                            }
+                                                .partnersLogos.length * 4}vw;
                                             img {
-                                                height: 50px;
+                                                height: 3.2vw;
+                                            }
+                                            @media (max-width: 992px) {
+                                                width: ${this.state.data
+                                                    .partnersLogos.length *
+                                                25}%;
+                                                margin-bottom: 20px;
+                                                img {
+                                                    height: 50px;
+                                                }
                                             }
                                         `}
                                     >

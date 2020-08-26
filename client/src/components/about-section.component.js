@@ -5,10 +5,10 @@ const AboutSection = styled.div`
     @media (max-width: 992px) {
         margin-top: 50px;
     }
-    a {
+    p a {
         color: #ed0000;
         font-weight: bold;
-        text-decoration: underline;
+        border-bottom: 0.2vh solid #ed0000;
     }
 `;
 
