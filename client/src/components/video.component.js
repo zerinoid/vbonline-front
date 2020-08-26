@@ -132,7 +132,7 @@ const VideoPlayer = (props) => {
             });
             // Close player on video end
             playerState.on('ended', () => {
-                closePlayer();
+                goToNextVideo();
             });
         } 
     });

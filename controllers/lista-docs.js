@@ -16,6 +16,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Abdoulaye Konaté',
+                    subtitle: '',
                     subtitle: 'Cores e Composições',
                     poster: '/img/main_video_test.jpg',
                     category: 'Doc',
@@ -29,6 +30,7 @@ exports.getListaDocs = (req, res, next) => {
                 order: 2,
                 pt: {
                     title: 'Visita Preparatória ao Brasil',
+                    subtitle: '',
                     poster: '/img/video_test_2.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
@@ -37,6 +39,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Preparatory Visit to Brazil',
+                    subtitle: '',
                     poster: '/img/video_test_2.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
@@ -49,6 +52,7 @@ exports.getListaDocs = (req, res, next) => {
                 order: 3,
                 pt: {
                     title: 'Encontro em Arken',
+                    subtitle: '',
                     poster: '/img/video_test_3.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
@@ -57,6 +61,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'An Encounter in Arken',
+                    subtitle: '',
                     poster: '/img/video_test_3.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
@@ -69,6 +74,7 @@ exports.getListaDocs = (req, res, next) => {
                 order: 4,
                 pt: {
                     title: 'As Asas da Borboleta',
+                    subtitle: '',
                     poster: '/img/video_test_4.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
@@ -77,6 +83,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'As Asas da Borboleta [The Butterfly’s Wings]',
+                    subtitle: '',
                     poster: '/img/video_test_4.jpg',
                     category: 'Extras',
                     caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
