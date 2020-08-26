@@ -49,6 +49,7 @@ const App = (props) => {
             autoplay: true,
             controls: true,
             id: value.id,
+            current_video: value,
             // responsive: true,
             texttrack: langState,
         };
@@ -123,8 +124,9 @@ const App = (props) => {
                 ></Global>
                 {appState.showPlayer ? (
                     <VideoPlayer
-                        {...appState.vimeoOptions}
+                        {...appState}
                         fechaVideo={closePlayer}
+                        lang={langState}
                     />
                 ) : (
                     <div className="limite">

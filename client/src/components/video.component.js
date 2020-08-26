@@ -12,90 +12,133 @@ import playlistButton from '../assets/img/v_assets/vFila.png'
 import nextButton from '../assets/img/v_assets/vNext.png'
 
 const VideoPlayer = (props) => {
+    // Hooks
     const history = useHistory();
     const { pathname } = useLocation();
     const playerRef = useRef(null);
 
-    let player = null;
+    // Constants
+    const lang = props.lang;
+    const vimeoOptions = props.vimeoOptions;
 
-    // Infobox state
+    // State
     const [infoBoxState, setInfoBoxState] = useState("none");
     const [playlistBoxState, setPlaylistBoxState] = useState("none");
+    const [vimeoState, setVimeoState] = useState(vimeoOptions);
+    const [playerState, setPlayerState] = useState(null);
 
-    // Methods
+    // Initial order and next video
+    let firstVideo = props.data.videos.filter(
+        video => video.order == 1
+    );
+
+    let nextVideo = props.data.videos.filter(
+        video => video.order == (+vimeoOptions.current_video.order)+1
+    );
+
+    nextVideo = nextVideo.length > 0 ? nextVideo[0] : firstVideo[0];
+
+    /* 
+     *  Methods 
+     */
+
+    // insert html from backend (used in info boxes)
+    const createMarkup = (markup) => {
+        return {__html: markup};
+    };
+
+    // close player and return to home
     const closePlayer = () => {
         props.fechaVideo();
-        if(player != null) player.destroy();
+        if(playerState != null) playerState.destroy();
         history.push('/');
     };
 
+    // enter fullscreen
     const enterFullScreen = () => {
         if (!document.fullscreenElement) {
             playerRef.current.requestFullscreen();
         } 
     };
 
+    // close all info boxes
+    const closeBoxes = () => {
+        setInfoBoxState("none");
+        setPlaylistBoxState("none");
+    };
+
+    // toggle info box
     const toggleInfoBox = () => {
         if(infoBoxState == "none"){
+            closeBoxes();
             setInfoBoxState("block");
         } else {
             setInfoBoxState("none");
         }
     };
     
+    // toggle playlist box
     const togglePlaylistBox = () => {
         if(playlistBoxState == "none"){
+            closeBoxes();
             setPlaylistBoxState("block");
         } else {
             setPlaylistBoxState("none");
         }
     };
 
-    const goToNextVideo = () => {};
+    // set vimeo state with next video
+    const goToNextVideo = () => {
+        setVimeoState({
+            autoplay: true,
+            controls: true,
+            id: nextVideo.id,
+            current_video: nextVideo,
+            // responsive: true,
+            texttrack: "pt",
+        });
+    };
 
-    // didMount
+    /* 
+     *  Lifecycle 
+     */
+
+    // 1) instantiate a new player on first load or if vimeo data changes 
     useEffect(() => {
-        // Instantiate vimeo player
-        player = new Player('vimeo-player', props);
+        if(playerState != null) playerState.destroy();
+        setPlayerState(new Player('vimeo-player', vimeoState));
+    }, [vimeoState])
 
-        // Player loaded
-        player.on('loaded', () => {
+    // 2) if player changes, increment "nextVideo" by 1
+    useEffect(() => {
+        let order = (+vimeoState.current_video.order);
+        order += 1;
+        nextVideo = props.data.videos.filter(
+            video => video.order == order
+        );
+        nextVideo = nextVideo.length > 0 ? nextVideo[0] : firstVideo[0];
+    }, [playerState]);
 
-            // Minimum volume
-            player.getVolume().then((vol) => {
-                if(vol < 0.5){
-                    player.setVolume(0.5);
-                }
+    // 3) vimeo player events
+    useEffect(() => {
+        if(playerState != null){
+            // Player loaded
+            playerState.on('loaded', () => {
+                // Minimum volume
+                playerState.getVolume().then((vol) => {
+                    if(vol < 0.5){
+                        playerState.setVolume(0.5);
+                    }
+                });
             });
+            // Close player on video end
+            playerState.on('ended', () => {
+                closePlayer();
+            });
+        } 
+    });
 
-            // player
-            //     .requestFullscreen()
-            //     .catch((error) =>
-            //         console.log('fullscreen não executado', error)
-            //     )
-        });
-
-        // Close player on exit fullscreen
-        // player.on('fullscreenchange', () => {
-        //     player.getFullscreen()
-        //         .then((fullscreen) => {
-        //             if(!fullscreen){
-        //                 closePlayer();
-        //             }
-        //         })
-        //         .catch((error) => {
-        //             console.log(error);
-        //         });
-        // });
-
-        // Close player on video end
-        player.on('ended', () => {
-            closePlayer();
-        });
-
-    }, []);
-
-    // Close player on route change
+    // 4) Close player on route change
     useEffect(() => {
         if (pathname !== '/video') {
             closePlayer();
@@ -103,7 +146,6 @@ const VideoPlayer = (props) => {
     });
 
     return (
-
         <div id="video-outter">
             <div id="video-container">
                 <div id="vimeo-player" ref={playerRef} />
@@ -131,24 +173,21 @@ const VideoPlayer = (props) => {
                         </div>
                         <div className="row video-boxes">
                             <div className="info-box col-xs-2 col-xs-offset-1">
-                                <div style={{display: infoBoxState}}>
-                                    aaa
+                                <div className="info-box-container" style={{display: infoBoxState}}>
+                                    <p className="info-box-title">{vimeoState.current_video[lang].title}</p>
+                                    <div className="info-box-caption" dangerouslySetInnerHTML={
+                                        createMarkup(vimeoState.current_video[lang].caption)
+                                    } />
                                 </div>
                             </div>
                             <div className="info-box col-xs-2">
-                                <div style={{display: playlistBoxState}}>
+                                <div className="info-box-container" style={{display: playlistBoxState}}>
                                     bbb
                                 </div>
                             </div>
-                            <div className="col-xs-2">
-                                3
-                            </div>
-                            <div className="col-xs-2">
-                                F
-                            </div>
-                            <div className="col-xs-2">
-                                C
-                            </div>
+                            <div className="col-xs-2"></div>
+                            <div className="col-xs-2"></div>
+                            <div className="col-xs-2"></div>
                         </div>
                     </div>
                 </div>        
