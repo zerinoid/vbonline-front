@@ -104,7 +104,7 @@ const VideoPlayer = (props) => {
     useEffect(() => {
         if (playerState != null) playerState.destroy();
         setPlayerState(new Player('vimeo-player', vimeoState));
-    }, [vimeoState, playerState]);
+    }, [vimeoState]);
 
     // 2) if player changes, increment "nextVideo" by 1
     useEffect(() => {
