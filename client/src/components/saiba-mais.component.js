@@ -18,7 +18,7 @@ export default class SaibaMais extends Component {
 
     // insert html from backend
     createMarkup = (markup) => {
-        return {__html: markup};
+        return { __html: markup };
     };
 
     componentDidMount() {
@@ -60,9 +60,11 @@ export default class SaibaMais extends Component {
                                 </h4>
                             </AboutSection>
                             <AboutSection>
-                                <div dangerouslySetInnerHTML={
-                                    this.createMarkup(this.state.data[this.props.lang].content)
-                                } />
+                                <div
+                                    dangerouslySetInnerHTML={this.createMarkup(
+                                        this.state.data[this.props.lang].content
+                                    )}
+                                />
                             </AboutSection>
                             <AboutSection>
                                 <a
