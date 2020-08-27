@@ -270,7 +270,7 @@ const App = (props) => {
                                 >
                                     <Link to="/sobre">
                                         <Botao active={pathname === '/sobre'}>
-                                            VB Online
+                                            Sobre
                                         </Botao>
                                     </Link>
                                     <div
