@@ -170,21 +170,27 @@ const App = (props) => {
                                 <div
                                     css={css({
                                         flex: '1 1 0',
+                                        height: '1.75vw',
                                     })}
                                 >
-                                    <Link to="/">
+                                    <Link
+                                        css={{
+                                            width: '9.2vw',
+                                            height: '7vw',
+                                            position: 'absolute',
+                                            'z-index': 99,
+                                            left: '-2.3vw',
+                                        }}
+                                        to="/"
+                                    >
                                         <div
                                             css={css({
                                                 cursor: 'pointer',
                                                 backgroundImage: `url(${logo})`,
                                                 backgroundRepeat: 'no-repeat',
                                                 backgroundSize: 'cover',
-                                                width: '9.2vw',
-                                                height: '7vw',
-                                                position: 'absolute',
-                                                left: '-2vw',
-                                                top: '3.15vw',
-                                                'z-index': 99,
+                                                width: '100%',
+                                                height: '100%',
                                                 '&:hover': {
                                                     backgroundImage: `url(${hvlogo})`,
                                                 },
