@@ -41,7 +41,7 @@ const App = (props) => {
     const [vinhetaState, setVinhetaState] = useState(true);
 
     const vinhetaRef = useRef(null);
-    
+
     // const showVinheta = process.env.NODE_ENV.substring(0, 3) !== "dev"
     const showVinheta = false;
 
@@ -114,7 +114,7 @@ const App = (props) => {
 
     useEffect(() => {
         if (appState.data && vinhetaRef.current != null) {
-            vinhetaRef.current.onended = function() {
+            vinhetaRef.current.onended = function () {
                 setVinhetaState(false);
             };
         }
