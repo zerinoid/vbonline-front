@@ -31,6 +31,9 @@ export default class Sobre extends Component {
                 <div
                     css={css`
                         flex: 1 1 0;
+                        @media (max-width: 992px) {
+                            display: none;
+                        }
                     `}
                 />
                 <div
@@ -114,7 +117,7 @@ export default class Sobre extends Component {
                     css={css`
                         flex: 1 1 30px;
                         @media (max-width: 992px) {
-                            flex-basis: 0;
+                            display: none;
                         }
                     `}
                 />

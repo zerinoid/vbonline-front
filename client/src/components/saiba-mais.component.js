@@ -29,10 +29,13 @@ export default class SaibaMais extends Component {
 
     render() {
         return (
-            <div className="sobre limite">
+            <div className="sobre">
                 <div
                     css={css`
                         flex: 1 1 0;
+                        @media (max-width: 992px) {
+                            display: none;
+                        }
                     `}
                 />
                 <div
@@ -133,7 +136,7 @@ export default class SaibaMais extends Component {
                     css={css`
                         flex: 1 5 30px;
                         @media (max-width: 992px) {
-                            flex-basis: 0;
+                            display: none;
                         }
                     `}
                 />
