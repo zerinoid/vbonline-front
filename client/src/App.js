@@ -171,6 +171,9 @@ const App = (props) => {
                                     css={css({
                                         flex: '1 1 0',
                                         height: '1.75vw',
+                                        [largeBreakPoint]: {
+                                            height: 'unset',
+                                        },
                                     })}
                                 >
                                     <Link
@@ -180,6 +183,12 @@ const App = (props) => {
                                             position: 'absolute',
                                             'z-index': 99,
                                             left: '-2.3vw',
+                                            [largeBreakPoint]: {
+                                                height: 'unset',
+                                                width: 'unset',
+                                                position: 'unset',
+                                                left: 'unset',
+                                            },
                                         }}
                                         to="/"
                                     >
