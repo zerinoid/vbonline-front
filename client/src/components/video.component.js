@@ -29,12 +29,35 @@ const VideoPlayer = (props) => {
 
     // Initial order and next video
     let firstVideo = props.data.videos.filter((video) => video.order == 1);
-
+    // Next video
     let nextVideo = props.data.videos.filter(
         (video) => video.order == +vimeoOptions.current_video.order + 1
     );
-
     nextVideo = nextVideo.length > 0 ? nextVideo[0] : firstVideo[0];
+    // Current video
+    let currentVideo = props.data.videos.filter(
+        (video) => video.order == +vimeoOptions.current_video.order
+    )[0];
+    // All videos except current
+    let remainingVideos = props.data.videos.filter(
+        (video) => video.order != +vimeoOptions.current_video.order
+    );
+
+    const pVideos = [];
+    pVideos.push(remainingVideos.map((value, index) => {
+        let video = value;
+        return (
+            <div className="row" key={index}>
+                <div className="col-xs-6">
+                    <img src={video[lang].thumb} />
+                </div>
+                <div className="col-xs-6">
+                    <p className="playlist-title">{video[lang].title}</p>
+                    <p className="playlist-category">{video[lang].category}</p>
+                </div>
+            </div>
+        );
+    }));
 
     /*
      *  Methods
@@ -104,7 +127,7 @@ const VideoPlayer = (props) => {
     useEffect(() => {
         if (playerState != null) playerState.destroy();
         setPlayerState(new Player('vimeo-player', vimeoState));
-    }, [vimeoState, playerState]);
+    }, [vimeoState]);
 
     // 2) if player changes, increment "nextVideo" by 1
     useEffect(() => {
@@ -126,7 +149,7 @@ const VideoPlayer = (props) => {
                     }
                 });
             });
-            // Close player on video end
+            // Go to next video once current video ends
             playerState.on('ended', () => {
                 goToNextVideo();
             });
@@ -168,7 +191,7 @@ const VideoPlayer = (props) => {
                                 <img
                                     src={nextButton}
                                     onClick={goToNextVideo}
-                                    className="bt-player"
+                                    className="bt-player bt-next"
                                 />
                             </div>
                             <div className="col-xs-2">
@@ -206,10 +229,10 @@ const VideoPlayer = (props) => {
                             </div>
                             <div className="info-box col-xs-2">
                                 <div
-                                    className="info-box-container"
+                                    className="info-box-container playlist"
                                     style={{ display: playlistBoxState }}
                                 >
-                                    bbb
+                                    {pVideos}
                                 </div>
                             </div>
                             <div className="col-xs-2"></div>

@@ -158,7 +158,7 @@ h5 {
 
             .info-box-container {
                 position: absolute;
-                top: 2vh;
+                top: 1.5vh;
                 right: 0;
                 width: 13vw;
                 min-width: 220px;
@@ -177,17 +177,42 @@ h5 {
                     font-weight: bold;
                     text-transform: uppercase;
                 }
+                &.playlist {
+                    width: 28vw;
+                    padding: 1.5vh 1vw;
+                    padding-bottom: 0.6vh;
 
+                    img {
+                        width: 100%;
+                        height: 90%;
+                        object-fit: cover;
+                    }
+                    p {
+                        text-align: left;
+                    }
+                    .playlist-title {
+                        text-decoration: underline;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+                    .playlist-category {
+                        position: relative;
+                        top: -1.5vh;
+                        font-size: 0.9em;
+                    }
+                }
             }
         }
     }
 
     .bt-player {
-        width: 2.1vw;
+        width: 2vw;
         height: auto;
         cursor: pointer;
-        // float: right;
-        // margin-left: 22px;
+    }
+
+    .bt-next {
+        width: 1.7vw;
     }
 
 }

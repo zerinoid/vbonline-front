@@ -14,6 +14,11 @@ export default class Sobre extends Component {
         };
     }
 
+    // insert html from backend
+    createMarkup = (markup) => {
+        return {__html: markup};
+    };
+
     componentDidMount() {
         axios.get('/api/sobre').then((res) => {
             this.setState({ data: res.data });
@@ -45,12 +50,9 @@ export default class Sobre extends Component {
                                 </h4>
                             </AboutSection>
                             <AboutSection>
-                                <p>
-                                    {this.state.data[this.props.lang].content}
-                                </p>
-                                <p>
-                                    {this.state.data[this.props.lang].content}
-                                </p>
+                                <div dangerouslySetInnerHTML={
+                                    this.createMarkup(this.state.data[this.props.lang].content)
+                                } />
                             </AboutSection>
                             {this.state.data.partnersLogos ? (
                                 <AboutSection>

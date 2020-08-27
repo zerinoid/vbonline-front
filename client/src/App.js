@@ -41,6 +41,9 @@ const App = (props) => {
     const [vinhetaState, setVinhetaState] = useState(true);
 
     const vinhetaRef = useRef(null);
+    
+    // const showVinheta = process.env.NODE_ENV.substring(0, 3) !== "dev"
+    const showVinheta = false;
 
     // Handler menu mobile
     const menuMobileToggle = () => {
@@ -111,9 +114,7 @@ const App = (props) => {
 
     useEffect(() => {
         if (appState.data && vinhetaRef.current != null) {
-            const vid = vinhetaRef.current;
-            // vid.play();
-            vid.onended = function () {
+            vinhetaRef.current.onended = function() {
                 setVinhetaState(false);
             };
         }
@@ -125,7 +126,7 @@ const App = (props) => {
     }, [pathname]);
 
     if (appState.data) {
-        if (vinhetaState) {
+        if (vinhetaState && showVinheta) {
             return (
                 <div
                     css={{
