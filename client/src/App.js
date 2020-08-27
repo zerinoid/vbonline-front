@@ -213,16 +213,16 @@ const App = (props) => {
                                                         pathname !== '/'
                                                             ? 25
                                                             : 44,
-                                                    left:
-                                                        pathname !== '/'
-                                                            ? 7
-                                                            : 0,
+                                                    left: 0,
                                                     top: 0,
                                                     backgroundImage:
                                                         pathname !== '/' &&
                                                         `url(${fechar})`,
                                                     '&:hover': {
-                                                        backgroundImage: `url(${logo})`,
+                                                        backgroundImage:
+                                                            pathname !== '/'
+                                                                ? `url(${fechar})`
+                                                                : `url(${logo})`,
                                                     },
                                                 },
                                             })}
