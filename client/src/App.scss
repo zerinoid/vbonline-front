@@ -177,6 +177,7 @@ h5 {
                     font-weight: bold;
                     text-transform: uppercase;
                 }
+
                 &.playlist {
                     width: 28vw;
                     padding: 1.5vh 1vw;
@@ -187,14 +188,17 @@ h5 {
                         height: 90%;
                         object-fit: cover;
                     }
+
                     p {
                         text-align: left;
                     }
+
                     .playlist-title {
                         text-decoration: underline;
                         font-weight: bold;
                         cursor: pointer;
                     }
+
                     .playlist-category {
                         position: relative;
                         top: -1.5vh;
@@ -257,7 +261,7 @@ h5 {
     }
 
     h1 {
-        font-size: 3.8em;
+        font-size: 3em;
     }
 
     h3 {
