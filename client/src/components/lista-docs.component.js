@@ -89,25 +89,38 @@ export default function ListaDocs(props) {
     function Lista() {
         if (video_list && video_list.length > 0) {
             // Main video
+            let buttonStyle = {
+                height: '1.8vw',
+                marginLeft: '0.5vw',
+            };
             const main = video_list[0];
             const main_video = [
                 <DocPreviewMain bg={main[lang].poster} key={0}>
                     <Absolute padding={'14% 16%'}>
                         <h1>{main[lang].title}</h1>
-                        <h3>{main[lang].subtitle}</h3>
-                        <Link to="/saibamais">
+                        <div
+                            css={{
+                                display: 'flex',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <h3>{main[lang].subtitle}</h3>
+                            <Link to="/saibamais">
+                                <HoverImage
+                                    alt=""
+                                    src={saibaMais}
+                                    hoverSrc={saibaMaisHv}
+                                    css={buttonStyle}
+                                />
+                            </Link>
                             <HoverImage
                                 alt=""
-                                src={saibaMais}
-                                hoverSrc={saibaMaisHv}
+                                src={playPrev}
+                                hoverSrc={playPrevHv}
+                                onClick={() => props.playVideo(main)}
+                                css={buttonStyle}
                             />
-                        </Link>
-                        <HoverImage
-                            alt=""
-                            src={playPrev}
-                            hoverSrc={playPrevHv}
-                        />
-                        <button click={() => props.playVideo(main)} />
+                        </div>
                     </Absolute>
                 </DocPreviewMain>,
             ];
