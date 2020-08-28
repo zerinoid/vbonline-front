@@ -14,8 +14,9 @@ import Botao from './components/botao.component';
 import SaibaMais from './components/saiba-mais.component';
 import MenuMobile from './components/menu-mobile.component';
 
-import logo from './assets/img/logo2x.png';
-import hvlogo from './assets/img/hv_logo2x.png';
+import logo from './assets/img/logo.png';
+import logoMob from './assets/img/logo_mb.png';
+// import hvlogo from './assets/img/hv_logo2x.png';
 import botaoMais from './assets/img/cruz.png';
 import botaoMaisApertado from './assets/img/cruzVerm.png';
 import fechar from './assets/img/fecharVerm.png';
@@ -200,9 +201,9 @@ const App = (props) => {
                                                 backgroundSize: 'cover',
                                                 width: '100%',
                                                 height: '100%',
-                                                '&:hover': {
-                                                    backgroundImage: `url(${hvlogo})`,
-                                                },
+                                                /* '&:hover': { */
+                                                /*     backgroundImage: `url(${hvlogo})`, */
+                                                /* }, */
                                                 [largeBreakPoint]: {
                                                     position: 'relative',
                                                     width:
@@ -216,14 +217,15 @@ const App = (props) => {
                                                     left: 0,
                                                     top: 0,
                                                     backgroundImage:
-                                                        pathname !== '/' &&
-                                                        `url(${fechar})`,
-                                                    '&:hover': {
-                                                        backgroundImage:
-                                                            pathname !== '/'
-                                                                ? `url(${fechar})`
-                                                                : `url(${logo})`,
-                                                    },
+                                                        pathname !== '/'
+                                                            ? `url(${fechar})`
+                                                            : `url(${logoMob})`,
+                                                    /* '&:hover': { */
+                                                    /*     backgroundImage: */
+                                                    /*         pathname !== '/' */
+                                                    /*             ? `url(${fechar})` */
+                                                    /*             : `url(${logoMob})`, */
+                                                    /* }, */
                                                 },
                                             })}
                                         />
