@@ -5,12 +5,10 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import colors from '../styles/colors';
 
-import Botao from './botao.component';
-
-import bigPlay from '../assets/img/big_play.png';
-import smallPlay from '../assets/img/sm_play.png';
-import hvSmallPlay from '../assets/img/hv_sm_play.png';
-import hvBigPlay from '../assets/img/hv_big_play.png';
+import playPrev from '../assets/img/play_prev.png';
+import playPrevHv from '../assets/img/play_prev_hv.png';
+import saibaMais from '../assets/img/saiba_mais.png';
+import saibaMaisHv from '../assets/img/saiba_mais_hv.png';
 
 export default function ListaDocs(props) {
     const video_list = props.lista.data.videos;
@@ -97,8 +95,9 @@ export default function ListaDocs(props) {
                         <h1>{main[lang].title}</h1>
                         <h3>{main[lang].subtitle}</h3>
                         <Link to="/saibamais">
-                            <Botao>+</Botao>
+                            <img alt="" src={saibaMais} />
                         </Link>
+                        <img alt="" src={playPrev} />
                         <button click={() => props.playVideo(main)} />
                     </Absolute>
                 </DocPreviewMain>,
