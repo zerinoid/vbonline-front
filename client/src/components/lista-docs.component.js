@@ -104,7 +104,15 @@ export default function ListaDocs(props) {
                                 alignItems: 'center',
                             }}
                         >
-                            <h3>{main[lang].subtitle}</h3>
+                            <h3
+                                css={{
+                                    margin: '0.4vw 0 0',
+                                    position: 'relative',
+                                    top: '-0.4vh',
+                                }}
+                            >
+                                {main[lang].subtitle}
+                            </h3>
                             <Link to="/saibamais">
                                 <HoverImage
                                     alt=""
