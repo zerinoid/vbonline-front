@@ -87,43 +87,6 @@ export default function ListaDocs(props) {
         justify-content: center;
     `;
 
-    const PlayButton = (props) => {
-        return (
-            <Link
-                css={{
-                    margin: 'auto',
-                    width: props.size,
-                    height: props.size,
-                    '@media (max-width: 992px)': {
-                        width: props.msize,
-                        height: props.msize,
-                    },
-                }}
-                to="/video"
-            >
-                <div
-                    css={css({
-                        cursor: 'pointer',
-                        background: `url(${props.imagem}) center/100% no-repeat`,
-                        width: '99%',
-                        height: '99%',
-                        position: 'relative',
-                        zIndex: 1,
-                        '&:hover': {
-                            background: `url(${props.hvimagem}) center/100% no-repeat`,
-                        },
-                        '@media (max-width: 992px)': {
-                            '&:hover': {
-                                background: `url(${props.imagem}) center/100% no-repeat`,
-                            },
-                        },
-                    })}
-                    onClick={props.click}
-                />
-            </Link>
-        );
-    };
-
     function Lista() {
         if (video_list && video_list.length > 0) {
             // Main video
@@ -136,7 +99,7 @@ export default function ListaDocs(props) {
                         <Link to="/saibamais">
                             <Botao>+</Botao>
                         </Link>
-                        <PlayButton click={() => props.playVideo(main)} />
+                        <button click={() => props.playVideo(main)} />
                     </Absolute>
                 </DocPreviewMain>,
             ];
@@ -153,13 +116,13 @@ export default function ListaDocs(props) {
                                     key={index}
                                 >
                                     <Absolute flex>
-                                        <PlayButton
-                                            click={() => props.playVideo(value)}
-                                            imagem={smallPlay}
-                                            hvimagem={hvSmallPlay}
-                                            size={'3vw'}
-                                            msize={'10vw'}
-                                        />
+                                        {/* <PlayButton */}
+                                        {/*     click={() => props.playVideo(value)} */}
+                                        {/*     imagem={smallPlay} */}
+                                        {/*     hvimagem={hvSmallPlay} */}
+                                        {/*     size={'3vw'} */}
+                                        {/*     msize={'10vw'} */}
+                                        {/* /> */}
                                     </Absolute>
                                     <Absolute padding={'2%'}>
                                         <div
