@@ -33,6 +33,7 @@ nav {
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
+    align-content: center;
     min-height: 90px;
     height: 5.7vw;
     padding: 0.51vw 0;
@@ -42,7 +43,7 @@ nav {
     }
 
     &>div {
-        margin-bottom: 0.32vw;
+        /* margin-bottom: 0.32vw; */
         height: 1.57vw;
     }
 }

@@ -169,32 +169,32 @@ const App = (props) => {
                         <div className="limite">
                             <nav>
                                 <div
-                                    css={css({
-                                        flex: '1 1 0',
-                                        height: '1.75vw',
+                                    css={{
+                                        flex: '4 1 0',
+                                        position: 'relative',
                                         [largeBreakPoint]: {
                                             height: 'unset',
+                                            width: 'unset',
+                                            position: 'unset',
+                                            left: 'unset',
                                         },
-                                    })}
+                                    }}
                                 >
                                     <Link
+                                        to="/"
                                         css={{
-                                            width: '9.2vw',
-                                            height: '7vw',
+                                            height: '1.57vw',
+                                            width: '10.3vw',
                                             position: 'absolute',
-                                            'z-index': 99,
-                                            left: '-2.3vw',
+                                            bottom: 0,
                                             [largeBreakPoint]: {
                                                 height: 'unset',
-                                                width: 'unset',
                                                 position: 'unset',
-                                                left: 'unset',
                                             },
                                         }}
-                                        to="/"
                                     >
                                         <div
-                                            css={css({
+                                            css={{
                                                 cursor: 'pointer',
                                                 backgroundImage: `url(${logo})`,
                                                 backgroundRepeat: 'no-repeat',
@@ -227,16 +227,15 @@ const App = (props) => {
                                                     /*             : `url(${logoMob})`, */
                                                     /* }, */
                                                 },
-                                            })}
+                                            }}
                                         />
                                     </Link>
                                 </div>
                                 <div
                                     css={css({
-                                        flex: '7 1 0',
-                                        [largeBreakPoint]: {
-                                            justifyContent: 'flex-end',
-                                        },
+                                        flex: '4 1 0',
+                                        justifyContent: 'flex-end',
+                                        paddingRight: '0.4vw',
                                     })}
                                 >
                                     <Link to="/">
