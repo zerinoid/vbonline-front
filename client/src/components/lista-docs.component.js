@@ -75,17 +75,6 @@ export default function ListaDocs(props) {
         />
     );
 
-    const Absolute = styled.div`
-        padding: ${(props) => props.padding && props.padding};
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: ${(props) => (props.flex ? 'flex' : 'block')};
-        ${(props) => props.flex && 'justify-content: space-between'};
-    `;
-
     function Lista() {
         if (video_list && video_list.length > 0) {
             // Main video
@@ -93,10 +82,20 @@ export default function ListaDocs(props) {
                 height: '1.8vw',
                 marginLeft: '0.5vw',
             };
+
+            let absoluteStyle = {
+                padding: '14% 16%',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+            };
+
             const main = video_list[0];
             const main_video = [
                 <DocPreviewMain bg={main[lang].poster} key={0}>
-                    <Absolute padding={'14% 16%'}>
+                    <div css={absoluteStyle}>
                         <h1>{main[lang].title}</h1>
                         <div
                             css={{
@@ -131,7 +130,7 @@ export default function ListaDocs(props) {
                                 />
                             </Link>
                         </div>
-                    </Absolute>
+                    </div>
                 </DocPreviewMain>,
             ];
 
@@ -139,6 +138,13 @@ export default function ListaDocs(props) {
             let videos = [];
             if (video_list.length > 1) {
                 buttonStyle = { ...buttonStyle, zIndex: 999 };
+
+                absoluteStyle = {
+                    ...absoluteStyle,
+                    padding: '2%',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                };
 
                 videos.push(
                     video_list.map((value, index) => {
@@ -149,9 +155,8 @@ export default function ListaDocs(props) {
                                     key={index}
                                 >
                                     <Link to="/video">
-                                        <Absolute
-                                            padding={'2%'}
-                                            flex
+                                        <div
+                                            css={absoluteStyle}
                                             onClick={() =>
                                                 props.playVideo(value)
                                             }
@@ -166,7 +171,7 @@ export default function ListaDocs(props) {
                                                 hoverSrc={playPrevHv}
                                                 css={buttonStyle}
                                             />
-                                        </Absolute>
+                                        </div>
                                     </Link>
                                 </DocPreviewThumb>
                             );
