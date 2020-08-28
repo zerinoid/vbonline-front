@@ -3,6 +3,7 @@ import React from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import HoverImage from 'react-hover-image';
 import colors from '../styles/colors';
 
 import playPrev from '../assets/img/play_prev.png';
@@ -95,9 +96,17 @@ export default function ListaDocs(props) {
                         <h1>{main[lang].title}</h1>
                         <h3>{main[lang].subtitle}</h3>
                         <Link to="/saibamais">
-                            <img alt="" src={saibaMais} />
+                            <HoverImage
+                                alt=""
+                                src={saibaMais}
+                                hoverSrc={saibaMaisHv}
+                            />
                         </Link>
-                        <img alt="" src={playPrev} />
+                        <HoverImage
+                            alt=""
+                            src={playPrev}
+                            hoverSrc={playPrevHv}
+                        />
                         <button click={() => props.playVideo(main)} />
                     </Absolute>
                 </DocPreviewMain>,
