@@ -37,16 +37,16 @@ const VideoPlayer = (props) => {
     let firstVideo = props.data.videos.filter((video) => video.order == 1);
     // Next video
     let nextVideo = props.data.videos.filter(
-        (video) => video.order == +vimeoOptions.current_video.order + 1
+        (video) => video.order == +vimeoState.current_video.order + 1
     );
     nextVideo = nextVideo.length > 0 ? nextVideo[0] : firstVideo[0];
     // Current video
     let currentVideo = props.data.videos.filter(
-        (video) => video.order == +vimeoOptions.current_video.order
+        (video) => video.order == +vimeoState.current_video.order
     )[0];
     // All videos except current
     let remainingVideos = props.data.videos.filter(
-        (video) => video.order != +vimeoOptions.current_video.order
+        (video) => video.order != +vimeoState.current_video.order
     );
 
     const pVideos = [];
@@ -55,7 +55,7 @@ const VideoPlayer = (props) => {
 
     pVideos.push(props.data.videos.map((value, index) => {
         let video = value;
-        let active = +vimeoOptions.current_video.order == video.order ? "active" : "";
+        let active = +vimeoState.current_video.order == video.order ? "active" : "";
 
         return (
             <div className={`row ${active}`} key={index}>
@@ -89,6 +89,7 @@ const VideoPlayer = (props) => {
     // enter fullscreen
     const enterFullScreen = () => {
         if (!document.fullscreenElement) {
+            closeBoxes();
             playerRef.current.requestFullscreen();
         }
     };
@@ -121,6 +122,7 @@ const VideoPlayer = (props) => {
 
     // set vimeo state with next video
     const goToNextVideo = () => {
+        closeBoxes();
         setVimeoState({
             autoplay: true,
             controls: true,
@@ -180,9 +182,45 @@ const VideoPlayer = (props) => {
                 <div id="vimeo-player" ref={playerRef} />
             </div>
             <div id="video-info">
-                <div className="row">
+                <div className="row" style={{position: 'relative'}}>
+                    <div style={{
+                        width: '100%',
+                        height: '100%',
+                        position: 'absolute',
+                        top: '0.4vh'
+                    }}>
+                        <div style={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'table',
+                            zIndex: '-1'
+                        }}>
+                            <div style={{
+                                width: '100%',
+                                height: '100%',
+                                verticalAlign: 'middle',
+                                display: 'table-cell',
+                                textAlign: 'center',
+                                zIndex: '-1',
+                                color: 'white',
+                                fontFamily: 'FedraMono',
+                            }}>
+                                <span style={{
+                                    textTransform: 'uppercase',
+                                    fontWeight: 'bold'
+                                }}>{vimeoState.current_video[lang].title}</span> 
+                                <span style={{
+                                    marginLeft: '0.7vw'
+                                }}>{vimeoState.current_video[lang].subtitle}</span>
+                            </div>
+                        </div>
+
+
+
+                        
+                    </div>
                     <div className="col-xs-8"></div>
-                    <div className="col-xs-4">
+                    <div className="col-xs-4" style={{ zIndex: '1' }}>
                         <div className="row video-buttons">
                             <div className="col-xs-2 col-xs-offset-1">
                                 <HoverImage 

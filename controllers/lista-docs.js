@@ -34,6 +34,7 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'Visita Preparatória ao Brasil',
                     subtitle: '',
+                    title_box: '',
                     poster: '/img/visita-preparatoria_01_low.jpg',
                     thumb: '/img/visita-preparatoria_01_thumb.jpg',
                     category: 'Extras',
@@ -44,6 +45,7 @@ exports.getListaDocs = (req, res, next) => {
                 en: {
                     title: 'Preparatory Visit to Brazil',
                     subtitle: '',
+                    title_box: '',
                     poster: '/img/visita-preparatoria_01_low.jpg',
                     thumb: '/img/visita-preparatoria_01_thumb.jpg',
                     category: 'Extras',
@@ -58,6 +60,7 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'Encontro em Arken',
                     subtitle: '',
+                    title_box: '',
                     poster: '/img/encontro_01_low.jpg',
                     thumb: '/img/encontro_01_thumb.jpg',
                     category: 'Extras',
@@ -68,6 +71,7 @@ exports.getListaDocs = (req, res, next) => {
                 en: {
                     title: 'An Encounter in Arken',
                     subtitle: '',
+                    title_box: '',
                     poster: '/img/encontro_01_low.jpg',
                     thumb: '/img/encontro_01_thumb.jpg',
                     category: 'Extras',
@@ -82,6 +86,7 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'As Asas da Borboleta',
                     subtitle: '',
+                    title_box: '',
                     poster: '/img/asas_01_low.jpg',
                     thumb: '/img/asas_01_thumb.jpg',
                     category: 'Extras',
@@ -92,6 +97,7 @@ exports.getListaDocs = (req, res, next) => {
                 en: {
                     title: 'As Asas da Borboleta [The Butterfly’s Wings]',
                     subtitle: '',
+                    title_box: '',
                     poster: '/img/asas_01_low.jpg',
                     thumb: '/img/asas_01_thumb.jpg',
                     category: 'Extras',
