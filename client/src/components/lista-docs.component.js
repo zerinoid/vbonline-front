@@ -10,6 +10,7 @@ import playPrev from '../assets/img/play_prev.png';
 import playPrevHv from '../assets/img/play_prev_hv.png';
 import saibaMais from '../assets/img/saiba_mais.png';
 import saibaMaisHv from '../assets/img/saiba_mais_hv.png';
+import setaMais from '../assets/img/seta_mais.png';
 
 export default function ListaDocs(props) {
     const video_list = props.lista.data.videos;
@@ -144,6 +145,7 @@ export default function ListaDocs(props) {
                                 />
                             </Link>
                         </div>
+                        <img alt="" src={setaMais} />
                     </div>
                 </DocPreviewMain>,
             ];
