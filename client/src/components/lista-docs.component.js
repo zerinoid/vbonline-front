@@ -130,27 +130,13 @@ export default function ListaDocs(props) {
             const main = video_list[0];
             const main_video = [
                 <DocPreviewMain bg={main[lang].poster} key={0}>
-                    <Absolute flex>
-                        <PlayButton
-                            click={() => props.playVideo(main)}
-                            imagem={bigPlay}
-                            hvimagem={hvBigPlay}
-                            size={'5vw'}
-                            msize={'15vw'}
-                        />
-                    </Absolute>
                     <Absolute padding={'10% 9%'}>
-                        <div
-                            css={{
-                                '@media (min-width: 993px)': { width: '50%' },
-                            }}
-                        >
-                            <h1>{main[lang].title}</h1>
-                            <h3>{main[lang].subtitle}</h3>
-                            <Link to="/saibamais">
-                                <Botao>Saiba +</Botao>
-                            </Link>
-                        </div>
+                        <h1>{main[lang].title}</h1>
+                        <h3>{main[lang].subtitle}</h3>
+                        <Link to="/saibamais">
+                            <Botao>+</Botao>
+                        </Link>
+                        <PlayButton click={() => props.playVideo(main)} />
                     </Absolute>
                 </DocPreviewMain>,
             ];
