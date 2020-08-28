@@ -81,6 +81,9 @@ export default function ListaDocs(props) {
             let buttonStyle = {
                 height: '1.8vw',
                 marginLeft: '0.5vw',
+                '@media (max-width: 992px)': {
+                    height: '7vw',
+                },
             };
 
             let absoluteStyle = {
@@ -90,6 +93,9 @@ export default function ListaDocs(props) {
                 left: 0,
                 width: '100%',
                 height: '100%',
+                '@media (max-width: 992px)': {
+                    padding: '20% 10%',
+                },
             };
 
             const main = video_list[0];
@@ -101,6 +107,9 @@ export default function ListaDocs(props) {
                             css={{
                                 display: 'flex',
                                 alignItems: 'center',
+                                '@media (max-width: 992px)': {
+                                    display: 'block',
+                                },
                             }}
                         >
                             <h3
@@ -108,6 +117,9 @@ export default function ListaDocs(props) {
                                     margin: '0.4vw 0 0',
                                     position: 'relative',
                                     top: '-0.4vh',
+                                    '@media (max-width: 992px)': {
+                                        position: 'unset',
+                                    },
                                 }}
                             >
                                 {main[lang].subtitle}
@@ -144,6 +156,7 @@ export default function ListaDocs(props) {
                     padding: '2%',
                     display: 'flex',
                     justifyContent: 'space-between',
+                    '@media (max-width: 992px)': null,
                 };
 
                 videos.push(
