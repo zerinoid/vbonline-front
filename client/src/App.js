@@ -171,7 +171,7 @@ const App = (props) => {
                                 <div
                                     css={{
                                         flex: '4 1 0',
-                                        position: 'relative',
+                                        alignItems: 'center',
                                         [largeBreakPoint]: {
                                             height: 'unset',
                                             width: 'unset',
@@ -180,52 +180,25 @@ const App = (props) => {
                                         },
                                     }}
                                 >
-                                    <Link
-                                        to="/"
-                                        css={{
-                                            height: '1.57vw',
-                                            width: '10.3vw',
-                                            position: 'absolute',
-                                            bottom: 0,
-                                            [largeBreakPoint]: {
-                                                height: 'unset',
-                                                position: 'unset',
-                                            },
-                                        }}
-                                    >
-                                        <div
+                                    <Link to="/">
+                                        <img
+                                            alt=""
+                                            src={logo}
                                             css={{
-                                                cursor: 'pointer',
-                                                backgroundImage: `url(${logo})`,
-                                                backgroundRepeat: 'no-repeat',
-                                                backgroundSize: 'cover',
-                                                width: '100%',
-                                                height: '100%',
-                                                /* '&:hover': { */
-                                                /*     backgroundImage: `url(${hvlogo})`, */
-                                                /* }, */
+                                                width: '12.8vw',
                                                 [largeBreakPoint]: {
-                                                    position: 'relative',
-                                                    width:
-                                                        pathname !== '/'
-                                                            ? 25
-                                                            : '57.6px',
-                                                    height:
-                                                        pathname !== '/'
-                                                            ? 25
-                                                            : 44,
-                                                    left: 0,
-                                                    top: 0,
-                                                    backgroundImage:
-                                                        pathname !== '/'
-                                                            ? `url(${fechar})`
-                                                            : `url(${logoMob})`,
-                                                    /* '&:hover': { */
-                                                    /*     backgroundImage: */
-                                                    /*         pathname !== '/' */
-                                                    /*             ? `url(${fechar})` */
-                                                    /*             : `url(${logoMob})`, */
-                                                    /* }, */
+                                                    display: 'none',
+                                                },
+                                            }}
+                                        />
+                                        <img
+                                            alt=""
+                                            src={logoMob}
+                                            css={{
+                                                width: '15.8vw',
+                                                display: 'none',
+                                                [largeBreakPoint]: {
+                                                    display: 'block',
                                                 },
                                             }}
                                         />
