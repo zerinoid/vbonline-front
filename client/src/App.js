@@ -16,7 +16,6 @@ import MenuMobile from './components/menu-mobile.component';
 
 import logo from './assets/img/logo.png';
 import logoMob from './assets/img/logo_mb.png';
-// import hvlogo from './assets/img/hv_logo2x.png';
 import botaoMais from './assets/img/cruz.png';
 import botaoMaisApertado from './assets/img/cruzVerm.png';
 import fechar from './assets/img/fecharVerm.png';
@@ -193,9 +192,16 @@ const App = (props) => {
                                         />
                                         <img
                                             alt=""
-                                            src={logoMob}
+                                            src={
+                                                pathname !== '/'
+                                                    ? fechar
+                                                    : logoMob
+                                            }
                                             css={{
-                                                width: '15.8vw',
+                                                width:
+                                                    pathname !== '/'
+                                                        ? 25
+                                                        : '15.8vw',
                                                 display: 'none',
                                                 [largeBreakPoint]: {
                                                     display: 'block',
