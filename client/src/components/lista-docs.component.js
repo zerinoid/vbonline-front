@@ -83,7 +83,7 @@ export default function ListaDocs(props) {
         width: 100%;
         height: 100%;
         display: ${(props) => (props.flex ? 'flex' : 'block')};
-        justify-content: center;
+        ${(props) => props.flex && 'justify-content: space-between'};
     `;
 
     function Lista() {
@@ -104,7 +104,15 @@ export default function ListaDocs(props) {
                                 alignItems: 'center',
                             }}
                         >
-                            <h3>{main[lang].subtitle}</h3>
+                            <h3
+                                css={{
+                                    margin: '0.4vw 0 0',
+                                    position: 'relative',
+                                    top: '-0.4vh',
+                                }}
+                            >
+                                {main[lang].subtitle}
+                            </h3>
                             <Link to="/saibamais">
                                 <HoverImage
                                     alt=""
@@ -130,6 +138,8 @@ export default function ListaDocs(props) {
             // Thumbs
             let videos = [];
             if (video_list.length > 1) {
+                buttonStyle = { ...buttonStyle, zIndex: 999 };
+
                 videos.push(
                     video_list.map((value, index) => {
                         if (index > 0) {
@@ -138,25 +148,26 @@ export default function ListaDocs(props) {
                                     bg={value[lang].poster}
                                     key={index}
                                 >
-                                    <Absolute flex>
-                                        {/* <PlayButton */}
-                                        {/*     click={() => props.playVideo(value)} */}
-                                        {/*     imagem={smallPlay} */}
-                                        {/*     hvimagem={hvSmallPlay} */}
-                                        {/*     size={'3vw'} */}
-                                        {/*     msize={'10vw'} */}
-                                        {/* /> */}
-                                    </Absolute>
-                                    <Absolute padding={'2%'}>
-                                        <div
-                                            css={{
-                                                width: '50%',
-                                            }}
+                                    <Link to="/video">
+                                        <Absolute
+                                            padding={'2%'}
+                                            flex
+                                            onClick={() =>
+                                                props.playVideo(value)
+                                            }
                                         >
-                                            <h5>{value[lang].title}</h5>
-                                            <p>{value[lang].category}</p>
-                                        </div>
-                                    </Absolute>
+                                            <div css={{ width: '50%' }}>
+                                                <h5>{value[lang].title}</h5>
+                                                <p>{value[lang].category}</p>
+                                            </div>
+                                            <HoverImage
+                                                alt=""
+                                                src={playPrev}
+                                                hoverSrc={playPrevHv}
+                                                css={buttonStyle}
+                                            />
+                                        </Absolute>
+                                    </Link>
                                 </DocPreviewThumb>
                             );
                         }
