@@ -124,20 +124,20 @@ export default function ListaDocs(props) {
                             >
                                 {main[lang].subtitle}
                             </h3>
-                            <Link to="/saibamais">
-                                <HoverImage
-                                    alt=""
-                                    src={saibaMais}
-                                    hoverSrc={saibaMaisHv}
-                                    css={buttonStyle}
-                                />
-                            </Link>
                             <Link to="/video">
                                 <HoverImage
                                     alt=""
                                     src={playPrev}
                                     hoverSrc={playPrevHv}
                                     onClick={() => props.playVideo(main)}
+                                    css={buttonStyle}
+                                />
+                            </Link>
+                            <Link to="/saibamais">
+                                <HoverImage
+                                    alt=""
+                                    src={saibaMais}
+                                    hoverSrc={saibaMaisHv}
                                     css={buttonStyle}
                                 />
                             </Link>
