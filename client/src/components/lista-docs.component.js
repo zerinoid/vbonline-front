@@ -50,6 +50,9 @@ export default function ListaDocs(props) {
             margin-bottom: ${previewMarginMobile};
             height: calc(100vh - 128px);
             padding-bottom: unset;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
         }
     `;
 
@@ -145,8 +148,19 @@ export default function ListaDocs(props) {
                                 />
                             </Link>
                         </div>
-                        <img alt="" src={setaMais} />
                     </div>
+                    <img
+                        alt=""
+                        src={setaMais}
+                        css={{
+                            display: 'block',
+                            marginBottom: '3vw',
+                            height: '4vw',
+                            '@media (min-width: 993px)': {
+                                display: 'none',
+                            },
+                        }}
+                    />
                 </DocPreviewMain>,
             ];
 
