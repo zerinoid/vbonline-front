@@ -91,7 +91,7 @@ export default function ListaDocs(props) {
             const main = video_list[0];
             const main_video = [
                 <DocPreviewMain bg={main[lang].poster} key={0}>
-                    <Absolute padding={'10% 9%'}>
+                    <Absolute padding={'14% 16%'}>
                         <h1>{main[lang].title}</h1>
                         <h3>{main[lang].subtitle}</h3>
                         <Link to="/saibamais">
