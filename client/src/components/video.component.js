@@ -4,12 +4,18 @@ import { useLocation, useHistory } from 'react-router-dom';
 import { css, jsx } from '@emotion/core';
 import Player from '@vimeo/player';
 import 'flexboxgrid';
+import HoverImage from "react-hover-image";
 
-import closeButton from '../assets/img/v_assets/vFechar.png';
-import fullScreenButton from '../assets/img/v_assets/vFullscreen.png';
-import infoButton from '../assets/img/v_assets/vMais.png';
-import playlistButton from '../assets/img/v_assets/vFila.png';
-import nextButton from '../assets/img/v_assets/vNext.png';
+import closeButton from '../assets/img/v_assets/new/botao_fechar_normal.png';
+import closeButtonActive from '../assets/img/v_assets/new/botao_fechar_hover.png';
+import fullScreenButton from '../assets/img/v_assets/new/botao_fullscreen_normal.png';
+import fullScreenButtonActive from '../assets/img/v_assets/new/botao_fullscreen_hover.png';
+import infoButton from '../assets/img/v_assets/new/botao_info_normal.png';
+import infoButtonActive from '../assets/img/v_assets/new/botao_info_hover.png';
+import playlistButton from '../assets/img/v_assets/new/botao_lista_normal.png';
+import playlistButtonActive from '../assets/img/v_assets/new/botao_lista_hover.png';
+import nextButton from '../assets/img/v_assets/new/botao_proximo_normal.png';
+import nextButtonActive from '../assets/img/v_assets/new/botao_proximo_hover.png';
 
 const VideoPlayer = (props) => {
     // Hooks
@@ -44,12 +50,17 @@ const VideoPlayer = (props) => {
     );
 
     const pVideos = [];
-    pVideos.push(remainingVideos.map((value, index) => {
+
+    
+
+    pVideos.push(props.data.videos.map((value, index) => {
         let video = value;
+        let active = +vimeoOptions.current_video.order == video.order ? "active" : "";
+
         return (
-            <div className="row" key={index}>
+            <div className={`row ${active}`} key={index}>
                 <div className="col-xs-6">
-                    <img src={video[lang].thumb} />
+                    <div className="thumb-container" style={{backgroundImage: `url(${video[lang].thumb})`}}></div>
                 </div>
                 <div className="col-xs-6">
                     <p className="playlist-title">{video[lang].title}</p>
@@ -170,43 +181,43 @@ const VideoPlayer = (props) => {
             </div>
             <div id="video-info">
                 <div className="row">
-                    <div className="col-xs-6"></div>
-                    <div className="col-xs-6">
+                    <div className="col-xs-8"></div>
+                    <div className="col-xs-4">
                         <div className="row video-buttons">
                             <div className="col-xs-2 col-xs-offset-1">
-                                <img
-                                    src={infoButton}
+                                <HoverImage 
+                                    src={infoButton} 
+                                    hoverSrc={infoButtonActive}
                                     onClick={toggleInfoBox}
-                                    className="bt-player"
-                                />
+                                    className="bt-player" />
                             </div>
                             <div className="col-xs-2">
-                                <img
-                                    src={playlistButton}
+                                <HoverImage 
+                                    src={playlistButton} 
+                                    hoverSrc={playlistButtonActive}
                                     onClick={togglePlaylistBox}
-                                    className="bt-player"
-                                />
+                                    className="bt-player" />
                             </div>
                             <div className="col-xs-2">
-                                <img
-                                    src={nextButton}
+                                <HoverImage 
+                                    src={nextButton} 
+                                    hoverSrc={nextButtonActive}
                                     onClick={goToNextVideo}
-                                    className="bt-player bt-next"
-                                />
+                                    className="bt-player" />
                             </div>
                             <div className="col-xs-2">
-                                <img
-                                    src={fullScreenButton}
+                                <HoverImage 
+                                    src={fullScreenButton} 
+                                    hoverSrc={fullScreenButtonActive}
                                     onClick={enterFullScreen}
-                                    className="bt-player"
-                                />
+                                    className="bt-player" />
                             </div>
                             <div className="col-xs-2">
-                                <img
-                                    src={closeButton}
+                                <HoverImage 
+                                    src={closeButton} 
+                                    hoverSrc={closeButtonActive}
                                     onClick={closePlayer}
-                                    className="bt-player"
-                                />
+                                    className="bt-player" />
                             </div>
                         </div>
                         <div className="row video-boxes">
