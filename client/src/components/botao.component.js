@@ -23,7 +23,8 @@ const Botao = styled.button((props) => ({
     '@media (max-width: 992px)': {
         borderRadius: 20,
         height: 25,
-        width: 100,
+        width: props.lingua ? 25 : 100,
+        padding: '2px 0 0',
         '&:hover': {
             border: 'initial',
         },

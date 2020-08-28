@@ -16,7 +16,7 @@ const menuMobile = (props) => {
                 position: 'absolute',
                 right: 0,
                 padding: '20px 18px',
-                margin: '8px 1rem 0 0',
+                margin: '0 1rem 0 0',
                 'z-index': 9999,
                 display: props.isShown ? 'block' : 'none',
             })}
