@@ -8,7 +8,7 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'Abdoulaye Konaté',
                     subtitle: 'Cores e Composições',
-                    title_box: 'Abdoulaye Konaté: Cores e composições',
+                    title_box: 'Abdoulaye Konaté:<br />Cores e composições',
                     poster: '/img/corescomposicoes_01_low.jpg',
                     thumb: '/img/corescomposicoes_01_thumb.jpg',
                     category: 'Doc',

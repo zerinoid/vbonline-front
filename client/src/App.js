@@ -29,6 +29,9 @@ const App = (props) => {
     const { pathname } = useLocation();
     // History
     const history = useHistory();
+    // Dimensions
+    const currentWidth = window.innerWidth;
+
     // State
     const [appState, setAppState] = useState({
         data: null,
@@ -42,8 +45,8 @@ const App = (props) => {
 
     const vinhetaRef = useRef(null);
 
-    // const showVinheta = process.env.NODE_ENV.substring(0, 3) !== "dev"
-    const showVinheta = false;
+    //const showVinheta = process.env.NODE_ENV.substring(0, 3) !== "dev"
+    const showVinheta = true;
 
     // Handler menu mobile
     const menuMobileToggle = () => {
@@ -126,7 +129,7 @@ const App = (props) => {
     }, [pathname]);
 
     if (appState.data) {
-        if (vinhetaState && showVinheta) {
+        if (vinhetaState && showVinheta && currentWidth > 992) {
             return (
                 <div
                     css={{

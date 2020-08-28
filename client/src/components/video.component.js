@@ -222,7 +222,7 @@ const VideoPlayer = (props) => {
                     <div className="col-xs-8"></div>
                     <div className="col-xs-4" style={{ zIndex: '1' }}>
                         <div className="row video-buttons">
-                            <div className="col-xs-2 col-xs-offset-1">
+                            <div className="col-xs-2 first-button">
                                 <HoverImage 
                                     src={infoButton} 
                                     hoverSrc={infoButtonActive}
@@ -259,13 +259,18 @@ const VideoPlayer = (props) => {
                             </div>
                         </div>
                         <div className="row video-boxes">
-                            <div className="info-box col-xs-2 col-xs-offset-1">
+                            <div className="info-box col-xs-2 first-button">
                                 <div
                                     className="info-box-container"
                                     style={{ display: infoBoxState }}
                                 >
-                                    <p className="info-box-title">
-                                        {vimeoState.current_video[lang].title}
+                                    <p className="info-box-title" dangerouslySetInnerHTML={
+                                        createMarkup(
+                                            vimeoState.current_video[lang].title_box ? 
+                                            vimeoState.current_video[lang].title_box :
+                                            vimeoState.current_video[lang].title
+                                        )
+                                    }>
                                     </p>
                                     <div
                                         className="info-box-caption"

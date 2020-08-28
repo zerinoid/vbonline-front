@@ -151,6 +151,18 @@ h5 {
         text-align: right;
     }
 
+    .row.video-buttons,
+    .row.video-boxes {
+        .col-xs-2 {
+            // flex-basis: 0;
+            padding-right: 0;
+            padding-left: 0.6vw;
+        }
+        .first-button {
+            margin-left: 5vw;
+        }
+    }
+
     .row.video-buttons {
         height: 6.2vh;
     }
@@ -162,8 +174,8 @@ h5 {
 
             .info-box-container {
                 position: absolute;
-                top: 0;
-                right: 1.2vw;
+                top: 0.1vh;
+                right: 0.5vw;
                 width: 15vw;
                 min-width: 220px;
                 height: auto;
@@ -180,6 +192,7 @@ h5 {
                 .info-box-title {
                     font-weight: bold;
                     text-decoration: underline;
+                    margin-bottom: 1.4vh;
                 }
 
                 &.playlist {
