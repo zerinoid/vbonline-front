@@ -148,22 +148,26 @@ export default function ListaDocs(props) {
                                     bg={value[lang].poster}
                                     key={index}
                                 >
-                                    <Absolute
-                                        padding={'2%'}
-                                        flex
-                                        onClick={() => props.playVideo(value)}
-                                    >
-                                        <div css={{ width: '50%' }}>
-                                            <h5>{value[lang].title}</h5>
-                                            <p>{value[lang].category}</p>
-                                        </div>
-                                        <HoverImage
-                                            alt=""
-                                            src={playPrev}
-                                            hoverSrc={playPrevHv}
-                                            css={buttonStyle}
-                                        />
-                                    </Absolute>
+                                    <Link to="/video">
+                                        <Absolute
+                                            padding={'2%'}
+                                            flex
+                                            onClick={() =>
+                                                props.playVideo(value)
+                                            }
+                                        >
+                                            <div css={{ width: '50%' }}>
+                                                <h5>{value[lang].title}</h5>
+                                                <p>{value[lang].category}</p>
+                                            </div>
+                                            <HoverImage
+                                                alt=""
+                                                src={playPrev}
+                                                hoverSrc={playPrevHv}
+                                                css={buttonStyle}
+                                            />
+                                        </Absolute>
+                                    </Link>
                                 </DocPreviewThumb>
                             );
                         }
