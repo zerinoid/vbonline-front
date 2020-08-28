@@ -80,8 +80,9 @@ export default function ListaDocs(props) {
             // Main video
             let buttonStyle = {
                 height: '1.8vw',
-                marginLeft: '0.5vw',
+                marginLeft: '0.2vw',
                 '@media (max-width: 992px)': {
+                    marginLeft: '0.5vw',
                     height: '7vw',
                 },
             };
@@ -117,6 +118,7 @@ export default function ListaDocs(props) {
                                     margin: '0.4vw 0 0',
                                     position: 'relative',
                                     top: '-0.4vh',
+                                    marginRight: '0.3vw',
                                     '@media (max-width: 992px)': {
                                         position: 'unset',
                                     },
