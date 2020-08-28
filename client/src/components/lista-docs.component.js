@@ -113,13 +113,15 @@ export default function ListaDocs(props) {
                                     css={buttonStyle}
                                 />
                             </Link>
-                            <HoverImage
-                                alt=""
-                                src={playPrev}
-                                hoverSrc={playPrevHv}
-                                onClick={() => props.playVideo(main)}
-                                css={buttonStyle}
-                            />
+                            <Link to="/video">
+                                <HoverImage
+                                    alt=""
+                                    src={playPrev}
+                                    hoverSrc={playPrevHv}
+                                    onClick={() => props.playVideo(main)}
+                                    css={buttonStyle}
+                                />
+                            </Link>
                         </div>
                     </Absolute>
                 </DocPreviewMain>,
