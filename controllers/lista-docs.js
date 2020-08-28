@@ -8,22 +8,24 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'Abdoulaye Konaté',
                     subtitle: 'Cores e Composições',
+                    title_box: 'Abdoulaye Konaté: Cores e composições',
                     poster: '/img/corescomposicoes_01_low.jpg',
                     thumb: '/img/corescomposicoes_01_thumb.jpg',
                     category: 'Doc',
-                    caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
-                              Brasil, 2017<br />
-                              Vídeo / 29'17"</p>`
+                    caption: `<p>2017, 29'17"<br />
+                              Direção:<br />
+                              <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
                 en: {
                     title: 'Abdoulaye Konaté',
                     subtitle: 'Cores e Composições',
+                    title_box: 'Abdoulaye Konaté: Cores e composições',
                     poster: '/img/corescomposicoes_01_low.jpg',
                     thumb: '/img/corescomposicoes_01_thumb.jpg',
                     category: 'Doc',
-                    caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
-                              Brazil, 2017<br />
-                              Video / 29'17"</p>`
+                    caption: `<p>2017, 29'17"<br />
+                              Director:<br />
+                              <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
             },
             {
@@ -35,9 +37,9 @@ exports.getListaDocs = (req, res, next) => {
                     poster: '/img/visita-preparatoria_01_low.jpg',
                     thumb: '/img/visita-preparatoria_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
-                              Brasil, 2017<br />
-                              Vídeo / 5'12"</p>`
+                    caption: `<p>2017, 5'12"<br />
+                              Direção:<br />
+                              <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
                 en: {
                     title: 'Preparatory Visit to Brazil',
@@ -45,9 +47,9 @@ exports.getListaDocs = (req, res, next) => {
                     poster: '/img/visita-preparatoria_01_low.jpg',
                     thumb: '/img/visita-preparatoria_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
-                              Brazil, 2017<br />
-                              Video / 5'12"</p>`
+                    caption: `<p>2017, 5'12"<br />
+                              Director:<br />
+                              <strong>Juliano Ribeiro Salgado</strong></p>`
                 }
             },
             {
@@ -59,9 +61,9 @@ exports.getListaDocs = (req, res, next) => {
                     poster: '/img/encontro_01_low.jpg',
                     thumb: '/img/encontro_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
-                              Brasil, 2017<br />
-                              Vídeo / 8'03"</p>`
+                    caption: `<p>2017, 8'03"<br />
+                              Direção:<br />
+                              <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
                 en: {
                     title: 'An Encounter in Arken',
@@ -69,9 +71,9 @@ exports.getListaDocs = (req, res, next) => {
                     poster: '/img/encontro_01_low.jpg',
                     thumb: '/img/encontro_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
-                              Brazil, 2017<br />
-                              Video / 8'03"</p>`
+                    caption: `<p>2017, 8'03"<br />
+                              Director:<br />
+                              <strong>Juliano Ribeiro Salgado</strong></p>`
                 }
             },
             {
@@ -83,9 +85,9 @@ exports.getListaDocs = (req, res, next) => {
                     poster: '/img/asas_01_low.jpg',
                     thumb: '/img/asas_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
-                              Brasil, 2017<br />
-                              Vídeo / 3'17"</p>`
+                    caption: `<p>2017, 3'17"<br />
+                              Direção:<br />
+                              <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
                 en: {
                     title: 'As Asas da Borboleta [The Butterfly’s Wings]',
@@ -93,9 +95,9 @@ exports.getListaDocs = (req, res, next) => {
                     poster: '/img/asas_01_low.jpg',
                     thumb: '/img/asas_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p><strong>Juliano Ribeiro Salgado</strong><br />
-                              Brazil, 2017<br />
-                              Video / 3'17"</p>`
+                    caption: `<p>2017, 3'17"<br />
+                              Director:<br />
+                              <strong>Juliano Ribeiro Salgado</strong></p>`
                 }
             },
         ],
