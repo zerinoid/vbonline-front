@@ -234,7 +234,7 @@ const App = (props) => {
                                 </div>
                                 <div
                                     css={css({
-                                        flex: '1 1 1.5%',
+                                        flex: '1 1 0.6%',
                                         justifyContent: 'space-between',
                                         alignItems: 'baseline',
                                         [largeBreakPoint]: {
@@ -250,7 +250,7 @@ const App = (props) => {
                                     <div
                                         css={css`
                                             justify-content: space-between;
-                                            min-width: 3.7vw;
+                                            min-width: 3.5vw;
                                         `}
                                     >
                                         <Botao
