@@ -253,7 +253,9 @@ const App = (props) => {
                                 >
                                     <Link to="/sobre">
                                         <Botao active={pathname === '/sobre'}>
-                                            Sobre
+                                            {langState === 'pt'
+                                                ? 'Sobre'
+                                                : 'About'}
                                         </Botao>
                                     </Link>
                                     <div

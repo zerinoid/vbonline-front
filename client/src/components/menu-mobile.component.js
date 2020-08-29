@@ -52,7 +52,7 @@ const menuMobile = (props) => {
                 />
                 <Link to="/sobre">
                     <BotaoMenuMobile active={props.pathname === '/sobre'}>
-                        VB Online
+                        {props.langState === 'pt' ? 'Sobre' : 'About'}
                     </BotaoMenuMobile>
                 </Link>
             </div>
