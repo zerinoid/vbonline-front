@@ -101,7 +101,11 @@ export default function ListaDocs(props) {
                 hovered={hovered}
                 onClick={props.click}
                 {...props}
-            />
+            >
+                {/* <Link to="/video"> */}
+                {/*     <div css={absoluteStyle}></div> */}
+                {/* </Link> */}
+            </DocPreviewMain>
         );
     };
 
@@ -202,7 +206,7 @@ export default function ListaDocs(props) {
                                 <Link to="/video">
                                     <div
                                         css={absoluteStyle}
-                                        onClick={() => props.playVideo(value)}
+                                        /* onClick={() => props.playVideo(value)} */
                                     >
                                         <div css={{ width: '50%' }}>
                                             <h5>{value[lang].title}</h5>
