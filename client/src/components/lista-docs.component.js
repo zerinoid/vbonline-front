@@ -32,6 +32,18 @@ export default function ListaDocs(props) {
         }
     `;
 
+    let absoluteStyle = {
+        padding: '14% 16%',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        '@media (max-width: 992px)': {
+            padding: '20% 10%',
+        },
+    };
+
     const DocPreviewMain = styled.div`
         width: 100%;
         padding-bottom: 40.1%;
@@ -101,18 +113,6 @@ export default function ListaDocs(props) {
             '@media (max-width: 992px)': {
                 marginLeft: '0.5vw',
                 height: 25,
-            },
-        };
-
-        let absoluteStyle = {
-            padding: '14% 16%',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            '@media (max-width: 992px)': {
-                padding: '20% 10%',
             },
         };
 
