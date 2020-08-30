@@ -79,6 +79,15 @@ export default function ListaDocs(props) {
 
     const DocPreviewThumb = (props) => {
         const [hovered, setHovered] = useState(false);
+        buttonStyle = { ...buttonStyle, zIndex: 999 };
+
+        absoluteStyle = {
+            ...absoluteStyle,
+            padding: '2%',
+            display: 'flex',
+            justifyContent: 'space-between',
+            '@media (max-width: 992px)': null,
+        };
 
         return (
             <DocPreviewMain
@@ -189,16 +198,6 @@ export default function ListaDocs(props) {
         // Thumbs
         let videos = [];
         if (video_list.length > 1) {
-            buttonStyle = { ...buttonStyle, zIndex: 999 };
-
-            absoluteStyle = {
-                ...absoluteStyle,
-                padding: '2%',
-                display: 'flex',
-                justifyContent: 'space-between',
-                '@media (max-width: 992px)': null,
-            };
-
             videos.push(
                 video_list.map((value, index) => {
                     if (index > 0) {
