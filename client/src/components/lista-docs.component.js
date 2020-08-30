@@ -56,7 +56,7 @@ export default function ListaDocs(props) {
         }
     `;
 
-    const DocPreviewThumb = (localProps) => {
+    const DocPreviewThumb = (props) => {
         const [hovered, setHovered] = useState(false);
 
         return (
@@ -78,14 +78,17 @@ export default function ListaDocs(props) {
                         height: 130px;
                     }
                 `}
-                onMouseOver={() => {
+                onMouseEnter={() => {
                     setHovered(true);
+                    console.log(hovered);
                 }}
-                onMouseOut={() => {
+                onMouseLeave={() => {
                     setHovered(false);
+                    console.log(hovered);
                 }}
+                hovered={hovered}
                 onClick={props.click}
-                {...localProps}
+                {...props}
             />
         );
     };
@@ -208,6 +211,15 @@ export default function ListaDocs(props) {
                                                 <h5>{value[lang].title}</h5>
                                                 <p>{value[lang].category}</p>
                                             </div>
+                                            <img
+                                                alt=""
+                                                src={
+                                                    props.hovered
+                                                        ? playPrevHv
+                                                        : playPrev
+                                                }
+                                                css={buttonStyle}
+                                            />
                                             <HoverImage
                                                 alt=""
                                                 src={playPrev}
