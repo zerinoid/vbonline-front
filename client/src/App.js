@@ -46,7 +46,7 @@ const App = (props) => {
     const vinhetaRef = useRef(null);
 
     //const showVinheta = process.env.NODE_ENV.substring(0, 3) !== "dev"
-    const showVinheta = true;
+    const showVinheta = false;
 
     // Handler menu mobile
     const menuMobileToggle = () => {
