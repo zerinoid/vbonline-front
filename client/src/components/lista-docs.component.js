@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from 'react';
+import React, { useState } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
@@ -56,28 +56,39 @@ export default function ListaDocs(props) {
         }
     `;
 
-    const DocPreviewThumb = (localProps) => (
-        <DocPreviewMain
-            css={css`
-                width: 32.95%;
-                padding-bottom: 11%;
-                display: inline-block;
-                margin-bottom: 0;
-                p {
-                    font: normal 0.8em FedraMono;
-                }
-                &:hover {
-                    box-shadow: inset 0px 0px 0px 0.2vw #fff;
-                }
-                @media (max-width: 992px) {
-                    margin-bottom: ${previewMarginMobile};
-                    width: 100%;
-                    height: 130px;
-                }
-            `}
-            {...localProps}
-        />
-    );
+    const DocPreviewThumb = (localProps) => {
+        const [hovered, setHovered] = useState(false);
+
+        return (
+            <DocPreviewMain
+                css={css`
+                    width: 32.95%;
+                    padding-bottom: 11.1%;
+                    display: inline-block;
+                    margin-bottom: 0;
+                    p {
+                        font: normal 0.8em FedraMono;
+                    }
+                    &:hover {
+                        box-shadow: inset 0px 0px 0px 2px #fff;
+                    }
+                    @media (max-width: 992px) {
+                        margin-bottom: ${previewMarginMobile};
+                        width: 100%;
+                        height: 130px;
+                    }
+                `}
+                onMouseOver={() => {
+                    setHovered(true);
+                }}
+                onMouseOut={() => {
+                    setHovered(false);
+                }}
+                onClick={props.click}
+                {...localProps}
+            />
+        );
+    };
 
     function Lista() {
         if (video_list && video_list.length > 0) {
@@ -184,6 +195,7 @@ export default function ListaDocs(props) {
                                 <DocPreviewThumb
                                     bg={value[lang].poster}
                                     key={index}
+                                    click={() => props.playVideo(value)}
                                 >
                                     <Link to="/video">
                                         <div
