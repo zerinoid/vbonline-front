@@ -98,7 +98,7 @@ export default function ListaDocs(props) {
                 marginLeft: '0.2vw',
                 '@media (max-width: 992px)': {
                     marginLeft: '0.5vw',
-                    height: '7vw',
+                    height: 25,
                 },
             };
 

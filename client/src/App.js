@@ -204,7 +204,7 @@ const App = (props) => {
                                                 width:
                                                     pathname !== '/'
                                                         ? 25
-                                                        : '15.8vw',
+                                                        : 60.2,
                                                 display: 'none',
                                                 [largeBreakPoint]: {
                                                     display: 'block',
