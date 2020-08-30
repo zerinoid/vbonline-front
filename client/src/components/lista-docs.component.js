@@ -101,19 +101,23 @@ export default function ListaDocs(props) {
                 `}
                 onMouseEnter={() => {
                     setHovered(true);
-                    console.log(hovered);
                 }}
                 onMouseLeave={() => {
                     setHovered(false);
-                    console.log(hovered);
                 }}
-                hovered={hovered}
                 onClick={props.click}
                 {...props}
             >
-                {/* <Link to="/video"> */}
-                {/*     <div css={absoluteStyle}></div> */}
-                {/* </Link> */}
+                <Link to="/video">
+                    <div css={absoluteStyle}>
+                        <div css={{ width: '50%' }}>{props.children}</div>
+                        <img
+                            alt=""
+                            src={hovered ? playPrevHv : playPrev}
+                            css={buttonStyle}
+                        />
+                    </div>
+                </Link>
             </DocPreviewMain>
         );
     };
@@ -204,32 +208,8 @@ export default function ListaDocs(props) {
                                 key={index}
                                 click={() => props.playVideo(value)}
                             >
-                                <Link to="/video">
-                                    <div
-                                        css={absoluteStyle}
-                                        /* onClick={() => props.playVideo(value)} */
-                                    >
-                                        <div css={{ width: '50%' }}>
-                                            <h5>{value[lang].title}</h5>
-                                            <p>{value[lang].category}</p>
-                                        </div>
-                                        <img
-                                            alt=""
-                                            src={
-                                                props.hovered
-                                                    ? playPrevHv
-                                                    : playPrev
-                                            }
-                                            css={buttonStyle}
-                                        />
-                                        <HoverImage
-                                            alt=""
-                                            src={playPrev}
-                                            hoverSrc={playPrevHv}
-                                            css={buttonStyle}
-                                        />
-                                    </div>
-                                </Link>
+                                <h5>{value[lang].title}</h5>
+                                <p>{value[lang].category}</p>
                             </DocPreviewThumb>
                         );
                     }
