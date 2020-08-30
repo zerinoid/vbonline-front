@@ -93,174 +93,164 @@ export default function ListaDocs(props) {
         );
     };
 
-    function Lista() {
-        if (video_list && video_list.length > 0) {
-            // Main video
-            let buttonStyle = {
-                height: '1.8vw',
-                marginLeft: '0.2vw',
-                '@media (max-width: 992px)': {
-                    marginLeft: '0.5vw',
-                    height: 25,
-                },
-            };
+    if (video_list && video_list.length > 0) {
+        // Main video
+        let buttonStyle = {
+            height: '1.8vw',
+            marginLeft: '0.2vw',
+            '@media (max-width: 992px)': {
+                marginLeft: '0.5vw',
+                height: 25,
+            },
+        };
 
-            let absoluteStyle = {
-                padding: '14% 16%',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                '@media (max-width: 992px)': {
-                    padding: '20% 10%',
-                },
-            };
+        let absoluteStyle = {
+            padding: '14% 16%',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            '@media (max-width: 992px)': {
+                padding: '20% 10%',
+            },
+        };
 
-            const main = video_list[0];
-            const main_video = [
-                <DocPreviewMain bg={main[lang].poster} key={0}>
-                    <div css={absoluteStyle}>
-                        <h1>{main[lang].title}</h1>
-                        <div
+        const main = video_list[0];
+        const main_video = [
+            <DocPreviewMain bg={main[lang].poster} key={0}>
+                <div css={absoluteStyle}>
+                    <h1>{main[lang].title}</h1>
+                    <div
+                        css={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            '@media (max-width: 992px)': {
+                                display: 'block',
+                            },
+                        }}
+                    >
+                        <h3
                             css={{
-                                display: 'flex',
-                                alignItems: 'center',
+                                margin: '0.4vw 0 0',
+                                position: 'relative',
+                                top: '-0.4vh',
+                                marginRight: '0.3vw',
                                 '@media (max-width: 992px)': {
-                                    display: 'block',
+                                    position: 'unset',
                                 },
                             }}
                         >
-                            <h3
-                                css={{
-                                    margin: '0.4vw 0 0',
-                                    position: 'relative',
-                                    top: '-0.4vh',
-                                    marginRight: '0.3vw',
-                                    '@media (max-width: 992px)': {
-                                        position: 'unset',
-                                    },
-                                }}
-                            >
-                                {main[lang].subtitle}
-                            </h3>
-                            <Link to="/video">
-                                <HoverImage
-                                    alt=""
-                                    src={playPrev}
-                                    hoverSrc={playPrevHv}
-                                    onClick={() => props.playVideo(main)}
-                                    css={buttonStyle}
-                                />
-                            </Link>
-                            <Link to="/saibamais">
-                                <HoverImage
-                                    alt=""
-                                    src={saibaMais}
-                                    hoverSrc={saibaMaisHv}
-                                    css={buttonStyle}
-                                />
-                            </Link>
-                        </div>
+                            {main[lang].subtitle}
+                        </h3>
+                        <Link to="/video">
+                            <HoverImage
+                                alt=""
+                                src={playPrev}
+                                hoverSrc={playPrevHv}
+                                onClick={() => props.playVideo(main)}
+                                css={buttonStyle}
+                            />
+                        </Link>
+                        <Link to="/saibamais">
+                            <HoverImage
+                                alt=""
+                                src={saibaMais}
+                                hoverSrc={saibaMaisHv}
+                                css={buttonStyle}
+                            />
+                        </Link>
                     </div>
-                    <img
-                        alt=""
-                        src={setaMais}
-                        css={{
-                            display: 'block',
-                            marginBottom: '3vw',
-                            height: '4vw',
-                            '@media (min-width: 993px)': {
-                                display: 'none',
-                            },
-                        }}
-                    />
-                </DocPreviewMain>,
-            ];
-
-            // Thumbs
-            let videos = [];
-            if (video_list.length > 1) {
-                buttonStyle = { ...buttonStyle, zIndex: 999 };
-
-                absoluteStyle = {
-                    ...absoluteStyle,
-                    padding: '2%',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    '@media (max-width: 992px)': null,
-                };
-
-                videos.push(
-                    video_list.map((value, index) => {
-                        if (index > 0) {
-                            return (
-                                <DocPreviewThumb
-                                    bg={value[lang].poster}
-                                    key={index}
-                                    click={() => props.playVideo(value)}
-                                >
-                                    <Link to="/video">
-                                        <div
-                                            css={absoluteStyle}
-                                            onClick={() =>
-                                                props.playVideo(value)
-                                            }
-                                        >
-                                            <div css={{ width: '50%' }}>
-                                                <h5>{value[lang].title}</h5>
-                                                <p>{value[lang].category}</p>
-                                            </div>
-                                            <img
-                                                alt=""
-                                                src={
-                                                    props.hovered
-                                                        ? playPrevHv
-                                                        : playPrev
-                                                }
-                                                css={buttonStyle}
-                                            />
-                                            <HoverImage
-                                                alt=""
-                                                src={playPrev}
-                                                hoverSrc={playPrevHv}
-                                                css={buttonStyle}
-                                            />
-                                        </div>
-                                    </Link>
-                                </DocPreviewThumb>
-                            );
-                        }
-                    })
-                );
-            }
-
-            return (
-                <React.Fragment>
-                    {main_video}
-                    <DocPreviewContainer>{videos}</DocPreviewContainer>
-                </React.Fragment>
-            );
-        } else {
-            return (
-                <div>
-                    <DocPreviewMain>
-                        <h1 css={css({ color: colors.vermelho })}>Loading</h1>
-                        <h3>&nbsp;</h3>
-                        <button>Saiba +</button>
-                    </DocPreviewMain>
-                    <DocPreviewThumb>
-                        <h5>Loading</h5>
-                        <p>&nbsp;</p>
-                    </DocPreviewThumb>
                 </div>
+                <img
+                    alt=""
+                    src={setaMais}
+                    css={{
+                        display: 'block',
+                        marginBottom: '3vw',
+                        height: '4vw',
+                        '@media (min-width: 993px)': {
+                            display: 'none',
+                        },
+                    }}
+                />
+            </DocPreviewMain>,
+        ];
+
+        // Thumbs
+        let videos = [];
+        if (video_list.length > 1) {
+            buttonStyle = { ...buttonStyle, zIndex: 999 };
+
+            absoluteStyle = {
+                ...absoluteStyle,
+                padding: '2%',
+                display: 'flex',
+                justifyContent: 'space-between',
+                '@media (max-width: 992px)': null,
+            };
+
+            videos.push(
+                video_list.map((value, index) => {
+                    if (index > 0) {
+                        return (
+                            <DocPreviewThumb
+                                bg={value[lang].poster}
+                                key={index}
+                                click={() => props.playVideo(value)}
+                            >
+                                <Link to="/video">
+                                    <div
+                                        css={absoluteStyle}
+                                        onClick={() => props.playVideo(value)}
+                                    >
+                                        <div css={{ width: '50%' }}>
+                                            <h5>{value[lang].title}</h5>
+                                            <p>{value[lang].category}</p>
+                                        </div>
+                                        <img
+                                            alt=""
+                                            src={
+                                                props.hovered
+                                                    ? playPrevHv
+                                                    : playPrev
+                                            }
+                                            css={buttonStyle}
+                                        />
+                                        <HoverImage
+                                            alt=""
+                                            src={playPrev}
+                                            hoverSrc={playPrevHv}
+                                            css={buttonStyle}
+                                        />
+                                    </div>
+                                </Link>
+                            </DocPreviewThumb>
+                        );
+                    }
+                })
             );
         }
-    }
 
-    return (
-        <div>
-            <div className="lista-docs">{Lista()}</div>
-        </div>
-    );
+        return (
+            <React.Fragment>
+                {main_video}
+                <DocPreviewContainer>{videos}</DocPreviewContainer>
+            </React.Fragment>
+        );
+    } else {
+        return (
+            <div>
+                <DocPreviewMain>
+                    <h1 css={css({ color: colors.vermelho })}>Loading</h1>
+                    <h3>&nbsp;</h3>
+                    <button>Saiba +</button>
+                </DocPreviewMain>
+                <DocPreviewThumb>
+                    <h5>Loading</h5>
+                    <p>&nbsp;</p>
+                </DocPreviewThumb>
+            </div>
+        );
+    }
 }
