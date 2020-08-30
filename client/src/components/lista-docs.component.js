@@ -32,6 +32,15 @@ export default function ListaDocs(props) {
         }
     `;
 
+    let buttonStyle = {
+        height: '1.8vw',
+        marginLeft: '0.2vw',
+        '@media (max-width: 992px)': {
+            marginLeft: '0.5vw',
+            height: 25,
+        },
+    };
+
     let absoluteStyle = {
         padding: '14% 16%',
         position: 'absolute',
@@ -111,14 +120,6 @@ export default function ListaDocs(props) {
 
     if (video_list && video_list.length > 0) {
         // Main video
-        let buttonStyle = {
-            height: '1.8vw',
-            marginLeft: '0.2vw',
-            '@media (max-width: 992px)': {
-                marginLeft: '0.5vw',
-                height: 25,
-            },
-        };
 
         const main = video_list[0];
         const main_video = [
