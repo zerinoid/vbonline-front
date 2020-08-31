@@ -156,8 +156,12 @@ const App = (props) => {
                             body: {
                                 background:
                                     pathname === '/' &&
-                                    `linear-gradient(0deg, ${colors.vermelho}, white 50%)`,
-                                backgroundAttachment: 'fixed',
+                                    `linear-gradient(0deg, ${colors.vermelho}, white 50%) fixed`,
+                                [largeBreakPoint]: {
+                                    background:
+                                        pathname === '/' &&
+                                        `linear-gradient(0deg, ${colors.vermelho} 53%, white 77%) scroll`,
+                                },
                             },
                         }}
                     ></Global>
