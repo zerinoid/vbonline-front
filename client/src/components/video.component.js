@@ -89,11 +89,9 @@ const VideoPlayer = (props) => {
 
     // enter fullscreen
     const enterFullScreen = () => {
-        if (!document.fullscreenElement) {
-            closeBoxes();
-            if (screenfull.isEnabled) {
-                screenfull.request(playerRef.current);
-            }
+        closeBoxes();
+        if (screenfull.isEnabled) {
+            screenfull.request(playerRef.current);
         }
     };
 
@@ -181,8 +179,8 @@ const VideoPlayer = (props) => {
 
     return (
         <div id="video-outter">
-            <div id="video-container">
-                <div id="vimeo-player" ref={playerRef} />
+            <div id="video-container" ref={playerRef}>
+                <div id="vimeo-player" />
             </div>
             <div id="video-info">
                 <div className="row" style={{position: 'relative'}}>
