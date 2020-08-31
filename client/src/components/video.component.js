@@ -5,6 +5,7 @@ import { css, jsx } from '@emotion/core';
 import Player from '@vimeo/player';
 import 'flexboxgrid';
 import HoverImage from "react-hover-image";
+import screenfull from "screenfull";
 
 import closeButton from '../assets/img/v_assets/new/botao_fechar_normal.png';
 import closeButtonActive from '../assets/img/v_assets/new/botao_fechar_hover.png';
@@ -90,7 +91,9 @@ const VideoPlayer = (props) => {
     const enterFullScreen = () => {
         if (!document.fullscreenElement) {
             closeBoxes();
-            playerRef.current.requestFullscreen();
+            if (screenfull.isEnabled) {
+                screenfull.request(playerRef.current);
+            }
         }
     };
 
