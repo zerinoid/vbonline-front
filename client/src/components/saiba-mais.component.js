@@ -82,7 +82,7 @@ export default class SaibaMais extends Component {
                                     </Botao>
                                 </a>
                             </AboutSection>
-                            {this.state.data.partnersLogos ? (
+                            {this.state.data.partnersLogos.length > 0 ? (
                                 <AboutSection>
                                     <p
                                         css={css`

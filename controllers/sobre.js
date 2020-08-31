@@ -1,11 +1,7 @@
 // Texto sobre
 exports.getSobre = (req, res, next) => {
     data = {
-        partnersLogos: [
-            '/img/parcholder.png',
-            '/img/parcholder.png',
-            '/img/parcholder.png',
-        ],
+        partnersLogos: ['/img/eletrica.png'],
         pt: {
             title: 'Videobrasil Online',
             partners: 'Parceiros',

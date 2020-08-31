@@ -59,7 +59,7 @@ export default class Sobre extends Component {
                                     )}
                                 />
                             </AboutSection>
-                            {this.state.data.partnersLogos ? (
+                            {this.state.data.partnersLogos.length > 0 ? (
                                 <AboutSection>
                                     <p
                                         css={css`
