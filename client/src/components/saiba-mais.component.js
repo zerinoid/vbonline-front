@@ -75,7 +75,11 @@ export default class SaibaMais extends Component {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <Botao>Saiba +</Botao>
+                                    <Botao>
+                                        {this.props.lang === 'pt'
+                                            ? 'Saiba +'
+                                            : 'Learn +'}
+                                    </Botao>
                                 </a>
                             </AboutSection>
                             {this.state.data.partnersLogos ? (
