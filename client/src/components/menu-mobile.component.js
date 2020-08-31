@@ -32,7 +32,7 @@ const menuMobile = (props) => {
                 <BotaoMenuMobile
                     lingua={true}
                     onClick={props.setLang.bind(this, 'pt')}
-                    active={props.langState === 'pt'}
+                    active={props.lang === 'pt'}
                 >
                     PT
                 </BotaoMenuMobile>
@@ -40,7 +40,7 @@ const menuMobile = (props) => {
                 <BotaoMenuMobile
                     lingua={true}
                     onClick={props.setLang.bind(this, 'en')}
-                    active={props.langState === 'en'}
+                    active={props.lang === 'en'}
                 >
                     EN
                 </BotaoMenuMobile>
@@ -52,7 +52,7 @@ const menuMobile = (props) => {
                 />
                 <Link to="/sobre">
                     <BotaoMenuMobile active={props.pathname === '/sobre'}>
-                        {props.langState === 'pt' ? 'Sobre' : 'About'}
+                        {props.lang === 'pt' ? 'Sobre' : 'About'}
                     </BotaoMenuMobile>
                 </Link>
             </div>
