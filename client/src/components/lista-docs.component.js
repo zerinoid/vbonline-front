@@ -212,6 +212,12 @@ export default function ListaDocs(props) {
                             </DocPreviewThumb>
                         );
                     }
+                    return (
+                        <DocPreviewThumb>
+                            <h5>Loading</h5>
+                            <p> Loading... </p>
+                        </DocPreviewThumb>
+                    );
                 })
             );
         }
