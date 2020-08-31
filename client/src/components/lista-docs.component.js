@@ -211,13 +211,9 @@ export default function ListaDocs(props) {
                                 <p>{value[lang].category}</p>
                             </DocPreviewThumb>
                         );
+                    } else {
+                        return null;
                     }
-                    return (
-                        <DocPreviewThumb>
-                            <h5>Loading</h5>
-                            <p> Loading... </p>
-                        </DocPreviewThumb>
-                    );
                 })
             );
         }
