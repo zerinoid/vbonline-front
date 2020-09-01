@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { css, jsx, Global } from '@emotion/core';
 import axios from 'axios';
 import { Route, Link, useLocation, useHistory } from 'react-router-dom';
+import HoverImage from 'react-hover-image';
 import colors from './styles/colors';
 
 import './App.scss';
@@ -21,6 +22,12 @@ import botaoMaisApertado from './assets/img/cruzVerm.png';
 import fechar from './assets/img/fecharVerm.png';
 import vinhetaMp4 from './assets/video/vb_crf25.mp4';
 import vinhetaWebM from './assets/video/vb.webm';
+import idiomaPt from './assets/img/PT.png';
+import idiomaPtHover from './assets/img/PThv.png';
+import idiomaPtActive from './assets/img/PTact.png';
+import idiomaEn from './assets/img/EN.png';
+import idiomaEnHover from './assets/img/ENhv.png';
+import idiomaEnActive from './assets/img/ENact.png';
 
 const largeBreakPoint = '@media (max-width: 992px)';
 
@@ -128,6 +135,8 @@ const App = (props) => {
         if (menuMobileShow) setMenuMobileShow(false);
     }, [pathname]);
 
+    const idiomaButtonStyle = { height: '1.57vw' };
+
     if (appState.data) {
         if (vinhetaState && showVinheta && currentWidth > 992) {
             return (
@@ -156,8 +165,12 @@ const App = (props) => {
                             body: {
                                 background:
                                     pathname === '/' &&
-                                    `linear-gradient(0deg, ${colors.vermelho}, white 50%)`,
-                                backgroundAttachment: 'fixed',
+                                    `linear-gradient(0deg, ${colors.vermelho}, white 50%) fixed`,
+                                [largeBreakPoint]: {
+                                    background:
+                                        pathname === '/' &&
+                                        `linear-gradient(0deg, ${colors.vermelho} 53%, white 77%) scroll`,
+                                },
                             },
                         }}
                     ></Global>
@@ -245,12 +258,13 @@ const App = (props) => {
                                     css={css({
                                         flex: '1 1 0.6%',
                                         justifyContent: 'space-between',
-                                        alignItems: 'baseline',
+                                        alignItems: 'flex-start',
                                         [largeBreakPoint]: {
                                             display: 'none',
                                         },
                                     })}
                                 >
+                                    {/* Sobre */}
                                     <Link to="/sobre">
                                         <Botao active={pathname === '/sobre'}>
                                             {langState === 'pt'
@@ -264,26 +278,42 @@ const App = (props) => {
                                             min-width: 3.5vw;
                                         `}
                                     >
-                                        <Botao
-                                            onClick={setLangHandler.bind(
-                                                this,
-                                                'pt'
-                                            )}
-                                            lingua
-                                            active={langState === 'pt'}
-                                        >
-                                            PT
-                                        </Botao>
-                                        <Botao
-                                            onClick={setLangHandler.bind(
-                                                this,
-                                                'en'
-                                            )}
-                                            lingua
-                                            active={langState === 'en'}
-                                        >
-                                            EN
-                                        </Botao>
+                                        {/* Idiomas PT */}
+                                        {langState === 'pt' ? (
+                                            <img
+                                                alt=""
+                                                src={idiomaPtActive}
+                                                style={idiomaButtonStyle}
+                                            />
+                                        ) : (
+                                            <HoverImage
+                                                src={idiomaPt}
+                                                hoverSrc={idiomaPtHover}
+                                                onClick={setLangHandler.bind(
+                                                    this,
+                                                    'pt'
+                                                )}
+                                                style={idiomaButtonStyle}
+                                            ></HoverImage>
+                                        )}
+                                        {/* Idiomta EN */}
+                                        {langState === 'en' ? (
+                                            <img
+                                                alt=""
+                                                src={idiomaEnActive}
+                                                style={idiomaButtonStyle}
+                                            />
+                                        ) : (
+                                            <HoverImage
+                                                src={idiomaEn}
+                                                hoverSrc={idiomaEnHover}
+                                                onClick={setLangHandler.bind(
+                                                    this,
+                                                    'en'
+                                                )}
+                                                style={idiomaButtonStyle}
+                                            ></HoverImage>
+                                        )}{' '}
                                     </div>
                                 </div>
                             </nav>
@@ -291,7 +321,7 @@ const App = (props) => {
                                 <MenuMobile
                                     isShown={menuMobileShow}
                                     setLang={setLangHandler}
-                                    langState={langState}
+                                    lang={langState}
                                     pathname={pathname}
                                 />
                                 {

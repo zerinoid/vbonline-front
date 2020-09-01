@@ -1,7 +1,7 @@
 // Texto sobre
 exports.getSaibaMais = (req, res, next) => {
     data = {
-        partnersLogos: ['/img/parcholder.png', '/img/parcholder.png'],
+        partnersLogos: [],
         pt: {
             artist: 'Abdoulaye Konaté',
             title: 'Cores e composições',
