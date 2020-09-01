@@ -1,15 +1,9 @@
-@import "video.js/dist/video-js";
+/* @import "video.js/dist/video-js"; */
+@import "styles/variables";
 @import "bootstrap/dist/css/bootstrap";
 @import "styles/fonts";
 @import "styles/video";
 @import "styles/fontSize";
-
-$min_width: 992px;
-$max_width: 5000px;
-$min_font: 10px;
-$max_font: 56px;
-
-$vermelho: #ed0000;
 
 html {
     @include fluid-type($min_width, $max_width, $min_font, $max_font);
