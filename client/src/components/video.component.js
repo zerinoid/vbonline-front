@@ -7,16 +7,16 @@ import 'flexboxgrid';
 import HoverImage from 'react-hover-image';
 import screenfull from 'screenfull';
 
-import closeButton from '../assets/img/v_assets/new/botao_fechar_normal.png';
-import closeButtonActive from '../assets/img/v_assets/new/botao_fechar_hover.png';
-import fullScreenButton from '../assets/img/v_assets/new/botao_fullscreen_normal.png';
-import fullScreenButtonActive from '../assets/img/v_assets/new/botao_fullscreen_hover.png';
-import infoButton from '../assets/img/v_assets/new/botao_info_normal.png';
-import infoButtonActive from '../assets/img/v_assets/new/botao_info_hover.png';
-import playlistButton from '../assets/img/v_assets/new/botao_lista_normal.png';
-import playlistButtonActive from '../assets/img/v_assets/new/botao_lista_hover.png';
-import nextButton from '../assets/img/v_assets/new/botao_proximo_normal.png';
-import nextButtonActive from '../assets/img/v_assets/new/botao_proximo_hover.png';
+import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
+import playlistButton from '../assets/img/v_assets/vPlaylist.png';
+import nextButtonActive from '../assets/img/v_assets/vNextActive.png';
+import nextButton from '../assets/img/v_assets/vNext.png';
+import infoButtonActive from '../assets/img/v_assets/vInfoActive.png';
+import infoButton from '../assets/img/v_assets/vInfo.png';
+import fullScreenButtonActive from '../assets/img/v_assets/vFullscreenActive.png';
+import fullScreenButton from '../assets/img/v_assets/vFullscreen.png';
+import closeButtonActive from '../assets/img/v_assets/vFecharActive.png';
+import closeButton from '../assets/img/v_assets/vFechar.png';
 
 const VideoPlayer = (props) => {
     // Hooks
