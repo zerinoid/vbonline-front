@@ -150,8 +150,19 @@ h5 {
         text-align: right;
     }
 
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .row.video-buttons,
     .row.video-boxes {
+
+        //temp
+        &>div {
+            border: white 0.1vw solid;
+        }
+
         .col-xs-2 {
             // flex-basis: 0;
             padding-right: 0;
@@ -169,13 +180,18 @@ h5 {
 
     .video-boxes {
 
+        // temp
+        &>div {
+            height: 1vw;
+        }
+
         .info-box {
             position: relative;
 
             .info-box-container {
                 position: absolute;
-                top: 0.1vh;
-                right: 0.5vw;
+                top: 0;
+                right: 0;
                 width: 15vw;
                 min-width: 220px;
                 height: auto;

@@ -242,8 +242,9 @@ const VideoPlayer = (props) => {
                     </div>
                     <div className="col-xs-8"></div>
                     <div className="col-xs-4" style={{ zIndex: '1' }}>
+                        {/* botoes */}
                         <div className="row video-buttons">
-                            <div className="col-xs-2 first-button">
+                            <div className="col-xs-2">
                                 <HoverImage
                                     src={infoButton}
                                     hoverSrc={infoButtonActive}
@@ -284,8 +285,9 @@ const VideoPlayer = (props) => {
                                 />
                             </div>
                         </div>
+                        {/* caixas */}
                         <div className="row video-boxes">
-                            <div className="info-box col-xs-2 first-button">
+                            <div className="info-box col-xs-2">
                                 <div
                                     className="info-box-container"
                                     style={{ display: infoBoxState }}
