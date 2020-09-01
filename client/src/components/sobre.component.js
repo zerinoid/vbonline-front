@@ -1,10 +1,13 @@
 /** @jsx jsx */
 import { Component } from 'react';
 import { css, jsx } from '@emotion/core';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import colors from '../styles/colors';
 
 import AboutSection from './about-section.component';
+
+import fechar from '../assets/img/fecharVerm.png';
 
 export default class Sobre extends Component {
     constructor(props) {
@@ -47,10 +50,27 @@ export default class Sobre extends Component {
                 >
                     {this.state.data ? (
                         <div>
-                            <AboutSection>
+                            <AboutSection
+                                css={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                }}
+                            >
                                 <h4>
                                     {this.state.data[this.props.lang].title}
                                 </h4>
+                                <Link to="/">
+                                    <img
+                                        alt=""
+                                        src={fechar}
+                                        css={{
+                                            height: '1.47vw',
+                                            '@media (max-width: 992px)': {
+                                                display: 'none',
+                                            },
+                                        }}
+                                    />
+                                </Link>
                             </AboutSection>
                             <AboutSection>
                                 <div
