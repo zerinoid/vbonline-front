@@ -4,8 +4,8 @@ import { useLocation, useHistory } from 'react-router-dom';
 import { css, jsx } from '@emotion/core';
 import Player from '@vimeo/player';
 import 'flexboxgrid';
-import HoverImage from "react-hover-image";
-import screenfull from "screenfull";
+import HoverImage from 'react-hover-image';
+import screenfull from 'screenfull';
 
 import closeButton from '../assets/img/v_assets/new/botao_fechar_normal.png';
 import closeButtonActive from '../assets/img/v_assets/new/botao_fechar_hover.png';
@@ -52,24 +52,32 @@ const VideoPlayer = (props) => {
 
     const pVideos = [];
 
-    
+    pVideos.push(
+        props.data.videos.map((value, index) => {
+            let video = value;
+            let active =
+                +vimeoState.current_video.order == video.order ? 'active' : '';
 
-    pVideos.push(props.data.videos.map((value, index) => {
-        let video = value;
-        let active = +vimeoState.current_video.order == video.order ? "active" : "";
-
-        return (
-            <div className={`row ${active}`} key={index}>
-                <div className="col-xs-6">
-                    <div className="thumb-container" style={{backgroundImage: `url(${video[lang].thumb})`}}></div>
+            return (
+                <div className={`row ${active}`} key={index}>
+                    <div className="col-xs-6">
+                        <div
+                            className="thumb-container"
+                            style={{
+                                backgroundImage: `url(${video[lang].thumb})`,
+                            }}
+                        ></div>
+                    </div>
+                    <div className="col-xs-6">
+                        <p className="playlist-title">{video[lang].title}</p>
+                        <p className="playlist-category">
+                            {video[lang].category}
+                        </p>
+                    </div>
                 </div>
-                <div className="col-xs-6">
-                    <p className="playlist-title">{video[lang].title}</p>
-                    <p className="playlist-category">{video[lang].category}</p>
-                </div>
-            </div>
-        );
-    }));
+            );
+        })
+    );
 
     /*
      *  Methods
@@ -185,80 +193,95 @@ const VideoPlayer = (props) => {
                 <div id="vimeo-player" ref={playerRef} />
             </div>
             <div id="video-info">
-                <div className="row" style={{position: 'relative'}}>
-                    <div style={{
-                        width: '100%',
-                        height: '100%',
-                        position: 'absolute',
-                        top: '0.4vh'
-                    }}>
-                        <div style={{
+                <div className="row" style={{ position: 'relative' }}>
+                    <div
+                        style={{
                             width: '100%',
                             height: '100%',
-                            display: 'table',
-                            zIndex: '-1'
-                        }}>
-                            <div style={{
+                            position: 'absolute',
+                            top: '0.4vh',
+                        }}
+                    >
+                        <div
+                            style={{
                                 width: '100%',
                                 height: '100%',
-                                verticalAlign: 'middle',
-                                display: 'table-cell',
-                                textAlign: 'center',
+                                display: 'table',
                                 zIndex: '-1',
-                                color: 'white',
-                                fontFamily: 'FedraMono',
-                            }}>
-                                <span style={{
-                                    textTransform: 'uppercase',
-                                    fontWeight: 'bold'
-                                }}>{vimeoState.current_video[lang].title}</span> 
-                                <span style={{
-                                    marginLeft: '0.7vw'
-                                }}>{vimeoState.current_video[lang].subtitle}</span>
+                            }}
+                        >
+                            <div
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    verticalAlign: 'middle',
+                                    display: 'table-cell',
+                                    textAlign: 'center',
+                                    zIndex: '-1',
+                                    color: 'white',
+                                    fontFamily: 'FedraMono',
+                                }}
+                            >
+                                <span
+                                    style={{
+                                        textTransform: 'uppercase',
+                                        fontWeight: 'bold',
+                                    }}
+                                >
+                                    {vimeoState.current_video[lang].title}
+                                </span>
+                                <span
+                                    style={{
+                                        marginLeft: '0.7vw',
+                                    }}
+                                >
+                                    {vimeoState.current_video[lang].subtitle}
+                                </span>
                             </div>
                         </div>
-
-
-
-                        
                     </div>
                     <div className="col-xs-8"></div>
                     <div className="col-xs-4" style={{ zIndex: '1' }}>
                         <div className="row video-buttons">
                             <div className="col-xs-2 first-button">
-                                <HoverImage 
-                                    src={infoButton} 
+                                <HoverImage
+                                    src={infoButton}
                                     hoverSrc={infoButtonActive}
                                     onClick={toggleInfoBox}
-                                    className="bt-player" />
+                                    className="bt-player"
+                                />
                             </div>
                             <div className="col-xs-2">
-                                <HoverImage 
-                                    src={playlistButton} 
+                                <HoverImage
+                                    src={playlistButton}
                                     hoverSrc={playlistButtonActive}
                                     onClick={togglePlaylistBox}
-                                    className="bt-player" />
+                                    className="bt-player"
+                                />
                             </div>
                             <div className="col-xs-2">
-                                <HoverImage 
-                                    src={nextButton} 
+                                <HoverImage
+                                    src={nextButton}
                                     hoverSrc={nextButtonActive}
                                     onClick={goToNextVideo}
-                                    className="bt-player" />
+                                    className="bt-player"
+                                />
                             </div>
                             <div className="col-xs-2">
-                                <HoverImage 
-                                    src={fullScreenButton} 
+                                <HoverImage
+                                    src={fullScreenButton}
                                     hoverSrc={fullScreenButtonActive}
                                     onClick={enterFullScreen}
-                                    className="bt-player" />
+                                    className="bt-player"
+                                />
                             </div>
                             <div className="col-xs-2">
-                                <HoverImage 
-                                    src={closeButton} 
+                                <HoverImage
+                                    src={closeButton}
                                     hoverSrc={closeButtonActive}
                                     onClick={closePlayer}
-                                    className="bt-player" />
+                                    className="bt-player"
+                                />
                             </div>
                         </div>
                         <div className="row video-boxes">
@@ -267,14 +290,17 @@ const VideoPlayer = (props) => {
                                     className="info-box-container"
                                     style={{ display: infoBoxState }}
                                 >
-                                    <p className="info-box-title" dangerouslySetInnerHTML={
-                                        createMarkup(
-                                            vimeoState.current_video[lang].title_box ? 
-                                            vimeoState.current_video[lang].title_box :
-                                            vimeoState.current_video[lang].title
-                                        )
-                                    }>
-                                    </p>
+                                    <p
+                                        className="info-box-title"
+                                        dangerouslySetInnerHTML={createMarkup(
+                                            vimeoState.current_video[lang]
+                                                .title_box
+                                                ? vimeoState.current_video[lang]
+                                                      .title_box
+                                                : vimeoState.current_video[lang]
+                                                      .title
+                                        )}
+                                    ></p>
                                     <div
                                         className="info-box-caption"
                                         dangerouslySetInnerHTML={createMarkup(
