@@ -257,6 +257,20 @@ h5 {
     height: 100%;
 }
 
+// @media screen and (max-width: 992px) and (orientation: portrait) {
+//     #mobile-player {
+//       transform: rotate(-90deg);
+//       transform-origin: left top;
+//       width: 100vh;
+//       position: absolute;
+//       top: 100%;
+//       left: 0;
+//     }
+//     html {
+//         overflow: hidden;
+//     }
+// }
+
 @media (min-width: 993px) {
     .limite {
         max-width: 4950px;

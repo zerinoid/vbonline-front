@@ -150,7 +150,10 @@ const App = (props) => {
             );
         } else {
             return (
-                <div className="App">
+                <div className="App" id={
+                    currentWidth <= 992 && appState.showPlayer ? 
+                    "mobile-player" : ""
+                }>
                     <Global
                         styles={{
                             body: {
