@@ -135,6 +135,8 @@ const App = (props) => {
         if (menuMobileShow) setMenuMobileShow(false);
     }, [pathname]);
 
+    const idiomaButtonStyle = { height: '1.57vw' };
+
     if (appState.data) {
         if (vinhetaState && showVinheta && currentWidth > 992) {
             return (
@@ -256,7 +258,7 @@ const App = (props) => {
                                     css={css({
                                         flex: '1 1 0.6%',
                                         justifyContent: 'space-between',
-                                        alignItems: 'baseline',
+                                        alignItems: 'flex-start',
                                         [largeBreakPoint]: {
                                             display: 'none',
                                         },
@@ -270,33 +272,48 @@ const App = (props) => {
                                                 : 'About'}
                                         </Botao>
                                     </Link>
-                                    {/* Idiomas */}
                                     <div
                                         css={css`
                                             justify-content: space-between;
                                             min-width: 3.5vw;
                                         `}
                                     >
-                                        <Botao
-                                            onClick={setLangHandler.bind(
-                                                this,
-                                                'pt'
-                                            )}
-                                            lingua
-                                            active={langState === 'pt'}
-                                        >
-                                            PT
-                                        </Botao>
-                                        <Botao
-                                            onClick={setLangHandler.bind(
-                                                this,
-                                                'en'
-                                            )}
-                                            lingua
-                                            active={langState === 'en'}
-                                        >
-                                            EN
-                                        </Botao>
+                                        {/* Idiomas PT */}
+                                        {langState === 'pt' ? (
+                                            <img
+                                                alt=""
+                                                src={idiomaPtActive}
+                                                style={idiomaButtonStyle}
+                                            />
+                                        ) : (
+                                            <HoverImage
+                                                src={idiomaPt}
+                                                hoverSrc={idiomaPtHover}
+                                                onClick={setLangHandler.bind(
+                                                    this,
+                                                    'pt'
+                                                )}
+                                                style={idiomaButtonStyle}
+                                            ></HoverImage>
+                                        )}
+                                        {/* Idiomta EN */}
+                                        {langState === 'en' ? (
+                                            <img
+                                                alt=""
+                                                src={idiomaEnActive}
+                                                style={idiomaButtonStyle}
+                                            />
+                                        ) : (
+                                            <HoverImage
+                                                src={idiomaEn}
+                                                hoverSrc={idiomaEnHover}
+                                                onClick={setLangHandler.bind(
+                                                    this,
+                                                    'en'
+                                                )}
+                                                style={idiomaButtonStyle}
+                                            ></HoverImage>
+                                        )}{' '}
                                     </div>
                                 </div>
                             </nav>
