@@ -15,13 +15,20 @@ import Botao from './components/botao.component';
 import SaibaMais from './components/saiba-mais.component';
 import MenuMobile from './components/menu-mobile.component';
 
+// logo
 import logo from './assets/img/logo.png';
 import logoMob from './assets/img/logo_mb.png';
+
+// botões nav
 import botaoMais from './assets/img/cruz.png';
 import botaoMaisApertado from './assets/img/cruzVerm.png';
 import fechar from './assets/img/fecharVerm.png';
+
+// vinheta
 import vinhetaMp4 from './assets/video/vb_crf25.mp4';
 import vinhetaWebM from './assets/video/vb.webm';
+
+// botões idioma
 import idiomaPt from './assets/img/PT.png';
 import idiomaPtHover from './assets/img/PThv.png';
 import idiomaPtActive from './assets/img/PTact.png';
