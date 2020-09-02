@@ -1,7 +1,8 @@
+/** @jsx jsx */
 import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
-import { css, jsx } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import Player from '@vimeo/player';
 import 'flexboxgrid';
 import HoverImage from 'react-hover-image';
@@ -241,7 +242,13 @@ const VideoPlayer = (props) => {
                         </div>
                     </div>
                     <div className="col-xs-8"></div>
-                    <div className="col-xs-4" style={{ zIndex: '1' }}>
+                    <div
+                        className="col-xs-4"
+                        css={{
+                            zIndex: '1',
+                            '.row': { justifyContent: 'space-between' },
+                        }}
+                    >
                         {/* botoes */}
                         <div className="row video-buttons">
                             <div className="col-xs-2">
