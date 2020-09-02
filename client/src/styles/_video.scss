@@ -34,8 +34,6 @@
     width: 100%;
     height: 100px;
     padding: 4vh 4vw;
-    // background-color: $vermelho;
-    //background: linear-gradient(0deg, $vermelho, white 170%);
 
     .video-buttons>div {
         display: flex;
@@ -46,24 +44,12 @@
     .row.video-buttons,
     .row.video-boxes {
 
-        //temp
         &>div {
-            // border: white 0.1vw solid;
             padding: 0;
         }
     }
 
-    .row.video-buttons {
-        // height: 6.2vh;
-    }
-
     .video-boxes {
-
-        // temp
-        // &>div {
-        //     height: 1vw;
-        // }
-
         .info-box {
             position: relative;
 
@@ -112,7 +98,6 @@
 
                     p {
                         text-align: left;
-                        // font-size: 0.9em;
                         line-height: 1.9vh;
                     }
 
