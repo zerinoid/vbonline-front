@@ -1,4 +1,131 @@
-.video-js {
+@import "styles/variables";
+
+#video-outter {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    background-color: black;
+}
+
+#video-container {
+    display: table;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+#vimeo-player {
+    display: table-cell;
+    vertical-align: middle;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        //pointer-events: none
+    }
+
+}
+
+#video-info {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    padding: 4vh 4vw;
+
+    .video-buttons>div {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .row.video-buttons,
+    .row.video-boxes {
+
+        &>div {
+            padding: 0;
+        }
+    }
+
+    .video-boxes {
+        .info-box {
+            position: relative;
+
+            .info-box-container {
+                position: absolute;
+                top: 1vw;
+                right: 0;
+                width: 15vw;
+                min-width: 220px;
+                height: auto;
+                padding: 0.8vw 0.8vw;
+                color: white;
+                background-color: $vermelho;
+                font-size: 0.7em;
+
+                .info-box-caption,
+                .info-box-title {
+                    text-align: left;
+                    line-height: 1.9vh;
+                }
+
+                .info-box-title {
+                    font-weight: bold;
+                    text-decoration: underline;
+                    margin-bottom: 1.4vh;
+                }
+
+                &.playlist {
+                    width: 15vw;
+                    padding: 0.8vw 0.8vw;
+                    padding-bottom: 0.3vw;
+
+                    .row,
+                    .col-xs-6 {
+                        margin-bottom: 0.8vh;
+                        max-height: 7.9vh;
+                    }
+
+                    .row.active {
+                        opacity: 0.5;
+
+                        .playlist-title {
+                            cursor: default;
+                        }
+                    }
+
+                    p {
+                        text-align: left;
+                        line-height: 1.9vh;
+                    }
+
+                    .playlist-title {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+
+                    .playlist-category {
+                        position: relative;
+                        top: -1.9vh;
+                        font-size: 0.8em;
+                    }
+
+                    .thumb-container {
+                        width: 100%;
+                        height: 100%;
+                        background-size: cover;
+                        max-height: 4.7vw;
+                    }
+                }
+            }
+        }
+    }
+
+    .bt-player {
+        height: 2vw;
+        cursor: pointer;
+    }
+
 }

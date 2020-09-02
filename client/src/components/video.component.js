@@ -1,22 +1,23 @@
+/** @jsx jsx */
 import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
-import { css, jsx } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import Player from '@vimeo/player';
 import 'flexboxgrid';
 import HoverImage from 'react-hover-image';
 import screenfull from 'screenfull';
 
-import closeButton from '../assets/img/v_assets/new/botao_fechar_normal.png';
-import closeButtonActive from '../assets/img/v_assets/new/botao_fechar_hover.png';
-import fullScreenButton from '../assets/img/v_assets/new/botao_fullscreen_normal.png';
-import fullScreenButtonActive from '../assets/img/v_assets/new/botao_fullscreen_hover.png';
-import infoButton from '../assets/img/v_assets/new/botao_info_normal.png';
-import infoButtonActive from '../assets/img/v_assets/new/botao_info_hover.png';
-import playlistButton from '../assets/img/v_assets/new/botao_lista_normal.png';
-import playlistButtonActive from '../assets/img/v_assets/new/botao_lista_hover.png';
-import nextButton from '../assets/img/v_assets/new/botao_proximo_normal.png';
-import nextButtonActive from '../assets/img/v_assets/new/botao_proximo_hover.png';
+import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
+import playlistButton from '../assets/img/v_assets/vPlaylist.png';
+import nextButtonActive from '../assets/img/v_assets/vNextActive.png';
+import nextButton from '../assets/img/v_assets/vNext.png';
+import infoButtonActive from '../assets/img/v_assets/vInfoActive.png';
+import infoButton from '../assets/img/v_assets/vInfo.png';
+import fullScreenButtonActive from '../assets/img/v_assets/vFullscreenActive.png';
+import fullScreenButton from '../assets/img/v_assets/vFullscreen.png';
+import closeButtonActive from '../assets/img/v_assets/vFecharActive.png';
+import closeButton from '../assets/img/v_assets/vFechar.png';
 
 const VideoPlayer = (props) => {
     // Hooks
@@ -197,7 +198,7 @@ const VideoPlayer = (props) => {
                             width: '100%',
                             height: '100%',
                             position: 'absolute',
-                            top: '0.4vh',
+                            /* top: '0.4vh', */
                         }}
                     >
                         <div
@@ -239,9 +240,16 @@ const VideoPlayer = (props) => {
                         </div>
                     </div>
                     <div className="col-xs-8"></div>
-                    <div className="col-xs-4" style={{ zIndex: '1' }}>
+                    <div
+                        className="col-xs-4"
+                        css={{
+                            zIndex: '1',
+                            '.row': { justifyContent: 'space-between' },
+                        }}
+                    >
+                        {/* botoes */}
                         <div className="row video-buttons">
-                            <div className="col-xs-2 first-button">
+                            <div className="col-xs-2">
                                 <HoverImage
                                     src={infoButton}
                                     hoverSrc={infoButtonActive}
@@ -282,8 +290,9 @@ const VideoPlayer = (props) => {
                                 />
                             </div>
                         </div>
+                        {/* caixas */}
                         <div className="row video-boxes">
-                            <div className="info-box col-xs-2 first-button">
+                            <div className="info-box col-xs-2">
                                 <div
                                     className="info-box-container"
                                     style={{ display: infoBoxState }}
