@@ -37,8 +37,7 @@
     // background-color: $vermelho;
     //background: linear-gradient(0deg, $vermelho, white 170%);
 
-    .video-buttons div,
-    .video-boxes div {
+    .video-buttons>div {
         display: flex;
         justify-content: flex-end;
         align-items: center;
