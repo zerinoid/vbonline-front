@@ -191,144 +191,138 @@ const VideoPlayer = (props) => {
             <div id="video-container" ref={playerRef}>
                 <div id="vimeo-player" />
             </div>
-            <div id="video-info">
-                <div className="row" style={{ position: 'relative' }}>
+            <div id="video-info" className="row">
+                <div className="col-xs-4"></div>
+                <div
+                    className="col-xs-4"
+                    style={{
+                        height: '100%',
+                    }}
+                >
                     <div
                         style={{
                             width: '100%',
                             height: '100%',
-                            position: 'absolute',
-                            /* top: '0.4vh', */
+                            display: 'table',
+                            zIndex: '-1',
                         }}
                     >
                         <div
                             style={{
                                 width: '100%',
                                 height: '100%',
-                                display: 'table',
+                                verticalAlign: 'middle',
+                                display: 'table-cell',
+                                textAlign: 'center',
                                 zIndex: '-1',
+                                color: 'white',
+                                fontFamily: 'FedraMono',
                             }}
                         >
-                            <div
+                            <span
                                 style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    verticalAlign: 'middle',
-                                    display: 'table-cell',
-                                    textAlign: 'center',
-                                    zIndex: '-1',
-                                    color: 'white',
-                                    fontFamily: 'FedraMono',
+                                    textTransform: 'uppercase',
+                                    fontWeight: 'bold',
                                 }}
                             >
-                                <span
-                                    style={{
-                                        textTransform: 'uppercase',
-                                        fontWeight: 'bold',
-                                    }}
-                                >
-                                    {vimeoState.current_video[lang].title}
-                                </span>
-                                <span
-                                    style={{
-                                        marginLeft: '0.7vw',
-                                    }}
-                                >
-                                    {vimeoState.current_video[lang].subtitle}
-                                </span>
-                            </div>
+                                {vimeoState.current_video[lang].title}
+                            </span>
+                            <span
+                                style={{
+                                    marginLeft: '0.7vw',
+                                }}
+                            >
+                                {vimeoState.current_video[lang].subtitle}
+                            </span>
                         </div>
                     </div>
-                    <div className="col-xs-8"></div>
-                    <div
-                        className="col-xs-4"
-                        css={{
-                            zIndex: '1',
-                            '.row': { justifyContent: 'space-between' },
-                        }}
-                    >
-                        {/* botoes */}
-                        <div className="row video-buttons">
-                            <div className="col-xs-2">
-                                <HoverImage
-                                    src={infoButton}
-                                    hoverSrc={infoButtonActive}
-                                    onClick={toggleInfoBox}
-                                    className="bt-player"
-                                />
-                            </div>
-                            <div className="col-xs-2">
-                                <HoverImage
-                                    src={playlistButton}
-                                    hoverSrc={playlistButtonActive}
-                                    onClick={togglePlaylistBox}
-                                    className="bt-player"
-                                />
-                            </div>
-                            <div className="col-xs-2">
-                                <HoverImage
-                                    src={nextButton}
-                                    hoverSrc={nextButtonActive}
-                                    onClick={goToNextVideo}
-                                    className="bt-player"
-                                />
-                            </div>
-                            <div className="col-xs-2">
-                                <HoverImage
-                                    src={fullScreenButton}
-                                    hoverSrc={fullScreenButtonActive}
-                                    onClick={enterFullScreen}
-                                    className="bt-player"
-                                />
-                            </div>
-                            <div className="col-xs-2">
-                                <HoverImage
-                                    src={closeButton}
-                                    hoverSrc={closeButtonActive}
-                                    onClick={closePlayer}
-                                    className="bt-player"
+                </div>
+                <div
+                    className="col-xs-4"
+                    css={{
+                        zIndex: '1',
+                        '.row': { justifyContent: 'space-between' },
+                    }}
+                >
+                    {/* botoes */}
+                    <div className="row video-buttons">
+                        <div className="col-xs-2">
+                            <HoverImage
+                                src={infoButton}
+                                hoverSrc={infoButtonActive}
+                                onClick={toggleInfoBox}
+                                className="bt-player"
+                            />
+                        </div>
+                        <div className="col-xs-2">
+                            <HoverImage
+                                src={playlistButton}
+                                hoverSrc={playlistButtonActive}
+                                onClick={togglePlaylistBox}
+                                className="bt-player"
+                            />
+                        </div>
+                        <div className="col-xs-2">
+                            <HoverImage
+                                src={nextButton}
+                                hoverSrc={nextButtonActive}
+                                onClick={goToNextVideo}
+                                className="bt-player"
+                            />
+                        </div>
+                        <div className="col-xs-2">
+                            <HoverImage
+                                src={fullScreenButton}
+                                hoverSrc={fullScreenButtonActive}
+                                onClick={enterFullScreen}
+                                className="bt-player"
+                            />
+                        </div>
+                        <div className="col-xs-2">
+                            <HoverImage
+                                src={closeButton}
+                                hoverSrc={closeButtonActive}
+                                onClick={closePlayer}
+                                className="bt-player"
+                            />
+                        </div>
+                    </div>
+                    {/* caixas */}
+                    <div className="row video-boxes">
+                        <div className="info-box col-xs-2">
+                            <div
+                                className="info-box-container"
+                                style={{ display: infoBoxState }}
+                            >
+                                <p
+                                    className="info-box-title"
+                                    dangerouslySetInnerHTML={createMarkup(
+                                        vimeoState.current_video[lang].title_box
+                                            ? vimeoState.current_video[lang]
+                                                  .title_box
+                                            : vimeoState.current_video[lang]
+                                                  .title
+                                    )}
+                                ></p>
+                                <div
+                                    className="info-box-caption"
+                                    dangerouslySetInnerHTML={createMarkup(
+                                        vimeoState.current_video[lang].caption
+                                    )}
                                 />
                             </div>
                         </div>
-                        {/* caixas */}
-                        <div className="row video-boxes">
-                            <div className="info-box col-xs-2">
-                                <div
-                                    className="info-box-container"
-                                    style={{ display: infoBoxState }}
-                                >
-                                    <p
-                                        className="info-box-title"
-                                        dangerouslySetInnerHTML={createMarkup(
-                                            vimeoState.current_video[lang]
-                                                .title_box
-                                                ? vimeoState.current_video[lang]
-                                                      .title_box
-                                                : vimeoState.current_video[lang]
-                                                      .title
-                                        )}
-                                    ></p>
-                                    <div
-                                        className="info-box-caption"
-                                        dangerouslySetInnerHTML={createMarkup(
-                                            vimeoState.current_video[lang]
-                                                .caption
-                                        )}
-                                    />
-                                </div>
+                        <div className="info-box col-xs-2">
+                            <div
+                                className="info-box-container playlist"
+                                style={{ display: playlistBoxState }}
+                            >
+                                {pVideos}
                             </div>
-                            <div className="info-box col-xs-2">
-                                <div
-                                    className="info-box-container playlist"
-                                    style={{ display: playlistBoxState }}
-                                >
-                                    {pVideos}
-                                </div>
-                            </div>
-                            <div className="col-xs-2"></div>
-                            <div className="col-xs-2"></div>
-                            <div className="col-xs-2"></div>
                         </div>
+                        <div className="col-xs-2"></div>
+                        <div className="col-xs-2"></div>
+                        <div className="col-xs-2"></div>
                     </div>
                 </div>
             </div>
