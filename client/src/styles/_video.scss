@@ -39,7 +39,9 @@
 
     .video-buttons div,
     .video-boxes div {
-        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
 
     .row.video-buttons,
@@ -48,6 +50,7 @@
         //temp
         &>div {
             border: white 0.1vw solid;
+            padding: 0;
         }
     }
 
@@ -137,8 +140,7 @@
     }
 
     .bt-player {
-        width: 3.5vw;
-        height: auto;
+        height: 2.2vw;
         cursor: pointer;
     }
 
