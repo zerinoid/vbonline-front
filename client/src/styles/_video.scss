@@ -36,6 +36,14 @@
     height: 100px;
     padding: 4vh 4vw;
 
+    .video-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: 'FedraMono';
+    }
+
     .video-buttons>div {
         display: flex;
         justify-content: flex-end;

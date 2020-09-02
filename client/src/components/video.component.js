@@ -193,49 +193,22 @@ const VideoPlayer = (props) => {
             </div>
             <div id="video-info" className="row">
                 <div className="col-xs-4"></div>
-                <div
-                    className="col-xs-4"
-                    style={{
-                        height: '100%',
-                    }}
-                >
-                    <div
+                <div className="video-title col-xs-4">
+                    <span
                         style={{
-                            width: '100%',
-                            height: '100%',
-                            display: 'table',
-                            zIndex: '-1',
+                            textTransform: 'uppercase',
+                            fontWeight: 'bold',
                         }}
                     >
-                        <div
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                verticalAlign: 'middle',
-                                display: 'table-cell',
-                                textAlign: 'center',
-                                zIndex: '-1',
-                                color: 'white',
-                                fontFamily: 'FedraMono',
-                            }}
-                        >
-                            <span
-                                style={{
-                                    textTransform: 'uppercase',
-                                    fontWeight: 'bold',
-                                }}
-                            >
-                                {vimeoState.current_video[lang].title}
-                            </span>
-                            <span
-                                style={{
-                                    marginLeft: '0.7vw',
-                                }}
-                            >
-                                {vimeoState.current_video[lang].subtitle}
-                            </span>
-                        </div>
-                    </div>
+                        {vimeoState.current_video[lang].title}
+                    </span>
+                    <span
+                        style={{
+                            marginLeft: '0.7vw',
+                        }}
+                    >
+                        {vimeoState.current_video[lang].subtitle}
+                    </span>
                 </div>
                 <div
                     className="col-xs-4"
