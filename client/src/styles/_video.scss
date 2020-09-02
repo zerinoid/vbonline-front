@@ -1,4 +1,160 @@
-.video-js {
+@import "styles/variables";
+
+#video-outter {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    background-color: black;
+}
+
+#video-container {
+    display: table;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+#vimeo-player {
+    display: table-cell;
+    vertical-align: middle;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        //pointer-events: none
+    }
+
+}
+
+#video-info {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    padding: 4vh 4vw;
+    // background-color: $vermelho;
+    //background: linear-gradient(0deg, $vermelho, white 170%);
+
+    .video-buttons div,
+    .video-boxes div {
+        text-align: right;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .row.video-buttons,
+    .row.video-boxes {
+
+        //temp
+        &>div {
+            border: white 0.1vw solid;
+        }
+
+        .col-xs-2 {
+            // flex-basis: 0;
+            padding-right: 0;
+            padding-left: 0.6vw;
+        }
+
+        .first-button {
+            margin-left: 5vw;
+        }
+    }
+
+    .row.video-buttons {
+        height: 6.2vh;
+    }
+
+    .video-boxes {
+
+        // temp
+        &>div {
+            height: 1vw;
+        }
+
+        .info-box {
+            position: relative;
+
+            .info-box-container {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 15vw;
+                min-width: 220px;
+                height: auto;
+                padding: 0.8vw 0.8vw;
+                color: white;
+                background-color: $vermelho;
+                font-size: 0.7em;
+
+                .info-box-caption,
+                .info-box-title {
+                    text-align: left;
+                    line-height: 1.9vh;
+                }
+
+                .info-box-title {
+                    font-weight: bold;
+                    text-decoration: underline;
+                    margin-bottom: 1.4vh;
+                }
+
+                &.playlist {
+                    width: 15vw;
+                    padding: 0.8vw 0.8vw;
+                    padding-bottom: 0.3vw;
+
+                    .row,
+                    .col-xs-6 {
+                        margin-bottom: 0.8vh;
+                        max-height: 7.9vh;
+                    }
+
+                    .row.active {
+                        opacity: 0.5;
+
+                        .playlist-title {
+                            cursor: default;
+                        }
+                    }
+
+                    p {
+                        text-align: left;
+                        // font-size: 0.9em;
+                        line-height: 1.9vh;
+                    }
+
+                    .playlist-title {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+
+                    .playlist-category {
+                        position: relative;
+                        top: -1.9vh;
+                        font-size: 0.8em;
+                    }
+
+                    .thumb-container {
+                        width: 100%;
+                        height: 100%;
+                        background-size: cover;
+                        max-height: 4.7vw;
+                    }
+                }
+            }
+        }
+    }
+
+    .bt-player {
+        width: 3.5vw;
+        height: auto;
+        cursor: pointer;
+    }
+
 }
