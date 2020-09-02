@@ -2,10 +2,11 @@
 import React, { useState } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import { Route, Link, useLocation, useHistory } from 'react-router-dom';
 import HoverImage from 'react-hover-image';
 import colors from '../styles/colors';
 
+import VideoPlayer from './video.component';
 import playPrev from '../assets/img/play_prev.png';
 import playPrevHv from '../assets/img/play_prev_hv.png';
 import saibaMais from '../assets/img/saiba_mais.png';
@@ -13,6 +14,13 @@ import saibaMaisHv from '../assets/img/saiba_mais_hv.png';
 import setaMais from '../assets/img/seta_mais.png';
 
 export default function ListaDocs(props) {
+
+    const [showPlayer, setShowPlayer] = useState(false);
+
+    const playerHandler = () => {
+        setShowPlayer(true);
+    };
+
     const video_list = props.lista.data.videos;
     const lang = props.lang ? props.lang : 'pt';
 
@@ -114,16 +122,14 @@ export default function ListaDocs(props) {
                 onClick={props.click}
                 {...props}
             >
-                <Link to="/video">
-                    <div css={absoluteStyle}>
-                        <div css={{ width: '50%' }}>{props.children}</div>
-                        <img
-                            alt=""
-                            src={hovered ? playPrevHv : playPrev}
-                            css={buttonStyle}
-                        />
-                    </div>
-                </Link>
+                <div css={absoluteStyle} onClick={playerHandler}>
+                    <div css={{ width: '50%' }}>{props.children}</div>
+                    <img
+                        alt=""
+                        src={hovered ? playPrevHv : playPrev}
+                        css={buttonStyle}
+                    />
+                </div>
             </DocPreviewMain>
         );
     };
@@ -158,15 +164,13 @@ export default function ListaDocs(props) {
                         >
                             {main[lang].subtitle}
                         </h3>
-                        <Link to="/video">
                             <HoverImage
                                 alt=""
                                 src={playPrev}
                                 hoverSrc={playPrevHv}
-                                onClick={() => props.playVideo(main)}
+                                onClick={playerHandler}
                                 css={buttonStyle}
                             />
-                        </Link>
                         <Link to="/saibamais">
                             <HoverImage
                                 alt=""
@@ -215,11 +219,13 @@ export default function ListaDocs(props) {
             );
         }
 
-        return (
+        return !showPlayer ? (
             <React.Fragment>
                 {main_video}
                 <DocPreviewContainer>{videos}</DocPreviewContainer>
             </React.Fragment>
+        ) : (
+            <VideoPlayer></VideoPlayer>
         );
     } else {
         return (

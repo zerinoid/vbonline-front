@@ -10,7 +10,6 @@ import './App.scss';
 
 import Sobre from './components/sobre.component';
 import ListaDocs from './components/lista-docs.component';
-import VideoPlayer from './components/video.component';
 import Botao from './components/botao.component';
 import SaibaMais from './components/saiba-mais.component';
 import MenuMobile from './components/menu-mobile.component';
@@ -49,7 +48,6 @@ const App = (props) => {
     // State
     const [appState, setAppState] = useState({
         data: null,
-        showPlayer: false,
         vimeoOptions: null,
     });
 
@@ -80,7 +78,6 @@ const App = (props) => {
         };
         setAppState({
             data: appState.data,
-            showPlayer: true,
             vimeoOptions: vimeoOptions,
         });
     };
@@ -88,7 +85,6 @@ const App = (props) => {
     const closePlayer = () =>
         setAppState({
             data: appState.data,
-            showPlayer: false,
             vimeoOptions: appState.vimeoOptions,
         });
 
@@ -100,9 +96,9 @@ const App = (props) => {
     };
 
     // Don't allow empty video
-    if (appState.vimeoOptions === null && pathname === '/video') {
-        history.push('/');
-    }
+    // if (appState.vimeoOptions === null && pathname === '/video') {
+    //     history.push('/');
+    // }
 
     // Main request
     useEffect(() => {
@@ -111,12 +107,11 @@ const App = (props) => {
             .then((res) =>
                 setAppState({
                     data: res.data,
-                    showPlayer: appState.showPlayer,
                     vimeoOptions: appState.vimeoOptions,
                 })
             )
             .catch((error) => console.log(error));
-    }, [appState.showPlayer, appState.vimeoOptions]);
+    }, [appState.vimeoOptions]);
 
     // Default language
     useEffect(() => {
@@ -166,10 +161,7 @@ const App = (props) => {
             );
         } else {
             return (
-                <div className="App" id={
-                    currentWidth <= 992 && appState.showPlayer ? 
-                    "mobile-player" : ""
-                }>
+                <div className="App">
                     <Global
                         styles={{
                             body: {
@@ -184,14 +176,7 @@ const App = (props) => {
                             },
                         }}
                     ></Global>
-                    {appState.showPlayer ? (
-                        <VideoPlayer
-                            {...appState}
-                            fechaVideo={closePlayer}
-                            lang={langState}
-                        />
-                    ) : (
-                        <div className="limite">
+                    {<div className="limite">
                             <nav>
                                 <div
                                     css={{
@@ -365,7 +350,7 @@ const App = (props) => {
                                 />
                             </div>
                         </div>
-                    )}
+                    }
                 </div>
             );
         }
