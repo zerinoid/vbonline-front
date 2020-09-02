@@ -48,7 +48,7 @@
 
         //temp
         &>div {
-            border: white 0.1vw solid;
+            // border: white 0.1vw solid;
             padding: 0;
         }
     }
@@ -60,16 +60,16 @@
     .video-boxes {
 
         // temp
-        &>div {
-            height: 1vw;
-        }
+        // &>div {
+        //     height: 1vw;
+        // }
 
         .info-box {
             position: relative;
 
             .info-box-container {
                 position: absolute;
-                top: 0;
+                top: 1vw;
                 right: 0;
                 width: 15vw;
                 min-width: 220px;
