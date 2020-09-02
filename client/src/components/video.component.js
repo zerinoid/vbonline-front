@@ -207,7 +207,7 @@ const VideoPlayer = (props) => {
                     className="col-xs-4"
                     css={{
                         zIndex: '1',
-                        '.row': { justifyContent: 'space-between' },
+                        '.row': { justifyContent: 'flex-end' },
                     }}
                 >
                     {/* botoes */}

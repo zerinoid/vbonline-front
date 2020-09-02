@@ -35,6 +35,12 @@
     width: 100%;
     padding: 6vh 105px;
 
+    .col-xs-2 {
+        flex-basis: unset;
+        max-width: unset;
+        width: 4.25vw;
+    }
+
     .video-title {
         display: flex;
         justify-content: center;
