@@ -195,18 +195,11 @@ const VideoPlayer = (props) => {
                 <div className="col-xs-4"></div>
                 <div className="video-title col-xs-4">
                     <span
-                        style={{
-                            textTransform: 'uppercase',
-                            fontWeight: 'bold',
-                        }}
+                        css={{ textTransform: 'uppercase', fontWeight: 'bold' }}
                     >
                         {vimeoState.current_video[lang].title}
                     </span>
-                    <span
-                        style={{
-                            marginLeft: '0.7vw',
-                        }}
-                    >
+                    <span css={{ marginLeft: '0.7vw' }}>
                         {vimeoState.current_video[lang].subtitle}
                     </span>
                 </div>
