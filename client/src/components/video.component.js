@@ -19,6 +19,19 @@ import fullScreenButton from '../assets/img/v_assets/vFullscreen.png';
 import closeButtonActive from '../assets/img/v_assets/vFecharActive.png';
 import closeButton from '../assets/img/v_assets/vFechar.png';
 
+const VideoButton = (props) => {
+    return (
+        <div className="col-xs-2">
+            <HoverImage
+                src={props.src}
+                hoverSrc={props.hoverSrc}
+                onClick={props.onClick}
+                className="bt-player"
+            />
+        </div>
+    );
+};
+
 const VideoPlayer = (props) => {
     // Hooks
     const history = useHistory();
@@ -212,46 +225,35 @@ const VideoPlayer = (props) => {
                 >
                     {/* botoes */}
                     <div className="row video-buttons">
-                        <div className="col-xs-2">
-                            <HoverImage
-                                src={infoButton}
-                                hoverSrc={infoButtonActive}
-                                onClick={toggleInfoBox}
-                                className="bt-player"
-                            />
-                        </div>
-                        <div className="col-xs-2">
-                            <HoverImage
-                                src={playlistButton}
-                                hoverSrc={playlistButtonActive}
-                                onClick={togglePlaylistBox}
-                                className="bt-player"
-                            />
-                        </div>
-                        <div className="col-xs-2">
-                            <HoverImage
-                                src={nextButton}
-                                hoverSrc={nextButtonActive}
-                                onClick={goToNextVideo}
-                                className="bt-player"
-                            />
-                        </div>
-                        <div className="col-xs-2">
-                            <HoverImage
-                                src={fullScreenButton}
-                                hoverSrc={fullScreenButtonActive}
-                                onClick={enterFullScreen}
-                                className="bt-player"
-                            />
-                        </div>
-                        <div className="col-xs-2">
-                            <HoverImage
-                                src={closeButton}
-                                hoverSrc={closeButtonActive}
-                                onClick={closePlayer}
-                                className="bt-player"
-                            />
-                        </div>
+                        <VideoButton
+                            src={infoButton}
+                            hoverSrc={infoButtonActive}
+                            onClick={toggleInfoBox}
+                        />
+
+                        <VideoButton
+                            src={playlistButton}
+                            hoverSrc={playlistButtonActive}
+                            onClick={togglePlaylistBox}
+                        />
+
+                        <VideoButton
+                            src={nextButton}
+                            hoverSrc={nextButtonActive}
+                            onClick={goToNextVideo}
+                        />
+
+                        <VideoButton
+                            src={fullScreenButton}
+                            hoverSrc={fullScreenButtonActive}
+                            onClick={enterFullScreen}
+                        />
+
+                        <VideoButton
+                            src={closeButton}
+                            hoverSrc={closeButtonActive}
+                            onClick={closePlayer}
+                        />
                     </div>
                     {/* caixas */}
                     <div className="row video-boxes">
