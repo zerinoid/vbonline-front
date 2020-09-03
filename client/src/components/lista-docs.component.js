@@ -53,6 +53,7 @@ export default function ListaDocs(props) {
 
     const DocPreviewMain = styled.div`
         width: 100%;
+        min-height: 274px;
         padding-bottom: 40.1%;
         margin-bottom: 0.5%;
         background: url(${(props) => props.bg}) center/cover no-repeat;
