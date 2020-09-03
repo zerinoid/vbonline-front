@@ -97,13 +97,19 @@
 
                 &.playlist {
                     width: 15vw;
-                    padding: 0.8vw 0.8vw;
-                    padding-bottom: 0.3vw;
+                    padding: $nn;
+                    // padding-bottom: 0.3vw;
 
-                    .row,
+                    .row {
+                        margin-bottom: 0.3vw;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+
                     .col-xs-6 {
-                        margin-bottom: 0.8vh;
-                        max-height: 7.9vh;
+                        max-height: 3.5vw;
                     }
 
                     .row.active {
