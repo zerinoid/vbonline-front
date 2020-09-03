@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Route, Link, useLocation } from 'react-router-dom';
 import HoverImage from 'react-hover-image';
 import colors from './styles/colors';
+import BP from './styles/breakpoints';
 
 import './App.scss';
 
@@ -34,8 +35,6 @@ import idiomaPtActive from './assets/img/PTact.png';
 import idiomaEn from './assets/img/EN.png';
 import idiomaEnHover from './assets/img/ENhv.png';
 import idiomaEnActive from './assets/img/ENact.png';
-
-const largeBreakPoint = '@media (max-width: 992px)';
 
 const App = (props) => {
     // Location
@@ -145,7 +144,7 @@ const App = (props) => {
                                 background:
                                     pathname === '/' &&
                                     `linear-gradient(0deg, ${colors.vermelho}, white 50%) fixed`,
-                                [largeBreakPoint]: {
+                                [BP.small]: {
                                     background:
                                         pathname === '/' &&
                                         `linear-gradient(0deg, ${colors.vermelho} 53%, white 77%) scroll`,
@@ -159,7 +158,7 @@ const App = (props) => {
                                     css={{
                                         flex: '4 1 0',
                                         alignItems: 'center',
-                                        [largeBreakPoint]: {
+                                        [BP.small]: {
                                             height: 'unset',
                                             width: 'unset',
                                             position: 'unset',
@@ -173,7 +172,7 @@ const App = (props) => {
                                             src={logo}
                                             css={{
                                                 width: '12.8vw',
-                                                [largeBreakPoint]: {
+                                                [BP.small]: {
                                                     display: 'none',
                                                 },
                                             }}
@@ -191,7 +190,7 @@ const App = (props) => {
                                                         ? 25
                                                         : 60.2,
                                                 display: 'none',
-                                                [largeBreakPoint]: {
+                                                [BP.small]: {
                                                     display: 'block',
                                                 },
                                             }}
@@ -219,7 +218,7 @@ const App = (props) => {
                                             height: 25,
                                             marginLeft: 10,
                                             cursor: 'pointer',
-                                            [largeBreakPoint]: {
+                                            [BP.small]: {
                                                 display: 'block',
                                             },
                                         })}
@@ -231,7 +230,7 @@ const App = (props) => {
                                         flex: '1 1 0.6%',
                                         justifyContent: 'space-between',
                                         alignItems: 'flex-start',
-                                        [largeBreakPoint]: {
+                                        [BP.small]: {
                                             display: 'none',
                                         },
                                     })}

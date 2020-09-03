@@ -4,6 +4,7 @@ import { css, jsx } from '@emotion/core';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import colors from '../styles/colors';
+import BP from '../styles/breakpoints';
 
 import AboutSection from './about-section.component';
 import Botao from './botao.component';
@@ -35,7 +36,7 @@ export default class SaibaMais extends Component {
                 <div
                     css={css`
                         flex: 1 1 0;
-                        @media (max-width: 992px) {
+                        ${BP.small} {
                             display: none;
                         }
                     `}
@@ -44,7 +45,7 @@ export default class SaibaMais extends Component {
                     css={css({
                         color: colors.vermelho,
                         flex: '5 1 0',
-                        '@media (max-width: 992px)': {
+                        [BP.small]: {
                             flexGrow: 8,
                         },
                     })}
@@ -79,7 +80,7 @@ export default class SaibaMais extends Component {
                                         src={fechar}
                                         css={{
                                             height: '1.47vw',
-                                            '@media (max-width: 992px)': {
+                                            [BP.small]: {
                                                 display: 'none',
                                             },
                                         }}
@@ -130,7 +131,7 @@ export default class SaibaMais extends Component {
                                             img {
                                                 height: 3.2vw;
                                             }
-                                            @media (max-width: 992px) {
+                                            ${BP.small} {
                                                 width: ${this.state.data
                                                     .partnersLogos.length *
                                                 25}%;
@@ -163,7 +164,7 @@ export default class SaibaMais extends Component {
                 <div
                     css={css`
                         flex: 1 5 30px;
-                        @media (max-width: 992px) {
+                        ${BP.small} {
                             display: none;
                         }
                     `}

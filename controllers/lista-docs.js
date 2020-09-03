@@ -12,8 +12,8 @@ exports.getListaDocs = (req, res, next) => {
                     poster: '/img/corescomposicoes_01_low.jpg',
                     thumb: '/img/corescomposicoes_01_thumb.jpg',
                     category: 'Doc',
-                    caption: `<p>2017, 29'17"<br />
-                              Direção:<br />
+                    caption: `<p>2017 | 29'17"<br />
+                              Direção<br />
                               <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
                 en: {
@@ -23,8 +23,8 @@ exports.getListaDocs = (req, res, next) => {
                     poster: '/img/corescomposicoes_01_low.jpg',
                     thumb: '/img/corescomposicoes_01_thumb.jpg',
                     category: 'Doc',
-                    caption: `<p>2017, 29'17"<br />
-                              Director:<br />
+                    caption: `<p>2017 | 29'17"<br />
+                              Director<br />
                               <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
             },
@@ -34,23 +34,23 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'Visita Preparatória ao Brasil',
                     subtitle: '',
-                    title_box: '',
+                    title_box: 'Visita Preparatória ao Brasil',
                     poster: '/img/visita-preparatoria_01_low.jpg',
                     thumb: '/img/visita-preparatoria_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p>2017, 5'12"<br />
-                              Direção:<br />
+                    caption: `<p>2017 | 5'12"<br />
+                              Direção<br />
                               <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
                 en: {
                     title: 'Preparatory Visit to Brazil',
                     subtitle: '',
-                    title_box: '',
+                    title_box: 'Preparatory Visit to Brazil',
                     poster: '/img/visita-preparatoria_01_low.jpg',
                     thumb: '/img/visita-preparatoria_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p>2017, 5'12"<br />
-                              Director:<br />
+                    caption: `<p>2017 | 5'12"<br />
+                              Director<br />
                               <strong>Juliano Ribeiro Salgado</strong></p>`
                 }
             },
@@ -60,23 +60,23 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'Encontro em Arken',
                     subtitle: '',
-                    title_box: '',
+                    title_box: 'Encontro em Arken',
                     poster: '/img/encontro_01_low.jpg',
                     thumb: '/img/encontro_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p>2017, 8'03"<br />
-                              Direção:<br />
+                    caption: `<p>2017 | 8'03"<br />
+                              Direção<br />
                               <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
                 en: {
-                    title: 'An Encounter in Arken',
+                    title: 'Encontro em Arken',
                     subtitle: '',
-                    title_box: '',
+                    title_box: 'An Encounter in Arken',
                     poster: '/img/encontro_01_low.jpg',
                     thumb: '/img/encontro_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p>2017, 8'03"<br />
-                              Director:<br />
+                    caption: `<p>2017 | 8'03"<br />
+                              Director<br />
                               <strong>Juliano Ribeiro Salgado</strong></p>`
                 }
             },
@@ -86,23 +86,23 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'As Asas da Borboleta',
                     subtitle: '',
-                    title_box: '',
+                    title_box: 'As Asas da Borboleta',
                     poster: '/img/asas_01_low.jpg',
                     thumb: '/img/asas_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p>2017, 3'17"<br />
-                              Direção:<br />
+                    caption: `<p>2017 | 3'17"<br />
+                              Direção<br />
                               <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
                 en: {
                     title: 'As Asas da Borboleta [The Butterfly’s Wings]',
                     subtitle: '',
-                    title_box: '',
+                    title_box: 'As Asas da Borboleta [The Butterfly’s Wings]',
                     poster: '/img/asas_01_low.jpg',
                     thumb: '/img/asas_01_thumb.jpg',
                     category: 'Extras',
-                    caption: `<p>2017, 3'17"<br />
-                              Director:<br />
+                    caption: `<p>2017 | 3'17"<br />
+                              Director<br />
                               <strong>Juliano Ribeiro Salgado</strong></p>`
                 }
             },

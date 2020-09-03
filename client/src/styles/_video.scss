@@ -29,11 +29,25 @@
 }
 
 #video-info {
+    display: flex;
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100px;
-    padding: 4vh 4vw;
+    padding: 6vh 105px;
+
+    .col-xs-2 {
+        flex-basis: unset;
+        max-width: unset;
+        width: 4.25vw;
+    }
+
+    .video-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: 'FedraMono';
+    }
 
     .video-buttons>div {
         display: flex;
@@ -55,12 +69,12 @@
 
             .info-box-container {
                 position: absolute;
-                top: 1vw;
+                top: $nn;
                 right: 0;
                 width: 15vw;
                 min-width: 220px;
                 height: auto;
-                padding: 0.8vw 0.8vw;
+                padding: (2*$nn) (2*$nn) (3*$nn);
                 color: white;
                 background-color: $vermelho;
                 font-size: 0.7em;
@@ -69,6 +83,10 @@
                 .info-box-title {
                     text-align: left;
                     line-height: 1.9vh;
+
+                    p {
+                        margin: 0;
+                    }
                 }
 
                 .info-box-title {
@@ -79,13 +97,29 @@
 
                 &.playlist {
                     width: 15vw;
-                    padding: 0.8vw 0.8vw;
-                    padding-bottom: 0.3vw;
+                    padding: $nn;
+                    // padding-bottom: 0.3vw;
 
-                    .row,
+                    .row {
+                        margin-bottom: 0.3vw;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        &:hover {
+                            p {
+                                font-weight: bold;
+                            }
+
+                            .thumb-container {
+                                border: 0.2vw solid white
+                            }
+                        }
+                    }
+
                     .col-xs-6 {
-                        margin-bottom: 0.8vh;
-                        max-height: 7.9vh;
+                        max-height: 3.5vw;
                     }
 
                     .row.active {
@@ -93,6 +127,16 @@
 
                         .playlist-title {
                             cursor: default;
+                        }
+
+                        &:hover {
+                            p {
+                                font-weight: normal;
+                            }
+
+                            .thumb-container {
+                                border: none;
+                            }
                         }
                     }
 
@@ -124,8 +168,18 @@
     }
 
     .bt-player {
-        height: 2vw;
+        height: 2 * $nn;
         cursor: pointer;
     }
 
+}
+
+@media (max-width: 768px) {
+    #video-info {
+        padding: 6vh 6vh;
+    }
+
+    .video-title {
+        font-size: 0.7em;
+    }
 }

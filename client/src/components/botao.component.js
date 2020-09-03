@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import colors from '../styles/colors';
+import BP from '../styles/breakpoints';
 
 const Botao = styled.button((props) => {
     const normalBorder = props.active ? 'none' : `solid 1px ${colors.vermelho}`;
@@ -26,7 +27,7 @@ const Botao = styled.button((props) => {
             border: `solid 2px ${colors.vermelho}`,
             fontWeight: 'bold',
         },
-        '@media (max-width: 992px)': {
+        [BP.small]: {
             borderRadius: 20,
             height: 25,
             width: props.lingua ? 25 : 100,

@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import HoverImage from 'react-hover-image';
 import colors from '../styles/colors';
+import BP from '../styles/breakpoints';
 
 import VideoPlayer from './video.component';
 import playPrev from '../assets/img/play_prev.png';
@@ -61,10 +62,10 @@ export default function ListaDocs(props) {
     const DocPreviewContainer = styled.div`
         display: flex;
         justify-content: space-between;
-        @media (max-width: 992px) {
+        ${BP.small} {
             flex-direction: column;
             > div {
-                margin-bottom: 1%;
+                margin-bottom: 1rem;
             }
             > div:last-child {
                 margin-bottom: 0px;
@@ -75,7 +76,7 @@ export default function ListaDocs(props) {
     let buttonStyle = {
         height: '1.8vw',
         marginLeft: '0.2vw',
-        '@media (max-width: 992px)': {
+        [BP.small]: {
             marginLeft: '0.5vw',
             height: 25,
         },
@@ -88,7 +89,7 @@ export default function ListaDocs(props) {
         left: 0,
         width: '100%',
         height: '100%',
-        '@media (max-width: 992px)': {
+        [BP.small]: {
             padding: '20% 10%',
         },
     };
@@ -107,7 +108,8 @@ export default function ListaDocs(props) {
             border: none;
             position: relative;
         }
-        @media (max-width: 992px) {
+        ${BP.small} {
+            min-height: 274px;
             margin-bottom: 1rem;
             height: calc(100vh - 126px - 1rem);
             padding-bottom: unset;
@@ -119,6 +121,7 @@ export default function ListaDocs(props) {
 
     const DocPreviewThumb = (props) => {
         const [hovered, setHovered] = useState(false);
+
         buttonStyle = { ...buttonStyle, zIndex: 999 };
 
         absoluteStyle = {
@@ -126,7 +129,7 @@ export default function ListaDocs(props) {
             padding: '2%',
             display: 'flex',
             justifyContent: 'space-between',
-            '@media (max-width: 992px)': null,
+            [BP.small]: null,
         };
 
         return (
@@ -142,7 +145,8 @@ export default function ListaDocs(props) {
                     &:hover {
                         box-shadow: inset 0px 0px 0px 2px #fff;
                     }
-                    @media (max-width: 992px) {
+                    ${BP.small} {
+                        min-height: unset;
                         width: 100%;
                         height: 130px;
                     }
@@ -180,7 +184,7 @@ export default function ListaDocs(props) {
                         css={{
                             display: 'flex',
                             alignItems: 'center',
-                            '@media (max-width: 992px)': {
+                            [BP.small]: {
                                 display: 'block',
                             },
                         }}
@@ -191,7 +195,7 @@ export default function ListaDocs(props) {
                                 position: 'relative',
                                 top: '-0.4vh',
                                 marginRight: '0.3vw',
-                                '@media (max-width: 992px)': {
+                                [BP.small]: {
                                     position: 'unset',
                                 },
                             }}
@@ -219,11 +223,11 @@ export default function ListaDocs(props) {
                     alt=""
                     src={setaMais}
                     css={{
-                        display: 'block',
+                        display: 'none',
                         marginBottom: '3vw',
                         height: '4vw',
-                        '@media (min-width: 993px)': {
-                            display: 'none',
+                        [BP.small]: {
+                            display: 'block',
                         },
                     }}
                 />
