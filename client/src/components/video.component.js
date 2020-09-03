@@ -209,7 +209,7 @@ const VideoPlayer = (props) => {
                         <VideoButton
                             src={nextButton}
                             hoverSrc={nextButtonActive}
-                            onClick={goToVideo}
+                            onClick={() => {goToVideo(nextVideo.id)}}
                         />
                         <VideoButton
                             src={fullScreenButton}
