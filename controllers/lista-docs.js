@@ -18,8 +18,8 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Abdoulaye Konaté',
-                    subtitle: 'Cores e Composições',
-                    title_box: 'Abdoulaye Konaté: Cores e composições',
+                    subtitle: 'Composition and Colors',
+                    title_box: 'Abdoulaye Konaté: Composition and colors',
                     poster: '/img/corescomposicoes_01_low.jpg',
                     thumb: '/img/corescomposicoes_01_thumb.jpg',
                     category: 'Doc',
