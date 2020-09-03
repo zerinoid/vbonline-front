@@ -206,8 +206,8 @@ const VideoPlayer = (props) => {
                 <div id="vimeo-player" />
             </div>
             <div id="video-info" className="row">
-                <div className="col-xs-4"></div>
-                <div className="video-title col-xs-4">
+                <div className="d-none d-md-block col-md-4"></div>
+                <div className="video-title col-8 col-md-4">
                     <span
                         css={{ textTransform: 'uppercase', fontWeight: 'bold' }}
                     >
@@ -218,7 +218,7 @@ const VideoPlayer = (props) => {
                     </span>
                 </div>
                 <div
-                    className="col-xs-4"
+                    className="col-4 col-md-4"
                     css={{
                         zIndex: '1',
                         '.row': { justifyContent: 'flex-end' },

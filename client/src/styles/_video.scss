@@ -173,3 +173,13 @@
     }
 
 }
+
+@media (max-width: 768px) {
+    #video-info {
+        padding: 6vh 6vh;
+    }
+
+    .video-title {
+        font-size: 0.7em;
+    }
+}
