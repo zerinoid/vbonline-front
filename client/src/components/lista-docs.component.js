@@ -54,7 +54,6 @@ export default function ListaDocs(props) {
 
     const DocPreviewMain = styled.div`
         width: 100%;
-        min-height: 274px;
         padding-bottom: 40.1%;
         margin-bottom: 0.5%;
         background: url(${(props) => props.bg}) center/cover no-repeat;
@@ -68,6 +67,7 @@ export default function ListaDocs(props) {
             position: relative;
         }
         ${BP.small} {
+            min-height: 274px;
             margin-bottom: 1rem;
             height: calc(100vh - 126px - 1rem);
             padding-bottom: unset;
@@ -79,6 +79,7 @@ export default function ListaDocs(props) {
 
     const DocPreviewThumb = (props) => {
         const [hovered, setHovered] = useState(false);
+
         buttonStyle = { ...buttonStyle, zIndex: 999 };
 
         absoluteStyle = {
@@ -103,6 +104,7 @@ export default function ListaDocs(props) {
                         box-shadow: inset 0px 0px 0px 2px #fff;
                     }
                     ${BP.small} {
+                        min-height: unset;
                         width: 100%;
                         height: 130px;
                     }
