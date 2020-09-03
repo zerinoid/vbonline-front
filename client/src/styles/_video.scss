@@ -69,12 +69,12 @@
 
             .info-box-container {
                 position: absolute;
-                top: 1vw;
+                top: $nn;
                 right: 0;
                 width: 15vw;
                 min-width: 220px;
                 height: auto;
-                padding: 0.8vw 0.8vw;
+                padding: (2*$nn) (2*$nn) (3*$nn);
                 color: white;
                 background-color: $vermelho;
                 font-size: 0.7em;
@@ -83,6 +83,10 @@
                 .info-box-title {
                     text-align: left;
                     line-height: 1.9vh;
+
+                    p {
+                        margin: 0;
+                    }
                 }
 
                 .info-box-title {
