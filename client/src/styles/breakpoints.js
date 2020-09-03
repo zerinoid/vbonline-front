@@ -1,5 +1,5 @@
 const BP = {
-    small: '@media (max-width: 992px)',
+    small: '@media (max-width: 768px)',
     large: '@media (max-width: 1024px)',
 };
 
