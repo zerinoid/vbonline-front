@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import colors from '../styles/colors';
+import BP from '../styles/breakpoints';
 
 import Botao from './botao.component';
 
@@ -15,7 +16,7 @@ const BotaoMenuMobile = (props) => {
                 color: props.active ? colors.vermelho : colors.branco,
                 border: normalBorder,
                 fontWeight: normalWeight,
-                '@media (max-width: 992px)': {
+                [BP.small]: {
                     '&:hover': {
                         border: normalBorder,
                         fontWeight: normalWeight,

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Route, Link, useLocation, useHistory } from 'react-router-dom';
 import HoverImage from 'react-hover-image';
 import colors from './styles/colors';
+import BP from './styles/breakpoints';
 
 import './App.scss';
 
@@ -35,8 +36,6 @@ import idiomaPtActive from './assets/img/PTact.png';
 import idiomaEn from './assets/img/EN.png';
 import idiomaEnHover from './assets/img/ENhv.png';
 import idiomaEnActive from './assets/img/ENact.png';
-
-import BP from './styles/breakpoints';
 
 const App = (props) => {
     // Location

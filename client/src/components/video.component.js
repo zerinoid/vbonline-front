@@ -7,6 +7,7 @@ import Player from '@vimeo/player';
 import 'flexboxgrid';
 import HoverImage from 'react-hover-image';
 import screenfull from 'screenfull';
+import BP from '../styles/breakpoints';
 
 import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
 import playlistButton from '../assets/img/v_assets/vPlaylist.png';

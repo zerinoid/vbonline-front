@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
+import BP from '../styles/breakpoints';
 
 const AboutSection = styled.div`
     margin-top: 6%;
-    @media (max-width: 992px) {
+    ${BP.small} {
         margin-top: 50px;
     }
     p a {
