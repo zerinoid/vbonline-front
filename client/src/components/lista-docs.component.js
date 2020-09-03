@@ -23,7 +23,7 @@ export default function ListaDocs(props) {
         ${BP.small} {
             flex-direction: column;
             > div {
-                margin-bottom: 1%;
+                margin-bottom: 1rem;
             }
             > div:last-child {
                 margin-bottom: 0px;
