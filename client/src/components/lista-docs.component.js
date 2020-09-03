@@ -183,11 +183,11 @@ export default function ListaDocs(props) {
                     alt=""
                     src={setaMais}
                     css={{
-                        display: 'block',
+                        display: 'none',
                         marginBottom: '3vw',
                         height: '4vw',
                         [BP.small]: {
-                            display: 'none',
+                            display: 'block',
                         },
                     }}
                 />
