@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
 import { jsx } from '@emotion/core';
 import Player from '@vimeo/player';
 import 'flexboxgrid';
@@ -21,43 +20,33 @@ import closeButton from '../assets/img/v_assets/vFechar.png';
 
 const VideoPlayer = (props) => {
     // Hooks
-    const history = useHistory();
-    const { pathname } = useLocation();
     const playerRef = useRef(null);
-
-    // Constants
-    const lang = props.lang;
-    const vimeoOptions = props.vimeoOptions;
 
     // State
     const [infoBoxState, setInfoBoxState] = useState('none');
     const [playlistBoxState, setPlaylistBoxState] = useState('none');
-    const [vimeoState, setVimeoState] = useState(vimeoOptions);
     const [playerState, setPlayerState] = useState(null);
 
-    // Initial order and next video
-    let firstVideo = props.data.videos.filter((video) => video.order == 1);
+    // First video
+    let firstVideo = props.videoList.data.videos.filter((video) => video.order == 1);
+    
     // Next video
-    let nextVideo = props.data.videos.filter(
-        (video) => video.order == +vimeoState.current_video.order + 1
+    let nextVideo = props.videoList.data.videos.filter(
+        (video) => video.order == +props.vimeoOptions.current_video.order + 1
     );
     nextVideo = nextVideo.length > 0 ? nextVideo[0] : firstVideo[0];
+    
     // Current video
-    let currentVideo = props.data.videos.filter(
-        (video) => video.order == +vimeoState.current_video.order
+    let currentVideo = props.videoList.data.videos.filter(
+        (video) => video.order == +props.vimeoOptions.current_video.order
     )[0];
-    // All videos except current
-    let remainingVideos = props.data.videos.filter(
-        (video) => video.order != +vimeoState.current_video.order
-    );
 
+    // Playlist videos
     const pVideos = [];
-
     pVideos.push(
-        props.data.videos.map((value, index) => {
+        props.videoList.data.videos.map((value, index) => {
             let video = value;
-            let active =
-                +vimeoState.current_video.order == video.order ? 'active' : '';
+            let active = currentVideo.id == video.id ? "active" : "";
 
             return (
                 <div className={`row ${active}`} key={index}>
@@ -65,14 +54,17 @@ const VideoPlayer = (props) => {
                         <div
                             className="thumb-container"
                             style={{
-                                backgroundImage: `url(${video[lang].thumb})`,
+                                backgroundImage: `url(${video[props.lang].thumb})`,
                             }}
+                            onClick={() => {goToVideo(video.id)}}
                         ></div>
                     </div>
                     <div className="col-xs-6">
-                        <p className="playlist-title">{video[lang].title}</p>
+                        <p className="playlist-title" onClick={() => {goToVideo(video.id)}}>
+                            {video[props.lang].title}
+                        </p>
                         <p className="playlist-category">
-                            {video[lang].category}
+                            {video[props.lang].category}
                         </p>
                     </div>
                 </div>
@@ -91,9 +83,8 @@ const VideoPlayer = (props) => {
 
     // close player and return to home
     const closePlayer = () => {
-        props.fechaVideo();
         if (playerState != null) playerState.destroy();
-        history.push('/');
+        props.closePlayer(true);
     };
 
     // enter fullscreen
@@ -130,16 +121,10 @@ const VideoPlayer = (props) => {
         }
     };
 
-    // set vimeo state with next video
-    const goToNextVideo = () => {
+    // go to video
+    const goToVideo = (id) => {
         closeBoxes();
-        setVimeoState({
-            autoplay: true,
-            controls: true,
-            id: nextVideo.id,
-            current_video: nextVideo,
-            texttrack: lang,
-        });
+        props.changeVideo(id);
     };
 
     /*
@@ -149,16 +134,8 @@ const VideoPlayer = (props) => {
     // 1) instantiate a new player on first load or if vimeo data changes
     useEffect(() => {
         if (playerState != null) playerState.destroy();
-        setPlayerState(new Player('vimeo-player', vimeoState));
-    }, [vimeoState]);
-
-    // 2) if player changes, increment "nextVideo" by 1
-    useEffect(() => {
-        let order = +vimeoState.current_video.order;
-        order += 1;
-        nextVideo = props.data.videos.filter((video) => video.order == order);
-        nextVideo = nextVideo.length > 0 ? nextVideo[0] : firstVideo[0];
-    }, [playerState]);
+        setPlayerState(new Player('vimeo-player', props.vimeoOptions));
+    }, [props.vimeoOptions]);
 
     // 3) vimeo player events
     useEffect(() => {
@@ -174,15 +151,8 @@ const VideoPlayer = (props) => {
             });
             // Go to next video once current video ends
             playerState.on('ended', () => {
-                goToNextVideo();
+                goToVideo(nextVideo.id);
             });
-        }
-    });
-
-    // 4) Close player on route change
-    useEffect(() => {
-        if (pathname !== '/video') {
-            closePlayer();
         }
     });
 
@@ -198,7 +168,6 @@ const VideoPlayer = (props) => {
                             width: '100%',
                             height: '100%',
                             position: 'absolute',
-                            /* top: '0.4vh', */
                         }}
                     >
                         <div
@@ -227,14 +196,14 @@ const VideoPlayer = (props) => {
                                         fontWeight: 'bold',
                                     }}
                                 >
-                                    {vimeoState.current_video[lang].title}
+                                    {props.vimeoOptions.current_video[props.lang].title}
                                 </span>
                                 <span
                                     style={{
                                         marginLeft: '0.7vw',
                                     }}
                                 >
-                                    {vimeoState.current_video[lang].subtitle}
+                                    {props.vimeoOptions.current_video[props.lang].subtitle}
                                 </span>
                             </div>
                         </div>
@@ -269,7 +238,7 @@ const VideoPlayer = (props) => {
                                 <HoverImage
                                     src={nextButton}
                                     hoverSrc={nextButtonActive}
-                                    onClick={goToNextVideo}
+                                    onClick={() => {goToVideo(nextVideo.id)}}
                                     className="bt-player"
                                 />
                             </div>
@@ -300,18 +269,14 @@ const VideoPlayer = (props) => {
                                     <p
                                         className="info-box-title"
                                         dangerouslySetInnerHTML={createMarkup(
-                                            vimeoState.current_video[lang]
+                                            props.vimeoOptions.current_video[props.lang]
                                                 .title_box
-                                                ? vimeoState.current_video[lang]
-                                                      .title_box
-                                                : vimeoState.current_video[lang]
-                                                      .title
                                         )}
                                     ></p>
                                     <div
                                         className="info-box-caption"
                                         dangerouslySetInnerHTML={createMarkup(
-                                            vimeoState.current_video[lang]
+                                            props.vimeoOptions.current_video[props.lang]
                                                 .caption
                                         )}
                                     />

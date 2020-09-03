@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import { Route, Link, useLocation, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import HoverImage from 'react-hover-image';
 import colors from '../styles/colors';
 
@@ -15,14 +15,48 @@ import setaMais from '../assets/img/seta_mais.png';
 
 export default function ListaDocs(props) {
 
-    const [showPlayer, setShowPlayer] = useState(false);
+    const lang = props.lang ? props.lang : 'pt';
+    const videoList = props.lista.data.videos;
 
-    const playerHandler = () => {
+    const [showPlayer, setShowPlayer] = useState(false);
+    const [currentVideo, setCurrentVideo] = useState(null);
+    const [vimeoOptions, setVimeoOptions] = useState({
+        autoplay: true,
+        controls: true,
+        id: null,
+        current_video: null,
+        texttrack: lang,
+    });
+
+    const closePlayer = (e) => {
+        setShowPlayer(false);
+        setVimeoOptions({
+            autoplay: true,
+            controls: true,
+            id: null,
+            current_video: null,
+            texttrack: lang,
+        });
+    };
+
+    const playerHandler = (id) => {
+        setCurrentVideo(videoList.filter(
+            (video) => video.id == id
+        )[0]);
         setShowPlayer(true);
     };
 
-    const video_list = props.lista.data.videos;
-    const lang = props.lang ? props.lang : 'pt';
+    useEffect(() => {
+        if(currentVideo != null){
+            setVimeoOptions({
+                autoplay: true,
+                controls: true,
+                id: currentVideo.id,
+                current_video: currentVideo,
+                texttrack: lang,
+            });
+        } 
+    }, [currentVideo]); 
 
     const DocPreviewContainer = styled.div`
         display: flex;
@@ -122,7 +156,7 @@ export default function ListaDocs(props) {
                 onClick={props.click}
                 {...props}
             >
-                <div css={absoluteStyle} onClick={playerHandler}>
+                <div css={absoluteStyle}>
                     <div css={{ width: '50%' }}>{props.children}</div>
                     <img
                         alt=""
@@ -134,10 +168,10 @@ export default function ListaDocs(props) {
         );
     };
 
-    if (video_list && video_list.length > 0) {
+    if (videoList && videoList.length > 0) {
         // Main video
 
-        const main = video_list[0];
+        const main = videoList[0];
         const main_video = [
             <DocPreviewMain bg={main[lang].poster} key={0}>
                 <div css={absoluteStyle}>
@@ -168,7 +202,7 @@ export default function ListaDocs(props) {
                                 alt=""
                                 src={playPrev}
                                 hoverSrc={playPrevHv}
-                                onClick={playerHandler}
+                                onClick={playerHandler.bind(this, main.id)}
                                 css={buttonStyle}
                             />
                         <Link to="/saibamais">
@@ -198,15 +232,15 @@ export default function ListaDocs(props) {
 
         // Thumbs
         let videos = [];
-        if (video_list.length > 1) {
+        if (videoList.length > 1) {
             videos.push(
-                video_list.map((value, index) => {
+                videoList.map((value, index) => {
                     if (index > 0) {
                         return (
                             <DocPreviewThumb
                                 bg={value[lang].poster}
                                 key={index}
-                                click={() => props.playVideo(value)}
+                                onClick={playerHandler.bind(this, value.id)}
                             >
                                 <h5>{value[lang].title}</h5>
                                 <p>{value[lang].category}</p>
@@ -219,14 +253,30 @@ export default function ListaDocs(props) {
             );
         }
 
-        return !showPlayer ? (
-            <React.Fragment>
-                {main_video}
-                <DocPreviewContainer>{videos}</DocPreviewContainer>
-            </React.Fragment>
-        ) : (
-            <VideoPlayer></VideoPlayer>
-        );
+        if(!showPlayer){
+            return (
+                <React.Fragment>
+                    {main_video}
+                    <DocPreviewContainer>{videos}</DocPreviewContainer>
+                </React.Fragment>
+            );
+        } else {
+            if(vimeoOptions.id != null){
+                return (
+                    <VideoPlayer
+                        {...props}
+                        closePlayer={closePlayer}
+                        changeVideo={playerHandler}
+                        videoList={props.lista}
+                        vimeoOptions={vimeoOptions}
+                    />
+                );
+            }
+            return (
+                <div>Loading</div>
+            );
+        }
+
     } else {
         return (
             <div>

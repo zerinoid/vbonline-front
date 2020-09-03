@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { css, jsx, Global } from '@emotion/core';
 import axios from 'axios';
-import { Route, Link, useLocation, useHistory } from 'react-router-dom';
+import { Route, Link, useLocation } from 'react-router-dom';
 import HoverImage from 'react-hover-image';
 import colors from './styles/colors';
 
@@ -40,15 +40,12 @@ const largeBreakPoint = '@media (max-width: 992px)';
 const App = (props) => {
     // Location
     const { pathname } = useLocation();
-    // History
-    const history = useHistory();
     // Dimensions
     const currentWidth = window.innerWidth;
 
     // State
     const [appState, setAppState] = useState({
         data: null,
-        vimeoOptions: null,
     });
 
     const [langState, setLangState] = useState('pt');
@@ -68,25 +65,10 @@ const App = (props) => {
 
     // Player
     const openPlayer = (value) => {
-        const vimeoOptions = {
-            autoplay: true,
-            controls: true,
-            id: value.id,
-            current_video: value,
-            // responsive: true,
-            texttrack: langState,
-        };
         setAppState({
             data: appState.data,
-            vimeoOptions: vimeoOptions,
         });
     };
-
-    const closePlayer = () =>
-        setAppState({
-            data: appState.data,
-            vimeoOptions: appState.vimeoOptions,
-        });
 
     // Language handler
     const setLangHandler = (lang) => {
@@ -95,11 +77,6 @@ const App = (props) => {
         setMenuMobileShow(false);
     };
 
-    // Don't allow empty video
-    // if (appState.vimeoOptions === null && pathname === '/video') {
-    //     history.push('/');
-    // }
-
     // Main request
     useEffect(() => {
         axios
@@ -107,11 +84,10 @@ const App = (props) => {
             .then((res) =>
                 setAppState({
                     data: res.data,
-                    vimeoOptions: appState.vimeoOptions,
                 })
             )
             .catch((error) => console.log(error));
-    }, [appState.vimeoOptions]);
+    }, []);
 
     // Default language
     useEffect(() => {
@@ -124,6 +100,7 @@ const App = (props) => {
         });
     }, []);
 
+    // Close intro video on end
     useEffect(() => {
         if (appState.data && vinhetaRef.current != null) {
             vinhetaRef.current.onended = function () {
@@ -132,7 +109,7 @@ const App = (props) => {
         }
     });
 
-    // Fechar menuMobile
+    // Close mobile menu
     useEffect(() => {
         if (menuMobileShow) setMenuMobileShow(false);
     }, [pathname]);
