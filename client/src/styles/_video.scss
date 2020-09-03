@@ -106,6 +106,16 @@
                         &:last-child {
                             margin-bottom: 0;
                         }
+
+                        &:hover {
+                            p {
+                                font-weight: bold;
+                            }
+
+                            .thumb-container {
+                                border: 0.2vw solid white
+                            }
+                        }
                     }
 
                     .col-xs-6 {
@@ -117,6 +127,16 @@
 
                         .playlist-title {
                             cursor: default;
+                        }
+
+                        &:hover {
+                            p {
+                                font-weight: normal;
+                            }
+
+                            .thumb-container {
+                                border: none;
+                            }
                         }
                     }
 
