@@ -69,12 +69,12 @@
 
             .info-box-container {
                 position: absolute;
-                top: $nn;
+                top: $meio_icone;
                 right: 0;
                 width: 15vw;
                 min-width: 220px;
                 height: auto;
-                padding: (2*$nn) (2*$nn) (3*$nn);
+                padding: (2*$meio_icone) (2*$meio_icone) (3*$meio_icone);
                 color: white;
                 background-color: $vermelho;
                 font-size: 0.7em;
@@ -97,7 +97,7 @@
 
                 &.playlist {
                     width: 15vw;
-                    padding: $nn;
+                    padding: $meio_icone;
                     // padding-bottom: 0.3vw;
 
                     .row {
@@ -168,7 +168,7 @@
     }
 
     .bt-player {
-        height: 2 * $nn;
+        height: 2 * $meio_icone;
         cursor: pointer;
     }
 
@@ -177,9 +177,30 @@
 @media (max-width: 768px) {
     #video-info {
         padding: 6vh 6vh;
+
+        .video-title {
+            font-size: 0.7em;
+            justify-content: flex-start;
+        }
+
+        .bt-player {
+            height: 2 * $meio_icone_mob;
+        }
+
+        .col-xs-2 {
+            width: 5.75vw;
+        }
+
+        .video-boxes {
+            .info-box-container {
+                top: $meio_icone_mob;
+                padding: (2*$meio_icone_mob) (2*$meio_icone_mob) (3*$meio_icone_mob);
+            }
+
+            &.playlist {
+                padding: $meio_icone_mob;
+            }
+        }
     }
 
-    .video-title {
-        font-size: 0.7em;
-    }
 }
