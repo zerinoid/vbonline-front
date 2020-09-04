@@ -69,7 +69,7 @@ exports.getListaDocs = (req, res, next) => {
                               <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
                 en: {
-                    title: 'Encontro em Arken',
+                    title: 'An Encounter in Arken',
                     subtitle: '',
                     title_box: 'An Encounter in Arken',
                     poster: '/img/encontro_01_low.jpg',
@@ -95,9 +95,9 @@ exports.getListaDocs = (req, res, next) => {
                               <strong>Juliano Ribeiro Salgado</strong></p>`
                 },
                 en: {
-                    title: 'As Asas da Borboleta [The Butterfly’s Wings]',
+                    title: 'The Butterfly’s Wings',
                     subtitle: '',
-                    title_box: 'As Asas da Borboleta [The Butterfly’s Wings]',
+                    title_box: 'The Butterfly’s Wings',
                     poster: '/img/asas_01_low.jpg',
                     thumb: '/img/asas_01_thumb.jpg',
                     category: 'Extras',
