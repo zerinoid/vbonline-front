@@ -256,6 +256,13 @@
 }
 
 @media (max-width: 576px) {
+
+    .buttons-container {
+        margin-bottom: 3.4vw;
+    }
+}
+
+@media (max-width: 560px) {
     #video-info {
         padding: 6vh 2vh;
         left: 2.3vw;
