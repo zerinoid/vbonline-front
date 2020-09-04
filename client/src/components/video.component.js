@@ -260,6 +260,19 @@ const VideoPlayer = (props) => {
                                 className="info-box-container"
                                 style={{ display: infoBoxState }}
                             >
+                                <img
+                                    alt=""
+                                    src={closeButton}
+                                    className="d-md-none"
+                                    onClick={closeBoxes}
+                                    css={{
+                                        position: 'absolute',
+                                        right: 0,
+                                        marginRight: '7vw',
+                                        width: '3vw',
+                                        zIndex: 69,
+                                    }}
+                                />
                                 <p
                                     className="info-box-title"
                                     dangerouslySetInnerHTML={createMarkup(
@@ -283,6 +296,19 @@ const VideoPlayer = (props) => {
                                 className="info-box-container playlist"
                                 style={{ display: playlistBoxState }}
                             >
+                                <img
+                                    alt=""
+                                    src={closeButton}
+                                    className="d-md-none"
+                                    onClick={closeBoxes}
+                                    css={{
+                                        position: 'absolute',
+                                        right: 0,
+                                        marginRight: '7vw',
+                                        width: '3vw',
+                                        zIndex: 69,
+                                    }}
+                                />
                                 {pVideos}
                             </div>
                         </div>

@@ -186,6 +186,16 @@
     #video-info {
         padding: 6vh 6vh;
 
+        .buttons-container {
+            position: unset;
+        }
+
+        .video-boxes {
+            .info-box {
+                position: unset;
+            }
+        }
+
         .video-title {
             font-size: 0.7em;
         }
@@ -195,13 +205,46 @@
         }
 
         .video-boxes {
-            .info-box-container {
-                top: $meio_icone_mob;
-                padding: (2*$meio_icone_mob) (2*$meio_icone_mob) (3*$meio_icone_mob);
-            }
+            .info-box {
+                .info-box-container {
+                    padding: 5vw 7vw !important;
+                    width: 100vw !important;
+                    height: 100vh !important;
+                    top: 0 !important;
+                    left: 1.3vw !important;
+                    right: unset !important;
 
-            &.playlist {
-                padding: $meio_icone_mob;
+                    .info-box-title {
+                        margin-bottom: 13.4vh;
+                    }
+
+                    .info-box-title,
+                    .info-box-caption {
+                        line-height: 1.4;
+                        font-size: 2.5em;
+                    }
+
+                    &.playlist {
+                        padding: $meio_icone_mob;
+
+                        p {
+                            line-height: 1em;
+                        }
+
+                        .row {
+                            height: 24%;
+                        }
+
+                        .col-xs-6 {
+                            max-height: unset;
+                            font-size: 1.4em;
+                        }
+
+                        .thumb-container {
+                            max-height: unset;
+                        }
+                    }
+                }
             }
         }
 
