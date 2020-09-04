@@ -207,7 +207,7 @@
         .video-boxes {
             .info-box {
                 .info-box-container {
-                    padding: 5vw 7vw !important;
+                    padding: 5vw 7vw;
                     width: 100vw !important;
                     height: 100vh !important;
                     top: 0 !important;
@@ -225,14 +225,15 @@
                     }
 
                     &.playlist {
-                        padding: $meio_icone_mob;
+                        padding: 3vw 7vw;
 
                         p {
                             line-height: 1em;
                         }
 
                         .row {
-                            height: 24%;
+                            height: 20vh;
+                            margin-bottom: 1.7vw;
                         }
 
                         .col-xs-6 {
