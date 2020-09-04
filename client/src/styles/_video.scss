@@ -67,7 +67,7 @@
     .row.video-boxes {
 
         &>div {
-            // padding: 0;
+            padding: 0;
         }
     }
 
@@ -188,7 +188,6 @@
 
         .video-title {
             font-size: 0.7em;
-            justify-content: flex-start;
         }
 
         .col-xs-2 {
@@ -214,16 +213,11 @@
 
 @media (max-width: 576px) {
     #video-info {
+        padding: 6vh 2vh;
+        left: 2.3vw;
+
         .buttons-container {
-            margin-top: 1.5vw;
-
-            &>.row {
-                justify-content: flex-start;
-            }
-        }
-
-        .video-buttons>div {
-            justify-content: flex-start;
+            margin-bottom: 6.5vw;
         }
 
         .col-xs-2 {
@@ -232,6 +226,14 @@
 
         .bt-player {
             height: 4.4vw;
+        }
+    }
+
+    .row.video-buttons,
+    .row.video-boxes {
+
+        &>div {
+            padding: unset;
         }
     }
 }

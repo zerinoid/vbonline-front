@@ -7,6 +7,7 @@ import Player from '@vimeo/player';
 import 'flexboxgrid';
 import HoverImage from 'react-hover-image';
 import screenfull from 'screenfull';
+import { useMediaQuery } from 'react-responsive';
 import BP from '../styles/breakpoints';
 
 import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
@@ -200,6 +201,8 @@ const VideoPlayer = (props) => {
         }
     });
 
+    const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
+
     return (
         <div id="video-outter">
             <div id="video-container" ref={playerRef}>
@@ -217,7 +220,11 @@ const VideoPlayer = (props) => {
                         {vimeoState.current_video[lang].subtitle}
                     </span>
                 </div>
-                <div className="col-12 col-sm-5 col-md-4 buttons-container">
+                <div
+                    className={`col-12 col-sm-5 col-md-4 ${
+                        isMobile ? 'first-xs' : ''
+                    } buttons-container`}
+                >
                     {/* botoes */}
                     <div className="row video-buttons">
                         <VideoButton
