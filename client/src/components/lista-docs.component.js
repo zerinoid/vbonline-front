@@ -29,24 +29,14 @@ export default function ListaDocs(props) {
         texttrack: lang,
     });
 
-    const closePlayer = (e) => {
-        setShowPlayer(false);
-        setVimeoOptions({
-            autoplay: true,
-            controls: true,
-            id: null,
-            current_video: null,
-            texttrack: lang,
-        });
-    };
-
+    // #1 set current video
     const playerHandler = (id) => {
         setCurrentVideo(videoList.filter(
             (video) => video.id == id
         )[0]);
-        setShowPlayer(true);
     };
 
+    // #2 vimeo options with data from clicked video
     useEffect(() => {
         if(currentVideo != null){
             setVimeoOptions({
@@ -58,6 +48,19 @@ export default function ListaDocs(props) {
             });
         } 
     }, [currentVideo]); 
+
+    // #3 show player
+    useEffect(() => {
+        if(vimeoOptions.id != null){
+            setShowPlayer(true);
+        }
+    }, [vimeoOptions]); 
+
+    // #4 close player
+    const closePlayer = () => {
+        setShowPlayer(false);
+        setCurrentVideo(null);
+    };
 
     const DocPreviewContainer = styled.div`
         display: flex;
@@ -206,7 +209,7 @@ export default function ListaDocs(props) {
                                 alt=""
                                 src={playPrev}
                                 hoverSrc={playPrevHv}
-                                onClick={playerHandler.bind(this, main.id)}
+                                onClick={() => playerHandler(main.id)}
                                 css={buttonStyle}
                             />
                         <Link to="/saibamais">
@@ -244,7 +247,7 @@ export default function ListaDocs(props) {
                             <DocPreviewThumb
                                 bg={value[lang].poster}
                                 key={index}
-                                onClick={playerHandler.bind(this, value.id)}
+                                onClick={() => playerHandler(value.id)}
                             >
                                 <h5>{value[lang].title}</h5>
                                 <p>{value[lang].category}</p>
