@@ -53,8 +53,8 @@ const App = (props) => {
 
     const vinhetaRef = useRef(null);
 
-    //const showVinheta = process.env.NODE_ENV.substring(0, 3) !== "dev"
-    const showVinheta = false;
+    const showVinheta = process.env.NODE_ENV.substring(0, 3) !== "dev"
+    //const showVinheta = true;
 
     // Handler menu mobile
     const menuMobileToggle = () => {
@@ -63,7 +63,7 @@ const App = (props) => {
     };
 
     // Player
-    const openPlayer = (value) => {
+    const openPlayer = () => {
         setAppState({
             data: appState.data,
         });
@@ -113,12 +113,18 @@ const App = (props) => {
         if (menuMobileShow) setMenuMobileShow(false);
     }, [pathname]);
 
+    // Close vinheta on click
+    const vinhetaHandler = () => {
+        setVinhetaState(false);
+    };
+
     const idiomaButtonStyle = { height: '1.57vw' };
 
     if (appState.data) {
         if (vinhetaState && showVinheta && currentWidth > 992) {
             return (
                 <div
+                    onClick={vinhetaHandler}
                     css={{
                         background: colors.vermelho,
                         height: '100vh',
