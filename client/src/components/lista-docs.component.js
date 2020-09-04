@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,7 @@ import HoverImage from 'react-hover-image';
 import colors from '../styles/colors';
 import BP from '../styles/breakpoints';
 
+import VideoPlayer from './video.component';
 import playPrev from '../assets/img/play_prev.png';
 import playPrevHv from '../assets/img/play_prev_hv.png';
 import saibaMais from '../assets/img/saiba_mais.png';
@@ -14,8 +15,52 @@ import saibaMaisHv from '../assets/img/saiba_mais_hv.png';
 import setaMais from '../assets/img/seta_mais.png';
 
 export default function ListaDocs(props) {
-    const video_list = props.lista.data.videos;
+
     const lang = props.lang ? props.lang : 'pt';
+    const videoList = props.lista.data.videos;
+
+    const [showPlayer, setShowPlayer] = useState(false);
+    const [currentVideo, setCurrentVideo] = useState(null);
+    const [vimeoOptions, setVimeoOptions] = useState({
+        autoplay: true,
+        controls: true,
+        id: null,
+        current_video: null,
+        texttrack: lang,
+    });
+
+    // #1 set current video
+    const playerHandler = (id) => {
+        setCurrentVideo(videoList.filter(
+            (video) => video.id == id
+        )[0]);
+    };
+
+    // #2 vimeo options with data from clicked video
+    useEffect(() => {
+        if(currentVideo != null){
+            setVimeoOptions({
+                autoplay: true,
+                controls: true,
+                id: currentVideo.id,
+                current_video: currentVideo,
+                texttrack: lang,
+            });
+        } 
+    }, [currentVideo]); 
+
+    // #3 show player
+    useEffect(() => {
+        if(vimeoOptions.id != null){
+            setShowPlayer(true);
+        }
+    }, [vimeoOptions]); 
+
+    // #4 close player
+    const closePlayer = () => {
+        setShowPlayer(false);
+        setCurrentVideo(null);
+    };
 
     const DocPreviewContainer = styled.div`
         display: flex;
@@ -118,24 +163,22 @@ export default function ListaDocs(props) {
                 onClick={props.click}
                 {...props}
             >
-                <Link to="/video">
-                    <div css={absoluteStyle}>
-                        <div css={{ width: '50%' }}>{props.children}</div>
-                        <img
-                            alt=""
-                            src={hovered ? playPrevHv : playPrev}
-                            css={buttonStyle}
-                        />
-                    </div>
-                </Link>
+                <div css={absoluteStyle}>
+                    <div css={{ width: '50%' }}>{props.children}</div>
+                    <img
+                        alt=""
+                        src={hovered ? playPrevHv : playPrev}
+                        css={buttonStyle}
+                    />
+                </div>
             </DocPreviewMain>
         );
     };
 
-    if (video_list && video_list.length > 0) {
+    if (videoList && videoList.length > 0) {
         // Main video
 
-        const main = video_list[0];
+        const main = videoList[0];
         const main_video = [
             <DocPreviewMain bg={main[lang].poster} key={0}>
                 <div css={absoluteStyle}>
@@ -162,15 +205,13 @@ export default function ListaDocs(props) {
                         >
                             {main[lang].subtitle}
                         </h3>
-                        <Link to="/video">
                             <HoverImage
                                 alt=""
                                 src={playPrev}
                                 hoverSrc={playPrevHv}
-                                onClick={() => props.playVideo(main)}
+                                onClick={() => playerHandler(main.id)}
                                 css={buttonStyle}
                             />
-                        </Link>
                         <Link to="/saibamais">
                             <HoverImage
                                 alt=""
@@ -198,15 +239,15 @@ export default function ListaDocs(props) {
 
         // Thumbs
         let videos = [];
-        if (video_list.length > 1) {
+        if (videoList.length > 1) {
             videos.push(
-                video_list.map((value, index) => {
+                videoList.map((value, index) => {
                     if (index > 0) {
                         return (
                             <DocPreviewThumb
                                 bg={value[lang].poster}
                                 key={index}
-                                click={() => props.playVideo(value)}
+                                onClick={() => playerHandler(value.id)}
                             >
                                 <h5>{value[lang].title}</h5>
                                 <p>{value[lang].category}</p>
@@ -219,12 +260,30 @@ export default function ListaDocs(props) {
             );
         }
 
-        return (
-            <React.Fragment>
-                {main_video}
-                <DocPreviewContainer>{videos}</DocPreviewContainer>
-            </React.Fragment>
-        );
+        if(!showPlayer){
+            return (
+                <React.Fragment>
+                    {main_video}
+                    <DocPreviewContainer>{videos}</DocPreviewContainer>
+                </React.Fragment>
+            );
+        } else {
+            if(vimeoOptions.id != null){
+                return (
+                    <VideoPlayer
+                        {...props}
+                        closePlayer={closePlayer}
+                        changeVideo={playerHandler}
+                        videoList={props.lista}
+                        vimeoOptions={vimeoOptions}
+                    />
+                );
+            }
+            return (
+                <div>Loading</div>
+            );
+        }
+
     } else {
         return (
             <div>

@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { css, jsx, Global } from '@emotion/core';
 import axios from 'axios';
-import { Route, Link, useLocation, useHistory } from 'react-router-dom';
+import { Route, Link, useLocation } from 'react-router-dom';
 import HoverImage from 'react-hover-image';
 import colors from './styles/colors';
 import BP from './styles/breakpoints';
@@ -11,7 +11,6 @@ import './App.scss';
 
 import Sobre from './components/sobre.component';
 import ListaDocs from './components/lista-docs.component';
-import VideoPlayer from './components/video.component';
 import Botao from './components/botao.component';
 import SaibaMais from './components/saiba-mais.component';
 import MenuMobile from './components/menu-mobile.component';
@@ -40,16 +39,12 @@ import idiomaEnActive from './assets/img/ENact.png';
 const App = (props) => {
     // Location
     const { pathname } = useLocation();
-    // History
-    const history = useHistory();
     // Dimensions
     const currentWidth = window.innerWidth;
 
     // State
     const [appState, setAppState] = useState({
         data: null,
-        showPlayer: false,
-        vimeoOptions: null,
     });
 
     const [langState, setLangState] = useState('pt');
@@ -58,8 +53,8 @@ const App = (props) => {
 
     const vinhetaRef = useRef(null);
 
-    //const showVinheta = process.env.NODE_ENV.substring(0, 3) !== "dev"
-    const showVinheta = false;
+    const showVinheta = process.env.NODE_ENV.substring(0, 3) !== "dev"
+    // const showVinheta = false;
 
     // Handler menu mobile
     const menuMobileToggle = () => {
@@ -69,27 +64,10 @@ const App = (props) => {
 
     // Player
     const openPlayer = (value) => {
-        const vimeoOptions = {
-            autoplay: true,
-            controls: true,
-            id: value.id,
-            current_video: value,
-            // responsive: true,
-            texttrack: langState,
-        };
         setAppState({
             data: appState.data,
-            showPlayer: true,
-            vimeoOptions: vimeoOptions,
         });
     };
-
-    const closePlayer = () =>
-        setAppState({
-            data: appState.data,
-            showPlayer: false,
-            vimeoOptions: appState.vimeoOptions,
-        });
 
     // Language handler
     const setLangHandler = (lang) => {
@@ -98,11 +76,6 @@ const App = (props) => {
         setMenuMobileShow(false);
     };
 
-    // Don't allow empty video
-    if (appState.vimeoOptions === null && pathname === '/video') {
-        history.push('/');
-    }
-
     // Main request
     useEffect(() => {
         axios
@@ -110,12 +83,10 @@ const App = (props) => {
             .then((res) =>
                 setAppState({
                     data: res.data,
-                    showPlayer: appState.showPlayer,
-                    vimeoOptions: appState.vimeoOptions,
                 })
             )
             .catch((error) => console.log(error));
-    }, [appState.showPlayer, appState.vimeoOptions]);
+    }, []);
 
     // Default language
     useEffect(() => {
@@ -128,6 +99,7 @@ const App = (props) => {
         });
     }, []);
 
+    // Close intro video on end
     useEffect(() => {
         if (appState.data && vinhetaRef.current != null) {
             vinhetaRef.current.onended = function () {
@@ -136,7 +108,7 @@ const App = (props) => {
         }
     });
 
-    // Fechar menuMobile
+    // Close mobile menu
     useEffect(() => {
         if (menuMobileShow) setMenuMobileShow(false);
     }, [pathname]);
@@ -165,14 +137,7 @@ const App = (props) => {
             );
         } else {
             return (
-                <div
-                    className="App"
-                    id={
-                        currentWidth <= 992 && appState.showPlayer
-                            ? 'mobile-player'
-                            : ''
-                    }
-                >
+                <div className="App">
                     <Global
                         styles={{
                             body: {
@@ -187,14 +152,7 @@ const App = (props) => {
                             },
                         }}
                     ></Global>
-                    {appState.showPlayer ? (
-                        <VideoPlayer
-                            {...appState}
-                            fechaVideo={closePlayer}
-                            lang={langState}
-                        />
-                    ) : (
-                        <div className="limite">
+                    {<div className="limite">
                             <nav>
                                 <div
                                     css={{
@@ -368,7 +326,7 @@ const App = (props) => {
                                 />
                             </div>
                         </div>
-                    )}
+                    }
                 </div>
             );
         }
