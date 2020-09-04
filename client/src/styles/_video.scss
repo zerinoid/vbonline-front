@@ -49,6 +49,14 @@
         font-family: 'FedraMono';
     }
 
+    .buttons-container {
+        z-index: 1;
+
+        &>.row {
+            justify-content: flex-end;
+        }
+    }
+
     .video-buttons>div {
         display: flex;
         justify-content: flex-end;
@@ -59,7 +67,7 @@
     .row.video-boxes {
 
         &>div {
-            padding: 0;
+            // padding: 0;
         }
     }
 
@@ -183,10 +191,6 @@
             justify-content: flex-start;
         }
 
-        .bt-player {
-            height: 2 * $meio_icone_mob;
-        }
-
         .col-xs-2 {
             width: 5.75vw;
         }
@@ -201,6 +205,33 @@
                 padding: $meio_icone_mob;
             }
         }
-    }
 
+        .bt-player {
+            height: 2 * $meio_icone_mob;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    #video-info {
+        .buttons-container {
+            margin-top: 1.5vw;
+
+            &>.row {
+                justify-content: flex-start;
+            }
+        }
+
+        .video-buttons>div {
+            justify-content: flex-start;
+        }
+
+        .col-xs-2 {
+            width: 9.75vw;
+        }
+
+        .bt-player {
+            height: 4.4vw;
+        }
+    }
 }

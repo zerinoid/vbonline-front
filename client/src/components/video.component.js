@@ -207,7 +207,7 @@ const VideoPlayer = (props) => {
             </div>
             <div id="video-info" className="row">
                 <div className="d-none d-md-block col-md-4"></div>
-                <div className="video-title col-7 col-md-4">
+                <div className="col-12 col-sm-7 col-md-4 video-title">
                     <span
                         css={{ textTransform: 'uppercase', fontWeight: 'bold' }}
                     >
@@ -217,13 +217,7 @@ const VideoPlayer = (props) => {
                         {vimeoState.current_video[lang].subtitle}
                     </span>
                 </div>
-                <div
-                    className="col-5 col-md-4"
-                    css={{
-                        zIndex: '1',
-                        '.row': { justifyContent: 'flex-end' },
-                    }}
-                >
+                <div className="col-12 col-sm-5 col-md-4 buttons-container">
                     {/* botoes */}
                     <div className="row video-buttons">
                         <VideoButton
