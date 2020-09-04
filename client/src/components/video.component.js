@@ -210,29 +210,29 @@ const VideoPlayer = (props) => {
                     <div className="row video-buttons">
                         <VideoButton
                             src={infoButton}
-                            hoverSrc={infoButtonActive}
+                            hoverSrc={isMobile ? infoButton : infoButtonActive}
                             onClick={toggleInfoBox}
                         />
                         <VideoButton
                             src={playlistButton}
-                            hoverSrc={playlistButtonActive}
+                            hoverSrc={isMobile ? playlistButton : playlistButtonActive}
                             onClick={togglePlaylistBox}
                         />
                         <VideoButton
                             src={nextButton}
-                            hoverSrc={nextButtonActive}
+                            hoverSrc={isMobile ? nextButton : nextButtonActive}
                             onClick={() => {
                                 goToVideo(nextVideo.id);
                             }}
                         />
                         <VideoButton
                             src={fullScreenButton}
-                            hoverSrc={fullScreenButtonActive}
+                            hoverSrc={isMobile ? fullScreenButton : fullScreenButtonActive}
                             onClick={enterFullScreen}
                         />
                         <VideoButton
                             src={closeButton}
-                            hoverSrc={closeButtonActive}
+                            hoverSrc={isMobile ? closeButton : closeButtonActive}
                             onClick={closePlayer}
                         />
                     </div>
