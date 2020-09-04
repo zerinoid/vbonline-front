@@ -267,10 +267,7 @@ export default function ListaDocs(props) {
             return (
                 <React.Fragment>
                     {main_video}
-                    <DocPreviewContainer>
-                        <a id="firstThumb" />
-                        {videos}
-                    </DocPreviewContainer>
+                    <DocPreviewContainer>{videos}</DocPreviewContainer>
                 </React.Fragment>
             );
         } else {
