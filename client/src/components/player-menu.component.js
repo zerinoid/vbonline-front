@@ -24,7 +24,7 @@ const VideoButton = (props) => {
             src={props.src}
             hoverSrc={props.hoverSrc}
             onClick={props.onClick}
-            className="video-button"
+            className="video-button-icon"
         />
     );
 };
@@ -45,11 +45,7 @@ const PlayerMenu = (props) => {
         >
             <Col md={4}>
                 <Dropdown>
-                    <Dropdown.Toggle
-                        variant="success"
-                        id="dropdown-basic"
-                        css={{}}
-                    >
+                    <Dropdown.Toggle>
                         <VideoButton
                             src={infoButton}
                             hoverSrc={infoButtonActive}

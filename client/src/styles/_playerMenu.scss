@@ -1,6 +1,15 @@
-.video-button {
+@import "bootstrap/scss/bootstrap";
+
+.video-button-icon {
     height: 1.5vw;
     padding-left: 2.25vw;
 }
 
-@import "bootstrap/scss/bootstrap";
+.btn-primary {
+    background-color: transparent;
+    border: none;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
