@@ -215,7 +215,9 @@ const VideoPlayer = (props) => {
                         />
                         <VideoButton
                             src={playlistButton}
-                            hoverSrc={isMobile ? playlistButton : playlistButtonActive}
+                            hoverSrc={
+                                isMobile ? playlistButton : playlistButtonActive
+                            }
                             onClick={togglePlaylistBox}
                         />
                         <VideoButton
@@ -227,12 +229,18 @@ const VideoPlayer = (props) => {
                         />
                         <VideoButton
                             src={fullScreenButton}
-                            hoverSrc={isMobile ? fullScreenButton : fullScreenButtonActive}
+                            hoverSrc={
+                                isMobile
+                                    ? fullScreenButton
+                                    : fullScreenButtonActive
+                            }
                             onClick={enterFullScreen}
                         />
                         <VideoButton
                             src={closeButton}
-                            hoverSrc={isMobile ? closeButton : closeButtonActive}
+                            hoverSrc={
+                                isMobile ? closeButton : closeButtonActive
+                            }
                             onClick={closePlayer}
                         />
                     </div>
