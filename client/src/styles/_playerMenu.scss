@@ -19,6 +19,14 @@
     padding: 0.75vw;
 }
 
+.video-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: "FedraMono";
+}
+
 // override do bootstrap
 .btn-primary:not(:disabled):not(.disabled):active,
 .show>.btn-primary.dropdown-toggle {
