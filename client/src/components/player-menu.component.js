@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import HoverImage from 'react-hover-image';
 import { jsx } from '@emotion/core';
+import HoverImage from 'react-hover-image';
 import { useMediaQuery } from 'react-responsive';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
