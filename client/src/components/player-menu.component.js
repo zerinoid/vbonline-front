@@ -36,13 +36,17 @@ const PlayerMenu = (props) => {
 
     return (
         <Row
-            style={{
+            css={{
                 position: 'absolute',
                 top: 0,
                 width: '88vw',
                 backgroundColor: 'black',
                 zIndex: 1010,
                 marginTop: '4vw',
+                '&>div': {
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                },
             }}
         >
             <Col md={4}>
