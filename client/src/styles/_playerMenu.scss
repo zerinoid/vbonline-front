@@ -1,23 +1,36 @@
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
 
+//temp
 .video-button-icon {
     height: 1.5vw;
     padding-left: 2.25vw;
 }
 
+// override do bootstrap
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    background-color: unset;
+    border-color: unset;
+
+    &:focus {
+        box-shadow: unset;
+    }
+}
+
 .btn-primary {
-    background-color: transparent;
-    border: none;
+    background-color: unset;
+    border: unset;
     height: 1.5vw;
 
     &:hover {
-        background-color: transparent;
+        background-color: unset;
         border: none;
     }
 
     &:focus {
-        background-color: transparent;
-        border: none;
+        background-color: unset;
+        box-shadow: unset;
+        border: unset;
     }
 }
 
