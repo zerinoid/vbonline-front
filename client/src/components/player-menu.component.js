@@ -61,7 +61,20 @@ const PlayerMenu = (props) => {
                             },
                         }}
                     ></Dropdown.Toggle>
-
+                    <Dropdown.Toggle
+                        css={{
+                            background: `url(${playlistButton}) center/contain no-repeat`,
+                            '&:hover': {
+                                backgroundImage: `url(${playlistButtonActive})`,
+                            },
+                            '&:focus': {
+                                backgroundImage: `url(${playlistButtonActive})`,
+                            },
+                            '&:active': {
+                                backgroundImage: `url(${playlistButtonActive})`,
+                            },
+                        }}
+                    ></Dropdown.Toggle>
                     <Dropdown.Menu alignRight>
                         <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                     </Dropdown.Menu>
