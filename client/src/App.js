@@ -15,6 +15,9 @@ import Botao from './components/botao.component';
 import SaibaMais from './components/saiba-mais.component';
 import MenuMobile from './components/menu-mobile.component';
 
+//temp
+import UpperBar from './components/upper-bar.component';
+
 // logo
 import logo from './assets/img/logo.png';
 import logoMob from './assets/img/logo_mb.png';
@@ -53,7 +56,7 @@ const App = (props) => {
 
     const vinhetaRef = useRef(null);
 
-    const showVinheta = process.env.NODE_ENV.substring(0, 3) !== "dev"
+    const showVinheta = process.env.NODE_ENV.substring(0, 3) !== 'dev';
     // const showVinheta = false;
 
     // Handler menu mobile
@@ -158,7 +161,8 @@ const App = (props) => {
                             },
                         }}
                     ></Global>
-                    {<div className="limite">
+                    {
+                        <div className="limite">
                             <nav>
                                 <div
                                     css={{
