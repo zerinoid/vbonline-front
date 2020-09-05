@@ -82,7 +82,7 @@ const PlayerMenu = (props) => {
                     <Dropdown.Menu alignRight>
                         <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                     </Dropdown.Menu>
-                </Dropdown>{' '}
+                </Dropdown>
             </Col>
             <Col md={4}>
                 <Row>
