@@ -2,7 +2,6 @@
 import { jsx } from '@emotion/core';
 import HoverImage from 'react-hover-image';
 import { useMediaQuery } from 'react-responsive';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-bootstrap/Dropdown';
 
@@ -33,81 +32,62 @@ const PlayerMenu = (props) => {
     const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
 
     return (
-        <Row
-            css={{
-                position: 'absolute',
-                top: 0,
-                width: '88vw',
-                backgroundColor: 'black',
-                zIndex: 1010,
-                marginTop: '4vw',
-                '&>div': {
-                    display: 'flex',
-                    justifyContent: 'flex-end',
-                },
-            }}
-        >
-            <Col md={4}> </Col>
-            <Col md={4}></Col>
-            <Col md={4}>
-                <Dropdown>
-                    <Dropdown.Toggle
-                        css={{
-                            background: `url(${infoButton}) center/contain no-repeat`,
-                            '&:hover': {
-                                backgroundImage: `url(${infoButtonActive})`,
-                            },
-                            '&:focus': {
-                                backgroundImage: `url(${infoButtonActive})`,
-                            },
-                            '&:active': {
-                                backgroundImage: `url(${infoButtonActive})`,
-                            },
-                        }}
-                    ></Dropdown.Toggle>
-                    <Dropdown.Menu alignRight>
-                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-                <Dropdown>
-                    <Dropdown.Toggle
-                        css={{
-                            background: `url(${playlistButton}) center/contain no-repeat`,
-                            '&:hover': {
-                                backgroundImage: `url(${playlistButtonActive})`,
-                            },
-                            '&:focus': {
-                                backgroundImage: `url(${playlistButtonActive})`,
-                            },
-                            '&:active': {
-                                backgroundImage: `url(${playlistButtonActive})`,
-                            },
-                        }}
-                    ></Dropdown.Toggle>
-                    <Dropdown.Menu alignRight>
-                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+        <Col md={4}>
+            <Dropdown>
+                <Dropdown.Toggle
+                    css={{
+                        background: `url(${infoButton}) center/contain no-repeat`,
+                        '&:hover': {
+                            backgroundImage: `url(${infoButtonActive})`,
+                        },
+                        '&:focus': {
+                            backgroundImage: `url(${infoButtonActive})`,
+                        },
+                        '&:active': {
+                            backgroundImage: `url(${infoButtonActive})`,
+                        },
+                    }}
+                ></Dropdown.Toggle>
+                <Dropdown.Menu alignRight>
+                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+            <Dropdown>
+                <Dropdown.Toggle
+                    css={{
+                        background: `url(${playlistButton}) center/contain no-repeat`,
+                        '&:hover': {
+                            backgroundImage: `url(${playlistButtonActive})`,
+                        },
+                        '&:focus': {
+                            backgroundImage: `url(${playlistButtonActive})`,
+                        },
+                        '&:active': {
+                            backgroundImage: `url(${playlistButtonActive})`,
+                        },
+                    }}
+                ></Dropdown.Toggle>
+                <Dropdown.Menu alignRight>
+                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
 
-                <VideoButton
-                    src={nextButton}
-                    hoverSrc={isMobile ? nextButton : nextButtonActive}
-                    /* onClick={() => {goToVideo(nextVideo.id);}} */
-                />
-                <VideoButton
-                    src={fullScreenButton}
-                    hoverSrc={
-                        isMobile ? fullScreenButton : fullScreenButtonActive
-                    }
-                    /* onClick={enterFullScreen} */
-                />
-                <VideoButton
-                    src={closeButton}
-                    hoverSrc={isMobile ? closeButton : closeButtonActive}
-                    /* onClick={closePlayer} */
-                />
-            </Col>
-        </Row>
+            <VideoButton
+                src={nextButton}
+                hoverSrc={isMobile ? nextButton : nextButtonActive}
+                /* onClick={() => {goToVideo(nextVideo.id);}} */
+            />
+            <VideoButton
+                src={fullScreenButton}
+                hoverSrc={isMobile ? fullScreenButton : fullScreenButtonActive}
+                /* onClick={enterFullScreen} */
+            />
+            <VideoButton
+                src={closeButton}
+                hoverSrc={isMobile ? closeButton : closeButtonActive}
+                /* onClick={closePlayer} */
+            />
+        </Col>
     );
 };
 

@@ -163,7 +163,6 @@ const App = (props) => {
                     ></Global>
                     {
                         <div className="limite">
-                            <PlayerMenu></PlayerMenu>
                             <nav>
                                 <div
                                     css={{
