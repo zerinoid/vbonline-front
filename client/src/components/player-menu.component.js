@@ -54,8 +54,9 @@ const PlayerMenu = (props) => {
             </Dropdown>
             <Dropdown>
                 <Dropdown.Toggle
+                    className="playlist"
                     css={{
-                        background: `url(${playlistButton}) center/contain no-repeat`,
+                        background: `url(${playlistButton}) center/cover no-repeat`,
                         '&:hover': {
                             backgroundImage: `url(${playlistButtonActive})`,
                         },
