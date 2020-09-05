@@ -70,6 +70,11 @@ const PlayerMenu = (props) => {
             <Col md={4}>
                 <Row>
                     <VideoButton
+                        src={infoButton}
+                        hoverSrc={isMobile ? infoButton : infoButtonActive}
+                        /* onClick={togglePlaylistBox} */
+                    />
+                    <VideoButton
                         src={playlistButton}
                         hoverSrc={
                             isMobile ? playlistButton : playlistButtonActive
