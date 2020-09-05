@@ -34,6 +34,7 @@
     top: 0;
     width: 100%;
     padding: 6vh 105px;
+    margin: 0 auto;
 
     .col-xs-2 {
         flex-basis: unset;
@@ -264,7 +265,7 @@
 
 @media (max-width: 560px) {
     #video-info {
-        padding: 6vh 2vh 6vh 4vh;
+        padding: 6vh 2vh;
 
         .buttons-container {
             margin-bottom: 6.5vw;
