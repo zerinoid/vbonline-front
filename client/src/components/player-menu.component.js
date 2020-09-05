@@ -1,5 +1,7 @@
+/** @jsx jsx */
 import React from 'react';
 import HoverImage from 'react-hover-image';
+import { jsx } from '@emotion/core';
 import { useMediaQuery } from 'react-responsive';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -45,21 +47,23 @@ const PlayerMenu = (props) => {
         >
             <Col md={4}>
                 <Dropdown>
-                    <Dropdown.Toggle>
-                        <VideoButton
-                            src={infoButton}
-                            hoverSrc={infoButtonActive}
-                        />
-                    </Dropdown.Toggle>
+                    <Dropdown.Toggle
+                        css={{
+                            background: `url(${infoButton}) center/contain no-repeat`,
+                            '&:hover': {
+                                backgroundImage: `url(${infoButtonActive})`,
+                            },
+                            '&:focus': {
+                                backgroundImage: `url(${infoButtonActive})`,
+                            },
+                            '&:active': {
+                                backgroundImage: `url(${infoButtonActive})`,
+                            },
+                        }}
+                    ></Dropdown.Toggle>
 
-                    <Dropdown.Menu>
+                    <Dropdown.Menu alignRight>
                         <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">
-                            Another action
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">
-                            Something else
-                        </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>{' '}
             </Col>

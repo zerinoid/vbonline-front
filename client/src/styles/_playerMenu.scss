@@ -8,6 +8,17 @@
 .btn-primary {
     background-color: transparent;
     border: none;
+    height: 1.5vw;
+
+    &:hover {
+        background-color: transparent;
+        border: none;
+    }
+
+    &:focus {
+        background-color: transparent;
+        border: none;
+    }
 }
 
 .dropdown-toggle::after {
