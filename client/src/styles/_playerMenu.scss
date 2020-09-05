@@ -1,7 +1,6 @@
 @import 'bootstrap/scss/bootstrap';
 @import "styles/variables";
 
-//temp
 .video-button-icon {
     height: 1.5vw;
     padding-left: 2.25vw;
@@ -11,6 +10,13 @@
     height: 1.5vw;
     margin-left: 2.25vw;
     border-radius: unset;
+}
+
+.dropdown-menu {
+    border: unset;
+    border-radius: unset;
+    background: $vermelho;
+    padding: 0.75vw;
 }
 
 // override do bootstrap
@@ -42,11 +48,4 @@
 
 .dropdown-toggle::after {
     display: none;
-}
-
-.dropdown-menu {
-    border: unset;
-    border-radius: unset;
-    background: $vermelho;
-    padding: 0.75vw;
 }

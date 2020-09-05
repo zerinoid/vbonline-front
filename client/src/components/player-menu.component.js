@@ -47,6 +47,8 @@ const PlayerMenu = (props) => {
                 },
             }}
         >
+            <Col md={4}> </Col>
+            <Col md={4}></Col>
             <Col md={4}>
                 <Dropdown>
                     <Dropdown.Toggle
@@ -86,29 +88,25 @@ const PlayerMenu = (props) => {
                         <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
+
+                <VideoButton
+                    src={nextButton}
+                    hoverSrc={isMobile ? nextButton : nextButtonActive}
+                    /* onClick={() => {goToVideo(nextVideo.id);}} */
+                />
+                <VideoButton
+                    src={fullScreenButton}
+                    hoverSrc={
+                        isMobile ? fullScreenButton : fullScreenButtonActive
+                    }
+                    /* onClick={enterFullScreen} */
+                />
+                <VideoButton
+                    src={closeButton}
+                    hoverSrc={isMobile ? closeButton : closeButtonActive}
+                    /* onClick={closePlayer} */
+                />
             </Col>
-            <Col md={4}>
-                <Row>
-                    <VideoButton
-                        src={nextButton}
-                        hoverSrc={isMobile ? nextButton : nextButtonActive}
-                        /* onClick={() => {goToVideo(nextVideo.id);}} */
-                    />
-                    <VideoButton
-                        src={fullScreenButton}
-                        hoverSrc={
-                            isMobile ? fullScreenButton : fullScreenButtonActive
-                        }
-                        /* onClick={enterFullScreen} */
-                    />
-                    <VideoButton
-                        src={closeButton}
-                        hoverSrc={isMobile ? closeButton : closeButtonActive}
-                        /* onClick={closePlayer} */
-                    />
-                </Row>
-            </Col>
-            <Col md={4}></Col>
         </Row>
     );
 };
