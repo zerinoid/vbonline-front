@@ -50,44 +50,47 @@ const PlayerMenu = (props) => {
             }}
         >
             <Col md={4}>
-                {['info', 'playlist'].map((value, index) => (
-                    <Dropdown>
-                        <Dropdown.Toggle
-                            css={{
-                                background: `url(${value}Button) center/contain no-repeat`,
-                                '&:hover': {
-                                    backgroundImage: `url(${value}ButtonActive)`,
-                                },
-                                '&:focus': {
-                                    backgroundImage: `url(${value}ButtonActive)`,
-                                },
-                                '&:active': {
-                                    backgroundImage: `url(${value}ButtonActive)`,
-                                },
-                            }}
-                        ></Dropdown.Toggle>
-                        <Dropdown.Menu alignRight>
-                            <Dropdown.Item href="#/action-1">
-                                Action
-                            </Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                ))}
+                <Dropdown>
+                    <Dropdown.Toggle
+                        css={{
+                            background: `url(${infoButton}) center/contain no-repeat`,
+                            '&:hover': {
+                                backgroundImage: `url(${infoButtonActive})`,
+                            },
+                            '&:focus': {
+                                backgroundImage: `url(${infoButtonActive})`,
+                            },
+                            '&:active': {
+                                backgroundImage: `url(${infoButtonActive})`,
+                            },
+                        }}
+                    ></Dropdown.Toggle>
+                    <Dropdown.Menu alignRight>
+                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+                <Dropdown>
+                    <Dropdown.Toggle
+                        css={{
+                            background: `url(${playlistButton}) center/contain no-repeat`,
+                            '&:hover': {
+                                backgroundImage: `url(${playlistButtonActive})`,
+                            },
+                            '&:focus': {
+                                backgroundImage: `url(${playlistButtonActive})`,
+                            },
+                            '&:active': {
+                                backgroundImage: `url(${playlistButtonActive})`,
+                            },
+                        }}
+                    ></Dropdown.Toggle>
+                    <Dropdown.Menu alignRight>
+                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
             </Col>
             <Col md={4}>
                 <Row>
-                    <VideoButton
-                        src={infoButton}
-                        hoverSrc={isMobile ? infoButton : infoButtonActive}
-                        /* onClick={togglePlaylistBox} */
-                    />
-                    <VideoButton
-                        src={playlistButton}
-                        hoverSrc={
-                            isMobile ? playlistButton : playlistButtonActive
-                        }
-                        /* onClick={togglePlaylistBox} */
-                    />
                     <VideoButton
                         src={nextButton}
                         hoverSrc={isMobile ? nextButton : nextButtonActive}
