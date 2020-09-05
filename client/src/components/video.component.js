@@ -1,39 +1,10 @@
 /** @jsx jsx */
-import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { jsx } from '@emotion/core';
 import Player from '@vimeo/player';
-import 'flexboxgrid';
-import HoverImage from 'react-hover-image';
 import screenfull from 'screenfull';
-import { useMediaQuery } from 'react-responsive';
-import BP from '../styles/breakpoints';
 
 import UpperBar from './upper-bar.component';
-
-import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
-import playlistButton from '../assets/img/v_assets/vPlaylist.png';
-import nextButtonActive from '../assets/img/v_assets/vNextActive.png';
-import nextButton from '../assets/img/v_assets/vNext.png';
-import infoButtonActive from '../assets/img/v_assets/vInfoActive.png';
-import infoButton from '../assets/img/v_assets/vInfo.png';
-import fullScreenButtonActive from '../assets/img/v_assets/vFullscreenActive.png';
-import fullScreenButton from '../assets/img/v_assets/vFullscreen.png';
-import closeButtonActive from '../assets/img/v_assets/vFecharActive.png';
-import closeButton from '../assets/img/v_assets/vFechar.png';
-
-const VideoButton = (props) => {
-    return (
-        <div className="col-xs-2">
-            <HoverImage
-                src={props.src}
-                hoverSrc={props.hoverSrc}
-                onClick={props.onClick}
-                className="bt-player"
-            />
-        </div>
-    );
-};
 
 const VideoPlayer = (props) => {
     // Hooks
@@ -183,8 +154,6 @@ const VideoPlayer = (props) => {
             });
         }
     });
-
-    const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
 
     return (
         <div id="video-outter">
