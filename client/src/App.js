@@ -15,6 +15,9 @@ import Botao from './components/botao.component';
 import SaibaMais from './components/saiba-mais.component';
 import MenuMobile from './components/menu-mobile.component';
 
+//temp
+import PlayerMenu from './components/player-menu.component';
+
 // logo
 import logo from './assets/img/logo.png';
 import logoMob from './assets/img/logo_mb.png';
@@ -158,7 +161,9 @@ const App = (props) => {
                             },
                         }}
                     ></Global>
-                    {<div className="limite">
+                    {
+                        <div className="limite">
+                            <PlayerMenu></PlayerMenu>
                             <nav>
                                 <div
                                     css={{
