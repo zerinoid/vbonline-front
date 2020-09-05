@@ -1,12 +1,10 @@
 /** @jsx jsx */
-import React from 'react';
 import HoverImage from 'react-hover-image';
 import { jsx } from '@emotion/core';
 import { useMediaQuery } from 'react-responsive';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 
 import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
 import playlistButton from '../assets/img/v_assets/vPlaylist.png';
