@@ -16,7 +16,7 @@ import SaibaMais from './components/saiba-mais.component';
 import MenuMobile from './components/menu-mobile.component';
 
 //temp
-import PlayerMenu from './components/player-menu.component';
+import UpperBar from './components/upper-bar.component';
 
 // logo
 import logo from './assets/img/logo.png';
@@ -163,6 +163,7 @@ const App = (props) => {
                     ></Global>
                     {
                         <div className="limite">
+                            <UpperBar />
                             <nav>
                                 <div
                                     css={{
