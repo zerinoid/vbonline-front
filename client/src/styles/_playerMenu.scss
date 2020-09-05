@@ -6,6 +6,11 @@
     padding-left: 2.25vw;
 }
 
+.btn {
+    height: 1.5vw;
+    margin-left: 2.25vw;
+}
+
 // override do bootstrap
 .btn-primary:not(:disabled):not(.disabled):active,
 .show>.btn-primary.dropdown-toggle {
@@ -20,7 +25,6 @@
 .btn-primary {
     background-color: unset;
     border: unset;
-    height: 1.5vw;
 
     &:hover {
         background-color: unset;
