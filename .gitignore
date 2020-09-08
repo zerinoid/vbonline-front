@@ -27,6 +27,7 @@ package-lock.json
 
 # .env
 .env
+client/.env
 
 .projectile
 jsconfig.json
