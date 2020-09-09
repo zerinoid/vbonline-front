@@ -134,8 +134,8 @@ const PlayerMenu = (props) => {
                 },
             }}
         >
-            <DropdownButton src={infoButton} />
-            <DropdownButton src={playlistButton} alignEnd title="Align right" />
+            <DropdownButton src={infoButton} alignEnd />
+            <DropdownButton src={playlistButton} alignEnd />
 
             <VideoButton
                 src={nextButton}
