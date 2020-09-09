@@ -95,8 +95,8 @@ const DropdownButton = ({ show, onToggle, drop, alignEnd, title, role }) => (
     >
         {({ props }) => (
             <div {...props} className="relative inline-block">
-                {/* <Toggle id="example-toggle">{title}</Toggle> */}
-                {/* <Menu role={role} /> */}
+                <Toggle id="example-toggle">{title}</Toggle>
+                <Menu role={role} />
             </div>
         )}
     </Dropdown>
@@ -116,46 +116,6 @@ const PlayerMenu = (props) => {
             /*     }, */
             /* }} */
         >
-            <Dropdown>
-                <Dropdown.Toggle
-                    css={{
-                        background: `url(${infoButton}) center/contain no-repeat`,
-                        '&:hover': {
-                            backgroundImage: `url(${infoButtonActive})`,
-                        },
-                        '&:focus': {
-                            backgroundImage: `url(${infoButtonActive})`,
-                        },
-                        '&:active': {
-                            backgroundImage: `url(${infoButtonActive})`,
-                        },
-                    }}
-                ></Dropdown.Toggle>
-                <Dropdown.Menu alignRight>
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
-            <Dropdown>
-                <Dropdown.Toggle
-                    className="playlist"
-                    css={{
-                        background: `url(${playlistButton}) center/cover no-repeat`,
-                        '&:hover': {
-                            backgroundImage: `url(${playlistButtonActive})`,
-                        },
-                        '&:focus': {
-                            backgroundImage: `url(${playlistButtonActive})`,
-                        },
-                        '&:active': {
-                            backgroundImage: `url(${playlistButtonActive})`,
-                        },
-                    }}
-                ></Dropdown.Toggle>
-                <Dropdown.Menu alignRight>
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
-
             <VideoButton
                 src={nextButton}
                 hoverSrc={isMobile ? nextButton : nextButtonActive}
