@@ -3,7 +3,7 @@ import { jsx } from '@emotion/core';
 import HoverImage from 'react-hover-image';
 import { useMediaQuery } from 'react-responsive';
 import Col from 'react-bootstrap/Col';
-import Dropdown from 'react-bootstrap/Dropdown';
+import Dropdown from 'react-overlays/Dropdown';
 
 import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
 import playlistButton from '../assets/img/v_assets/vPlaylist.png';
@@ -19,7 +19,6 @@ import closeButton from '../assets/img/v_assets/vFechar.png';
 const VideoButton = (props) => {
     return (
         <HoverImage
-            style={{}}
             src={props.src}
             hoverSrc={props.hoverSrc}
             onClick={props.onClick}

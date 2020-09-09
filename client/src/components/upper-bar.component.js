@@ -14,6 +14,7 @@ const UpperBar = (props) => {
                 left: 0,
                 margin: '0 auto',
                 width: '100%',
+                background: 'black',
                 zIndex: 1010,
                 padding: '6vh 105px',
                 '&>div': {
