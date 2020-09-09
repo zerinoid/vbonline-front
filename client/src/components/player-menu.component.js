@@ -5,6 +5,7 @@ import HoverImage from 'react-hover-image';
 import { useMediaQuery } from 'react-responsive';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-overlays/Dropdown';
+import { useDropdownToggle } from 'react-overlays';
 
 import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
 import playlistButton from '../assets/img/v_assets/vPlaylist.png';
@@ -29,7 +30,7 @@ const VideoButton = (props) => {
 };
 
 const Toggle = ({ id, children }) => {
-    // const [props, { show, toggle }] = useDropdownToggle();
+    const [props, { show, toggle }] = useDropdownToggle();
     return (
         <button
             type="button"
