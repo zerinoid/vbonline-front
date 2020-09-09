@@ -33,7 +33,7 @@ const VideoButton = (props) => {
     );
 };
 
-const MenuContainer = styled('div')`
+const BoxContainer = styled('div')`
     display: ${(p) => (p.show ? 'flex' : 'none')};
     min-width: 250px;
     position: absolute;
@@ -51,7 +51,7 @@ const Menu = ({ role }) => {
         offset: [0, 8],
     });
     return (
-        <MenuContainer {...props} role={role} show={show}>
+        <BoxContainer {...props} role={role} show={show}>
             <button
                 type="button"
                 onClick={onClose}
@@ -66,7 +66,7 @@ const Menu = ({ role }) => {
             >
                 Item 2
             </button>
-        </MenuContainer>
+        </BoxContainer>
     );
 };
 
