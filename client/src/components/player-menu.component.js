@@ -7,6 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-overlays/Dropdown';
 import { useDropdownToggle, useDropdownMenu } from 'react-overlays';
+import colors from './styles/colors';
 
 import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
 import playlistButton from '../assets/img/v_assets/vPlaylist.png';
@@ -18,6 +19,8 @@ import fullScreenButtonActive from '../assets/img/v_assets/vFullscreenActive.png
 import fullScreenButton from '../assets/img/v_assets/vFullscreen.png';
 import closeButtonActive from '../assets/img/v_assets/vFecharActive.png';
 import closeButton from '../assets/img/v_assets/vFechar.png';
+
+const meio_icone = 0.75;
 
 const VideoButton = (props) => {
     return (
@@ -32,12 +35,13 @@ const VideoButton = (props) => {
 
 const MenuContainer = styled('div')`
     display: ${(p) => (p.show ? 'flex' : 'none')};
-    min-width: 150px;
+    min-width: 250px;
     position: absolute;
+    top: ${meio_icone};
+    padding: ${2 * meio_icone} ${2 * meio_icone} ${3 * meio_icone};
     z-index: 1000;
     flex-direction: column;
-    border: 1px solid #e5e5e5;
-    background-color: white;
+    background-color: ${colors.vermelho};
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 `;
 
