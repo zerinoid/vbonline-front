@@ -31,7 +31,15 @@ const PlayerMenu = (props) => {
     const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
 
     return (
-        <Col md={4}>
+        // ButtonToolbar
+        <Col
+            md={4}
+            /* css={{ */
+            /*     '& > * + *': { */
+            /*         marginLeft: 12, */
+            /*     }, */
+            /* }} */
+        >
             <Dropdown>
                 <Dropdown.Toggle
                     css={{
