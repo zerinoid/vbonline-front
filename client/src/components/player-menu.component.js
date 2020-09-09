@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-overlays/Dropdown';
 import { useDropdownToggle, useDropdownMenu } from 'react-overlays';
-import colors from './styles/colors';
+import colors from '../styles/colors';
 
 import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
 import playlistButton from '../assets/img/v_assets/vPlaylist.png';
