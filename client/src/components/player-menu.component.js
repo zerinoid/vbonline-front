@@ -110,11 +110,11 @@ const PlayerMenu = (props) => {
         // ButtonToolbar
         <Col
             md={4}
-            /* css={{ */
-            /*     '& > * + *': { */
-            /*         marginLeft: 12, */
-            /*     }, */
-            /* }} */
+            css={{
+                '& > * + *': {
+                    marginLeft: 3 * meio_icone + 'vw',
+                },
+            }}
         >
             <VideoButton
                 src={nextButton}
