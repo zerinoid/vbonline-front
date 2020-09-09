@@ -101,6 +101,7 @@ const DropdownButton = ({
     title,
     role,
     src,
+    hoverSrc,
 }) => (
     <Dropdown
         show={show}
@@ -111,7 +112,7 @@ const DropdownButton = ({
     >
         {({ props }) => (
             <div {...props} className="relative inline-block">
-                <Toggle id="example-toggle" src={src}>
+                <Toggle id="example-toggle" src={src} hoverSrc={hoverSrc}>
                     {title}
                 </Toggle>
                 <Menu role={role} />
@@ -134,8 +135,16 @@ const PlayerMenu = (props) => {
                 },
             }}
         >
-            <DropdownButton src={infoButton} alignEnd />
-            <DropdownButton src={playlistButton} alignEnd />
+            <DropdownButton
+                src={infoButton}
+                hoverSrc={infoButtonActive}
+                alignEnd
+            />
+            <DropdownButton
+                src={playlistButton}
+                hoverSrc={playlistButtonActive}
+                alignEnd
+            />
 
             <VideoButton
                 src={nextButton}
