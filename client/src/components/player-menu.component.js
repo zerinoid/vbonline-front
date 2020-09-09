@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { useState } from 'react';
 import { jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 import HoverImage from 'react-hover-image';
 import { useMediaQuery } from 'react-responsive';
 import Col from 'react-bootstrap/Col';
