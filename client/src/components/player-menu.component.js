@@ -28,6 +28,23 @@ const VideoButton = (props) => {
     );
 };
 
+const DropdownButton = ({ show, onToggle, drop, alignEnd, title, role }) => (
+    <Dropdown
+        show={show}
+        onToggle={onToggle}
+        drop={drop}
+        alignEnd={alignEnd}
+        itemSelector="button:not(:disabled)"
+    >
+        {({ props }) => (
+            <div {...props} className="relative inline-block">
+                {/* <Toggle id="example-toggle">{title}</Toggle> */}
+                {/* <Menu role={role} /> */}
+            </div>
+        )}
+    </Dropdown>
+);
+
 const PlayerMenu = (props) => {
     const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
     const [show, setShow] = useState(false);
