@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { useState } from 'react';
 import { jsx } from '@emotion/core';
 import HoverImage from 'react-hover-image';
 import { useMediaQuery } from 'react-responsive';
@@ -29,6 +30,7 @@ const VideoButton = (props) => {
 
 const PlayerMenu = (props) => {
     const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
+    const [show, setShow] = useState(false);
 
     return (
         // ButtonToolbar
