@@ -28,6 +28,21 @@ const VideoButton = (props) => {
     );
 };
 
+const Toggle = ({ id, children }) => {
+    // const [props, { show, toggle }] = useDropdownToggle();
+    return (
+        <button
+            type="button"
+            className="btn"
+            id={id}
+            {...props}
+            onClick={toggle}
+        >
+            {children}
+        </button>
+    );
+};
+
 const DropdownButton = ({ show, onToggle, drop, alignEnd, title, role }) => (
     <Dropdown
         show={show}
