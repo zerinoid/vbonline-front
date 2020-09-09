@@ -70,13 +70,13 @@ const Menu = ({ role }) => {
     );
 };
 
-const Toggle = ({ id, children, src }) => {
+const Toggle = ({ id, children, src, hoverSrc }) => {
     const [props, { show, toggle }] = useDropdownToggle();
     const [imageSrc, setImageSrc] = useState(src);
 
     return (
         <img
-            src={show ? infoButtonActive : imageSrc}
+            src={show ? hoverSrc : imageSrc}
             /* type="button" */
             alt=""
             className="video-button-icon"
@@ -84,10 +84,10 @@ const Toggle = ({ id, children, src }) => {
             {...props}
             onClick={toggle}
             onMouseEnter={() => {
-                setImageSrc(infoButtonActive);
+                setImageSrc(hoverSrc);
             }}
             onMouseLeave={() => {
-                setImageSrc(infoButton);
+                setImageSrc(imageSrc);
             }}
         />
     );
