@@ -6,7 +6,7 @@ import HoverImage from 'react-hover-image';
 import { useMediaQuery } from 'react-responsive';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-overlays/Dropdown';
-import { useDropdownToggle } from 'react-overlays';
+import { useDropdownToggle, useDropdownMenu } from 'react-overlays';
 
 import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
 import playlistButton from '../assets/img/v_assets/vPlaylist.png';
@@ -27,6 +27,42 @@ const VideoButton = (props) => {
             onClick={props.onClick}
             className="video-button-icon"
         />
+    );
+};
+
+const MenuContainer = styled('div')`
+    display: ${(p) => (p.show ? 'flex' : 'none')};
+    min-width: 150px;
+    position: absolute;
+    z-index: 1000;
+    flex-direction: column;
+    border: 1px solid #e5e5e5;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+`;
+
+const Menu = ({ role }) => {
+    const { show, onClose, props } = useDropdownMenu({
+        flip: true,
+        offset: [0, 8],
+    });
+    return (
+        <MenuContainer {...props} role={role} show={show}>
+            <button
+                type="button"
+                onClick={onClose}
+                className="text-left hover:bg-brand-100 px-6 py-2"
+            >
+                Item 1
+            </button>
+            <button
+                type="button"
+                onClick={onClose}
+                className="text-left hover:bg-brand-100 px-6 py-2"
+            >
+                Item 2
+            </button>
+        </MenuContainer>
     );
 };
 
