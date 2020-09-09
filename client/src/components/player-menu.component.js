@@ -70,22 +70,38 @@ const Menu = ({ role }) => {
     );
 };
 
-const Toggle = ({ id, children }) => {
+const Toggle = ({ id, children, src }) => {
     const [props, { show, toggle }] = useDropdownToggle();
+    const [imageSrc, setImageSrc] = useState(src);
+
     return (
-        <button
-            type="button"
-            className="btn"
+        <img
+            src={show ? infoButtonActive : imageSrc}
+            /* type="button" */
+            alt=""
+            className="video-button-icon"
             id={id}
             {...props}
             onClick={toggle}
-        >
-            {children}
-        </button>
+            onMouseEnter={() => {
+                setImageSrc(infoButtonActive);
+            }}
+            onMouseLeave={() => {
+                setImageSrc(infoButton);
+            }}
+        />
     );
 };
 
-const DropdownButton = ({ show, onToggle, drop, alignEnd, title, role }) => (
+const DropdownButton = ({
+    show,
+    onToggle,
+    drop,
+    alignEnd,
+    title,
+    role,
+    src,
+}) => (
     <Dropdown
         show={show}
         onToggle={onToggle}
@@ -95,7 +111,9 @@ const DropdownButton = ({ show, onToggle, drop, alignEnd, title, role }) => (
     >
         {({ props }) => (
             <div {...props} className="relative inline-block">
-                <Toggle id="example-toggle">{title}</Toggle>
+                <Toggle id="example-toggle" src={src}>
+                    {title}
+                </Toggle>
                 <Menu role={role} />
             </div>
         )}
@@ -116,6 +134,9 @@ const PlayerMenu = (props) => {
                 },
             }}
         >
+            <DropdownButton src={infoButton} />
+            <DropdownButton src={playlistButton} alignEnd title="Align right" />
+
             <VideoButton
                 src={nextButton}
                 hoverSrc={isMobile ? nextButton : nextButtonActive}
