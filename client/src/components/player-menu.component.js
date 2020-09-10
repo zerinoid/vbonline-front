@@ -70,9 +70,9 @@ const Menu = ({ role }) => {
     );
 };
 
-const Toggle = ({ id, src, hoverSrc }) => {
+const Toggle = ({ id, source, hoverSrc }) => {
     const [props, { show, toggle }] = useDropdownToggle();
-    const [imageSrc, setImageSrc] = useState(src);
+    const [imageSrc, setImageSrc] = useState(source);
 
     return (
         <img
@@ -98,7 +98,7 @@ const DropdownButton = ({
     drop,
     alignEnd,
     role,
-    src,
+    source,
     hoverSrc,
 }) => (
     <Dropdown
@@ -110,7 +110,11 @@ const DropdownButton = ({
     >
         {({ props }) => (
             <div {...props} className="relative inline-block">
-                <Toggle id="example-toggle" src={src} hoverSrc={hoverSrc} />
+                <Toggle
+                    id="example-toggle"
+                    source={source}
+                    hoverSrc={hoverSrc}
+                />
                 <Menu role={role} />
             </div>
         )}
@@ -132,12 +136,12 @@ const PlayerMenu = (props) => {
             }}
         >
             <DropdownButton
-                src={infoButton}
+                source={infoButton}
                 hoverSrc={infoButtonActive}
                 alignEnd
             />
             <DropdownButton
-                src={playlistButton}
+                source={playlistButton}
                 hoverSrc={playlistButtonActive}
                 alignEnd
             />
