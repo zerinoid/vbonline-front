@@ -59,7 +59,13 @@ const Menu = ({ role, children, playlist }) => {
         offset: [0, 8],
     });
     return (
-        <BoxContainer {...props} role={role} show={show} playlist={playlist}>
+        <BoxContainer
+            {...props}
+            role={role}
+            show={show}
+            playlist={playlist}
+            className="info-box"
+        >
             {/* <button */}
             {/*     type="button" */}
             {/*     onClick={onClose} */}
@@ -136,6 +142,7 @@ const PlayerMenu = (props) => {
         <Col
             md={4}
             css={{
+                justifyContent: 'flex-end',
                 '& > * + *': {
                     marginLeft: 3 * meio_icone + 'vw',
                 },
@@ -146,7 +153,7 @@ const PlayerMenu = (props) => {
                 hoverSrc={infoButtonActive}
                 alignEnd
             >
-                <p>umba umba ê</p>
+                <p>Cartela</p>
             </DropdownButton>
             <DropdownButton
                 source={playlistButton}
@@ -154,7 +161,7 @@ const PlayerMenu = (props) => {
                 alignEnd
                 playlist
             >
-                <p>MA OEEEEEEEEEEEEEEEEE</p>
+                <p>Playlist</p>
             </DropdownButton>
             <VideoButton
                 src={nextButton}
