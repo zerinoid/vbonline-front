@@ -38,34 +38,36 @@ const BoxContainer = styled('div')`
     min-width: 250px;
     position: absolute;
     top: ${meio_icone}vw;
-    padding: ${2 * meio_icone}vw ${2 * meio_icone}vw ${3 * meio_icone}vw;
+    padding: ${(p) =>
+        p.playlist
+            ? meio_icone + 'vw'
+            : 2 * meio_icone +
+              'vw ' +
+              2 * meio_icone +
+              'vw ' +
+              3 * meio_icone +
+              'vw'};
     z-index: 1000;
     flex-direction: column;
     background-color: ${colors.vermelho};
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 `;
 
-const Menu = ({ role }) => {
+const Menu = ({ role, children, playlist }) => {
     const { show, onClose, props } = useDropdownMenu({
         flip: true,
         offset: [0, 8],
     });
     return (
-        <BoxContainer {...props} role={role} show={show}>
-            <button
-                type="button"
-                onClick={onClose}
-                className="text-left hover:bg-brand-100 px-6 py-2"
-            >
-                Item 1
-            </button>
-            <button
-                type="button"
-                onClick={onClose}
-                className="text-left hover:bg-brand-100 px-6 py-2"
-            >
-                Item 2
-            </button>
+        <BoxContainer {...props} role={role} show={show} playlist={playlist}>
+            {/* <button */}
+            {/*     type="button" */}
+            {/*     onClick={onClose} */}
+            {/*     className="text-left hover:bg-brand-100 px-6 py-2" */}
+            {/* > */}
+            {/*     Item 1 */}
+            {/* </button> */}
+            {children}
         </BoxContainer>
     );
 };
@@ -100,6 +102,7 @@ const DropdownButton = ({
     role,
     source,
     hoverSrc,
+    playlist,
 }) => (
     <Dropdown
         show={show}
@@ -115,7 +118,9 @@ const DropdownButton = ({
                     source={source}
                     hoverSrc={hoverSrc}
                 />
-                <Menu role={role} />
+                <Menu role={role} playlist={playlist}>
+                    <p>somenthings</p>
+                </Menu>
             </div>
         )}
     </Dropdown>
@@ -144,6 +149,7 @@ const PlayerMenu = (props) => {
                 source={playlistButton}
                 hoverSrc={playlistButtonActive}
                 alignEnd
+                playlist
             />
 
             <VideoButton
