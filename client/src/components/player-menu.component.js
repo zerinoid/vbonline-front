@@ -103,6 +103,7 @@ const DropdownButton = ({
     source,
     hoverSrc,
     playlist,
+    children,
 }) => (
     <Dropdown
         show={show}
@@ -119,7 +120,7 @@ const DropdownButton = ({
                     hoverSrc={hoverSrc}
                 />
                 <Menu role={role} playlist={playlist}>
-                    <p>somenthings</p>
+                    {children}
                 </Menu>
             </div>
         )}
@@ -144,14 +145,17 @@ const PlayerMenu = (props) => {
                 source={infoButton}
                 hoverSrc={infoButtonActive}
                 alignEnd
-            />
+            >
+                <p>umba umba ê</p>
+            </DropdownButton>
             <DropdownButton
                 source={playlistButton}
                 hoverSrc={playlistButtonActive}
                 alignEnd
                 playlist
-            />
-
+            >
+                <p>MA OEEEEEEEEEEEEEEEEE</p>
+            </DropdownButton>
             <VideoButton
                 src={nextButton}
                 hoverSrc={isMobile ? nextButton : nextButtonActive}
