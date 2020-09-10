@@ -86,7 +86,7 @@ const Toggle = ({ id, source, hoverSrc }) => {
                 setImageSrc(hoverSrc);
             }}
             onMouseLeave={() => {
-                setImageSrc(imageSrc);
+                setImageSrc(source);
             }}
         />
     );
@@ -123,7 +123,7 @@ const DropdownButton = ({
 
 const PlayerMenu = (props) => {
     const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
-    const [show, setShow] = useState(false);
+    // const [show, setShow] = useState(false);
 
     return (
         // ButtonToolbar
