@@ -19,7 +19,6 @@ const UpperBar = (props) => {
                 padding: '6vh 105px',
                 '&>div': {
                     display: 'flex',
-                    justifyContent: 'flex-end',
                 },
             }}
         >
