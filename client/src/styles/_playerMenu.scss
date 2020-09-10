@@ -1,26 +1,7 @@
 @import 'bootstrap/scss/bootstrap';
-@import "styles/variables";
 
 .video-button-icon {
     height: 1.5vw;
-    /* padding-left: 2.25vw; */
-}
-
-.btn.playlist {
-    width: 2.2vw;
-}
-
-.btn {
-    height: 1.5vw;
-    margin-left: 2.25vw;
-    border-radius: unset;
-}
-
-.dropdown-menu {
-    border: unset;
-    border-radius: unset;
-    background: $vermelho;
-    padding: 0.75vw;
 }
 
 .video-title {
@@ -31,33 +12,8 @@
     font-family: "FedraMono";
 }
 
-// override do bootstrap
-.btn-primary:not(:disabled):not(.disabled):active,
-.show>.btn-primary.dropdown-toggle {
-    background-color: unset;
-    border-color: unset;
+.info-box {
+    color: #fff;
+    font-family: "Graphik";
 
-    &:focus {
-        box-shadow: unset;
-    }
-}
-
-.btn-primary {
-    background-color: unset;
-    border: unset;
-
-    &:hover {
-        background-color: unset;
-        border: none;
-    }
-
-    &:focus {
-        background-color: unset;
-        box-shadow: unset;
-        border: unset;
-    }
-}
-
-.dropdown-toggle::after {
-    display: none;
 }
