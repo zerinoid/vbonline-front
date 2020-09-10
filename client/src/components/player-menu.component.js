@@ -37,8 +37,8 @@ const BoxContainer = styled('div')`
     display: ${(p) => (p.show ? 'flex' : 'none')};
     min-width: 250px;
     position: absolute;
-    top: ${meio_icone};
-    padding: ${2 * meio_icone} ${2 * meio_icone} ${3 * meio_icone};
+    top: ${meio_icone}vw;
+    padding: ${2 * meio_icone}vw ${2 * meio_icone}vw ${3 * meio_icone}vw;
     z-index: 1000;
     flex-direction: column;
     background-color: ${colors.vermelho};
