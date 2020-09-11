@@ -52,7 +52,7 @@ const BoxContainer = styled('div')`
     background-color: ${colors.vermelho};
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     & > * + * {
-        margin-top: ${meio_icone}vw;
+        margin-top: ${(p) => (p.playlist ? meio_icone : meio_icone * 2)}vw;
     },
 `;
 
