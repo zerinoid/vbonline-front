@@ -42,21 +42,17 @@ const VideoPlayer = (props) => {
 
             return (
                 <Row className={`${active}`} key={index}>
-                    <Col>
-                        <div
+                    <Col xs={6}>
+                        <img
                             className="thumb-container"
-                            style={{
-                                height: '3vw',
-                                backgroundImage: `url(${
-                                    video[props.lang].thumb
-                                })`,
-                            }}
+                            src={video[props.lang].thumb}
+                            alt=""
                             onClick={() => {
                                 goToVideo(video.id);
                             }}
-                        ></div>
+                        />
                     </Col>
-                    <Col>
+                    <Col xs={6}>
                         <p
                             className="playlist-title"
                             onClick={() => {
