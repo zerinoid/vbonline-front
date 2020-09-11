@@ -151,6 +151,7 @@ const PlayerMenu = (props) => {
                 },
             }}
         >
+            {/* cartela */}
             <DropdownButton
                 source={infoButton}
                 hoverSrc={infoButtonActive}
@@ -172,13 +173,14 @@ const PlayerMenu = (props) => {
                     )}
                 />
             </DropdownButton>
+            {/* playlist */}
             <DropdownButton
                 source={playlistButton}
                 hoverSrc={playlistButtonActive}
                 alignEnd
                 playlist
             >
-                <p>Playlist</p>
+                {props.playlist}
             </DropdownButton>
             <VideoButton
                 src={nextButton}
