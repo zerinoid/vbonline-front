@@ -279,6 +279,7 @@ export default function ListaDocs(props) {
                         changeVideo={playerHandler}
                         videoList={props.lista}
                         vimeoOptions={vimeoOptions}
+                        lang={lang}
                     />
                 );
             }

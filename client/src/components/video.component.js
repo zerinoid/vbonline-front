@@ -160,7 +160,7 @@ const VideoPlayer = (props) => {
             <div id="video-container" ref={playerRef}>
                 <div id="vimeo-player" />
             </div>
-            <UpperBar />
+            <UpperBar vimeoOptions={props.vimeoOptions} lang={props.lang} />
         </div>
     );
 };
