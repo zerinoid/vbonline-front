@@ -9,15 +9,29 @@
     justify-content: center;
     align-items: center;
     color: #fff;
-    font-family: "FedraMono";
+    font-family: 'FedraMono';
 }
 
 .info-box {
     color: #fff;
-    font-family: "Graphik";
+    font-family: 'Graphik';
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 .thumb-container {
+    padding-right: 0;
+    padding-left: 0;
+
+    &+div {
+        padding-right: 0;
+    }
+}
+
+.play-thumb {
     width: 100%;
     object-fit: cover;
     height: 100%;

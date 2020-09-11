@@ -8,6 +8,8 @@ import Col from 'react-bootstrap/Col';
 
 import UpperBar from './upper-bar.component';
 
+const meio_icone = 0.75;
+
 const VideoPlayer = (props) => {
     // Hooks
     const playerRef = useRef(null);
@@ -42,9 +44,9 @@ const VideoPlayer = (props) => {
 
             return (
                 <Row className={`${active}`} key={index}>
-                    <Col xs={6}>
+                    <Col xs={6} className="thumb-container">
                         <img
-                            className="thumb-container"
+                            className="play-thumb"
                             src={video[props.lang].thumb}
                             alt=""
                             onClick={() => {
@@ -52,7 +54,7 @@ const VideoPlayer = (props) => {
                             }}
                         />
                     </Col>
-                    <Col xs={6}>
+                    <Col xs={6} css={{ paddingLeft: meio_icone + 'vw' }}>
                         <p
                             className="playlist-title"
                             onClick={() => {
