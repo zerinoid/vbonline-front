@@ -36,6 +36,7 @@ const VideoButton = (props) => {
 const BoxContainer = styled('div')`
     display: ${(p) => (p.show ? 'flex' : 'none')};
     min-width: 250px;
+    width: ${(p) => (p.playlist ? '22vw' : '10vw')};
     position: absolute;
     top: ${meio_icone}vw;
     padding: ${(p) =>
