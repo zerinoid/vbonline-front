@@ -36,7 +36,7 @@ const VideoButton = (props) => {
 const BoxContainer = styled('div')`
     display: ${(p) => (p.show ? 'flex' : 'none')};
     min-width: 250px;
-    width: ${(p) => (p.playlist ? '22vw' : '10vw')};
+    width: ${(p) => (p.playlist ? '18vw' : '16.5vw')};
     position: absolute;
     top: ${meio_icone}vw;
     padding: ${(p) =>
@@ -53,7 +53,7 @@ const BoxContainer = styled('div')`
     background-color: ${colors.vermelho};
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     & > * + * {
-        margin-top: ${(p) => (p.playlist ? meio_icone : meio_icone * 2)}vw;
+        margin-top: ${(p) => (p.playlist ? meio_icone / 2 : meio_icone * 2)}vw;
     }
     font-size: 0.8em;
     p {
