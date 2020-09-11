@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { jsx } from '@emotion/core';
 import Player from '@vimeo/player';
 import screenfull from 'screenfull';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import UpperBar from './upper-bar.component';
 
@@ -39,11 +41,12 @@ const VideoPlayer = (props) => {
             let active = currentVideo.id == video.id ? 'active' : '';
 
             return (
-                <div className={`row ${active}`} key={index}>
-                    <div className="col-xs-6">
+                <Row className={`${active}`} key={index}>
+                    <Col>
                         <div
                             className="thumb-container"
                             style={{
+                                height: '3vw',
                                 backgroundImage: `url(${
                                     video[props.lang].thumb
                                 })`,
@@ -52,8 +55,8 @@ const VideoPlayer = (props) => {
                                 goToVideo(video.id);
                             }}
                         ></div>
-                    </div>
-                    <div className="col-xs-6">
+                    </Col>
+                    <Col>
                         <p
                             className="playlist-title"
                             onClick={() => {
@@ -65,8 +68,8 @@ const VideoPlayer = (props) => {
                         <p className="playlist-category">
                             {video[props.lang].category}
                         </p>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
             );
         })
     );
