@@ -136,6 +136,9 @@ const DropdownButton = ({
 const PlayerMenu = (props) => {
     const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
     // const [show, setShow] = useState(false);
+    const createMarkup = (markup) => {
+        return { __html: markup };
+    };
 
     return (
         // ButtonToolbar
@@ -153,7 +156,21 @@ const PlayerMenu = (props) => {
                 hoverSrc={infoButtonActive}
                 alignEnd
             >
-                <p>Cartela</p>
+                <p
+                    className="info-box-title"
+                    dangerouslySetInnerHTML={createMarkup(
+                        props.vimeoOptions.current_video[props.lang].title_box
+                            ? props.vimeoOptions.current_video[props.lang]
+                                  .title_box
+                            : props.vimeoOptions.current_video[props.lang].title
+                    )}
+                ></p>
+                <div
+                    className="info-box-caption"
+                    dangerouslySetInnerHTML={createMarkup(
+                        props.vimeoOptions.current_video[props.lang].caption
+                    )}
+                />
             </DropdownButton>
             <DropdownButton
                 source={playlistButton}

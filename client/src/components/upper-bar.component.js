@@ -31,7 +31,7 @@ const UpperBar = (props) => {
                     {props.vimeoOptions.current_video[props.lang].subtitle}
                 </span>
             </Col>
-            <PlayerMenu />
+            <PlayerMenu vimeoOptions={props.vimeoOptions} lang={props.lang} />
         </Row>
     );
 };
