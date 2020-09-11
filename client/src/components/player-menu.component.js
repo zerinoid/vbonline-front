@@ -51,6 +51,9 @@ const BoxContainer = styled('div')`
     flex-direction: column;
     background-color: ${colors.vermelho};
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    & > * + * {
+        margin-top: ${meio_icone}vw;
+    },
 `;
 
 const Menu = ({ role, children, playlist }) => {
