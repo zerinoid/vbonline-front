@@ -54,7 +54,11 @@ const BoxContainer = styled('div')`
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     & > * + * {
         margin-top: ${(p) => (p.playlist ? meio_icone : meio_icone * 2)}vw;
-    },
+    }
+    font-size: 0.8em;
+    p {
+        margin-bottom: 0;
+    }
 `;
 
 const Menu = ({ role, children, playlist }) => {
@@ -162,7 +166,7 @@ const PlayerMenu = (props) => {
                 alignEnd
             >
                 <p
-                    className="info-box-title"
+                    className="chart-title"
                     dangerouslySetInnerHTML={createMarkup(
                         props.vimeoOptions.current_video[props.lang].title_box
                             ? props.vimeoOptions.current_video[props.lang]
@@ -171,7 +175,7 @@ const PlayerMenu = (props) => {
                     )}
                 ></p>
                 <div
-                    className="info-box-caption"
+                    className="chart-caption"
                     dangerouslySetInnerHTML={createMarkup(
                         props.vimeoOptions.current_video[props.lang].caption
                     )}

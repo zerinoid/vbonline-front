@@ -37,3 +37,18 @@
     height: 100%;
     cursor: pointer;
 }
+
+.chart-title {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.playlist-title {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.playlist-category {
+    font-size: 0.75;
+    position: relative;
+}
