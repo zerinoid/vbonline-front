@@ -22,6 +22,37 @@
     }
 }
 
+.play-item {
+    &:hover {
+        .thumb-container {
+            box-shadow: inset 0px 0px 0px 0.2vw #fff;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    }
+
+    &.active {
+        opacity: 0.5;
+
+        .playlist-title,
+        .play-thumb {
+            cursor: default;
+        }
+
+        &:hover {
+            p {
+                font-weight: normal;
+            }
+
+            .thumb-container {
+                border: none;
+            }
+        }
+    }
+}
+
 .thumb-container {
     padding-right: 0;
     padding-left: 0;

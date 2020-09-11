@@ -43,7 +43,7 @@ const VideoPlayer = (props) => {
             let active = currentVideo.id == video.id ? 'active' : '';
 
             return (
-                <Row className={`${active}`} key={index}>
+                <Row className={`play-item ${active}`} key={index}>
                     <Col xs={6} className="thumb-container">
                         <img
                             className="play-thumb"
