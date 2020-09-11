@@ -143,7 +143,7 @@ export default function ListaDocs(props) {
                         font: normal 0.8em FedraMono;
                     }
                     &:hover {
-                        box-shadow: inset 0px 0px 0px 0.2vw #fff;
+                        box-shadow: 0px 0px 0px 0.2vw #fff;
                     }
                     ${BP.small} {
                         min-height: unset;
