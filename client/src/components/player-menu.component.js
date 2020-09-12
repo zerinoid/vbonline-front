@@ -38,7 +38,7 @@ const BoxContainer = styled('div')`
     min-width: 250px;
     width: ${(p) => (p.playlist ? '18vw' : '16.5vw')};
     position: absolute;
-    top: ${meio_icone}vw;
+    top: ${meio_icone}vw !important;
     padding: ${(p) =>
         p.playlist
             ? meio_icone + 'vw'
@@ -64,7 +64,6 @@ const BoxContainer = styled('div')`
 const Menu = ({ role, children, playlist }) => {
     const { show, onClose, props } = useDropdownMenu({
         flip: true,
-        offset: [0, 8],
     });
     return (
         <BoxContainer
