@@ -37,6 +37,7 @@ const UpperBar = (props) => {
                 playlist={props.playlist}
                 closePlayer={props.closePlayer}
                 enterFullScreen={props.enterFullScreen}
+                goToVideo={props.goToVideo}
             />
         </Row>
     );

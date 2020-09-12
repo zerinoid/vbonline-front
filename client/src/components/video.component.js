@@ -167,6 +167,7 @@ const VideoPlayer = (props) => {
                 playlist={pVideos}
                 closePlayer={closePlayer}
                 enterFullScreen={enterFullScreen}
+                goToVideo={() => goToVideo(nextVideo.id)}
             />
         </div>
     );

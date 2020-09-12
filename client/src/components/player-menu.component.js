@@ -191,7 +191,7 @@ const PlayerMenu = (props) => {
             <VideoButton
                 src={nextButton}
                 hoverSrc={isMobile ? nextButton : nextButtonActive}
-                /* onClick={() => {goToVideo(nextVideo.id);}} */
+                onClick={props.goToVideo}
             />
             <VideoButton
                 src={fullScreenButton}
