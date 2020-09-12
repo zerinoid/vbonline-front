@@ -35,6 +35,8 @@ const UpperBar = (props) => {
                 vimeoOptions={props.vimeoOptions}
                 lang={props.lang}
                 playlist={props.playlist}
+                closePlayer={props.closePlayer}
+                enterFullScreen={props.enterFullScreen}
             />
         </Row>
     );

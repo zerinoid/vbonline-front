@@ -148,7 +148,6 @@ const PlayerMenu = (props) => {
     };
 
     return (
-        // ButtonToolbar
         <Col
             md={4}
             css={{
@@ -197,12 +196,12 @@ const PlayerMenu = (props) => {
             <VideoButton
                 src={fullScreenButton}
                 hoverSrc={isMobile ? fullScreenButton : fullScreenButtonActive}
-                /* onClick={enterFullScreen} */
+                onClick={props.enterFullScreen}
             />
             <VideoButton
                 src={closeButton}
                 hoverSrc={isMobile ? closeButton : closeButtonActive}
-                /* onClick={closePlayer} */
+                onClick={props.closePlayer}
             />
         </Col>
     );

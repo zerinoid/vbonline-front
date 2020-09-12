@@ -165,6 +165,8 @@ const VideoPlayer = (props) => {
                 vimeoOptions={props.vimeoOptions}
                 lang={props.lang}
                 playlist={pVideos}
+                closePlayer={closePlayer}
+                enterFullScreen={enterFullScreen}
             />
         </div>
     );
