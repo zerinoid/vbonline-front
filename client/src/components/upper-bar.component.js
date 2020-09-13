@@ -22,7 +22,7 @@ const UpperBar = (props) => {
                 },
             }}
         >
-            <Col md={{ span: 4, offset: 4 }} sm={4} className="video-title">
+            <Col md={{ span: 4, offset: 4 }} xs={6} className="video-title">
                 <span css={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
                     {props.vimeoOptions.current_video[props.lang].title}
                 </span>
