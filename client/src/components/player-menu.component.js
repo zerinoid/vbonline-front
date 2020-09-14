@@ -162,7 +162,7 @@ const PlayerMenu = (props) => {
             {/* cartela */}
             <DropdownButton
                 source={infoButton}
-                hoverSrc={infoButtonActive}
+                hoverSrc={isMobile ? infoButton : infoButtonActive}
                 alignEnd
             >
                 <p
@@ -184,7 +184,7 @@ const PlayerMenu = (props) => {
             {/* playlist */}
             <DropdownButton
                 source={playlistButton}
-                hoverSrc={playlistButtonActive}
+                hoverSrc={isMobile ? playlistButton : playlistButtonActive}
                 alignEnd
                 playlist
             >
