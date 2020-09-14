@@ -151,6 +151,7 @@ const PlayerMenu = (props) => {
         <Col
             md={4}
             sm={5}
+            xs={12}
             css={{
                 justifyContent: 'flex-end',
                 alignItems: 'center',
