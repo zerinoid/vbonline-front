@@ -5,14 +5,6 @@
     cursor: pointer;
 }
 
-.video-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-family: 'FedraMono';
-}
-
 .info-box {
     color: #fff;
     font-family: 'Graphik';
@@ -83,4 +75,11 @@
 .playlist-category {
     font-size: 0.75;
     position: relative;
+}
+
+@include media-breakpoint-down(sm) {
+
+    .video-button-icon {
+        height: 2.7vw;
+    }
 }

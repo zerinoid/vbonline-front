@@ -1,0 +1,38 @@
+@import 'bootstrap/scss/bootstrap';
+
+.upper-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    z-index: 1010;
+    padding: 6vh 105px;
+
+    &.row {
+        margin: 0 auto;
+    }
+
+    &>div {
+        display: flex;
+    }
+}
+
+.video-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'FedraMono';
+}
+
+@include media-breakpoint-down(sm) {
+    .upper-bar {
+        padding: 6vh 6vh;
+    }
+
+    .video-title {
+        justify-content: flex-start;
+        font-size: 0.8em;
+    }
+}

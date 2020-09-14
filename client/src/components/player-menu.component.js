@@ -150,9 +150,10 @@ const PlayerMenu = (props) => {
     return (
         <Col
             md={4}
-            xs={6}
+            xs={5}
             css={{
                 justifyContent: 'flex-end',
+                alignItems: 'center',
                 '& > * + *': {
                     marginLeft: 3 * meio_icone + 'vw',
                 },
@@ -161,7 +162,7 @@ const PlayerMenu = (props) => {
             {/* cartela */}
             <DropdownButton
                 source={infoButton}
-                hoverSrc={infoButtonActive}
+                hoverSrc={isMobile ? infoButton : infoButtonActive}
                 alignEnd
             >
                 <p
@@ -183,7 +184,7 @@ const PlayerMenu = (props) => {
             {/* playlist */}
             <DropdownButton
                 source={playlistButton}
-                hoverSrc={playlistButtonActive}
+                hoverSrc={isMobile ? playlistButton : playlistButtonActive}
                 alignEnd
                 playlist
             >
