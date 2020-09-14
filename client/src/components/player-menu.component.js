@@ -153,6 +153,7 @@ const PlayerMenu = (props) => {
             xs={5}
             css={{
                 justifyContent: 'flex-end',
+                alignItems: 'center',
                 '& > * + *': {
                     marginLeft: 3 * meio_icone + 'vw',
                 },

@@ -84,3 +84,10 @@
     font-size: 0.75;
     position: relative;
 }
+
+@include media-breakpoint-down(sm) {
+
+    .video-button-icon {
+        height: 2.7vw;
+    }
+}
