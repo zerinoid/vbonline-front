@@ -150,7 +150,7 @@ const PlayerMenu = (props) => {
     return (
         <Col
             md={4}
-            xs={5}
+            sm={5}
             css={{
                 justifyContent: 'flex-end',
                 alignItems: 'center',
