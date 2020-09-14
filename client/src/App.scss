@@ -1,4 +1,14 @@
-/* @import "video.js/dist/video-js"; */
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+$grid-breakpoints: (xs: 0,
+    sm: 560px,
+    md: 768px,
+    lg: 992px,
+    xl: 1280px);
+
+@import 'bootstrap/scss/bootstrap';
+
 @import "styles/variables";
 @import "styles/fonts";
 @import "styles/video";
