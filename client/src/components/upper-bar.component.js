@@ -7,21 +7,7 @@ import PlayerMenu from './player-menu.component';
 
 const UpperBar = (props) => {
     return (
-        <Row
-            css={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                margin: '0 auto',
-                width: '100%',
-                background: 'black',
-                zIndex: 1010,
-                padding: '6vh 105px',
-                '&>div': {
-                    display: 'flex',
-                },
-            }}
-        >
+        <Row className="upper-bar">
             <Col md={{ span: 4, offset: 4 }} xs={7} className="video-title">
                 <span css={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
                     {props.vimeoOptions.current_video[props.lang].title}
