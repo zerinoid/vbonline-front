@@ -10,8 +10,8 @@ const UpperBar = (props) => {
         <Row className="upper-bar">
             <Col
                 md={{ span: 4, offset: 4 }}
-                sm={7}
-                xs={12}
+                sm={{ span: 7, order: 'first' }}
+                xs={{ span: 12, order: 'last' }}
                 className="video-title"
             >
                 <span css={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
