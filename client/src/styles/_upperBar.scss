@@ -18,7 +18,15 @@
     }
 }
 
-@include media-breakpoint-up(sm) {
+.video-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'FedraMono';
+}
+
+@include media-breakpoint-down(sm) {
     .upper-bar {
         padding: 6vh 6vh;
     }
