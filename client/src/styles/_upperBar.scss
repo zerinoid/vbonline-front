@@ -1,18 +1,25 @@
 @import 'bootstrap/scss/bootstrap';
 
-.upper-bar.row {
+.upper-bar {
     position: absolute;
     top: 0;
     left: 0;
-    margin: 0 auto;
     width: 100%;
     background: black;
     z-index: 1010;
     padding: 6vh 105px;
+
+    &.row {
+        margin: 0 auto;
+    }
 
     &>div {
         display: flex;
     }
 }
 
-@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(sm) {
+    .upper-bar {
+        padding: 6vh 6vh;
+    }
+}
