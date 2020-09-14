@@ -1,3 +1,8 @@
+.player-menu {
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .video-button-icon {
     height: 1.5vw;
     cursor: pointer;
@@ -76,8 +81,17 @@
 }
 
 @include media-breakpoint-down(sm) {
-
     .video-button-icon {
         height: 2.7vw;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .player-menu {
+        justify-content: space-between;
+    }
+
+    .video-button-icon {
+        height: 6vw;
     }
 }

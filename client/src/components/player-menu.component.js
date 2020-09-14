@@ -149,12 +149,11 @@ const PlayerMenu = (props) => {
 
     return (
         <Col
+            className="player-menu"
             md={4}
             sm={5}
             xs={12}
             css={{
-                justifyContent: 'flex-end',
-                alignItems: 'center',
                 '& > * + *': {
                     marginLeft: 3 * meio_icone + 'vw',
                 },
