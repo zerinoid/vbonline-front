@@ -13,6 +13,7 @@
 
     &>div {
         display: flex;
+        flex-wrap: wrap;
     }
 }
 
@@ -32,5 +33,17 @@
     .video-title {
         justify-content: flex-start;
         font-size: 0.8em;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .upper-bar {
+        padding: 6vh 3vh;
+    }
+
+    .video-title {
+        margin-top: 6.4vw;
+        justify-content: flex-start;
+        font-size: 1.2em;
     }
 }

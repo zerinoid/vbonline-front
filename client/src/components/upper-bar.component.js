@@ -17,7 +17,8 @@ const UpperBar = (props) => {
                 <span css={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
                     {props.vimeoOptions.current_video[props.lang].title}
                 </span>
-                <span css={{ marginLeft: '0.7vw' }}>
+                <span>&nbsp;</span>
+                <span>
                     {props.vimeoOptions.current_video[props.lang].subtitle}
                 </span>
             </Col>
