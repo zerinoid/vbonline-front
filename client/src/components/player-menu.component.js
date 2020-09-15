@@ -68,15 +68,7 @@ const BoxContainer = styled('div')`
         width: 100vw;
         height: 100vh;
         top: 0 !important;
-        padding: ${(p) =>
-            p.playlist
-                ? '6vw 8vw 19vw'
-                : 8.8 * meio_icone +
-                  'vw ' +
-                  8.8 * meio_icone +
-                  'vw ' +
-                  17.6 * meio_icone +
-                  'vw'};
+        padding: ${(p) => (p.playlist ? '6vw 8vw 19vw' : '6.6vw 6.6vw 13.2vw')};
         justify-content: space-between;
         transform: none;
     }
