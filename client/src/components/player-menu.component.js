@@ -68,7 +68,7 @@ const BoxContainer = styled('div')`
         width: 100vw;
         height: 100vh;
         top: 0 !important;
-        padding: ${(p) => (p.playlist ? '6vw 8vw 19vw' : '6.6vw 6.6vw 13.2vw')};
+        padding: 6vw 8vw 15vw;
         justify-content: space-between;
         transform: none;
     }
