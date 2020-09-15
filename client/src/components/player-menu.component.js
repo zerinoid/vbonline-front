@@ -36,8 +36,9 @@ const VideoButton = (props) => {
 
 const LegendaMobile = (props) => {
     return (
-        <div className="d-md-none justify-content-around">
+        <div className="d-md-none justify-content-between d-flex">
             <h2>{props.children}</h2>
+            <img alt="" src={closeButton} css={{ height: '1.9em' }} />
         </div>
     );
 };
