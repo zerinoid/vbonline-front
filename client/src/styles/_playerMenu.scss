@@ -78,6 +78,10 @@
 .playlist-wrap {
     display: flex;
     flex-direction: column;
+
+    &>*+* {
+        margin-top: 0.375vw,
+    }
 }
 
 .playlist-title {
@@ -95,12 +99,31 @@
         height: 2.7vw;
     }
 
+    .playlist-carousel {
+        width: 80vw;
+        height: 70vh;
+        overflow-x: auto;
+    }
+
     .playlist-wrap {
         flex-direction: row;
+        width: 100vw;
+
+        &>*+* {
+            margin-top: 0;
+        }
     }
 
     .info-box {
         top: 0 !important;
+
+        .row+.row {
+            margin-left: 2vw;
+        }
+    }
+
+    .thumb-container {
+        height: 22vh;
     }
 }
 

@@ -202,15 +202,11 @@ const PlayerMenu = (props) => {
                 alignEnd
                 playlist
             >
-                <div
-                    className="playlist-wrap"
-                    css={{
-                        '& > * + *': {
-                            marginTop: meio_icone / 2 + 'vw',
-                        },
-                    }}
-                >
-                    {props.playlist}
+                <div>
+                    <h3>Lista de reprodução</h3>
+                </div>
+                <div className="playlist-carousel">
+                    <div className="playlist-wrap">{props.playlist}</div>
                 </div>
             </DropdownButton>
             {/* outros */}
