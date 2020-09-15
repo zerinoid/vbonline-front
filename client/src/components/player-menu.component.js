@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-overlays/Dropdown';
 import { useDropdownToggle, useDropdownMenu } from 'react-overlays';
 import colors from '../styles/colors';
+import BP from '../styles/breakpoints';
 
 import playlistButtonActive from '../assets/img/v_assets/vPlaylistActive.png';
 import playlistButton from '../assets/img/v_assets/vPlaylist.png';
@@ -53,11 +54,25 @@ const BoxContainer = styled('div')`
     background-color: ${colors.vermelho};
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     & > * + * {
-        margin-top: ${(p) => (p.playlist ? meio_icone / 2 : meio_icone * 2)}vw;
+        margin-top: ${(p) => p.playlist && meio_icone / 2 + 'vw'};
     }
     font-size: 0.8em;
     p {
         margin-bottom: 0;
+    }
+    ${BP.small} {
+        width: 100vw;
+        height: 100vh;
+        padding: ${(p) =>
+            p.playlist
+                ? meio_icone + 'vw'
+                : 8.8 * meio_icone +
+                  'vw ' +
+                  8.8 * meio_icone +
+                  'vw ' +
+                  17.6 * meio_icone +
+                  'vw'};
+        justify-content: ${(p) => (p.playlist ? 'initial' : 'space-between')};
     }
 `;
 
@@ -165,6 +180,7 @@ const PlayerMenu = (props) => {
                 hoverSrc={isMobile ? infoButton : infoButtonActive}
                 alignEnd
             >
+                <h3 className="d-md-none">Ficha Técnica</h3>
                 <p
                     className="chart-title"
                     dangerouslySetInnerHTML={createMarkup(
