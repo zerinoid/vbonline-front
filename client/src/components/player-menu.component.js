@@ -70,14 +70,14 @@ const BoxContainer = styled('div')`
         top: 0 !important;
         padding: ${(p) =>
             p.playlist
-                ? meio_icone + 'vw'
+                ? '6vw 8vw 15vw'
                 : 8.8 * meio_icone +
                   'vw ' +
                   8.8 * meio_icone +
                   'vw ' +
                   17.6 * meio_icone +
                   'vw'};
-        justify-content: ${(p) => (p.playlist ? 'center' : 'space-between')};
+        justify-content: space-between;
         transform: none;
     }
 `;
