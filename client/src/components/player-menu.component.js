@@ -178,7 +178,7 @@ const PlayerMenu = (props) => {
                 hoverSrc={isMobile ? infoButton : infoButtonActive}
                 alignEnd
             >
-                <h3 className="d-md-none">Ficha Técnica</h3>
+                <h2 className="d-md-none">Ficha Técnica</h2>
                 <p
                     className="chart-title"
                     dangerouslySetInnerHTML={createMarkup(
@@ -203,7 +203,7 @@ const PlayerMenu = (props) => {
                 playlist
             >
                 <div>
-                    <h3>Lista de reprodução</h3>
+                    <h2>Lista de reprodução</h2>
                 </div>
                 <div className="playlist-carousel">
                     <div className="playlist-wrap">{props.playlist}</div>
