@@ -48,123 +48,124 @@ const LegendaMobile = (props) => {
     );
 };
 
-const BoxContainer = styled('div')`
-    display: ${(p) => (p.show ? 'flex' : 'none')};
-    min-width: 250px;
-    width: ${(p) => (p.playlist ? '18vw' : '16.5vw')};
-    top: ${meio_icone}vw !important;
-    padding: ${(p) =>
-        p.playlist
-            ? meio_icone + 'vw'
-            : 2 * meio_icone +
-              'vw ' +
-              2 * meio_icone +
-              'vw ' +
-              3 * meio_icone +
-              'vw'};
-    z-index: 1000;
-    flex-direction: column;
-    background-color: ${colors.vermelho};
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    font-size: 0.8em;
-    p {
-        margin-bottom: 0;
-    }
-    ${BP.small} {
-        width: 100vw;
-        height: 100vh;
-        top: 0 !important;
-        padding: 5vw 8vw 11vw;
-        justify-content: space-between;
-        transform: none;
-    }
-`;
-
-const Menu = ({ role, children, playlist }) => {
-    const { show, onClose, props } = useDropdownMenu({
-        flip: true,
-    });
-    return (
-        <BoxContainer
-            {...props}
-            role={role}
-            show={show}
-            playlist={playlist}
-            className="info-box"
-        >
-            {/* <button */}
-            {/*     type="button" */}
-            {/*     onClick={onClose} */}
-            {/*     className="text-left hover:bg-brand-100 px-6 py-2" */}
-            {/* > */}
-            {/*     Item 1 */}
-            {/* </button> */}
-            {children}
-        </BoxContainer>
-    );
-};
-
-const Toggle = ({ id, source, hoverSrc }) => {
-    const [props, { show, toggle }] = useDropdownToggle();
-    const [imageSrc, setImageSrc] = useState(source);
-
-    return (
-        <img
-            src={show ? hoverSrc : imageSrc}
-            alt=""
-            className="video-button-icon"
-            id={id}
-            {...props}
-            onClick={toggle}
-            onMouseEnter={() => {
-                setImageSrc(hoverSrc);
-            }}
-            onMouseLeave={() => {
-                setImageSrc(source);
-            }}
-        />
-    );
-};
-
-const DropdownButton = ({
-    show,
-    onToggle,
-    drop,
-    alignEnd,
-    role,
-    source,
-    hoverSrc,
-    playlist,
-    children,
-}) => (
-    <Dropdown
-        show={show}
-        onToggle={onToggle}
-        drop={drop}
-        alignEnd={alignEnd}
-        itemSelector="button:not(:disabled)"
-    >
-        {({ props }) => (
-            <div {...props} className="relative inline-block">
-                <Toggle
-                    id="example-toggle"
-                    source={source}
-                    hoverSrc={hoverSrc}
-                />
-                <Menu role={role} playlist={playlist}>
-                    {children}
-                </Menu>
-            </div>
-        )}
-    </Dropdown>
-);
-
 const PlayerMenu = (props) => {
     const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
-    // const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false);
     const createMarkup = (markup) => {
         return { __html: markup };
     };
+
+    const BoxContainer = styled('div')`
+        display: ${(p) => (p.show ? 'flex' : 'none')};
+        min-width: 250px;
+        width: ${(p) => (p.playlist ? '18vw' : '16.5vw')};
+        top: ${meio_icone}vw !important;
+        padding: ${(p) =>
+            p.playlist
+                ? meio_icone + 'vw'
+                : 2 * meio_icone +
+                  'vw ' +
+                  2 * meio_icone +
+                  'vw ' +
+                  3 * meio_icone +
+                  'vw'};
+        z-index: 1000;
+        flex-direction: column;
+        background-color: ${colors.vermelho};
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        font-size: 0.8em;
+        p {
+            margin-bottom: 0;
+        }
+        ${BP.small} {
+            width: 100vw;
+            height: 100vh;
+            top: 0 !important;
+            padding: 5vw 8vw 11vw;
+            justify-content: space-between;
+            transform: none;
+        }
+    `;
+
+    const Menu = ({ role, children, playlist }) => {
+        const { show, onClose, props } = useDropdownMenu({
+            flip: true,
+        });
+
+        return (
+            <BoxContainer
+                {...props}
+                role={role}
+                show={show}
+                playlist={playlist}
+                className="info-box"
+            >
+                {/* <button */}
+                {/*     type="button" */}
+                {/*     onClick={() => testeHandler(!teste)} */}
+                {/*     className="text-left hover:bg-brand-100 px-6 py-2" */}
+                {/* > */}
+                {/*     Item 1 */}
+                {/* </button> */}
+                {children}
+            </BoxContainer>
+        );
+    };
+
+    const Toggle = ({ id, source, hoverSrc }) => {
+        const [props, { show, toggle }] = useDropdownToggle();
+        const [imageSrc, setImageSrc] = useState(source);
+
+        return (
+            <img
+                src={show ? hoverSrc : imageSrc}
+                alt=""
+                className="video-button-icon"
+                id={id}
+                {...props}
+                onClick={toggle}
+                onMouseEnter={() => {
+                    setImageSrc(hoverSrc);
+                }}
+                onMouseLeave={() => {
+                    setImageSrc(source);
+                }}
+            />
+        );
+    };
+
+    const DropdownButton = ({
+        show,
+        onToggle,
+        drop,
+        alignEnd,
+        role,
+        source,
+        hoverSrc,
+        playlist,
+        children,
+    }) => (
+        <Dropdown
+            show={show}
+            onToggle={onToggle}
+            drop={drop}
+            alignEnd={alignEnd}
+            itemSelector="button:not(:disabled)"
+        >
+            {({ props }) => (
+                <div {...props} className="relative inline-block">
+                    <Toggle
+                        id="example-toggle"
+                        source={source}
+                        hoverSrc={hoverSrc}
+                    />
+                    <Menu role={role} playlist={playlist}>
+                        {children}
+                    </Menu>
+                </div>
+            )}
+        </Dropdown>
+    );
 
     return (
         <Col
