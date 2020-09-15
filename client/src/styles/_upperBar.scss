@@ -24,6 +24,12 @@
     font-family: 'FedraMono';
 }
 
+@media (min-width: 2000px) {
+    .upper-bar {
+        padding: 125px 105px;
+    }
+}
+
 @include media-breakpoint-down(sm) {
     .upper-bar {
         padding: 6vh 6vh;
