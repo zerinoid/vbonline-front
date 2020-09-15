@@ -38,7 +38,6 @@ const BoxContainer = styled('div')`
     display: ${(p) => (p.show ? 'flex' : 'none')};
     min-width: 250px;
     width: ${(p) => (p.playlist ? '18vw' : '16.5vw')};
-    position: absolute;
     top: ${meio_icone}vw !important;
     padding: ${(p) =>
         p.playlist
@@ -63,6 +62,7 @@ const BoxContainer = styled('div')`
     ${BP.small} {
         width: 100vw;
         height: 100vh;
+        top: 0 !important;
         padding: ${(p) =>
             p.playlist
                 ? meio_icone + 'vw'
@@ -73,6 +73,7 @@ const BoxContainer = styled('div')`
                   17.6 * meio_icone +
                   'vw'};
         justify-content: ${(p) => (p.playlist ? 'initial' : 'space-between')};
+        transform: none;
     }
 `;
 

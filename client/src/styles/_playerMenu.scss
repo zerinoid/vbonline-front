@@ -1,6 +1,7 @@
 .player-menu {
     justify-content: flex-end;
     align-items: center;
+    position: static;
 }
 
 .video-button-icon {
@@ -87,6 +88,10 @@
 @include media-breakpoint-down(sm) {
     .video-button-icon {
         height: 2.7vw;
+    }
+
+    .info-box {
+        top: 0 !important;
     }
 }
 
