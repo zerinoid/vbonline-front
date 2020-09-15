@@ -70,7 +70,7 @@ const BoxContainer = styled('div')`
         top: 0 !important;
         padding: ${(p) =>
             p.playlist
-                ? '6vw 8vw 15vw'
+                ? '6vw 8vw 19vw'
                 : 8.8 * meio_icone +
                   'vw ' +
                   8.8 * meio_icone +
