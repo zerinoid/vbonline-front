@@ -52,9 +52,6 @@ const BoxContainer = styled('div')`
     flex-direction: column;
     background-color: ${colors.vermelho};
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    & > * + * {
-        margin-top: ${(p) => p.playlist && meio_icone / 2 + 'vw'};
-    }
     font-size: 0.8em;
     p {
         margin-bottom: 0;
@@ -205,8 +202,18 @@ const PlayerMenu = (props) => {
                 alignEnd
                 playlist
             >
-                {props.playlist}
+                <div
+                    className="playlist-wrap"
+                    css={{
+                        '& > * + *': {
+                            marginTop: meio_icone / 2 + 'vw',
+                        },
+                    }}
+                >
+                    {props.playlist}
+                </div>
             </DropdownButton>
+            {/* outros */}
             <VideoButton
                 src={nextButton}
                 hoverSrc={isMobile ? nextButton : nextButtonActive}

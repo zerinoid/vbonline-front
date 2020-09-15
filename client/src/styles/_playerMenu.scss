@@ -75,19 +75,28 @@
     margin-top: 1.5vw;
 }
 
+.playlist-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
 .playlist-title {
     text-decoration: underline;
     cursor: pointer;
 }
 
 .playlist-category {
-    font-size: 0.75;
+    // font-size: 0.75;
     position: relative;
 }
 
 @include media-breakpoint-down(sm) {
     .video-button-icon {
         height: 2.7vw;
+    }
+
+    .playlist-wrap {
+        flex-direction: row;
     }
 
     .info-box {
