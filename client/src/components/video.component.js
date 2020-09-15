@@ -44,7 +44,7 @@ const VideoPlayer = (props) => {
 
             return (
                 <Row className={`play-item ${active}`} key={index}>
-                    <Col xs={6} className="thumb-container">
+                    <Col md={6} xs={12} className="thumb-container">
                         <img
                             className="play-thumb"
                             src={video[props.lang].thumb}
@@ -54,7 +54,11 @@ const VideoPlayer = (props) => {
                             }}
                         />
                     </Col>
-                    <Col xs={6} css={{ paddingLeft: meio_icone + 'vw' }}>
+                    <Col
+                        md={6}
+                        xs={12}
+                        css={{ paddingLeft: meio_icone + 'vw' }}
+                    >
                         <p
                             className="playlist-title"
                             onClick={() => {

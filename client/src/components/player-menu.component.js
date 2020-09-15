@@ -69,7 +69,7 @@ const BoxContainer = styled('div')`
                   'vw ' +
                   17.6 * meio_icone +
                   'vw'};
-        justify-content: ${(p) => (p.playlist ? 'initial' : 'space-between')};
+        justify-content: ${(p) => (p.playlist ? 'center' : 'space-between')};
         transform: none;
     }
 `;
