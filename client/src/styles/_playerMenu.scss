@@ -118,6 +118,10 @@
         .row+.row {
             margin-left: 2vw;
         }
+
+        [class*="chart-"] {
+            font-size: 1.7em;
+        }
     }
 
     .thumb-container {
