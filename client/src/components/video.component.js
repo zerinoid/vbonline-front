@@ -5,6 +5,7 @@ import Player from '@vimeo/player';
 import screenfull from 'screenfull';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import BP from '../styles/breakpoints';
 
 import UpperBar from './upper-bar.component';
 
@@ -57,7 +58,12 @@ const VideoPlayer = (props) => {
                     <Col
                         md={6}
                         xs={12}
-                        css={{ paddingLeft: meio_icone + 'vw' }}
+                        css={{
+                            paddingLeft: meio_icone + 'vw',
+                            [BP.small]: {
+                                paddingLeft: 0,
+                            },
+                        }}
                     >
                         <p
                             className="playlist-title"
