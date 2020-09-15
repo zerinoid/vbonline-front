@@ -34,6 +34,14 @@ const VideoButton = (props) => {
     );
 };
 
+const LegendaMobile = (props) => {
+    return (
+        <div className="d-md-none justify-content-around">
+            <h2>{props.children}</h2>
+        </div>
+    );
+};
+
 const BoxContainer = styled('div')`
     display: ${(p) => (p.show ? 'flex' : 'none')};
     min-width: 250px;
@@ -178,7 +186,7 @@ const PlayerMenu = (props) => {
                 hoverSrc={isMobile ? infoButton : infoButtonActive}
                 alignEnd
             >
-                <h2 className="d-md-none">Ficha Técnica</h2>
+                <LegendaMobile>Ficha Técnica</LegendaMobile>
                 <p
                     className="chart-title"
                     dangerouslySetInnerHTML={createMarkup(
@@ -202,9 +210,7 @@ const PlayerMenu = (props) => {
                 alignEnd
                 playlist
             >
-                <div>
-                    <h2>Lista de reprodução</h2>
-                </div>
+                <LegendaMobile>Lista de reprodução</LegendaMobile>
                 <div className="playlist-carousel">
                     <div className="playlist-wrap">{props.playlist}</div>
                 </div>
