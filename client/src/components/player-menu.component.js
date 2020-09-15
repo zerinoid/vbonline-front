@@ -34,25 +34,25 @@ const VideoButton = (props) => {
     );
 };
 
-const LegendaMobile = (props) => {
-    return (
-        <div className="d-md-none justify-content-between d-flex">
-            <h2>{props.children}</h2>
-            <img
-                alt=""
-                src={closeButton}
-                css={{ height: '1.9em' }}
-                onClick={props.onClick}
-            />
-        </div>
-    );
-};
-
 const PlayerMenu = (props) => {
     const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
     const [show, setShow] = useState(false);
     const createMarkup = (markup) => {
         return { __html: markup };
+    };
+
+    const LegendaMobile = (props) => {
+        return (
+            <div className="d-md-none justify-content-between d-flex">
+                <h2>{props.children}</h2>
+                <img
+                    alt=""
+                    src={closeButton}
+                    css={{ height: '1.9em' }}
+                    onClick={(nextShow) => setShow(nextShow)}
+                />
+            </div>
+        );
     };
 
     const BoxContainer = styled('div')`
@@ -185,9 +185,7 @@ const PlayerMenu = (props) => {
                 hoverSrc={isMobile ? infoButton : infoButtonActive}
                 alignEnd
             >
-                <LegendaMobile onClick={() => setShow(false)}>
-                    Ficha Técnica
-                </LegendaMobile>
+                <LegendaMobile>Ficha Técnica</LegendaMobile>
                 <p
                     className="chart-title"
                     dangerouslySetInnerHTML={createMarkup(
