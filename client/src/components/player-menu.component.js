@@ -68,7 +68,7 @@ const BoxContainer = styled('div')`
         width: 100vw;
         height: 100vh;
         top: 0 !important;
-        padding: 6vw 8vw 15vw;
+        padding: 5vw 8vw 13vw;
         justify-content: space-between;
         transform: none;
     }
