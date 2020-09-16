@@ -43,9 +43,7 @@ const PlayerMenu = (props) => {
 
     // Reset show state
     useEffect(() => {
-        if(show){
-            setShow(!show);
-        }
+        if(show) setShow(!show)
     }, [show]);
 
     const LegendaMobile = (props) => {
@@ -55,9 +53,7 @@ const PlayerMenu = (props) => {
                 <img
                     alt=""
                     src={closeButton}
-                    onClick={(nextShow) => {
-                        setShow(nextShow);
-                    }}
+                    onClick={(nextShow) => setShow(nextShow)}
                 />
             </div>
         );
