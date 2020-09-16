@@ -35,7 +35,7 @@ const VideoButton = (props) => {
 };
 
 const PlayerMenu = (props) => {
-    const isMobile = useMediaQuery({ query: '(max-width: 576px)' });
+    const isMobile = useMediaQuery({ query: '(max-width: 767.99px)' });
     const [show, setShow] = useState(false);
     const createMarkup = (markup) => {
         return { __html: markup };
@@ -59,7 +59,7 @@ const PlayerMenu = (props) => {
         display: ${(p) => (p.show ? 'flex' : 'none')};
         min-width: 250px;
         width: ${(p) => (p.playlist ? '18vw' : '16.5vw')};
-        // top: ${meio_icone}vw !important;
+        top: ${meio_icone}vw !important;
         padding: ${(p) =>
             p.playlist
                 ? meio_icone + 'vw'
@@ -90,7 +90,7 @@ const PlayerMenu = (props) => {
     const Menu = ({ role, children, playlist }) => {
         const { show, onClose, props } = useDropdownMenu({
             flip: true,
-            offset: [0, meio_icone ^ 9],
+            offset: isMobile ? [0, -42] : [0, 0],
         });
 
         return (
