@@ -43,12 +43,11 @@ const PlayerMenu = (props) => {
 
     const LegendaMobile = (props) => {
         return (
-            <div className="d-md-none justify-content-between d-flex">
+            <div className="legenda d-md-none justify-content-between d-flex">
                 <h2>{props.children}</h2>
                 <img
                     alt=""
                     src={closeButton}
-                    css={{ height: '1.9em' }}
                     onClick={(nextShow) => setShow(nextShow)}
                 />
             </div>

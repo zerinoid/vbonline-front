@@ -136,6 +136,12 @@
     .thumb-container {
         height: 24vh;
     }
+
+    .legenda {
+        img {
+            height: 1.9em;
+        }
+    }
 }
 
 @include media-breakpoint-down(xs) {
@@ -145,5 +151,34 @@
 
     .video-button-icon {
         height: 6vw;
+    }
+
+    .playlist-wrap {
+        &>*+* {
+            margin-top: 2vw;
+        }
+    }
+
+    .info-box {
+        padding: 5vw 8vw;
+
+        [class*="chart-"] {
+            font-size: 1.7em;
+        }
+
+        .playlist-title {
+            font-size: 1.5em;
+            margin-top: 0.8vw;
+        }
+
+        .playlist-category {
+            font-size: 1.2em;
+        }
+    }
+
+    .legenda {
+        img {
+            height: 1.8em;
+        }
     }
 }
