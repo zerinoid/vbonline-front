@@ -59,7 +59,7 @@ const PlayerMenu = (props) => {
         display: ${(p) => (p.show ? 'flex' : 'none')};
         min-width: 250px;
         width: ${(p) => (p.playlist ? '18vw' : '16.5vw')};
-        top: ${meio_icone}vw !important;
+        // top: ${meio_icone}vw !important;
         padding: ${(p) =>
             p.playlist
                 ? meio_icone + 'vw'
@@ -90,6 +90,7 @@ const PlayerMenu = (props) => {
     const Menu = ({ role, children, playlist }) => {
         const { show, onClose, props } = useDropdownMenu({
             flip: true,
+            offset: [0, meio_icone ^ 9],
         });
 
         return (
