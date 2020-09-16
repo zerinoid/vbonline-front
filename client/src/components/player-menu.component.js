@@ -90,7 +90,7 @@ const PlayerMenu = (props) => {
     const Menu = ({ role, children, playlist }) => {
         const { show, onClose, props } = useDropdownMenu({
             flip: true,
-            offset: isMobile ? [0, -42] : [0, 0],
+            offset: isMobile ? [0, window] : [0, 0],
         });
 
         return (
