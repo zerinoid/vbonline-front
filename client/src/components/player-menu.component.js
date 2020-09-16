@@ -84,6 +84,9 @@ const PlayerMenu = (props) => {
             justify-content: space-between;
             transform: none;
         }
+        ${BP.extraSmall} {
+            justify-content: ${(p) => !p.playlist && 'flex-start'};
+        }
     `;
 
     const Menu = ({ role, children, playlist }) => {
