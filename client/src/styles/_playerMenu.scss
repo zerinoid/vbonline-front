@@ -94,14 +94,7 @@
     position: relative;
 }
 
-@include media-breakpoint-down(sm) {
-    .video-button-icon {
-        height: 2.7vw;
-    }
-
-    .playlist-carousel {
-        overflow-x: auto;
-    }
+@include media-breakpoint-only(sm) {
 
     .playlist-wrap {
         flex-direction: row;
@@ -112,12 +105,23 @@
         }
     }
 
+    .row+.row {
+        margin-left: 2vw;
+    }
+
+}
+
+@include media-breakpoint-down(sm) {
+    .video-button-icon {
+        height: 2.7vw;
+    }
+
+    .playlist-carousel {
+        overflow-x: auto;
+    }
+
     .info-box {
         top: 0 !important;
-
-        .row+.row {
-            margin-left: 2vw;
-        }
 
         [class*="chart-"] {
             font-size: 1.7em;
