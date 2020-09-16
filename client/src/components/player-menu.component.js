@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import HoverImage from 'react-hover-image';
@@ -41,6 +41,13 @@ const PlayerMenu = (props) => {
         return { __html: markup };
     };
 
+    // Reset show state
+    useEffect(() => {
+        if(show){
+            setShow(!show);
+        }
+    }, [show]);
+
     const LegendaMobile = (props) => {
         return (
             <div className="legenda d-md-none justify-content-between d-flex">
@@ -48,7 +55,9 @@ const PlayerMenu = (props) => {
                 <img
                     alt=""
                     src={closeButton}
-                    onClick={(nextShow) => setShow(nextShow)}
+                    onClick={(nextShow) => {
+                        setShow(nextShow);
+                    }}
                 />
             </div>
         );
