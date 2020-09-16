@@ -48,7 +48,10 @@ const PlayerMenu = (props) => {
                 <img
                     alt=""
                     src={closeButton}
-                    onClick={(nextShow) => setShow(nextShow)}
+                    onClick={(nextShow) => {
+                        setShow(nextShow);
+                        console.log(show);
+                    }}
                 />
             </div>
         );
