@@ -177,7 +177,11 @@ export default function ListaDocs(props) {
 
         const main = videoList[0];
         const main_video = [
-            <DocPreviewMain bg={main[lang].poster} key={0}>
+            <DocPreviewMain
+                bg={main[lang].poster}
+                key={0}
+                onClick={() => playerHandler(main.id)}
+            >
                 <div css={absoluteStyle}>
                     <h1>{main[lang].title}</h1>
                     <div
@@ -206,7 +210,6 @@ export default function ListaDocs(props) {
                             alt=""
                             src={playPrev}
                             hoverSrc={playPrevHv}
-                            onClick={() => playerHandler(main.id)}
                             css={buttonStyle}
                         />
                         <Link to="/saibamais">
