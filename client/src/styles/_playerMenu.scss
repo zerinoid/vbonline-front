@@ -80,7 +80,7 @@
     flex-direction: column;
 
     &>*+* {
-        margin-top: 0.375vw,
+        margin-top: 0.375vw;
     }
 }
 
@@ -95,7 +95,6 @@
 }
 
 @include media-breakpoint-only(sm) {
-
     .playlist-wrap {
         flex-direction: row;
         width: 100vw;
@@ -108,7 +107,6 @@
     .row+.row {
         margin-left: 2vw;
     }
-
 }
 
 @include media-breakpoint-down(sm) {
@@ -123,7 +121,7 @@
     .info-box {
         top: 0 !important;
 
-        [class*="chart-"] {
+        [class*='chart-'] {
             font-size: 1.7em;
         }
 
@@ -177,6 +175,14 @@
     .legenda {
         img {
             height: 1.8em;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .legenda {
+        img {
+            height: 1.55em;
         }
     }
 }
