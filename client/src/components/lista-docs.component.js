@@ -94,7 +94,7 @@ export default function ListaDocs(props) {
         },
     };
 
-    const DocPreviewMain = styled.div`
+    const PreviewBase = styled.div`
         width: 100%;
         padding-bottom: 40.1%;
         margin-bottom: 0.5%;
@@ -133,7 +133,7 @@ export default function ListaDocs(props) {
         };
 
         return (
-            <DocPreviewMain
+            <PreviewBase
                 css={css`
                     width: 32.95%;
                     padding-bottom: 11.1%;
@@ -168,7 +168,7 @@ export default function ListaDocs(props) {
                         css={buttonStyle}
                     />
                 </div>
-            </DocPreviewMain>
+            </PreviewBase>
         );
     };
 
@@ -177,11 +177,7 @@ export default function ListaDocs(props) {
 
         const main = videoList[0];
         const main_video = [
-            <DocPreviewMain
-                bg={main[lang].poster}
-                key={0}
-                onClick={() => playerHandler(main.id)}
-            >
+            <PreviewBase bg={main[lang].poster} key={0}>
                 <div css={absoluteStyle}>
                     <h1>{main[lang].title}</h1>
                     <div
@@ -210,6 +206,7 @@ export default function ListaDocs(props) {
                             alt=""
                             src={playPrev}
                             hoverSrc={playPrevHv}
+                            onClick={() => playerHandler(main.id)}
                             css={buttonStyle}
                         />
                         <Link to="/saibamais">
@@ -240,7 +237,7 @@ export default function ListaDocs(props) {
                         }}
                     />
                 </a>
-            </DocPreviewMain>,
+            </PreviewBase>,
         ];
 
         // Thumbs
@@ -291,11 +288,11 @@ export default function ListaDocs(props) {
     } else {
         return (
             <div>
-                <DocPreviewMain>
+                <PreviewBase>
                     <h1 css={css({ color: colors.vermelho })}>Loading</h1>
                     <h3>&nbsp;</h3>
                     <button>Saiba +</button>
-                </DocPreviewMain>
+                </PreviewBase>
                 <DocPreviewThumb>
                     <h5>Loading</h5>
                     <p>&nbsp;</p>
