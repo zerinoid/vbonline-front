@@ -75,7 +75,7 @@
     margin-top: 1.5vw;
 }
 
-.playlist-wrap {
+.playlist.box-wrap {
     display: flex;
     flex-direction: column;
 
@@ -95,7 +95,7 @@
 }
 
 @include media-breakpoint-only(sm) {
-    .playlist-wrap {
+    .playlist.box-wrap {
         flex-direction: row;
         width: 100vw;
 
@@ -151,7 +151,7 @@
         height: 6vw;
     }
 
-    .playlist-wrap {
+    .playlist.box-wrap {
         &>*+* {
             margin-top: 2vw;
         }
