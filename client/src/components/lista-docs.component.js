@@ -122,7 +122,7 @@ export default function ListaDocs(props) {
     const PreviewMain = (props) => {
         const [hovered, setHovered] = useState(false);
         return (
-            <PreviewBase bg={props.bg}>
+            <PreviewBase bg={props.bg} onClick={props.onClick}>
                 <div css={absoluteStyle}>
                     {React.Children.map(props.children, (child, i) => {
                         if (i === 0) return <h1>{child}</h1>;
@@ -154,7 +154,7 @@ export default function ListaDocs(props) {
                                         alt=""
                                         src={playPrev}
                                         hoverSrc={playPrevHv}
-                                        onClick={props.clickPlayer}
+                                        onClick={props.onClick}
                                         css={buttonStyle}
                                     />
                                     <Link to="/saibamais">
@@ -253,7 +253,7 @@ export default function ListaDocs(props) {
             <PreviewMain
                 bg={main[lang].poster}
                 key={0}
-                clickPlayer={() => playerHandler(main.id)}
+                onClick={() => playerHandler(main.id)}
             >
                 {main[lang].title}
                 {main[lang].subtitle}
