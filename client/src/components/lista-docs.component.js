@@ -119,6 +119,79 @@ export default function ListaDocs(props) {
         }
     `;
 
+    const PreviewMain = (props) => {
+        const [hovered, setHovered] = useState(false);
+        return (
+            <PreviewBase bg={props.bg}>
+                <div css={absoluteStyle}>
+                    {React.Children.map(props.children, (child, i) => {
+                        if (i === 0) return <h1>{child}</h1>;
+                        if (i === 1)
+                            return (
+                                <div
+                                    css={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        [BP.small]: {
+                                            display: 'block',
+                                        },
+                                    }}
+                                >
+                                    <h3
+                                        css={{
+                                            margin: '0.4vw 0 0',
+                                            position: 'relative',
+                                            top: '-0.4vh',
+                                            marginRight: '0.3vw',
+                                            [BP.small]: {
+                                                position: 'unset',
+                                            },
+                                        }}
+                                    >
+                                        {child}
+                                    </h3>
+                                    <HoverImage
+                                        alt=""
+                                        src={playPrev}
+                                        hoverSrc={playPrevHv}
+                                        onClick={props.clickPlayer}
+                                        css={buttonStyle}
+                                    />
+                                    <Link to="/saibamais">
+                                        <HoverImage
+                                            alt=""
+                                            src={saibaMais}
+                                            hoverSrc={saibaMaisHv}
+                                            css={buttonStyle}
+                                        />
+                                    </Link>
+                                </div>
+                            );
+                        return null;
+                    })}
+                    <a href="#firstThumb" css={{ zIndex: 1010 }}>
+                        <img
+                            alt=""
+                            src={setaMais}
+                            css={{
+                                display: 'none',
+                                [BP.small]: {
+                                    marginBottom: '2.3vw',
+                                    height: '2.5vw',
+                                    display: 'block',
+                                },
+                                '@media(max-width: 576px)': {
+                                    marginBottom: '3vw',
+                                    height: '4vw',
+                                },
+                            }}
+                        />
+                    </a>
+                </div>
+            </PreviewBase>
+        );
+    };
+
     const DocPreviewThumb = (props) => {
         const [hovered, setHovered] = useState(false);
 
@@ -177,67 +250,14 @@ export default function ListaDocs(props) {
 
         const main = videoList[0];
         const main_video = [
-            <PreviewBase bg={main[lang].poster} key={0}>
-                <div css={absoluteStyle}>
-                    <h1>{main[lang].title}</h1>
-                    <div
-                        css={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            [BP.small]: {
-                                display: 'block',
-                            },
-                        }}
-                    >
-                        <h3
-                            css={{
-                                margin: '0.4vw 0 0',
-                                position: 'relative',
-                                top: '-0.4vh',
-                                marginRight: '0.3vw',
-                                [BP.small]: {
-                                    position: 'unset',
-                                },
-                            }}
-                        >
-                            {main[lang].subtitle}
-                        </h3>
-                        <HoverImage
-                            alt=""
-                            src={playPrev}
-                            hoverSrc={playPrevHv}
-                            onClick={() => playerHandler(main.id)}
-                            css={buttonStyle}
-                        />
-                        <Link to="/saibamais">
-                            <HoverImage
-                                alt=""
-                                src={saibaMais}
-                                hoverSrc={saibaMaisHv}
-                                css={buttonStyle}
-                            />
-                        </Link>
-                    </div>
-                </div>
-                <a href="#firstThumb" css={{ zIndex: 1010 }}>
-                    <img
-                        alt=""
-                        src={setaMais}
-                        css={{
-                            display: 'none',
-                            [BP.small]: {
-                                marginBottom: '2.3vw',
-                                height: '2.5vw',
-                                display: 'block',
-                            },
-                            '@media(max-width: 576px)': {
-                                marginBottom: '3vw',
-                                height: '4vw',
-                            },
-                        }}
-                    />
-                </a>
-            </PreviewBase>,
+            <PreviewMain
+                bg={main[lang].poster}
+                key={0}
+                clickPlayer={() => playerHandler(main.id)}
+            >
+                {main[lang].title}
+                {main[lang].subtitle}
+            </PreviewMain>,
         ];
 
         // Thumbs
@@ -288,11 +308,11 @@ export default function ListaDocs(props) {
     } else {
         return (
             <div>
-                <PreviewBase>
+                <PreviewMain>
                     <h1 css={css({ color: colors.vermelho })}>Loading</h1>
                     <h3>&nbsp;</h3>
                     <button>Saiba +</button>
-                </PreviewBase>
+                </PreviewMain>
                 <DocPreviewThumb>
                     <h5>Loading</h5>
                     <p>&nbsp;</p>
