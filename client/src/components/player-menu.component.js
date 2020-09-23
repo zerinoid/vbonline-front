@@ -43,7 +43,7 @@ const PlayerMenu = (props) => {
 
     // Reset show state
     useEffect(() => {
-        if(show) setShow(!show)
+        if (show) setShow(!show);
     }, [show]);
 
     const LegendaMobile = (props) => {
