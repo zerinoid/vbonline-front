@@ -194,21 +194,25 @@ const PlayerMenu = (props) => {
                 alignEnd
             >
                 <LegendaMobile>Ficha Técnica</LegendaMobile>
-                <p
-                    className="chart-title"
-                    dangerouslySetInnerHTML={createMarkup(
-                        props.vimeoOptions.current_video[props.lang].title_box
-                            ? props.vimeoOptions.current_video[props.lang]
-                                  .title_box
-                            : props.vimeoOptions.current_video[props.lang].title
-                    )}
-                ></p>
-                <div
-                    className="chart-caption"
-                    dangerouslySetInnerHTML={createMarkup(
-                        props.vimeoOptions.current_video[props.lang].caption
-                    )}
-                />
+                <div className="playlist-carousel">
+                    <p
+                        className="chart-title"
+                        dangerouslySetInnerHTML={createMarkup(
+                            props.vimeoOptions.current_video[props.lang]
+                                .title_box
+                                ? props.vimeoOptions.current_video[props.lang]
+                                      .title_box
+                                : props.vimeoOptions.current_video[props.lang]
+                                      .title
+                        )}
+                    ></p>
+                    <div
+                        className="chart-caption"
+                        dangerouslySetInnerHTML={createMarkup(
+                            props.vimeoOptions.current_video[props.lang].caption
+                        )}
+                    />
+                </div>
             </DropdownButton>
             {/* playlist */}
             <DropdownButton
