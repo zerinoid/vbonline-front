@@ -89,6 +89,7 @@ export default function ListaDocs(props) {
         left: 0,
         width: '100%',
         height: '100%',
+        cursor: 'pointer',
         [BP.small]: {
             padding: '20% 10%',
         },
