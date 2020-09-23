@@ -194,7 +194,7 @@ const PlayerMenu = (props) => {
                 alignEnd
             >
                 <LegendaMobile>Ficha Técnica</LegendaMobile>
-                <div className="playlist-carousel">
+                <div className="cartela box-carousel">
                     <div className="playlist-wrap">
                         <p
                             className="chart-title"
@@ -227,7 +227,7 @@ const PlayerMenu = (props) => {
                 playlist
             >
                 <LegendaMobile>Lista de reprodução</LegendaMobile>
-                <div className="playlist-carousel">
+                <div className="playlist box-carousel">
                     <div className="playlist-wrap">{props.playlist}</div>
                 </div>
             </DropdownButton>
