@@ -195,23 +195,28 @@ const PlayerMenu = (props) => {
             >
                 <LegendaMobile>Ficha Técnica</LegendaMobile>
                 <div className="playlist-carousel">
-                    <p
-                        className="chart-title"
-                        dangerouslySetInnerHTML={createMarkup(
-                            props.vimeoOptions.current_video[props.lang]
-                                .title_box
-                                ? props.vimeoOptions.current_video[props.lang]
-                                      .title_box
-                                : props.vimeoOptions.current_video[props.lang]
-                                      .title
-                        )}
-                    ></p>
-                    <div
-                        className="chart-caption"
-                        dangerouslySetInnerHTML={createMarkup(
-                            props.vimeoOptions.current_video[props.lang].caption
-                        )}
-                    />
+                    <div className="playlist-wrap">
+                        <p
+                            className="chart-title"
+                            dangerouslySetInnerHTML={createMarkup(
+                                props.vimeoOptions.current_video[props.lang]
+                                    .title_box
+                                    ? props.vimeoOptions.current_video[
+                                          props.lang
+                                      ].title_box
+                                    : props.vimeoOptions.current_video[
+                                          props.lang
+                                      ].title
+                            )}
+                        ></p>
+                        <div
+                            className="chart-caption"
+                            dangerouslySetInnerHTML={createMarkup(
+                                props.vimeoOptions.current_video[props.lang]
+                                    .caption
+                            )}
+                        />
+                    </div>
                 </div>
             </DropdownButton>
             {/* playlist */}
