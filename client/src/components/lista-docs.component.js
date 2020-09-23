@@ -59,7 +59,7 @@ export default function ListaDocs(props) {
         setCurrentVideo(null);
     };
 
-    const DocPreviewContainer = styled.div`
+    const PreviewContainer = styled.div`
         display: flex;
         justify-content: space-between;
         ${BP.small} {
@@ -94,7 +94,7 @@ export default function ListaDocs(props) {
         },
     };
 
-    const PreviewBase = styled.div`
+    const BasePreview = styled.div`
         width: 100%;
         padding-bottom: 40.1%;
         margin-bottom: 0.5%;
@@ -119,11 +119,11 @@ export default function ListaDocs(props) {
         }
     `;
 
-    const PreviewMain = (props) => {
+    const MainPreview = (props) => {
         const [hovered, setHovered] = useState(false);
 
         return (
-            <PreviewBase
+            <BasePreview
                 bg={props.bg}
                 onClick={props.onClick}
                 onMouseEnter={() => {
@@ -196,11 +196,11 @@ export default function ListaDocs(props) {
                         />
                     </a>
                 </div>
-            </PreviewBase>
+            </BasePreview>
         );
     };
 
-    const DocPreviewThumb = (props) => {
+    const ThumbPreview = (props) => {
         const [hovered, setHovered] = useState(false);
 
         const buttonStyleThumb = { ...buttonStyle, zIndex: 999 };
@@ -214,7 +214,7 @@ export default function ListaDocs(props) {
         };
 
         return (
-            <PreviewBase
+            <BasePreview
                 css={css`
                     width: 32.95%;
                     padding-bottom: 11.1%;
@@ -249,7 +249,7 @@ export default function ListaDocs(props) {
                         css={buttonStyleThumb}
                     />
                 </div>
-            </PreviewBase>
+            </BasePreview>
         );
     };
 
@@ -258,14 +258,14 @@ export default function ListaDocs(props) {
 
         const main = videoList[0];
         const main_video = [
-            <PreviewMain
+            <MainPreview
                 bg={main[lang].poster}
                 key={0}
                 onClick={() => playerHandler(main.id)}
             >
                 {main[lang].title}
                 {main[lang].subtitle}
-            </PreviewMain>,
+            </MainPreview>,
         ];
 
         // Thumbs
@@ -275,14 +275,14 @@ export default function ListaDocs(props) {
                 videoList.map((value, index) => {
                     if (index > 0) {
                         return (
-                            <DocPreviewThumb
+                            <ThumbPreview
                                 bg={value[lang].poster}
                                 key={index}
                                 onClick={() => playerHandler(value.id)}
                             >
                                 <h5>{value[lang].title}</h5>
                                 <p>{value[lang].category}</p>
-                            </DocPreviewThumb>
+                            </ThumbPreview>
                         );
                     } else {
                         return null;
@@ -295,7 +295,7 @@ export default function ListaDocs(props) {
             return (
                 <React.Fragment>
                     {main_video}
-                    <DocPreviewContainer>{videos}</DocPreviewContainer>
+                    <PreviewContainer>{videos}</PreviewContainer>
                 </React.Fragment>
             );
         } else {
@@ -316,15 +316,15 @@ export default function ListaDocs(props) {
     } else {
         return (
             <div>
-                <PreviewMain>
+                <MainPreview>
                     <h1 css={css({ color: colors.vermelho })}>Loading</h1>
                     <h3>&nbsp;</h3>
                     <button>Saiba +</button>
-                </PreviewMain>
-                <DocPreviewThumb>
+                </MainPreview>
+                <ThumbPreview>
                     <h5>Loading</h5>
                     <p>&nbsp;</p>
-                </DocPreviewThumb>
+                </ThumbPreview>
             </div>
         );
     }
