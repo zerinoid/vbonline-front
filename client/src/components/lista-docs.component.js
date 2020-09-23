@@ -121,6 +121,7 @@ export default function ListaDocs(props) {
 
     const PreviewMain = (props) => {
         const [hovered, setHovered] = useState(false);
+
         return (
             <PreviewBase bg={props.bg} onClick={props.onClick}>
                 <div css={absoluteStyle}>
@@ -180,7 +181,7 @@ export default function ListaDocs(props) {
                                     height: '2.5vw',
                                     display: 'block',
                                 },
-                                '@media(max-width: 576px)': {
+                                [BP.extraSmall]: {
                                     marginBottom: '3vw',
                                     height: '4vw',
                                 },
