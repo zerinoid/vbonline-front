@@ -123,7 +123,16 @@ export default function ListaDocs(props) {
         const [hovered, setHovered] = useState(false);
 
         return (
-            <PreviewBase bg={props.bg} onClick={props.onClick}>
+            <PreviewBase
+                bg={props.bg}
+                onClick={props.onClick}
+                onMouseEnter={() => {
+                    setHovered(true);
+                }}
+                onMouseLeave={() => {
+                    setHovered(false);
+                }}
+            >
                 <div css={absoluteStyle}>
                     {React.Children.map(props.children, (child, i) => {
                         if (i === 0) return <h1>{child}</h1>;
@@ -151,11 +160,9 @@ export default function ListaDocs(props) {
                                     >
                                         {child}
                                     </h3>
-                                    <HoverImage
+                                    <img
                                         alt=""
-                                        src={playPrev}
-                                        hoverSrc={playPrevHv}
-                                        onClick={props.onClick}
+                                        src={hovered ? playPrevHv : playPrev}
                                         css={buttonStyle}
                                     />
                                     <Link to="/saibamais">
