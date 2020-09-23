@@ -203,9 +203,9 @@ export default function ListaDocs(props) {
     const DocPreviewThumb = (props) => {
         const [hovered, setHovered] = useState(false);
 
-        buttonStyle = { ...buttonStyle, zIndex: 999 };
+        const buttonStyleThumb = { ...buttonStyle, zIndex: 999 };
 
-        absoluteStyle = {
+        const absoluteStyleThumb = {
             ...absoluteStyle,
             padding: '2%',
             display: 'flex',
@@ -241,12 +241,12 @@ export default function ListaDocs(props) {
                 onClick={props.click}
                 {...props}
             >
-                <div css={absoluteStyle}>
+                <div css={absoluteStyleThumb}>
                     <div css={{ width: '50%' }}>{props.children}</div>
                     <img
                         alt=""
                         src={hovered ? playPrevHv : playPrev}
-                        css={buttonStyle}
+                        css={buttonStyleThumb}
                     />
                 </div>
             </PreviewBase>
