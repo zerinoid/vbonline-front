@@ -314,6 +314,7 @@ const App = (props) => {
                                                 {...props}
                                                 lista={appState}
                                                 lang={langState}
+                                                setMenuMobileShow={setMenuMobileShow}
                                                 playVideo={openPlayer}
                                             />
                                         )}
