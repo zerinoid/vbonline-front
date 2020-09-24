@@ -6,6 +6,7 @@ const langController = require('../controllers/lang');
 const sobreController = require('../controllers/sobre');
 const listaDocsController = require('../controllers/lista-docs');
 const saibaMaisController = require('../controllers/saiba-mais');
+const vinhetaController = require('../controllers/vinheta');
 
 // POST /api/lang/set/:name
 router.post('/lang/set/:name', langController.setLang);
@@ -21,6 +22,12 @@ router.get('/lista-docs', listaDocsController.getListaDocs);
 
 // GET /api/saibamais
 router.get('/saibamais', saibaMaisController.getSaibaMais);
+
+// GET /api/vinheta/set
+router.post('/vinheta/set', vinhetaController.setVinheta);
+
+// GET /api/vinheta/set
+router.get('/vinheta/get', vinhetaController.getVinheta);
 
 // Export
 module.exports = router;

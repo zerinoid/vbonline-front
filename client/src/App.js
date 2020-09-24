@@ -56,8 +56,8 @@ const App = (props) => {
 
     const vinhetaRef = useRef(null);
 
-    const showVinheta = process.env.NODE_ENV.substring(0, 3) !== 'dev';
-    // const showVinheta = false;
+    //const showVinheta = process.env.NODE_ENV.substring(0, 3) !== 'dev';
+    const showVinheta = true;
 
     // Handler menu mobile
     const menuMobileToggle = () => {
@@ -101,8 +101,19 @@ const App = (props) => {
             }
         });
     }, []);
+    
+    // Vinheta session
+    useEffect(() => {
+        axios.get('/api/vinheta/get').then((res) => {
+            if (res.data === null) {
+                axios.post('/api/vinheta/set');
+            } else {
+                setVinhetaState(false);
+            }
+        });
+    });
 
-    // Close intro video on end
+    // Close vinheta once it completes
     useEffect(() => {
         if (appState.data && vinhetaRef.current != null) {
             vinhetaRef.current.onended = function () {
