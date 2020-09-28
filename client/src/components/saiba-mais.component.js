@@ -69,6 +69,7 @@ export default class SaibaMais extends Component {
                                         css={css`
                                             font-weight: normal;
                                             text-transform: none;
+                                            display: ${this.state.data[this.props.lang].title ? "block" : "none"}
                                         `}
                                     >
                                         {this.state.data[this.props.lang].title}
@@ -94,7 +95,9 @@ export default class SaibaMais extends Component {
                                     )}
                                 />
                             </AboutSection>
-                            <AboutSection>
+                            <AboutSection style={{
+                                display: `${this.state.data[this.props.lang].link ? "block" : "none"}`
+                            }}>
                                 <a
                                     href={this.state.data[this.props.lang].link}
                                     target="_blank"

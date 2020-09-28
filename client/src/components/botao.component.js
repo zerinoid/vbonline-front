@@ -22,6 +22,7 @@ const Botao = styled.button((props) => {
         justifyContent: 'center',
         alignItems: 'center',
         cursor: props.active ? 'default !important' : 'pointer !important',
+        textTransform: 'capitalize',
         '&:focus': { outline: 'none' },
         '&:hover': !props.active && {
             border: `solid 2px ${colors.vermelho}`,
