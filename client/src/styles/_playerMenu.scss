@@ -75,12 +75,14 @@
     margin-top: 1.5vw;
 }
 
-.playlist.box-wrap {
+.box-wrap {
     display: flex;
     flex-direction: column;
 
-    &>*+* {
-        margin-top: 0.375vw;
+    &.playlist {
+        &>*+* {
+            margin-top: 0.375vw;
+        }
     }
 }
 
