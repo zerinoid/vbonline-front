@@ -43,7 +43,7 @@ const PlayerMenu = (props) => {
 
     // Reset show state
     useEffect(() => {
-        if(show) setShow(!show)
+        if (show) setShow(!show);
     }, [show]);
 
     const LegendaMobile = (props) => {
@@ -194,21 +194,30 @@ const PlayerMenu = (props) => {
                 alignEnd
             >
                 <LegendaMobile>Ficha Técnica</LegendaMobile>
-                <p
-                    className="chart-title"
-                    dangerouslySetInnerHTML={createMarkup(
-                        props.vimeoOptions.current_video[props.lang].title_box
-                            ? props.vimeoOptions.current_video[props.lang]
-                                  .title_box
-                            : props.vimeoOptions.current_video[props.lang].title
-                    )}
-                ></p>
-                <div
-                    className="chart-caption"
-                    dangerouslySetInnerHTML={createMarkup(
-                        props.vimeoOptions.current_video[props.lang].caption
-                    )}
-                />
+                <div className="cartela box-carousel">
+                    <div className="cartela box-wrap">
+                        <p
+                            className="chart-title"
+                            dangerouslySetInnerHTML={createMarkup(
+                                props.vimeoOptions.current_video[props.lang]
+                                    .title_box
+                                    ? props.vimeoOptions.current_video[
+                                          props.lang
+                                      ].title_box
+                                    : props.vimeoOptions.current_video[
+                                          props.lang
+                                      ].title
+                            )}
+                        ></p>
+                        <div
+                            className="chart-caption"
+                            dangerouslySetInnerHTML={createMarkup(
+                                props.vimeoOptions.current_video[props.lang]
+                                    .caption
+                            )}
+                        />
+                    </div>
+                </div>
             </DropdownButton>
             {/* playlist */}
             <DropdownButton
@@ -218,8 +227,8 @@ const PlayerMenu = (props) => {
                 playlist
             >
                 <LegendaMobile>Lista de reprodução</LegendaMobile>
-                <div className="playlist-carousel">
-                    <div className="playlist-wrap">{props.playlist}</div>
+                <div className="playlist box-carousel">
+                    <div className="playlist box-wrap">{props.playlist}</div>
                 </div>
             </DropdownButton>
             {/* outros */}
