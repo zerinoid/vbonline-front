@@ -28,7 +28,10 @@ app.use((req, res, next) => {
 
 // Session
 app.use(session({
-    secret: "vb"
+    secret: "vb",
+    cookie: {
+        maxAge: 3600 * 1000 // 1h
+    }
 }));
 
 // Routes declaration
