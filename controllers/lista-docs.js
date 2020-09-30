@@ -42,7 +42,7 @@ exports.getListaDocs = (req, res, next) => {
                     category: 'Vídeo',
                     specs: `<p>2015 | 8’36”<br />
                             Videoinstalação em dois canais</p>`,
-                    synopsis: `<p><br />O artista oficia um rito coreografado de limpeza espiritual e expulsão de fantasmas históricos ao varrer, com feixes de plantas sagradas, dois marcos da escravidão no Brasil e na África: a Casa da Torre, na Bahia, e a Casa dos Escravos, na Ilha de Goré, Senegal.</p>`
+                    caption: `<p><br />O artista oficia um rito coreografado de limpeza espiritual e expulsão de fantasmas históricos ao varrer, com feixes de plantas sagradas, dois marcos da escravidão no Brasil e na África: a Casa da Torre, na Bahia, e a Casa dos Escravos, na Ilha de Goré, Senegal.</p>`,
                 },
                 en: {
                     title: 'Sacudimentos',
