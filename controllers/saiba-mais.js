@@ -11,17 +11,17 @@ exports.getSaibaMais = (req, res, next) => {
                 {
                     text: 'Link 1 PT',
                     url: 'http://uol.com.br',
-                    new_window: true 
+                    new_window: true,
                 },
                 {
                     text: 'Link 2 PT',
                     url: 'http://worldstarshiphop.com',
-                    new_window: true 
+                    new_window: true,
                 },
                 {
                     text: 'Link 3 PT',
                     url: 'http://google.com',
-                    new_window: true 
+                    new_window: true,
                 },
             ],
             content: `<p>A obra de Ayrson Heráclito (Macaúbas-BA, 1968) deriva da ideia de sagrado expressa na ritualística e na simbologia do Candomblé, religião que pratica há quase trinta anos. A matéria orgânica mobilizada pelos ritos de matriz africana na Bahia alimenta seu trabalho, explorada até o limite da plasticidade e do significado; mas também seu sentido de performance, de transe, do ato mágico em que se conjura, purifica e reorganiza energias, histórias e memórias. Na melhor tradição das religiões afro-brasileiras (e da própria arte), usa tais atributos como forma de resistência: numa contribuição muito particular às práticas ditas descoloniais, recorre ao próprio remédio que os escravizados trouxeram da África para confrontar, sacudir e transmutar poeticamente o legado corpóreo e imaterial duradouro da escravidão.</p>
@@ -36,17 +36,17 @@ exports.getSaibaMais = (req, res, next) => {
                 {
                     text: 'Link 1 EN',
                     url: 'http://uol.com.br',
-                    new_window: true 
+                    new_window: true,
                 },
                 {
                     text: 'Link 2 EN',
                     url: 'http://worldstarshiphop.com',
-                    new_window: true 
+                    new_window: true,
                 },
                 {
                     text: 'Link 3 EN',
                     url: 'http://google.com',
-                    new_window: true 
+                    new_window: true,
                 },
             ],
             content: `<p>The works of Ayrson Heráclito (Macaúbas – Bahia, 1968) are derived from the idea of the sacred as expressed in the rituals and symbols of Candomblé, the religion the artist has practiced for almost thirty years. The organic materials used in Afro-Brazilian rites contribute greatly to his work, and are taken to their plastic and semantic limits. The artist also explores the performative and trance-inducing qualities of Candomblé, as well as its magical character, which implies in the conjuring, purification and reorganization of energies, histories and memories. Following the tradition of Afro-Brazilian religions (and of art itself), the artist uses these very attributes as a form of resistance: in a very particular contribution to the so-called decolonial praxis, the artist resorts to the medicines brought by slaves from Africa to poetically confront, disrupt and transmute the lasting corporeal and immaterial legacy of slavery.</p>
