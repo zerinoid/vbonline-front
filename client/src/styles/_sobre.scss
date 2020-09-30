@@ -1,15 +1,15 @@
-.sobre-conteudo-wrapper {
-    display: flex;
-    justify-content: space-between;
-    font-family: Graphik;
-    font-size: 1.2em;
-}
-
 .sobre {
     padding: 2.8vw 0 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.sobre-conteudo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-family: Graphik;
+    font-size: 1.2em;
 }
 
 @include media-breakpoint-down(sm) {
