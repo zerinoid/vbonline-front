@@ -98,7 +98,19 @@ export default class SaibaMais extends Component {
                                         this.state.data[this.props.lang].content
                                     )}
                                 />
-                                <div>vejamais</div>
+                                <div className="veja-mais-wrapper">
+                                    <ul className="veja-mais">
+                                        {this.state.data[
+                                            this.props.lang
+                                        ].links.map((value, index) => (
+                                            <li key={index}>
+                                                <a href={value.url}>
+                                                    {value.text}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </AboutSection>
                             {this.state.data.partnersLogos.length > 0 ? (
                                 <AboutSection>
