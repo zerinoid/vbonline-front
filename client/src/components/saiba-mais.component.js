@@ -69,7 +69,11 @@ export default class SaibaMais extends Component {
                                         css={css`
                                             font-weight: normal;
                                             text-transform: none;
-                                            display: ${this.state.data[this.props.lang].title ? "block" : "none"}
+                                            display: ${this.state.data[
+                                                this.props.lang
+                                            ].title
+                                                ? 'block'
+                                                : 'none'};
                                         `}
                                     >
                                         {this.state.data[this.props.lang].title}
