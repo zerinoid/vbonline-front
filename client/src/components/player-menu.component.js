@@ -213,6 +213,13 @@ const PlayerMenu = (props) => {
                             className="chart-caption"
                             dangerouslySetInnerHTML={createMarkup(
                                 props.vimeoOptions.current_video[props.lang]
+                                    .specs
+                            )}
+                        />
+                        <div
+                            className="chart-caption"
+                            dangerouslySetInnerHTML={createMarkup(
+                                props.vimeoOptions.current_video[props.lang]
                                     .caption
                             )}
                         />
