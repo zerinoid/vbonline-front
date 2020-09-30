@@ -15,6 +15,7 @@ $grid-breakpoints: (xs: 0,
 @import "styles/fontSize";
 @import "styles/upperBar";
 @import "styles/playerMenu";
+@import "styles/saibaMais";
 
 html {
     @include fluid-type($min_width, $max_width, $min_font, $max_font);
