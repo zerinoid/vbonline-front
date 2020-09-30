@@ -1,0 +1,24 @@
+.saibamais-conteudo {
+    display: flex;
+    justify-content: space-between;
+    font-family: Graphik;
+}
+
+.sobre {
+    padding: 2.8vw 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    p {
+        font-family: Graphik;
+        font-size: 1.2em;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .sobre {
+        padding-top: 15px;
+    }
+
+}

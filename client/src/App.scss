@@ -15,7 +15,7 @@ $grid-breakpoints: (xs: 0,
 @import "styles/fontSize";
 @import "styles/upperBar";
 @import "styles/playerMenu";
-@import "styles/saibaMais";
+@import "styles/sobre";
 
 html {
     @include fluid-type($min_width, $max_width, $min_font, $max_font);
@@ -49,18 +49,6 @@ nav {
     &>div {
         margin-bottom: 0.52vw;
         height: 1.57vw;
-    }
-}
-
-.sobre {
-    padding: 2.8vw 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    p {
-        font-family: Graphik;
-        font-size: 1.2em;
     }
 }
 
@@ -158,10 +146,6 @@ h5 {
             margin-bottom: 0;
             height: unset;
         }
-    }
-
-    .sobre {
-        padding-top: 15px;
     }
 
     h1 {
