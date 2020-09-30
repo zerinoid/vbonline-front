@@ -94,6 +94,7 @@ export default class SaibaMais extends Component {
                             </AboutSection>
                             <AboutSection className="sobre-conteudo-wrapper">
                                 <div
+                                    className="sobre-conteudo"
                                     dangerouslySetInnerHTML={this.createMarkup(
                                         this.state.data[this.props.lang].content
                                     )}
