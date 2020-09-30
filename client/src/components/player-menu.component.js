@@ -216,13 +216,16 @@ const PlayerMenu = (props) => {
                                     .specs
                             )}
                         />
-                        <div
-                            className="chart-caption"
-                            dangerouslySetInnerHTML={createMarkup(
-                                props.vimeoOptions.current_video[props.lang]
-                                    .caption
-                            )}
-                        />
+                        {props.vimeoOptions.current_video[props.lang]
+                            .caption ? (
+                            <div
+                                className="chart-caption"
+                                dangerouslySetInnerHTML={createMarkup(
+                                    props.vimeoOptions.current_video[props.lang]
+                                        .caption
+                                )}
+                            />
+                        ) : null}
                     </div>
                 </div>
             </DropdownButton>
