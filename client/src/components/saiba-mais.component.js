@@ -92,12 +92,13 @@ export default class SaibaMais extends Component {
                                     />
                                 </Link>
                             </AboutSection>
-                            <AboutSection>
+                            <AboutSection className="sobre-conteudo-wrapper">
                                 <div
                                     dangerouslySetInnerHTML={this.createMarkup(
                                         this.state.data[this.props.lang].content
                                     )}
                                 />
+                                <div>vejamais</div>
                             </AboutSection>
                             {this.state.data.partnersLogos.length > 0 ? (
                                 <AboutSection>
