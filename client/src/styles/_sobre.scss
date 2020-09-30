@@ -1,7 +1,8 @@
-.saibamais-conteudo {
+.sobre-conteudo-wrapper {
     display: flex;
     justify-content: space-between;
     font-family: Graphik;
+    font-size: 1.2em;
 }
 
 .sobre {
@@ -9,11 +10,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
-    p {
-        font-family: Graphik;
-        font-size: 1.2em;
-    }
 }
 
 @include media-breakpoint-down(sm) {
