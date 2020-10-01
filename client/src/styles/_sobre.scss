@@ -29,21 +29,22 @@
 
     a {
         color: $vermelho;
-
-        &:hover {
-            color: $vermelho;
-            font-weight: bold;
-        }
     }
 }
 
 .veja-mais {
-    &>* {
-        border-bottom: solid 1px $vermelho;
 
-        &:hover {
-            border-bottom: solid 2px $vermelho;
+    li:not(:first-child):hover {
+        box-shadow: inset 0 -2px 0 0 $vermelho;
+
+        a {
+            color: $vermelho;
+            font-weight: bold;
         }
+    }
+
+    &>* {
+        border-bottom: solid 0.1vw $vermelho;
     }
 }
 
@@ -62,5 +63,16 @@
 
     .sobre-conteudo-wrapper {
         display: block;
+    }
+
+    .veja-mais {
+        li:not(:first-child):hover {
+            box-shadow: none;
+
+            a {
+                color: $vermelho;
+                font-weight: normal;
+            }
+        }
     }
 }
