@@ -7,7 +7,6 @@ import colors from '../styles/colors';
 import BP from '../styles/breakpoints';
 
 import AboutSection from './about-section.component';
-import Botao from './botao.component';
 
 import fechar from '../assets/img/fecharVerm.png';
 
