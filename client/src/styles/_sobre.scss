@@ -40,10 +40,14 @@
 .veja-mais {
     &>* {
         border-bottom: solid 1px $vermelho;
+
+        &:hover {
+            border-bottom: solid 2px $vermelho;
+        }
     }
 }
 
-.slick-slide > div {
+.slick-slide>div {
     margin-right: 0.6vw;
 }
 
