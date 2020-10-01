@@ -108,7 +108,14 @@ export default class SaibaMais extends Component {
                                             this.props.lang
                                         ].links.map((value, index) => (
                                             <li key={index}>
-                                                <a href={value.url}>
+                                                <a
+                                                    href={value.url}
+                                                    target={
+                                                        value.new_window
+                                                            ? '_blank'
+                                                            : '_self'
+                                                    }
+                                                >
                                                     {value.text}
                                                 </a>
                                             </li>
