@@ -42,13 +42,17 @@
     }
 }
 
-.slick-slide div {
+.slick-slide > div {
     margin-right: 0.6vw;
+}
+
+.slick-list {
+    margin-right: -0.5vw !important;
 }
 
 @include media-breakpoint-down(sm) {
     .sobre {
         padding-top: 15px;
     }
-
+    
 }
