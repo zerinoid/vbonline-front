@@ -227,6 +227,7 @@ export default function ListaDocs(props) {
                     padding-bottom: 11.1%;
                     display: inline-block;
                     margin-bottom: 0;
+                    height: 9.5vw;
                     p {
                         font: normal 0.8em FedraMono;
                     }
