@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import HoverImage from 'react-hover-image';
 import colors from '../styles/colors';
 import BP from '../styles/breakpoints';
@@ -22,6 +23,7 @@ import 'slick-carousel/slick/slick-theme.css';
 export default function ListaDocs(props) {
     const lang = props.lang ? props.lang : 'pt';
     const videoList = props.lista.data.videos;
+    const isMobile = useMediaQuery({ query: '(max-width: 767.99px)' });
 
     const [showPlayer, setShowPlayer] = useState(false);
     const [currentVideo, setCurrentVideo] = useState(null);
@@ -308,7 +310,14 @@ export default function ListaDocs(props) {
                 slidesToScroll: 1,
             };
 
-            return (
+            return isMobile ? (
+                <React.Fragment>
+                    {main_video}
+                    <PreviewContainer>
+                        {videos}
+                    </PreviewContainer>
+                </React.Fragment>
+            ) : (
                 <React.Fragment>
                     {main_video}
                     <PreviewContainer>
