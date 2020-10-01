@@ -301,7 +301,7 @@ export default function ListaDocs(props) {
 
         if (!showPlayer) {
             const slickOptions = {
-                slide: ThumbPreview,
+                // slide: ThumbPreview,
                 dots: false,
                 infinite: false,
                 speed: 500,

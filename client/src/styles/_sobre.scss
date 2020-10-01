@@ -42,6 +42,10 @@
     }
 }
 
+.slick-slide div {
+    margin-right: 0.6vw;
+}
+
 @include media-breakpoint-down(sm) {
     .sobre {
         padding-top: 15px;
