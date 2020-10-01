@@ -101,6 +101,9 @@ export default class SaibaMais extends Component {
                                 />
                                 <div className="veja-mais-wrapper">
                                     <ul className="veja-mais">
+                                        <li>
+                                            <b>Veja mais</b>
+                                        </li>
                                         {this.state.data[
                                             this.props.lang
                                         ].links.map((value, index) => (
