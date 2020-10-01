@@ -111,7 +111,7 @@ export default class SaibaMais extends Component {
                                                 <a
                                                     href={value.url}
                                                     target={
-                                                        value.new_window
+                                                        value.blank
                                                             ? '_blank'
                                                             : '_self'
                                                     }
