@@ -29,6 +29,10 @@
 
     a {
         color: $vermelho;
+
+        &:hover {
+            color: $vermelho;
+        }
     }
 }
 
