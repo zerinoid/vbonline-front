@@ -7,7 +7,7 @@ const path = require('path')
 require('dotenv').config({path: __dirname + '/.env'})
 
 // Port used by node.js
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4040;
 
 // App
 const app = express()
