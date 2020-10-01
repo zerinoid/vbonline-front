@@ -232,7 +232,7 @@ export default function ListaDocs(props) {
                         font: normal 0.8em FedraMono;
                     }
                     &:hover {
-                        box-shadow: 0px 0px 0px 0.2vw #fff;
+                        box-shadow: inset 0 0 0 0.2vw #fff;
                     }
                     ${BP.small} {
                         min-height: unset;
@@ -301,7 +301,6 @@ export default function ListaDocs(props) {
 
         if (!showPlayer) {
             const slickOptions = {
-                // slide: ThumbPreview,
                 dots: false,
                 infinite: false,
                 speed: 500,
