@@ -154,6 +154,16 @@
         }
     }
 
+    .play-item:hover {
+        .thumb-container {
+            box-shadow: none;
+        }
+
+        p {
+            font-weight: normal;
+        }
+    }
+
     .thumb-container {
         height: 24vh;
     }
