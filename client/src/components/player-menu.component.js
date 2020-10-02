@@ -7,6 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-overlays/Dropdown';
 import { useDropdownToggle, useDropdownMenu } from 'react-overlays';
+import Slider from 'react-slick';
 import colors from '../styles/colors';
 import BP from '../styles/breakpoints';
 
@@ -168,6 +169,14 @@ const PlayerMenu = (props) => {
         </Dropdown>
     );
 
+    const slickOptions = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+    };
+
     return (
         <Col
             className="player-menu"
@@ -230,9 +239,15 @@ const PlayerMenu = (props) => {
                 playlist
             >
                 <LegendaMobile>Lista de reprodução</LegendaMobile>
-                <div className="playlist box-carousel">
-                    <div className="playlist box-wrap">{props.playlist}</div>
-                </div>
+                {isMobile ? (
+                    <Slider {...slickOptions}>{props.playlist}</Slider>
+                ) : (
+                    <div className="playlist box-carousel">
+                        <div className="playlist box-wrap">
+                            {props.playlist}
+                        </div>
+                    </div>
+                )}
             </DropdownButton>
             {/* outros */}
             <VideoButton
