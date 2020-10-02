@@ -85,7 +85,7 @@
             margin-top: 0.375vw;
         }
 
-        @media (min-width: 768px) {
+        @include media-breakpoint-up(sm) {
             max-height: 50vh;
             overflow-y: scroll;
             overflow-x: hidden;
