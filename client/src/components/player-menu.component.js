@@ -37,6 +37,7 @@ const VideoButton = (props) => {
 
 const PlayerMenu = (props) => {
     const isMobile = useMediaQuery({ query: '(max-width: 767.99px)' });
+    const isLandscape = useMediaQuery({ query: '(orientation: landscape)' });
     const [show, setShow] = useState(false);
     const createMarkup = (markup) => {
         return { __html: markup };
@@ -239,7 +240,7 @@ const PlayerMenu = (props) => {
                 playlist
             >
                 <LegendaMobile>Lista de reprodução</LegendaMobile>
-                {isMobile ? (
+                {isLandscape && isMobile ? (
                     <Slider {...slickOptions}>{props.playlist}</Slider>
                 ) : (
                     <div className="playlist box-carousel">
