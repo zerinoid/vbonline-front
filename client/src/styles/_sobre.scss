@@ -20,7 +20,7 @@
 
     flex: 1 3 0;
     text-transform: uppercase;
-    padding-left: 0.8vw;
+    padding-left: 1.2vw;
 
     ul {
         padding-inline-start: 0px;
@@ -34,7 +34,7 @@
 
 .veja-mais {
 
-    li:not(:first-child):hover {
+    li:hover {
         box-shadow: inset 0 -2px 0 0 $vermelho;
 
         a {
