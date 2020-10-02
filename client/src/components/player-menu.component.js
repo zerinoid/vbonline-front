@@ -95,7 +95,7 @@ const PlayerMenu = (props) => {
     `;
 
     const Menu = ({ role, children, playlist }) => {
-        const { show, onClose, props } = useDropdownMenu({
+        const { show, props } = useDropdownMenu({
             flip: true,
             offset: isMobile ? [0, window] : [0, 0],
         });
@@ -108,13 +108,6 @@ const PlayerMenu = (props) => {
                 playlist={playlist}
                 className="info-box"
             >
-                {/* <button */}
-                {/*     type="button" */}
-                {/*     onClick={() => testeHandler(!teste)} */}
-                {/*     className="text-left hover:bg-brand-100 px-6 py-2" */}
-                {/* > */}
-                {/*     Item 1 */}
-                {/* </button> */}
                 {children}
             </BoxContainer>
         );
