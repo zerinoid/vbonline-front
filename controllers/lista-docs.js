@@ -15,8 +15,8 @@ exports.getListaDocs = (req, res, next) => {
                     title_box: 'Sacudimentos',
                     poster: '/img/ayrson/01-principal_desktop.jpg',
                     thumb: '/img/ayrson/01-principal_desktop.jpg',
-                    category: 'Artista',
-                    specs: ``,
+                    category: '21’36”',
+                    specs: `O artista comenta as obras incluídas nesta exposição.`,
                     caption: ``,
                 },
                 en: {
@@ -25,8 +25,8 @@ exports.getListaDocs = (req, res, next) => {
                     title_box: 'Sacudimentos',
                     poster: '/img/ayrson/01-principal_desktop.jpg',
                     thumb: '/img/ayrson/01-principal_desktop.jpg',
-                    category: 'Artist',
-                    specs: ``,
+                    category: '21’36”',
+                    specs: `The artist comments on the works gathered in this exhibition.`,
                     caption: ``,
                 },
             },
@@ -158,7 +158,7 @@ exports.getListaDocs = (req, res, next) => {
                     thumb: '/img/ayrson/5-baoba.jpg',
                     category: '2’43”',
                     specs: `<p>2015 | 2’43”<br />
-                    Vídeo</p>`,
+                    Video</p>`,
                     caption: `<p>Part of a series filmed in Senegal, drawing on the <em>História do futuro</em> – a book in praise of the Portuguese Empire, written by Jesuit priest Antônio Vieira in the 17<sup>th</sup> century – the work evokes the divinatory art of agromancy in a field populated by enormous baobabs and invisible rhinoceroses.</p>`,
                 },
             },
@@ -241,7 +241,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
             },
             {
-                id: '463231025',
+                id: '463995792',
                 order: 10,
                 pt: {
                     title: 'As mãos do epô',
@@ -249,8 +249,8 @@ exports.getListaDocs = (req, res, next) => {
                     title_box: 'As mãos do epô',
                     poster: '/img/ayrson/9-as-maos.jpg',
                     thumb: '/img/ayrson/9-as-maos.jpg',
-                    category: '11’11”',
-                    specs: `<p>2007 | 11’11”<br />
+                    category: '7’30”',
+                    specs: `<p>2007 | 7’30”<br />
                     Vídeo</p>`,
                     caption: `<p>Um bailado de mãos apresenta a simbologia associada aos principais orixás do panteão do Candomblé. Uma massa de azeite de dendê serve de fundo: o elemento ancestral é recorrente na obra do artista e onipresente na cultura gastronômica e nos rituais de matriz africana.</p>`,
                 },
@@ -260,8 +260,8 @@ exports.getListaDocs = (req, res, next) => {
                     title_box: 'As mãos do epô',
                     poster: '/img/ayrson/9-as-maos.jpg',
                     thumb: '/img/ayrson/9-as-maos.jpg',
-                    category: '11’11”',
-                    specs: `<p>2007 | 11’11”<br />
+                    category: '7’30”',
+                    specs: `<p>2007 | 7’30”<br />
                     Video</p>`,
                     caption: `<p>A “dance of hands” that portrays the gestures associated with the main <em>orixás</em> of the Candomblé pantheon. A profusion of palm oil serves as backdrop: this ancestral element is used recurrently throughout the artist’s work and is ubiquitous in the culinary culture and rituals of African origin.</p>`,
                 },
