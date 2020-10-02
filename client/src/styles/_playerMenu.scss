@@ -22,7 +22,7 @@
 .play-item {
     &:hover {
         .thumb-container {
-            box-shadow: 0 0 0 0.2vw #fff !important;
+            box-shadow: 0 0 0 0.2vw #fff;
         }
 
         p {
@@ -78,13 +78,14 @@
 .box-wrap {
     display: flex;
     flex-direction: column;
+    padding: 0.2vw;
 
     &.playlist {
         &>*+* {
             margin-top: 0.375vw;
         }
 
-        @media (min-width: 768px){
+        @media (min-width: 768px) {
             max-height: 50vh;
             overflow-y: scroll;
             overflow-x: hidden;

@@ -66,7 +66,7 @@ const PlayerMenu = (props) => {
         top: ${meio_icone}vw !important;
         padding: ${(p) =>
             p.playlist
-                ? meio_icone + 'vw'
+                ? meio_icone - 0.2 + 'vw'
                 : 2 * meio_icone +
                   'vw ' +
                   2 * meio_icone +
