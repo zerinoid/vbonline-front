@@ -90,14 +90,27 @@ export default class Sobre extends Component {
                                                     (value, index) => (
                                                         <li key={index}>
                                                             <span>{value.title[this.props.lang]}</span><br />
-                                                            <img 
-                                                                src={value.img.url} 
-                                                                style={
-                                                                    this.currentWidth < 768 && value.img.custom_size_mobile ? { width: value.img.custom_size_mobile } : (
-                                                                        value.img.custom_size ? { width: value.img.custom_size } : {}
-                                                                    )
+                                                            <a
+                                                                href={
+                                                                    value.link.url
+                                                                        ? value.link.url
+                                                                        : '#'
                                                                 }
-                                                            />
+                                                                target={
+                                                                    value.link.blank
+                                                                        ? '_blank'
+                                                                        : '_self'
+                                                                }
+                                                            >
+                                                                <img 
+                                                                    src={value.img.url} 
+                                                                    style={
+                                                                        this.currentWidth < 768 && value.img.custom_size_mobile ? { width: value.img.custom_size_mobile } : (
+                                                                            value.img.custom_size ? { width: value.img.custom_size } : {}
+                                                                        )
+                                                                    }
+                                                                />
+                                                            </a>
                                                         </li>
                                                     )
                                                 )}

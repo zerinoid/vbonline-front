@@ -11,6 +11,10 @@ exports.getSobre = (req, res, next) => {
                     url: '/img/vb_logo_verm.png',
                     custom_size: '',
                     custom_size_mobile: '12vw'
+                },
+                link: {
+                    url: 'http://www.videobrasil.org.br',
+                    blank: true
                 }
             },
             {
@@ -22,6 +26,10 @@ exports.getSobre = (req, res, next) => {
                     url: '/img/electrica_logo_verm.png',
                     custom_size: '3.3vw',
                     custom_size_mobile: '17vw'
+                },
+                link: {
+                    url: 'http://www.electrica.com.br/home',
+                    blank: true
                 }
             },
         ],
