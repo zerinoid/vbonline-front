@@ -20,11 +20,11 @@ exports.getSaibaMais = (req, res, next) => {
                 },
                 {
                     text: 'Residência',
-                    url: '#',
+                    url: 'https://inresidence.videobrasil.org.br/2015/04/11/diario-de-dakar/',
                     blank: true,
                 },
                 {
-                    text: 'Agora somos todxs negrxs',
+                    text: 'Agora somos todxs negrxs?',
                     url: 'http://site.videobrasil.org.br/exposicoes/galpaovb/agorasomostodxsnegrxs/',
                     blank: true,
                 },
@@ -50,7 +50,7 @@ exports.getSaibaMais = (req, res, next) => {
                 },
                 {
                     text: 'Article on Dakar residency',
-                    url: '#',
+                    url: 'https://inresidence.videobrasil.org.br/2015/04/11/diario-de-dakar/',
                     blank: true,
                 },
                 {

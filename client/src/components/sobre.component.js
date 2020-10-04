@@ -18,6 +18,8 @@ export default class Sobre extends Component {
         };
     }
 
+    currentWidth = window.innerWidth;
+
     // insert html from backend
     createMarkup = (markup) => {
         return { __html: markup };
@@ -34,7 +36,7 @@ export default class Sobre extends Component {
             <div className="sobre">
                 <div
                     css={css`
-                        flex: 1 1 0;
+                        flex: 1.3 1 0;
                         ${BP.small} {
                             display: none;
                         }
@@ -43,7 +45,7 @@ export default class Sobre extends Component {
                 <div
                     css={css({
                         color: colors.vermelho,
-                        flex: '3.75 1 0',
+                        flex: '8 1 0',
                         [BP.small]: {
                             flexGrow: 8,
                         },
@@ -58,7 +60,7 @@ export default class Sobre extends Component {
                                 }}
                             >
                                 <h4>
-                                    {this.state.data[this.props.lang].title}
+                                    {this.state.data.title[this.props.lang]}
                                 </h4>
                                 <Link to="/">
                                     <img
@@ -73,14 +75,40 @@ export default class Sobre extends Component {
                                     />
                                 </Link>
                             </AboutSection>
-                            <AboutSection>
+                            {/* Main content */}
+                            <AboutSection className="sobre-conteudo-wrapper">
                                 <div
+                                    className="sobre-conteudo"
                                     dangerouslySetInnerHTML={this.createMarkup(
-                                        this.state.data[this.props.lang].content
+                                        this.state.data.content[this.props.lang]
                                     )}
                                 />
+                                <div className="veja-mais-wrapper">
+                                        {this.state.data.partnersLogos.length > 0 ? 
+                                            <ul className="veja-mais sobre-logos">
+                                                {this.state.data.partnersLogos.map(
+                                                    (value, index) => (
+                                                        <li key={index}>
+                                                            <span>{value.title[this.props.lang]}</span><br />
+                                                            <img 
+                                                                src={value.img.url} 
+                                                                style={
+                                                                    this.currentWidth < 768 && value.img.custom_size_mobile ? { width: value.img.custom_size_mobile } : (
+                                                                        value.img.custom_size ? { width: value.img.custom_size } : {}
+                                                                    )
+                                                                }
+                                                            />
+                                                        </li>
+                                                    )
+                                                )}
+                                            </ul> : 
+                                            // Empty
+                                            <ul className="veja-mais"></ul>
+                                        }
+                                        
+                                </div>
                             </AboutSection>
-                            {this.state.data.partnersLogos.length > 0 ? (
+                            {/* {this.state.data.partnersLogos.length > 0 ? (
                                 <AboutSection>
                                     <p
                                         css={css`
@@ -126,7 +154,7 @@ export default class Sobre extends Component {
                                         )}
                                     </div>
                                 </AboutSection>
-                            ) : null}
+                            ) : null} */}
                         </div>
                     ) : (
                         <div className="sobre">
@@ -136,7 +164,7 @@ export default class Sobre extends Component {
                 </div>
                 <div
                     css={css`
-                        flex: 1 1 30px;
+                        flex: 1.1 1 30px;
                         ${BP.small} {
                             display: none;
                         }

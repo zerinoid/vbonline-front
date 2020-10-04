@@ -34,7 +34,7 @@ export default class SaibaMais extends Component {
             <div className="sobre">
                 <div
                     css={css`
-                        flex: 1 1 0;
+                        flex: 1.3 1 0;
                         ${BP.small} {
                             display: none;
                         }
@@ -43,7 +43,7 @@ export default class SaibaMais extends Component {
                 <div
                     css={css({
                         color: colors.vermelho,
-                        flex: '5 1 0',
+                        flex: '8 1 0',
                         [BP.small]: {
                             flexGrow: 8,
                         },
@@ -175,7 +175,7 @@ export default class SaibaMais extends Component {
                 </div>
                 <div
                     css={css`
-                        flex: 1 5 30px;
+                        flex: 1.1 5 30px;
                         ${BP.small} {
                             display: none;
                         }
