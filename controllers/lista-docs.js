@@ -11,8 +11,8 @@ exports.getListaDocs = (req, res, next) => {
                 order: 1,
                 pt: {
                     title: 'Ayrson Heráclito',
-                    subtitle: 'Sacudimentos',
-                    title_box: 'Sacudimentos',
+                    subtitle: 'comenta a exposição',
+                    title_box: 'Ayrson Heráclito',
                     poster: '/img/ayrson/01-principal_desktop.jpg',
                     thumb: '/img/ayrson/01-principal_desktop.jpg',
                     category: '21’36”',
@@ -21,8 +21,8 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Ayrson Heráclito',
-                    subtitle: 'Sacudimentos',
-                    title_box: 'Sacudimentos',
+                    subtitle: 'comments on the exhibition',
+                    title_box: 'Ayrson Heráclito',
                     poster: '/img/ayrson/01-principal_desktop.jpg',
                     thumb: '/img/ayrson/01-principal_desktop.jpg',
                     category: '21’36”',
