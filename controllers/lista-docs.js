@@ -2,8 +2,14 @@
 exports.getListaDocs = (req, res, next) => {
     data = {
         season: {
-            pt: 'artista',
-            en: 'artist',
+            pt: {
+                type: 'artista',
+                title: 'Sacudimentos'
+            },
+            en: {
+                type: 'artist',
+                title: 'Sacudimentos'
+            },
         },
         videos: [
             {

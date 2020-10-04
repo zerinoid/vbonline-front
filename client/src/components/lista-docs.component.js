@@ -274,7 +274,9 @@ export default function ListaDocs(props) {
                 onClick={() => playerHandler(main.id)}
             >
                 {main[lang].title}
-                {main[lang].subtitle}
+                {props.lista.data.season[lang].title
+                    ? props.lista.data.season[lang].title
+                    : main[lang].subtitle}
             </MainPreview>,
         ];
 

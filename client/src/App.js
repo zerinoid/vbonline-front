@@ -228,7 +228,7 @@ const App = (props) => {
                                     <Link to="/">
                                         <Botao active={true}>
                                             {appState !== null && typeof appState !== "undefined" ?
-                                                appState.data.season[langState] : "docs"}
+                                                appState.data.season[langState].type : "docs"}
                                         </Botao>
                                     </Link>
                                     <div
