@@ -20,6 +20,10 @@
 }
 
 .play-item {
+    .playlist-caption {
+        float: left;
+    }
+
     &:hover {
         .thumb-container {
             box-shadow: 0 0 0 0.2vw #fff;
@@ -28,6 +32,10 @@
         p {
             font-weight: bold;
         }
+    }
+
+    &.row {
+        display: block !important;
     }
 
     &.active {
@@ -53,6 +61,7 @@
 .thumb-container {
     padding-right: 0;
     padding-left: 0;
+    float: left;
 
     &+div {
         padding-right: 1.4vw;

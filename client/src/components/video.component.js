@@ -58,7 +58,8 @@ const VideoPlayer = (props) => {
                     <Col
                         md={6}
                         xs={12}
-                        css={{
+                        className="playlist-caption"
+                        css={{  
                             paddingLeft: meio_icone + 'vw',
                             [BP.small]: {
                                 paddingLeft: 0,
