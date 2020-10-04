@@ -21,6 +21,10 @@ html {
     @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }
 
+html {
+    overflow-y:scroll;
+}
+
 #root,
 .App,
 .conteudo {
