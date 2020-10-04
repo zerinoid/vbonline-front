@@ -4,7 +4,7 @@ exports.getSaibaMais = (req, res, next) => {
         partnersLogos: [],
         pt: {
             artist: 'Ayrson Heráclito',
-            title: '',
+            title: 'Sacudimentos',
             partners: 'Parceiros',
             link: '', //botão saibaMais desativado
             links: [
@@ -30,11 +30,11 @@ exports.getSaibaMais = (req, res, next) => {
                 },
             ],
             content: `<p>A obra de Ayrson Heráclito (Macaúbas-BA, 1968) deriva da ideia de sagrado expressa na ritualística e na simbologia do Candomblé, religião que pratica há quase trinta anos. A matéria orgânica mobilizada pelos ritos de matriz africana na Bahia alimenta seu trabalho, explorada até o limite da plasticidade e do significado; mas também seu sentido de performance, de transe, do ato mágico em que se conjuram, purificam e reorganizam energias, histórias e memórias. Na melhor tradição das religiões afro-brasileiras (e da própria arte), o artista usa tais atributos como forma de resistência: numa contribuição muito particular às práticas ditas descoloniais, recorre ao próprio remédio que os escravizados trouxeram da África para confrontar, sacudir e transmutar poeticamente o legado corpóreo e imaterial duradouro da escravidão.</p>
-            <p>Cobrindo um arco de tempo que se estende 2004 a 2018, esta seleção reafirma a coesão poética da obra de Heráclito e celebra sua presença marcante no Acervo Videobrasil, um reflexo dos diversos momentos em que o trajeto do artista atravessou nossas atividades. Das primeiras participações no Videobrasil, como <em>As mãos do epô,</em> exercício em torno do azeite do dendê, e <em>Barrueco</em>, alegoria da travessia do Atlântico realizada com Danilo Baratta, estende-se a <em>Funfun, </em>que lhe deu, em 2013, nosso prêmio de residência artística na Raw Material Company, em Dacar. Desse período no Senegal nasce <em>Sacudimentos</em>, que mostrou na 57ª Bienal de Veneza, em 2017, e a série <em>História do futuro</em><strong>, </strong>ambas presentes aqui.</p>`,
+            <p>Cobrindo um arco de tempo que se estende 2004 a 2018, esta seleção reafirma a coesão poética da obra de Heráclito e celebra sua presença marcante no Acervo Videobrasil, um reflexo dos diversos momentos em que o trajeto do artista atravessou nossas atividades. Das primeiras participações no Videobrasil, como <em>As mãos do epô,</em> exercício em torno do azeite do dendê, e <em>Barrueco</em>, alegoria da travessia do Atlântico realizada com Danilo Baratta, estende-se a <em>Funfun, </em>que lhe deu, em 2013, nosso prêmio de residência artística na Raw Material Company, em Dacar. Desse período no Senegal nasce <em>Sacudimentos</em>, que mostrou na 57ª Bienal de Veneza, em 2017, e a série <em>História do futuro</em>, ambas presentes aqui.</p>`,
         },
         en: {
             artist: 'Ayrson Heráclito',
-            title: '',
+            title: 'Sacudimentos',
             partners: 'Partners',
             link: '', //botão saibaMais desativado
             links: [
