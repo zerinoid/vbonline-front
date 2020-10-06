@@ -5,8 +5,9 @@ import Player from '@vimeo/player';
 import screenfull from 'screenfull';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import BP from '../styles/breakpoints';
+import isMobile from 'ismobilejs';
 
+import BP from '../styles/breakpoints';
 import UpperBar from './upper-bar.component';
 
 const meio_icone = 0.75;
@@ -16,9 +17,12 @@ const VideoPlayer = (props) => {
     const playerRef = useRef(null);
 
     // State
-    const [infoBoxState, setInfoBoxState] = useState('none');
-    const [playlistBoxState, setPlaylistBoxState] = useState('none');
-    const [playerState, setPlayerState] = useState(null);
+    const [infoBox, setInfoBox] = useState('none');
+    const [playlistBox, setPlaylistBox] = useState('none');
+    const [player, setPlayer] = useState(null);
+
+    // Detect device
+    const isMobileApple = isMobile().apple.device;
 
     // First video
     let firstVideo = props.videoList.data.videos.filter(
@@ -94,41 +98,47 @@ const VideoPlayer = (props) => {
 
     // close player and return to home
     const closePlayer = () => {
-        if (playerState != null) playerState.destroy();
+        if (player != null) player.destroy();
         props.closePlayer(true);
     };
 
     // enter fullscreen
     const enterFullScreen = () => {
+        // Close all boxes
         closeBoxes();
-        if (screenfull.isEnabled) {
+        // Check Apple mobile devices
+        if (isMobileApple){
+            player.requestFullscreen();
+        } 
+        // Other devices
+        else if (screenfull.isEnabled) {
             screenfull.request(playerRef.current);
         }
     };
 
     // close all info boxes
     const closeBoxes = () => {
-        setInfoBoxState('none');
-        setPlaylistBoxState('none');
+        setInfoBox('none');
+        setPlaylistBox('none');
     };
 
     // toggle info box
     const toggleInfoBox = () => {
-        if (infoBoxState == 'none') {
+        if (infoBox == 'none') {
             closeBoxes();
-            setInfoBoxState('block');
+            setInfoBox('block');
         } else {
-            setInfoBoxState('none');
+            setInfoBox('none');
         }
     };
 
     // toggle playlist box
     const togglePlaylistBox = () => {
-        if (playlistBoxState == 'none') {
+        if (playlistBox == 'none') {
             closeBoxes();
-            setPlaylistBoxState('block');
+            setPlaylistBox('block');
         } else {
-            setPlaylistBoxState('none');
+            setPlaylistBox('none');
         }
     };
 
@@ -144,24 +154,24 @@ const VideoPlayer = (props) => {
 
     // 1) instantiate a new player on first load or if vimeo data changes
     useEffect(() => {
-        if (playerState != null) playerState.destroy();
-        setPlayerState(new Player('vimeo-player', props.vimeoOptions));
+        if (player != null) player.destroy();
+        setPlayer(new Player('vimeo-player', props.vimeoOptions));
     }, [props.vimeoOptions]);
 
     // 3) vimeo player events
     useEffect(() => {
-        if (playerState != null) {
+        if (player != null) {
             // Player loaded
-            playerState.on('loaded', () => {
+            player.on('loaded', () => {
                 // Minimum volume
-                playerState.getVolume().then((vol) => {
+                player.getVolume().then((vol) => {
                     if (vol < 0.5) {
-                        playerState.setVolume(0.5);
+                        player.setVolume(0.5);
                     }
                 });
             });
             // Go to next video once current video ends
-            playerState.on('ended', () => {
+            player.on('ended', () => {
                 goToVideo(nextVideo.id);
             });
         }
