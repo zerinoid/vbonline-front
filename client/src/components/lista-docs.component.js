@@ -57,24 +57,29 @@ function PrevArrow(props) {
     );
 }
 
-const SetaMais = (props) => (
-    <img
-        alt=""
-        src={setaMais}
-        css={{
-            display: 'none',
-            [BP.small]: {
-                marginBottom: '2.3vw',
-                height: '2.5vw',
-                display: 'block',
-            },
-            [BP.extraSmall]: {
-                marginBottom: '3vw',
-                height: '4vw',
-            },
-        }}
-    />
-);
+function SetaMais(props) {
+    const { onClick } = props;
+    return (
+        <img
+            alt=""
+            src={setaMais}
+            css={{
+                display: 'none',
+                [BP.small]: {
+                    marginBottom: '2.3vw',
+                    height: '2.5vw',
+                    display: 'block',
+                },
+                [BP.extraSmall]: {
+                    marginBottom: '3vw',
+                    height: '4vw',
+                },
+            }}
+            onClick={onClick}
+        />
+    );
+}
+
 export default function ListaDocs(props) {
     const lang = props.lang ? props.lang : 'pt';
     const videoList = props.lista.data.videos;
@@ -355,9 +360,11 @@ export default function ListaDocs(props) {
                 <React.Fragment>
                     {main_video}
                     <Accordion>
-                        <Accordion.Toggle variant="link" eventKey="0">
-                            Click me!
-                        </Accordion.Toggle>
+                        <Accordion.Toggle
+                            as={SetaMais}
+                            variant="link"
+                            eventKey="0"
+                        ></Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
                             <PreviewContainer>{videos}</PreviewContainer>
                         </Accordion.Collapse>
