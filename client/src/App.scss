@@ -22,7 +22,7 @@ html {
 }
 
 html {
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
 #root,
@@ -140,10 +140,6 @@ h5 {
 @include media-breakpoint-down(sm) {
     html {
         font-size: 16px;
-    }
-
-    .limite {
-        padding-bottom: 1rem;
     }
 
     nav {

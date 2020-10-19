@@ -139,9 +139,6 @@ export default function ListaDocs(props) {
             > div {
                 margin-bottom: 1rem;
             }
-            > div:last-child {
-                margin-bottom: 0px;
-            }
         }
     `;
 
@@ -184,7 +181,7 @@ export default function ListaDocs(props) {
         ${BP.small} {
             min-height: 274px;
             margin-bottom: 1rem;
-            height: calc(100vh - 126px - 1rem);
+            height: calc(100vh - 86.5px);
             padding-bottom: unset;
             display: flex;
             justify-content: center;
