@@ -66,12 +66,17 @@ function SetaMais(props) {
             css={{
                 display: 'none',
                 [BP.small]: {
-                    height: '2.5vw',
+                    width: '6vw',
                     display: 'block',
+                    position: 'absolute',
+                    left: 'calc(50vw - 6vw)',
+                    top: '90%',
                 },
                 [BP.extraSmall]: {
-                    height: '4vw',
+                    width: '10vw',
                     margin: 'auto',
+                    left: 'calc(50vw - 10vw)',
+                    top: '95%',
                 },
             }}
             onClick={onClick}
