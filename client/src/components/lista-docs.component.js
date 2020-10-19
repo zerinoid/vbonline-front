@@ -178,7 +178,7 @@ export default function ListaDocs(props) {
                     setHovered(false);
                 }}
             >
-                <div css={absoluteStyle} to="/video">
+                <Link css={absoluteStyle} to="/video">
                     {React.Children.map(props.children, (child, i) => {
                         if (i === 0) return <h1>{child}</h1>;
                         if (i === 1)
@@ -222,7 +222,7 @@ export default function ListaDocs(props) {
                             );
                         return null;
                     })}
-                </div>
+                </Link>
                 <a href="#firstThumb" css={{ zIndex: 1010 }}>
                     <img
                         alt=""
