@@ -70,13 +70,13 @@ function SetaMais(props) {
                     display: 'block',
                     position: 'absolute',
                     left: 'calc(50vw - 6vw)',
-                    top: '90%',
+                    top: '68vh',
                 },
                 [BP.extraSmall]: {
                     width: '10vw',
                     margin: 'auto',
                     left: 'calc(50vw - 10vw)',
-                    top: '95%',
+                    top: '80vh',
                 },
             }}
             onClick={onClick}
