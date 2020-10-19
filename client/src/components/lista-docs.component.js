@@ -353,7 +353,11 @@ export default function ListaDocs(props) {
             return isMobile ? (
                 <React.Fragment>
                     {main_video}
-                    <PreviewContainer>{videos}</PreviewContainer>
+                    <Accordion>
+                        <Accordion.Collapse eventKey="0">
+                            <PreviewContainer>{videos}</PreviewContainer>
+                        </Accordion.Collapse>
+                    </Accordion>
                 </React.Fragment>
             ) : (
                 <React.Fragment>
