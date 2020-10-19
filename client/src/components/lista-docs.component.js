@@ -57,6 +57,24 @@ function PrevArrow(props) {
     );
 }
 
+const SetaMais = (props) => (
+    <img
+        alt=""
+        src={setaMais}
+        css={{
+            display: 'none',
+            [BP.small]: {
+                marginBottom: '2.3vw',
+                height: '2.5vw',
+                display: 'block',
+            },
+            [BP.extraSmall]: {
+                marginBottom: '3vw',
+                height: '4vw',
+            },
+        }}
+    />
+);
 export default function ListaDocs(props) {
     const lang = props.lang ? props.lang : 'pt';
     const videoList = props.lista.data.videos;
@@ -224,23 +242,6 @@ export default function ListaDocs(props) {
                         return null;
                     })}
                 </Link>
-
-                <img
-                    alt=""
-                    src={setaMais}
-                    css={{
-                        display: 'none',
-                        [BP.small]: {
-                            marginBottom: '2.3vw',
-                            height: '2.5vw',
-                            display: 'block',
-                        },
-                        [BP.extraSmall]: {
-                            marginBottom: '3vw',
-                            height: '4vw',
-                        },
-                    }}
-                />
             </BasePreview>
         );
     };
