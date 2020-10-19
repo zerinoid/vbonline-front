@@ -354,6 +354,9 @@ export default function ListaDocs(props) {
                 <React.Fragment>
                     {main_video}
                     <Accordion>
+                        <Accordion.Toggle variant="link" eventKey="0">
+                            Click me!
+                        </Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
                             <PreviewContainer>{videos}</PreviewContainer>
                         </Accordion.Collapse>
