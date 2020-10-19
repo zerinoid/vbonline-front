@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import HoverImage from 'react-hover-image';
 import colors from '../styles/colors';
@@ -72,7 +72,7 @@ export default function ListaDocs(props) {
     });
 
     // #1 set current video
-    const playerHandler = (id) => {
+    const playerHandler = (e, id) => {
         setCurrentVideo(videoList.filter((video) => video.id == id)[0]);
     };
 
@@ -178,7 +178,7 @@ export default function ListaDocs(props) {
                     setHovered(false);
                 }}
             >
-                <div css={absoluteStyle}>
+                <div css={absoluteStyle} to="/video">
                     {React.Children.map(props.children, (child, i) => {
                         if (i === 0) return <h1>{child}</h1>;
                         if (i === 1)
@@ -307,7 +307,7 @@ export default function ListaDocs(props) {
             <MainPreview
                 bg={main[lang].poster}
                 key={0}
-                onClick={() => playerHandler(main.id)}
+                onClick={(e) => playerHandler(e, main.id)}
             >
                 {main[lang].title}
                 {props.lista.data.season[lang].title
@@ -368,13 +368,18 @@ export default function ListaDocs(props) {
         } else {
             if (vimeoOptions.id != null) {
                 return (
-                    <VideoPlayer
-                        {...props}
-                        closePlayer={closePlayer}
-                        changeVideo={playerHandler}
-                        videoList={props.lista}
-                        vimeoOptions={vimeoOptions}
-                        lang={lang}
+                    <Route
+                        path="/video"
+                        render={(props) => (
+                            <VideoPlayer
+                                {...props}
+                                closePlayer={closePlayer}
+                                changeVideo={playerHandler}
+                                videoList={props.lista}
+                                vimeoOptions={vimeoOptions}
+                                lang={lang}
+                            />
+                        )}
                     />
                 );
             }
