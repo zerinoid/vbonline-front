@@ -4,6 +4,7 @@ import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { Route, Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
+import Accordion from 'react-bootstrap/Accordion';
 import HoverImage from 'react-hover-image';
 import colors from '../styles/colors';
 import BP from '../styles/breakpoints';
