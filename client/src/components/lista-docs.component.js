@@ -26,35 +26,35 @@ function NextArrow(props) {
     const { className, style, onClick } = props;
     return (
         <img
-        src={setaNext}
-        className={className}
-        style={{ 
-            ...style,
-            right: "-2.3vw",
-            width: "1.3vw",
-            height: "auto",
-        }}
-        onClick={onClick}
+            src={setaNext}
+            className={className}
+            style={{
+                ...style,
+                right: '-2.3vw',
+                width: '1.3vw',
+                height: 'auto',
+            }}
+            onClick={onClick}
         />
     );
 }
-  
-  function PrevArrow(props) {
+
+function PrevArrow(props) {
     const { className, style, onClick } = props;
     return (
-      <img
-        src={setaPrev}
-        className={className}
-        style={{ 
-            ...style,
-            left: "-2.3vw",
-            width: "1.3vw",
-            height: "auto",
-        }}
-        onClick={onClick}
-      />
+        <img
+            src={setaPrev}
+            className={className}
+            style={{
+                ...style,
+                left: '-2.3vw',
+                width: '1.3vw',
+                height: 'auto',
+            }}
+            onClick={onClick}
+        />
     );
-  }
+}
 
 export default function ListaDocs(props) {
     const lang = props.lang ? props.lang : 'pt';
@@ -347,15 +347,13 @@ export default function ListaDocs(props) {
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 nextArrow: <NextArrow />,
-                prevArrow: <PrevArrow />
+                prevArrow: <PrevArrow />,
             };
 
             return isMobile ? (
                 <React.Fragment>
                     {main_video}
-                    <PreviewContainer>
-                        {videos}
-                    </PreviewContainer>
+                    <PreviewContainer>{videos}</PreviewContainer>
                 </React.Fragment>
             ) : (
                 <React.Fragment>
