@@ -158,7 +158,7 @@ const VideoPlayer = (props) => {
         setPlayer(new Player('vimeo-player', props.vimeoOptions));
     }, [props.vimeoOptions]);
 
-    // 3) vimeo player events
+    // 2) vimeo player events
     useEffect(() => {
         if (player != null) {
             // Player loaded

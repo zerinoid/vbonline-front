@@ -14,11 +14,47 @@ import playPrevHv from '../assets/img/play_prev_hv.png';
 import saibaMais from '../assets/img/saiba_mais.png';
 import saibaMaisHv from '../assets/img/saiba_mais_hv.png';
 import setaMais from '../assets/img/seta_mais.png';
+import setaNext from '../assets/img/arrow_next.png';
+import setaPrev from '../assets/img/arrow_prev.png';
 
 // Slick
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+function NextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+        <img
+        src={setaNext}
+        className={className}
+        style={{ 
+            ...style,
+            right: "-2.3vw",
+            width: "1.3vw",
+            height: "auto",
+        }}
+        onClick={onClick}
+        />
+    );
+}
+  
+  function PrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <img
+        src={setaPrev}
+        className={className}
+        style={{ 
+            ...style,
+            left: "-2.3vw",
+            width: "1.3vw",
+            height: "auto",
+        }}
+        onClick={onClick}
+      />
+    );
+  }
 
 export default function ListaDocs(props) {
     const lang = props.lang ? props.lang : 'pt';
@@ -310,6 +346,8 @@ export default function ListaDocs(props) {
                 speed: 500,
                 slidesToShow: 3,
                 slidesToScroll: 1,
+                nextArrow: <NextArrow />,
+                prevArrow: <PrevArrow />
             };
 
             return isMobile ? (
