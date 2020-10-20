@@ -105,6 +105,14 @@ export default function ListaDocs(props) {
             scrollHere.scrollIntoView({ behavior: 'smooth' });
         }, 200);
     };
+    
+    const onEntered = () => {
+        console.log('onEntered');
+    };
+    
+    const onEntering = () => {
+        console.log('onEntering');
+    };
 
     // #1 set current video
     const playerHandler = (e, id) => {
@@ -374,7 +382,7 @@ export default function ListaDocs(props) {
                             eventKey="0"
                             onClick={scrollHandler}
                         ></Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0">
+                        <Accordion.Collapse eventKey="0" onEntering={onEntering} onEntered={onEntered}>
                             <PreviewContainer id="scroll-here">
                                 {videos}
                             </PreviewContainer>
