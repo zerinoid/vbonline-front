@@ -101,17 +101,7 @@ export default function ListaDocs(props) {
 
     const scrollHandler = () => {
         const scrollHere = document.querySelector('#scroll-here');
-        setTimeout(function () {
-            scrollHere.scrollIntoView({ behavior: 'smooth' });
-        }, 200);
-    };
-    
-    const onEntered = () => {
-        console.log('onEntered');
-    };
-    
-    const onEntering = () => {
-        console.log('onEntering');
+        scrollHere.scrollIntoView({ behavior: 'smooth' });
     };
 
     // #1 set current video
@@ -380,9 +370,8 @@ export default function ListaDocs(props) {
                             as={SetaMais}
                             variant="link"
                             eventKey="0"
-                            onClick={scrollHandler}
                         ></Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0" onEntering={onEntering} onEntered={onEntered}>
+                        <Accordion.Collapse eventKey="0" onEntered={scrollHandler}>
                             <PreviewContainer id="scroll-here">
                                 {videos}
                             </PreviewContainer>
