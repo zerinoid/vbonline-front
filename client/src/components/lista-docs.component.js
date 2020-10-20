@@ -375,7 +375,9 @@ export default function ListaDocs(props) {
                             onClick={scrollHandler}
                         ></Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
-                            <PreviewContainer>{videos}</PreviewContainer>
+                            <PreviewContainer id="scroll-here">
+                                {videos}
+                            </PreviewContainer>
                         </Accordion.Collapse>
                     </Accordion>
                 </React.Fragment>
