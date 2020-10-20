@@ -99,6 +99,13 @@ export default function ListaDocs(props) {
         texttrack: lang,
     });
 
+    const scrollHandler = () => {
+        const scrollHere = document.querySelector('#scroll-here');
+        setTimeout(function () {
+            scrollHere.scrollIntoView({ behavior: 'smooth' });
+        }, 200);
+    };
+
     // #1 set current video
     const playerHandler = (e, id) => {
         setCurrentVideo(videoList.filter((video) => video.id == id)[0]);
@@ -365,6 +372,7 @@ export default function ListaDocs(props) {
                             as={SetaMais}
                             variant="link"
                             eventKey="0"
+                            onClick={scrollHandler}
                         ></Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
                             <PreviewContainer>{videos}</PreviewContainer>
