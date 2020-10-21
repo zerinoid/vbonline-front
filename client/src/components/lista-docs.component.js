@@ -223,12 +223,13 @@ export default function ListaDocs(props) {
                         return null;
                     })}
                 </div>
-                <a href="#firstThumb" css={{ zIndex: 1010 }}>
+                <div css={{ zIndex: 1010 }}>
                     <img
                         alt=""
                         src={setaMais}
                         css={{
                             display: 'none',
+                            cursor: 'pointer',
                             [BP.small]: {
                                 marginBottom: '2.3vw',
                                 height: '2.5vw',
@@ -240,7 +241,7 @@ export default function ListaDocs(props) {
                             },
                         }}
                     />
-                </a>
+                </div>
             </BasePreview>
         );
     };
