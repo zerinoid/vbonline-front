@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Accordion from 'react-bootstrap/Accordion';
 import HoverImage from 'react-hover-image';
@@ -105,7 +105,7 @@ export default function ListaDocs(props) {
     };
 
     // #1 set current video
-    const playerHandler = (e, id) => {
+    const playerHandler = (id) => {
         setCurrentVideo(videoList.filter((video) => video.id == id)[0]);
     };
 
@@ -151,7 +151,7 @@ export default function ListaDocs(props) {
         height: '1.8vw',
         marginLeft: '0.2vw',
         [BP.small]: {
-            marginLeft: '0.5vw',
+            // marginLeft: '0.5vw',
             height: 25,
         },
     };
@@ -208,7 +208,7 @@ export default function ListaDocs(props) {
                     setHovered(false);
                 }}
             >
-                <Link css={absoluteStyle} to="/video">
+                <div css={absoluteStyle}>
                     {React.Children.map(props.children, (child, i) => {
                         if (i === 0) return <h1>{child}</h1>;
                         if (i === 1)
@@ -252,7 +252,7 @@ export default function ListaDocs(props) {
                             );
                         return null;
                     })}
-                </Link>
+                </div>
             </BasePreview>
         );
     };
@@ -260,7 +260,7 @@ export default function ListaDocs(props) {
     const ThumbPreview = (props) => {
         const [hovered, setHovered] = useState(false);
 
-        const buttonStyleThumb = { ...buttonStyle, zIndex: 999 };
+        const buttonStyleThumb = { ...buttonStyle, margin: '0 auto', display: 'block', zIndex: 999 };
 
         const absoluteStyleThumb = {
             ...absoluteStyle,
@@ -299,13 +299,35 @@ export default function ListaDocs(props) {
                 onClick={props.click}
                 {...props}
             >
-                <div css={absoluteStyleThumb}>
-                    <div css={{ width: '50%' }}>{props.children}</div>
-                    <img
-                        alt=""
-                        src={hovered ? playPrevHv : playPrev}
-                        css={buttonStyleThumb}
-                    />
+                <div css={absoluteStyleThumb} onClick={() => props.onClick}>
+                    <div css={{ width: '100%' }}>
+                        {props.children}
+                        <div style={{
+                            position: 'absolute',
+                            width: '100%',
+                            height: '100%',
+                            top: 0,
+                            left: 0,
+                        }}>
+                            <div style={{
+                                width: '100%',
+                                height: '100%',
+                            }}>
+                                <img
+                                    alt=""
+                                    src={hovered ? playPrevHv : playPrev}
+                                    style={{
+                                        position:'relative',
+                                        transform: 'translateY(-50%)',
+                                        WebkitTransform: 'translateY(-50%)',
+                                        msTransform: 'translateY(-50%)',
+                                        top: '50%',
+                                    }}
+                                    css={buttonStyleThumb}
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </BasePreview>
         );
@@ -319,7 +341,7 @@ export default function ListaDocs(props) {
             <MainPreview
                 bg={main[lang].poster}
                 key={0}
-                onClick={(e) => playerHandler(e, main.id)}
+                onClick={(e) => playerHandler(main.id)}
             >
                 {main[lang].title}
                 {props.lista.data.season[lang].title
@@ -389,18 +411,13 @@ export default function ListaDocs(props) {
         } else {
             if (vimeoOptions.id != null) {
                 return (
-                    <Route
-                        path="/video"
-                        render={(props) => (
-                            <VideoPlayer
-                                {...props}
-                                closePlayer={closePlayer}
-                                changeVideo={playerHandler}
-                                videoList={props.lista}
-                                vimeoOptions={vimeoOptions}
-                                lang={lang}
-                            />
-                        )}
+                    <VideoPlayer
+                        {...props}
+                        closePlayer={closePlayer}
+                        changeVideo={playerHandler}
+                        videoList={props.lista}
+                        vimeoOptions={vimeoOptions}
+                        lang={lang}
                     />
                 );
             }
