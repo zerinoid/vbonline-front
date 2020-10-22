@@ -29,11 +29,11 @@ function NextArrow(props) {
         <img
             src={setaNext}
             className={className}
-            style={{
+            style={{ 
                 ...style,
-                right: '-2.3vw',
-                width: '1.3vw',
-                height: 'auto',
+                right: "0.6vw",
+                width: "1vw",
+                height: "auto",
             }}
             onClick={onClick}
         />
@@ -46,11 +46,12 @@ function PrevArrow(props) {
         <img
             src={setaPrev}
             className={className}
-            style={{
+            style={{ 
                 ...style,
-                left: '-2.3vw',
-                width: '1.3vw',
-                height: 'auto',
+                zIndex: "1",
+                left: "0.6vw",
+                width: "1vw",
+                height: "auto",
             }}
             onClick={onClick}
         />
@@ -387,18 +388,9 @@ export default function ListaDocs(props) {
             return isMobile ? (
                 <React.Fragment>
                     {main_video}
-                    <Accordion>
-                        <Accordion.Toggle
-                            as={SetaMais}
-                            variant="link"
-                            eventKey="0"
-                        ></Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0" onEntered={scrollHandler}>
-                            <PreviewContainer id="scroll-here">
-                                {videos}
-                            </PreviewContainer>
-                        </Accordion.Collapse>
-                    </Accordion>
+                    <PreviewContainer id="scroll-here">
+                        {videos}
+                    </PreviewContainer>
                 </React.Fragment>
             ) : (
                 <React.Fragment>
