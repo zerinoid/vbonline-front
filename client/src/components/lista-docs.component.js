@@ -137,12 +137,9 @@ export default function ListaDocs(props) {
     };
 
     const PreviewContainer = styled.div`
-        // display: flex;
-        // justify-content: space-between;
         ${BP.small} {
-            flex-direction: column;
-            > div {
-                margin-bottom: 1rem;
+            div {
+                height: 25vh;
             }
         }
     `;
@@ -185,8 +182,8 @@ export default function ListaDocs(props) {
         }
         ${BP.small} {
             min-height: 274px;
-            margin-bottom: 1rem;
-            height: calc(100vh - 86px);
+            margin-bottom: 0.33rem;
+            height: calc(75vh - 86px);
             padding-bottom: unset;
             display: flex;
             justify-content: center;
@@ -292,7 +289,6 @@ export default function ListaDocs(props) {
                     ${BP.small} {
                         min-height: unset;
                         width: 100%;
-                        height: 130px;
                     }
                 `}
                 onMouseEnter={() => {
