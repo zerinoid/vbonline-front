@@ -27,6 +27,7 @@ function NextArrow(props) {
     return (
         <img
             src={setaNext}
+            alt="next"
             className={className}
             style={{
                 ...style,
@@ -44,6 +45,7 @@ function PrevArrow(props) {
     return (
         <img
             src={setaPrev}
+            alt="prev"
             className={className}
             style={{
                 ...style,
