@@ -28,11 +28,11 @@ function NextArrow(props) {
         <img
             src={setaNext}
             className={className}
-            style={{ 
+            style={{
                 ...style,
-                right: "0.6vw",
-                width: "1vw",
-                height: "auto",
+                right: '0.6vw',
+                width: '1vw',
+                height: 'auto',
             }}
             onClick={onClick}
         />
@@ -45,12 +45,12 @@ function PrevArrow(props) {
         <img
             src={setaPrev}
             className={className}
-            style={{ 
+            style={{
                 ...style,
-                zIndex: "1",
-                left: "0.6vw",
-                width: "1vw",
-                height: "auto",
+                zIndex: '1',
+                left: '0.6vw',
+                width: '1vw',
+                height: 'auto',
             }}
             onClick={onClick}
         />
@@ -260,7 +260,12 @@ export default function ListaDocs(props) {
     const ThumbPreview = (props) => {
         const [hovered, setHovered] = useState(false);
 
-        const buttonStyleThumb = { ...buttonStyle, margin: '0 auto', display: 'block', zIndex: 999 };
+        const buttonStyleThumb = {
+            ...buttonStyle,
+            margin: '0 auto',
+            display: 'block',
+            zIndex: 999,
+        };
 
         const absoluteStyleThumb = {
             ...absoluteStyle,
@@ -302,22 +307,26 @@ export default function ListaDocs(props) {
                 <div css={absoluteStyleThumb} onClick={() => props.onClick}>
                     <div css={{ width: '100%' }}>
                         {props.children}
-                        <div style={{
-                            position: 'absolute',
-                            width: '100%',
-                            height: '100%',
-                            top: 0,
-                            left: 0,
-                        }}>
-                            <div style={{
+                        <div
+                            style={{
+                                position: 'absolute',
                                 width: '100%',
                                 height: '100%',
-                            }}>
+                                top: 0,
+                                left: 0,
+                            }}
+                        >
+                            <div
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                }}
+                            >
                                 <img
                                     alt=""
                                     src={hovered ? playPrevHv : playPrev}
                                     style={{
-                                        position:'relative',
+                                        position: 'relative',
                                         transform: 'translateY(-50%)',
                                         WebkitTransform: 'translateY(-50%)',
                                         msTransform: 'translateY(-50%)',
@@ -384,14 +393,7 @@ export default function ListaDocs(props) {
                 prevArrow: <PrevArrow />,
             };
 
-            return isMobile ? (
-                <React.Fragment>
-                    {main_video}
-                    <PreviewContainer id="scroll-here">
-                        {videos}
-                    </PreviewContainer>
-                </React.Fragment>
-            ) : (
+            return (
                 <React.Fragment>
                     {main_video}
                     <PreviewContainer>
