@@ -266,7 +266,7 @@ export default function ListaDocs(props) {
 
         const absoluteStyleThumb = {
             ...absoluteStyle,
-            padding: '2%',
+            padding: '0.33rem',
             display: 'flex',
             justifyContent: 'space-between',
             [BP.small]: null,
