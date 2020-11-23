@@ -98,7 +98,7 @@ const App = (props) => {
             }
         });
     }, []);
-    
+
     // Vinheta session
     useEffect(() => {
         axios.get('/api/vinheta/get').then((res) => {
@@ -162,6 +162,7 @@ const App = (props) => {
                                     pathname === '/' &&
                                     `linear-gradient(0deg, ${colors.vermelho}, white 50%) fixed`,
                                 [BP.small]: {
+                                    height: '100vh',
                                     background:
                                         pathname === '/' &&
                                         `linear-gradient(0deg, ${colors.vermelho} 53%, white 77%) scroll`,
@@ -224,8 +225,12 @@ const App = (props) => {
                                 >
                                     <Link to="/">
                                         <Botao active={true}>
-                                            {appState !== null && typeof appState !== "undefined" ?
-                                                appState.data.season[langState].type : "docs"}
+                                            {appState !== null &&
+                                            typeof appState !== 'undefined'
+                                                ? appState.data.season[
+                                                      langState
+                                                  ].type
+                                                : 'docs'}
                                         </Botao>
                                     </Link>
                                     <div
@@ -325,7 +330,9 @@ const App = (props) => {
                                                 {...props}
                                                 lista={appState}
                                                 lang={langState}
-                                                setMenuMobileShow={setMenuMobileShow}
+                                                setMenuMobileShow={
+                                                    setMenuMobileShow
+                                                }
                                                 playVideo={openPlayer}
                                             />
                                         )}
