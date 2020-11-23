@@ -122,6 +122,14 @@ h5 {
 //     }
 // }
 
+.slick-slide>div {
+    margin-right: 0.33rem;
+}
+
+.slick-list {
+    margin-right: -0.33rem !important;
+}
+
 @include media-breakpoint-up(md) {
     .limite {
         max-width: 4950px;
@@ -130,6 +138,15 @@ h5 {
     .App {
         margin: 0 4.4% 4.4%;
     }
+
+    .slick-slide>div {
+        margin-right: 0.6vw;
+    }
+
+    .slick-list {
+        margin-right: -0.6vw !important;
+    }
+
 }
 
 

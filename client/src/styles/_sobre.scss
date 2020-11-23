@@ -28,14 +28,15 @@
         font-size: 0.7em;
     }
 
-    a, span {
+    a,
+    span {
         color: $vermelho;
     }
 }
 
 .veja-mais {
 
-    & > * {
+    &>* {
         border-bottom: solid 0.1vw $vermelho;
     }
 
@@ -69,7 +70,7 @@
 
         li:hover {
             box-shadow: unset;
-    
+
             a {
                 font-weight: normal;
             }
@@ -88,14 +89,6 @@
 
         }
     }
-}
-
-.slick-slide>div {
-    margin-right: 0.6vw;
-}
-
-.slick-list {
-    margin-right: -0.6vw !important;
 }
 
 @include media-breakpoint-down(sm) {
