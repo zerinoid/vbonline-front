@@ -84,90 +84,75 @@ export default class Sobre extends Component {
                                     )}
                                 />
                                 <div className="veja-mais-wrapper">
-                                        {this.state.data.partnersLogos.length > 0 ? 
-                                            <ul className="veja-mais sobre-logos">
-                                                {this.state.data.partnersLogos.map(
-                                                    (value, index) => (
-                                                        <li key={index}>
-                                                            <span>{value.title[this.props.lang]}</span><br />
-                                                            <a
-                                                                href={
-                                                                    value.link.url
-                                                                        ? value.link.url
-                                                                        : '#'
+                                    {this.state.data.partnersLogos.length >
+                                    0 ? (
+                                        <ul className="veja-mais sobre-logos">
+                                            {this.state.data.partnersLogos.map(
+                                                (value, index) => (
+                                                    <li key={index}>
+                                                        <span>
+                                                            {
+                                                                value.title[
+                                                                    this.props
+                                                                        .lang
+                                                                ]
+                                                            }
+                                                        </span>
+                                                        <br />
+                                                        <a
+                                                            href={
+                                                                value.link.url
+                                                                    ? value.link
+                                                                          .url
+                                                                    : '#'
+                                                            }
+                                                            target={
+                                                                value.link.blank
+                                                                    ? '_blank'
+                                                                    : '_self'
+                                                            }
+                                                        >
+                                                            <img
+                                                                src={
+                                                                    value.img
+                                                                        .url
                                                                 }
-                                                                target={
-                                                                    value.link.blank
-                                                                        ? '_blank'
-                                                                        : '_self'
+                                                                alt="Parceiro"
+                                                                style={
+                                                                    this
+                                                                        .currentWidth <
+                                                                        768 &&
+                                                                    value.img
+                                                                        .custom_size_mobile
+                                                                        ? {
+                                                                              width:
+                                                                                  value
+                                                                                      .img
+                                                                                      .custom_size_mobile,
+                                                                          }
+                                                                        : value
+                                                                              .img
+                                                                              .custom_size
+                                                                        ? {
+                                                                              width:
+                                                                                  value
+                                                                                      .img
+                                                                                      .custom_size,
+                                                                          }
+                                                                        : {}
                                                                 }
-                                                            >
-                                                                <img 
-                                                                    src={value.img.url} 
-                                                                    style={
-                                                                        this.currentWidth < 768 && value.img.custom_size_mobile ? { width: value.img.custom_size_mobile } : (
-                                                                            value.img.custom_size ? { width: value.img.custom_size } : {}
-                                                                        )
-                                                                    }
-                                                                />
-                                                            </a>
-                                                        </li>
-                                                    )
-                                                )}
-                                            </ul> : 
-                                            // Empty
-                                            <ul className="veja-mais"></ul>
-                                        }
-                                        
+                                                            />
+                                                        </a>
+                                                    </li>
+                                                )
+                                            )}
+                                        </ul>
+                                    ) : (
+                                        // Empty
+                                        <ul className="veja-mais"></ul>
+                                    )}
                                 </div>
                             </AboutSection>
-                            {/* {this.state.data.partnersLogos.length > 0 ? (
-                                <AboutSection>
-                                    <p
-                                        css={css`
-                                            font: bold 0.8em FedraMono !important;
-                                            text-transform: uppercase;
-                                        `}
-                                    >
-                                        {
-                                            this.state.data[this.props.lang]
-                                                .partners
-                                        }
-                                        :
-                                    </p>
-                                    <div
-                                        css={css`
-                                            margin-top: 28px;
-                                            display: flex;
-                                            justify-content: space-between;
-                                            width: ${this.state.data
-                                                .partnersLogos.length * 4}vw;
-                                            img {
-                                                height: 3.2vw;
-                                            }
-                                            ${BP.small} {
-                                                width: ${this.state.data
-                                                    .partnersLogos.length *
-                                                25}%;
-                                                margin-bottom: 20px;
-                                                img {
-                                                    height: 50px;
-                                                }
-                                            }
-                                        `}
-                                    >
-                                        {this.state.data.partnersLogos.map(
-                                            (value, index) => (
-                                                <img
-                                                    alt=""
-                                                    src={value}
-                                                    key={index}
-                                                />
-                                            )
-                                        )}
-                                    </div>
-                                </AboutSection>
-                            ) : null} */}
                         </div>
                     ) : (
                         <div className="sobre">
