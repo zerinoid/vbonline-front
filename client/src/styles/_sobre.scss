@@ -100,6 +100,10 @@
         display: block;
     }
 
+    .veja-mais-wrapper {
+        padding-left: 0;
+    }
+
     .veja-mais {
         li:not(:first-child):hover {
             box-shadow: none;
