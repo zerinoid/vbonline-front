@@ -63,7 +63,7 @@ const VideoPlayer = (props) => {
                         md={6}
                         xs={12}
                         className="playlist-caption"
-                        css={{  
+                        css={{
                             paddingLeft: meio_icone + 'vw',
                             [BP.small]: {
                                 paddingLeft: 0,
@@ -91,11 +91,6 @@ const VideoPlayer = (props) => {
      *  Methods
      */
 
-    // insert html from backend (used in info boxes)
-    const createMarkup = (markup) => {
-        return { __html: markup };
-    };
-
     // close player and return to home
     const closePlayer = () => {
         if (player != null) player.destroy();
@@ -107,9 +102,9 @@ const VideoPlayer = (props) => {
         // Close all boxes
         closeBoxes();
         // Check Apple mobile devices
-        if (isMobileApple){
+        if (isMobileApple) {
             player.requestFullscreen();
-        } 
+        }
         // Other devices
         else if (screenfull.isEnabled) {
             screenfull.request(playerRef.current);
@@ -120,26 +115,6 @@ const VideoPlayer = (props) => {
     const closeBoxes = () => {
         setInfoBox('none');
         setPlaylistBox('none');
-    };
-
-    // toggle info box
-    const toggleInfoBox = () => {
-        if (infoBox == 'none') {
-            closeBoxes();
-            setInfoBox('block');
-        } else {
-            setInfoBox('none');
-        }
-    };
-
-    // toggle playlist box
-    const togglePlaylistBox = () => {
-        if (playlistBox == 'none') {
-            closeBoxes();
-            setPlaylistBox('block');
-        } else {
-            setPlaylistBox('none');
-        }
     };
 
     // go to video
