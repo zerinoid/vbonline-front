@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
 import HoverImage from 'react-hover-image';
 import colors from '../styles/colors';
 import BP from '../styles/breakpoints';
@@ -13,7 +12,6 @@ import playPrev from '../assets/img/play_prev.png';
 import playPrevHv from '../assets/img/play_prev_hv.png';
 import saibaMais from '../assets/img/saiba_mais.png';
 import saibaMaisHv from '../assets/img/saiba_mais_hv.png';
-import setaMais from '../assets/img/seta_mais.png';
 import setaNext from '../assets/img/arrow_next.png';
 import setaPrev from '../assets/img/arrow_prev.png';
 
@@ -59,37 +57,9 @@ function PrevArrow(props) {
     );
 }
 
-function SetaMais(props) {
-    const { onClick } = props;
-    return (
-        <img
-            alt=""
-            src={setaMais}
-            css={{
-                display: 'none',
-                [BP.small]: {
-                    width: '6vw',
-                    display: 'block',
-                    position: 'absolute',
-                    left: 'calc(50vw - 6vw)',
-                    top: '68vh',
-                },
-                [BP.extraSmall]: {
-                    width: '10vw',
-                    margin: 'auto',
-                    left: 'calc(50vw - 10vw)',
-                    top: '80vh',
-                },
-            }}
-            onClick={onClick}
-        />
-    );
-}
-
 export default function ListaDocs(props) {
     const lang = props.lang ? props.lang : 'pt';
     const videoList = props.lista.data.videos;
-    const isMobile = useMediaQuery({ query: '(max-width: 767.99px)' });
 
     const [showPlayer, setShowPlayer] = useState(false);
     const [currentVideo, setCurrentVideo] = useState(null);
@@ -100,11 +70,6 @@ export default function ListaDocs(props) {
         current_video: null,
         texttrack: lang,
     });
-
-    const scrollHandler = () => {
-        const scrollHere = document.querySelector('#scroll-here');
-        scrollHere.scrollIntoView({ behavior: 'smooth' });
-    };
 
     // #1 set current video
     const playerHandler = (id) => {
