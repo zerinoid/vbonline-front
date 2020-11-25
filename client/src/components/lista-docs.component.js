@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
+import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-router-dom';
 import HoverImage from 'react-hover-image';
 import colors from '../styles/colors';
@@ -60,6 +61,7 @@ function PrevArrow(props) {
 export default function ListaDocs(props) {
     const lang = props.lang ? props.lang : 'pt';
     const videoList = props.lista.data.videos;
+    const isMobile = useMediaQuery({ query: '(max-width: 767.99px)' });
 
     const [showPlayer, setShowPlayer] = useState(false);
     const [currentVideo, setCurrentVideo] = useState(null);
@@ -346,7 +348,7 @@ export default function ListaDocs(props) {
         }
 
         if (!showPlayer) {
-            const slickOptions = {
+            let slickOptions = {
                 dots: false,
                 infinite: false,
                 speed: 500,
@@ -355,6 +357,13 @@ export default function ListaDocs(props) {
                 nextArrow: <NextArrow />,
                 prevArrow: <PrevArrow />,
             };
+
+            if (isMobile) {
+                slickOptions = {
+                    ...slickOptions,
+                    arrows: false,
+                };
+            }
 
             return (
                 <React.Fragment>
