@@ -258,6 +258,9 @@ export default function ListaDocs(props) {
                     ${BP.small} {
                         min-height: unset;
                         width: 100%;
+                        &:hover {
+                            box-shadow: none;
+                        }
                     }
                 `}
                 onMouseEnter={() => {
