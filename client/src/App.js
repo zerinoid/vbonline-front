@@ -165,7 +165,7 @@ const App = (props) => {
                                     height: '100vh',
                                     background:
                                         pathname === '/' &&
-                                        `linear-gradient(0deg, ${colors.vermelho} 53%, white 77%) scroll`,
+                                        `linear-gradient(0deg, ${colors.vermelho} 5%, white 59%) scroll`,
                                 },
                             },
                         }}
