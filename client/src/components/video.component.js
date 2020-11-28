@@ -28,25 +28,24 @@ const VideoPlayer = (props) => {
     const videoList = props.videoList;
 
     // First video
-    let firstVideo = videoList.data.videos.filter(
-        (video) => video.order == 1
-    );
-
+    const firstVideoOrder = videoList.reduce((min, video) => video.order < min ? video.order : min, videoList[0].order);
+    const firstVideo = videoList.filter(video => video.order == firstVideoOrder);
+    
     // Next video
-    let nextVideo = videoList.data.videos.filter(
-        (video) => video.order == +props.vimeoOptions.current_video.order + 1
+    let nextVideo = videoList.filter(
+        (video) => video.order == +props.currentVideo.order + 1
     );
-    nextVideo = nextVideo.length > 0 ? nextVideo[0] : firstVideo[0];
+    nextVideo = nextVideo.length > 0  && typeof nextVideo !== "undefined" ? nextVideo[0] : firstVideo[0];
 
     // Current video
-    let currentVideo = videoList.data.videos.filter(
-        (video) => video.order == +props.vimeoOptions.current_video.order
+    let currentVideo = videoList.filter(
+        (video) => video.order == +props.currentVideo.order
     )[0];
 
     // Playlist videos
     const pVideos = [];
     pVideos.push(
-        videoList.data.videos.map((value, index) => {
+        videoList.map((value, index) => {
             let video = value;
             let active = currentVideo.id == video.id ? 'active' : '';
 

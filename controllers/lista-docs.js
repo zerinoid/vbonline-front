@@ -45,7 +45,7 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: '463433712',
                 order: 1,
-                program: 1,
+                program: null,
                 pt: {
                     title: 'Ayrson Heráclito',
                     subtitle: 'comenta a exposição',
