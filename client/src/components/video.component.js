@@ -24,26 +24,29 @@ const VideoPlayer = (props) => {
     // Detect device
     const isMobileApple = isMobile().apple.device;
 
+    // Video list
+    const videoList = props.videoList;
+
     // First video
-    let firstVideo = props.videoList.data.videos.filter(
+    let firstVideo = videoList.data.videos.filter(
         (video) => video.order == 1
     );
 
     // Next video
-    let nextVideo = props.videoList.data.videos.filter(
+    let nextVideo = videoList.data.videos.filter(
         (video) => video.order == +props.vimeoOptions.current_video.order + 1
     );
     nextVideo = nextVideo.length > 0 ? nextVideo[0] : firstVideo[0];
 
     // Current video
-    let currentVideo = props.videoList.data.videos.filter(
+    let currentVideo = videoList.data.videos.filter(
         (video) => video.order == +props.vimeoOptions.current_video.order
     )[0];
 
     // Playlist videos
     const pVideos = [];
     pVideos.push(
-        props.videoList.data.videos.map((value, index) => {
+        videoList.data.videos.map((value, index) => {
             let video = value;
             let active = currentVideo.id == video.id ? 'active' : '';
 

@@ -61,6 +61,7 @@ function PrevArrow(props) {
 export default function ListaDocs(props) {
     const lang = props.lang ? props.lang : 'pt';
     const videoList = props.lista.data.videos;
+    console.log(props.lista);
     const isMobile = useMediaQuery({ query: '(max-width: 767.99px)' });
 
     const [showPlayer, setShowPlayer] = useState(false);
@@ -74,8 +75,22 @@ export default function ListaDocs(props) {
     });
 
     // #1 set current video
-    const playerHandler = (id) => {
-        setCurrentVideo(videoList.filter((video) => video.id == id)[0]);
+    const playerHandler = (video, isProgram = false, group = null) => {
+        let videoId = video.id;
+
+        if(isProgram && group !== null){
+            let groupedIds = [];
+            let firstVideoFromGroup = null;
+
+            group[video.id].map(value => {
+                groupedIds.push(value.id);
+            });
+            console.log(groupedIds);
+
+            setCurrentVideo(videoList.filter((video) => video.program)[0]);
+        } else {
+            setCurrentVideo(videoList.filter((video) => video.id == videoId)[0]);
+        }
     };
 
     // #2 vimeo options with data from clicked video
@@ -325,26 +340,59 @@ export default function ListaDocs(props) {
         ];
 
         // Thumbs
+
+        // Group programs
         let videos = [];
-        if (videoList.length > 1) {
-            videos.push(
-                videoList.map((value, index) => {
-                    if (index > 0) {
+
+        if(props.lista.data.group_programs){
+            let programs = props.lista.data.programs;
+            let groupedVideos = [];
+            programs.map((value) => {
+                let filteredVideos = videoList.filter(video => video.program == value.id)
+                if(filteredVideos.length > 0){
+                    groupedVideos[value.id] = filteredVideos;
+                }
+            });
+            console.log(programs);
+
+            if (programs.length > 1) {
+                videos.push(
+                    programs.map((value, index) => {
                         return (
                             <ThumbPreview
                                 bg={value[lang].poster}
                                 key={index}
-                                onClick={() => playerHandler(value.id)}
+                                onClick={() => playerHandler(value, true, groupedVideos)}
                             >
                                 <h5>{value[lang].title}</h5>
                                 <p>{value[lang].category}</p>
                             </ThumbPreview>
                         );
-                    } else {
-                        return null;
-                    }
-                })
-            );
+                    })
+                );
+            }
+            
+        } else {
+            if (videoList.length > 1) {
+                videos.push(
+                    videoList.map((value, index) => {
+                        if (index > 0) {
+                            return (
+                                <ThumbPreview
+                                    bg={value[lang].poster}
+                                    key={index}
+                                    onClick={() => playerHandler(value, false)}
+                                >
+                                    <h5>{value[lang].title}</h5>
+                                    <p>{value[lang].category}</p>
+                                </ThumbPreview>
+                            );
+                        } else {
+                            return null;
+                        }
+                    })
+                );
+            }
         }
 
         if (!showPlayer) {
