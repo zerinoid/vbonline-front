@@ -26,15 +26,22 @@ html {
 }
 
 #root,
-.App,
-.conteudo {
+.App {
     height: 100%;
 }
 
-.limite {
+.App {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem 0;
+    padding: 0 1rem 1rem;
+    display: flex;
+    flex-flow: column;
+}
+
+.conteudo {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
 }
 
 nav {
@@ -117,12 +124,11 @@ h5 {
 }
 
 @include media-breakpoint-up(md) {
-    .limite {
-        max-width: 4950px;
-    }
-
     .App {
-        margin: 0 4.4% 4.4%;
+        height: 100vh;
+        min-height: 800px;
+        padding: 0 4.4% 4.4%;
+        max-width: 5100px;
     }
 
     .slick-slide>div {

@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import { css, jsx, Global } from '@emotion/core';
 import axios from 'axios';
@@ -172,7 +173,7 @@ const App = (props) => {
                         }}
                     ></Global>
                     {
-                        <div className="limite">
+                        <React.Fragment>
                             <nav>
                                 <div
                                     css={{
@@ -357,7 +358,7 @@ const App = (props) => {
                                     )}
                                 />
                             </div>
-                        </div>
+                        </React.Fragment>
                     }
                 </div>
             );

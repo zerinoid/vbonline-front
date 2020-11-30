@@ -170,10 +170,10 @@ export default function ListaDocs(props) {
     const BasePreview = styled.div`
         width: 100%;
         padding-bottom: 40.1%;
-        margin-bottom: 0.5%;
         background: url(${(props) => props.bg}) center/cover no-repeat;
         color: white;
         position: relative;
+        flex: 1;
         h3 {
             text-transform: none;
         }
@@ -183,8 +183,6 @@ export default function ListaDocs(props) {
         }
         ${BP.small} {
             min-height: 274px;
-            margin-bottom: 0.33rem;
-            height: calc(75vh - 86px);
             padding-bottom: unset;
             display: flex;
             justify-content: center;
