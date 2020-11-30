@@ -62,9 +62,9 @@ function arraysEqual(a, b) {
     if (a === b) return true;
     if (a == null || b == null) return false;
     if (a.length !== b.length) return false;
-  
+
     for (var i = 0; i < a.length; ++i) {
-      if (a[i] !== b[i]) return false;
+        if (a[i] !== b[i]) return false;
     }
     return true;
 }
@@ -86,10 +86,12 @@ export default function ListaDocs(props) {
 
     // #1 set current video
     const playerHandler = (videoId, isProgram = false, group = null) => {
-        if(isProgram && group !== null){
+        if (isProgram && group !== null) {
             setVideoList(group[videoId]);
         } else {
-            let videoFilter = videoList.filter((video) => video.id == videoId)[0];
+            let videoFilter = videoList.filter(
+                (video) => video.id == videoId
+            )[0];
             setCurrentVideo(videoFilter);
         }
     };
@@ -97,8 +99,13 @@ export default function ListaDocs(props) {
     // #1-1 Set video from group
     useEffect(() => {
         if (!arraysEqual(videoList, props.lista.data.videos)) {
-            let firstVideo = videoList.reduce((min, video) => video.order < min ? video.order : min, videoList[0].order);
-            setCurrentVideo(videoList.filter((video) => video.order == firstVideo)[0]);
+            let firstVideo = videoList.reduce(
+                (min, video) => (video.order < min ? video.order : min),
+                videoList[0].order
+            );
+            setCurrentVideo(
+                videoList.filter((video) => video.order == firstVideo)[0]
+            );
         }
     }, [videoList]);
 
@@ -358,16 +365,16 @@ export default function ListaDocs(props) {
         const groupPrograms = props.lista.data.group_programs;
 
         // Group programs
-        if(groupPrograms){
-
+        if (groupPrograms) {
             const programs = props.lista.data.programs;
             let groupedVideos = [];
 
             if (programs.length > 1) {
-
                 programs.map((program) => {
-                    let filteredVideos = videoList.filter(video => video.program == program.id)
-                    if(filteredVideos.length > 0){
+                    let filteredVideos = videoList.filter(
+                        (video) => video.program == program.id
+                    );
+                    if (filteredVideos.length > 0) {
                         groupedVideos[program.id] = filteredVideos;
                     }
                 });
@@ -378,7 +385,13 @@ export default function ListaDocs(props) {
                             <ThumbPreview
                                 bg={program[lang].poster}
                                 key={index}
-                                onClick={() => playerHandler(program.id, true, groupedVideos)}
+                                onClick={() =>
+                                    playerHandler(
+                                        program.id,
+                                        true,
+                                        groupedVideos
+                                    )
+                                }
                             >
                                 <h5>{program[lang].title}</h5>
                                 <p>{program[lang].category}</p>
@@ -387,9 +400,8 @@ export default function ListaDocs(props) {
                     })
                 );
             }
-            
         }
-        // Regular program (ungrouped) 
+        // Regular program (ungrouped)
         else {
             if (videoList.length > 1) {
                 videos.push(
