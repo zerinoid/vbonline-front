@@ -58,12 +58,23 @@ function PrevArrow(props) {
     );
 }
 
+function arraysEqual(a, b) {
+    if (a === b) return true;
+    if (a == null || b == null) return false;
+    if (a.length !== b.length) return false;
+  
+    for (var i = 0; i < a.length; ++i) {
+      if (a[i] !== b[i]) return false;
+    }
+    return true;
+}
+
 export default function ListaDocs(props) {
     const lang = props.lang ? props.lang : 'pt';
-    const videoList = props.lista.data.videos;
     const isMobile = useMediaQuery({ query: '(max-width: 767.99px)' });
 
     const [showPlayer, setShowPlayer] = useState(false);
+    const [videoList, setVideoList] = useState(props.lista.data.videos);
     const [currentVideo, setCurrentVideo] = useState(null);
     const [vimeoOptions, setVimeoOptions] = useState({
         autoplay: true,
@@ -74,9 +85,22 @@ export default function ListaDocs(props) {
     });
 
     // #1 set current video
-    const playerHandler = (id) => {
-        setCurrentVideo(videoList.filter((video) => video.id == id)[0]);
+    const playerHandler = (videoId, isProgram = false, group = null) => {
+        if(isProgram && group !== null){
+            setVideoList(group[videoId]);
+        } else {
+            let videoFilter = videoList.filter((video) => video.id == videoId)[0];
+            setCurrentVideo(videoFilter);
+        }
     };
+
+    // #1-1 Set video from group
+    useEffect(() => {
+        if (!arraysEqual(videoList, props.lista.data.videos)) {
+            let firstVideo = videoList.reduce((min, video) => video.order < min ? video.order : min, videoList[0].order);
+            setCurrentVideo(videoList.filter((video) => video.order == firstVideo)[0]);
+        }
+    }, [videoList]);
 
     // #2 vimeo options with data from clicked video
     useEffect(() => {
@@ -103,6 +127,7 @@ export default function ListaDocs(props) {
     const closePlayer = () => {
         setShowPlayer(false);
         setCurrentVideo(null);
+        setVideoList(props.lista.data.videos);
     };
 
     const PreviewContainer = styled.div`
@@ -328,26 +353,64 @@ export default function ListaDocs(props) {
         ];
 
         // Thumbs
+
         let videos = [];
-        if (videoList.length > 1) {
-            videos.push(
-                videoList.map((value, index) => {
-                    if (index > 0) {
+        const groupPrograms = props.lista.data.group_programs;
+
+        // Group programs
+        if(groupPrograms){
+
+            const programs = props.lista.data.programs;
+            let groupedVideos = [];
+
+            if (programs.length > 1) {
+
+                programs.map((program) => {
+                    let filteredVideos = videoList.filter(video => video.program == program.id)
+                    if(filteredVideos.length > 0){
+                        groupedVideos[program.id] = filteredVideos;
+                    }
+                });
+
+                videos.push(
+                    programs.map((program, index) => {
                         return (
                             <ThumbPreview
-                                bg={value[lang].poster}
+                                bg={program[lang].poster}
                                 key={index}
-                                onClick={() => playerHandler(value.id)}
+                                onClick={() => playerHandler(program.id, true, groupedVideos)}
                             >
-                                <h5>{value[lang].title}</h5>
-                                <p>{value[lang].category}</p>
+                                <h5>{program[lang].title}</h5>
+                                <p>{program[lang].category}</p>
                             </ThumbPreview>
                         );
-                    } else {
-                        return null;
-                    }
-                })
-            );
+                    })
+                );
+            }
+            
+        }
+        // Regular program (ungrouped) 
+        else {
+            if (videoList.length > 1) {
+                videos.push(
+                    videoList.map((value, index) => {
+                        if (index > 0) {
+                            return (
+                                <ThumbPreview
+                                    bg={value[lang].poster}
+                                    key={index}
+                                    onClick={() => playerHandler(value.id)}
+                                >
+                                    <h5>{value[lang].title}</h5>
+                                    <p>{value[lang].category}</p>
+                                </ThumbPreview>
+                            );
+                        } else {
+                            return null;
+                        }
+                    })
+                );
+            }
         }
 
         if (!showPlayer) {
@@ -383,8 +446,10 @@ export default function ListaDocs(props) {
                         {...props}
                         closePlayer={closePlayer}
                         changeVideo={playerHandler}
-                        videoList={props.lista}
+                        videoList={videoList}
                         vimeoOptions={vimeoOptions}
+                        currentVideo={currentVideo}
+                        groupPrograms={groupPrograms}
                         lang={lang}
                     />
                 );

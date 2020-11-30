@@ -11,10 +11,41 @@ exports.getListaDocs = (req, res, next) => {
                 title: 'Sacudimentos'
             },
         },
+        group_programs: true,
+        programs: [
+            {
+                id: 1,
+                pt: {
+                    title: "programa1",
+                    poster: '/img/ayrson/1_sacudimentos.jpg',
+                    thumb: '/img/ayrson/1_sacudimentos.jpg',
+                },
+                en: {
+                    title: "program1",
+                    poster: '/img/ayrson/1_sacudimentos.jpg',
+                    thumb: '/img/ayrson/1_sacudimentos.jpg',
+                }
+            },
+            {
+                id: 2,
+                pt: {
+                    title: "programa2",
+                    poster: '/img/ayrson/2_a-floresta-02.jpg',
+                    thumb: '/img/ayrson/2_a-floresta-02.jpg',
+                    
+                },
+                en: {
+                    title: "program2",
+                    poster: '/img/ayrson/2_a-floresta-02.jpg',
+                    thumb: '/img/ayrson/2_a-floresta-02.jpg',
+                }
+            }
+        ],
         videos: [
             {
                 id: '463433712',
                 order: 1,
+                program: null,
                 pt: {
                     title: 'Ayrson Heráclito',
                     subtitle: 'comenta a exposição',
@@ -39,6 +70,7 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: '462709032',
                 order: 2,
+                program: 1,
                 pt: {
                     title: 'Sacudimentos',
                     subtitle: '',
@@ -65,6 +97,7 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: '462710890',
                 order: 3,
+                program: 1,
                 pt: {
                     title: 'A floresta em transe',
                     subtitle: '',
@@ -91,6 +124,7 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: '462706453',
                 order: 4,
+                program: 1,
                 pt: {
                     title: 'Ogum',
                     subtitle: '',
@@ -117,6 +151,7 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: '463229869',
                 order: 5,
+                program: 1,
                 pt: {
                     title: 'Baía de Todas as Santas',
                     subtitle: '',
@@ -143,6 +178,7 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: '462713786',
                 order: 6,
+                program: 2,
                 pt: {
                     title: 'Baobá: o capítulo da agromancia',
                     subtitle: 'Da série História do futuro',
@@ -171,6 +207,7 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: '462715462',
                 order: 7,
+                program: 2,
                 pt: {
                     title: 'Batendo amalá',
                     subtitle: '',
@@ -197,6 +234,7 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: '462717306',
                 order: 8,
+                program: 2,
                 pt: {
                     title: 'Funfun',
                     subtitle: '',
@@ -223,6 +261,7 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: '462720040',
                 order: 9,
+                program: 2,
                 pt: {
                     title: 'Buruburu',
                     subtitle: '',
@@ -249,6 +288,7 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: '463995792',
                 order: 10,
+                program: 2,
                 pt: {
                     title: 'As mãos do epô',
                     subtitle: '',
@@ -275,6 +315,7 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: '463231730',
                 order: 11,
+                program: 2,
                 pt: {
                     title: 'Barrueco',
                     subtitle: '',

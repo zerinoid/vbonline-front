@@ -23,7 +23,7 @@ router.get('/lista-docs', listaDocsController.getListaDocs);
 // GET /api/saibamais
 router.get('/saibamais', saibaMaisController.getSaibaMais);
 
-// GET /api/vinheta/set
+// POST /api/vinheta/set
 router.post('/vinheta/set', vinhetaController.setVinheta);
 
 // GET /api/vinheta/set
