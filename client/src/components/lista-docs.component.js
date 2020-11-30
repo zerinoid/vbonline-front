@@ -443,7 +443,7 @@ export default function ListaDocs(props) {
                 };
             }
 
-            const homeThumbs = videoList > 1;
+            const homeThumbs = videoList.length > 1;
 
             return (
                 <React.Fragment>
