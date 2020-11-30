@@ -153,6 +153,7 @@ const App = (props) => {
                 </div>
             );
         } else {
+            const { videos } = appState.data;
             return (
                 <div className="App">
                     <Global
@@ -223,16 +224,18 @@ const App = (props) => {
                                         paddingRight: '0.4vw',
                                     })}
                                 >
-                                    <Link to="/">
-                                        <Botao active={true}>
-                                            {appState !== null &&
-                                            typeof appState !== 'undefined'
-                                                ? appState.data.season[
-                                                      langState
-                                                  ].type
-                                                : 'docs'}
-                                        </Botao>
-                                    </Link>
+                                    {videos.length > 1 ? (
+                                        <Link to="/">
+                                            <Botao active={true}>
+                                                {appState !== null &&
+                                                typeof appState !== 'undefined'
+                                                    ? appState.data.season[
+                                                          langState
+                                                      ].type
+                                                    : 'docs'}
+                                            </Botao>
+                                        </Link>
+                                    ) : null}
                                     <div
                                         css={css({
                                             display: 'none',
