@@ -4,42 +4,41 @@ exports.getListaDocs = (req, res, next) => {
         season: {
             pt: {
                 type: 'artista',
-                title: 'Sacudimentos'
+                title: 'Sacudimentos',
             },
             en: {
                 type: 'artist',
-                title: 'Sacudimentos'
+                title: 'Sacudimentos',
             },
         },
-        group_programs: true,
+        group_programs: false,
         programs: [
             {
                 id: 1,
                 pt: {
-                    title: "programa1",
+                    title: 'programa1',
                     poster: '/img/ayrson/1_sacudimentos.jpg',
                     thumb: '/img/ayrson/1_sacudimentos.jpg',
                 },
                 en: {
-                    title: "program1",
+                    title: 'program1',
                     poster: '/img/ayrson/1_sacudimentos.jpg',
                     thumb: '/img/ayrson/1_sacudimentos.jpg',
-                }
+                },
             },
             {
                 id: 2,
                 pt: {
-                    title: "programa2",
+                    title: 'programa2',
                     poster: '/img/ayrson/2_a-floresta-02.jpg',
                     thumb: '/img/ayrson/2_a-floresta-02.jpg',
-                    
                 },
                 en: {
-                    title: "program2",
+                    title: 'program2',
                     poster: '/img/ayrson/2_a-floresta-02.jpg',
                     thumb: '/img/ayrson/2_a-floresta-02.jpg',
-                }
-            }
+                },
+            },
         ],
         videos: [
             {
