@@ -443,12 +443,16 @@ export default function ListaDocs(props) {
                 };
             }
 
+            const homeThumbs = videoList > 1;
+
             return (
                 <React.Fragment>
                     {main_video}
-                    <PreviewContainer>
-                        <Slider {...slickOptions}>{videos}</Slider>
-                    </PreviewContainer>
+                    {homeThumbs ? (
+                        <PreviewContainer>
+                            <Slider {...slickOptions}>{videos}</Slider>
+                        </PreviewContainer>
+                    ) : null}
                 </React.Fragment>
             );
         } else {
