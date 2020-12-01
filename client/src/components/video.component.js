@@ -28,14 +28,22 @@ const VideoPlayer = (props) => {
     const videoList = props.videoList;
 
     // First video
-    const firstVideoOrder = videoList.reduce((min, video) => video.order < min ? video.order : min, videoList[0].order);
-    const firstVideo = videoList.filter(video => video.order == firstVideoOrder);
-    
+    const firstVideoOrder = videoList.reduce(
+        (min, video) => (video.order < min ? video.order : min),
+        videoList[0].order
+    );
+    const firstVideo = videoList.filter(
+        (video) => video.order == firstVideoOrder
+    );
+
     // Next video
     let nextVideo = videoList.filter(
         (video) => video.order == +props.currentVideo.order + 1
     );
-    nextVideo = nextVideo.length > 0  && typeof nextVideo !== "undefined" ? nextVideo[0] : firstVideo[0];
+    nextVideo =
+        nextVideo.length > 0 && typeof nextVideo !== 'undefined'
+            ? nextVideo[0]
+            : firstVideo[0];
 
     // Current video
     let currentVideo = videoList.filter(
