@@ -1,20 +1,20 @@
 exports.getButtonConfig = (req, res, next) => {
     data = {
-        botoes: [
+        buttons: [
             {
                 id: 1,
-                nome: 'saiba_mais',
-                propriedades: 'something'
+                name: 'saiba_mais',
+                options: 'something'
             },
             {
                 id: 2,
-                nome: 'botao_play',
-                propriedades: 'something'
+                name: 'botao_play',
+                options: 'something'
             },
             {
                 id: 3,
-                nome: 'ficha_tecnica',
-                propriedades: 'something'
+                name: 'ficha_tecnica',
+                options: 'something'
             }
         ]
     }
