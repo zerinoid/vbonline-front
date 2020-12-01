@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 
 // Controllers
-const langController = require('../controllers/lang');
-const sobreController = require('../controllers/sobre');
-const listaDocsController = require('../controllers/lista-docs');
-const saibaMaisController = require('../controllers/saiba-mais');
-const vinhetaController = require('../controllers/vinheta');
+const langController = require('../controllers/lang')
+const sobreController = require('../controllers/sobre')
+const listaDocsController = require('../controllers/lista-docs')
+const saibaMaisController = require('../controllers/saiba-mais')
+const vinhetaController = require('../controllers/vinheta')
+const buttonConfig = require('../controllers/btn_config')
 
 // POST /api/lang/set/:name
 router.post('/lang/set/:name', langController.setLang);
@@ -27,7 +28,10 @@ router.get('/saibamais', saibaMaisController.getSaibaMais);
 router.post('/vinheta/set', vinhetaController.setVinheta);
 
 // GET /api/vinheta/set
-router.get('/vinheta/get', vinhetaController.getVinheta);
+router.get('/vinheta/get', vinhetaController.getVinheta)
+
+//GET /api/btn_config
+router.get('/btn_config', buttonConfig.getButtonConfig)
 
 // Export
 module.exports = router;
