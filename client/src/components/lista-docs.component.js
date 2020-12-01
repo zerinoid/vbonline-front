@@ -474,6 +474,7 @@ export default function ListaDocs(props) {
                 return (
                     <VideoPlayer
                         {...props}
+                        buttonConfig={buttonConfig}
                         closePlayer={closePlayer}
                         changeVideo={playerHandler}
                         videoList={videoList}
