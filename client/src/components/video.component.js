@@ -17,8 +17,6 @@ const VideoPlayer = (props) => {
     const playerRef = useRef(null);
 
     // State
-    const [infoBox, setInfoBox] = useState('none');
-    const [playlistBox, setPlaylistBox] = useState('none');
     const [player, setPlayer] = useState(null);
 
     // Detect device
@@ -110,7 +108,6 @@ const VideoPlayer = (props) => {
     // enter fullscreen
     const enterFullScreen = () => {
         // Close all boxes
-        closeBoxes();
         // Check Apple mobile devices
         if (isMobileApple) {
             player.requestFullscreen();
@@ -121,15 +118,8 @@ const VideoPlayer = (props) => {
         }
     };
 
-    // close all info boxes
-    const closeBoxes = () => {
-        setInfoBox('none');
-        setPlaylistBox('none');
-    };
-
     // go to video
     const goToVideo = (id) => {
-        closeBoxes();
         props.changeVideo(id);
     };
 
