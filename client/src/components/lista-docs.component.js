@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useMediaQuery } from 'react-responsive';
@@ -83,6 +84,19 @@ export default function ListaDocs(props) {
         current_video: null,
         texttrack: lang,
     });
+    const [buttonConfig, setButtonConfig] = useState(null);
+
+    // Button request
+    useEffect(() => {
+        axios
+            .get('/api/btn_config')
+            .then((res) =>
+                setButtonConfig({
+                    data: res.data,
+                })
+            )
+            .catch((error) => console.log(error));
+    }, []);
 
     // #1 set current video
     const playerHandler = (videoId, isProgram = false, group = null) => {
