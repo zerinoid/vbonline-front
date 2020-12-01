@@ -4,18 +4,19 @@ exports.getButtonConfig = (req, res, next) => {
             {
                 id: 1,
                 name: 'saiba_mais',
-                options: 'something'
+                options: 'something',
             },
             {
                 id: 2,
                 name: 'botao_play',
-                options: 'something'
+                options: 'something',
             },
             {
                 id: 3,
                 name: 'ficha_tecnica',
-                options: 'something'
-            }
-        ]
-    }
-}
+                options: 'something',
+            },
+        ],
+    };
+    res.status(200).json(data);
+};
