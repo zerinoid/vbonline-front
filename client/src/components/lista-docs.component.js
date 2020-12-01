@@ -138,7 +138,9 @@ export default function ListaDocs(props) {
     };
 
     const PreviewContainer = styled.div`
+        margin-top: 0.6vw;
         ${BP.small} {
+            margin-top: 0.33rem;
             div {
                 height: 25vh;
             }
