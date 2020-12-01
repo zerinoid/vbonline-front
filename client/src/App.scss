@@ -126,7 +126,7 @@ h5 {
 @include media-breakpoint-up(md) {
     .App {
         height: 100vh;
-        min-height: 800px;
+        /* min-height: 800px; */
         padding: 0 4.4% 4.4%;
         max-width: 5100px;
     }
