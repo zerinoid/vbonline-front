@@ -1,19 +1,37 @@
 {
-  "name": "videobrasil.online",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "client": "cd client && npm start",
-    "server": "node server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
-  },
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1"
-  },
-  "devDependencies": {
-    "concurrently": "^5.2.0"
-  }
+    "name": "videobrasil.online",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "client": "cd client && npm start",
+        "server": "node server.js",
+        "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1"
+    },
+    "devDependencies": {
+        "concurrently": "^5.2.0"
+    },
+    "eslintConfig": {
+        "parserOptions": {
+            "sourceType": "module",
+            "ecmaFeatures": {
+                "jsx": true
+            }
+        },
+        "env": {
+            "es2020": true
+        },
+        "rules": {
+            "semi": [
+                0,
+                "never"
+            ],
+            "eqeqeq": "off"
+        }
+    }
 }
