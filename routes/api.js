@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
 // Controllers
 const langController = require('../controllers/lang')
@@ -10,22 +10,22 @@ const vinhetaController = require('../controllers/vinheta')
 const buttonConfig = require('../controllers/btn_config')
 
 // POST /api/lang/set/:name
-router.post('/lang/set/:name', langController.setLang);
+router.post('/lang/set/:name', langController.setLang)
 
 // GET /api/lang/get/:name
-router.get('/lang/get', langController.getLang);
+router.get('/lang/get', langController.getLang)
 
 // GET /api/sobre
-router.get('/sobre', sobreController.getSobre);
+router.get('/sobre', sobreController.getSobre)
 
 // GET /api/lista-docs
-router.get('/lista-docs', listaDocsController.getListaDocs);
+router.get('/lista-docs', listaDocsController.getListaDocs)
 
 // GET /api/saibamais
-router.get('/saibamais', saibaMaisController.getSaibaMais);
+router.get('/saibamais', saibaMaisController.getSaibaMais)
 
 // POST /api/vinheta/set
-router.post('/vinheta/set', vinhetaController.setVinheta);
+router.post('/vinheta/set', vinhetaController.setVinheta)
 
 // GET /api/vinheta/set
 router.get('/vinheta/get', vinhetaController.getVinheta)
@@ -34,4 +34,4 @@ router.get('/vinheta/get', vinhetaController.getVinheta)
 router.get('/btn_config', buttonConfig.getButtonConfig)
 
 // Export
-module.exports = router;
+module.exports = router
