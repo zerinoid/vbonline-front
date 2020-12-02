@@ -3,7 +3,7 @@ exports.getButtonConfig = (req, res, next) => {
         buttons: {
             saibaMais: {
                 id: 1,
-                options: { show: false },
+                options: { hide: true },
             },
             botaoPlay: {
                 id: 2,
@@ -11,7 +11,7 @@ exports.getButtonConfig = (req, res, next) => {
             },
             fichaTecnica: {
                 id: 3,
-                options: { show: false },
+                options: { hide: true },
             },
         },
     };
