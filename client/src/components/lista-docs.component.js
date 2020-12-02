@@ -10,6 +10,8 @@ import colors from '../styles/colors';
 import BP from '../styles/breakpoints';
 
 import VideoPlayer from './video.component';
+import Play from '../assets/img/play_normal.png';
+import PlayHv from '../assets/img/play_hover.png';
 import playPrev from '../assets/img/play_prev.png';
 import playPrevHv from '../assets/img/play_prev_hv.png';
 import saibaMais from '../assets/img/saiba_mais.png';
@@ -91,7 +93,7 @@ export default function ListaDocs(props) {
         axios
             .get('/api/btn_config')
             .then((res) => {
-                if(res.data.buttons){
+                if (res.data.buttons) {
                     setButtonConfig(res.data.buttons);
                 }
             })
@@ -165,7 +167,13 @@ export default function ListaDocs(props) {
         height: '1.8vw',
         marginLeft: '0.2vw',
         [BP.small]: {
-            // marginLeft: '0.5vw',
+            height: 25,
+        },
+    };
+
+    let buttonStyleBig = {
+        height: '7vw',
+        [BP.small]: {
             height: 25,
         },
     };
@@ -182,6 +190,12 @@ export default function ListaDocs(props) {
             padding: '20% 10%',
         },
     };
+
+    let absoluteStyleBig = {
+        ...absoluteStyle,
+        display: 'flex',
+        justifyContent: 'center',
+    }
 
     const BasePreview = styled.div`
         width: 100%;
@@ -206,6 +220,9 @@ export default function ListaDocs(props) {
         }
     `;
 
+    if (buttonConfig !== null && typeof buttonConfig !== 'undefined')
+        var playImageBig = (buttonConfig.botaoPlay.options.grande)
+
     const MainPreview = (props) => {
         const [hovered, setHovered] = useState(false);
 
@@ -220,7 +237,7 @@ export default function ListaDocs(props) {
                     setHovered(false);
                 }}
             >
-                <div css={absoluteStyle}>
+              <div css={playImageBig ? absoluteStyleBig : absoluteStyle}>
                     {React.Children.map(props.children, (child, i) => {
                         if (i === 0) return <h1>{child}</h1>;
                         if (i === 1)
@@ -247,11 +264,18 @@ export default function ListaDocs(props) {
                                     >
                                         {child}
                                     </h3>
-                                    <img
-                                        alt=""
-                                        src={hovered ? playPrevHv : playPrev}
-                                        css={buttonStyle}
-                                    />
+                                  {playImageBig ?
+                                   <img
+                                     alt=""
+                                     src={hovered ? PlayHv : Play}
+                                     css={buttonStyleBig}
+                                   /> : 
+                                   <img
+                                     alt=""
+                                     src={hovered ? playPrevHv : playPrev}
+                                     css={buttonStyle}
+                                   />
+                                  }
                                     <Link to="/saibamais">
                                         <HoverImage
                                             alt=""
