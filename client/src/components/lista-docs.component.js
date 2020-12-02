@@ -195,7 +195,7 @@ export default function ListaDocs(props) {
         ...absoluteStyle,
         display: 'flex',
         justifyContent: 'center',
-    }
+    };
 
     const BasePreview = styled.div`
         width: 100%;
@@ -220,8 +220,10 @@ export default function ListaDocs(props) {
         }
     `;
 
-    if (buttonConfig !== null && typeof buttonConfig !== 'undefined')
-        var playImageBig = (buttonConfig.botaoPlay.options.grande)
+    if (buttonConfig !== null && typeof buttonConfig !== 'undefined') {
+        var playImageBig = buttonConfig.botaoPlay.options.grande;
+        var hideSaibaMais = buttonConfig.saibaMais.options.hide;
+    }
 
     const MainPreview = (props) => {
         const [hovered, setHovered] = useState(false);
@@ -237,7 +239,7 @@ export default function ListaDocs(props) {
                     setHovered(false);
                 }}
             >
-              <div css={playImageBig ? absoluteStyleBig : absoluteStyle}>
+                <div css={playImageBig ? absoluteStyleBig : absoluteStyle}>
                     {React.Children.map(props.children, (child, i) => {
                         if (i === 0) return <h1>{child}</h1>;
                         if (i === 1)
@@ -264,18 +266,21 @@ export default function ListaDocs(props) {
                                     >
                                         {child}
                                     </h3>
-                                  {playImageBig ?
-                                   <img
-                                     alt=""
-                                     src={hovered ? PlayHv : Play}
-                                     css={buttonStyleBig}
-                                   /> : 
-                                   <img
-                                     alt=""
-                                     src={hovered ? playPrevHv : playPrev}
-                                     css={buttonStyle}
-                                   />
-                                  }
+                                    {playImageBig ? (
+                                        <img
+                                            alt=""
+                                            src={hovered ? PlayHv : Play}
+                                            css={buttonStyleBig}
+                                        />
+                                    ) : (
+                                        <img
+                                            alt=""
+                                            src={
+                                                hovered ? playPrevHv : playPrev
+                                            }
+                                            css={buttonStyle}
+                                        />
+                                    )}
                                     <Link to="/saibamais">
                                         <HoverImage
                                             alt=""
@@ -283,14 +288,9 @@ export default function ListaDocs(props) {
                                             hoverSrc={saibaMaisHv}
                                             css={{
                                                 ...buttonStyle,
-                                                display:
-                                                    buttonConfig !== null &&
-                                                    typeof buttonConfig !==
-                                                        'undefined' &&
-                                                    buttonConfig.saibaMais
-                                                        .options.show
-                                                        ? 'block'
-                                                        : 'none',
+                                                display: hideSaibaMais
+                                                    ? 'none'
+                                                    : 'block',
                                             }}
                                         />
                                     </Link>
