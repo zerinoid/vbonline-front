@@ -84,7 +84,7 @@ export default function ListaDocs(props) {
         current_video: null,
         texttrack: lang,
     });
-    const [buttonConfig, setButtonConfig] = useState({ data: '' });
+    const [buttonConfig, setButtonConfig] = useState(null);
 
     // Button request
     useEffect(() => {
@@ -261,10 +261,12 @@ export default function ListaDocs(props) {
                                             hoverSrc={saibaMaisHv}
                                             css={{
                                                 ...buttonStyle,
-                                                display: buttonConfig.data
-                                                    .saibaMais.options.show
-                                                    ? 'block'
-                                                    : 'none',
+                                                display: (
+                                                    buttonConfig !== null && 
+                                                    typeof buttonConfig.data !== "undefined" && 
+                                                    buttonConfig.data.saibaMais.options.show
+                                                ) ? 'block'
+                                                  : 'none',
                                             }}
                                         />
                                     </Link>
