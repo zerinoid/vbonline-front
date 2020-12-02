@@ -91,11 +91,8 @@ export default function ListaDocs(props) {
         axios
             .get('/api/btn_config')
             .then((res) => {
-                if (res.data === null) {
-                    console.log('yes', buttonConfig);
-                } else {
-                    setButtonConfig(res.data);
-                    console.log('no', buttonConfig);
+                if(res.data.buttons){
+                    setButtonConfig(res.data.buttons);
                 }
             })
             .catch((error) => console.log(error));
@@ -264,9 +261,9 @@ export default function ListaDocs(props) {
                                                 ...buttonStyle,
                                                 display:
                                                     buttonConfig !== null &&
-                                                    typeof buttonConfig.data !==
+                                                    typeof buttonConfig !==
                                                         'undefined' &&
-                                                    buttonConfig.data.saibaMais
+                                                    buttonConfig.saibaMais
                                                         .options.show
                                                         ? 'block'
                                                         : 'none',
