@@ -147,7 +147,7 @@ const PlayerMenu = (props) => {
         hoverSrc,
         playlist,
         children,
-        display,
+        hidden,
     }) => (
         <Dropdown
             show={show}
@@ -157,7 +157,7 @@ const PlayerMenu = (props) => {
             itemSelector="button:not(:disabled)"
         >
             {({ props }) => (
-                <div {...props} className="relative inline-block" css={display}>
+                <div {...props} className="relative inline-block" css={{display: hidden? 'none' : 'block'}}>
                     <Toggle
                         id="example-toggle"
                         source={source}
@@ -179,14 +179,13 @@ const PlayerMenu = (props) => {
         slidesToScroll: 3,
     };
 
-    const showBotaoFicha = {
-        display:
-            props.buttonConfig !== null &&
-            typeof props.buttonConfig.data !== 'undefined' &&
-            props.buttonConfig.fichaTecnica.options.show
-                ? 'block'
-                : 'none',
-    };
+    if (
+        props.buttonConfig !== null &&
+        typeof props.buttonConfig !== 'undefined'
+    )
+        var hideBotaoFicha = props.buttonConfig.fichaTecnica.options.hide;
+
+    console.log(props.buttonConfig.fichaTecnica.options.hide)
 
     return (
         <Col
@@ -205,7 +204,7 @@ const PlayerMenu = (props) => {
                 source={infoButton}
                 hoverSrc={isMobile ? infoButton : infoButtonActive}
                 alignEnd
-                display={showBotaoFicha}
+                hidden={hideBotaoFicha}
             >
                 <LegendaMobile>Ficha Técnica</LegendaMobile>
                 <div className="cartela box-carousel">
