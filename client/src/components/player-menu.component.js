@@ -185,8 +185,6 @@ const PlayerMenu = (props) => {
     )
         var hideBotaoFicha = props.buttonConfig.fichaTecnica.options.hide;
 
-    console.log(props.buttonConfig.fichaTecnica.options.hide)
-
     return (
         <Col
             className="player-menu"
