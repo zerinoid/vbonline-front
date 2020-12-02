@@ -10,7 +10,7 @@ exports.getButtonConfig = (req, res, next) => {
         },
         fichaTecnica: {
             id: 3,
-            options: { show: true },
+            options: { show: false },
         },
     };
     res.status(200).json(data);
