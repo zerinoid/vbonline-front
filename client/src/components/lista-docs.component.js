@@ -261,12 +261,14 @@ export default function ListaDocs(props) {
                                             hoverSrc={saibaMaisHv}
                                             css={{
                                                 ...buttonStyle,
-                                                display: (
-                                                    buttonConfig !== null && 
-                                                    typeof buttonConfig.data !== "undefined" && 
-                                                    buttonConfig.data.saibaMais.options.show
-                                                ) ? 'block'
-                                                  : 'none',
+                                                display:
+                                                    buttonConfig !== null &&
+                                                    typeof buttonConfig.data !==
+                                                        'undefined' &&
+                                                    buttonConfig.data.saibaMais
+                                                        .options.show
+                                                        ? 'block'
+                                                        : 'none',
                                             }}
                                         />
                                     </Link>
