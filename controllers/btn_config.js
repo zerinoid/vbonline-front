@@ -1,22 +1,17 @@
 exports.getButtonConfig = (req, res, next) => {
     data = {
-        buttons: [
-            {
-                id: 1,
-                name: 'saiba_mais',
-                options: 'something',
-            },
-            {
-                id: 2,
-                name: 'botao_play',
-                options: 'something',
-            },
-            {
-                id: 3,
-                name: 'ficha_tecnica',
-                options: 'something',
-            },
-        ],
+        saibaMais: {
+            id: 1,
+            options: { show: true },
+        },
+        botaoPlay: {
+            id: 2,
+            options: { show: true },
+        },
+        fichaTecnica: {
+            id: 3,
+            options: { show: true },
+        },
     };
     res.status(200).json(data);
 };
