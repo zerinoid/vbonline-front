@@ -174,7 +174,7 @@ export default function ListaDocs(props) {
     let buttonStyleBig = {
         height: '7vw',
         [BP.small]: {
-            height: 25,
+            height: '25vw',
         },
     };
 
@@ -249,7 +249,7 @@ export default function ListaDocs(props) {
                                         display: 'flex',
                                         alignItems: 'center',
                                         [BP.small]: {
-                                            display: 'block',
+                                            display: playImageBig ? 'flex' : 'block',
                                         },
                                     }}
                                 >
