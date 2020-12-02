@@ -7,13 +7,13 @@ exports.getButtonConfig = (req, res, next) => {
             },
             botaoPlay: {
                 id: 2,
-                options: { show: true },
+                options: { grande: true },
             },
             fichaTecnica: {
                 id: 3,
                 options: { show: false },
             },
-        }
-    }
+        },
+    };
     res.status(200).json(data);
 };
