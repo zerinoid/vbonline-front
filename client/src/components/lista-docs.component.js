@@ -84,17 +84,19 @@ export default function ListaDocs(props) {
         current_video: null,
         texttrack: lang,
     });
-    const [buttonConfig, setButtonConfig] = useState(null);
+    const [buttonConfig, setButtonConfig] = useState({ data: '' });
 
     // Button request
     useEffect(() => {
         axios
             .get('/api/btn_config')
-            .then((res) =>
-                setButtonConfig({
-                    data: res.data,
-                })
-            )
+            .then((res) => {
+                if (res.data === null) {
+                    console.log(buttonConfig);
+                } else {
+                    setButtonConfig(res.data);
+                }
+            })
             .catch((error) => console.log(error));
     }, []);
 
@@ -257,7 +259,13 @@ export default function ListaDocs(props) {
                                             alt=""
                                             src={saibaMais}
                                             hoverSrc={saibaMaisHv}
-                                            css={buttonStyle}
+                                            css={{
+                                                ...buttonStyle,
+                                                display: buttonConfig.data
+                                                    .saibaMais.options.show
+                                                    ? 'block'
+                                                    : 'none',
+                                            }}
                                         />
                                     </Link>
                                 </div>
