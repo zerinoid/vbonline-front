@@ -92,9 +92,10 @@ export default function ListaDocs(props) {
             .get('/api/btn_config')
             .then((res) => {
                 if (res.data === null) {
-                    console.log(buttonConfig);
+                    console.log('yes', buttonConfig);
                 } else {
                     setButtonConfig(res.data);
+                    console.log('no', buttonConfig);
                 }
             })
             .catch((error) => console.log(error));
