@@ -4,11 +4,11 @@ exports.getListaDocs = (req, res, next) => {
         season: {
             pt: {
                 type: 'artista',
-                title: 'Sacudimentos',
+                title: '',
             },
             en: {
                 type: 'artist',
-                title: 'Sacudimentos',
+                title: '',
             },
         },
         group_programs: false,
@@ -46,8 +46,8 @@ exports.getListaDocs = (req, res, next) => {
                 order: 1,
                 program: null,
                 pt: {
-                    title: 'Ayrson Heráclito',
-                    subtitle: 'comenta a exposição',
+                    title: '',
+                    subtitle: '',
                     title_box: 'Ayrson Heráclito',
                     poster: '/img/ayrson/01-principal_desktop.jpg',
                     thumb: '/img/ayrson/01-principal_desktop.jpg',
@@ -56,8 +56,8 @@ exports.getListaDocs = (req, res, next) => {
                     caption: ``,
                 },
                 en: {
-                    title: 'Ayrson Heráclito',
-                    subtitle: 'comments on the exhibition',
+                    title: '',
+                    subtitle: '',
                     title_box: 'Ayrson Heráclito',
                     poster: '/img/ayrson/01-principal_desktop.jpg',
                     thumb: '/img/ayrson/01-principal_desktop.jpg',
