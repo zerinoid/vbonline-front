@@ -23,6 +23,7 @@ const UpperBar = (props) => {
                 </span>
             </Col>
             <PlayerMenu
+                buttonConfig={props.buttonConfig}
                 vimeoOptions={props.vimeoOptions}
                 lang={props.lang}
                 playlist={props.playlist}

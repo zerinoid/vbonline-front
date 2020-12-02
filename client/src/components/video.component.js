@@ -107,7 +107,6 @@ const VideoPlayer = (props) => {
 
     // enter fullscreen
     const enterFullScreen = () => {
-        // Close all boxes
         // Check Apple mobile devices
         if (isMobileApple) {
             player.requestFullscreen();
@@ -158,6 +157,7 @@ const VideoPlayer = (props) => {
                 <div id="vimeo-player" />
             </div>
             <UpperBar
+                buttonConfig={props.buttonConfig}
                 vimeoOptions={props.vimeoOptions}
                 lang={props.lang}
                 playlist={pVideos}
