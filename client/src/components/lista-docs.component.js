@@ -153,6 +153,16 @@ export default function ListaDocs(props) {
         setVideoList(props.lista.data.videos);
     };
 
+    // #5 if lang changes, switch video id with language specific id (if present)
+    useEffect(() => {
+        videoList.map(video => {
+            let vLang = video[lang][`id_${lang}`];
+            if(vLang !== '' && typeof vLang !== "undefined"){
+                video.id = vLang;
+            }
+        });
+    }, [lang]);
+
     const PreviewContainer = styled.div`
         margin-top: 0.6vw;
         ${BP.small} {
