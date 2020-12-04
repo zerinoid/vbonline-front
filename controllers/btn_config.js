@@ -7,7 +7,7 @@ exports.getButtonConfig = (req, res, next) => {
             },
             botaoPlay: {
                 id: 2,
-                options: { grande: true },
+                options: { grande: false },
             },
             fichaTecnica: {
                 id: 3,
