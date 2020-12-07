@@ -197,8 +197,11 @@ export default function ListaDocs(props) {
         height: '100%',
         cursor: 'pointer',
         [BP.small]: {
-            padding: '20% 10%',
+            padding: '10% 10%',
         },
+        [BP.extraSmall]: {
+            padding: '20% 10%',
+        }
     };
 
     let absoluteStyleBig = {
@@ -222,7 +225,7 @@ export default function ListaDocs(props) {
             position: relative;
         }
         ${BP.small} {
-            min-height: 274px;
+            // min-height: 274px;
             padding-bottom: unset;
             display: flex;
             justify-content: center;
