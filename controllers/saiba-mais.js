@@ -2,65 +2,102 @@
 exports.getSaibaMais = (req, res, next) => {
     data = {
         partnersLogos: [],
+        replaceText: true,
         pt: {
-            artist: 'Ayrson Heráclito',
-            title: 'Sacudimentos',
+            name: 'Anthropocene: Brazil x Korea 2019-2020',
+            subtitle: 'Curadoria de Juhyun Cho',
             partners: 'Parceiros',
-            link: '', //botão saibaMais desativado
             links: [
                 {
-                    text: 'Acervo',
-                    url: 'http://site.videobrasil.org.br/acervo/artistas/artista/236665',
-                    blank: true,
+                    title: 'Hayoun Kwon',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/hayoun-kwon.jpg" /><strong>Hayoun Kwon</strong>. Fronteiras s&atilde;o recorrentes na obra da artista, da divisa real entre Coreia do Sul e Coreia do Norte, que v&ecirc; como um palco de teatro &ndash; com marcas que o espectador n&atilde;o pode transpor &ndash;, aos limites f&iacute;sicos e mentais do indiv&iacute;duo. Ganhou o Prix D&eacute;couverte des Amis du Palais de Tokyo (2015), o grande pr&ecirc;mio do 62&ordm; Oberhausen International Short Film Festival (2016) e o Arte Creative Newcomer Award do European Media Art Festival (2014).'
                 },
                 {
-                    text: 'FF>>dossier',
-                    url: 'http://site.videobrasil.org.br/dossier/dossier/831604',
-                    blank: true,
+                    title: 'Sanghee Song',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/sanghee-song.jpg" /><strong>Sanghee Song</strong> transforma situa&ccedil;&otilde;es sociais e contextos relacionais em objeto de pesquisa. A partir da facilidade de introspec&ccedil;&atilde;o e do interesse pela voz do outro, enfoca uma gama ampla de temas: experi&ecirc;ncias pessoais, identidades relacionadas &agrave; moderniza&ccedil;&atilde;o da Coreia, trabalhadores sexuais, mitos, ecologia. A artista participou de resid&ecirc;ncias no exterior, fez dez exposi&ccedil;&otilde;es individuais e recebeu o Hermes Foundation Art Prize (2008) e o Korea Artist Prize do National Museum of Modern and Contemporary Art.'
                 },
                 {
-                    text: 'Residência',
-                    url: 'https://inresidence.videobrasil.org.br/2015/04/11/diario-de-dakar/',
-                    blank: true,
+                    title: 'Minjung Song',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/song-min-jung.jpg" /><strong>Minjung Song</strong> participou de coletivas como a <em>Busan Biennale 2020: an exhibition in ten chapters and five poems </em>(Museum of Comtemporary Art Busan, 2020), <em>Night Turns to Day</em> (Art Sonje Center, 2019), <em>Young Korean Artists 2019</em> (MMCA Korea, 2019), <em>PRO-TEST</em> (SeMA Bunker, 2019) e <em>Dear Amazon</em>&nbsp; (Ilmin Museum of Art, 2019), al&eacute;m do Asis Film and Videoart Forum (MMCA Korea, 2019). Suas individuais incluem <em>COLD MOOD</em> <em>(1000% soft point)</em>, na Tastehouse, Seoul (2018).'
                 },
                 {
-                    text: 'Agora somos todxs negrxs?',
-                    url: 'http://site.videobrasil.org.br/exposicoes/galpaovb/agorasomostodxsnegrxs/',
-                    blank: true,
+                    title: 'Ji Hye Yeom',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/ji-hye-yeom.jpg" /><strong>Ji Hye Yeom</strong>. Experi&ecirc;ncias intensas de viagem informam o trabalho da artista, colagens de imagens reais e virtuais que sobrep&otilde;em entidades de tempos e espa&ccedil;os diversos e aludem &agrave; destrui&ccedil;&atilde;o ambiental iminente do planeta. Suas exposi&ccedil;&otilde;es recentes incluem <a href="https://www.mutualart.com/Exhibition/Tenacious-Afterimage/EA65E32B1ED8FC6E"><em>Tenacious Afterimage</em></a> (Doosan Gallery, Nova York, 2018), <em>Total Perspective Vortex</em> (Daegu Art Museum, 2018), <a href="https://www.mutualart.com/Exhibition/Imaginary-Asia-/29F073A63A6E0B7A"><em>Imaginary Asia </em>(</a>Nam June Paik Art Center, Yongin-Si, 2017), e&nbsp;<em>All Exiles Have a Hidden Luck</em> (Art Sonje Center Project Space, Seoul, 2015).'
+                },
+                {
+                    title: 'Jeamin Cha',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/jaemin-cha.jpg" /><strong>Jeamin Cha</strong> trabalha com filme, performance e instala&ccedil;&atilde;o. Suas obras n&atilde;o s&atilde;o constru&iacute;das com imagens virtuais, mas captadas, e indagam sobre as possibilidades e as fragilidade das artes visuais e do document&aacute;rio. Aborda realidades individuais a partir de processos de entrevista e estudos de campo, atenta para a forma como a sociedade permeia a vida. Participou de coletivas no Asia Culture Center e no Barcelona Museum of Contemporary Art, e de festivais internacionais de cinema como Berlim, entre outros.'
+                },
+                {
+                    title: 'Eunji Cho',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<strong>Eunji Cho</strong>. Usando performance, instala&ccedil;&atilde;o, interven&ccedil;&atilde;o, desenho e texto, a artista ativa o movimento e a energia inerentes a ru&iacute;nas urbanas, vest&iacute;gios e mat&eacute;rias suspensas como lama, pedra e poeira.&nbsp;Explora o escorregamento que acontece quando um sujeito contempor&acirc;neo adentra outro territ&oacute;rio e torna-se minoria, o colonizado, o &ldquo;outro&rdquo;. Participou de coletivas como<em> Walking Drifting Dragging</em>,&nbsp;no New Museum (Nova York, 2013).'
                 },
             ],
-            content: `<p>A obra de Ayrson Heráclito (Macaúbas-BA, 1968) deriva da ideia de sagrado expressa na ritualística e na simbologia do Candomblé, religião que pratica há quase trinta anos. A matéria orgânica mobilizada pelos ritos de matriz africana na Bahia alimenta seu trabalho, explorada até o limite da plasticidade e do significado; mas também seu sentido de performance, de transe, do ato mágico em que se conjuram, purificam e reorganizam energias, histórias e memórias. Na melhor tradição das religiões afro-brasileiras (e da própria arte), o artista usa tais atributos como forma de resistência: numa contribuição muito particular às práticas ditas descoloniais, recorre ao próprio remédio que os escravizados trouxeram da África para confrontar, sacudir e transmutar poeticamente o legado corpóreo e imaterial duradouro da escravidão.</p>
-            <p>Cobrindo um arco de tempo que se estende 2004 a 2018, esta seleção reafirma a coesão poética da obra de Heráclito e celebra sua presença marcante no Acervo Videobrasil, um reflexo dos diversos momentos em que o trajeto do artista atravessou nossas atividades. Das primeiras participações no Videobrasil, como <em>As mãos do epô,</em> exercício em torno do azeite do dendê, e <em>Barrueco</em>, alegoria da travessia do Atlântico realizada com Danilo Baratta, estende-se a <em>Funfun, </em>que lhe deu, em 2013, nosso prêmio de residência artística na Raw Material Company, em Dacar. Desse período no Senegal nasce <em>Sacudimentos</em>, que mostrou na 57ª Bienal de Veneza, em 2017, e a série <em>História do futuro</em>, ambas presentes aqui.</p>`,
+            content: `<p>O mundo dist&oacute;pico legado ao futuro pelo Antropoceno &eacute; um tema cr&iacute;tico para os artistas contempor&acirc;neos da Coreia do Sul. <em>Anthropocene: Brazil x Korea 2019-2020</em> traz para o Videobrasil Online, por dois meses, o melhor dessa produ&ccedil;&atilde;o. At&eacute; o fim de janeiro, uma sele&ccedil;&atilde;o de obras organizada por Juhyun Cho, curadora-chefe do Ilmin Museum of Art, em Seul, re&uacute;ne seis dos principais nomes da cena sul-coreana. Em fevereiro, vai ao ar uma individual da artista Ayung Kim, que representou a Coreia na 56&ordf; Bienal de Veneza.</p>
+            
+            <p>Pesquisadora associada do Center for Anthropocene Studies, KAIST, Juhyun Cho nutre especial interesse pela rela&ccedil;&atilde;o entre arte e novas m&iacute;dias, al&eacute;m de quest&otilde;es relacionadas &agrave; reconstitui&ccedil;&atilde;o da modernidade e da hist&oacute;ria. Suas curadorias incluem <em>do it 2017, Seoul</em> e <em>Flip Book: The Revolutionary Animations of the 21th Century</em> (2018).&nbsp;</p>
+            
+            <p>Em <em>Anthropocene</em>, ela re&uacute;ne anima&ccedil;&otilde;es, instala&ccedil;&otilde;es e v&iacute;deos que navegam pela zona de choque entre os futuros antevistos pela ci&ecirc;ncia, a tecnologia e o capital e aquele que de fato se apresenta. A crise da civiliza&ccedil;&atilde;o moderna e do ecossistema global &eacute; o subtexto das obras de Hayoun Kwon, Sanghee Song, Eunji Cho, Jeamin Cha, Minjung Song e Ji Hye Yeom, que contam hist&oacute;rias de amor e vingan&ccedil;a entre homem e natureza, exploram as fronteiras da experi&ecirc;ncia f&iacute;sica e exp&otilde;em a viol&ecirc;ncia da a&ccedil;&atilde;o que priva de significado aquilo que n&atilde;o pode domesticar. em seu <em>statement,</em> a curadora afirma: &ldquo;S&atilde;o artistas que operam na fronteira entre normalidade e aberra&ccedil;&atilde;o, em obras que, de formas diferentes, baseiam-se no documental&rdquo;.&nbsp;</p>
+            <p><em>Anthropocene: Korea x Brazil 2019-2020</em> &eacute; um projeto de coopera&ccedil;&atilde;o entre a Associa&ccedil;&atilde;o Cultural Videobrasil e o Ilmin Museum of Art. Realizado em parceria com o ARKO Fund (Arts Council Korea), celebra os sessenta anos do estabelecimento de rela&ccedil;&otilde;es diplom&aacute;ticas entre Brasil e Coreia do Sul. Teve in&iacute;cio com uma exposi&ccedil;&atilde;o de artistas brasileiros e sul-coreanos no Ilmin Museum of Art, organizada por Juhyun Cho e Solange Farkas, em 2019. A segunda exposi&ccedil;&atilde;o, que aconteceria em 2020 no Brasil, foi repensada em fun&ccedil;&atilde;o da pandemia do novo Coronav&iacute;rus, e chega agora ao Videobrasil Online, com apoio do Centro Cultural Coreano, que exibir&aacute; os programas em seu espa&ccedil;o em S&atilde;o Paulo.</p>`,
         },
         en: {
-            artist: 'Ayrson Heráclito',
-            title: 'Sacudimentos',
+            name: 'Anthropocene: Brazil x Korea 2019-2020',
+            subtitle: 'Curated by Juhyun Cho',
             partners: 'Partners',
-            link: '', //botão saibaMais desativado
             links: [
                 {
-                    text: 'Collection',
-                    url: 'http://site.videobrasil.org.br/en/acervo/artistas/artista/236665',
-                    blank: true,
+                    title: 'Hayoun Kwon',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/hayoun-kwon.jpg" /><strong>Hayoun Kwon</strong>. Borders are recurring elements in her work, from the border between North and South Korea, which she perceives as a theatre stage with limits that the spectator cannot transgress, to the question of the physical and mental limits of the individual. Winner of the Prix D&eacute;couverte des Amis du Palais de Tokyo in 2015, she received the first prize at the 62nd Oberhausen International Short Film Festival (2016), and the Arte Creative Newcomer Award at the European Media Art Festival (Osnabr&uuml;ck, 2014).'
                 },
                 {
-                    text: 'FF>>dossier',
-                    url: 'http://site.videobrasil.org.br/en/dossier/dossier/831604',
-                    blank: true,
+                    title: 'Sanghee Song',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/sanghee-song.jpg" /><strong>Sanghee Song</strong> transforms social situations and relational contexts and draws them into the subject of her works. Based on agile introspection and interest in the voices of others, she focuses on a wide range of topics such as personal experiences and identities related to Korean modernization, sex workers, myths and ecology. She participated in overseas residencies, had ten solo exhibitions, and received Hermes Foundation Art Prize (2008) and Korea Artist Prize (National Museum of Modern and Contemporary Art).'
                 },
                 {
-                    text: 'Article on Dakar residency',
-                    url: 'https://inresidence.videobrasil.org.br/2015/04/11/diario-de-dakar/',
-                    blank: true,
+                    title: 'Minjung Song',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/song-min-jung.jpg" /><strong>Minjung Song</strong> has participated in several group exhibition such as <em>Busan Biennale 2020: an exhibition in ten chapters and five poems </em>(Museum of Comtemporary Art Busan, 2020), <em>Night Turns to day</em> (Art Sonje Center, 2019), <em>Young Korean Artists 2019</em> (MMCA Korea, 2019), <em>PRO-TEST</em> (SeMA Bunker, 2019), <em>Dear Amazon</em>&nbsp; (Ilmin Museum of Art, 2019), and Asis Film and Videoart Forum (MMCA Korea, 2019). Her solo exhibitions include <em>COLD MOOD</em> <em>(1000% soft point)</em>, at Tastehouse, Seoul (2018).'
                 },
                 {
-                    text: 'Participation in the Now are we all black exhibition',
-                    url: 'http://site.videobrasil.org.br/en/exposicoes/galpaovb/agorasomostodxsnegrxs/',
-                    blank: true,
+                    title: 'Ji Hye Yeom',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/ji-hye-yeom.jpg" /><strong>Ji Hye Yeom</strong>. The artist&rsquo;s work is informed by intense travel experiences. Her collages, composed of real and virtual images alike, superimpose entities from different spaces and time sin order to address the imminent environmental destruction of the planet. Her recent exhibitions include <em>Tenacious Afterimage</em> (Doosan Gallery, New York, 2018), <em>Total Perspective Vortex</em> (Daegu Art Museum, 2018), <em>Imaginary Asia</em> (Nam June Paik Art Center, Yongin-Si, 2017), and <em>All Exies Have a Hidden Luck</em> (Art Sonje Center Project Space, Seoul, 2015).'
+                },
+                {
+                    title: 'Jeamin Cha',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/jaemin-cha.jpg" /><strong>Jeamin Cha</strong> works with film, performance, and installation. Her pieces are not constituted of synthesized images, but lens-based, and ask about the possibilities and helplessness of visual arts and documentaries. She approaches the reality of individuals through processes of interviews and field studies, and notes how society permeates their lives. She has participated in group exhibitions and festivals at Asia Culture Center, Barcelona Museum of Contemporary Art; and Berlin International Film Festival, among others.'
+                },
+                {
+                    title: 'Eunji Cho',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<strong>Eunji Cho</strong> activates the movement and inherent energy of urban remains, traces and suspended&nbsp;matters such as mud, stone and dust through performance, installation, intervention, and writing.&nbsp;She explores the slippage that arises when a modern subject enters another territory and&nbsp;becomes a minority, colonized, and the &ldquo;other.&rdquo; Cho uses a range of media&nbsp;including drawing, video, performance and installation. Her selected group exhibitions include&nbsp;<em>Walking Drifting Dragging</em>,&nbsp;New Museum,&nbsp;New York, 2013.'
                 },
             ],
-            content: `<p>The works of Ayrson Heráclito (Macaúbas – Bahia, 1968) are derived from the idea of the sacred as expressed in the rituals and symbols of Candomblé, the religion the artist has practiced for almost thirty years. The organic materials used in Afro-Brazilian rites contribute greatly to his work, and are taken to their plastic and semantic limits. The artist also explores the performative and trance-inducing qualities of Candomblé, as well as its magical character, which implies in the conjuring, purification and reorganization of energies, histories and memories. Following the tradition of Afro-Brazilian religions (and of art itself), the artist uses these very attributes as a form of resistance: in a very particular contribution to the so-called decolonial praxis, he resorts to the medicines brought by slaves from Africa to poetically confront, disrupt and transmute the lasting corporeal and immaterial legacy of slavery.</p>
-            <p>Spanning the period from 2004 to 2018, this selection reaffirms the poetic cohesion of Heráclito’s body of work and celebrates his remarkable presence in the Videobrasil Collection, reflecting several instances in which the artist’s professional carreer crossed paths with Videobrasil’s activities. His earliest participations in Videobrasil – with works such as <em>As mãos do epô</em>, an artistic exercise that explores the uses of <em>dendê</em> palm oil, and <em>Barrueco</em>, an allegory of the transatlantic slave crossings, produced in partnership with Danilo Baratta – paved the way for the creation of <em>Funfun</em>, which earned him the Videobrasil residency, in 2013, at the Raw Material Company, in Dakar. <em>Sacudimentos</em>, featured in the 57th Venice Biennale, in 2017, and <em>História do futuro</em>, both of which have also been made available here, were conceived during his residency in Dakar.</p>`,
+            content: `<p>The dystopian world that the Anthropocene will bequeath to the future is a crucial focal point for contemporary South Korean artists. <em>Anthropocene: Korea x Brazil 2019-2020</em> brings the best of this production to Videobrasil Online. Throughout January, the website features a selection of artworks by six major Korean video and film artists, organized by Juhyun Cho, head curator of the Ilmin Museum of Art, in Seoul. In February, it hosts a solo exhibition of works by artist Ayung Kim, who represented Korea at the 56th Venice Biennale.</p>
+            <p>An associate researcher at the Center for Anthropocene Studies, KAIST, Juhyun Cho takes a special interest in the relationship between art and new media, as well as issues related to the reconstitution of modernity and history. She has curated exhibitions such as <em>do it 2017,</em> <em>Seoul</em> and <em>Flip Book: The Revolutionary Animations of the 21</em><em>st</em><em> Century</em> (2018).</p>
+            <p>In <em>Anthropocene</em>, Cho brings together animations, installations, and videos that investigate the clash between the futures envisioned by science, technology, and capitalism, and the future as it actually presents itself. The crises of modern civilization and of the global ecosystem serve as subtexts in the works of Hayoun Kwon, Sanghee Song, Eunji Cho, Jeamin Cha, Minjung Song, and Ji Hye Yeom, which tell stories of love and vengeance between humans and nature, explore the frontiers of physical experience, and expose the violent acts which strip all that is untamable of any possible meaning. According to the curator&rsquo;s statement, &ldquo;these artists work on the boundary that distinguishes between normality and abnormality through various forms of documentary-based works.&rdquo;</p>
+            <p><em>Anthropocene: Korea x Brazil 2019-2020</em> is a collaborative project by Associa&ccedil;&atilde;o Cultural Videobrasil and Ilmin Museum of Art, in Seoul, in partnership with ARKO Fund (Arts Council Korea). It celebrates 60 years of diplomatic relations between Brazil and South Korea. The project started out with an exhibition held in 2019 at the Ilmin Museum of Art, with works by Brazilian and South Korean artists, curated by Juhyun Cho and Solange Farkas. A second exhibition, scheduled to happen in Brazil in 2020, was adapted for online viewing due to the ongoing Covid-19 pandemic. It is featured at Videobrasil Online with the support of Korean Cultural Center, and will also be screened in its S&atilde;o Paulo venue.</p>`,
         },
     };
 

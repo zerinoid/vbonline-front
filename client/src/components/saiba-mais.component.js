@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import { css, jsx } from '@emotion/core';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -13,24 +14,51 @@ import fechar from '../assets/img/fecharVerm.png';
 export default function SaibaMais(props) {
 
     const [saibaMaisState, setSaibaMaisState] = useState({ data: null });
+    const [replacementText, setReplacementText] = useState("");
+    const linksRef = useRef(null);
 
-    // insert html from backend
-    const createMarkup = (markup) => {
-        return { __html: markup };
-    };
-
-    const linkHandler = (event, link, data) => {
-        if(data.replace_text){
-            event.preventDefault();
-            console.log(link);
-        }
-    }
-
+    // Get data
     useEffect(() => {
         axios.get('/api/saibamais').then((res) => {
             setSaibaMaisState({ data: res.data });
         });
     }, []);
+    
+    // Set initial replacement text
+    useEffect(() => {
+        if(saibaMaisState.data){
+            setReplacementText(
+                saibaMaisState.data[props.lang].content
+            )
+        }
+    }, [saibaMaisState, props.lang]);
+    
+    // Insert html from backend
+    const createMarkup = (markup) => {
+        return { __html: markup };
+    };
+
+    // Link handler for text replacement
+    const textReplacementHandler = (event, link, data, list, index) => {
+
+        if(data.replaceText){
+
+            event.preventDefault();
+            setReplacementText(link.textReplacement);
+
+            let currentList = ReactDOM.findDOMNode(list.current);
+
+            // All elements
+            let links = currentList.querySelectorAll(`li a`)
+            // Clicked element
+            let clickedLink = currentList.querySelectorAll(`li[id="${index}"] a`)[0]
+            // Clear bold
+            links.forEach(link => link.style = "");
+            // Bold clicked element
+            clickedLink.style.fontWeight = "bold";
+
+        }
+    }
 
     return (
         <div className="sobre">
@@ -96,24 +124,22 @@ export default function SaibaMais(props) {
                         <AboutSection className="sobre-conteudo-wrapper">
                             <div
                                 className="sobre-conteudo"
-                                dangerouslySetInnerHTML={createMarkup(
-                                    saibaMaisState.data[props.lang].content
-                                )}
+                                dangerouslySetInnerHTML={createMarkup(replacementText)}
                             />
                             <div className="veja-mais-wrapper">
-                                <ul className="veja-mais">
+                                <ul className="veja-mais" ref={linksRef}>
                                     {saibaMaisState.data[
                                         props.lang
                                     ].links.map((value, index) => (
-                                        <li key={index}>
+                                        <li key={index} id={index}>
                                             <a
                                                 href={value.url}
                                                 target={
-                                                    (value.blank && !saibaMaisState.data.replace_text)
+                                                    (value.blank && !saibaMaisState.data.replaceText)
                                                         ? '_blank'
                                                         : '_self'
                                                 }
-                                                onClick={(event) => linkHandler(event, value, saibaMaisState.data)}
+                                                onClick={(event) => textReplacementHandler(event, value, saibaMaisState.data, linksRef, index)}
                                             >
                                                 {value.title}
                                             </a>

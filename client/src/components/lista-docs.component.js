@@ -85,9 +85,16 @@ export default function ListaDocs(props) {
     });
 
     // #1 set current video
-    const playerHandler = (videoId, isProgram = false, group = null) => {
+    const playerHandler = (videoId, isProgram = false, group = null, main = false) => {
         if(isProgram && group !== null){
-            setVideoList(group[videoId]);
+            if(main){
+                let arr = [];
+                arr[0] = group[0];
+                setVideoList(arr);
+            } else {
+                setVideoList(group[videoId]);
+            }
+
         } else {
             let videoFilter = videoList.filter((video) => video.id == videoId)[0];
             setCurrentVideo(videoFilter);
@@ -148,12 +155,12 @@ export default function ListaDocs(props) {
     };
 
     let absoluteStyle = {
-        padding: '14% 16%',
+        padding: '0 16%',
+        transform: 'translateY(-50%)',
         position: 'absolute',
-        top: 0,
+        top: '50%',
         left: 0,
         width: '100%',
-        height: '100%',
         cursor: 'pointer',
         [BP.small]: {
             padding: '20% 10%',
@@ -261,6 +268,9 @@ export default function ListaDocs(props) {
         const absoluteStyleThumb = {
             ...absoluteStyle,
             padding: '0.33rem',
+            top: 0,
+            height: '100%',
+            transform: 'unset',
             display: 'flex',
             justifyContent: 'space-between',
             [BP.small]: null,
@@ -337,28 +347,28 @@ export default function ListaDocs(props) {
 
     if (videoList && videoList.length > 0) {
         // Main video
-
         const main = videoList[0];
-        const main_video = [
-            <MainPreview
-                bg={main[lang].poster}
-                key={0}
-                onClick={(e) => playerHandler(main.id)}
-            >
-                {main[lang].title}
-                {props.lista.data.season[lang].title
-                    ? props.lista.data.season[lang].title
-                    : main[lang].subtitle}
-            </MainPreview>,
-        ];
+        let main_video = [];
 
         // Thumbs
-
         let videos = [];
         const groupPrograms = props.lista.data.group_programs;
 
         // Group programs
         if(groupPrograms){
+
+            main_video.push(
+                <MainPreview
+                    bg={main[lang].poster}
+                    key={0}
+                    onClick={(e) => playerHandler(main.id, true, [main], true)}
+                >
+                    {main[lang].title}
+                    {props.lista.data.season[lang].title
+                        ? props.lista.data.season[lang].title
+                        : main[lang].subtitle}
+                </MainPreview>
+            );
 
             const programs = props.lista.data.programs;
             let groupedVideos = [];
@@ -374,16 +384,18 @@ export default function ListaDocs(props) {
 
                 videos.push(
                     programs.map((program, index) => {
-                        return (
-                            <ThumbPreview
-                                bg={program[lang].poster}
-                                key={index}
-                                onClick={() => playerHandler(program.id, true, groupedVideos)}
-                            >
-                                <h5>{program[lang].title}</h5>
-                                <p>{program[lang].category}</p>
-                            </ThumbPreview>
-                        );
+                        if(program.id !== 0){
+                            return (
+                                <ThumbPreview
+                                    bg={program[lang].poster}
+                                    key={index}
+                                    onClick={() => playerHandler(program.id, true, groupedVideos)}
+                                >
+                                    <h5>{program[lang].title}</h5>
+                                    <p>{program[lang].category}</p>
+                                </ThumbPreview>
+                            );
+                        }
                     })
                 );
             }
@@ -391,6 +403,20 @@ export default function ListaDocs(props) {
         }
         // Regular program (ungrouped) 
         else {
+
+            main_video.push(
+                <MainPreview
+                    bg={main[lang].poster}
+                    key={0}
+                    onClick={(e) => playerHandler(main.id)}
+                >
+                    {main[lang].title}
+                    {props.lista.data.season[lang].title
+                        ? props.lista.data.season[lang].title
+                        : main[lang].subtitle}
+                </MainPreview>
+            );
+
             if (videoList.length > 1) {
                 videos.push(
                     videoList.map((value, index) => {
@@ -414,11 +440,15 @@ export default function ListaDocs(props) {
         }
 
         if (!showPlayer) {
+
+            const slidesLength = groupPrograms ? (props.lista.data.programs.length - 1) : videoList.length;
+            const slidesToShow = slidesLength >= 3 ? 3 : slidesLength;
+
             let slickOptions = {
                 dots: false,
                 infinite: false,
                 speed: 500,
-                slidesToShow: 3,
+                slidesToShow: slidesToShow,
                 slidesToScroll: 1,
                 nextArrow: <NextArrow />,
                 prevArrow: <PrevArrow />,
