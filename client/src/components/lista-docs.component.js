@@ -155,12 +155,12 @@ export default function ListaDocs(props) {
     };
 
     let absoluteStyle = {
-        padding: '14% 16%',
+        padding: '0 16%',
+        transform: 'translateY(-50%)',
         position: 'absolute',
-        top: 0,
+        top: '50%',
         left: 0,
         width: '100%',
-        height: '100%',
         cursor: 'pointer',
         [BP.small]: {
             padding: '20% 10%',
@@ -268,6 +268,9 @@ export default function ListaDocs(props) {
         const absoluteStyleThumb = {
             ...absoluteStyle,
             padding: '0.33rem',
+            top: 0,
+            height: '100%',
+            transform: 'unset',
             display: 'flex',
             justifyContent: 'space-between',
             [BP.small]: null,
