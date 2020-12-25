@@ -66,7 +66,7 @@ exports.getListaDocs = (req, res, next) => {
                 order: 1,
                 program: 0,
                 pt: {
-                    title: 'ANTHROPOCENE:\nBRAZIL X KOREA',
+                    title: 'ANTHROPOCENE:\nBRAZIL X KOREA\n2019-2020',
                     subtitle: 'Curadoria por Juhyun Cho',
                     poster: '/img/brkorea/brkorea_main.jpg',
                     thumb: '/img/brkorea/brkorea_main.jpg',
