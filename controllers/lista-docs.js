@@ -67,7 +67,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 0,
                 pt: {
                     title: 'ANTHROPOCENE:\nBRAZIL X KOREA\n2019-2020',
-                    subtitle: 'Curadoria por Juhyun Cho',
+                    subtitle: 'Curadoria Juhyun Cho',
                     poster: '/img/brkorea/brkorea_main.jpg',
                     thumb: '/img/brkorea/brkorea_main.jpg',
                     category: '',
@@ -94,7 +94,7 @@ exports.getListaDocs = (req, res, next) => {
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008466482_236x133.jpg',
-                    category: '11’18”',
+                    category: 'Hayoun Kwon',
                     specs: `<p>2016 | 11’18”<br />
                     Single channel video, color, stereo</p>`,
                     caption: `<p>Baseado no testemunho de um ex-soldado coreano, o vídeo nos mergulha no coração de suas memórias pessoais. Ele relata sua experiência em uma missão exploratória e a incrível descoberta que fez em um campo minado. Fala de um lugar onde não é permitido entrar e a natureza recobrou totalmente seu domínio.</p>`,
