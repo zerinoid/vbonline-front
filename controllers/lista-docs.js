@@ -66,7 +66,7 @@ exports.getListaDocs = (req, res, next) => {
                 order: 1,
                 program: 0,
                 pt: {
-                    title: 'ANTHROPOCENE:\nBRAZIL X KOREA\n2019-2020',
+                    title: 'ANTHROPOCENE:\nKOREA X BRAZIL\n2019-2021',
                     subtitle: 'Curadoria Juhyun Cho',
                     poster: '/img/brkorea/brkorea_main.jpg',
                     thumb: '/img/brkorea/brkorea_main.jpg',
@@ -75,7 +75,7 @@ exports.getListaDocs = (req, res, next) => {
                     caption: ``,
                 },
                 en: {
-                    title: 'ANTHROPOCENE: BRAZIL X KOREA 2019-2020',
+                    title: 'ANTHROPOCENE: KOREA X BRAZIL\n2019-2021',
                     subtitle: 'Curated by Juhyun Cho',
                     poster: '/img/brkorea/brkorea_main.jpg',
                     thumb: '/img/brkorea/brkorea_main.jpg',
@@ -96,7 +96,7 @@ exports.getListaDocs = (req, res, next) => {
                     thumb: 'https://i.vimeocdn.com/video/1008466482_236x133.jpg',
                     category: 'Hayoun Kwon',
                     specs: `<p>2016 | 11’18”<br />
-                    Single channel video, color, stereo</p>`,
+                    Vídeo, cor, estéreo</p>`,
                     caption: `<p>Baseado no testemunho de um ex-soldado coreano, o vídeo nos mergulha no coração de suas memórias pessoais. Ele relata sua experiência em uma missão exploratória e a incrível descoberta que fez em um campo minado. Fala de um lugar onde não é permitido entrar e a natureza recobrou totalmente seu domínio.</p>`,
                 },
                 en: {
@@ -107,7 +107,7 @@ exports.getListaDocs = (req, res, next) => {
                     thumb: 'https://i.vimeocdn.com/video/1008466482_236x133.jpg',
                     category: 'Hayoun Kwon',
                     specs: `<p>2016 | 11’18”<br />
-                    Vídeo, cor, estéreo</p>`,
+                    Single channel video, color, stereo</p>`,
                     caption: `<p>Transcribed according to the testimony of a former soldier in South Korea, Kim, the video immerses us in the heart of his personal memory. He tells us his experience in a research mission and the amazing discovery he made in afield full of mines. He speaks of a place where people are forbidden and nature has totally reclaimed its hold.</p>`,
                 },
             },
@@ -151,7 +151,7 @@ exports.getListaDocs = (req, res, next) => {
                     category: 'Sanghee Song',
                     specs: `<p>2014 | 34'28"<br />
                     Videoinstalação single-channel, cor, estéreo</p>`,
-                    caption: `<p>Uma história distópica e irônica, baseada na premissa ficcional de que, por trás de uma fachada comum e pacífica, uma força obscura espreita, conspirando para submeter a humanidade a uma lavagem cerebral. A artista explora a cidade de Anyang, cujo nome sugere um lugar feliz e apaziguado, e ideias de <em>Admirável mundo novo</em>, de Aldous Huxley, e 1984, de George Orwell.</p>`,
+                    caption: `<p>Uma história distópica e irônica, baseada na premissa ficcional de que, por trás de uma fachada comum e pacífica, uma força obscura espreita, conspirando para submeter a humanidade a uma lavagem cerebral. A artista explora a cidade de Anyang, cujo nome sugere um lugar feliz e apaziguado, e ideias de <em>Admirável mundo novo</em>, de Aldous Huxley, e <em>1984</em>, de George Orwell.</p>`,
                 },
                 en: {
                     title: 'Anyang, at the Dawn of the Day',
@@ -162,7 +162,7 @@ exports.getListaDocs = (req, res, next) => {
                     category: 'Sanghee Song',
                     specs: `<p>2014 | 34'28"<br />
                     Single-channel video installation, color, stereo</p>`,
-                    caption: `<p>A playful story of a dystopia, based on the fictional premise that behind an ordinary and peaceful façade lurks a dark force that conspires to brainwash the human race. The artist explores Anyang–a city whose name suggests a blissful and peaceful place–and ideas from <em>Brave New World</em>, by Aldous Huxley, and 1984, by George Orwell.</p>`,
+                    caption: `<p>A playful story of a dystopia, based on the fictional premise that behind an ordinary and peaceful façade lurks a dark force that conspires to brainwash the human race. The artist explores Anyang–a city whose name suggests a blissful and peaceful place–and ideas from <em>Brave New World</em>, by Aldous Huxley, and <em>1984</em>, by George Orwell.</p>`,
                 },
             },
             {
@@ -204,7 +204,7 @@ exports.getListaDocs = (req, res, next) => {
                     thumb: 'https://i.vimeocdn.com/video/1011821766_236x133.jpg',
                     category: 'Ji Hye Yeom',
                     specs: `<p>2018 | 17'08"<br />
-                    Single channel video, color, stereo</p>`,
+                    Vídeo, cor, estéreo</p>`,
                     caption: `<p>A sensação de crise, urgência e inferioridade em relação ao futuro foi recorrente no passado. Os futuristas italianos do começo do século 20 defendiam uma entrada assertiva no futuro; isso ecoava o fascismo da época, que falava em “criar uma nova sociedade”. Agora enfrentamos a epidemia contemporânea da “febre do futuro”, crença aguerrida em um progresso que depende de vencer a corrida da alta tecnologia. Para onde vamos, exatamente?</p>`,
                 },
                 en: {
@@ -232,7 +232,7 @@ exports.getListaDocs = (req, res, next) => {
                     category: 'Ji Hye Yeom',
                     specs: `<p>2015 | 21'36"<br />
                     Vídeo, cor, estéreo</p>`,
-                    caption: `<p>Baseado na minha experiência de encontrar um boto cor-de-rosa na Amazônia, o trabalho tem quatro camadas: uma lenda do folclore sobre o animal; a história colonial da região; meu relato pessoal do encontro; e as forças do capitalismo em ação, que se revelam na imagem de botos sendo consumidos e absorvidos.</p>`,
+                    caption: `<p>Baseado na experiência de encontrar um boto cor-de-rosa na Amazônia, o trabalho tem quatro camadas: uma lenda do folclore sobre o animal; a história colonial da região; um relato pessoal do encontro; e as forças do capitalismo em ação, que se revelam na imagem de botos sendo consumidos e absorvidos.</p>`,
                 },
                 en: {
                     title: 'A Night with a Pink Dolphin',
@@ -243,7 +243,7 @@ exports.getListaDocs = (req, res, next) => {
                     category: 'Ji Hye Yeom',
                     specs: `<p>2015 | 21'36"<br />
                     Single channel video, color, stereo</p>`,
-                    caption: `<p>Based on my experience of encountering a pink dolphin in the Amazon, the work consists of four tiers: a folk legend about these animals, the region’s surrounding colonial history, a personal narrative of the encounter, and the operating forces of capitalism revealed through the representation of pink dolphins being consumed and absorbed.</p>`,
+                    caption: `<p>Based on the experience of encountering a pink dolphin in the Amazon, the work consists of four tiers: a folk legend about these animals, the region’s surrounding colonial history, a personal narrative of the encounter, and the operating forces of capitalism revealed through the representation of pink dolphins being consumed and absorbed.</p>`,
                 },
             },
             {
@@ -332,7 +332,7 @@ exports.getListaDocs = (req, res, next) => {
                 order: 11,
                 program: 2,
                 pt: {
-                    title: 'Song for the shooting Star',
+                    title: 'Song for the Shooting Star',
                     subtitle: '',
                     title_box: '',
                     poster: '',
@@ -343,7 +343,7 @@ exports.getListaDocs = (req, res, next) => {
                     caption: `<p>Uma zona de meretrício em Seoul, erguida nos anos 1960, caiu em ruína, e hoje é um espaço vazio e desarticulado, sem janela que divida dentro e fora, sem portas para salas ou corredores. Sem separação de opostos, revela que o outro é inseparável. A lama atirada mostra um espaço descartado por um sistema incapaz de domesticá-lo – o resto nunca incorporado nem devidamente velado.</p>`,
                 },
                 en: {
-                    title: 'Song for the shooting Star',
+                    title: 'Song for the Shooting Star',
                     subtitle: '',
                     title_box: '',
                     poster: '',
@@ -366,7 +366,7 @@ exports.getListaDocs = (req, res, next) => {
                     thumb: 'https://i.vimeocdn.com/video/1008343956_236x133.jpg',
                     category: 'Minjung Song',
                     specs: `<p>2020 |  22’23”<br />
-                    Single channel video, color, stereo</p>`,
+                    Vídeo, cor, estéreo</p>`,
                     caption: `<p>Nesse thriller de vingança, uma pessoa que perdeu seu corpo físico por causa de dados manipulados vivencia um mundo diferente como anônimo, fantasma, e enfrenta as contradições e as verdades de viver em uma cidade com um corpo estranho. O trabalho contempla um mundo onde físico e não físico se misturam.</p>`,
                 },
                 en: {
