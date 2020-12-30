@@ -170,7 +170,7 @@ export default function ListaDocs(props) {
 
     const BasePreview = styled.div`
         width: 100%;
-        padding-bottom: ${['curadoria', 'curatorship'].includes(season) ? '34.695%' : '40.1%'};
+        padding-bottom: ${['curador', 'curator'].includes(season) ? '34.695%' : '40.1%'};
         margin-bottom: 0.5%;
         background: url(${(props) => props.bg}) center/cover no-repeat;
         color: white;
@@ -284,7 +284,7 @@ export default function ListaDocs(props) {
                     padding-bottom: 11.1%;
                     display: inline-block;
                     margin-bottom: 0;
-                    height: ${['curadoria', 'curatorship'].includes(season) ? '14.317vw' : '9.5vw'};
+                    height: ${['curador', 'curator'].includes(season) ? '14.317vw' : '9.5vw'};
                     p {
                         font: normal 0.8em FedraMono;
                     }
@@ -482,6 +482,7 @@ export default function ListaDocs(props) {
                         currentVideo={currentVideo}
                         groupPrograms={groupPrograms}
                         lang={lang}
+                        seasonType={season}
                     />
                 );
             }

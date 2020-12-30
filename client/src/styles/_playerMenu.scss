@@ -17,6 +17,10 @@
         margin-left: 0;
         margin-right: 0;
     }
+
+    .artist-link {
+        text-decoration: underline;
+    }
 }
 
 .play-item {
@@ -77,7 +81,7 @@
 
 .chart-title {
     font-weight: bold;
-    text-decoration: underline;
+    // text-decoration: underline;
 }
 
 .chart-caption {

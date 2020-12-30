@@ -1,12 +1,17 @@
+const seasonType = {
+    pt: 'curador',
+    en: 'curator',
+};
+
 exports.getListaDocs = (req, res, next) => {
     data = {
         season: {
             pt: {
-                type: 'curadoria',
+                type: seasonType['pt'],
                 title: '' // if filled, value is shown in the main preview's subtitle
             },
             en: {
-                type: 'curatorship',
+                type: seasonType['en'],
                 title: ''
             },
         },
@@ -69,6 +74,7 @@ exports.getListaDocs = (req, res, next) => {
                 pt: {
                     title: 'ANTHROPOCENE:\nKOREA X BRAZIL\n2019-2021',
                     subtitle: 'Curadoria Juhyun Cho',
+                    title_box: '', // Replaces title in player (info button)
                     poster: '/img/brkorea/brkorea_main.jpg',
                     thumb: '/img/brkorea/brkorea_main.jpg',
                     category: '',
@@ -78,6 +84,7 @@ exports.getListaDocs = (req, res, next) => {
                 en: {
                     title: 'ANTHROPOCENE: KOREA X BRAZIL\n2019-2021',
                     subtitle: 'Curated by Juhyun Cho',
+                    title_box: '',
                     poster: '/img/brkorea/brkorea_main.jpg',
                     thumb: '/img/brkorea/brkorea_main.jpg',
                     category: '',
@@ -91,7 +98,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 1,
                 pt: {
                     title: '489 Years',
-                    subtitle: '',
+                    subtitle: 'Parte 1 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008466482_236x133.jpg',
@@ -102,7 +109,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: '489 Years',
-                    subtitle: '',
+                    subtitle: 'Part 1 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008466482_236x133.jpg',
@@ -118,7 +125,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 1,
                 pt: {
                     title: 'Lack of Evidence',
-                    subtitle: '',
+                    subtitle: 'Parte 1 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011771352_236x133.jpg',
@@ -129,7 +136,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Lack of Evidence',
-                    subtitle: '',
+                    subtitle: 'Part 1 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011771352_236x133.jpg',
@@ -145,7 +152,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 1,
                 pt: {
                     title: 'Anyang, at the Dawn of the Day',
-                    subtitle: '',
+                    subtitle: 'Parte 1 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011795298_236x133.jpg',
@@ -156,7 +163,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Anyang, at the Dawn of the Day',
-                    subtitle: '',
+                    subtitle: 'Part 1 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011795298_236x133.jpg',
@@ -172,7 +179,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 1,
                 pt: {
                     title: 'The 16th book of Metamorphoses: The love story of Khora Plesiosaurus & Leviathan',
-                    subtitle: '',
+                    subtitle: 'Parte 1 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008334726_236x133.jpg',
@@ -183,7 +190,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'The 16th book of Metamorphoses: The love story of Khora Plesiosaurus & Leviathan',
-                    subtitle: '',
+                    subtitle: 'Part 1 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008334726_236x133.jpg',
@@ -199,7 +206,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Future Fever',
-                    subtitle: '',
+                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011821766_236x133.jpg',
@@ -210,7 +217,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Future Fever',
-                    subtitle: '',
+                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011821766_236x133.jpg',
@@ -226,7 +233,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'A Night with a Pink Dolphin',
-                    subtitle: '',
+                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011823335_236x133.jpg',
@@ -237,7 +244,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'A Night with a Pink Dolphin',
-                    subtitle: '',
+                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011823335_236x133.jpg',
@@ -253,7 +260,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Sound Garden',
-                    subtitle: '',
+                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008460672_236x133.jpg',
@@ -264,7 +271,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Sound Garden',
-                    subtitle: '',
+                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008460672_236x133.jpg',
@@ -280,7 +287,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Ellie’s Eye',
-                    subtitle: '',
+                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008337780_236x133.jpg',
@@ -291,7 +298,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Ellie’s Eye',
-                    subtitle: '',
+                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008337780_236x133.jpg',
@@ -307,7 +314,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Cow Bathing for Spring Day',
-                    subtitle: '',
+                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008458685_236x133.jpg',
@@ -318,7 +325,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Cow Bathing for Spring Day',
-                    subtitle: '',
+                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008458685_236x133.jpg',
@@ -334,7 +341,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Song for the Shooting Star',
-                    subtitle: '',
+                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008491329_236x133.jpg',
@@ -345,7 +352,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Song for the Shooting Star',
-                    subtitle: '',
+                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008491329_236x133.jpg',
@@ -361,7 +368,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Wild Seed',
-                    subtitle: '',
+                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008343956_236x133.jpg',
@@ -372,7 +379,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Wild Seed',
-                    subtitle: '',
+                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008343956_236x133.jpg',

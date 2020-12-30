@@ -29,6 +29,7 @@ const UpperBar = (props) => {
                 closePlayer={props.closePlayer}
                 enterFullScreen={props.enterFullScreen}
                 goToVideo={props.goToVideo}
+                seasonType={props.seasonType}
             />
         </Row>
     );

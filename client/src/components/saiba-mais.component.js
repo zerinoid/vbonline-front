@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import queryString from 'query-string';
 import { css, jsx } from '@emotion/core';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -17,10 +18,14 @@ export default function SaibaMais(props) {
     const [replacementText, setReplacementText] = useState("");
     const [saibaMaisTitle, setSaibaMaisTitle] = useState("");
     const [saibaMaisSubTitle, setSaibaMaisSubTitle] = useState("");
-    const linksRef = useRef(null);
+    const [urlQuery, setUrlQuery] = useState(null);
+
+    const listRef = useRef(null);
+    const linkRef = useRef(null);
 
     // Get data
     useEffect(() => {
+        setUrlQuery(queryString.parse(props.location.search));
         axios.get('/api/saibamais').then((res) => {
             setSaibaMaisState({ data: res.data });
         });
@@ -40,6 +45,13 @@ export default function SaibaMais(props) {
             );
         }
     }, [saibaMaisState, props.lang]);
+
+    // Navigate to sidebar item programatically (simulate click)
+    useEffect(() => {
+        if(linkRef.current !== null){
+            linkRef.current.click();
+        }
+    }, [linkRef.current]);
     
     // Insert html from backend
     const createMarkup = (markup) => {
@@ -47,11 +59,18 @@ export default function SaibaMais(props) {
     };
 
     // Update title if text replacement is enabled
-    const titleHandler = (newTitle, reset = false) => {
+    const titleHandler = (newTitle, list, reset = false) => {
         setSaibaMaisTitle(newTitle);
         if(reset){
             setSaibaMaisSubTitle(saibaMaisState.data[props.lang].subtitle);
             setReplacementText(saibaMaisState.data[props.lang].content);
+
+            // Clear bold
+            let currentList = ReactDOM.findDOMNode(list.current);
+            if(currentList){
+                currentList.querySelectorAll(`li a`)
+                    .forEach(link => link.style = "");
+            }
         } else {
             setSaibaMaisSubTitle(<span css={{color:'white'}}>_</span>);
         }
@@ -62,23 +81,27 @@ export default function SaibaMais(props) {
 
         if(data.replaceText){
 
-            event.preventDefault();
+            if(event){
+                event.preventDefault();
+            }
+
             setReplacementText(link.textReplacement);
 
             let currentList = ReactDOM.findDOMNode(list.current);
 
-            // All elements
-            let links = currentList.querySelectorAll(`li a`)
-            // Clicked element
-            let clickedLink = currentList.querySelectorAll(`li[id="${index}"] a`)[0]
-            // Clear bold
-            links.forEach(link => link.style = "");
-            // Bold clicked element
-            clickedLink.style.fontWeight = "bold";
+            if(currentList){
+                // All elements
+                let links = currentList.querySelectorAll(`li a`)
+                // Clicked element
+                let clickedLink = currentList.querySelectorAll(`li[id="${index}"] a`)[0]
+                // Clear bold
+                links.forEach(link => link.style = "");
+                // Bold clicked element
+                clickedLink.style.fontWeight = "bold";
 
-            // Update title and subtitle
-            titleHandler(clickedLink.innerHTML);
-
+                // Update title and subtitle
+                titleHandler(clickedLink.innerHTML);
+            }
         }
     }
 
@@ -142,20 +165,23 @@ export default function SaibaMais(props) {
                                 dangerouslySetInnerHTML={createMarkup(replacementText)}
                             />
                             <div className="veja-mais-wrapper">
-                                <ul className="veja-mais" ref={linksRef}>
-                                    {/* If replaceText is enabled, set first item */}
+                                <ul className="veja-mais" ref={listRef}>
+
+                                    {/* If replaceText is enabled, set first item with programme name*/}
                                     {saibaMaisState.data.replaceText ? 
                                         <li 
                                             css={{fontWeight: 'bold', cursor: 'pointer'}}
                                             onClick={() => titleHandler(
                                                 saibaMaisState.data[props.lang].name,
+                                                listRef,
                                                 true
                                             )}
                                         >{saibaMaisState.data[props.lang].name}</li> : null}
+                                    
                                     {saibaMaisState.data[
                                         props.lang
-                                    ].links.map((value, index) => (
-                                        <li key={index} id={index}>
+                                    ].links.map((value, index) => 
+                                        (<li key={index} id={index}>
                                             <a
                                                 href={value.url}
                                                 target={
@@ -163,12 +189,20 @@ export default function SaibaMais(props) {
                                                         ? '_blank'
                                                         : '_self'
                                                 }
-                                                onClick={(event) => textReplacementHandler(event, value, saibaMaisState.data, linksRef, index)}
+                                                ref={
+                                                    saibaMaisState.data.replaceText &&
+                                                    urlQuery !== null && 
+                                                    urlQuery['artist'] && 
+                                                    value.title.toLowerCase() === urlQuery['artist'].toLowerCase()
+                                                    ? linkRef
+                                                    : null
+                                                }
+                                                onClick={(event) => textReplacementHandler(event, value, saibaMaisState.data, listRef, index)}
                                             >
                                                 {value.title}
                                             </a>
-                                        </li>
-                                    ))}
+                                        </li>)
+                                    )}
                                 </ul>
                             </div>
                         </AboutSection>

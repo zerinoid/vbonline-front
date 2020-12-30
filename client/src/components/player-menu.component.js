@@ -178,6 +178,14 @@ const PlayerMenu = (props) => {
         slidesToScroll: 1,
     };
 
+    // Add link to artist bio in saibaMais sidebar if season type is "curator"
+    let artistLink = null;
+    if(["curador", "curator"].includes(props.seasonType)){
+        artistLink = <a className={"artist-link"} href={
+            `/saibamais?artist=${props.vimeoOptions.current_video[props.lang].category}`
+        }>{props.vimeoOptions.current_video[props.lang].category}</a>
+    }
+
     return (
         <Col
             className="player-menu"
@@ -212,6 +220,9 @@ const PlayerMenu = (props) => {
                                       ].title
                             )}
                         ></p>
+
+                        {artistLink}
+
                         <div
                             className="chart-caption"
                             dangerouslySetInnerHTML={createMarkup(

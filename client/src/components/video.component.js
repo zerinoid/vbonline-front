@@ -166,6 +166,7 @@ const VideoPlayer = (props) => {
                 closePlayer={closePlayer}
                 enterFullScreen={enterFullScreen}
                 goToVideo={() => goToVideo(nextVideo.id)}
+                seasonType={props.seasonType}
             />
         </div>
     );
