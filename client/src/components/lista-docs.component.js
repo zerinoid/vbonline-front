@@ -71,6 +71,7 @@ function arraysEqual(a, b) {
 
 export default function ListaDocs(props) {
     const lang = props.lang ? props.lang : 'pt';
+    const season = props.lista.data.season[lang].type;
     const isMobile = useMediaQuery({ query: '(max-width: 767.99px)' });
 
     const [showPlayer, setShowPlayer] = useState(false);
@@ -163,13 +164,13 @@ export default function ListaDocs(props) {
         width: '100%',
         cursor: 'pointer',
         [BP.small]: {
-            padding: '20% 10%',
+            padding: '0 10%',
         },
     };
 
     const BasePreview = styled.div`
         width: 100%;
-        padding-bottom: 40.1%;
+        padding-bottom: ${['curadoria', 'curatorship'].includes(season) ? '34.695%' : '40.1%'};
         margin-bottom: 0.5%;
         background: url(${(props) => props.bg}) center/cover no-repeat;
         color: white;
@@ -283,7 +284,7 @@ export default function ListaDocs(props) {
                     padding-bottom: 11.1%;
                     display: inline-block;
                     margin-bottom: 0;
-                    height: 9.5vw;
+                    height: ${['curadoria', 'curatorship'].includes(season) ? '14.317vw' : '9.5vw'};
                     p {
                         font: normal 0.8em FedraMono;
                     }

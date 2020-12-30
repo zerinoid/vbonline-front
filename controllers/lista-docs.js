@@ -3,7 +3,7 @@ exports.getListaDocs = (req, res, next) => {
         season: {
             pt: {
                 type: 'curadoria',
-                title: ''
+                title: '' // if filled, value is shown in the main preview's subtitle
             },
             en: {
                 type: 'curatorship',
