@@ -226,7 +226,7 @@ export default function SaibaMais(props) {
                                         display: flex;
                                         justify-content: space-between;
                                         width: ${saibaMaisState.data
-                                            .partnersLogos.length * 4}vw;
+                                            .partnersLogos.length * 6}vw;
                                         img {
                                             height: 3.2vw;
                                         }
@@ -243,11 +243,13 @@ export default function SaibaMais(props) {
                                 >
                                     {saibaMaisState.data.partnersLogos.map(
                                         (value, index) => (
-                                            <img
+                                            <a href={value.url} target="_blank">
+                                                <img
                                                 alt=""
-                                                src={value}
+                                                src={value.img}
                                                 key={index}
                                             />
+                                            </a>
                                         )
                                     )}
                                 </div>
