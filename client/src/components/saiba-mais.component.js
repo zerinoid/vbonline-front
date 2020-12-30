@@ -15,6 +15,8 @@ export default function SaibaMais(props) {
 
     const [saibaMaisState, setSaibaMaisState] = useState({ data: null });
     const [replacementText, setReplacementText] = useState("");
+    const [saibaMaisTitle, setSaibaMaisTitle] = useState("");
+    const [saibaMaisSubTitle, setSaibaMaisSubTitle] = useState("");
     const linksRef = useRef(null);
 
     // Get data
@@ -24,12 +26,18 @@ export default function SaibaMais(props) {
         });
     }, []);
     
-    // Set initial replacement text
+    // Set initial title and replacement text
     useEffect(() => {
         if(saibaMaisState.data){
             setReplacementText(
                 saibaMaisState.data[props.lang].content
-            )
+            );
+            setSaibaMaisTitle(
+                saibaMaisState.data[props.lang].name
+            );
+            setSaibaMaisSubTitle(
+                saibaMaisState.data[props.lang].subtitle
+            );
         }
     }, [saibaMaisState, props.lang]);
     
@@ -37,6 +45,17 @@ export default function SaibaMais(props) {
     const createMarkup = (markup) => {
         return { __html: markup };
     };
+
+    // Update title if text replacement is enabled
+    const titleHandler = (newTitle, reset = false) => {
+        setSaibaMaisTitle(newTitle);
+        if(reset){
+            setSaibaMaisSubTitle(saibaMaisState.data[props.lang].subtitle);
+            setReplacementText(saibaMaisState.data[props.lang].content);
+        } else {
+            setSaibaMaisSubTitle(<span css={{color:'white'}}>_</span>);
+        }
+    }
 
     // Link handler for text replacement
     const textReplacementHandler = (event, link, data, list, index) => {
@@ -56,6 +75,9 @@ export default function SaibaMais(props) {
             links.forEach(link => link.style = "");
             // Bold clicked element
             clickedLink.style.fontWeight = "bold";
+
+            // Update title and subtitle
+            titleHandler(clickedLink.innerHTML);
 
         }
     }
@@ -88,12 +110,7 @@ export default function SaibaMais(props) {
                             }}
                         >
                             <div>
-                                <h4>
-                                    {
-                                        saibaMaisState.data[props.lang]
-                                            .name
-                                    }
-                                </h4>
+                                <h4>{saibaMaisTitle}</h4>
                                 <h4
                                     css={css`
                                         font-weight: normal;
@@ -104,9 +121,7 @@ export default function SaibaMais(props) {
                                             ? 'block'
                                             : 'none'};
                                     `}
-                                >
-                                    {saibaMaisState.data[props.lang].subtitle}
-                                </h4>
+                                >{saibaMaisSubTitle}</h4>
                             </div>
                             <Link to="/">
                                 <img
@@ -128,6 +143,15 @@ export default function SaibaMais(props) {
                             />
                             <div className="veja-mais-wrapper">
                                 <ul className="veja-mais" ref={linksRef}>
+                                    {/* If replaceText is enabled, set first item */}
+                                    {saibaMaisState.data.replaceText ? 
+                                        <li 
+                                            css={{fontWeight: 'bold', cursor: 'pointer'}}
+                                            onClick={() => titleHandler(
+                                                saibaMaisState.data[props.lang].name,
+                                                true
+                                            )}
+                                        >{saibaMaisState.data[props.lang].name}</li> : null}
                                     {saibaMaisState.data[
                                         props.lang
                                     ].links.map((value, index) => (

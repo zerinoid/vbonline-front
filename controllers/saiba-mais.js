@@ -5,7 +5,7 @@ exports.getSaibaMais = (req, res, next) => {
         replaceText: true,
         pt: {
             name: 'Anthropocene: Korea x Brazil 2019-2021',
-            subtitle: 'Curadoria de Juhyun Cho',
+            subtitle: 'Curadoria Juhyun Cho',
             partners: 'Parceiros',
             links: [
                 {

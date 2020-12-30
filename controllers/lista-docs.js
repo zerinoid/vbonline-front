@@ -10,6 +10,7 @@ exports.getListaDocs = (req, res, next) => {
                 title: ''
             },
         },
+        // Group programs for curatorship season
         group_programs: true,
         // Use id: 0 for the main video only
         programs: [
