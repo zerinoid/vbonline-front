@@ -152,7 +152,7 @@ export default function ListaDocs(props) {
 
     const PreviewContainer = styled.div`
         ${BP.small} {
-            div {
+            & > div {
                 height: 25vh;
             }
         }
@@ -307,6 +307,7 @@ export default function ListaDocs(props) {
                     ${BP.small} {
                         min-height: unset;
                         width: 100%;
+                        height: 25vh;
                         &:hover {
                             box-shadow: none;
                         }
