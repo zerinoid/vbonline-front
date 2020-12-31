@@ -293,6 +293,7 @@ export default function ListaDocs(props) {
             <BasePreview
                 css={css`
                     width: 32.95%;
+                    padding: 0.33rem;
                     padding-bottom: 11.1%;
                     display: inline-block;
                     margin-bottom: 0;
