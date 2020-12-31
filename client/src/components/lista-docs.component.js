@@ -330,7 +330,7 @@ export default function ListaDocs(props) {
                 >
                     {props.children}
                 </div>
-                <div css={absoluteStyleThumb} onClick={() => props.onClick}>
+                <div css={absoluteStyleThumb}>
                     <img
                         alt=""
                         src={hovered ? playPrevHv : playPrev}
