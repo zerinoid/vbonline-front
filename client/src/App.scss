@@ -25,9 +25,7 @@ html {
     overflow-y: scroll;
 }
 
-#root,
-.App,
-.conteudo {
+.App {
     height: 100%;
 }
 
@@ -140,6 +138,11 @@ h5 {
     html {
         font-size: 16px;
     }
+
+    body {
+        padding-bottom: 1rem;
+    }
+
 
     nav {
         min-height: 70px;

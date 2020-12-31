@@ -162,7 +162,6 @@ const App = (props) => {
                                     pathname === '/' &&
                                     `linear-gradient(0deg, ${colors.vermelho}, white 50%) fixed`,
                                 [BP.small]: {
-                                    height: '100vh',
                                     background:
                                         pathname === '/' &&
                                         `linear-gradient(0deg, ${colors.vermelho} 5%, white 59%) scroll`,
