@@ -273,7 +273,7 @@ export default function ListaDocs(props) {
 
         const buttonStyleThumb = {
             ...buttonStyle,
-            margin: '0 auto',
+            margin: '0',
             display: 'block',
             zIndex: 999,
         };
@@ -285,8 +285,11 @@ export default function ListaDocs(props) {
             height: '100%',
             transform: 'unset',
             display: 'flex',
-            justifyContent: 'space-between',
-            [BP.small]: null,
+            justifyContent: 'flex-end',
+            [BP.small]: {
+                justifyContent: 'center',
+                alignItems: 'center',
+            },
         };
 
         return (
