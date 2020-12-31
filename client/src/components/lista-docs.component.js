@@ -186,7 +186,7 @@ export default function ListaDocs(props) {
         ${BP.small} {
             min-height: 274px;
             margin-bottom: 0.33rem;
-            height: calc(75vh - 86px);
+            height: calc(75vh - 91px);
             padding-bottom: unset;
             display: flex;
             justify-content: center;
