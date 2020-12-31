@@ -62,9 +62,9 @@ function arraysEqual(a, b) {
     if (a === b) return true;
     if (a == null || b == null) return false;
     if (a.length !== b.length) return false;
-  
+
     for (var i = 0; i < a.length; ++i) {
-      if (a[i] !== b[i]) return false;
+        if (a[i] !== b[i]) return false;
     }
     return true;
 }
@@ -87,18 +87,24 @@ export default function ListaDocs(props) {
     });
 
     // #1 set current video
-    const playerHandler = (videoId, isProgram = false, group = null, main = false) => {
-        if(isProgram && group !== null){
-            if(main){
+    const playerHandler = (
+        videoId,
+        isProgram = false,
+        group = null,
+        main = false
+    ) => {
+        if (isProgram && group !== null) {
+            if (main) {
                 let arr = [];
                 arr[0] = group[0];
                 setVideoList(arr);
             } else {
                 setVideoList(group[videoId]);
             }
-
         } else {
-            let videoFilter = videoList.filter((video) => video.id == videoId)[0];
+            let videoFilter = videoList.filter(
+                (video) => video.id == videoId
+            )[0];
             setCurrentVideo(videoFilter);
         }
     };
@@ -106,8 +112,13 @@ export default function ListaDocs(props) {
     // #1-1 Set video from group
     useEffect(() => {
         if (!arraysEqual(videoList, props.lista.data.videos)) {
-            let firstVideo = videoList.reduce((min, video) => video.order < min ? video.order : min, videoList[0].order);
-            setCurrentVideo(videoList.filter((video) => video.order == firstVideo)[0]);
+            let firstVideo = videoList.reduce(
+                (min, video) => (video.order < min ? video.order : min),
+                videoList[0].order
+            );
+            setCurrentVideo(
+                videoList.filter((video) => video.order == firstVideo)[0]
+            );
         }
     }, [videoList]);
 
@@ -333,12 +344,23 @@ export default function ListaDocs(props) {
                                     src={hovered ? playPrevHv : playPrev}
                                     style={{
                                         position: 'relative',
-                                        transform: curatorSeason ? 'unset' : 'translateY(-50%)',
-                                        WebkitTransform: curatorSeason ? 'unset' : 'translateY(-50%)',
-                                        msTransform: curatorSeason ? 'unset' : 'translateY(-50%)',
+                                        transform: curatorSeason
+                                            ? 'unset'
+                                            : 'translateY(-50%)',
+                                        WebkitTransform: curatorSeason
+                                            ? 'unset'
+                                            : 'translateY(-50%)',
+                                        msTransform: curatorSeason
+                                            ? 'unset'
+                                            : 'translateY(-50%)',
                                         top: curatorSeason ? '0' : '50%',
-                                        float: curatorSeason ? 'right' : 'unset',
-                                        margin: curatorSeason && !isMobile ? '1.5% 1.5% 0 0' : '0 auto',
+                                        float: curatorSeason
+                                            ? 'right'
+                                            : 'unset',
+                                        margin:
+                                            curatorSeason && !isMobile
+                                                ? '1.5% 1.5% 0 0'
+                                                : '0 auto',
                                     }}
                                     css={buttonStyleThumb}
                                 />
@@ -360,8 +382,7 @@ export default function ListaDocs(props) {
         const groupPrograms = props.lista.data.group_programs;
 
         // Group programs
-        if(groupPrograms){
-
+        if (groupPrograms) {
             main_video.push(
                 <MainPreview
                     bg={main[lang].poster}
@@ -383,17 +404,19 @@ export default function ListaDocs(props) {
                 let artworks = [];
 
                 programs.map((program) => {
-                    filteredVideos = videoList.filter(video => video.program == program.id)
-                    if(filteredVideos.length > 0){
+                    filteredVideos = videoList.filter(
+                        (video) => video.program == program.id
+                    );
+                    if (filteredVideos.length > 0) {
                         groupedVideos[program.id] = filteredVideos;
                     }
 
                     // Show artwork list in each program's thumb in home
-                    if(typeof groupedVideos[program.id] !== "undefined"){
+                    if (typeof groupedVideos[program.id] !== 'undefined') {
                         artworks[program.id] = [];
                         artworks[program.id].push(
-                            groupedVideos[program.id].map(video => {
-                                return `${video[lang].title} (${video[lang].category})`
+                            groupedVideos[program.id].map((video) => {
+                                return `${video[lang].title} (${video[lang].category})`;
                             })
                         );
                     }
@@ -401,31 +424,40 @@ export default function ListaDocs(props) {
 
                 videos.push(
                     programs.map((program, index) => {
-                        if(program.id !== 0 && artworks[program.id]){
+                        if (program.id !== 0 && artworks[program.id]) {
                             return (
                                 <ThumbPreview
                                     bg={program[lang].poster}
                                     key={index}
-                                    onClick={() => playerHandler(program.id, true, groupedVideos)}
+                                    onClick={() =>
+                                        playerHandler(
+                                            program.id,
+                                            true,
+                                            groupedVideos
+                                        )
+                                    }
                                 >
                                     <h5>{program[lang].title}</h5>
                                     {/* Show artwork list in desktop only */}
-                                    <p style={{
+                                    <p
+                                        style={{
                                             marginTop: '0.7%',
-                                            lineHeight: '1.5em'
-                                        }
-                                    }>{isMobile ? program[lang].category : artworks[program.id].join(", ")}</p>
+                                            lineHeight: '1.5em',
+                                        }}
+                                    >
+                                        {isMobile
+                                            ? program[lang].category
+                                            : artworks[program.id].join(', ')}
+                                    </p>
                                 </ThumbPreview>
                             );
                         }
                     })
                 );
             }
-            
         }
-        // Regular program (ungrouped) 
+        // Regular program (ungrouped)
         else {
-
             main_video.push(
                 <MainPreview
                     bg={main[lang].poster}
@@ -462,8 +494,9 @@ export default function ListaDocs(props) {
         }
 
         if (!showPlayer) {
-
-            const slidesLength = groupPrograms ? (props.lista.data.programs.length - 1) : videoList.length;
+            const slidesLength = groupPrograms
+                ? props.lista.data.programs.length - 1
+                : videoList.length;
             const slidesToShow = slidesLength >= 3 ? 3 : slidesLength;
 
             let slickOptions = {
