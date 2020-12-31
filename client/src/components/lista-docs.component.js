@@ -281,7 +281,6 @@ export default function ListaDocs(props) {
         const absoluteStyleThumb = {
             ...absoluteStyle,
             padding: '0.33rem',
-            paddingRight: curatorSeason && !isMobile ? '9.5rem' : '0.33rem',
             top: 0,
             height: '100%',
             transform: 'unset',
@@ -322,52 +321,20 @@ export default function ListaDocs(props) {
                 onClick={props.click}
                 {...props}
             >
+                <div
+                    css={{
+                        width: '100%',
+                        paddingRight: curatorSeason && !isMobile ? '9.5rem' : 0,
+                    }}
+                >
+                    {props.children}
+                </div>
                 <div css={absoluteStyleThumb} onClick={() => props.onClick}>
-                    <div css={{ width: '100%' }}>
-                        {props.children}
-                        <div
-                            style={{
-                                position: 'absolute',
-                                width: '100%',
-                                height: '100%',
-                                top: 0,
-                                left: 0,
-                            }}
-                        >
-                            <div
-                                style={{
-                                    width: '100%',
-                                    height: '100%',
-                                }}
-                            >
-                                <img
-                                    alt=""
-                                    src={hovered ? playPrevHv : playPrev}
-                                    style={{
-                                        position: 'relative',
-                                        transform: curatorSeason
-                                            ? 'unset'
-                                            : 'translateY(-50%)',
-                                        WebkitTransform: curatorSeason
-                                            ? 'unset'
-                                            : 'translateY(-50%)',
-                                        msTransform: curatorSeason
-                                            ? 'unset'
-                                            : 'translateY(-50%)',
-                                        top: curatorSeason ? '0' : '50%',
-                                        float: curatorSeason
-                                            ? 'right'
-                                            : 'unset',
-                                        margin:
-                                            curatorSeason && !isMobile
-                                                ? '1.5% 1.5% 0 0'
-                                                : '0 auto',
-                                    }}
-                                    css={buttonStyleThumb}
-                                />
-                            </div>
-                        </div>
-                    </div>
+                    <img
+                        alt=""
+                        src={hovered ? playPrevHv : playPrev}
+                        css={buttonStyleThumb}
+                    />
                 </div>
             </BasePreview>
         );
