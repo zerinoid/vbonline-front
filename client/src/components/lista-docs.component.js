@@ -72,6 +72,7 @@ function arraysEqual(a, b) {
 export default function ListaDocs(props) {
     const lang = props.lang ? props.lang : 'pt';
     const season = props.lista.data.season[lang].type;
+    const curatorSeason = ['curador', 'curator'].includes(season);
     const isMobile = useMediaQuery({ query: '(max-width: 767.99px)' });
 
     const [showPlayer, setShowPlayer] = useState(false);
@@ -170,7 +171,7 @@ export default function ListaDocs(props) {
 
     const BasePreview = styled.div`
         width: 100%;
-        padding-bottom: ${['curador', 'curator'].includes(season) ? '34.695%' : '40.1%'};
+        padding-bottom: ${curatorSeason ? '34.695%' : '40.1%'};
         margin-bottom: 0.5%;
         background: url(${(props) => props.bg}) center/cover no-repeat;
         color: white;
@@ -269,6 +270,7 @@ export default function ListaDocs(props) {
         const absoluteStyleThumb = {
             ...absoluteStyle,
             padding: '0.33rem',
+            paddingRight: curatorSeason && !isMobile ? '9.5rem' : '0.33rem',
             top: 0,
             height: '100%',
             transform: 'unset',
@@ -284,7 +286,7 @@ export default function ListaDocs(props) {
                     padding-bottom: 11.1%;
                     display: inline-block;
                     margin-bottom: 0;
-                    height: ${['curador', 'curator'].includes(season) ? '14.317vw' : '9.5vw'};
+                    height: ${curatorSeason ? '14.317vw' : '9.5vw'};
                     p {
                         font: normal 0.8em FedraMono;
                     }
@@ -331,10 +333,12 @@ export default function ListaDocs(props) {
                                     src={hovered ? playPrevHv : playPrev}
                                     style={{
                                         position: 'relative',
-                                        transform: 'translateY(-50%)',
-                                        WebkitTransform: 'translateY(-50%)',
-                                        msTransform: 'translateY(-50%)',
-                                        top: '50%',
+                                        transform: curatorSeason ? 'unset' : 'translateY(-50%)',
+                                        WebkitTransform: curatorSeason ? 'unset' : 'translateY(-50%)',
+                                        msTransform: curatorSeason ? 'unset' : 'translateY(-50%)',
+                                        top: curatorSeason ? '0' : '50%',
+                                        float: curatorSeason ? 'right' : 'unset',
+                                        margin: curatorSeason && !isMobile ? '1.5% 1.5% 0 0' : '0 auto',
                                     }}
                                     css={buttonStyleThumb}
                                 />
@@ -375,17 +379,29 @@ export default function ListaDocs(props) {
             let groupedVideos = [];
 
             if (programs.length > 1) {
+                let filteredVideos = [];
+                let artworks = [];
 
                 programs.map((program) => {
-                    let filteredVideos = videoList.filter(video => video.program == program.id)
+                    filteredVideos = videoList.filter(video => video.program == program.id)
                     if(filteredVideos.length > 0){
                         groupedVideos[program.id] = filteredVideos;
+                    }
+
+                    // Show artwork list in each program's thumb in home
+                    if(typeof groupedVideos[program.id] !== "undefined"){
+                        artworks[program.id] = [];
+                        artworks[program.id].push(
+                            groupedVideos[program.id].map(video => {
+                                return `${video[lang].title} (${video[lang].category})`
+                            })
+                        );
                     }
                 });
 
                 videos.push(
                     programs.map((program, index) => {
-                        if(program.id !== 0){
+                        if(program.id !== 0 && artworks[program.id]){
                             return (
                                 <ThumbPreview
                                     bg={program[lang].poster}
@@ -393,7 +409,12 @@ export default function ListaDocs(props) {
                                     onClick={() => playerHandler(program.id, true, groupedVideos)}
                                 >
                                     <h5>{program[lang].title}</h5>
-                                    <p>{program[lang].category}</p>
+                                    {/* Show artwork list in desktop only */}
+                                    <p style={{
+                                            marginTop: '0.7%',
+                                            lineHeight: '1.5em'
+                                        }
+                                    }>{isMobile ? program[lang].category : artworks[program.id].join(", ")}</p>
                                 </ThumbPreview>
                             );
                         }
@@ -482,7 +503,7 @@ export default function ListaDocs(props) {
                         currentVideo={currentVideo}
                         groupPrograms={groupPrograms}
                         lang={lang}
-                        seasonType={season}
+                        curatorSeason={curatorSeason}
                     />
                 );
             }

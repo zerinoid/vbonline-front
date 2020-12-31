@@ -1,7 +1,20 @@
 // Texto sobre
 exports.getSaibaMais = (req, res, next) => {
     data = {
-        partnersLogos: [],
+        partnersLogos: [
+            {
+                img: '/img/brkorea/logos/logo_vb.png',
+                url: 'http://site.videobrasil.org.br'
+            },
+            {
+                img: '/img/brkorea/logos/logo_ilmin.png',
+                url: 'http://ilmin.org/kr/?ckattempt=1'
+            },
+            {
+                img: '/img/brkorea/logos/logo_arts_council.png',
+                url: 'https://www.arko.or.kr/eng/main.jsp'
+            },
+        ],
         replaceText: true,
         pt: {
             name: 'Anthropocene: Korea x Brazil 2019-2021',

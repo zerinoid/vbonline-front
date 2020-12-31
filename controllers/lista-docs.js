@@ -17,34 +17,23 @@ exports.getListaDocs = (req, res, next) => {
         },
         // Group programs for curatorship season
         group_programs: true,
-        // Use id: 0 for the main video only
         programs: [
             {
-                id: 0,
-                pt: {
-                    title: '',
-                    category: '',
-                    poster: '',
-                    thumb: '',
-                },
-                en: {
-                    title: '',
-                    category: '',
-                    poster: '',
-                    thumb: '',
-                }
+                id: 0, // Use id: 0 for the main video's group only
+                pt: { title: '', category: '', poster: '', thumb: '' },
+                en: { title: '', category: '', poster: '', thumb: '' }
             },
             {
                 id: 1,
                 pt: {
-                    title: "Landmines, Iron, Facilities",
-                    category: 'Parte 1',
+                    title: "Parte 1 - Landmines, Iron, Facilities",
+                    category: '',
                     poster: '/img/brkorea/brkorea_prog1.jpg',
                     thumb: '/img/brkorea/brkorea_prog1.jpg',
                 },
                 en: {
-                    title: "Landmines, Iron, Facilities",
-                    category: 'Part 1',
+                    title: "Part 1 - Landmines, Iron, Facilities",
+                    category: '',
                     poster: '/img/brkorea/brkorea_prog1.jpg',
                     thumb: '/img/brkorea/brkorea_prog1.jpg',
                 }
@@ -52,15 +41,15 @@ exports.getListaDocs = (req, res, next) => {
             {
                 id: 2,
                 pt: {
-                    title: "Ghosts of the City",
-                    category: 'Parte 2',
+                    title: "Parte 2 - Ghosts of the City",
+                    category: '',
                     poster: '/img/brkorea/brkorea_prog2.jpg',
                     thumb: '/img/brkorea/brkorea_prog2.jpg',
                     
                 },
                 en: {
-                    title: "Ghosts of the City",
-                    category: 'Part 2',
+                    title: "Part 2 - Ghosts of the City",
+                    category: '',
                     poster: '/img/brkorea/brkorea_prog2.jpg',
                     thumb: '/img/brkorea/brkorea_prog2.jpg',
                 }
@@ -102,7 +91,7 @@ exports.getListaDocs = (req, res, next) => {
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008466482_236x133.jpg',
-                    category: 'Hayoun Kwon',
+                    category: 'Hayoun Kwon', // Use for artist name
                     specs: `<p>2016 | 11’18”<br />
                     Vídeo, cor, estéreo</p>`,
                     caption: `<p>Baseado no testemunho de um ex-soldado coreano, o vídeo nos mergulha no coração de suas memórias pessoais. Ele relata sua experiência em uma missão exploratória e a incrível descoberta que fez em um campo minado. Fala de um lugar onde não é permitido entrar e a natureza recobrou totalmente seu domínio.</p>`,
