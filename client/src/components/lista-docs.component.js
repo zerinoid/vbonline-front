@@ -139,6 +139,7 @@ export default function ListaDocs(props) {
     useEffect(() => {
         if (vimeoOptions.id != null) {
             props.setMenuMobileShow(false);
+            window.scrollTo(0, 0)
             setShowPlayer(true);
         }
     }, [vimeoOptions]);

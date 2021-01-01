@@ -154,11 +154,6 @@ const VideoPlayer = (props) => {
         }
     });
 
-    // Scroll video player to top
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
-
     return (
         <div id="video-outter">
             <div id="video-container" ref={playerRef}>
