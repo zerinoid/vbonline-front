@@ -19,7 +19,7 @@ exports.getSaibaMais = (req, res, next) => {
         pt: {
             name: 'Anthropocene: Korea x Brazil 2019-2021',
             subtitle: 'Curadoria Juhyun Cho',
-            partners: 'Parceiros',
+            partners: '',
             links: [
                 {
                     title: 'Hayoun Kwon',
@@ -68,7 +68,7 @@ exports.getSaibaMais = (req, res, next) => {
         en: {
             name: 'Anthropocene: Korea x Brazil 2019-2021',
             subtitle: 'Curated by Juhyun Cho',
-            partners: 'Partners',
+            partners: '',
             links: [
                 {
                     title: 'Hayoun Kwon',
@@ -104,7 +104,7 @@ exports.getSaibaMais = (req, res, next) => {
                     title: 'Eunji Cho',
                     url: '',
                     blank: false,
-                    textReplacement: 'The artist activates the movement and inherent energy of urban remains, traces and suspended&nbsp;matters such as mud, stone and dust through performance, installation, intervention, and writing.&nbsp;She explores the slippage that arises when a modern subject enters another territory and&nbsp;becomes a minority, colonized, and the &ldquo;other.&rdquo; Cho uses a range of media&nbsp;including drawing, video, performance and installation. Her selected group exhibitions include&nbsp;<em>Walking Drifting Dragging</em>,&nbsp;New Museum,&nbsp;New York, 2013.'
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/eunji-cho.jpg" />The artist activates the movement and inherent energy of urban remains, traces and suspended&nbsp;matters such as mud, stone and dust through performance, installation, intervention, and writing.&nbsp;She explores the slippage that arises when a modern subject enters another territory and&nbsp;becomes a minority, colonized, and the &ldquo;other.&rdquo; Cho uses a range of media&nbsp;including drawing, video, performance and installation. Her selected group exhibitions include&nbsp;<em>Walking Drifting Dragging</em>,&nbsp;New Museum,&nbsp;New York, 2013.'
                 },
             ],
             content: `<p>The dystopian world that the Anthropocene will bequeath to the future is a crucial focal point for contemporary South Korean artists. <em>Anthropocene: Korea x Brazil 2019-2021</em> brings the best of this production to Videobrasil Online. Throughout January, the website features a selection of artworks by six major Korean video and film artists, organized by Juhyun Cho, head curator of the Ilmin Museum of Art, in Seoul. In February, it hosts a solo exhibition of works by artist Ayung Kim, who represented Korea at the 56th Venice Biennale.</p>

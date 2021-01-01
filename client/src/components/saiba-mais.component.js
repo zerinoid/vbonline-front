@@ -91,11 +91,12 @@ export default function SaibaMais(props) {
 
             if(currentList){
                 // All elements
-                let links = currentList.querySelectorAll(`li a`)
+                let links = currentList.querySelectorAll(`li:not(.veja-mais-title) a`)
                 // Clicked element
                 let clickedLink = currentList.querySelectorAll(`li[id="${index}"] a`)[0]
                 // Clear bold
                 links.forEach(link => link.style = "");
+                currentList.querySelectorAll(`li.veja-mais-title a`)[0].style = "font-weight:normal";
                 // Bold clicked element
                 clickedLink.style.fontWeight = "bold";
 
@@ -169,14 +170,14 @@ export default function SaibaMais(props) {
 
                                     {/* If replaceText is enabled, set first item with programme name*/}
                                     {saibaMaisState.data.replaceText ? 
-                                        <li 
+                                        <li className="veja-mais-title"
                                             css={{fontWeight: 'bold', cursor: 'pointer'}}
                                             onClick={() => titleHandler(
                                                 saibaMaisState.data[props.lang].name,
                                                 listRef,
                                                 true
                                             )}
-                                        >{saibaMaisState.data[props.lang].name}</li> : null}
+                                        ><a>{saibaMaisState.data[props.lang].name}</a></li> : null}
                                     
                                     {saibaMaisState.data[
                                         props.lang
@@ -215,10 +216,10 @@ export default function SaibaMais(props) {
                                     `}
                                 >
                                     {
-                                        saibaMaisState.data[props.lang]
-                                            .partners
+                                        saibaMaisState.data[props.lang].partners 
+                                        ? `${saibaMaisState.data[props.lang].partners}: `
+                                        : ''
                                     }
-                                    :
                                 </p>
                                 <div
                                     css={css`

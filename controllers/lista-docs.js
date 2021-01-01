@@ -195,7 +195,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Future Fever',
-                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Parte 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011821766_236x133.jpg',
@@ -206,7 +206,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Future Fever',
-                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Part 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011821766_236x133.jpg',
@@ -222,7 +222,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'A Night with a Pink Dolphin',
-                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Parte 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011823335_236x133.jpg',
@@ -233,7 +233,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'A Night with a Pink Dolphin',
-                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Part 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1011823335_236x133.jpg',
@@ -249,7 +249,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Sound Garden',
-                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Parte 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008460672_236x133.jpg',
@@ -260,7 +260,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Sound Garden',
-                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Part 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008460672_236x133.jpg',
@@ -276,7 +276,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Ellie’s Eye',
-                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Parte 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008337780_236x133.jpg',
@@ -287,7 +287,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Ellie’s Eye',
-                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Part 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008337780_236x133.jpg',
@@ -303,7 +303,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Cow Bathing for Spring Day',
-                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Parte 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008458685_236x133.jpg',
@@ -314,7 +314,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Cow Bathing for Spring Day',
-                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Part 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008458685_236x133.jpg',
@@ -330,7 +330,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Song for the Shooting Star',
-                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Parte 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008491329_236x133.jpg',
@@ -341,7 +341,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Song for the Shooting Star',
-                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Part 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008491329_236x133.jpg',
@@ -357,7 +357,7 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'Wild Seed',
-                    subtitle: 'Parte 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Parte 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008343956_236x133.jpg',
@@ -368,7 +368,7 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Wild Seed',
-                    subtitle: 'Part 2 - Landmines, Iron, Facilities',
+                    subtitle: 'Part 2 - Ghosts of the City',
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008343956_236x133.jpg',
