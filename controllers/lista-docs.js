@@ -361,7 +361,7 @@ exports.getListaDocs = (req, res, next) => {
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008343956_236x133.jpg',
-                    category: 'Minjung Song',
+                    category: 'Song Min Jung',
                     specs: `<p>2020 |  22’23”<br />
                     Vídeo, cor, estéreo</p>`,
                     caption: `<p>Nesse thriller de vingança, uma pessoa que perdeu seu corpo físico por causa de dados manipulados vivencia um mundo diferente como anônimo, fantasma, e enfrenta as contradições e as verdades de viver em uma cidade com um corpo estranho. O trabalho contempla um mundo onde físico e não físico se misturam.</p>`,
@@ -372,7 +372,7 @@ exports.getListaDocs = (req, res, next) => {
                     title_box: '',
                     poster: '',
                     thumb: 'https://i.vimeocdn.com/video/1008343956_236x133.jpg',
-                    category: 'Minjung Song',
+                    category: 'Song Min Jung',
                     specs: `<p>2020 |  22’23”<br />
                     Single channel video, color, stereo</p>`,
                     caption: `<p>A revenge thriller in which a person who has lost their physical body due to data manipulation experiences a different world as an anonymous, a ghost, and faces the contradictions and truths of living in a city with a strange body. This work observes a world where physical and non-physical are mixed together.</p>`,
