@@ -46,16 +46,16 @@ exports.getSaibaMais = (req, res, next) => {
                     textReplacement: '<img class="img-link" src="/img/brkorea/artistas/ji-hye-yeom.jpg" />Experi&ecirc;ncias intensas de viagem informam o trabalho da artista, colagens de imagens reais e virtuais que sobrep&otilde;em entidades de tempos e espa&ccedil;os diversos e aludem &agrave; destrui&ccedil;&atilde;o ambiental iminente do planeta. Suas exposi&ccedil;&otilde;es recentes incluem <a href="https://www.mutualart.com/Exhibition/Tenacious-Afterimage/EA65E32B1ED8FC6E"><em>Tenacious Afterimage</em></a> (Doosan Gallery, Nova York, 2018), <em>Total Perspective Vortex</em> (Daegu Art Museum, 2018), <a href="https://www.mutualart.com/Exhibition/Imaginary-Asia-/29F073A63A6E0B7A"><em>Imaginary Asia </em>(</a>Nam June Paik Art Center, Yongin-Si, 2017), e&nbsp;<em>All Exiles Have a Hidden Luck</em> (Art Sonje Center Project Space, Seoul, 2015).'
                 },
                 {
-                    title: 'Song Min Jung',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/song-min-jung.jpg" />A artista participou de coletivas como a <em>Busan Biennale 2020: an exhibition in ten chapters and five poems </em>(Museum of Comtemporary Art Busan, 2020), <em>Night Turns to Day</em> (Art Sonje Center, 2019), <em>Young Korean Artists 2019</em> (MMCA Korea, 2019), <em>PRO-TEST</em> (SeMA Bunker, 2019) e <em>Dear Amazon</em>&nbsp; (Ilmin Museum of Art, 2019), al&eacute;m do Asis Film and Videoart Forum (MMCA Korea, 2019). Suas individuais incluem <em>COLD MOOD</em> <em>(1000% soft point)</em>, na Tastehouse, Seoul (2018).'
-                },
-                {
                     title: 'Sanghee Song',
                     url: '',
                     blank: false,
                     textReplacement: '<img class="img-link" src="/img/brkorea/artistas/sanghee-song.jpg" />A artista transforma situa&ccedil;&otilde;es sociais e contextos relacionais em objeto de pesquisa. A partir da facilidade de introspec&ccedil;&atilde;o e do interesse pela voz do outro, enfoca uma gama ampla de temas: experi&ecirc;ncias pessoais, identidades relacionadas &agrave; moderniza&ccedil;&atilde;o da Coreia, trabalhadores sexuais, mitos, ecologia. A artista participou de resid&ecirc;ncias no exterior, fez dez exposi&ccedil;&otilde;es individuais e recebeu o Hermes Foundation Art Prize (2008) e o Korea Artist Prize do National Museum of Modern and Contemporary Art.'
+                },
+                {
+                    title: 'Song Min Jung',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/song-min-jung.jpg" />A artista participou de coletivas como a <em>Busan Biennale 2020: an exhibition in ten chapters and five poems </em>(Museum of Comtemporary Art Busan, 2020), <em>Night Turns to Day</em> (Art Sonje Center, 2019), <em>Young Korean Artists 2019</em> (MMCA Korea, 2019), <em>PRO-TEST</em> (SeMA Bunker, 2019) e <em>Dear Amazon</em>&nbsp; (Ilmin Museum of Art, 2019), al&eacute;m do Asis Film and Videoart Forum (MMCA Korea, 2019). Suas individuais incluem <em>COLD MOOD</em> <em>(1000% soft point)</em>, na Tastehouse, Seoul (2018).'
                 },
             ],
             content: `<p>O mundo dist&oacute;pico legado ao futuro pelo Antropoceno &eacute; um tema cr&iacute;tico para os artistas contempor&acirc;neos da Coreia do Sul. <em>Anthropocene: Korea x Brazil 2019-2021</em> traz para o Videobrasil Online, por dois meses, o melhor dessa produ&ccedil;&atilde;o. At&eacute; o fim de janeiro, uma sele&ccedil;&atilde;o de obras organizada por Juhyun Cho, curadora-chefe do Ilmin Museum of Art, em Seul, re&uacute;ne seis dos principais nomes da cena sul-coreana. Em fevereiro, vai ao ar uma individual da artista Ayoung Kim, que representou a Coreia na 56&ordf; Bienal de Veneza.</p>
@@ -94,18 +94,17 @@ exports.getSaibaMais = (req, res, next) => {
                     blank: false,
                     textReplacement: '<img class="img-link" src="/img/brkorea/artistas/ji-hye-yeom.jpg" />The artist&rsquo;s work is informed by intense travel experiences. Her collages, composed of real and virtual images alike, superimpose entities from different spaces and time sin order to address the imminent environmental destruction of the planet. Her recent exhibitions include <em>Tenacious Afterimage</em> (Doosan Gallery, New York, 2018), <em>Total Perspective Vortex</em> (Daegu Art Museum, 2018), <em>Imaginary Asia</em> (Nam June Paik Art Center, Yongin-Si, 2017), and <em>All Exies Have a Hidden Luck</em> (Art Sonje Center Project Space, Seoul, 2015).'
                 },
-                
-                {
-                    title: 'Song Min Jung',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/song-min-jung.jpg" />The artist has participated in several group exhibition such as <em>Busan Biennale 2020: an exhibition in ten chapters and five poems </em>(Museum of Comtemporary Art Busan, 2020), <em>Night Turns to day</em> (Art Sonje Center, 2019), <em>Young Korean Artists 2019</em> (MMCA Korea, 2019), <em>PRO-TEST</em> (SeMA Bunker, 2019), <em>Dear Amazon</em>&nbsp; (Ilmin Museum of Art, 2019), and Asis Film and Videoart Forum (MMCA Korea, 2019). Her solo exhibitions include <em>COLD MOOD</em> <em>(1000% soft point)</em>, at Tastehouse, Seoul (2018).'
-                },
                 {
                     title: 'Sanghee Song',
                     url: '',
                     blank: false,
                     textReplacement: '<img class="img-link" src="/img/brkorea/artistas/sanghee-song.jpg" />The artist transforms social situations and relational contexts and draws them into the subject of her works. Based on agile introspection and interest in the voices of others, she focuses on a wide range of topics such as personal experiences and identities related to Korean modernization, sex workers, myths and ecology. She participated in overseas residencies, had ten solo exhibitions, and received Hermes Foundation Art Prize (2008) and Korea Artist Prize (National Museum of Modern and Contemporary Art).'
+                },
+                {
+                    title: 'Song Min Jung',
+                    url: '',
+                    blank: false,
+                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/song-min-jung.jpg" />The artist has participated in several group exhibition such as <em>Busan Biennale 2020: an exhibition in ten chapters and five poems </em>(Museum of Comtemporary Art Busan, 2020), <em>Night Turns to day</em> (Art Sonje Center, 2019), <em>Young Korean Artists 2019</em> (MMCA Korea, 2019), <em>PRO-TEST</em> (SeMA Bunker, 2019), <em>Dear Amazon</em>&nbsp; (Ilmin Museum of Art, 2019), and Asis Film and Videoart Forum (MMCA Korea, 2019). Her solo exhibitions include <em>COLD MOOD</em> <em>(1000% soft point)</em>, at Tastehouse, Seoul (2018).'
                 },
             ],
             content: `<p>The dystopian world that the Anthropocene will bequeath to the future is a crucial focal point for contemporary South Korean artists. <em>Anthropocene: Korea x Brazil 2019-2021</em> brings the best of this production to Videobrasil Online. Throughout January, the website features a selection of artworks by six major Korean video and film artists, organized by Juhyun Cho, head curator of the Ilmin Museum of Art, in Seoul. In February, it hosts a solo exhibition of works by artist Ayoung Kim, who represented Korea at the 56th Venice Biennale.</p>
