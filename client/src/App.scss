@@ -198,3 +198,47 @@ h5 {
         font-size: 0.65em;
     }
 }
+
+// Custom class for main preview
+.ayoung {
+
+    padding: 0 25% !important;
+
+    h1 {
+        font-size: 5.6em !important;
+    }
+    
+    h3 {
+        text-transform: capitalize !important;
+        font-size: 3.7em !important;
+        line-height: 1.1 !important;
+        margin-right: 1vw !important;
+    }
+    
+    h4 {
+        text-transform: uppercase;
+        font-size: 2.8em !important;
+        margin-top: 1.1% !important;
+        line-height: 1.1 !important;
+    }
+
+    @include media-breakpoint-down(xs) {
+
+        padding: 0 7% !important;
+
+        h1 {
+            font-size: 9.8vw !important;
+        }
+        
+        h3 {
+            font-size: 6.52vw !important;
+            margin-bottom: 4.6% !important;
+        }
+        
+        h4 {
+            font-size: 4.9vw !important;
+            margin-top: 4.6% !important;
+        }
+
+    }
+}
