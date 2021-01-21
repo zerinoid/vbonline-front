@@ -223,7 +223,7 @@ export default function ListaDocs(props) {
                     setHovered(false);
                 }}
             >
-                <div css={absoluteStyle}>
+                <div css={absoluteStyle} className={props.customClass}>
                     {React.Children.map(props.children, (child, i) => {
                         if (i === 0) return <h1>{child}</h1>;
                         if (i === 1)
@@ -266,7 +266,7 @@ export default function ListaDocs(props) {
                                 </div>  
                             );
                         if (i === 2 && child){
-                            return <div 
+                            return <div id={props.customClass} 
                                 dangerouslySetInnerHTML={createMarkup(child)}
                             ></div>
                         };
@@ -367,6 +367,7 @@ export default function ListaDocs(props) {
             main_video.push(
                 <MainPreview
                     bg={main[lang].poster}
+                    customClass={"ayoung"}
                     key={0}
                     onClick={(e) => playerHandler(main.id, true, [main], true)}
                 >
@@ -442,6 +443,7 @@ export default function ListaDocs(props) {
             main_video.push(
                 <MainPreview
                     bg={main[lang].poster}
+                    customClass={"ayoung"}
                     key={0}
                     onClick={(e) => playerHandler(main.id)}
                 >
@@ -449,7 +451,7 @@ export default function ListaDocs(props) {
                     {props.lista.data.season[lang].title
                         ? props.lista.data.season[lang].title
                         : main[lang].subtitle}
-                    {main[lang].custom_html}
+                    {main[lang].main_preview_html}
                 </MainPreview>
             );
 
