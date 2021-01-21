@@ -33,25 +33,27 @@ exports.getListaDocs = (req, res, next) => {
                 order: 1,
                 program: 0,
                 pt: {
-                    title: 'ANTHROPOCENE:\nKOREA X BRAZIL\n2019-2021',
-                    subtitle: 'Curadoria Juhyun Cho',
-                    custom_html: '<h3>htththth</h3>',
-                    title_box: 'abacate', // Replaces title in player (info button)
+                    title: 'ayoung kim',
+                    subtitle: 'oxbow lake time',
+                    main_preview_html: '<h4>Anthropocene:<br />Korea x Brazil 2019-2021</h4>',
+                    title_box: 'Ayoung Kim Interview', // Replaces title in player (info button)
                     poster: '/img/ayoung/home/main_low.jpg',
                     thumb: '/img/ayoung/home/main_low.jpg',
                     category: '',
-                    specs: ``,
+                    specs: `<p>2021 | 18'<br />
+                    vídeo, cor, estéreo</p>`,
                     caption: ``,
                 },
                 en: {
-                    title: 'ANTHROPOCENE: KOREA X BRAZIL\n2019-2021',
-                    subtitle: 'Curated by Juhyun Cho',
-                    custom_html: '<h3>hththt</h3>',
-                    title_box: '',
+                    title: 'ayoung kim',
+                    subtitle: 'oxbow lake time',
+                    main_preview_html: '<h4>Anthropocene:<br />Korea x Brazil 2019-2021</h4>',
+                    title_box: 'Ayoung Kim Interview',
                     poster: '/img/ayoung/home/main_low.jpg',
                     thumb: '/img/ayoung/home/main_low.jpg',
                     category: '',
-                    specs: ``,
+                    specs: `<p>2021 | 18'<br />
+                    single channel video, color, stereo</p>`,
                     caption: ``,
                 },
             },
