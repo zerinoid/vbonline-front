@@ -1,6 +1,6 @@
 const seasonType = {
-    pt: 'curador',
-    en: 'curator',
+    pt: 'artista',
+    en: 'artist',
 };
 
 exports.getListaDocs = (req, res, next) => {
@@ -16,44 +16,16 @@ exports.getListaDocs = (req, res, next) => {
             },
         },
         // Group programs for curatorship season
-        group_programs: true,
+        group_programs: false,
+        bg_color: '#dce1f4',
+        bg_img_desktop: '/img/ayoung/bg_desktop_low.jpg',
+        bg_img_mobile: '/img/ayoung/bg_mobile_low.jpg',
         programs: [
             {
                 id: 0, // Use id: 0 for the main video's group only
                 pt: { title: '', category: '', poster: '', thumb: '' },
                 en: { title: '', category: '', poster: '', thumb: '' }
             },
-            {
-                id: 1,
-                pt: {
-                    title: "Parte 1 - Landmines, Iron, Facilities",
-                    category: '',
-                    poster: '/img/brkorea/brkorea_prog1.jpg',
-                    thumb: '/img/brkorea/brkorea_prog1.jpg',
-                },
-                en: {
-                    title: "Part 1 - Landmines, Iron, Facilities",
-                    category: '',
-                    poster: '/img/brkorea/brkorea_prog1.jpg',
-                    thumb: '/img/brkorea/brkorea_prog1.jpg',
-                }
-            },
-            {
-                id: 2,
-                pt: {
-                    title: "Parte 2 - Ghosts of the City",
-                    category: '',
-                    poster: '/img/brkorea/brkorea_prog2.jpg',
-                    thumb: '/img/brkorea/brkorea_prog2.jpg',
-                    
-                },
-                en: {
-                    title: "Part 2 - Ghosts of the City",
-                    category: '',
-                    poster: '/img/brkorea/brkorea_prog2.jpg',
-                    thumb: '/img/brkorea/brkorea_prog2.jpg',
-                }
-            }
         ],
         videos: [
             {
@@ -64,8 +36,8 @@ exports.getListaDocs = (req, res, next) => {
                     title: 'ANTHROPOCENE:\nKOREA X BRAZIL\n2019-2021',
                     subtitle: 'Curadoria Juhyun Cho',
                     title_box: '', // Replaces title in player (info button)
-                    poster: '/img/brkorea/brkorea_main2.jpg',
-                    thumb: '/img/brkorea/brkorea_main2.jpg',
+                    poster: '/img/ayoung/main_low.jpg',
+                    thumb: '/img/ayoung/main_low.jpg',
                     category: '',
                     specs: `Vídeo, cor, estéreo, 13'20"`,
                     caption: ``,

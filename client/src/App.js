@@ -132,6 +132,19 @@ const App = (props) => {
     const idiomaButtonStyle = { height: '1.57vw' };
 
     if (appState.data) {
+
+        // background image
+        const hasBg = (!!appState.data.bg_img_desktop || !!appState.data.bg_img_mobile);
+        const noMobileBg = !!appState.data.bg_img_desktop && !appState.data.bg_img_mobile;
+        const bgColor = appState.data.bg_color || '';
+
+        const bg_desktop = hasBg 
+            ? `${bgColor} url(${appState.data.bg_img_desktop}) center/cover no-repeat fixed` 
+            : `linear-gradient(0deg, ${colors.vermelho}, white 50%) fixed`
+        const bg_mobile = hasBg 
+            ? (noMobileBg ? bg_desktop : `${bgColor} url(${appState.data.bg_img_mobile}) center/cover no-repeat fixed`)
+            : `linear-gradient(0deg, ${colors.vermelho} 5%, white 59%) scroll`
+
         if (vinhetaState && showVinheta && currentWidth > 992) {
             return (
                 <div
@@ -160,11 +173,11 @@ const App = (props) => {
                             body: {
                                 background:
                                     pathname === '/' &&
-                                    `linear-gradient(0deg, ${colors.vermelho}, white 50%) fixed`,
+                                    `${bg_desktop}`,
                                 [BP.small]: {
                                     background:
                                         pathname === '/' &&
-                                        `linear-gradient(0deg, ${colors.vermelho} 5%, white 59%) scroll`,
+                                        `${bg_mobile}`,
                                 },
                             },
                         }}
