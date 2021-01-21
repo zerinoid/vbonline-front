@@ -7,7 +7,7 @@ const Botao = styled.button((props) => {
     const normalWeight = props.active ? 'bold' : 'normal';
 
     return {
-        backgroundColor: props.active ? colors.vermelho : colors.branco,
+        backgroundColor: props.active ? colors.vermelho : 'transparent',
         color: props.active ? colors.branco : colors.vermelho,
         border: normalBorder,
         fontFamily: 'FedraMono',
