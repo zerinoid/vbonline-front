@@ -29,27 +29,29 @@ exports.getListaDocs = (req, res, next) => {
         ],
         videos: [
             {
-                id: '493360769',
+                id: '502827993',
                 order: 1,
                 program: 0,
                 pt: {
                     title: 'ANTHROPOCENE:\nKOREA X BRAZIL\n2019-2021',
                     subtitle: 'Curadoria Juhyun Cho',
-                    title_box: '', // Replaces title in player (info button)
-                    poster: '/img/ayoung/main_low.jpg',
-                    thumb: '/img/ayoung/main_low.jpg',
+                    custom_html: '<h3>htththth</h3>',
+                    title_box: 'abacate', // Replaces title in player (info button)
+                    poster: '/img/ayoung/home/main_low.jpg',
+                    thumb: '/img/ayoung/home/main_low.jpg',
                     category: '',
-                    specs: `Vídeo, cor, estéreo, 13'20"`,
+                    specs: ``,
                     caption: ``,
                 },
                 en: {
                     title: 'ANTHROPOCENE: KOREA X BRAZIL\n2019-2021',
                     subtitle: 'Curated by Juhyun Cho',
+                    custom_html: '<h3>hththt</h3>',
                     title_box: '',
-                    poster: '/img/brkorea/brkorea_main2.jpg',
-                    thumb: '/img/brkorea/brkorea_main2.jpg',
+                    poster: '/img/ayoung/home/main_low.jpg',
+                    thumb: '/img/ayoung/home/main_low.jpg',
                     category: '',
-                    specs: `Video, color, stereo, 13'20"`,
+                    specs: ``,
                     caption: ``,
                 },
             },
@@ -58,26 +60,29 @@ exports.getListaDocs = (req, res, next) => {
                 order: 2,
                 program: 1,
                 pt: {
-                    title: '489 Years',
-                    subtitle: 'Parte 1 - Landmines, Iron, Facilities',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008466482_236x133.jpg',
-                    category: 'Hayoun Kwon', // Use for artist name
-                    specs: `<p>2016 | 11’18”<br />
+                    title: 'At the Surisol Underwater Lab',
+                    subtitle: '(excerto)',
+                    title_box: 'At the Surisol Underwater Lab',
+                    poster: '/img/ayoung/home/surisol.jpg',
+                    thumb: '/img/ayoung/home/surisol.jpg',
+                    category: '(excerto)', // Use for artist name
+                    specs: `<p>2020 | 17'11"<br />
                     Vídeo, cor, estéreo</p>`,
-                    caption: `<p>Baseado no testemunho de um ex-soldado coreano, o vídeo nos mergulha no coração de suas memórias pessoais. Ele relata sua experiência em uma missão exploratória e a incrível descoberta que fez em um campo minado. Fala de um lugar onde não é permitido entrar e a natureza recobrou totalmente seu domínio.</p>`,
+                    caption: `<p>Essa fic&ccedil;&atilde;o especulativa se passa no futuro pr&oacute;ximo, cerca de uma d&eacute;cada depois da pandemia global do Covid-19. Na esteira da mudan&ccedil;a clim&aacute;tica e do esgotamento dos recursos naturais causado pelos combust&iacute;veis f&oacute;sseis, os biocombust&iacute;veis verdes tornaram-se a principal fonte de energia das sociedades. A principal s&atilde;o as macroalgas, fermentadas para produzir biocombust&iacute;vel. Em Busan, uma &ldquo;cidade da biomassa&rdquo; cresceu ao longo da costa do Mar do Leste. O laborat&oacute;rio submarino Surisol, &agrave; frente de um processo que integra fazendas de alga, qualidade da &aacute;gua, correntes mar&iacute;timas e biomassa, tamb&eacute;m fica na regi&atilde;o das Ilhas Oryukdo.<p>
+
+                    </p>Sohila (interpretada por Sohila AlBna&rsquo;a, imigrante iemenita vivendo na Coreia), que conseguiu um visto humanit&aacute;rio depois de fugir da Guerra do I&ecirc;men, trabalha como pesquisadora s&ecirc;nior no laborat&oacute;rio. Ela recebe not&iacute;cias boas e m&aacute;s de Surisol e envia um ve&iacute;culo de opera&ccedil;&atilde;o remota para vistoriar as &aacute;guas em quest&atilde;o. Vendo as imagens emitidas pelo VOR, Sohila assume seu ponto de vista; ele v&ecirc; em perigo ao deparar com um enorme cardume de lulas e com correntes turbulentas. De repente, ela apaga. Segue-se um flashback em que se lembra do que aconteceu a ela e &agrave; Coreia na pandemia que varreu o mundo em 2020.</p>`,
                 },
                 en: {
-                    title: '489 Years',
-                    subtitle: 'Part 1 - Landmines, Iron, Facilities',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008466482_236x133.jpg',
-                    category: 'Hayoun Kwon',
-                    specs: `<p>2016 | 11’18”<br />
+                    title: 'At the Surisol Underwater Lab',
+                    subtitle: '(excerpt)',
+                    title_box: 'At the Surisol Underwater Lab',
+                    poster: '/img/ayoung/home/surisol.jpg',
+                    thumb: '/img/ayoung/home/surisol.jpg',
+                    category: '(excerpt)',
+                    specs: `<p>2020 | 17'11"<br />
                     Single channel video, color, stereo</p>`,
-                    caption: `<p>Transcribed according to the testimony of a former soldier in South Korea, Kim, the video immerses us in the heart of his personal memory. He tells us his experience in a research mission and the amazing discovery he made in afield full of mines. He speaks of a place where people are forbidden and nature has totally reclaimed its hold.</p>`,
+                    caption: `<p>This speculative fiction is set in the near future, around a decade after the Covid-19 global pandemic of 2020. In the wake of climate change and depletion of natural resources brought on by fossil fuels, eco-friendly bio-fuels have become society&rsquo;s main energy source. The chief source of energy in the world is algae&mdash;macro-algae that are fermented to produce biofuel. In Busan, a &ldquo;biomass town&rdquo; has been established along the East Sea coastline. Surisol Underwater Lab, which manages an integrated process involving seaweed farming, water quality, ocean currents, and biomass, is also located in the area of the Oryukdo Islands.</p>
+                    <p>Sohila (played by Sohila AlBna'a, a Yemeni migrant living in Korea), a former humanitarian status holder who left Yemen escaping the Yemen War, is a senior researcher at the lab. She hears good news and bad news from Surisol, and sends &nbsp;a remotely operated vehicle to conduct reconnaissance in the waters in question. Viewing the images sent by the ROV, Sohila shares its point-of-view, as it is imperiled when encountering a large swarm of squid and turbulent currents. Suddenly, she blacks out. This segues into a flashback, as she recalls what happened to Korea, and to her, during the pandemic that swept over the world in 2020.</p>`,
                 },
             },
             {
@@ -85,134 +90,142 @@ exports.getListaDocs = (req, res, next) => {
                 order: 3,
                 program: 1,
                 pt: {
-                    title: 'Lack of Evidence',
-                    subtitle: 'Parte 1 - Landmines, Iron, Facilities',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1011771352_236x133.jpg',
-                    category: 'Hayoun Kwon',
-                    specs: `<p>2011 | 9’20”<br />
-                    Animação 3D, cor e p&b, estéreo</p>`,
-                    caption: `<p>Na Nigéria, nascer gêmeo pode ser bênção ou maldição. O pai de O é chefe da aldeia e xamã. Por acreditar na maldição dos gêmeos, tenta matar os filhos em um ritual. O consegue fugir; seu irmão é assassinado. Depois de atravessar o país, O pede asilo na França. Mas não tem como provar sua identidade.</p>`,
+                    title: 'Porosity Valley 2: Tricksters Plot',
+                    subtitle: '(excerto)',
+                    title_box: 'Porosity Valley 2: Tricksters Plot',
+                    poster: '/img/ayoung/home/porosityvalley2.jpg',
+                    thumb: '/img/ayoung/home/porosityvalley2.jpg',
+                    category: '(excerto)',
+                    specs: `<p>2019 | 23'08"<br />
+                    vídeo em dois canais, cor, estéreo</p>`,
+                    caption: `<p>A obra sugere um mundo e uma mitologia alternativas para as migra&ccedil;&otilde;es de todo tipo do s&eacute;culo 21. Sequ&ecirc;ncia de <em>Porosity Valley, Portable Holes</em> (2017), avan&ccedil;a em rela&ccedil;&atilde;o ao trabalho anterior criando a figura fict&iacute;cia do aglomerado de migrantes, min&eacute;rios e dados conhecido como Petra Genetrix. Sobrepondo migra&ccedil;&otilde;es de refugiados e digitais, ambas caracter&iacute;sticas das migra&ccedil;&otilde;es do s&eacute;culo 21, gera um tempo-espa&ccedil;o especulativo ao questionar as &ldquo;formas de existir&rdquo; e as &ldquo;formas de representar&rdquo; dos refugiados iemenitas que chegaram recentemente &agrave; Coreia do Sul.</p>
+                    <p>Os trapaceiros (do t&iacute;tulo da obra) vieram para perturbar a ordem no vale, conhecida como &ldquo;a mitologia do puro-sangue&rdquo;. Eles amea&ccedil;am o r&iacute;gido sistema imunol&oacute;gico do estado-na&ccedil;&atilde;o, mas acabam por fortalec&ecirc;-lo, ao transplantar nele sementes heterog&ecirc;neas (xenotransplante). O que se reflete aqui &eacute; um estado de coisas no qual refugiados s&atilde;o tratados como uma esp&eacute;cie de disfun&ccedil;&atilde;o ou v&iacute;rus que amea&ccedil;a o estado-na&ccedil;&atilde;o. A seguir, desdobram-se cenas de controle biopol&iacute;tico, tal como &eacute; vivido por Petra e pelos pr&oacute;prios refugiados iemenitas na Coreia.</p>
+                    <p>O trabalho questiona ideias de fronteira, atravessamento e coexist&ecirc;ncia ou simbiose. A suposta solidez do territ&oacute;rio e das fronteiras que imigrantes, refugiados, minerais e dados cruzam come&ccedil;a a desmoronar. Isso se deve ao movimento das placas tect&ocirc;nicas, elas mesmas eternamente sujeitas &agrave; migra&ccedil;&atilde;o e ao movimento. Nesse sentido, o trabalho reflete a Terra e seus estratos, o movimento de seus diversos agentes e as fronteiras e rela&ccedil;&otilde;es simbi&oacute;ticas que o impedem e facilitam.</p>`,
                 },
                 en: {
-                    title: 'Lack of Evidence',
-                    subtitle: 'Part 1 - Landmines, Iron, Facilities',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1011771352_236x133.jpg',
-                    category: 'Hayoun Kwon',
-                    specs: `<p>2011 | 9’20”<br />
-                    3D animation, color and b&w, stereo</p>`,
-                    caption: `<p>In Nigeria, to be a twin can be a blessing or a curse. The father of O is the village chief, a witch doctor who believes in the curse of twins. He tries to kill his twin sons in a ritual ceremony. O manages to escape but his brother is murdered. Having fled across his country, O applies for asylum in France. But he can’t produce any proof of identity.</p>`,
+                    title: 'Porosity Valley 2: Tricksters Plot',
+                    subtitle: '(excerpt)',
+                    title_box: 'Porosity Valley 2: Tricksters Plot',
+                    poster: '/img/ayoung/home/porosityvalley2.jpg',
+                    thumb: '/img/ayoung/home/porosityvalley2.jpg',
+                    category: '(excerpt)',
+                    specs: `<p>2019 | 23'08"<br />
+                    two channel video, color, stereo</p>`,
+                    caption: `<p>The work suggests an alternative world, an alternative mythology for all kind of migrants of the 21st century. A sequel to <em>Porosity Valley, Portable Holes</em> (2017), it expands upon the previous work through a fictionalized depiction of the migration of the migrant/mineral/data cluster known as Petra Genetrix. Juxtaposing refugee migration and digital migration, both of which characterize migration in the 21st century, the work creates a speculative space-time by interrogating the &ldquo;ways of existence&rdquo; and the &ldquo;ways of representation&rdquo; of the Yemeni refugees who recently arrived in South Korea.</p>
+                    <p>The tricksters came to disturb the order in the valley, which is called &ldquo;pure blood mythology&rdquo;. They threaten the strict immune system of the nation state, but eventually strengthen it by transplanting a bit of heterogeneous seeds (xenotransplantation). Reflected here is the state of affairs in which refugees are treated as a kind of malware or virus that threaten the nation state. Next, further scenes unfold with biopolitical control, as experienced by Petra, as well as the very Yemeni refugess in Korea.</p>
+                    <p>The work questions the notions of borders, crossings, and co-existence or symbiosis. The concept of solid ground and borders&ndash;crossed by migrants, refugees, minerals, and data&ndash;starts to crumble. This is due to the movement of tectonic plates, which are eternally moving and migrating subjects themselves. In this sense, the work is a reflection of Earth and its strata, the movements of its different agents, and the boundaries and symbiotic relations that impede or facilitate their movement.</p>`,
                 },
             },
             {
-                id: '489010460',
+                id: '502826916',
                 order: 4,
                 program: 1,
                 pt: {
-                    title: 'Anyang, at the Dawn of the Day',
-                    subtitle: 'Parte 1 - Landmines, Iron, Facilities',
+                    title: 'Crossings',
+                    subtitle: '',
                     title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1011795298_236x133.jpg',
-                    category: 'Sanghee Song',
-                    specs: `<p>2014 | 34'28"<br />
-                    Videoinstalação single-channel, cor, estéreo</p>`,
-                    caption: `<p>Uma história distópica e irônica, baseada na premissa ficcional de que, por trás de uma fachada comum e pacífica, uma força obscura espreita, conspirando para submeter a humanidade a uma lavagem cerebral. A artista explora a cidade de Anyang, cujo nome sugere um lugar feliz e apaziguado, e ideias de <em>Admirável mundo novo</em>, de Aldous Huxley, e <em>1984</em>, de George Orwell.</p>`,
+                    poster: '/img/ayoung/home/crossings.jpg',
+                    thumb: '/img/ayoung/home/crossings.jpg',
+                    category: '',
+                    specs: `<p>2019 | 3'<br />
+                    vídeo, cor, estéreo</p>`,
+                    caption: `<p>Ahmed Asker, que faz o papel da Correnteza em <em>Porosity Valley 2: Tricksters&rsquo; Plot</em>, &eacute; atleta e representou o I&ecirc;men em competi&ccedil;&otilde;es. Nessa obra complementar, ele retra&ccedil;a a viagem que fez de Hajjah, onde nasceu, &agrave; Ilha Jeju, na Coreia, fugindo da guerra do I&ecirc;men, que prossegue. Ele foi um dos 561 refugiados iemenitas que chegaram a Jeju in 2018. Os v&iacute;deos de estrada foram feitos por Sam Faisal, tamb&eacute;m cidad&atilde;o do I&ecirc;men, e que fugiu para a Alemanha em 2019.</p>`,
                 },
                 en: {
-                    title: 'Anyang, at the Dawn of the Day',
-                    subtitle: 'Part 1 - Landmines, Iron, Facilities',
+                    title: 'Crossings',
+                    subtitle: '',
                     title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1011795298_236x133.jpg',
-                    category: 'Sanghee Song',
-                    specs: `<p>2014 | 34'28"<br />
-                    Single-channel video installation, color, stereo</p>`,
-                    caption: `<p>A playful story of a dystopia, based on the fictional premise that behind an ordinary and peaceful façade lurks a dark force that conspires to brainwash the human race. The artist explores Anyang–a city whose name suggests a blissful and peaceful place–and ideas from <em>Brave New World</em>, by Aldous Huxley, and <em>1984</em>, by George Orwell.</p>`,
+                    poster: '/img/ayoung/home/crossings.jpg',
+                    thumb: '/img/ayoung/home/crossings.jpg',
+                    category: '',
+                    specs: `<p>2019 | 3'<br />
+                    single channel video, color, stereo</p>`,
+                    caption: `<p>Ahmed Asker, who played the Tide in <em>Porosity Valley 2: Tricksters&rsquo; Plot</em>, is a former national athlete of Yemen. In this supplementary video, he retraces his journey from Hajjah, his hometown, to Jeju Island, Korea, escaping the ongoing Yemen War. He was one of the 561 Yemeni refugees who arrived in Jeju in 2018. The on-the-road footage was shot by Sam Faisal, a Yemen citizen, who fled to Germany in 2019.</p>`,
                 },
             },
             {
-                id: '487229590',
+                id: '502826979',
                 order: 5,
                 program: 1,
                 pt: {
-                    title: 'The 16th book of Metamorphoses: The love story of Khora Plesiosaurus & Leviathan',
-                    subtitle: 'Parte 1 - Landmines, Iron, Facilities',
+                    title: 'Petrogenesis, Petra Genetrix',
+                    subtitle: '',
                     title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008334726_236x133.jpg',
-                    category: 'Sanghee Song',
-                    specs: `<p>2009 | 14'<br />
-                    Animação com desenho a caneta, cor e p&b, videoinstalação single-channel, estéreo</p>`,
-                    caption: `<p>Sequência do épico sobre a gênese do universo escrito pelo poeta romano Ovídeo, a animação descortina um mundo que mistura ciência e mitologia, justapondo elementos díspares – a Bíblia e o darwinismo, homens, dinossauros e baleias, e a Guerra do petróleo e o desastre ambiental – para contar uma história de amor e vingança.</p>`,
+                    poster: '/img/ayoung/home/petrogenesis.jpg',
+                    thumb: '/img/ayoung/home/petrogenesis.jpg',
+                    category: '',
+                    specs: `<p>2019 | 6'50"<br />
+                    vídeo, cor/p&b</p>`,
+                    caption: `<p>Em 2019, Ayoung Kim foi &agrave; Mong&oacute;lia pesquisar o amplo sistema de cren&ccedil;as animistas do pa&iacute;s, que envolve a Terra, a&nbsp;m&atilde;e-pedra, rochas e cavernas sagradas que purificam as culpas humanas. &Eacute; muito difundida entre o povo da Mong&oacute;lia a cren&ccedil;a de que pedras e minerais, assim como outros elementos naturais, est&atilde;o vivos. Sobre o mito de origem segundo o qual o ser humano nasceu da pedra, de onde ele viria? Porque prevalece h&aacute; tanto tempo?</p>
+                    <p>A artista explora esse tema e cria sua pr&oacute;pria mitologia hiperb&oacute;lica sobre a origem de Petra Genetrix. Combina entrevistas com um historiador, um ge&oacute;logo, o diretor de um museu de geologia e habitantes locais. Partindo da ideia da petrog&ecirc;nese &ndash; a origem na pedra &ndash;, vagueia pelas camadas de tempo sobrepostas e conectadas que se perdem nos estratos da Terra.</p>
+                    <p>&ldquo;O quartzo pode ser considerado uma esp&eacute;cie de computador natural, j&aacute; que absorve e armazena uma quantidade enorme de energia&rdquo;. Podemos pensar nas pedras e rochas que existiam desde o surgimento da Terra como a m&iacute;dia em que o planeta armazena mem&oacute;ria?</p>`,
                 },
                 en: {
-                    title: 'The 16th book of Metamorphoses: The love story of Khora Plesiosaurus & Leviathan',
-                    subtitle: 'Part 1 - Landmines, Iron, Facilities',
+                    title: 'Petrogenesis, Petra Genetrix',
+                    subtitle: '',
                     title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008334726_236x133.jpg',
-                    category: 'Sanghee Song',
-                    specs: `<p>2009 | 14'<br />
-                    Pencil drawing animation, color and b&w, single-channel video installation, stereo</p>`,
-                    caption: `<p>A sequel to the epic on the origin of the universe by ancient Roman poet Ovid, the animation unfolds a heterogeneous world of science and mythology, putting together disparate elements–Bible and Darwinian theory, the human, the dinosaur, and the whale, and the oil war and the ecological disaster–to tell a story of love and vengeance.</p>`,
+                    poster: '/img/ayoung/home/petrogenesis.jpg',
+                    thumb: '/img/ayoung/home/petrogenesis.jpg',
+                    category: '',
+                    specs: `<p>2019 | 6'50"<br />
+                    single channel video, color/b&w</p>`,
+                    caption: `<p>In 2019, Ayoung Kim travelled to Mongolia to research its abundant animistic belief system based on land, mother rock, stones, and sacred caves that purify human guilt. It is a widespread belief of the Mongolian people that rocks and minerals, like other natural elements, are alive. Consider the particular origin myth that human beings were born from rocks: where does it come from, and why has it prevailed for so long?</p>
+                    <p>The artist traces this topic and creates her own hyperbolic mythology, connected to the origin of Petra Genetrix, by integrating interviews with a historian, a geologist, a geology museum director, and the locals. Through the notion of Petrogenesis&ndash;a genesis from rocks&ndash;, she wanders through the interrelated and overlapped layers of time that are lost in the Earth strata.</p>
+                    <p>&ldquo;Quartz can be considered to be a type of natural computer, since it absorbs and stores a large amount of energy.&rdquo; Can we think of the rocks and stones that have existed since the beginning of the Earth as the Earth&rsquo;s vehicle for memory storage?</p>`,
                 },
             },
             {
-                id: '489037335',
+                id: '502827641',
                 order: 6,
                 program: 2,
                 pt: {
-                    title: 'Future Fever',
-                    subtitle: 'Parte 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1011821766_236x133.jpg',
-                    category: 'Ji Hye Yeom',
-                    specs: `<p>2018 | 17'08"<br />
-                    Vídeo, cor, estéreo</p>`,
-                    caption: `<p>A sensação de crise, urgência e inferioridade em relação ao futuro foi recorrente no passado. Os futuristas italianos do começo do século 20 defendiam uma entrada assertiva no futuro; isso ecoava o fascismo da época, que falava em “criar uma nova sociedade”. Agora enfrentamos a epidemia contemporânea da “febre do futuro”, crença aguerrida em um progresso que depende de vencer a corrida da alta tecnologia. Para onde vamos, exatamente?</p>`,
+                    title: 'In Search of Petra Genetrix',
+                    subtitle: '(versão MMCA/Coreia)',
+                    title_box: 'In Search of Petra Genetrix (versão MMCA/Coreia)',
+                    poster: '/img/ayoung/home/insearchofpetra_MMCA.jpg',
+                    thumb: '/img/ayoung/home/insearchofpetra_MMCA.jpg',
+                    category: '(versão MMCA/Coreia)',
+                    specs: `<p>2020 | 28'13"<br />
+                    performance-palestra com voz alterada, cor, estéreo</p>`,
+                    caption: `<p>Palestra-performance realizada no espa&ccedil;o expositivo da artista no MMCA, Seoul, como parte do Korea Artist Prize 2019. Petra Genetrix, protagonista da s&eacute;rie <em>Porosity Valley</em>, &eacute; um conglomerado de migrantes, minerais e dados que atravessa constantemente barreiras entre na&ccedil;&otilde;es, g&ecirc;neros, exist&ecirc;ncia e inexist&ecirc;ncia. Manipulando fragmentos de &aacute;udio e v&iacute;deo de seus trabalhos, ela usa a voz para criar uma narrativa sobre agentes que cruzam fronteiras. Ao faz&ecirc;-lo, desenha as faces de cristal multifacetadas de Petra Genetrix, essencialmente porosa e amb&iacute;gua.</p>`,
                 },
                 en: {
-                    title: 'Future Fever',
-                    subtitle: 'Part 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1011821766_236x133.jpg',
-                    category: 'Ji Hye Yeom',
-                    specs: `<p>2018 | 17'08"<br />
-                    Single channel video, color, stereo</p>`,
-                    caption: `<p>A sense of crisis, urgency, and inferiority towards the future has repeated itself in the past. Italian Futurists of the early 20th century defended aggressively entering the future; it resonated with Fascism at the time, which was about ‘new people, making a new society’. We now face the contemporary epidemic of ‘future fever’, a fervent belief that progress depends on winning the high-tech race. Where exactly are we headed? </p>`,
+                    title: 'In Search of Petra Genetrix',
+                    subtitle: '(MMCA/Korea version)',
+                    title_box: 'In Search of Petra Genetrix (MMCA/Korea version)',
+                    poster: '/img/ayoung/home/insearchofpetra_MMCA.jpg',
+                    thumb: '/img/ayoung/home/insearchofpetra_MMCA.jpg',
+                    category: '(MMCA/Korea version)',
+                    specs: `<p>2020 | 28'13"<br />
+                    voice-transforming lecture performance, color, stereo</p>`,
+                    caption: `<p>A live lecture performance held at Ayoung Kim&rsquo;s Exhibition Space at MMCA, Seoul, as a Part of Korea Artist Prize 2019. Petra Genetrix, the protagonist of the <em>Porosity Valley</em> series, is a migrant, mineral, and data cluster who constantly crosses borders, gender boundaries, and the concept of existence and nonexistence. While utilizing audio and video excerpts from her existing works, she uses her own voice to create a verbal narrative exploring those agents who cross boundaries. By doing so, she continues to trace multifaceted crystal faces of Petra Genetrix, who is fundamentally porous and ambiguous.</p>`,
                 },
             },
             {
-                id: '489036623',
+                id: '502827208',
                 order: 7,
                 program: 2,
                 pt: {
-                    title: 'A Night with a Pink Dolphin',
-                    subtitle: 'Parte 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1011823335_236x133.jpg',
-                    category: 'Ji Hye Yeom',
-                    specs: `<p>2015 | 21'36"<br />
-                    Vídeo, cor, estéreo</p>`,
-                    caption: `<p>Baseado na experiência de encontrar um boto cor-de-rosa na Amazônia, o trabalho tem quatro camadas: uma lenda do folclore sobre o animal; a história colonial da região; um relato pessoal do encontro; e as forças do capitalismo em ação, que se revelam na imagem de botos sendo consumidos e absorvidos.</p>`,
+                    title: 'In Search of Petra Genetrix',
+                    subtitle: '(versão IMPAKT Festival/Holanda)',
+                    title_box: 'In Search of Petra Genetrix (versão IMPAKT Festival/Holanda)',
+                    poster: '/img/ayoung/home/insearchofpetra_IMPAKT.jpg',
+                    thumb: '/img/ayoung/home/insearchofpetra_IMPAKT.jpg',
+                    category: '(versão IMPAKT Festival/Holanda)',
+                    specs: `<p>2020 | 2020 | 30'45"<br />
+                    performance-palestra com voz alterada, cor, estéreo</p>`,
+                    caption: `<p>Ayoung Kim cria sua pr&oacute;pria vers&atilde;o do mito segundo o qual os seres humanos prov&ecirc;m das pedras: uma mitologia ligada ao personagem fict&iacute;cio de Petra Genetrix, protagonista da s&eacute;rie <em>Porosity Valley</em>. Partindo da ideia da petrog&ecirc;nese &ndash; o que tem origem na pedra &ndash;,vagueia pelos estratos da Terra. Trechos de entrevistas com historiadores, ge&oacute;logos e moradores, gravadas na Mong&oacute;lia e no Ir&atilde;, s&atilde;o exibidos enquanto a artista, alterando a pr&oacute;pria voz, incorpora diferentes entidades.</p>`,
                 },
                 en: {
-                    title: 'A Night with a Pink Dolphin',
-                    subtitle: 'Part 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1011823335_236x133.jpg',
-                    category: 'Ji Hye Yeom',
-                    specs: `<p>2015 | 21'36"<br />
-                    Single channel video, color, stereo</p>`,
-                    caption: `<p>Based on the experience of encountering a pink dolphin in the Amazon, the work consists of four tiers: a folk legend about these animals, the region’s surrounding colonial history, a personal narrative of the encounter, and the operating forces of capitalism revealed through the representation of pink dolphins being consumed and absorbed.</p>`,
+                    title: 'In Search of Petra Genetrix',
+                    subtitle: '(IMPAKT Festival/The Netherlands version)',
+                    title_box: 'In Search of Petra Genetrix (IMPAKT Festival/The Netherlands version)',
+                    poster: '/img/ayoung/home/insearchofpetra_IMPAKT.jpg',
+                    thumb: '/img/ayoung/home/insearchofpetra_IMPAKT.jpg',
+                    category: '(IMPAKT Festival/The Netherlands version)',
+                    specs: `<p>2020 | 2020 | 30'45"<br />
+                    voice-transforming lecture performance, color, stereo</p>`,
+                    caption: `<p>Ayoung Kim creates her own version of the myth according to which human beings were born from rocks: a mythology connected to the fictional character of Petra Genetrix, the protagonist of her series <em>Porosity Valley</em>. Through the notion of Petrogenesis&ndash;genesis from rocks&ndash;, the artist wanders through the Earth&rsquo;s strata. She shows us fragments of interviews she recorded in Mongolia and Iran with history and geology experts and local inhabitants, while she embodies different entities by transforming her own voice.</p>`,
                 },
             },
             {
@@ -220,134 +233,59 @@ exports.getListaDocs = (req, res, next) => {
                 order: 8,
                 program: 2,
                 pt: {
-                    title: 'Sound Garden',
-                    subtitle: 'Parte 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008460672_236x133.jpg',
-                    category: 'Jeamin Cha',
-                    specs: `<p>2019 | 30'<br />
-                    Videoinstalação single-channel, cor, estéreo</p>`,
-                    caption: `<p>Cenas de árvores enormes se alternam com entrevistas com profissionais de saúde mental sul-coreanas. As árvores vêm de um processo de mercantilização; são cultivadas para crescer mais que o normal e manter a qualidade estética. A terapia tem suas próprias contradições: o pós-capitalismo a utiliza como forma de administrar a saúde mental, mas ela também tem a missão de desembaraçar o espírito humano danificado pelos valores e ambientes sociais contemporâneos.</p>`,
+                    title: 'In This Vessel We Shall Be Kept',
+                    subtitle: 'With Sébastien Bertaud',
+                    title_box: 'In This Vessel We Shall Be Kept (With Sébastien Bertaud)',
+                    poster: '/img/ayoung/home/inthisvessel.jpg',
+                    thumb: '/img/ayoung/home/inthisvessel.jpg',
+                    category: 'With Sébastien Bertaud',
+                    specs: `<p>2016 | 18'17"<br />
+                    performance de voz e dança, cor, estéreo</p>`,
+                    caption: `<p>O projeto se ancora no por&atilde;o do Palais Garnier, em Paris, nas profundezas de seu &ldquo;lago&rdquo; submerso, e encena uma inunda&ccedil;&atilde;o m&iacute;tica esquecida h&aacute; muito. O reservat&oacute;rio artificial, constru&iacute;do pelo arquiteto Charles Garnier quando um bra&ccedil;o do Sena transbordou, &eacute; revestido com piche, impermeabilizante derivado de petr&oacute;leo que No&eacute; teria usado para calafetar o casco de sua arca.</p>
+                    <p>Esse espa&ccedil;o claustrof&oacute;bico protegeu o Palais Garnier, assim como a &aacute;gua do lastro traz o peso para o centro para estabilizar um navio sem carga. Al&eacute;m disso, a nave do teatro (mesmo nome do corredor central dos templos e catedrais) tem a forma estrutural de um navio.</p>
+                    <p>A artista constr&oacute;i o trabalho apropriando-se de elementos comuns a tempos e espa&ccedil;os diferentes, incluindo o barco (ou arca) impermeabilizado com betume para salvar a humanidade de inunda&ccedil;&otilde;es reais e m&iacute;ticas &ndash; que aparecem na B&iacute;blia, no Alcor&atilde;o e no Epopeia de Gilgamesh, da antiga Mesopot&acirc;mia, hoje uma regi&atilde;o conturbada. A estrutura do Palais Garnier e narrativas sobre desastres contempor&acirc;neos permeiam o projeto.</p>
+                    <p>Nesse trabalho colaborativo, o p&uacute;blico &eacute; recebido por seis bailarinos e seis cantores e embarca em uma jornada, flutuando sobre ondas de vozes e movimento.</p>`,
                 },
                 en: {
-                    title: 'Sound Garden',
-                    subtitle: 'Part 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008460672_236x133.jpg',
-                    category: 'Jeamin Cha',
-                    specs: `<p>2019 | 30'<br />
-                    Single channel video installation, color, stereo</p>`,
-                    caption: `<p>Scenes of large trees alternate with interviews with South Korean female mental health counselors. The trees are the product of a commodification process, cultivated to grow large in size and maintain aesthetic quality. Counseling has its own contradictions: post-capitalism employs it as a form of mental health management, but it is also meant to disentangle the human spirit damaged by contemporary values and social environments.</p>`,
+                    title: 'In This Vessel We Shall Be Kept',
+                    subtitle: 'With Sébastien Bertaud',
+                    title_box: 'In This Vessel We Shall Be Kept (With Sébastien Bertaud)',
+                    poster: '/img/ayoung/home/inthisvessel.jpg',
+                    thumb: '/img/ayoung/home/inthisvessel.jpg',
+                    category: 'With Sébastien Bertaud',
+                    specs: `<p>2016 | 18'17"<br />
+                    voice and dance performance, color, stereo</p>`,
+                    caption: `<p>The project takes root in the basement of the Palais Garnier, in Paris&ndash;in the depths of its famous underground &ldquo;lake&rdquo;&ndash;to stage a long forgotten mythical flood. The artificial reservoir, built by architect Charles Garnier when a branch of the Seine flooded, is coated with pitch, a petroleum derivative with waterproofing properties that Noah supposedly used to caulk the hull of his ark.</p>
+                    <p>This claustrophobic space has protected Palais Garnier as the ballast water puts weight on the hull to stabilize the unloaded ship. On top of this, the &lsquo;nef&rsquo; of the opera house, named just like the central corridor of temples/cathedrals, is structurally shaped like a boat.</p>
+                    <p>The artist has constructed the piece by appropriating elements that are common across time and space, including the vessel (or arc) waterproofed with bitumen to save the humanity from real and mythological floods, that appear on the Bible, the Quran and the Epic of Gilgamesh of the ancient Mesopotamia, now a troubled region. The structure of Palais Garnier and contemporary disaster narratives are diffused in the project.</p>
+                    <p>In this collaborative work, the audiences are greeted by six dancers and six singers and embark into a ship to join a voyage, floating on the waves of voices and movements.</p>`,
                 },
             },
             {
-                id: '487232513',
+                id: '502827072',
                 order: 9,
                 program: 2,
                 pt: {
-                    title: 'Ellie’s Eye',
-                    subtitle: 'Parte 2 - Ghosts of the City',
+                    title: 'Every North Star: Part I & II',
+                    subtitle: '',
                     title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008337780_236x133.jpg',
-                    category: 'Jeamin Cha',
-                    specs: `<p>2020 | 11'38"<br />
-                    Videoinstalação em dois canais, cor, estéreo</p>`,
-                    caption: `<p>Ellie é uma terapeuta virtual em progresso, baseada em Inteligência Artificial. O vídeo-ensaio examina a relação entre tecnologias aplicadas a tratamentos médicos e o desejo humano de ver-se através e por dentro. E indaga como sociedades e tecnologias do futuro conseguirão abordar questões psicológicas individuais – e se não estamos fazendo da própria psiquê humana um objeto.</p>`,
+                    poster: '/img/ayoung/home/everynorthstar1.jpg',
+                    thumb: '/img/ayoung/home/everynorthstar1.jpg',
+                    category: '',
+                    specs: `<p>2010 | 14'57"<br />
+                    vídeo, p&b, estéreo</p>`,
+                    caption: `<p>Intrigada pela not&iacute;cia do suic&iacute;dio de uma j&oacute;quei, e pela rela&ccedil;&atilde;o estreita que ela tinha com um cavalo chamado The North Star, a artista tenta entender o passado usando informa&ccedil;&otilde;es de dom&iacute;nio p&uacute;blico sobre a &ldquo;ind&uacute;stria&rdquo; do turfe na Coreia, como anais de resultados e manchetes noticiosas, que converte em uma narrativa em duas partes. Os espectadores podem contempl&aacute;-la e entender algumas idiossincrasias da cidade de Busan, na Coreia do Sul. Hist&oacute;rias aparentemente comuns e individuais com frequ&ecirc;ncia est&atilde;o atadas aos fluxos sociais mais amplos de uma era que constitui a hist&oacute;ria recente n&atilde;o apenas da cidade, mas tamb&eacute;m do pa&iacute;s.</p>`,
                 },
                 en: {
-                    title: 'Ellie’s Eye',
-                    subtitle: 'Part 2 - Ghosts of the City',
+                    title: 'Every North Star: Part I & II',
+                    subtitle: '',
                     title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008337780_236x133.jpg',
-                    category: 'Jeamin Cha',
-                    specs: `<p>2020 | 11'38"<br />
-                    Two channel video installation, color, stereo</p>`,
-                    caption: `<p>Ellie is the name of an AI therapist in development. This video-essay examines how technologies invented for medical treatment relate to the human desire to see through, and into. It interrogates how future societies and technologies can approach individual psychological issues, and whether we are objectifying the human psyche itself.</p>`,
-                },
-            },
-            {
-                id: '487301265',
-                order: 10,
-                program: 2,
-                pt: {
-                    title: 'Cow Bathing for Spring Day',
-                    subtitle: 'Parte 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008458685_236x133.jpg',
-                    category: 'Eunji Cho',
-                    specs: `<p>2018 | 10’10”<br />
-                    Vídeo, cor, estéreo</p>`,
-                    caption: `<p>Filmado em uma fazenda em Jacarta, Indonésia, o vídeo captura a sensação imediata de uma vaca ao ser tocada. O artista foca corpos que têm de aguentar passivamente qualquer violência, e interage com eles. A pele da vaca se torna um dispositivo sonoro, e seus olhos representam o que não pode ser representado.</p>`,
-                },
-                en: {
-                    title: 'Cow Bathing for Spring Day',
-                    subtitle: 'Part 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008458685_236x133.jpg',
-                    category: 'Eunji Cho',
-                    specs: `<p>2018 | 10’10”<br />
-                    Single channel video, color, stereo</p>`,
-                    caption: `<p>Filmed at a farm in Jakarta, Indonesia, the video captures the immediate sensation of the touch against the skin of a cow. The artist focuses on the bodies of those who have to bear any violence with complete passivity, and engages with them. The cow skin becomes a sound piece, and its eyes, a representation of what cannot be represented.</p>`,
-                },
-            },
-            {
-                id: '487326243',
-                order: 11,
-                program: 2,
-                pt: {
-                    title: 'Song for the Shooting Star',
-                    subtitle: 'Parte 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008491329_236x133.jpg',
-                    category: 'Eunji Cho',
-                    specs: `<p>2018 |  5’39”<br />
-                    Vídeo, cor, estéreo</p>`,
-                    caption: `<p>Uma zona de meretrício em Seoul, erguida nos anos 1960, caiu em ruína, e hoje é um espaço vazio e desarticulado, sem janela que divida dentro e fora, sem portas para salas ou corredores. Sem separação de opostos, revela que o outro é inseparável. A lama atirada mostra um espaço descartado por um sistema incapaz de domesticá-lo – o resto nunca incorporado nem devidamente velado.</p>`,
-                },
-                en: {
-                    title: 'Song for the Shooting Star',
-                    subtitle: 'Part 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008491329_236x133.jpg',
-                    category: 'Eunji Cho',
-                    specs: `<p>2018 |  5’39”<br />
-                    Single channel video, color, stereo</p>`,
-                    caption: `<p>A red-light district in Seoul, built in the 1960s, has fallen into ruin, and is now an empty space without articulation; no windows to separate inside and outside, no doors to rooms or corridors. With no separation of opposites, it elucidates the inseparability with the other. The act of throwing mud reveals the space spit out by the system because it cannot be tamed; the remainder not incorporated into meaning, and never fully mourned.</p>`,
-                },
-            },
-            {
-                id: '487234220',
-                order: 12,
-                program: 2,
-                pt: {
-                    title: 'Wild Seed',
-                    subtitle: 'Parte 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008343956_236x133.jpg',
-                    category: 'Song Min Jung',
-                    specs: `<p>2020 |  22’23”<br />
-                    Vídeo, cor, estéreo</p>`,
-                    caption: `<p>Nesse thriller de vingança, uma pessoa que perdeu seu corpo físico por causa de dados manipulados vivencia um mundo diferente como anônimo, fantasma, e enfrenta as contradições e as verdades de viver em uma cidade com um corpo estranho. O trabalho contempla um mundo onde físico e não físico se misturam.</p>`,
-                },
-                en: {
-                    title: 'Wild Seed',
-                    subtitle: 'Part 2 - Ghosts of the City',
-                    title_box: '',
-                    poster: '',
-                    thumb: 'https://i.vimeocdn.com/video/1008343956_236x133.jpg',
-                    category: 'Song Min Jung',
-                    specs: `<p>2020 |  22’23”<br />
-                    Single channel video, color, stereo</p>`,
-                    caption: `<p>A revenge thriller in which a person who has lost their physical body due to data manipulation experiences a different world as an anonymous, a ghost, and faces the contradictions and truths of living in a city with a strange body. This work observes a world where physical and non-physical are mixed together.</p>`,
+                    poster: '/img/ayoung/home/everynorthstar1.jpg',
+                    thumb: '/img/ayoung/home/everynorthstar1.jpg',
+                    category: '',
+                    specs: `<p>2010 | 14'57"<br />
+                    single channel video, b&w, stereo</p>`,
+                    caption: `<p>Intrigued by a news story about a female jockey&rsquo;s suicide and its close relation to a horse called The North Star, the artist attempts to grasp at the past through public information around the horse racing industry in Korea, such as horse racing records and news headlines, and converts into a new narrative in two parts. Viewers can contemplate it and also grasp the idiosyncrasies of Busan, in South Korea. The apparently individual and vernacular stories are often tied up with broader social flows of an era that constitute the recent history not only of the city, but also of the country.</p>`,
                 },
             },
         ],

@@ -17,100 +17,56 @@ exports.getSaibaMais = (req, res, next) => {
         ],
         replaceText: true,
         pt: {
-            name: 'Anthropocene: Korea x Brazil 2019-2021',
-            subtitle: 'Curadoria Juhyun Cho',
+            name: 'Ayoung Kim: Oxbow Lake Time',
+            subtitle: 'Anthropocene: Korea x Brazil 2019-2021',
             partners: '',
             links: [
                 {
-                    title: 'Eunji Cho',
+                    title: 'Leia mais',
                     url: '',
                     blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/eunji-cho.jpg" />Usando performance, instala&ccedil;&atilde;o, interven&ccedil;&atilde;o, desenho e texto, a artista ativa o movimento e a energia inerentes a ru&iacute;nas urbanas, vest&iacute;gios e mat&eacute;rias suspensas como lama, pedra e poeira.&nbsp;Explora o escorregamento que acontece quando um sujeito contempor&acirc;neo adentra outro territ&oacute;rio e torna-se minoria, o colonizado, o &ldquo;outro&rdquo;. Participou de coletivas como<em> Walking Drifting Dragging</em>,&nbsp;no New Museum (Nova York, 2013).'
-                },
-                {
-                    title: 'Hayoun Kwon',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/hayoun-kwon.jpg" />Fronteiras s&atilde;o recorrentes na obra da artista, da divisa real entre Coreia do Sul e Coreia do Norte, que v&ecirc; como um palco de teatro &ndash; com marcas que o espectador n&atilde;o pode transpor &ndash;, aos limites f&iacute;sicos e mentais do indiv&iacute;duo. Ganhou o Prix D&eacute;couverte des Amis du Palais de Tokyo (2015), o grande pr&ecirc;mio do 62&ordm; Oberhausen International Short Film Festival (2016) e o Arte Creative Newcomer Award do European Media Art Festival (2014).'
-                },
-                {
-                    title: 'Jeamin Cha',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/jaemin-cha.jpg" />A artista trabalha com filme, performance e instala&ccedil;&atilde;o. Suas obras n&atilde;o s&atilde;o constru&iacute;das com imagens virtuais, mas captadas, e indagam sobre as possibilidades e as fragilidade das artes visuais e do document&aacute;rio. Aborda realidades individuais a partir de processos de entrevista e estudos de campo, atenta para a forma como a sociedade permeia a vida. Participou de coletivas no Asia Culture Center e no Barcelona Museum of Contemporary Art, e de festivais internacionais de cinema como Berlim, entre outros.'
-                },
-                {
-                    title: 'Ji Hye Yeom',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/ji-hye-yeom.jpg" />Experi&ecirc;ncias intensas de viagem informam o trabalho da artista, colagens de imagens reais e virtuais que sobrep&otilde;em entidades de tempos e espa&ccedil;os diversos e aludem &agrave; destrui&ccedil;&atilde;o ambiental iminente do planeta. Suas exposi&ccedil;&otilde;es recentes incluem <a href="https://www.mutualart.com/Exhibition/Tenacious-Afterimage/EA65E32B1ED8FC6E"><em>Tenacious Afterimage</em></a> (Doosan Gallery, Nova York, 2018), <em>Total Perspective Vortex</em> (Daegu Art Museum, 2018), <a href="https://www.mutualart.com/Exhibition/Imaginary-Asia-/29F073A63A6E0B7A"><em>Imaginary Asia </em>(</a>Nam June Paik Art Center, Yongin-Si, 2017), e&nbsp;<em>All Exiles Have a Hidden Luck</em> (Art Sonje Center Project Space, Seoul, 2015).'
-                },
-                {
-                    title: 'Sanghee Song',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/sanghee-song.jpg" />A artista transforma situa&ccedil;&otilde;es sociais e contextos relacionais em objeto de pesquisa. A partir da facilidade de introspec&ccedil;&atilde;o e do interesse pela voz do outro, enfoca uma gama ampla de temas: experi&ecirc;ncias pessoais, identidades relacionadas &agrave; moderniza&ccedil;&atilde;o da Coreia, trabalhadores sexuais, mitos, ecologia. A artista participou de resid&ecirc;ncias no exterior, fez dez exposi&ccedil;&otilde;es individuais e recebeu o Hermes Foundation Art Prize (2008) e o Korea Artist Prize do National Museum of Modern and Contemporary Art.'
-                },
-                {
-                    title: 'Song Min Jung',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/song-min-jung.jpg" />A artista participou de coletivas como a <em>Busan Biennale 2020: an exhibition in ten chapters and five poems </em>(Museum of Comtemporary Art Busan, 2020), <em>Night Turns to Day</em> (Art Sonje Center, 2019), <em>Young Korean Artists 2019</em> (MMCA Korea, 2019), <em>PRO-TEST</em> (SeMA Bunker, 2019) e <em>Dear Amazon</em>&nbsp; (Ilmin Museum of Art, 2019), al&eacute;m do Asis Film and Videoart Forum (MMCA Korea, 2019). Suas individuais incluem <em>COLD MOOD</em> <em>(1000% soft point)</em>, na Tastehouse, Seoul (2018).'
+                    textReplacement: `
+                    <p>Uma sele&ccedil;&atilde;o de ensaios para download sobre a obra de <strong>Ayoung King</strong></p>
+                    <p>&nbsp;</p>
+                    <p><a href="/pdfs/ayoung/2020_jinshil_lee_speculative_feminism.pdf" target="_blank" rel="noopener">The Nth Possible World of Speculative Feminism: Ayoung Kim&rsquo;s <em>Porosity Valley 1 &amp; 2 </em>(2017-2019)</a>, 2020<br />Por Jinshil Lee</p>
+                    <p><a href="/pdfs/ayoung/2018_rezanegarestani_cosmological_politics_of_many_worlds_edit.pdf" target="_blank" rel="noopener">Fragments on Cosmological Politics of Many Worlds</a>, 2018<br />Por Reza Negarestani</p>
+                    <p><a href="/pdfs/ayoung/2018_celine_poulin_petra_genetrix_and_the_figure_of_the_lyrical_assembler.pdf" target="_blank" rel="noopener">Petra Genetrix and the Figure of the Lyrical Assembler</a>, 2018<br />Por C&eacute;line Poulin</p>
+                    <p><a href="/pdfs/ayoung/2018_ayoung_kim_petrogenesis,_petra_genetrix.pdf" target="_blank" rel="noopener">Petrogenesis, Petra Genetrix</a>, 2018<br />Por Ayoung Kim</p>
+                    `
                 },
             ],
-            content: `<p>O mundo dist&oacute;pico legado ao futuro pelo Antropoceno &eacute; um tema cr&iacute;tico para os artistas contempor&acirc;neos da Coreia do Sul. <em>Anthropocene: Korea x Brazil 2019-2021</em> traz para o Videobrasil Online, por dois meses, o melhor dessa produ&ccedil;&atilde;o. At&eacute; o fim de janeiro, uma sele&ccedil;&atilde;o de obras organizada por Juhyun Cho, curadora-chefe do Ilmin Museum of Art, em Seul, re&uacute;ne seis dos principais nomes da cena sul-coreana. Em fevereiro, vai ao ar uma individual da artista Ayoung Kim, que representou a Coreia na 56&ordf; Bienal de Veneza.</p>
-            
-            <p>Pesquisadora associada do Center for Anthropocene Studies, KAIST, Juhyun Cho nutre especial interesse pela rela&ccedil;&atilde;o entre arte e novas m&iacute;dias, al&eacute;m de quest&otilde;es relacionadas &agrave; reconstitui&ccedil;&atilde;o da modernidade e da hist&oacute;ria. Suas curadorias incluem <em>do it 2017, Seoul</em> e <em>Flip Book: The Revolutionary Animations of the 21th Century</em> (2018).&nbsp;</p>
-            
-            <p>Em <em>Anthropocene</em>, ela re&uacute;ne anima&ccedil;&otilde;es, instala&ccedil;&otilde;es e v&iacute;deos que navegam pela zona de choque entre os futuros antevistos pela ci&ecirc;ncia, a tecnologia e o capital e aquele que de fato se apresenta. A crise da civiliza&ccedil;&atilde;o moderna e do ecossistema global &eacute; o subtexto das obras de Hayoun Kwon, Sanghee Song, Eunji Cho, Jeamin Cha, Song Min Jung e Ji Hye Yeom, que contam hist&oacute;rias de amor e vingan&ccedil;a entre homem e natureza, exploram as fronteiras da experi&ecirc;ncia f&iacute;sica e exp&otilde;em a viol&ecirc;ncia da a&ccedil;&atilde;o que priva de significado aquilo que n&atilde;o pode domesticar. em seu <em>statement,</em> a curadora afirma: &ldquo;S&atilde;o artistas que operam na fronteira entre normalidade e aberra&ccedil;&atilde;o, em obras que, de formas diferentes, baseiam-se no documental&rdquo;.&nbsp;</p>
-            <p><em>Anthropocene: Korea x Brazil 2019-2021</em> &eacute; um projeto de coopera&ccedil;&atilde;o entre a Associa&ccedil;&atilde;o Cultural Videobrasil e o Ilmin Museum of Art. Realizado em parceria com o ARKO Fund (Arts Council Korea), celebra os sessenta anos do estabelecimento de rela&ccedil;&otilde;es diplom&aacute;ticas entre Brasil e Coreia do Sul. Teve in&iacute;cio com uma exposi&ccedil;&atilde;o de artistas brasileiros e sul-coreanos no Ilmin Museum of Art, organizada por Juhyun Cho com colaboração de Solange Farkas, em 2019. A segunda exposi&ccedil;&atilde;o, que aconteceria em 2020 no Brasil, foi repensada em fun&ccedil;&atilde;o da pandemia do novo Coronav&iacute;rus, e chega agora ao Videobrasil Online.</p>`,
+            content: `<p>A ideia de uma fic&ccedil;&atilde;o que rompe radicalmente com a mim&eacute;tica e arrisca-se a criar mundos, m&atilde;e de tantos g&ecirc;neros liter&aacute;rios, ganha dimens&otilde;es particulares no trabalho de Ayoung Kim. De grande pot&ecirc;ncia visual, sonora e c&ecirc;nica, os v&iacute;deos, performances e projetos teatrais da artista articulam elementos de tempos, espa&ccedil;os e sintaxes diversos, enxertando o ficcional na hist&oacute;ria e distorcendo a realidade para faz&ecirc;-los colidir. Feitas para incitar formas pouco familiares de leitura, escuta e pensamento, atravessam mitos de origem e distopias futuristas, cat&aacute;strofes reais e mitol&oacute;gicas, mar&eacute;s e minerais, na&ccedil;&otilde;es e g&ecirc;neros.</p>
+            <p>Uma das artistas mais proeminentes da cena sul-coreana, Ayoung Kim sintetiza em obras de formaliza&ccedil;&atilde;o rigorosa o resultado de uma especula&ccedil;&atilde;o de amplo espectro, que relaciona biopol&iacute;tica e controle de fronteiras, a mem&oacute;ria da pedra e a mem&oacute;ria virtual, a origem ancestral e o futuro iminente. A exposi&ccedil;&atilde;o <em>Oxbow Lake Time</em> re&uacute;ne trabalhos realizados entre 2010 e 2021, dos v&iacute;deos da s&eacute;rie fundadora <em>Every North Star</em> &agrave; recente performance-palestra <em>In Search of Petra Genetrix</em> (2020). &nbsp;</p>
+            <p>Em v&iacute;deo-depoimento criado para a exposi&ccedil;&atilde;o, Kim comenta e relaciona os trabalhos, inventariando temas recorrentes. O t&iacute;tulo escolhido &ndash; em portugu&ecirc;s, lago em ferradura &ndash; designa um trecho sinuoso de rio que, por causas naturais, se separa do curso principal e forma um corpo de &aacute;gua isolado. Comum no Brasil, o acidente geogr&aacute;fico &eacute;, para a artista, uma met&aacute;fora do estado atual de coisas. &ldquo;Os lagos em ferradura s&atilde;o como uma parte seccionada de um corpo. Representam uma condi&ccedil;&atilde;o de restri&ccedil;&atilde;o e de isolamento mas, ao mesmo tempo, algo em potencial&rdquo;, diz. &ldquo;Isso pode ser relacionado ao estranhamento existencial que vivemos na pandemia, um tempo descont&iacute;nuo e isolado. Tanto na separa&ccedil;&atilde;o f&iacute;sica quanto na cronologia da descontinuidade, o &lsquo;tempo do lago em ferradura&rsquo; sugere o pr&oacute;prio mundo de hoje&rdquo;.</p>
+            <p>Com uma passagem marcante pela 56&ordf; Bienal de Veneza (2015) e resid&ecirc;ncias e premia&ccedil;&otilde;es internacionais, Ayoung Kim mostrou suas obras em individuais e festivais de cinema na Coreia do Sul, Austr&aacute;lia, China e Europa. <em>Oxbow Lake Time</em> fecha o projeto <em>Anthropocene: Korea x Brazil 2019-2021</em>, uma coopera&ccedil;&atilde;o entre a Associa&ccedil;&atilde;o Cultural Videobrasil e o Ilmin Museum of Art, em parceria com o ARKO Fund (Arts Council Korea).</p>
+            <p>-</p>
+            <p><strong>Solange Farkas</strong></p>`,
         },
         en: {
-            name: 'Anthropocene: Korea x Brazil 2019-2021',
-            subtitle: 'Curated by Juhyun Cho',
+            name: 'Ayoung Kim: Oxbow Lake Time',
+            subtitle: 'Anthropocene: Korea x Brazil 2019-2021',
             partners: '',
             links: [
                 {
-                    title: 'Eunji Cho',
+                    title: 'Further reading',
                     url: '',
                     blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/eunji-cho.jpg" />The artist activates the movement and inherent energy of urban remains, traces and suspended&nbsp;matters such as mud, stone and dust through performance, installation, intervention, and writing.&nbsp;She explores the slippage that arises when a modern subject enters another territory and&nbsp;becomes a minority, colonized, and the &ldquo;other.&rdquo; Cho uses a range of media&nbsp;including drawing, video, performance and installation. Her selected group exhibitions include&nbsp;<em>Walking Drifting Dragging</em>,&nbsp;New Museum,&nbsp;New York, 2013.'
-                },
-                {
-                    title: 'Hayoun Kwon',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/hayoun-kwon.jpg" />Borders are recurring elements in her work, from the border between North and South Korea, which she perceives as a theatre stage with limits that the spectator cannot transgress, to the question of the physical and mental limits of the individual. Winner of the Prix D&eacute;couverte des Amis du Palais de Tokyo in 2015, she received the first prize at the 62nd Oberhausen International Short Film Festival (2016), and the Arte Creative Newcomer Award at the European Media Art Festival (Osnabr&uuml;ck, 2014).'
-                },
-                {
-                    title: 'Jeamin Cha',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/jaemin-cha.jpg" />The artist works with film, performance, and installation. Her pieces are not constituted of synthesized images, but lens-based, and ask about the possibilities and helplessness of visual arts and documentaries. She approaches the reality of individuals through processes of interviews and field studies, and notes how society permeates their lives. She has participated in group exhibitions and festivals at Asia Culture Center, Barcelona Museum of Contemporary Art; and Berlin International Film Festival, among others.'
-                },
-                {
-                    title: 'Ji Hye Yeom',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/ji-hye-yeom.jpg" />The artist&rsquo;s work is informed by intense travel experiences. Her collages, composed of real and virtual images alike, superimpose entities from different spaces and time sin order to address the imminent environmental destruction of the planet. Her recent exhibitions include <em>Tenacious Afterimage</em> (Doosan Gallery, New York, 2018), <em>Total Perspective Vortex</em> (Daegu Art Museum, 2018), <em>Imaginary Asia</em> (Nam June Paik Art Center, Yongin-Si, 2017), and <em>All Exies Have a Hidden Luck</em> (Art Sonje Center Project Space, Seoul, 2015).'
-                },
-                {
-                    title: 'Sanghee Song',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/sanghee-song.jpg" />The artist transforms social situations and relational contexts and draws them into the subject of her works. Based on agile introspection and interest in the voices of others, she focuses on a wide range of topics such as personal experiences and identities related to Korean modernization, sex workers, myths and ecology. She participated in overseas residencies, had ten solo exhibitions, and received Hermes Foundation Art Prize (2008) and Korea Artist Prize (National Museum of Modern and Contemporary Art).'
-                },
-                {
-                    title: 'Song Min Jung',
-                    url: '',
-                    blank: false,
-                    textReplacement: '<img class="img-link" src="/img/brkorea/artistas/song-min-jung.jpg" />The artist has participated in several group exhibition such as <em>Busan Biennale 2020: an exhibition in ten chapters and five poems </em>(Museum of Comtemporary Art Busan, 2020), <em>Night Turns to day</em> (Art Sonje Center, 2019), <em>Young Korean Artists 2019</em> (MMCA Korea, 2019), <em>PRO-TEST</em> (SeMA Bunker, 2019), <em>Dear Amazon</em>&nbsp; (Ilmin Museum of Art, 2019), and Asis Film and Videoart Forum (MMCA Korea, 2019). Her solo exhibitions include <em>COLD MOOD</em> <em>(1000% soft point)</em>, at Tastehouse, Seoul (2018).'
+                    textReplacement: `
+                    <p>A selection of essays for download on the work of <strong>Ayoung King</strong></p>
+                    <p>&nbsp;</p>
+                    <p><a href="/pdfs/ayoung/2020_jinshil_lee_speculative_feminism.pdf" target="_blank" rel="noopener">The Nth Possible World of Speculative Feminism: Ayoung Kim&rsquo;s <em>Porosity Valley 1 &amp; 2 </em>(2017-2019)</a>, 2020<br />By Jinshil Lee</p>
+                    <p><a href="/pdfs/ayoung/2018_rezanegarestani_cosmological_politics_of_many_worlds_edit.pdf" target="_blank" rel="noopener">Fragments on Cosmological Politics of Many Worlds</a>, 2018<br />By Reza Negarestani</p>
+                    <p><a href="/pdfs/ayoung/2018_celine_poulin_petra_genetrix_and_the_figure_of_the_lyrical_assembler.pdf" target="_blank" rel="noopener">Petra Genetrix and the Figure of the Lyrical Assembler</a>, 2018<br />By C&eacute;line Poulin</p>
+                    <p><a href="/pdfs/ayoung/2018_ayoung_kim_petrogenesis,_petra_genetrix.pdf" target="_blank" rel="noopener">Petrogenesis, Petra Genetrix</a>, 2018<br />By Ayoung Kim</p>
+                    `
                 },
             ],
-            content: `<p>The dystopian world that the Anthropocene will bequeath to the future is a crucial focal point for contemporary South Korean artists. <em>Anthropocene: Korea x Brazil 2019-2021</em> brings the best of this production to Videobrasil Online. Throughout January, the website features a selection of artworks by six major Korean video and film artists, organized by Juhyun Cho, head curator of the Ilmin Museum of Art, in Seoul. In February, it hosts a solo exhibition of works by artist Ayoung Kim, who represented Korea at the 56th Venice Biennale.</p>
-            <p>An associate researcher at the Center for Anthropocene Studies, KAIST, Juhyun Cho takes a special interest in the relationship between art and new media, as well as issues related to the reconstitution of modernity and history. She has curated exhibitions such as <em>do it 2017,</em> <em>Seoul</em> and <em>Flip Book: The Revolutionary Animations of the 21</em><em>st</em><em> Century</em> (2018).</p>
-            <p>In <em>Anthropocene</em>, Cho brings together animations, installations, and videos that investigate the clash between the futures envisioned by science, technology, and capitalism, and the future as it actually presents itself. The crises of modern civilization and of the global ecosystem serve as subtexts in the works of Hayoun Kwon, Sanghee Song, Eunji Cho, Jeamin Cha, Song Min Jung, and Ji Hye Yeom, which tell stories of love and vengeance between humans and nature, explore the frontiers of physical experience, and expose the violent acts which strip all that is untamable of any possible meaning. According to the curator&rsquo;s statement, &ldquo;these artists work on the boundary that distinguishes between normality and abnormality through various forms of documentary-based works.&rdquo;</p>
-            <p><em>Anthropocene: Korea x Brazil 2019-2021</em> is a collaborative project by Associa&ccedil;&atilde;o Cultural Videobrasil and Ilmin Museum of Art, in Seoul, in partnership with ARKO Fund (Arts Council Korea). It celebrates 60 years of diplomatic relations between Brazil and South Korea. The project started out with an exhibition held in 2019 at the Ilmin Museum of Art, with works by Brazilian and South Korean artists, curated by Juhyun Cho with the collaboration of Solange Farkas. A second exhibition, scheduled to happen in Brazil in 2020, was adapted for online viewing due to the ongoing Covid-19 pandemic and is now featured at Videobrasil Online.</p>`,
+            content: `<p>The notion of a fiction that detaches itself radically from mimesis and dares to create new worlds &ndash; a notion which has given birth to so many literary genres &ndash; takes on a special dimension in the works of Ayoung Kim. Imbued with incredible visual, sonic and scenic potency, the artist&rsquo;s videos, performances and theatrical projects explore elements from a diversity of times, space sand syntaxes, interweaving fiction and history, and distorting reality to make them collide. The pieces, set to elicit unfamiliar forms of reading, listening and thinking, cover a broad spectrum of themes: origin myths and futuristic dystopias, real and mythological catastrophes, tides and minerals, nations and genders.</p>
+            <p>In her rigorously formal work, eminent South Korean artist Ayoung Kim synthesizes the outcome of far-reaching speculation, establishing connections between biopolitics and border control, the memory of stone and virtual memory, ancestral origins and imminent futures. The <em>Oxbow Lake Time</em> exhibition features works produced from 2010 to 2021, including videos from the founding series <em>Every North Star</em>, and her recent performance-lectures <em>In Search of Petra Genetrix</em> (2020).</p>
+            <p>In a video-testimonial shot especially for the exhibition, Kim comments on and draws connections between her works, listing recurring themes. The title describes a sinuous, U-shaped section of a river that is cut off, due to natural causes, from its main course, creating a free-standing body of water. Widely found in Brazil, this natural feature is perceived by the artist as a metaphor for the current state of things. &ldquo;An Oxbow lake exists as an isolated part of the whole body. It&rsquo;s a status of being stuck or isolated in the middle of somewhere but also potential at the same time&rdquo;, she notes. &ldquo;It could link to a current strange existential time under the pandemic: non-continuous and isolated time. <em>Oxbow Lake </em>Time suggests both the space (of separation) and the time/chronology of discontinuity, the current world itself&rdquo;.</p>
+            <p>With a noteworthy participation in the 56<sup>th</sup> Venice Bienalle (2015), having taken part in residencies and received international awards, Ayoung Kim has shown her works in solo exhibitions and film festivals across South Korea, Australia, China and Europe. <em>Oxbow Lake Time</em> is the closing piece in the <em>Anthropoecene: Korea x Brazil 2019-2021 </em>project, a collaboration between Associa&ccedil;&atilde;o Cultural Videobrasil and the ilmin Museum of Art, in partnership with the ARKO Fund (Arts Council Korea).</p>
+            <p>-</p>
+            <p><strong>Solange Farkas</strong></p>`,
         },
     };
 
