@@ -86,6 +86,10 @@ export default function ListaDocs(props) {
         texttrack: lang,
     });
 
+    const createMarkup = (markup) => {
+        return { __html: markup };
+    };
+
     // #1 set current video
     const playerHandler = (
         videoId,
@@ -259,8 +263,13 @@ export default function ListaDocs(props) {
                                             css={buttonStyle}
                                         />
                                     </Link>
-                                </div>
+                                </div>  
                             );
+                        if (i === 2 && child){
+                            return <div 
+                                dangerouslySetInnerHTML={createMarkup(child)}
+                            ></div>
+                        };
                         return null;
                     })}
                 </div>
@@ -440,6 +449,7 @@ export default function ListaDocs(props) {
                     {props.lista.data.season[lang].title
                         ? props.lista.data.season[lang].title
                         : main[lang].subtitle}
+                    {main[lang].custom_html}
                 </MainPreview>
             );
 
