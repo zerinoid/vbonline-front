@@ -78,11 +78,13 @@ const VideoPlayer = (props) => {
                                 goToVideo(video.id);
                             }}
                         >
-                            {video[props.lang].title}
+                            {video[props.lang].title_box
+                                ? video[props.lang].title_box
+                                : video[props.lang].title}
                         </p>
-                        <p className="playlist-category">
+                        {/* <p className="playlist-category">
                             {video[props.lang].category}
-                        </p>
+                        </p> */}
                     </Col>
                 </Row>
             );
