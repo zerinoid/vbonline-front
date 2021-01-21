@@ -6,6 +6,11 @@ import Col from 'react-bootstrap/Col';
 import PlayerMenu from './player-menu.component';
 
 const UpperBar = (props) => {
+
+    const currentVideo = props.vimeoOptions.current_video[props.lang];
+    const videoTitle = !!currentVideo.title_box ? currentVideo.title_box : currentVideo.title;
+    const videoSubTitle = !!currentVideo.title_box ? '' : currentVideo.subtitle;
+
     return (
         <Row className="upper-bar">
             <Col
@@ -15,11 +20,11 @@ const UpperBar = (props) => {
                 className="video-title"
             >
                 <span css={{ textTransform: 'uppercase', fontWeight: 'bold' }}>
-                    {props.vimeoOptions.current_video[props.lang].title}
+                    {videoTitle}
                 </span>
                 <span>&nbsp;</span>
                 <span>
-                    {props.vimeoOptions.current_video[props.lang].subtitle}
+                    {videoSubTitle}
                 </span>
             </Col>
             <PlayerMenu
