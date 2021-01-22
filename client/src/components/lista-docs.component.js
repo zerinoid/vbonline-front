@@ -497,7 +497,10 @@ export default function ListaDocs(props) {
                 slickOptions = {
                     ...slickOptions,
                     arrows: false,
-                    swipeToSlide: true
+                    speed: 9000, 
+                    autoplay: true, 
+                    autoplaySpeed: 0, 
+                    cssEase: 'linear'
                 };
             }
 
