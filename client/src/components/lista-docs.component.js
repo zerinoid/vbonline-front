@@ -498,8 +498,6 @@ export default function ListaDocs(props) {
                     ...slickOptions,
                     arrows: false,
                     speed: 9000, 
-                    autoplay: true, 
-                    autoplaySpeed: 0, 
                     cssEase: 'linear'
                 };
             }
