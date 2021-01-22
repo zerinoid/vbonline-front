@@ -497,8 +497,6 @@ export default function ListaDocs(props) {
                 slickOptions = {
                     ...slickOptions,
                     arrows: false,
-                    speed: 9000, 
-                    cssEase: 'linear'
                 };
             }
 
