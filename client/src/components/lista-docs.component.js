@@ -225,7 +225,9 @@ export default function ListaDocs(props) {
             >
                 <div css={absoluteStyle} className={props.customClass}>
                     {React.Children.map(props.children, (child, i) => {
+                        // Main title
                         if (i === 0) return <h1>{child}</h1>;
+                        // Subtitle
                         if (i === 1)
                             return (
                                 <div
@@ -250,6 +252,18 @@ export default function ListaDocs(props) {
                                     >
                                         {child}
                                     </h3>
+                                </div>  
+                            );
+                        // Main preview custom html
+                        if (i === 2 && child){
+                            return <div id={props.customClass} className="main_preview_html"
+                                dangerouslySetInnerHTML={createMarkup(child)}
+                            ></div>
+                        }
+                        // Buttons
+                        if (i === 3) {
+                            return (
+                                <div>
                                     <img
                                         alt=""
                                         src={hovered ? playPrevHv : playPrev}
@@ -263,14 +277,9 @@ export default function ListaDocs(props) {
                                             css={buttonStyle}
                                         />
                                     </Link>
-                                </div>  
+                                </div>
                             );
-                        if (i === 2 && child){
-                            return <div id={props.customClass} 
-                                dangerouslySetInnerHTML={createMarkup(child)}
-                            ></div>
-                        };
-                        return null;
+                        }
                     })}
                 </div>
             </BasePreview>
@@ -375,6 +384,8 @@ export default function ListaDocs(props) {
                     {props.lista.data.season[lang].title
                         ? props.lista.data.season[lang].title
                         : main[lang].subtitle}
+                    {main[lang].main_preview_html}
+                    {null /* Leave empty for buttons to be rendered */} 
                 </MainPreview>
             );
 
@@ -452,6 +463,7 @@ export default function ListaDocs(props) {
                         ? props.lista.data.season[lang].title
                         : main[lang].subtitle}
                     {main[lang].main_preview_html}
+                    {null /* Leave empty for buttons to be rendered */} 
                 </MainPreview>
             );
 
