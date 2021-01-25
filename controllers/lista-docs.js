@@ -63,11 +63,11 @@ exports.getListaDocs = (req, res, next) => {
                 program: 1,
                 pt: {
                     title: 'At the Surisol Underwater Lab',
-                    subtitle: '(excerto)',
-                    title_box: 'At the Surisol Underwater Lab',
+                    subtitle: '',
+                    title_box: 'At the Surisol Underwater Lab (excerto)',
                     poster: '/img/ayoung/home/surisol.jpg',
                     thumb: '/img/ayoung/home/surisol.jpg',
-                    category: '(excerto)', // Use for artist name
+                    category: '', // Use for artist name
                     specs: `<p>2020 | 03'58"<br />
                     Vídeo, cor, estéreo</p>`,
                     caption: `<p>Essa fic&ccedil;&atilde;o especulativa se passa no futuro pr&oacute;ximo, cerca de uma d&eacute;cada depois da pandemia global do Covid-19. Na esteira da mudan&ccedil;a clim&aacute;tica e do esgotamento dos recursos naturais causado pelos combust&iacute;veis f&oacute;sseis, os biocombust&iacute;veis verdes tornaram-se a maior fonte de energia das sociedades. A principal s&atilde;o as macroalgas, fermentadas para produzir biocombust&iacute;vel. Em Busan, uma &ldquo;cidade da biomassa&rdquo; cresceu ao longo da costa do Mar do Leste. O laborat&oacute;rio submarino Surisol, &agrave; frente de um processo que integra fazendas de alga, qualidade da &aacute;gua, correntes mar&iacute;timas e biomassa, tamb&eacute;m fica na regi&atilde;o das Ilhas Oryukdo.<p>
@@ -76,11 +76,11 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'At the Surisol Underwater Lab',
-                    subtitle: '(excerpt)',
-                    title_box: 'At the Surisol Underwater Lab',
+                    subtitle: '',
+                    title_box: 'At the Surisol Underwater Lab (excerpt)',
                     poster: '/img/ayoung/home/surisol.jpg',
                     thumb: '/img/ayoung/home/surisol.jpg',
-                    category: '(excerpt)',
+                    category: '',
                     specs: `<p>2020 | 03'58"<br />
                     Single channel video, color, stereo</p>`,
                     caption: `<p>This speculative fiction is set in the near future, around a decade after the Covid-19 global pandemic of 2020. In the wake of climate change and depletion of natural resources brought on by fossil fuels, eco-friendly bio-fuels have become society&rsquo;s main energy source. The chief source of energy in the world is algae&mdash;macro-algae that are fermented to produce biofuel. In Busan, a &ldquo;biomass town&rdquo; has been established along the East Sea coastline. Surisol Underwater Lab, which manages an integrated process involving seaweed farming, water quality, ocean currents, and biomass, is also located in the area of the Oryukdo Islands.</p>
@@ -93,11 +93,11 @@ exports.getListaDocs = (req, res, next) => {
                 program: 1,
                 pt: {
                     title: 'Porosity Valley 2: Tricksters Plot',
-                    subtitle: '(excerto)',
-                    title_box: 'Porosity Valley 2: Tricksters Plot',
+                    subtitle: '',
+                    title_box: 'Porosity Valley 2: Tricksters Plot (excerto)',
                     poster: '/img/ayoung/home/porosityvalley2.jpg',
                     thumb: '/img/ayoung/home/porosityvalley2.jpg',
-                    category: '(excerto)',
+                    category: '',
                     specs: `<p>2019 | 02'42"<br />
                     vídeo em dois canais, cor, estéreo</p>`,
                     caption: `<p>A obra sugere um mundo e uma mitologia alternativas para as migra&ccedil;&otilde;es de todo tipo do s&eacute;culo 21. Sequ&ecirc;ncia de <em>Porosity Valley, Portable Holes</em> (2017), avan&ccedil;a em rela&ccedil;&atilde;o ao trabalho anterior criando a figura fict&iacute;cia do aglomerado de migrantes, min&eacute;rios e dados conhecido como Petra Genetrix. Sobrepondo migra&ccedil;&otilde;es de refugiados e digitais, ambas caracter&iacute;sticas das migra&ccedil;&otilde;es do s&eacute;culo 21, gera um tempo-espa&ccedil;o especulativo ao questionar as &ldquo;formas de existir&rdquo; e as &ldquo;formas de representar&rdquo; dos refugiados iemenitas que chegaram recentemente &agrave; Coreia do Sul.</p>
@@ -106,11 +106,11 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'Porosity Valley 2: Tricksters Plot',
-                    subtitle: '(excerpt)',
-                    title_box: 'Porosity Valley 2: Tricksters Plot',
+                    subtitle: '',
+                    title_box: 'Porosity Valley 2: Tricksters Plot (excerpt)',
                     poster: '/img/ayoung/home/porosityvalley2.jpg',
                     thumb: '/img/ayoung/home/porosityvalley2.jpg',
-                    category: '(excerpt)',
+                    category: '',
                     specs: `<p>2019 | 02'42"<br />
                     two channel video, color, stereo</p>`,
                     caption: `<p>The work suggests an alternative world, an alternative mythology for all kind of migrants of the 21st century. A sequel to <em>Porosity Valley, Portable Holes</em> (2017), it expands upon the previous work through a fictionalized depiction of the migration of the migrant/mineral/data cluster known as Petra Genetrix. Juxtaposing refugee migration and digital migration, both of which characterize migration in the 21st century, the work creates a speculative space-time by interrogating the &ldquo;ways of existence&rdquo; and the &ldquo;ways of representation&rdquo; of the Yemeni refugees who recently arrived in South Korea.</p>
@@ -182,22 +182,22 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'In Search of Petra Genetrix',
-                    subtitle: '(versão MMCA/Coreia)',
+                    subtitle: '',
                     title_box: 'In Search of Petra Genetrix (versão MMCA/Coreia)',
                     poster: '/img/ayoung/home/insearchofpetra_MMCA.jpg',
                     thumb: '/img/ayoung/home/insearchofpetra_MMCA.jpg',
-                    category: '(versão MMCA/Coreia)',
+                    category: '',
                     specs: `<p>2020 | 28'13"<br />
                     performance-palestra com voz alterada, cor, estéreo</p>`,
                     caption: `<p>Palestra-performance realizada no espa&ccedil;o expositivo da artista no MMCA, Seoul, como parte do Korea Artist Prize 2019. Petra Genetrix, protagonista da s&eacute;rie <em>Porosity Valley</em>, &eacute; um conglomerado de migrantes, minerais e dados que atravessa constantemente barreiras entre na&ccedil;&otilde;es, g&ecirc;neros, exist&ecirc;ncia e inexist&ecirc;ncia. Manipulando fragmentos de &aacute;udio e v&iacute;deo de seus trabalhos, a artista usa a voz para criar uma narrativa sobre agentes que cruzam fronteiras. Ao faz&ecirc;-lo, desenha as faces de cristal multifacetadas de Petra Genetrix, essencialmente porosa e amb&iacute;gua.</p>`,
                 },
                 en: {
                     title: 'In Search of Petra Genetrix',
-                    subtitle: '(MMCA/Korea version)',
+                    subtitle: '',
                     title_box: 'In Search of Petra Genetrix (MMCA/Korea version)',
                     poster: '/img/ayoung/home/insearchofpetra_MMCA.jpg',
                     thumb: '/img/ayoung/home/insearchofpetra_MMCA.jpg',
-                    category: '(MMCA/Korea version)',
+                    category: '',
                     specs: `<p>2020 | 28'13"<br />
                     voice-transforming lecture performance, color, stereo</p>`,
                     caption: `<p>A live lecture performance held at Ayoung Kim&rsquo;s Exhibition Space at MMCA, Seoul, as a Part of Korea Artist Prize 2019. Petra Genetrix, the protagonist of the <em>Porosity Valley</em> series, is a migrant, mineral, and data cluster who constantly crosses borders, gender boundaries, and the concept of existence and nonexistence. While utilizing audio and video excerpts from her existing works, she uses her own voice to create a verbal narrative exploring those agents who cross boundaries. By doing so, she continues to trace multifaceted crystal faces of Petra Genetrix, who is fundamentally porous and ambiguous.</p>`,
@@ -209,22 +209,22 @@ exports.getListaDocs = (req, res, next) => {
                 program: 2,
                 pt: {
                     title: 'In Search of Petra Genetrix',
-                    subtitle: '(versão IMPAKT Festival/Holanda)',
+                    subtitle: '',
                     title_box: 'In Search of Petra Genetrix (versão IMPAKT Festival/Holanda)',
                     poster: '/img/ayoung/home/insearchofpetra_IMPAKT.jpg',
                     thumb: '/img/ayoung/home/insearchofpetra_IMPAKT.jpg',
-                    category: '(versão IMPAKT Festival/Holanda)',
+                    category: '',
                     specs: `<p>2020 | 2020 | 30'45"<br />
                     performance-palestra com voz alterada, cor, estéreo</p>`,
                     caption: `<p>Ayoung Kim cria sua pr&oacute;pria vers&atilde;o do mito segundo o qual os seres humanos prov&ecirc;m das pedras: uma mitologia ligada ao personagem fict&iacute;cio de Petra Genetrix, protagonista da s&eacute;rie <em>Porosity Valley</em>. Partindo da ideia da petrog&ecirc;nese &ndash; o que tem origem na pedra &ndash;,vagueia pelos estratos da Terra. Trechos de entrevistas com historiadores, ge&oacute;logos e moradores, gravadas na Mong&oacute;lia e no Ir&atilde;, s&atilde;o exibidos enquanto a artista, alterando a pr&oacute;pria voz, incorpora diferentes entidades.</p>`,
                 },
                 en: {
                     title: 'In Search of Petra Genetrix',
-                    subtitle: '(IMPAKT Festival/The Netherlands version)',
+                    subtitle: '',
                     title_box: 'In Search of Petra Genetrix (IMPAKT Festival/The Netherlands version)',
                     poster: '/img/ayoung/home/insearchofpetra_IMPAKT.jpg',
                     thumb: '/img/ayoung/home/insearchofpetra_IMPAKT.jpg',
-                    category: '(IMPAKT Festival/The Netherlands version)',
+                    category: '',
                     specs: `<p>2020 | 2020 | 30'45"<br />
                     voice-transforming lecture performance, color, stereo</p>`,
                     caption: `<p>Ayoung Kim creates her own version of the myth according to which human beings were born from rocks: a mythology connected to the fictional character of Petra Genetrix, the protagonist of her series <em>Porosity Valley</em>. Through the notion of Petrogenesis&ndash;genesis from rocks&ndash;, the artist wanders through the Earth&rsquo;s strata. She shows us fragments of interviews she recorded in Mongolia and Iran with history and geology experts and local inhabitants, while she embodies different entities by transforming her own voice.</p>`,
@@ -249,11 +249,11 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'In This Vessel We Shall Be Kept',
-                    subtitle: 'With Sébastien Bertaud',
+                    subtitle: '',
                     title_box: 'In This Vessel We Shall Be Kept (With Sébastien Bertaud)',
                     poster: '/img/ayoung/home/inthisvessel.jpg',
                     thumb: '/img/ayoung/home/inthisvessel.jpg',
-                    category: 'With Sébastien Bertaud',
+                    category: '',
                     specs: `<p>2016 | 18'17"<br />
                     voice and dance performance, color, stereo</p>`,
                     caption: `<p>The project takes root in the basement of the Palais Garnier, in Paris&ndash;in the depths of its famous underground &ldquo;lake&rdquo;&ndash;to stage a long forgotten mythical flood. The artificial reservoir, built by architect Charles Garnier when a branch of the Seine flooded, is coated with pitch, a petroleum derivative with waterproofing properties that Noah supposedly used to caulk the hull of his ark.</p>
