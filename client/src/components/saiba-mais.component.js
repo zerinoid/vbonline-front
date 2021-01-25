@@ -256,6 +256,7 @@ export default function SaibaMais(props) {
                                             margin-bottom: 20px;
                                             img {
                                                 height: 50px;
+                                                margin-right: 5vw;
                                             }
                                         }
                                     `}
