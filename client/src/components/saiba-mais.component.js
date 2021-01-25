@@ -11,6 +11,7 @@ import BP from '../styles/breakpoints';
 import AboutSection from './about-section.component';
 
 import fechar from '../assets/img/fecharVerm.png';
+import dl_button from '../assets/img/dl_button.png';
 
 export default function SaibaMais(props) {
 
@@ -178,31 +179,48 @@ export default function SaibaMais(props) {
                                                 true
                                             )}
                                         ><a>{saibaMaisState.data[props.lang].name}</a></li> : null}
+
+                                    
                                     
                                     {saibaMaisState.data[
                                         props.lang
                                     ].links.map((value, index) => 
-                                        (<li key={index} id={index}>
-                                            <a
-                                                href={value.url}
-                                                target={
-                                                    (value.blank && !saibaMaisState.data.replaceText)
-                                                        ? '_blank'
-                                                        : '_self'
-                                                }
-                                                ref={
-                                                    saibaMaisState.data.replaceText &&
-                                                    urlQuery !== null && 
-                                                    urlQuery['artist'] && 
-                                                    value.title.toLowerCase() === urlQuery['artist'].toLowerCase()
-                                                    ? linkRef
+                                        (
+                                            <li key={index} id={index} className={value.download ? 'download' : ''}>
+                                                { value.download 
+                                                    ? <a
+                                                        className="dl_button"
+                                                        href={value.url}
+                                                        target={
+                                                            (value.blank && !saibaMaisState.data.replaceText)
+                                                                ? '_blank'
+                                                                : '_self'
+                                                      }>
+                                                        <img src={dl_button} />
+                                                      </a>
                                                     : null
                                                 }
-                                                onClick={(event) => textReplacementHandler(event, value, saibaMaisState.data, listRef, index)}
-                                            >
-                                                {value.title}
-                                            </a>
-                                        </li>)
+                                                <a
+                                                    dangerouslySetInnerHTML={createMarkup(value.title)}
+                                                    href={value.url}
+                                                    target={
+                                                        (value.blank && !saibaMaisState.data.replaceText)
+                                                            ? '_blank'
+                                                            : '_self'
+                                                    }
+                                                    ref={
+                                                        saibaMaisState.data.replaceText &&
+                                                        urlQuery !== null && 
+                                                        urlQuery['artist'] && 
+                                                        value.title.toLowerCase() === urlQuery['artist'].toLowerCase()
+                                                        ? linkRef
+                                                        : null
+                                                    }
+                                                    onClick={(event) => textReplacementHandler(event, value, saibaMaisState.data, listRef, index)}
+                                                >
+                                                </a>
+                                            </li>
+                                        )
                                     )}
                                 </ul>
                             </div>

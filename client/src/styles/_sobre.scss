@@ -70,15 +70,34 @@
 
     li {
         margin-top: 0.4vh;
-    }
 
-    li:hover {
+        &.download {
+            padding: 2.5% 17.5% 2.5% 0;
+            display: flex;
+            justify-content: left;
 
-        a {
+            .dl_button {
+                width: 25%;
+                max-width: 1.3vw;
+                margin: 0 3.5% 0 0;
+            
+                @media (max-width: 767px) {
+                    max-width: 5.3vw;
+                    min-width: 5.3vw;
+                }
+            
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        
+        a:hover {
             color: $vermelho;
             font-weight: bold;
         }
     }
+
 
     li.veja-mais-title:hover a {
         font-weight: bold !important;
@@ -138,7 +157,11 @@
             a {
                 color: $vermelho;
                 font-weight: normal;
+
             }
         }
     }
 }
+
+
+    
