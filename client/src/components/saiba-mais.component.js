@@ -80,6 +80,11 @@ export default function SaibaMais(props) {
     // Link handler for text replacement
     const textReplacementHandler = (event, link, data, list, index) => {
 
+        // Prevent click in items with no href (useful for fake titles in link bar)
+        if(!event.target.getAttribute('href')){
+            event.preventDefault();
+        }
+
         if(data.replaceText){
 
             if(event){
@@ -88,13 +93,13 @@ export default function SaibaMais(props) {
 
             setReplacementText(link.textReplacement);
 
-            let currentList = ReactDOM.findDOMNode(list.current);
+            const currentList = ReactDOM.findDOMNode(list.current);
 
             if(currentList){
                 // All elements
-                let links = currentList.querySelectorAll(`li:not(.veja-mais-title) a`)
+                const links = currentList.querySelectorAll(`li:not(.veja-mais-title) a`)
                 // Clicked element
-                let clickedLink = currentList.querySelectorAll(`li[id="${index}"] a`)[0]
+                const clickedLink = currentList.querySelectorAll(`li[id="${index}"] a`)[0]
                 // Clear bold
                 links.forEach(link => link.style = "");
                 currentList.querySelectorAll(`li.veja-mais-title a`)[0].style = "font-weight:normal";
@@ -171,7 +176,8 @@ export default function SaibaMais(props) {
 
                                     {/* If replaceText is enabled, set first item with programme name*/}
                                     {saibaMaisState.data.replaceText ? 
-                                        <li className="veja-mais-title"
+                                        <li key={`veja-mais-${0}`}
+                                            className="veja-mais-title"
                                             css={{fontWeight: 'bold', cursor: 'pointer'}}
                                             onClick={() => titleHandler(
                                                 saibaMaisState.data[props.lang].name,
@@ -179,14 +185,15 @@ export default function SaibaMais(props) {
                                                 true
                                             )}
                                         ><a>{saibaMaisState.data[props.lang].name}</a></li> : null}
-
-                                    
                                     
                                     {saibaMaisState.data[
                                         props.lang
                                     ].links.map((value, index) => 
                                         (
-                                            <li key={index} id={index} className={value.download ? 'download' : ''}>
+                                            <li key={`veja-mais-${index+1}`} 
+                                                id={index} 
+                                                className={value.download ? 'download' : ''}
+                                            >
                                                 { value.download 
                                                     ? <a
                                                         className="dl_button"
@@ -203,6 +210,10 @@ export default function SaibaMais(props) {
                                                 <a
                                                     dangerouslySetInnerHTML={createMarkup(value.title)}
                                                     href={value.url}
+                                                    className={!value.url 
+                                                        ? "empty-link"
+                                                        : null
+                                                    }
                                                     target={
                                                         (value.blank && !saibaMaisState.data.replaceText)
                                                             ? '_blank'
@@ -263,11 +274,14 @@ export default function SaibaMais(props) {
                                 >
                                     {saibaMaisState.data.partnersLogos.map(
                                         (value, index) => (
-                                            <a href={value.url} target="_blank">
+                                            <a 
+                                                href={value.url} 
+                                                key={`logos-${index}`} 
+                                                target="_blank"
+                                            >
                                                 <img
-                                                alt=""
-                                                src={value.img}
-                                                key={index}
+                                                    alt=""
+                                                    src={value.img}
                                             />
                                             </a>
                                         )

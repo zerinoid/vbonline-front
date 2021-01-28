@@ -96,6 +96,13 @@
             color: $vermelho;
             font-weight: bold;
         }
+
+        .empty-link {
+            cursor: default !important;
+            &:hover {
+                font-weight: normal !important;
+            }
+        }
     }
 
 
