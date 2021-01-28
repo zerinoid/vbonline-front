@@ -240,7 +240,7 @@ exports.getListaDocs = (req, res, next) => {
                     title_box: 'In This Vessel We Shall Be Kept (With Sébastien Bertaud)',
                     poster: '/img/ayoung/home/inthisvessel.jpg',
                     thumb: '/img/ayoung/home/inthisvessel.jpg',
-                    category: 'With Sébastien Bertaud',
+                    category: '',
                     specs: `<p>2016 | 18'17"<br />
                     performance de voz e dança, cor, estéreo</p>`,
                     caption: `<p>O projeto se ancora no por&atilde;o do Palais Garnier, em Paris, nas profundezas de seu &ldquo;lago&rdquo; submerso, e encena uma inunda&ccedil;&atilde;o m&iacute;tica esquecida h&aacute; muito. O reservat&oacute;rio artificial, constru&iacute;do pelo arquiteto Charles Garnier quando um bra&ccedil;o do Sena transbordou, &eacute; revestido com piche, impermeabilizante derivado de petr&oacute;leo que No&eacute; teria usado para calafetar o casco de sua arca. Esse espa&ccedil;o claustrof&oacute;bico protegeu o Palais Garnier, assim como a &aacute;gua do lastro traz o peso para o centro para estabilizar um navio sem carga. Al&eacute;m disso, a nave do teatro (mesmo nome do corredor central dos templos e catedrais) tem a forma estrutural de um navio.</p>

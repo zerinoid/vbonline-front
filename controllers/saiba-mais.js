@@ -22,7 +22,7 @@ exports.getSaibaMais = (req, res, next) => {
             partners: '',
             links: [
                 {
-                    title: 'Leia mais:',
+                    title: 'Saiba mais:',
                     url: '',
                     blank: false,
                     download: false,
