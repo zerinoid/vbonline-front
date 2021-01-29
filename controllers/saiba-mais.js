@@ -14,6 +14,10 @@ exports.getSaibaMais = (req, res, next) => {
                 img: '/img/brkorea/logos/logo_arts_council.png',
                 url: 'https://www.arko.or.kr/eng/main.jsp'
             },
+            {
+                img: '/img/brkorea/logos/logo_cccb.png',
+                url: '#'
+            },
         ],
         replaceText: false,
         pt: {

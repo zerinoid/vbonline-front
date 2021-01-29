@@ -256,18 +256,17 @@ export default function SaibaMais(props) {
                                         display: flex;
                                         justify-content: space-between;
                                         width: ${saibaMaisState.data
-                                            .partnersLogos.length * 6}vw;
+                                            .partnersLogos.length * 9}vw;
                                         img {
                                             height: 3.2vw;
                                         }
                                         ${BP.small} {
-                                            width: ${saibaMaisState.data
-                                                .partnersLogos.length *
-                                            25}%;
+                                            
                                             margin-bottom: 20px;
                                             img {
-                                                height: 50px;
-                                                margin-right: 5vw;
+                                                height: ${130 / saibaMaisState.data
+                                                    .partnersLogos.length}px;
+                                                margin-right: 6vw;
                                             }
                                         }
                                     `}
