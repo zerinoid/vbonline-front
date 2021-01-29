@@ -13,6 +13,7 @@ import fechar from '../assets/img/fecharVerm.png';
 export default function Sobre(props) {
 
     const [sobreState, setSobreState] = useState({ data: null });
+    const [equipeState, setEquipeState] = useState({ data: null });
 
     const currentWidth = window.innerWidth;
 
@@ -24,6 +25,12 @@ export default function Sobre(props) {
     useEffect(() => {
         axios.get('/api/sobre').then((res) => {
             setSobreState({ data: res.data });
+        });
+    }, []);
+
+    useEffect(() => {
+        axios.get('/api/equipe').then((res) => {
+            setEquipeState({ data: res.data });
         });
     }, []);
 
@@ -46,7 +53,7 @@ export default function Sobre(props) {
                     },
                 })}
             >
-                {sobreState.data ? (
+                {sobreState.data && equipeState.data ? (
                     <div>
                         <AboutSection
                             css={{
@@ -79,12 +86,25 @@ export default function Sobre(props) {
                                 )}
                             />
                             <div className="veja-mais-wrapper">
+
+                                <ul className="veja-mais sobre-logos equipe">
+                                    {equipeState.data.roles.map(
+                                        (value, index) => (
+                                            <li key={`sobre-equipe-${index}`}>
+                                                <span>{value.role[props.lang]}</span>
+                                                <br />
+                                                <p>{value.name}</p>
+                                            </li>
+                                        )
+                                    )}
+                                </ul>
+
                                 {sobreState.data.partnersLogos.length >
                                 0 ? (
                                     <ul className="veja-mais sobre-logos">
                                         {sobreState.data.partnersLogos.map(
                                             (value, index) => (
-                                                <li key={index}>
+                                                <li key={`sobre-logos-${index}`}>
                                                     <span>
                                                         {
                                                             value.title[

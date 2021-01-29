@@ -17,6 +17,9 @@ router.get('/lang/get', langController.getLang);
 // GET /api/sobre
 router.get('/sobre', sobreController.getSobre);
 
+// GET /api/equipe
+router.get('/equipe', sobreController.getEquipe);
+
 // GET /api/lista-docs
 router.get('/lista-docs', listaDocsController.getListaDocs);
 
