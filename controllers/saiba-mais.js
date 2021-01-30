@@ -1,29 +1,48 @@
 // Texto sobre
 exports.getSaibaMais = (req, res, next) => {
     data = {
+        partnerRoles: [
+            {
+                id: 1,
+                name: {
+                    pt: "realização",
+                    en: "undertaking",
+                }
+            },
+            {
+                id: 2,
+                name: {
+                    pt: "apoio",
+                    en: "support",
+                }
+            }
+        ],
         partnersLogos: [
             {
                 img: '/img/brkorea/logos/logo_vb.png',
-                url: 'http://site.videobrasil.org.br'
+                url: 'http://site.videobrasil.org.br',
+                role: 1
             },
             {
                 img: '/img/brkorea/logos/logo_ilmin.png',
-                url: 'http://ilmin.org/kr/?ckattempt=1'
+                url: 'http://ilmin.org/kr/?ckattempt=1',
+                role: 1
             },
             {
                 img: '/img/brkorea/logos/logo_arts_council.png',
-                url: 'https://www.arko.or.kr/eng/main.jsp'
+                url: 'https://www.arko.or.kr/eng/main.jsp',
+                role: 1
             },
             {
                 img: '/img/brkorea/logos/logo_cccb.png',
-                url: '#'
+                url: '#',
+                role: 2
             },
         ],
         replaceText: false,
         pt: {
             name: 'Ayoung Kim',
             subtitle: 'Oxbow Lake Time',
-            partners: '',
             links: [
                 {
                     title: 'Saiba mais:',
@@ -71,7 +90,6 @@ exports.getSaibaMais = (req, res, next) => {
         en: {
             name: 'Ayoung Kim',
             subtitle: 'Oxbow Lake Time',
-            partners: '',
             links: [
                 {
                     title: 'Further reading:',

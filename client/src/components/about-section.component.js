@@ -2,9 +2,17 @@ import styled from '@emotion/styled';
 import BP from '../styles/breakpoints';
 
 const AboutSection = styled.div`
-    margin-top: 6%;
+    margin-top: 7%;
+
+    &:last-child {
+        margin-top: 4%;
+    }
+
     ${BP.small} {
         margin-top: 50px;
+        &:last-child {
+            margin-top: 30px;
+        }
     }
     p a {
         color: #ed0000;

@@ -236,57 +236,64 @@ export default function SaibaMais(props) {
                                 </ul>
                             </div>
                         </AboutSection>
-                        {saibaMaisState.data.partnersLogos.length > 0 ? (
-                            <AboutSection>
-                                <p
-                                    css={css`
-                                        font: bold 0.8em FedraMono !important;
-                                        text-transform: uppercase;
-                                    `}
-                                >
-                                    {
-                                        saibaMaisState.data[props.lang].partners 
-                                        ? `${saibaMaisState.data[props.lang].partners}: `
-                                        : ''
-                                    }
-                                </p>
-                                <div
-                                    css={css`
-                                        margin-top: 28px;
-                                        display: flex;
-                                        justify-content: space-between;
-                                        width: ${saibaMaisState.data
-                                            .partnersLogos.length * 9}vw;
-                                        img {
-                                            height: 3.2vw;
-                                        }
-                                        ${BP.small} {
-                                            
-                                            margin-bottom: 20px;
-                                            img {
-                                                height: ${130 / saibaMaisState.data
-                                                    .partnersLogos.length}px;
-                                                margin-right: 6vw;
+                        {saibaMaisState.data.partnersLogos.length > 0  && saibaMaisState.data.partnerRoles
+                            ? saibaMaisState.data.partnerRoles.map(
+                                (role, index) => (
+                                    <AboutSection>
+                                        <p
+                                            css={css`
+                                                font: bold 0.8em FedraMono !important;
+                                                text-transform: uppercase;
+                                            `}
+                                        >
+                                            {
+                                                saibaMaisState.data[props.lang].partners 
+                                                ? `${saibaMaisState.data[props.lang].partners}: `
+                                                : role.name[props.lang]
                                             }
-                                        }
-                                    `}
-                                >
-                                    {saibaMaisState.data.partnersLogos.map(
-                                        (value, index) => (
-                                            <a 
-                                                href={value.url} 
-                                                key={`logos-${index}`} 
-                                                target="_blank"
-                                            >
-                                                <img
-                                                    alt=""
-                                                    src={value.img}
-                                            />
-                                            </a>
-                                        )
-                                    )}
-                                </div>
-                            </AboutSection>
+                                        </p>
+                                        <div
+                                            css={css`
+                                                // margin-top: 28px;
+                                                display: flex;
+                                                justify-content: space-between;
+                                                width: ${saibaMaisState.data
+                                                    .partnersLogos.length * 6}vw;
+                                                img {
+                                                    height: 3.2vw;
+                                                }
+                                                ${BP.small} {
+                                                    
+                                                    margin-bottom: 20px;
+                                                    img {
+                                                        height: ${130 / saibaMaisState.data
+                                                            .partnersLogos.length}px;
+                                                        margin-right: 9vw;
+                                                    }
+                                                }
+                                            `}
+                                        >
+                                            {saibaMaisState.data.partnersLogos.map(
+                                                (value, index) => {
+                                                    if(value.role === role.id){
+                                                        return (
+                                                            <a 
+                                                                href={value.url} 
+                                                                key={`logos-${index}`} 
+                                                                target="_blank"
+                                                            >
+                                                                <img
+                                                                    alt=""
+                                                                    src={value.img}
+                                                                />
+                                                            </a>
+                                                        )
+                                                    }
+                                                }
+                                            )}
+                                        </div>
+                                    </AboutSection>
+                                )
                         ) : null}
                     </div>
                 ) : (
