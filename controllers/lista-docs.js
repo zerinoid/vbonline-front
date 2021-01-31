@@ -18,8 +18,8 @@ exports.getListaDocs = (req, res, next) => {
         // Group programs for curatorship season
         group_programs: false,
         bg_color: '#dce1f4',
-        bg_img_desktop: '/img/ayoung/bg_desktop_low.jpg',
-        bg_img_mobile: '/img/ayoung/bg_mobile_low.jpg',
+        bg_img_desktop: '/img/ayoung/bg_desktop2_low.jpg',
+        bg_img_mobile: '/img/ayoung/bg_mobile2_low.jpg',
         programs: [
             {
                 id: 0, // Use id: 0 for the main video's group only
@@ -34,11 +34,11 @@ exports.getListaDocs = (req, res, next) => {
                 program: 0,
                 pt: {
                     title: 'ayoung kim',
-                    subtitle: 'oxbow lake time',
+                    subtitle: 'OXBOW LAKE TIME',
                     main_preview_html: '<h4>Anthropocene:<br />Korea x Brazil 2019-2021</h4>',
                     title_box: 'Ayoung Kim Interview', // Replaces title in player (info button)
-                    poster: '/img/ayoung/home/main_low.jpg',
-                    thumb: '/img/ayoung/home/main_low.jpg',
+                    poster: '/img/ayoung/home/main2_low.jpg',
+                    thumb: '/img/ayoung/home/main2_low.jpg',
                     category: '',
                     specs: `<p>2021 | 18'<br />
                     vídeo, cor, estéreo</p>`,
@@ -46,11 +46,11 @@ exports.getListaDocs = (req, res, next) => {
                 },
                 en: {
                     title: 'ayoung kim',
-                    subtitle: 'oxbow lake time',
+                    subtitle: 'OXBOW LAKE TIME',
                     main_preview_html: '<h4>Anthropocene:<br />Korea x Brazil 2019-2021</h4>',
                     title_box: 'Ayoung Kim Interview',
-                    poster: '/img/ayoung/home/main_low.jpg',
-                    thumb: '/img/ayoung/home/main_low.jpg',
+                    poster: '/img/ayoung/home/main2_low.jpg',
+                    thumb: '/img/ayoung/home/main2_low.jpg',
                     category: '',
                     specs: `<p>2021 | 18'<br />
                     single channel video, color, stereo</p>`,
@@ -65,8 +65,8 @@ exports.getListaDocs = (req, res, next) => {
                     title: 'At the Surisol Underwater Lab',
                     subtitle: '',
                     title_box: 'At the Surisol Underwater Lab (excerto)',
-                    poster: '/img/ayoung/home/surisol.jpg',
-                    thumb: '/img/ayoung/home/surisol.jpg',
+                    poster: '/img/ayoung/home/surisol2.jpg',
+                    thumb: '/img/ayoung/home/surisol2.jpg',
                     category: '', // Use for artist name
                     specs: `<p>2020 | 03'58"<br />
                     Vídeo, cor, estéreo</p>`,
@@ -78,8 +78,8 @@ exports.getListaDocs = (req, res, next) => {
                     title: 'At the Surisol Underwater Lab',
                     subtitle: '',
                     title_box: 'At the Surisol Underwater Lab (excerpt)',
-                    poster: '/img/ayoung/home/surisol.jpg',
-                    thumb: '/img/ayoung/home/surisol.jpg',
+                    poster: '/img/ayoung/home/surisol2.jpg',
+                    thumb: '/img/ayoung/home/surisol2.jpg',
                     category: '',
                     specs: `<p>2020 | 03'58"<br />
                     Single channel video, color, stereo</p>`,
@@ -95,8 +95,8 @@ exports.getListaDocs = (req, res, next) => {
                     title: 'Porosity Valley 2: Tricksters Plot',
                     subtitle: '',
                     title_box: 'Porosity Valley 2: Tricksters Plot (excerto)',
-                    poster: '/img/ayoung/home/porosityvalley2.jpg',
-                    thumb: '/img/ayoung/home/porosityvalley2.jpg',
+                    poster: '/img/ayoung/home/porosityvalley3.jpg',
+                    thumb: '/img/ayoung/home/porosityvalley3.jpg',
                     category: '',
                     specs: `<p>2019 | 02'42"<br />
                     vídeo em dois canais, cor, estéreo</p>`,
@@ -108,8 +108,8 @@ exports.getListaDocs = (req, res, next) => {
                     title: 'Porosity Valley 2: Tricksters Plot',
                     subtitle: '',
                     title_box: 'Porosity Valley 2: Tricksters Plot (excerpt)',
-                    poster: '/img/ayoung/home/porosityvalley2.jpg',
-                    thumb: '/img/ayoung/home/porosityvalley2.jpg',
+                    poster: '/img/ayoung/home/porosityvalley3.jpg',
+                    thumb: '/img/ayoung/home/porosityvalley3.jpg',
                     category: '',
                     specs: `<p>2019 | 02'42"<br />
                     two channel video, color, stereo</p>`,
@@ -126,8 +126,8 @@ exports.getListaDocs = (req, res, next) => {
                     title: 'Crossings',
                     subtitle: '',
                     title_box: '',
-                    poster: '/img/ayoung/home/crossings.jpg',
-                    thumb: '/img/ayoung/home/crossings.jpg',
+                    poster: '/img/ayoung/home/crossings2.jpg',
+                    thumb: '/img/ayoung/home/crossings2.jpg',
                     category: '',
                     specs: `<p>2019 | 3'<br />
                     vídeo, cor, estéreo</p>`,
@@ -137,8 +137,8 @@ exports.getListaDocs = (req, res, next) => {
                     title: 'Crossings',
                     subtitle: '',
                     title_box: '',
-                    poster: '/img/ayoung/home/crossings.jpg',
-                    thumb: '/img/ayoung/home/crossings.jpg',
+                    poster: '/img/ayoung/home/crossings2.jpg',
+                    thumb: '/img/ayoung/home/crossings2.jpg',
                     category: '',
                     specs: `<p>2019 | 3'<br />
                     single channel video, color, stereo</p>`,
