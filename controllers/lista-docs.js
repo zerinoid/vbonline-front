@@ -92,9 +92,9 @@ exports.getListaDocs = (req, res, next) => {
                 order: 3,
                 program: 1,
                 pt: {
-                    title: 'Porosity Valley 2: Tricksters Plot',
+                    title: 'Porosity Valley 2: Tricksters\' Plot',
                     subtitle: '',
-                    title_box: 'Porosity Valley 2: Tricksters Plot (excerto)',
+                    title_box: 'Porosity Valley 2: Tricksters\' Plot (excerto)',
                     poster: '/img/ayoung/home/porosityvalley3.jpg',
                     thumb: '/img/ayoung/home/porosityvalley3.jpg',
                     category: '',
@@ -105,9 +105,9 @@ exports.getListaDocs = (req, res, next) => {
                     <p>O trabalho questiona ideias de fronteira, atravessamento e coexist&ecirc;ncia ou simbiose. A suposta solidez do territ&oacute;rio e das fronteiras que imigrantes, refugiados, minerais e dados cruzam come&ccedil;a a desmoronar. Isso se deve ao movimento das placas tect&ocirc;nicas, elas mesmas eternamente sujeitas &agrave; migra&ccedil;&atilde;o e ao movimento. Nesse sentido, o trabalho reflete a Terra e seus estratos, o movimento de seus diversos agentes e as fronteiras e rela&ccedil;&otilde;es simbi&oacute;ticas que o impedem e facilitam.</p>`,
                 },
                 en: {
-                    title: 'Porosity Valley 2: Tricksters Plot',
+                    title: 'Porosity Valley 2: Tricksters\' Plot',
                     subtitle: '',
-                    title_box: 'Porosity Valley 2: Tricksters Plot (excerpt)',
+                    title_box: 'Porosity Valley 2: Tricksters\' Plot (excerpt)',
                     poster: '/img/ayoung/home/porosityvalley3.jpg',
                     thumb: '/img/ayoung/home/porosityvalley3.jpg',
                     category: '',
