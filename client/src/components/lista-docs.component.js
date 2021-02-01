@@ -476,6 +476,9 @@ export default function ListaDocs(props) {
                                     bg={value[lang].poster}
                                     key={index}
                                     onClick={() => playerHandler(value.id)}
+                                    css={{
+                                        display: isMobile ? 'table !important' : '',
+                                    }}
                                 >
                                     <h5>{value[lang].title}</h5>
                                     <p>{value[lang].category}</p>
