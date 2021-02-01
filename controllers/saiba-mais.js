@@ -45,7 +45,7 @@ exports.getSaibaMais = (req, res, next) => {
             subtitle: 'Oxbow Lake Time',
             links: [
                 {
-                    title: 'Saiba mais:',
+                    title: 'Leia mais:',
                     url: '',
                     blank: false,
                     download: false,
