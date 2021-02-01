@@ -59,14 +59,14 @@ exports.getSaibaMais = (req, res, next) => {
                     textReplacement: false,
                 },
                 {
-                    title: 'The Nth Possible World of Speculative Feminism: Ayoung Kim&rsquo;s Porosity Valley 1 &amp; 2 (2017-2019), 2020<br>Por Jinshil Lee',
+                    title: 'The Nth Possible World of Speculative Feminism: Ayoung Kim&rsquo;s <em>Porosity Valley 1 &amp; 2</em> (2017-2019), 2020<br>Por Jinshil Lee',
                     url: '/pdfs/ayoung/2020_jinshil_lee_speculative_feminism.pdf',
                     blank: true,
                     download: true,
                     textReplacement: false,
                 },
                 {
-                    title: 'Between a Rock and a Hard Place: Ayoung Kim’s Porosity Valley, Portable Holes (2017), 2018<br>Por Adela Kim',
+                    title: 'Between a Rock and a Hard Place: Ayoung Kim’s <em>Porosity Valley, Portable Holes</em> (2017), 2018<br>Por Adela Kim',
                     url: '/pdfs/ayoung/2018_AdelaKim_PorosityValley.pdf',
                     blank: true,
                     download: true,
@@ -120,14 +120,14 @@ exports.getSaibaMais = (req, res, next) => {
                     textReplacement: false,
                 },
                 {
-                    title: 'The Nth Possible World of Speculative Feminism: Ayoung Kim&rsquo;s Porosity Valley 1 &amp; 2 (2017-2019), 2020<br>By Jinshil Lee',
+                    title: 'The Nth Possible World of Speculative Feminism: Ayoung Kim&rsquo;s <em>Porosity Valley 1 &amp; 2</em> (2017-2019), 2020<br>By Jinshil Lee',
                     url: '/pdfs/ayoung/2020_jinshil_lee_speculative_feminism.pdf',
                     blank: true,
                     download: true,
                     textReplacement: false,
                 },
                 {
-                    title: 'Between a Rock and a Hard Place: Ayoung Kim’s Porosity Valley, Portable Holes (2017), 2018<br>By Adela Kim',
+                    title: 'Between a Rock and a Hard Place: Ayoung Kim’s <em>Porosity Valley, Portable Holes</em> (2017), 2018<br>By Adela Kim',
                     url: '/pdfs/ayoung/2018_AdelaKim_PorosityValley.pdf',
                     blank: true,
                     download: true,
