@@ -2,9 +2,11 @@ const express = require('express')
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path')
+const glob = require('glob')
+const sequelize = require('./db/db');
 
 // .env file
-require('dotenv').config({path: __dirname + '/.env'})
+require('dotenv').config({path: __dirname + '/.env'});
 
 // Port used by node.js
 const port = process.env.PORT || 4040;
@@ -47,5 +49,20 @@ if (process.env.NODE_ENV === 'prod') {
         res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
     });
 }
+
+// Require models
+glob.sync('./models/**/*.js').forEach(function(file) {
+    require(path.resolve(file));
+});
+
+// Sync tables
+sequelize
+    .sync({ alter: true })
+    .then(() => {
+        // Start server
+        app.listen(port, () => console.log(`Listening on port ${port}`));
+    })
+    .catch(err => {
+        console.log(err);
+    })
   
-app.listen(port, () => console.log(`Listening on port ${port}`));
