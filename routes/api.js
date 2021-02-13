@@ -4,7 +4,7 @@ const router = express.Router();
 // Controllers
 const langController = require('../controllers/lang');
 const sobreController = require('../controllers/sobre');
-const listaDocsController = require('../controllers/video-list');
+const videoListController = require('../controllers/video-list');
 const saibaMaisController = require('../controllers/saiba-mais');
 const vinhetaController = require('../controllers/vinheta');
 
@@ -21,7 +21,7 @@ router.get('/sobre', sobreController.getSobre);
 router.get('/equipe', sobreController.getEquipe);
 
 // GET /api/video-list
-router.get('/video-list', listaDocsController.getListaDocs);
+router.get('/video-list', videoListController.getVideoList);
 
 // GET /api/saibamais
 router.get('/saibamais', saibaMaisController.getSaibaMais);

@@ -69,7 +69,7 @@ function arraysEqual(a, b) {
     return true;
 }
 
-export default function ListaDocs(props) {
+export default function VideoList(props) {
     const lang = props.lang ? props.lang : 'pt';
     const season = props.lista.data.season[lang].type;
     const curatorSeason = ['curador', 'curator'].includes(season);
