@@ -10,7 +10,7 @@ import BP from './styles/breakpoints';
 import './App.scss';
 
 import Sobre from './components/sobre.component';
-import ListaDocs from './components/lista-docs.component';
+import ListaDocs from './components/video-list.component';
 import Botao from './components/botao.component';
 import SaibaMais from './components/saiba-mais.component';
 import MenuMobile from './components/menu-mobile.component';
@@ -79,7 +79,7 @@ const App = (props) => {
     // Main request
     useEffect(() => {
         axios
-            .get('/api/lista-docs')
+            .get('/api/video-list')
             .then((res) =>
                 setAppState({
                     data: res.data,
