@@ -14,15 +14,12 @@ const Sobre = sequelize.define('sobre', {
     },
     title_en: {
         type: Sequelize.STRING,
-
     },
     content_pt: {
         type: Sequelize.TEXT,
-
     },
     content_en: {
         type: Sequelize.TEXT,
-
     },
 }, {
     tableName: "sobre",
