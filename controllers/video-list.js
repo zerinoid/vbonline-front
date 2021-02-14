@@ -1,17 +1,24 @@
-const seasonType = {
-    pt: 'artista',
-    en: 'artist',
-};
-
-exports.getListaDocs = (req, res, next) => {
+exports.getVideoList = (req, res, next) => {
     data = {
+
+        // season_types: [
+        //     {
+        //         id: 1,
+        //         title_pt: 'artista',
+        //         title_en: 'artist',
+        //     },
+        // ],
+
+        // edition:
+        // id, season_type_id, title_pt/en, subtitle_pt/en
+
         season: {
             pt: {
-                type: seasonType['pt'],
+                type: 'artista',
                 title: '' // if filled, value is shown in the main preview's subtitle
             },
             en: {
-                type: seasonType['en'],
+                type: 'artist',
                 title: ''
             },
         },

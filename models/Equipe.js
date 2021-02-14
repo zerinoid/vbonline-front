@@ -16,7 +16,6 @@ const Equipe = sequelize.define('equipe', {
     },
     name: {
         type: Sequelize.STRING,
-
     },
 }, {
     tableName: "equipe",

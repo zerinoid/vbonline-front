@@ -1,7 +1,7 @@
 // Texto sobre
 exports.getSaibaMais = (req, res, next) => {
     data = {
-        partnerRoles: [
+        partnerRoles: [ // vai para outra tabela
             {
                 id: 1,
                 name: {
@@ -17,7 +17,7 @@ exports.getSaibaMais = (req, res, next) => {
                 }
             }
         ],
-        partnersLogos: [
+        partnersLogos: [ // vai para outra tabela
             {
                 img: '/img/brkorea/logos/logo_vb.png',
                 url: 'http://site.videobrasil.org.br',
@@ -41,9 +41,9 @@ exports.getSaibaMais = (req, res, next) => {
         ],
         replaceText: false,
         pt: {
-            name: 'Ayoung Kim',
-            subtitle: 'Oxbow Lake Time',
-            links: [
+            name: 'Ayoung Kim', // vai para Edition
+            subtitle: 'Oxbow Lake Time', // vai para Edition
+            links: [ // vai para outra tabela
                 {
                     title: 'Leia mais:',
                     url: '',
