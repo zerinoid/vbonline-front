@@ -21,6 +21,7 @@ const Edition = sequelize.define('edition', {
     bg_img_desktop: Sequelize.STRING(1024),
     bg_img_mobile: Sequelize.STRING(1024),
 }, {
+    freezeTableName: true,
     tableName: "edition",
     timestamps: true
 });

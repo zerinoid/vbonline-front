@@ -51,17 +51,7 @@ if (process.env.NODE_ENV === 'prod') {
 }
 
 // Require models and associations
-const {
-    Edition,
-    Equipe,
-    LinkSaibaMais,
-    LogoSobre,
-    LogoSaibaMais,
-    PartnerRoles,
-    SaibaMais,
-    SeasonType,
-    Sobre
-} = require('./db/associations');
+require('./db/associations');
 
 // Sync tables
 sequelize

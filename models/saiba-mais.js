@@ -12,6 +12,7 @@ const SaibaMais = sequelize.define('saibamais', {
     content_en: Sequelize.TEXT,
     replace_text: Sequelize.TINYINT(1)
 }, {
+    freezeTableName: true,
     tableName: "saibamais",
     timestamps: false
 });
