@@ -1,6 +1,6 @@
-const Sobre = require('../models/Sobre')
-const LogosSobre = require('../models/LogosSobre')
-const Equipe = require('../models/Equipe')
+const Sobre = require('../models/sobre')
+const LogosSobre = require('../models/logos-sobre')
+const Equipe = require('../models/equipe')
 
 exports.getSobre = async (req, res, next) => {
     

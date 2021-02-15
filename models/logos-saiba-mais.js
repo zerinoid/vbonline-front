@@ -2,22 +2,21 @@ const Sequelize = require('sequelize');
 
 const sequelize = require('../db/db');
 
-const SeasonType = sequelize.define('season_type', {
+const LogoSaibaMais = sequelize.define('logos_saibamais', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    title_pt: {
+    img: {
         type: Sequelize.STRING(1024),
-        allowNull: false,
     },
-    title_en: {
+    url: {
         type: Sequelize.STRING(1024),
     },
 }, {
-    tableName: "season_type",
-    timestamps: false
+    tableName: "logos_saibamais",
+    timestamps: true
 });
 
-module.exports = SeasonType;
+module.exports = LogoSaibaMais;

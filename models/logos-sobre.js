@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 const sequelize = require('../db/db');
 
-const LogosSobre = sequelize.define('logos_sobre', {
+const LogoSobre = sequelize.define('logos_sobre', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -35,4 +35,4 @@ const LogosSobre = sequelize.define('logos_sobre', {
     timestamps: true
 });
 
-module.exports = LogosSobre;
+module.exports = LogoSobre;

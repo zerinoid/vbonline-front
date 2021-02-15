@@ -50,10 +50,18 @@ if (process.env.NODE_ENV === 'prod') {
     });
 }
 
-// Require models
-glob.sync('./models/**/*.js').forEach(function(file) {
-    require(path.resolve(file));
-});
+// Require models and associations
+const {
+    Edition,
+    Equipe,
+    LinkSaibaMais,
+    LogoSobre,
+    LogoSaibaMais,
+    PartnerRoles,
+    SaibaMais,
+    SeasonType,
+    Sobre
+} = require('./db/associations');
 
 // Sync tables
 sequelize
